@@ -1,0 +1,69 @@
+issues:
+  exclude-rules:
+    # Exclude `lll` issues for long lines with `go:generate`.
+    - linters:
+        - lll
+      source: "^//go:generate "
+    # Exclude funlen for testing files.
+    - linters:
+        - funlen
+        - unparam
+      path: '(.+)_test\.go'
+
+  max-per-linter: 0
+  max-same-issues: 0
+
+linters:
+  disable-all: true
+  enable:
+    - errcheck
+    - gofumpt
+    - gomnd
+    - gosimple
+    - ineffassign
+    - makezero
+    - misspell
+    - nakedret
+    - nilerr
+    - nolintlint
+    - staticcheck
+    - unconvert
+    - unparam
+    - unused
+    - vet
+    - godot
+    - revive
+    - wsl
+    - nlreturn
+    - paralleltest
+    - thelper
+    - gocognit
+    - govet
+    - forcetypeassert
+    - goerr113
+    # - maintidx
+
+linters-settings:
+  govet:
+    check-shadowing: true
+    enable:
+      - fieldalignment
+  misspell:
+    ignore-words:
+    - "intial"
+  gomnd:
+    settings:
+      mnd:
+        checks:
+          - argument
+        ignored-functions: "make,strconv.FormatFloat,strconv.FormatInt,strconv.ParseFloat,strconv.ParseInt"
+  nolintlint:
+    allow-leading-space: false
+    require-explanation: true
+    require-specific: true
+    allow-no-explanation:
+      - unparam
+      - gomnd
+
+run:
+  timeout: 35m

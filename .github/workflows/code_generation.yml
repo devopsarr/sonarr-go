@@ -1,0 +1,57 @@
+# Terraform Provider testing workflow.
+name: Code Generation
+
+# This GitHub action runs your tests for each pull request and push.
+# Optionally, you can turn it on using a schedule for regular testing.
+on:
+  push:
+    branches:
+      - main
+
+# Needs to generate the actual code and commit it.
+permissions:
+  contents: write
+
+# Default values to simplify job configurations below.
+env:
+  # Go language version to use for building. This value should also be updated
+  # in the release workflow if changed.
+  GO_VERSION: '1.19'
+
+jobs:
+
+  get-source:
+    name: generate code
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: pull swagger
+        run: curl "https://raw.githubusercontent.com/Sonarr/Sonarr/develop/src/Sonarr.Api.V3/openapi.json" -o openapi.json
+      - name: preprocess swagger
+        run: python3 assign_operation_id.py
+      - name: test
+        run: cat openapi.json
+      - name: generate code
+        run: |
+          docker run --rm \
+          -v $PWD:/local openapitools/openapi-generator-cli generate \
+          -c /local/openapi-generator.yaml
+      - name: reorder files
+        run: |
+          mv sonarr/go.mod go.mod && \
+          mv sonarr/go.sum go.sum && \
+          mv sonarr/README.md README.md
+      - name: create branch
+        run: git checkout -b feature/code-generation
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: commit and push
+        run: |
+          git add . && \
+          git commit -m "build: generate code" && \
+          git push --set-upstream origin feature/code-generation -f
+

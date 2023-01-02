@@ -1,0 +1,13 @@
+generatorName: go
+packageVersion: 0.0.1
+httpUserAgent: Sonarr-go/v0.0.1
+packageName: sonarr
+gitUserId: devopsarr
+gitRepoId: sonarr
+inputSpec: /local/openapi.json
+outputDir: /local/sonarr
+enumClassPrefix: true
+disallowAdditionalPropertiesIfNotPresent: false
+templateDir: /local/templates
+goImportAlias: sonarrClient
+structPrefix: false
