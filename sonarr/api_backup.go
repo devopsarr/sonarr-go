@@ -374,7 +374,7 @@ type ApiListSystemBackupRequest struct {
 	ApiService *BackupApiService
 }
 
-func (r ApiListSystemBackupRequest) Execute() ([]BackupResource, *http.Response, error) {
+func (r ApiListSystemBackupRequest) Execute() ([]*BackupResource, *http.Response, error) {
 	return r.ApiService.ListSystemBackupExecute(r)
 }
 
@@ -393,12 +393,12 @@ func (a *BackupApiService) ListSystemBackup(ctx context.Context) ApiListSystemBa
 
 // Execute executes the request
 //  @return []BackupResource
-func (a *BackupApiService) ListSystemBackupExecute(r ApiListSystemBackupRequest) ([]BackupResource, *http.Response, error) {
+func (a *BackupApiService) ListSystemBackupExecute(r ApiListSystemBackupRequest) ([]*BackupResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []BackupResource
+		localVarReturnValue  []*BackupResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupApiService.ListSystemBackup")

@@ -317,7 +317,7 @@ func (r ApiListHistorySeriesRequest) IncludeEpisode(includeEpisode bool) ApiList
 	return r
 }
 
-func (r ApiListHistorySeriesRequest) Execute() ([]HistoryResource, *http.Response, error) {
+func (r ApiListHistorySeriesRequest) Execute() ([]*HistoryResource, *http.Response, error) {
 	return r.ApiService.ListHistorySeriesExecute(r)
 }
 
@@ -336,12 +336,12 @@ func (a *HistoryApiService) ListHistorySeries(ctx context.Context) ApiListHistor
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryApiService) ListHistorySeriesExecute(r ApiListHistorySeriesRequest) ([]HistoryResource, *http.Response, error) {
+func (a *HistoryApiService) ListHistorySeriesExecute(r ApiListHistorySeriesRequest) ([]*HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []HistoryResource
+		localVarReturnValue  []*HistoryResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.ListHistorySeries")
@@ -480,7 +480,7 @@ func (r ApiListHistorySinceRequest) IncludeEpisode(includeEpisode bool) ApiListH
 	return r
 }
 
-func (r ApiListHistorySinceRequest) Execute() ([]HistoryResource, *http.Response, error) {
+func (r ApiListHistorySinceRequest) Execute() ([]*HistoryResource, *http.Response, error) {
 	return r.ApiService.ListHistorySinceExecute(r)
 }
 
@@ -499,12 +499,12 @@ func (a *HistoryApiService) ListHistorySince(ctx context.Context) ApiListHistory
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryApiService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]HistoryResource, *http.Response, error) {
+func (a *HistoryApiService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]*HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []HistoryResource
+		localVarReturnValue  []*HistoryResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.ListHistorySince")

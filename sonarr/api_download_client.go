@@ -529,7 +529,7 @@ type ApiListDownloadclientRequest struct {
 	ApiService *DownloadClientApiService
 }
 
-func (r ApiListDownloadclientRequest) Execute() ([]DownloadClientResource, *http.Response, error) {
+func (r ApiListDownloadclientRequest) Execute() ([]*DownloadClientResource, *http.Response, error) {
 	return r.ApiService.ListDownloadclientExecute(r)
 }
 
@@ -548,12 +548,12 @@ func (a *DownloadClientApiService) ListDownloadclient(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []DownloadClientResource
-func (a *DownloadClientApiService) ListDownloadclientExecute(r ApiListDownloadclientRequest) ([]DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientApiService) ListDownloadclientExecute(r ApiListDownloadclientRequest) ([]*DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []DownloadClientResource
+		localVarReturnValue  []*DownloadClientResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.ListDownloadclient")
@@ -653,7 +653,7 @@ type ApiListDownloadclientSchemaRequest struct {
 	ApiService *DownloadClientApiService
 }
 
-func (r ApiListDownloadclientSchemaRequest) Execute() ([]DownloadClientResource, *http.Response, error) {
+func (r ApiListDownloadclientSchemaRequest) Execute() ([]*DownloadClientResource, *http.Response, error) {
 	return r.ApiService.ListDownloadclientSchemaExecute(r)
 }
 
@@ -672,12 +672,12 @@ func (a *DownloadClientApiService) ListDownloadclientSchema(ctx context.Context)
 
 // Execute executes the request
 //  @return []DownloadClientResource
-func (a *DownloadClientApiService) ListDownloadclientSchemaExecute(r ApiListDownloadclientSchemaRequest) ([]DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientApiService) ListDownloadclientSchemaExecute(r ApiListDownloadclientSchemaRequest) ([]*DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []DownloadClientResource
+		localVarReturnValue  []*DownloadClientResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientApiService.ListDownloadclientSchema")

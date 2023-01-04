@@ -22,9 +22,9 @@ type QueueResource struct {
 	EpisodeId NullableInt32 `json:"episodeId,omitempty"`
 	Series *SeriesResource `json:"series,omitempty"`
 	Episode *EpisodeResource `json:"episode,omitempty"`
-	Languages []Language `json:"languages,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
 	Size *float64 `json:"size,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	Sizeleft *float64 `json:"sizeleft,omitempty"`
@@ -33,7 +33,7 @@ type QueueResource struct {
 	Status NullableString `json:"status,omitempty"`
 	TrackedDownloadStatus *TrackedDownloadStatus `json:"trackedDownloadStatus,omitempty"`
 	TrackedDownloadState *TrackedDownloadState `json:"trackedDownloadState,omitempty"`
-	StatusMessages []TrackedDownloadStatusMessage `json:"statusMessages,omitempty"`
+	StatusMessages []*TrackedDownloadStatusMessage `json:"statusMessages,omitempty"`
 	ErrorMessage NullableString `json:"errorMessage,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
@@ -240,9 +240,9 @@ func (o *QueueResource) SetEpisode(v EpisodeResource) {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueueResource) GetLanguages() []Language {
+func (o *QueueResource) GetLanguages() []*Language {
 	if o == nil {
-		var ret []Language
+		var ret []*Language
 		return ret
 	}
 	return o.Languages
@@ -251,7 +251,7 @@ func (o *QueueResource) GetLanguages() []Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QueueResource) GetLanguagesOk() ([]Language, bool) {
+func (o *QueueResource) GetLanguagesOk() ([]*Language, bool) {
 	if o == nil || isNil(o.Languages) {
     return nil, false
 	}
@@ -268,7 +268,7 @@ func (o *QueueResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *QueueResource) SetLanguages(v []Language) {
+func (o *QueueResource) SetLanguages(v []*Language) {
 	o.Languages = v
 }
 
@@ -305,9 +305,9 @@ func (o *QueueResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueueResource) GetCustomFormats() []CustomFormatResource {
+func (o *QueueResource) GetCustomFormats() []*CustomFormatResource {
 	if o == nil {
-		var ret []CustomFormatResource
+		var ret []*CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -316,7 +316,7 @@ func (o *QueueResource) GetCustomFormats() []CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QueueResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+func (o *QueueResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
 	if o == nil || isNil(o.CustomFormats) {
     return nil, false
 	}
@@ -333,7 +333,7 @@ func (o *QueueResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *QueueResource) SetCustomFormats(v []CustomFormatResource) {
+func (o *QueueResource) SetCustomFormats(v []*CustomFormatResource) {
 	o.CustomFormats = v
 }
 
@@ -624,9 +624,9 @@ func (o *QueueResource) SetTrackedDownloadState(v TrackedDownloadState) {
 }
 
 // GetStatusMessages returns the StatusMessages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueueResource) GetStatusMessages() []TrackedDownloadStatusMessage {
+func (o *QueueResource) GetStatusMessages() []*TrackedDownloadStatusMessage {
 	if o == nil {
-		var ret []TrackedDownloadStatusMessage
+		var ret []*TrackedDownloadStatusMessage
 		return ret
 	}
 	return o.StatusMessages
@@ -635,7 +635,7 @@ func (o *QueueResource) GetStatusMessages() []TrackedDownloadStatusMessage {
 // GetStatusMessagesOk returns a tuple with the StatusMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QueueResource) GetStatusMessagesOk() ([]TrackedDownloadStatusMessage, bool) {
+func (o *QueueResource) GetStatusMessagesOk() ([]*TrackedDownloadStatusMessage, bool) {
 	if o == nil || isNil(o.StatusMessages) {
     return nil, false
 	}
@@ -652,7 +652,7 @@ func (o *QueueResource) HasStatusMessages() bool {
 }
 
 // SetStatusMessages gets a reference to the given []TrackedDownloadStatusMessage and assigns it to the StatusMessages field.
-func (o *QueueResource) SetStatusMessages(v []TrackedDownloadStatusMessage) {
+func (o *QueueResource) SetStatusMessages(v []*TrackedDownloadStatusMessage) {
 	o.StatusMessages = v
 }
 

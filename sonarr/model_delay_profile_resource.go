@@ -24,7 +24,7 @@ type DelayProfileResource struct {
 	TorrentDelay *int32 `json:"torrentDelay,omitempty"`
 	BypassIfHighestQuality *bool `json:"bypassIfHighestQuality,omitempty"`
 	Order *int32 `json:"order,omitempty"`
-	Tags []int32 `json:"tags,omitempty"`
+	Tags []*int32 `json:"tags,omitempty"`
 }
 
 // NewDelayProfileResource instantiates a new DelayProfileResource object
@@ -301,9 +301,9 @@ func (o *DelayProfileResource) SetOrder(v int32) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DelayProfileResource) GetTags() []int32 {
+func (o *DelayProfileResource) GetTags() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.Tags
@@ -312,7 +312,7 @@ func (o *DelayProfileResource) GetTags() []int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DelayProfileResource) GetTagsOk() ([]int32, bool) {
+func (o *DelayProfileResource) GetTagsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.Tags) {
     return nil, false
 	}
@@ -329,7 +329,7 @@ func (o *DelayProfileResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *DelayProfileResource) SetTags(v []int32) {
+func (o *DelayProfileResource) SetTags(v []*int32) {
 	o.Tags = v
 }
 

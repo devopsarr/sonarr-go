@@ -19,7 +19,7 @@ type QualityProfileQualityItemResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	Quality *Quality `json:"quality,omitempty"`
-	Items []QualityProfileQualityItemResource `json:"items,omitempty"`
+	Items []*QualityProfileQualityItemResource `json:"items,omitempty"`
 	Allowed *bool `json:"allowed,omitempty"`
 }
 
@@ -147,9 +147,9 @@ func (o *QualityProfileQualityItemResource) SetQuality(v Quality) {
 }
 
 // GetItems returns the Items field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QualityProfileQualityItemResource) GetItems() []QualityProfileQualityItemResource {
+func (o *QualityProfileQualityItemResource) GetItems() []*QualityProfileQualityItemResource {
 	if o == nil {
-		var ret []QualityProfileQualityItemResource
+		var ret []*QualityProfileQualityItemResource
 		return ret
 	}
 	return o.Items
@@ -158,7 +158,7 @@ func (o *QualityProfileQualityItemResource) GetItems() []QualityProfileQualityIt
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QualityProfileQualityItemResource) GetItemsOk() ([]QualityProfileQualityItemResource, bool) {
+func (o *QualityProfileQualityItemResource) GetItemsOk() ([]*QualityProfileQualityItemResource, bool) {
 	if o == nil || isNil(o.Items) {
     return nil, false
 	}
@@ -175,7 +175,7 @@ func (o *QualityProfileQualityItemResource) HasItems() bool {
 }
 
 // SetItems gets a reference to the given []QualityProfileQualityItemResource and assigns it to the Items field.
-func (o *QualityProfileQualityItemResource) SetItems(v []QualityProfileQualityItemResource) {
+func (o *QualityProfileQualityItemResource) SetItems(v []*QualityProfileQualityItemResource) {
 	o.Items = v
 }
 

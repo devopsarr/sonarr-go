@@ -192,7 +192,7 @@ func (r ApiListCalendarRequest) IncludeEpisodeImages(includeEpisodeImages bool) 
 	return r
 }
 
-func (r ApiListCalendarRequest) Execute() ([]EpisodeResource, *http.Response, error) {
+func (r ApiListCalendarRequest) Execute() ([]*EpisodeResource, *http.Response, error) {
 	return r.ApiService.ListCalendarExecute(r)
 }
 
@@ -211,12 +211,12 @@ func (a *CalendarApiService) ListCalendar(ctx context.Context) ApiListCalendarRe
 
 // Execute executes the request
 //  @return []EpisodeResource
-func (a *CalendarApiService) ListCalendarExecute(r ApiListCalendarRequest) ([]EpisodeResource, *http.Response, error) {
+func (a *CalendarApiService) ListCalendarExecute(r ApiListCalendarRequest) ([]*EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []EpisodeResource
+		localVarReturnValue  []*EpisodeResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.ListCalendar")

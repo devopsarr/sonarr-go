@@ -177,7 +177,7 @@ func (r ApiListManualimportRequest) FilterExistingFiles(filterExistingFiles bool
 	return r
 }
 
-func (r ApiListManualimportRequest) Execute() ([]ManualImportResource, *http.Response, error) {
+func (r ApiListManualimportRequest) Execute() ([]*ManualImportResource, *http.Response, error) {
 	return r.ApiService.ListManualimportExecute(r)
 }
 
@@ -196,12 +196,12 @@ func (a *ManualImportApiService) ListManualimport(ctx context.Context) ApiListMa
 
 // Execute executes the request
 //  @return []ManualImportResource
-func (a *ManualImportApiService) ListManualimportExecute(r ApiListManualimportRequest) ([]ManualImportResource, *http.Response, error) {
+func (a *ManualImportApiService) ListManualimportExecute(r ApiListManualimportRequest) ([]*ManualImportResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ManualImportResource
+		localVarReturnValue  []*ManualImportResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.ListManualimport")

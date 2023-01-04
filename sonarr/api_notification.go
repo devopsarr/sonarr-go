@@ -529,7 +529,7 @@ type ApiListNotificationRequest struct {
 	ApiService *NotificationApiService
 }
 
-func (r ApiListNotificationRequest) Execute() ([]NotificationResource, *http.Response, error) {
+func (r ApiListNotificationRequest) Execute() ([]*NotificationResource, *http.Response, error) {
 	return r.ApiService.ListNotificationExecute(r)
 }
 
@@ -548,12 +548,12 @@ func (a *NotificationApiService) ListNotification(ctx context.Context) ApiListNo
 
 // Execute executes the request
 //  @return []NotificationResource
-func (a *NotificationApiService) ListNotificationExecute(r ApiListNotificationRequest) ([]NotificationResource, *http.Response, error) {
+func (a *NotificationApiService) ListNotificationExecute(r ApiListNotificationRequest) ([]*NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []NotificationResource
+		localVarReturnValue  []*NotificationResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.ListNotification")
@@ -653,7 +653,7 @@ type ApiListNotificationSchemaRequest struct {
 	ApiService *NotificationApiService
 }
 
-func (r ApiListNotificationSchemaRequest) Execute() ([]NotificationResource, *http.Response, error) {
+func (r ApiListNotificationSchemaRequest) Execute() ([]*NotificationResource, *http.Response, error) {
 	return r.ApiService.ListNotificationSchemaExecute(r)
 }
 
@@ -672,12 +672,12 @@ func (a *NotificationApiService) ListNotificationSchema(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []NotificationResource
-func (a *NotificationApiService) ListNotificationSchemaExecute(r ApiListNotificationSchemaRequest) ([]NotificationResource, *http.Response, error) {
+func (a *NotificationApiService) ListNotificationSchemaExecute(r ApiListNotificationSchemaRequest) ([]*NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []NotificationResource
+		localVarReturnValue  []*NotificationResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationApiService.ListNotificationSchema")

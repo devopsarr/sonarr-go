@@ -16,7 +16,7 @@ import (
 
 // EpisodesMonitoredResource struct for EpisodesMonitoredResource
 type EpisodesMonitoredResource struct {
-	EpisodeIds []int32 `json:"episodeIds,omitempty"`
+	EpisodeIds []*int32 `json:"episodeIds,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 }
 
@@ -38,9 +38,9 @@ func NewEpisodesMonitoredResourceWithDefaults() *EpisodesMonitoredResource {
 }
 
 // GetEpisodeIds returns the EpisodeIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodesMonitoredResource) GetEpisodeIds() []int32 {
+func (o *EpisodesMonitoredResource) GetEpisodeIds() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.EpisodeIds
@@ -49,7 +49,7 @@ func (o *EpisodesMonitoredResource) GetEpisodeIds() []int32 {
 // GetEpisodeIdsOk returns a tuple with the EpisodeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodesMonitoredResource) GetEpisodeIdsOk() ([]int32, bool) {
+func (o *EpisodesMonitoredResource) GetEpisodeIdsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.EpisodeIds) {
     return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *EpisodesMonitoredResource) HasEpisodeIds() bool {
 }
 
 // SetEpisodeIds gets a reference to the given []int32 and assigns it to the EpisodeIds field.
-func (o *EpisodesMonitoredResource) SetEpisodeIds(v []int32) {
+func (o *EpisodesMonitoredResource) SetEpisodeIds(v []*int32) {
 	o.EpisodeIds = v
 }
 

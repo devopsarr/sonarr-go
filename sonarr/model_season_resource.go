@@ -19,7 +19,7 @@ type SeasonResource struct {
 	SeasonNumber *int32 `json:"seasonNumber,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 	Statistics *SeasonStatisticsResource `json:"statistics,omitempty"`
-	Images []MediaCover `json:"images,omitempty"`
+	Images []*MediaCover `json:"images,omitempty"`
 }
 
 // NewSeasonResource instantiates a new SeasonResource object
@@ -136,9 +136,9 @@ func (o *SeasonResource) SetStatistics(v SeasonStatisticsResource) {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeasonResource) GetImages() []MediaCover {
+func (o *SeasonResource) GetImages() []*MediaCover {
 	if o == nil {
-		var ret []MediaCover
+		var ret []*MediaCover
 		return ret
 	}
 	return o.Images
@@ -147,7 +147,7 @@ func (o *SeasonResource) GetImages() []MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeasonResource) GetImagesOk() ([]MediaCover, bool) {
+func (o *SeasonResource) GetImagesOk() ([]*MediaCover, bool) {
 	if o == nil || isNil(o.Images) {
     return nil, false
 	}
@@ -164,7 +164,7 @@ func (o *SeasonResource) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *SeasonResource) SetImages(v []MediaCover) {
+func (o *SeasonResource) SetImages(v []*MediaCover) {
 	o.Images = v
 }
 

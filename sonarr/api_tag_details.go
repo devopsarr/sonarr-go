@@ -155,7 +155,7 @@ type ApiListTagDetailRequest struct {
 	ApiService *TagDetailsApiService
 }
 
-func (r ApiListTagDetailRequest) Execute() ([]TagDetailsResource, *http.Response, error) {
+func (r ApiListTagDetailRequest) Execute() ([]*TagDetailsResource, *http.Response, error) {
 	return r.ApiService.ListTagDetailExecute(r)
 }
 
@@ -174,12 +174,12 @@ func (a *TagDetailsApiService) ListTagDetail(ctx context.Context) ApiListTagDeta
 
 // Execute executes the request
 //  @return []TagDetailsResource
-func (a *TagDetailsApiService) ListTagDetailExecute(r ApiListTagDetailRequest) ([]TagDetailsResource, *http.Response, error) {
+func (a *TagDetailsApiService) ListTagDetailExecute(r ApiListTagDetailRequest) ([]*TagDetailsResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []TagDetailsResource
+		localVarReturnValue  []*TagDetailsResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagDetailsApiService.ListTagDetail")

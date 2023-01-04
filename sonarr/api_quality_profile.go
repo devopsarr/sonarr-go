@@ -404,7 +404,7 @@ type ApiListQualityprofileRequest struct {
 	ApiService *QualityProfileApiService
 }
 
-func (r ApiListQualityprofileRequest) Execute() ([]QualityProfileResource, *http.Response, error) {
+func (r ApiListQualityprofileRequest) Execute() ([]*QualityProfileResource, *http.Response, error) {
 	return r.ApiService.ListQualityprofileExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *QualityProfileApiService) ListQualityprofile(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []QualityProfileResource
-func (a *QualityProfileApiService) ListQualityprofileExecute(r ApiListQualityprofileRequest) ([]QualityProfileResource, *http.Response, error) {
+func (a *QualityProfileApiService) ListQualityprofileExecute(r ApiListQualityprofileRequest) ([]*QualityProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []QualityProfileResource
+		localVarReturnValue  []*QualityProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileApiService.ListQualityprofile")

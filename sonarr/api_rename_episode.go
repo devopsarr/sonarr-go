@@ -38,7 +38,7 @@ func (r ApiListRenameRequest) SeasonNumber(seasonNumber int32) ApiListRenameRequ
 	return r
 }
 
-func (r ApiListRenameRequest) Execute() ([]RenameEpisodeResource, *http.Response, error) {
+func (r ApiListRenameRequest) Execute() ([]*RenameEpisodeResource, *http.Response, error) {
 	return r.ApiService.ListRenameExecute(r)
 }
 
@@ -57,12 +57,12 @@ func (a *RenameEpisodeApiService) ListRename(ctx context.Context) ApiListRenameR
 
 // Execute executes the request
 //  @return []RenameEpisodeResource
-func (a *RenameEpisodeApiService) ListRenameExecute(r ApiListRenameRequest) ([]RenameEpisodeResource, *http.Response, error) {
+func (a *RenameEpisodeApiService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameEpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []RenameEpisodeResource
+		localVarReturnValue  []*RenameEpisodeResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameEpisodeApiService.ListRename")

@@ -155,7 +155,7 @@ type ApiListLanguageRequest struct {
 	ApiService *LanguageApiService
 }
 
-func (r ApiListLanguageRequest) Execute() ([]LanguageResource, *http.Response, error) {
+func (r ApiListLanguageRequest) Execute() ([]*LanguageResource, *http.Response, error) {
 	return r.ApiService.ListLanguageExecute(r)
 }
 
@@ -174,12 +174,12 @@ func (a *LanguageApiService) ListLanguage(ctx context.Context) ApiListLanguageRe
 
 // Execute executes the request
 //  @return []LanguageResource
-func (a *LanguageApiService) ListLanguageExecute(r ApiListLanguageRequest) ([]LanguageResource, *http.Response, error) {
+func (a *LanguageApiService) ListLanguageExecute(r ApiListLanguageRequest) ([]*LanguageResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []LanguageResource
+		localVarReturnValue  []*LanguageResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageApiService.ListLanguage")

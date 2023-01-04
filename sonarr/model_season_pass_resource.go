@@ -16,7 +16,7 @@ import (
 
 // SeasonPassResource struct for SeasonPassResource
 type SeasonPassResource struct {
-	Series []SeasonPassSeriesResource `json:"series,omitempty"`
+	Series []*SeasonPassSeriesResource `json:"series,omitempty"`
 	MonitoringOptions *MonitoringOptions `json:"monitoringOptions,omitempty"`
 }
 
@@ -38,9 +38,9 @@ func NewSeasonPassResourceWithDefaults() *SeasonPassResource {
 }
 
 // GetSeries returns the Series field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeasonPassResource) GetSeries() []SeasonPassSeriesResource {
+func (o *SeasonPassResource) GetSeries() []*SeasonPassSeriesResource {
 	if o == nil {
-		var ret []SeasonPassSeriesResource
+		var ret []*SeasonPassSeriesResource
 		return ret
 	}
 	return o.Series
@@ -49,7 +49,7 @@ func (o *SeasonPassResource) GetSeries() []SeasonPassSeriesResource {
 // GetSeriesOk returns a tuple with the Series field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeasonPassResource) GetSeriesOk() ([]SeasonPassSeriesResource, bool) {
+func (o *SeasonPassResource) GetSeriesOk() ([]*SeasonPassSeriesResource, bool) {
 	if o == nil || isNil(o.Series) {
     return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *SeasonPassResource) HasSeries() bool {
 }
 
 // SetSeries gets a reference to the given []SeasonPassSeriesResource and assigns it to the Series field.
-func (o *SeasonPassResource) SetSeries(v []SeasonPassSeriesResource) {
+func (o *SeasonPassResource) SetSeries(v []*SeasonPassSeriesResource) {
 	o.Series = v
 }
 

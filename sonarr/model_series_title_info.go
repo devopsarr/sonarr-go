@@ -19,7 +19,7 @@ type SeriesTitleInfo struct {
 	Title NullableString `json:"title,omitempty"`
 	TitleWithoutYear NullableString `json:"titleWithoutYear,omitempty"`
 	Year *int32 `json:"year,omitempty"`
-	AllTitles []string `json:"allTitles,omitempty"`
+	AllTitles []*string `json:"allTitles,omitempty"`
 }
 
 // NewSeriesTitleInfo instantiates a new SeriesTitleInfo object
@@ -156,9 +156,9 @@ func (o *SeriesTitleInfo) SetYear(v int32) {
 }
 
 // GetAllTitles returns the AllTitles field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesTitleInfo) GetAllTitles() []string {
+func (o *SeriesTitleInfo) GetAllTitles() []*string {
 	if o == nil {
-		var ret []string
+		var ret []*string
 		return ret
 	}
 	return o.AllTitles
@@ -167,7 +167,7 @@ func (o *SeriesTitleInfo) GetAllTitles() []string {
 // GetAllTitlesOk returns a tuple with the AllTitles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesTitleInfo) GetAllTitlesOk() ([]string, bool) {
+func (o *SeriesTitleInfo) GetAllTitlesOk() ([]*string, bool) {
 	if o == nil || isNil(o.AllTitles) {
     return nil, false
 	}
@@ -184,7 +184,7 @@ func (o *SeriesTitleInfo) HasAllTitles() bool {
 }
 
 // SetAllTitles gets a reference to the given []string and assigns it to the AllTitles field.
-func (o *SeriesTitleInfo) SetAllTitles(v []string) {
+func (o *SeriesTitleInfo) SetAllTitles(v []*string) {
 	o.AllTitles = v
 }
 

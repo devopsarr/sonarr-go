@@ -404,7 +404,7 @@ type ApiListTagRequest struct {
 	ApiService *TagApiService
 }
 
-func (r ApiListTagRequest) Execute() ([]TagResource, *http.Response, error) {
+func (r ApiListTagRequest) Execute() ([]*TagResource, *http.Response, error) {
 	return r.ApiService.ListTagExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *TagApiService) ListTag(ctx context.Context) ApiListTagRequest {
 
 // Execute executes the request
 //  @return []TagResource
-func (a *TagApiService) ListTagExecute(r ApiListTagRequest) ([]TagResource, *http.Response, error) {
+func (a *TagApiService) ListTagExecute(r ApiListTagRequest) ([]*TagResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []TagResource
+		localVarReturnValue  []*TagResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagApiService.ListTag")

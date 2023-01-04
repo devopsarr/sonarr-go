@@ -18,14 +18,14 @@ import (
 type DownloadClientResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []Field `json:"fields,omitempty"`
+	Fields []*Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []int32 `json:"tags,omitempty"`
-	Presets []DownloadClientResource `json:"presets,omitempty"`
+	Tags []*int32 `json:"tags,omitempty"`
+	Presets []*DownloadClientResource `json:"presets,omitempty"`
 	Enable *bool `json:"enable,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	Priority *int32 `json:"priority,omitempty"`
@@ -125,9 +125,9 @@ func (o *DownloadClientResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientResource) GetFields() []Field {
+func (o *DownloadClientResource) GetFields() []*Field {
 	if o == nil {
-		var ret []Field
+		var ret []*Field
 		return ret
 	}
 	return o.Fields
@@ -136,7 +136,7 @@ func (o *DownloadClientResource) GetFields() []Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientResource) GetFieldsOk() ([]Field, bool) {
+func (o *DownloadClientResource) GetFieldsOk() ([]*Field, bool) {
 	if o == nil || isNil(o.Fields) {
     return nil, false
 	}
@@ -153,7 +153,7 @@ func (o *DownloadClientResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *DownloadClientResource) SetFields(v []Field) {
+func (o *DownloadClientResource) SetFields(v []*Field) {
 	o.Fields = v
 }
 
@@ -358,9 +358,9 @@ func (o *DownloadClientResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientResource) GetTags() []int32 {
+func (o *DownloadClientResource) GetTags() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.Tags
@@ -369,7 +369,7 @@ func (o *DownloadClientResource) GetTags() []int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientResource) GetTagsOk() ([]int32, bool) {
+func (o *DownloadClientResource) GetTagsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.Tags) {
     return nil, false
 	}
@@ -386,14 +386,14 @@ func (o *DownloadClientResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *DownloadClientResource) SetTags(v []int32) {
+func (o *DownloadClientResource) SetTags(v []*int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientResource) GetPresets() []DownloadClientResource {
+func (o *DownloadClientResource) GetPresets() []*DownloadClientResource {
 	if o == nil {
-		var ret []DownloadClientResource
+		var ret []*DownloadClientResource
 		return ret
 	}
 	return o.Presets
@@ -402,7 +402,7 @@ func (o *DownloadClientResource) GetPresets() []DownloadClientResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientResource) GetPresetsOk() ([]DownloadClientResource, bool) {
+func (o *DownloadClientResource) GetPresetsOk() ([]*DownloadClientResource, bool) {
 	if o == nil || isNil(o.Presets) {
     return nil, false
 	}
@@ -419,7 +419,7 @@ func (o *DownloadClientResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []DownloadClientResource and assigns it to the Presets field.
-func (o *DownloadClientResource) SetPresets(v []DownloadClientResource) {
+func (o *DownloadClientResource) SetPresets(v []*DownloadClientResource) {
 	o.Presets = v
 }
 

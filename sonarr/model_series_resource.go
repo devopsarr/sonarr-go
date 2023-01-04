@@ -19,7 +19,7 @@ import (
 type SeriesResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Title NullableString `json:"title,omitempty"`
-	AlternateTitles []AlternateTitleResource `json:"alternateTitles,omitempty"`
+	AlternateTitles []*AlternateTitleResource `json:"alternateTitles,omitempty"`
 	SortTitle NullableString `json:"sortTitle,omitempty"`
 	Status *SeriesStatusType `json:"status,omitempty"`
 	Ended *bool `json:"ended,omitempty"`
@@ -29,10 +29,10 @@ type SeriesResource struct {
 	PreviousAiring NullableTime `json:"previousAiring,omitempty"`
 	Network NullableString `json:"network,omitempty"`
 	AirTime NullableString `json:"airTime,omitempty"`
-	Images []MediaCover `json:"images,omitempty"`
+	Images []*MediaCover `json:"images,omitempty"`
 	OriginalLanguage *Language `json:"originalLanguage,omitempty"`
 	RemotePoster NullableString `json:"remotePoster,omitempty"`
-	Seasons []SeasonResource `json:"seasons,omitempty"`
+	Seasons []*SeasonResource `json:"seasons,omitempty"`
 	Year *int32 `json:"year,omitempty"`
 	Path NullableString `json:"path,omitempty"`
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
@@ -51,8 +51,8 @@ type SeriesResource struct {
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
 	Folder NullableString `json:"folder,omitempty"`
 	Certification NullableString `json:"certification,omitempty"`
-	Genres []string `json:"genres,omitempty"`
-	Tags []int32 `json:"tags,omitempty"`
+	Genres []*string `json:"genres,omitempty"`
+	Tags []*int32 `json:"tags,omitempty"`
 	Added *time.Time `json:"added,omitempty"`
 	AddOptions *AddSeriesOptions `json:"addOptions,omitempty"`
 	Ratings *Ratings `json:"ratings,omitempty"`
@@ -154,9 +154,9 @@ func (o *SeriesResource) UnsetTitle() {
 }
 
 // GetAlternateTitles returns the AlternateTitles field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesResource) GetAlternateTitles() []AlternateTitleResource {
+func (o *SeriesResource) GetAlternateTitles() []*AlternateTitleResource {
 	if o == nil {
-		var ret []AlternateTitleResource
+		var ret []*AlternateTitleResource
 		return ret
 	}
 	return o.AlternateTitles
@@ -165,7 +165,7 @@ func (o *SeriesResource) GetAlternateTitles() []AlternateTitleResource {
 // GetAlternateTitlesOk returns a tuple with the AlternateTitles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesResource) GetAlternateTitlesOk() ([]AlternateTitleResource, bool) {
+func (o *SeriesResource) GetAlternateTitlesOk() ([]*AlternateTitleResource, bool) {
 	if o == nil || isNil(o.AlternateTitles) {
     return nil, false
 	}
@@ -182,7 +182,7 @@ func (o *SeriesResource) HasAlternateTitles() bool {
 }
 
 // SetAlternateTitles gets a reference to the given []AlternateTitleResource and assigns it to the AlternateTitles field.
-func (o *SeriesResource) SetAlternateTitles(v []AlternateTitleResource) {
+func (o *SeriesResource) SetAlternateTitles(v []*AlternateTitleResource) {
 	o.AlternateTitles = v
 }
 
@@ -545,9 +545,9 @@ func (o *SeriesResource) UnsetAirTime() {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesResource) GetImages() []MediaCover {
+func (o *SeriesResource) GetImages() []*MediaCover {
 	if o == nil {
-		var ret []MediaCover
+		var ret []*MediaCover
 		return ret
 	}
 	return o.Images
@@ -556,7 +556,7 @@ func (o *SeriesResource) GetImages() []MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesResource) GetImagesOk() ([]MediaCover, bool) {
+func (o *SeriesResource) GetImagesOk() ([]*MediaCover, bool) {
 	if o == nil || isNil(o.Images) {
     return nil, false
 	}
@@ -573,7 +573,7 @@ func (o *SeriesResource) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *SeriesResource) SetImages(v []MediaCover) {
+func (o *SeriesResource) SetImages(v []*MediaCover) {
 	o.Images = v
 }
 
@@ -652,9 +652,9 @@ func (o *SeriesResource) UnsetRemotePoster() {
 }
 
 // GetSeasons returns the Seasons field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesResource) GetSeasons() []SeasonResource {
+func (o *SeriesResource) GetSeasons() []*SeasonResource {
 	if o == nil {
-		var ret []SeasonResource
+		var ret []*SeasonResource
 		return ret
 	}
 	return o.Seasons
@@ -663,7 +663,7 @@ func (o *SeriesResource) GetSeasons() []SeasonResource {
 // GetSeasonsOk returns a tuple with the Seasons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesResource) GetSeasonsOk() ([]SeasonResource, bool) {
+func (o *SeriesResource) GetSeasonsOk() ([]*SeasonResource, bool) {
 	if o == nil || isNil(o.Seasons) {
     return nil, false
 	}
@@ -680,7 +680,7 @@ func (o *SeriesResource) HasSeasons() bool {
 }
 
 // SetSeasons gets a reference to the given []SeasonResource and assigns it to the Seasons field.
-func (o *SeriesResource) SetSeasons(v []SeasonResource) {
+func (o *SeriesResource) SetSeasons(v []*SeasonResource) {
 	o.Seasons = v
 }
 
@@ -1341,9 +1341,9 @@ func (o *SeriesResource) UnsetCertification() {
 }
 
 // GetGenres returns the Genres field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesResource) GetGenres() []string {
+func (o *SeriesResource) GetGenres() []*string {
 	if o == nil {
-		var ret []string
+		var ret []*string
 		return ret
 	}
 	return o.Genres
@@ -1352,7 +1352,7 @@ func (o *SeriesResource) GetGenres() []string {
 // GetGenresOk returns a tuple with the Genres field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesResource) GetGenresOk() ([]string, bool) {
+func (o *SeriesResource) GetGenresOk() ([]*string, bool) {
 	if o == nil || isNil(o.Genres) {
     return nil, false
 	}
@@ -1369,14 +1369,14 @@ func (o *SeriesResource) HasGenres() bool {
 }
 
 // SetGenres gets a reference to the given []string and assigns it to the Genres field.
-func (o *SeriesResource) SetGenres(v []string) {
+func (o *SeriesResource) SetGenres(v []*string) {
 	o.Genres = v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesResource) GetTags() []int32 {
+func (o *SeriesResource) GetTags() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.Tags
@@ -1385,7 +1385,7 @@ func (o *SeriesResource) GetTags() []int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesResource) GetTagsOk() ([]int32, bool) {
+func (o *SeriesResource) GetTagsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.Tags) {
     return nil, false
 	}
@@ -1402,7 +1402,7 @@ func (o *SeriesResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *SeriesResource) SetTags(v []int32) {
+func (o *SeriesResource) SetTags(v []*int32) {
 	o.Tags = v
 }
 

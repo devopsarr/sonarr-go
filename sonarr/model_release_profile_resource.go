@@ -22,7 +22,7 @@ type ReleaseProfileResource struct {
 	Required interface{} `json:"required,omitempty"`
 	Ignored interface{} `json:"ignored,omitempty"`
 	IndexerId *int32 `json:"indexerId,omitempty"`
-	Tags []int32 `json:"tags,omitempty"`
+	Tags []*int32 `json:"tags,omitempty"`
 }
 
 // NewReleaseProfileResource instantiates a new ReleaseProfileResource object
@@ -247,9 +247,9 @@ func (o *ReleaseProfileResource) SetIndexerId(v int32) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseProfileResource) GetTags() []int32 {
+func (o *ReleaseProfileResource) GetTags() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.Tags
@@ -258,7 +258,7 @@ func (o *ReleaseProfileResource) GetTags() []int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseProfileResource) GetTagsOk() ([]int32, bool) {
+func (o *ReleaseProfileResource) GetTagsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.Tags) {
     return nil, false
 	}
@@ -275,7 +275,7 @@ func (o *ReleaseProfileResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *ReleaseProfileResource) SetTags(v []int32) {
+func (o *ReleaseProfileResource) SetTags(v []*int32) {
 	o.Tags = v
 }
 

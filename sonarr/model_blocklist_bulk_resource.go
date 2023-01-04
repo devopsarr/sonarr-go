@@ -16,7 +16,7 @@ import (
 
 // BlocklistBulkResource struct for BlocklistBulkResource
 type BlocklistBulkResource struct {
-	Ids []int32 `json:"ids,omitempty"`
+	Ids []*int32 `json:"ids,omitempty"`
 }
 
 // NewBlocklistBulkResource instantiates a new BlocklistBulkResource object
@@ -37,9 +37,9 @@ func NewBlocklistBulkResourceWithDefaults() *BlocklistBulkResource {
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistBulkResource) GetIds() []int32 {
+func (o *BlocklistBulkResource) GetIds() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.Ids
@@ -48,7 +48,7 @@ func (o *BlocklistBulkResource) GetIds() []int32 {
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistBulkResource) GetIdsOk() ([]int32, bool) {
+func (o *BlocklistBulkResource) GetIdsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.Ids) {
     return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *BlocklistBulkResource) HasIds() bool {
 }
 
 // SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *BlocklistBulkResource) SetIds(v []int32) {
+func (o *BlocklistBulkResource) SetIds(v []*int32) {
 	o.Ids = v
 }
 

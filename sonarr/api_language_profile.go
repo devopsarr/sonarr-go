@@ -410,7 +410,7 @@ type ApiListLanguageprofileRequest struct {
 	ApiService *LanguageProfileApiService
 }
 
-func (r ApiListLanguageprofileRequest) Execute() ([]LanguageProfileResource, *http.Response, error) {
+func (r ApiListLanguageprofileRequest) Execute() ([]*LanguageProfileResource, *http.Response, error) {
 	return r.ApiService.ListLanguageprofileExecute(r)
 }
 
@@ -432,12 +432,12 @@ func (a *LanguageProfileApiService) ListLanguageprofile(ctx context.Context) Api
 // Execute executes the request
 //  @return []LanguageProfileResource
 // Deprecated
-func (a *LanguageProfileApiService) ListLanguageprofileExecute(r ApiListLanguageprofileRequest) ([]LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileApiService) ListLanguageprofileExecute(r ApiListLanguageprofileRequest) ([]*LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []LanguageProfileResource
+		localVarReturnValue  []*LanguageProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.ListLanguageprofile")

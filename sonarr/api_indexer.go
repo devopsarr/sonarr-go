@@ -529,7 +529,7 @@ type ApiListIndexerRequest struct {
 	ApiService *IndexerApiService
 }
 
-func (r ApiListIndexerRequest) Execute() ([]IndexerResource, *http.Response, error) {
+func (r ApiListIndexerRequest) Execute() ([]*IndexerResource, *http.Response, error) {
 	return r.ApiService.ListIndexerExecute(r)
 }
 
@@ -548,12 +548,12 @@ func (a *IndexerApiService) ListIndexer(ctx context.Context) ApiListIndexerReque
 
 // Execute executes the request
 //  @return []IndexerResource
-func (a *IndexerApiService) ListIndexerExecute(r ApiListIndexerRequest) ([]IndexerResource, *http.Response, error) {
+func (a *IndexerApiService) ListIndexerExecute(r ApiListIndexerRequest) ([]*IndexerResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexerResource
+		localVarReturnValue  []*IndexerResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerApiService.ListIndexer")
@@ -653,7 +653,7 @@ type ApiListIndexerSchemaRequest struct {
 	ApiService *IndexerApiService
 }
 
-func (r ApiListIndexerSchemaRequest) Execute() ([]IndexerResource, *http.Response, error) {
+func (r ApiListIndexerSchemaRequest) Execute() ([]*IndexerResource, *http.Response, error) {
 	return r.ApiService.ListIndexerSchemaExecute(r)
 }
 
@@ -672,12 +672,12 @@ func (a *IndexerApiService) ListIndexerSchema(ctx context.Context) ApiListIndexe
 
 // Execute executes the request
 //  @return []IndexerResource
-func (a *IndexerApiService) ListIndexerSchemaExecute(r ApiListIndexerSchemaRequest) ([]IndexerResource, *http.Response, error) {
+func (a *IndexerApiService) ListIndexerSchemaExecute(r ApiListIndexerSchemaRequest) ([]*IndexerResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexerResource
+		localVarReturnValue  []*IndexerResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerApiService.ListIndexerSchema")

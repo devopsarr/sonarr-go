@@ -21,11 +21,11 @@ type ParsedEpisodeInfo struct {
 	SeriesTitleInfo *SeriesTitleInfo `json:"seriesTitleInfo,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 	SeasonNumber *int32 `json:"seasonNumber,omitempty"`
-	EpisodeNumbers []int32 `json:"episodeNumbers,omitempty"`
-	AbsoluteEpisodeNumbers []int32 `json:"absoluteEpisodeNumbers,omitempty"`
-	SpecialAbsoluteEpisodeNumbers []float64 `json:"specialAbsoluteEpisodeNumbers,omitempty"`
+	EpisodeNumbers []*int32 `json:"episodeNumbers,omitempty"`
+	AbsoluteEpisodeNumbers []*int32 `json:"absoluteEpisodeNumbers,omitempty"`
+	SpecialAbsoluteEpisodeNumbers []*float64 `json:"specialAbsoluteEpisodeNumbers,omitempty"`
 	AirDate NullableString `json:"airDate,omitempty"`
-	Languages []Language `json:"languages,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
 	FullSeason *bool `json:"fullSeason,omitempty"`
 	IsPartialSeason *bool `json:"isPartialSeason,omitempty"`
 	IsMultiSeason *bool `json:"isMultiSeason,omitempty"`
@@ -240,9 +240,9 @@ func (o *ParsedEpisodeInfo) SetSeasonNumber(v int32) {
 }
 
 // GetEpisodeNumbers returns the EpisodeNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedEpisodeInfo) GetEpisodeNumbers() []int32 {
+func (o *ParsedEpisodeInfo) GetEpisodeNumbers() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.EpisodeNumbers
@@ -251,7 +251,7 @@ func (o *ParsedEpisodeInfo) GetEpisodeNumbers() []int32 {
 // GetEpisodeNumbersOk returns a tuple with the EpisodeNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedEpisodeInfo) GetEpisodeNumbersOk() ([]int32, bool) {
+func (o *ParsedEpisodeInfo) GetEpisodeNumbersOk() ([]*int32, bool) {
 	if o == nil || isNil(o.EpisodeNumbers) {
     return nil, false
 	}
@@ -268,14 +268,14 @@ func (o *ParsedEpisodeInfo) HasEpisodeNumbers() bool {
 }
 
 // SetEpisodeNumbers gets a reference to the given []int32 and assigns it to the EpisodeNumbers field.
-func (o *ParsedEpisodeInfo) SetEpisodeNumbers(v []int32) {
+func (o *ParsedEpisodeInfo) SetEpisodeNumbers(v []*int32) {
 	o.EpisodeNumbers = v
 }
 
 // GetAbsoluteEpisodeNumbers returns the AbsoluteEpisodeNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbers() []int32 {
+func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbers() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.AbsoluteEpisodeNumbers
@@ -284,7 +284,7 @@ func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbers() []int32 {
 // GetAbsoluteEpisodeNumbersOk returns a tuple with the AbsoluteEpisodeNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbersOk() ([]int32, bool) {
+func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbersOk() ([]*int32, bool) {
 	if o == nil || isNil(o.AbsoluteEpisodeNumbers) {
     return nil, false
 	}
@@ -301,14 +301,14 @@ func (o *ParsedEpisodeInfo) HasAbsoluteEpisodeNumbers() bool {
 }
 
 // SetAbsoluteEpisodeNumbers gets a reference to the given []int32 and assigns it to the AbsoluteEpisodeNumbers field.
-func (o *ParsedEpisodeInfo) SetAbsoluteEpisodeNumbers(v []int32) {
+func (o *ParsedEpisodeInfo) SetAbsoluteEpisodeNumbers(v []*int32) {
 	o.AbsoluteEpisodeNumbers = v
 }
 
 // GetSpecialAbsoluteEpisodeNumbers returns the SpecialAbsoluteEpisodeNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbers() []float64 {
+func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbers() []*float64 {
 	if o == nil {
-		var ret []float64
+		var ret []*float64
 		return ret
 	}
 	return o.SpecialAbsoluteEpisodeNumbers
@@ -317,7 +317,7 @@ func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbers() []float64 {
 // GetSpecialAbsoluteEpisodeNumbersOk returns a tuple with the SpecialAbsoluteEpisodeNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbersOk() ([]float64, bool) {
+func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbersOk() ([]*float64, bool) {
 	if o == nil || isNil(o.SpecialAbsoluteEpisodeNumbers) {
     return nil, false
 	}
@@ -334,7 +334,7 @@ func (o *ParsedEpisodeInfo) HasSpecialAbsoluteEpisodeNumbers() bool {
 }
 
 // SetSpecialAbsoluteEpisodeNumbers gets a reference to the given []float64 and assigns it to the SpecialAbsoluteEpisodeNumbers field.
-func (o *ParsedEpisodeInfo) SetSpecialAbsoluteEpisodeNumbers(v []float64) {
+func (o *ParsedEpisodeInfo) SetSpecialAbsoluteEpisodeNumbers(v []*float64) {
 	o.SpecialAbsoluteEpisodeNumbers = v
 }
 
@@ -381,9 +381,9 @@ func (o *ParsedEpisodeInfo) UnsetAirDate() {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedEpisodeInfo) GetLanguages() []Language {
+func (o *ParsedEpisodeInfo) GetLanguages() []*Language {
 	if o == nil {
-		var ret []Language
+		var ret []*Language
 		return ret
 	}
 	return o.Languages
@@ -392,7 +392,7 @@ func (o *ParsedEpisodeInfo) GetLanguages() []Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedEpisodeInfo) GetLanguagesOk() ([]Language, bool) {
+func (o *ParsedEpisodeInfo) GetLanguagesOk() ([]*Language, bool) {
 	if o == nil || isNil(o.Languages) {
     return nil, false
 	}
@@ -409,7 +409,7 @@ func (o *ParsedEpisodeInfo) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *ParsedEpisodeInfo) SetLanguages(v []Language) {
+func (o *ParsedEpisodeInfo) SetLanguages(v []*Language) {
 	o.Languages = v
 }
 

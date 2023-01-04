@@ -186,7 +186,7 @@ func (r ApiListEpisodeRequest) IncludeImages(includeImages bool) ApiListEpisodeR
 	return r
 }
 
-func (r ApiListEpisodeRequest) Execute() ([]EpisodeResource, *http.Response, error) {
+func (r ApiListEpisodeRequest) Execute() ([]*EpisodeResource, *http.Response, error) {
 	return r.ApiService.ListEpisodeExecute(r)
 }
 
@@ -205,12 +205,12 @@ func (a *EpisodeApiService) ListEpisode(ctx context.Context) ApiListEpisodeReque
 
 // Execute executes the request
 //  @return []EpisodeResource
-func (a *EpisodeApiService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]EpisodeResource, *http.Response, error) {
+func (a *EpisodeApiService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []EpisodeResource
+		localVarReturnValue  []*EpisodeResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeApiService.ListEpisode")

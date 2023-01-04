@@ -23,8 +23,8 @@ type CustomFormatSpecificationSchema struct {
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Negate *bool `json:"negate,omitempty"`
 	Required *bool `json:"required,omitempty"`
-	Fields []Field `json:"fields,omitempty"`
-	Presets []CustomFormatSpecificationSchema `json:"presets,omitempty"`
+	Fields []*Field `json:"fields,omitempty"`
+	Presets []*CustomFormatSpecificationSchema `json:"presets,omitempty"`
 }
 
 // NewCustomFormatSpecificationSchema instantiates a new CustomFormatSpecificationSchema object
@@ -309,9 +309,9 @@ func (o *CustomFormatSpecificationSchema) SetRequired(v bool) {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomFormatSpecificationSchema) GetFields() []Field {
+func (o *CustomFormatSpecificationSchema) GetFields() []*Field {
 	if o == nil {
-		var ret []Field
+		var ret []*Field
 		return ret
 	}
 	return o.Fields
@@ -320,7 +320,7 @@ func (o *CustomFormatSpecificationSchema) GetFields() []Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomFormatSpecificationSchema) GetFieldsOk() ([]Field, bool) {
+func (o *CustomFormatSpecificationSchema) GetFieldsOk() ([]*Field, bool) {
 	if o == nil || isNil(o.Fields) {
     return nil, false
 	}
@@ -337,14 +337,14 @@ func (o *CustomFormatSpecificationSchema) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *CustomFormatSpecificationSchema) SetFields(v []Field) {
+func (o *CustomFormatSpecificationSchema) SetFields(v []*Field) {
 	o.Fields = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomFormatSpecificationSchema) GetPresets() []CustomFormatSpecificationSchema {
+func (o *CustomFormatSpecificationSchema) GetPresets() []*CustomFormatSpecificationSchema {
 	if o == nil {
-		var ret []CustomFormatSpecificationSchema
+		var ret []*CustomFormatSpecificationSchema
 		return ret
 	}
 	return o.Presets
@@ -353,7 +353,7 @@ func (o *CustomFormatSpecificationSchema) GetPresets() []CustomFormatSpecificati
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomFormatSpecificationSchema) GetPresetsOk() ([]CustomFormatSpecificationSchema, bool) {
+func (o *CustomFormatSpecificationSchema) GetPresetsOk() ([]*CustomFormatSpecificationSchema, bool) {
 	if o == nil || isNil(o.Presets) {
     return nil, false
 	}
@@ -370,7 +370,7 @@ func (o *CustomFormatSpecificationSchema) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []CustomFormatSpecificationSchema and assigns it to the Presets field.
-func (o *CustomFormatSpecificationSchema) SetPresets(v []CustomFormatSpecificationSchema) {
+func (o *CustomFormatSpecificationSchema) SetPresets(v []*CustomFormatSpecificationSchema) {
 	o.Presets = v
 }
 

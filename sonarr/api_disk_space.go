@@ -26,7 +26,7 @@ type ApiListDiskspaceRequest struct {
 	ApiService *DiskSpaceApiService
 }
 
-func (r ApiListDiskspaceRequest) Execute() ([]DiskSpaceResource, *http.Response, error) {
+func (r ApiListDiskspaceRequest) Execute() ([]*DiskSpaceResource, *http.Response, error) {
 	return r.ApiService.ListDiskspaceExecute(r)
 }
 
@@ -45,12 +45,12 @@ func (a *DiskSpaceApiService) ListDiskspace(ctx context.Context) ApiListDiskspac
 
 // Execute executes the request
 //  @return []DiskSpaceResource
-func (a *DiskSpaceApiService) ListDiskspaceExecute(r ApiListDiskspaceRequest) ([]DiskSpaceResource, *http.Response, error) {
+func (a *DiskSpaceApiService) ListDiskspaceExecute(r ApiListDiskspaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []DiskSpaceResource
+		localVarReturnValue  []*DiskSpaceResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceApiService.ListDiskspace")

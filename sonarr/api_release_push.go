@@ -33,7 +33,7 @@ func (r ApiCreateReleasePushRequest) ReleaseResource(releaseResource ReleaseReso
 	return r
 }
 
-func (r ApiCreateReleasePushRequest) Execute() ([]ReleaseResource, *http.Response, error) {
+func (r ApiCreateReleasePushRequest) Execute() ([]*ReleaseResource, *http.Response, error) {
 	return r.ApiService.CreateReleasePushExecute(r)
 }
 
@@ -52,12 +52,12 @@ func (a *ReleasePushApiService) CreateReleasePush(ctx context.Context) ApiCreate
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleasePushApiService) CreateReleasePushExecute(r ApiCreateReleasePushRequest) ([]ReleaseResource, *http.Response, error) {
+func (a *ReleasePushApiService) CreateReleasePushExecute(r ApiCreateReleasePushRequest) ([]*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ReleaseResource
+		localVarReturnValue  []*ReleaseResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePushApiService.CreateReleasePush")

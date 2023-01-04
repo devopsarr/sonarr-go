@@ -20,9 +20,9 @@ type BlocklistResourcePagingResource struct {
 	PageSize *int32 `json:"pageSize,omitempty"`
 	SortKey NullableString `json:"sortKey,omitempty"`
 	SortDirection *SortDirection `json:"sortDirection,omitempty"`
-	Filters []PagingResourceFilter `json:"filters,omitempty"`
+	Filters []*PagingResourceFilter `json:"filters,omitempty"`
 	TotalRecords *int32 `json:"totalRecords,omitempty"`
-	Records []BlocklistResource `json:"records,omitempty"`
+	Records []*BlocklistResource `json:"records,omitempty"`
 }
 
 // NewBlocklistResourcePagingResource instantiates a new BlocklistResourcePagingResource object
@@ -181,9 +181,9 @@ func (o *BlocklistResourcePagingResource) SetSortDirection(v SortDirection) {
 }
 
 // GetFilters returns the Filters field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResourcePagingResource) GetFilters() []PagingResourceFilter {
+func (o *BlocklistResourcePagingResource) GetFilters() []*PagingResourceFilter {
 	if o == nil {
-		var ret []PagingResourceFilter
+		var ret []*PagingResourceFilter
 		return ret
 	}
 	return o.Filters
@@ -192,7 +192,7 @@ func (o *BlocklistResourcePagingResource) GetFilters() []PagingResourceFilter {
 // GetFiltersOk returns a tuple with the Filters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResourcePagingResource) GetFiltersOk() ([]PagingResourceFilter, bool) {
+func (o *BlocklistResourcePagingResource) GetFiltersOk() ([]*PagingResourceFilter, bool) {
 	if o == nil || isNil(o.Filters) {
     return nil, false
 	}
@@ -209,7 +209,7 @@ func (o *BlocklistResourcePagingResource) HasFilters() bool {
 }
 
 // SetFilters gets a reference to the given []PagingResourceFilter and assigns it to the Filters field.
-func (o *BlocklistResourcePagingResource) SetFilters(v []PagingResourceFilter) {
+func (o *BlocklistResourcePagingResource) SetFilters(v []*PagingResourceFilter) {
 	o.Filters = v
 }
 
@@ -246,9 +246,9 @@ func (o *BlocklistResourcePagingResource) SetTotalRecords(v int32) {
 }
 
 // GetRecords returns the Records field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResourcePagingResource) GetRecords() []BlocklistResource {
+func (o *BlocklistResourcePagingResource) GetRecords() []*BlocklistResource {
 	if o == nil {
-		var ret []BlocklistResource
+		var ret []*BlocklistResource
 		return ret
 	}
 	return o.Records
@@ -257,7 +257,7 @@ func (o *BlocklistResourcePagingResource) GetRecords() []BlocklistResource {
 // GetRecordsOk returns a tuple with the Records field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResourcePagingResource) GetRecordsOk() ([]BlocklistResource, bool) {
+func (o *BlocklistResourcePagingResource) GetRecordsOk() ([]*BlocklistResource, bool) {
 	if o == nil || isNil(o.Records) {
     return nil, false
 	}
@@ -274,7 +274,7 @@ func (o *BlocklistResourcePagingResource) HasRecords() bool {
 }
 
 // SetRecords gets a reference to the given []BlocklistResource and assigns it to the Records field.
-func (o *BlocklistResourcePagingResource) SetRecords(v []BlocklistResource) {
+func (o *BlocklistResourcePagingResource) SetRecords(v []*BlocklistResource) {
 	o.Records = v
 }
 

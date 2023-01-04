@@ -155,7 +155,7 @@ type ApiListSystemTaskRequest struct {
 	ApiService *TaskApiService
 }
 
-func (r ApiListSystemTaskRequest) Execute() ([]TaskResource, *http.Response, error) {
+func (r ApiListSystemTaskRequest) Execute() ([]*TaskResource, *http.Response, error) {
 	return r.ApiService.ListSystemTaskExecute(r)
 }
 
@@ -174,12 +174,12 @@ func (a *TaskApiService) ListSystemTask(ctx context.Context) ApiListSystemTaskRe
 
 // Execute executes the request
 //  @return []TaskResource
-func (a *TaskApiService) ListSystemTaskExecute(r ApiListSystemTaskRequest) ([]TaskResource, *http.Response, error) {
+func (a *TaskApiService) ListSystemTaskExecute(r ApiListSystemTaskRequest) ([]*TaskResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []TaskResource
+		localVarReturnValue  []*TaskResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskApiService.ListSystemTask")

@@ -18,14 +18,14 @@ import (
 type MetadataResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []Field `json:"fields,omitempty"`
+	Fields []*Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []int32 `json:"tags,omitempty"`
-	Presets []MetadataResource `json:"presets,omitempty"`
+	Tags []*int32 `json:"tags,omitempty"`
+	Presets []*MetadataResource `json:"presets,omitempty"`
 	Enable *bool `json:"enable,omitempty"`
 }
 
@@ -121,9 +121,9 @@ func (o *MetadataResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MetadataResource) GetFields() []Field {
+func (o *MetadataResource) GetFields() []*Field {
 	if o == nil {
-		var ret []Field
+		var ret []*Field
 		return ret
 	}
 	return o.Fields
@@ -132,7 +132,7 @@ func (o *MetadataResource) GetFields() []Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MetadataResource) GetFieldsOk() ([]Field, bool) {
+func (o *MetadataResource) GetFieldsOk() ([]*Field, bool) {
 	if o == nil || isNil(o.Fields) {
     return nil, false
 	}
@@ -149,7 +149,7 @@ func (o *MetadataResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *MetadataResource) SetFields(v []Field) {
+func (o *MetadataResource) SetFields(v []*Field) {
 	o.Fields = v
 }
 
@@ -354,9 +354,9 @@ func (o *MetadataResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MetadataResource) GetTags() []int32 {
+func (o *MetadataResource) GetTags() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.Tags
@@ -365,7 +365,7 @@ func (o *MetadataResource) GetTags() []int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MetadataResource) GetTagsOk() ([]int32, bool) {
+func (o *MetadataResource) GetTagsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.Tags) {
     return nil, false
 	}
@@ -382,14 +382,14 @@ func (o *MetadataResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *MetadataResource) SetTags(v []int32) {
+func (o *MetadataResource) SetTags(v []*int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MetadataResource) GetPresets() []MetadataResource {
+func (o *MetadataResource) GetPresets() []*MetadataResource {
 	if o == nil {
-		var ret []MetadataResource
+		var ret []*MetadataResource
 		return ret
 	}
 	return o.Presets
@@ -398,7 +398,7 @@ func (o *MetadataResource) GetPresets() []MetadataResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MetadataResource) GetPresetsOk() ([]MetadataResource, bool) {
+func (o *MetadataResource) GetPresetsOk() ([]*MetadataResource, bool) {
 	if o == nil || isNil(o.Presets) {
     return nil, false
 	}
@@ -415,7 +415,7 @@ func (o *MetadataResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []MetadataResource and assigns it to the Presets field.
-func (o *MetadataResource) SetPresets(v []MetadataResource) {
+func (o *MetadataResource) SetPresets(v []*MetadataResource) {
 	o.Presets = v
 }
 

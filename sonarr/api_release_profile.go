@@ -404,7 +404,7 @@ type ApiListReleaseprofileRequest struct {
 	ApiService *ReleaseProfileApiService
 }
 
-func (r ApiListReleaseprofileRequest) Execute() ([]ReleaseProfileResource, *http.Response, error) {
+func (r ApiListReleaseprofileRequest) Execute() ([]*ReleaseProfileResource, *http.Response, error) {
 	return r.ApiService.ListReleaseprofileExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *ReleaseProfileApiService) ListReleaseprofile(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []ReleaseProfileResource
-func (a *ReleaseProfileApiService) ListReleaseprofileExecute(r ApiListReleaseprofileRequest) ([]ReleaseProfileResource, *http.Response, error) {
+func (a *ReleaseProfileApiService) ListReleaseprofileExecute(r ApiListReleaseprofileRequest) ([]*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ReleaseProfileResource
+		localVarReturnValue  []*ReleaseProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.ListReleaseprofile")

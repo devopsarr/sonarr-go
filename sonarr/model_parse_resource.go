@@ -20,7 +20,7 @@ type ParseResource struct {
 	Title NullableString `json:"title,omitempty"`
 	ParsedEpisodeInfo *ParsedEpisodeInfo `json:"parsedEpisodeInfo,omitempty"`
 	Series *SeriesResource `json:"series,omitempty"`
-	Episodes []EpisodeResource `json:"episodes,omitempty"`
+	Episodes []*EpisodeResource `json:"episodes,omitempty"`
 }
 
 // NewParseResource instantiates a new ParseResource object
@@ -179,9 +179,9 @@ func (o *ParseResource) SetSeries(v SeriesResource) {
 }
 
 // GetEpisodes returns the Episodes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParseResource) GetEpisodes() []EpisodeResource {
+func (o *ParseResource) GetEpisodes() []*EpisodeResource {
 	if o == nil {
-		var ret []EpisodeResource
+		var ret []*EpisodeResource
 		return ret
 	}
 	return o.Episodes
@@ -190,7 +190,7 @@ func (o *ParseResource) GetEpisodes() []EpisodeResource {
 // GetEpisodesOk returns a tuple with the Episodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParseResource) GetEpisodesOk() ([]EpisodeResource, bool) {
+func (o *ParseResource) GetEpisodesOk() ([]*EpisodeResource, bool) {
 	if o == nil || isNil(o.Episodes) {
     return nil, false
 	}
@@ -207,7 +207,7 @@ func (o *ParseResource) HasEpisodes() bool {
 }
 
 // SetEpisodes gets a reference to the given []EpisodeResource and assigns it to the Episodes field.
-func (o *ParseResource) SetEpisodes(v []EpisodeResource) {
+func (o *ParseResource) SetEpisodes(v []*EpisodeResource) {
 	o.Episodes = v
 }
 

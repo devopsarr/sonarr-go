@@ -20,9 +20,9 @@ type HistoryResourcePagingResource struct {
 	PageSize *int32 `json:"pageSize,omitempty"`
 	SortKey NullableString `json:"sortKey,omitempty"`
 	SortDirection *SortDirection `json:"sortDirection,omitempty"`
-	Filters []PagingResourceFilter `json:"filters,omitempty"`
+	Filters []*PagingResourceFilter `json:"filters,omitempty"`
 	TotalRecords *int32 `json:"totalRecords,omitempty"`
-	Records []HistoryResource `json:"records,omitempty"`
+	Records []*HistoryResource `json:"records,omitempty"`
 }
 
 // NewHistoryResourcePagingResource instantiates a new HistoryResourcePagingResource object
@@ -181,9 +181,9 @@ func (o *HistoryResourcePagingResource) SetSortDirection(v SortDirection) {
 }
 
 // GetFilters returns the Filters field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoryResourcePagingResource) GetFilters() []PagingResourceFilter {
+func (o *HistoryResourcePagingResource) GetFilters() []*PagingResourceFilter {
 	if o == nil {
-		var ret []PagingResourceFilter
+		var ret []*PagingResourceFilter
 		return ret
 	}
 	return o.Filters
@@ -192,7 +192,7 @@ func (o *HistoryResourcePagingResource) GetFilters() []PagingResourceFilter {
 // GetFiltersOk returns a tuple with the Filters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoryResourcePagingResource) GetFiltersOk() ([]PagingResourceFilter, bool) {
+func (o *HistoryResourcePagingResource) GetFiltersOk() ([]*PagingResourceFilter, bool) {
 	if o == nil || isNil(o.Filters) {
     return nil, false
 	}
@@ -209,7 +209,7 @@ func (o *HistoryResourcePagingResource) HasFilters() bool {
 }
 
 // SetFilters gets a reference to the given []PagingResourceFilter and assigns it to the Filters field.
-func (o *HistoryResourcePagingResource) SetFilters(v []PagingResourceFilter) {
+func (o *HistoryResourcePagingResource) SetFilters(v []*PagingResourceFilter) {
 	o.Filters = v
 }
 
@@ -246,9 +246,9 @@ func (o *HistoryResourcePagingResource) SetTotalRecords(v int32) {
 }
 
 // GetRecords returns the Records field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoryResourcePagingResource) GetRecords() []HistoryResource {
+func (o *HistoryResourcePagingResource) GetRecords() []*HistoryResource {
 	if o == nil {
-		var ret []HistoryResource
+		var ret []*HistoryResource
 		return ret
 	}
 	return o.Records
@@ -257,7 +257,7 @@ func (o *HistoryResourcePagingResource) GetRecords() []HistoryResource {
 // GetRecordsOk returns a tuple with the Records field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoryResourcePagingResource) GetRecordsOk() ([]HistoryResource, bool) {
+func (o *HistoryResourcePagingResource) GetRecordsOk() ([]*HistoryResource, bool) {
 	if o == nil || isNil(o.Records) {
     return nil, false
 	}
@@ -274,7 +274,7 @@ func (o *HistoryResourcePagingResource) HasRecords() bool {
 }
 
 // SetRecords gets a reference to the given []HistoryResource and assigns it to the Records field.
-func (o *HistoryResourcePagingResource) SetRecords(v []HistoryResource) {
+func (o *HistoryResourcePagingResource) SetRecords(v []*HistoryResource) {
 	o.Records = v
 }
 

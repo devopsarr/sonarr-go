@@ -294,7 +294,7 @@ func (r ApiListReleaseRequest) SeasonNumber(seasonNumber int32) ApiListReleaseRe
 	return r
 }
 
-func (r ApiListReleaseRequest) Execute() ([]ReleaseResource, *http.Response, error) {
+func (r ApiListReleaseRequest) Execute() ([]*ReleaseResource, *http.Response, error) {
 	return r.ApiService.ListReleaseExecute(r)
 }
 
@@ -313,12 +313,12 @@ func (a *ReleaseApiService) ListRelease(ctx context.Context) ApiListReleaseReque
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleaseApiService) ListReleaseExecute(r ApiListReleaseRequest) ([]ReleaseResource, *http.Response, error) {
+func (a *ReleaseApiService) ListReleaseExecute(r ApiListReleaseRequest) ([]*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ReleaseResource
+		localVarReturnValue  []*ReleaseResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseApiService.ListRelease")

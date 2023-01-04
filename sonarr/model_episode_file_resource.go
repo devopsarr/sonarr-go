@@ -26,9 +26,9 @@ type EpisodeFileResource struct {
 	DateAdded *time.Time `json:"dateAdded,omitempty"`
 	SceneName NullableString `json:"sceneName,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
-	Languages []Language `json:"languages,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
 	MediaInfo *MediaInfoResource `json:"mediaInfo,omitempty"`
 	QualityCutoffNotMet *bool `json:"qualityCutoffNotMet,omitempty"`
 }
@@ -379,9 +379,9 @@ func (o *EpisodeFileResource) UnsetReleaseGroup() {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodeFileResource) GetLanguages() []Language {
+func (o *EpisodeFileResource) GetLanguages() []*Language {
 	if o == nil {
-		var ret []Language
+		var ret []*Language
 		return ret
 	}
 	return o.Languages
@@ -390,7 +390,7 @@ func (o *EpisodeFileResource) GetLanguages() []Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodeFileResource) GetLanguagesOk() ([]Language, bool) {
+func (o *EpisodeFileResource) GetLanguagesOk() ([]*Language, bool) {
 	if o == nil || isNil(o.Languages) {
     return nil, false
 	}
@@ -407,7 +407,7 @@ func (o *EpisodeFileResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *EpisodeFileResource) SetLanguages(v []Language) {
+func (o *EpisodeFileResource) SetLanguages(v []*Language) {
 	o.Languages = v
 }
 
@@ -444,9 +444,9 @@ func (o *EpisodeFileResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodeFileResource) GetCustomFormats() []CustomFormatResource {
+func (o *EpisodeFileResource) GetCustomFormats() []*CustomFormatResource {
 	if o == nil {
-		var ret []CustomFormatResource
+		var ret []*CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -455,7 +455,7 @@ func (o *EpisodeFileResource) GetCustomFormats() []CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodeFileResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+func (o *EpisodeFileResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
 	if o == nil || isNil(o.CustomFormats) {
     return nil, false
 	}
@@ -472,7 +472,7 @@ func (o *EpisodeFileResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *EpisodeFileResource) SetCustomFormats(v []CustomFormatResource) {
+func (o *EpisodeFileResource) SetCustomFormats(v []*CustomFormatResource) {
 	o.CustomFormats = v
 }
 

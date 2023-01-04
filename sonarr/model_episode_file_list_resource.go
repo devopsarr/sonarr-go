@@ -16,8 +16,8 @@ import (
 
 // EpisodeFileListResource struct for EpisodeFileListResource
 type EpisodeFileListResource struct {
-	EpisodeFileIds []int32 `json:"episodeFileIds,omitempty"`
-	Languages []Language `json:"languages,omitempty"`
+	EpisodeFileIds []*int32 `json:"episodeFileIds,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 	SceneName NullableString `json:"sceneName,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
@@ -41,9 +41,9 @@ func NewEpisodeFileListResourceWithDefaults() *EpisodeFileListResource {
 }
 
 // GetEpisodeFileIds returns the EpisodeFileIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodeFileListResource) GetEpisodeFileIds() []int32 {
+func (o *EpisodeFileListResource) GetEpisodeFileIds() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.EpisodeFileIds
@@ -52,7 +52,7 @@ func (o *EpisodeFileListResource) GetEpisodeFileIds() []int32 {
 // GetEpisodeFileIdsOk returns a tuple with the EpisodeFileIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodeFileListResource) GetEpisodeFileIdsOk() ([]int32, bool) {
+func (o *EpisodeFileListResource) GetEpisodeFileIdsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.EpisodeFileIds) {
     return nil, false
 	}
@@ -69,14 +69,14 @@ func (o *EpisodeFileListResource) HasEpisodeFileIds() bool {
 }
 
 // SetEpisodeFileIds gets a reference to the given []int32 and assigns it to the EpisodeFileIds field.
-func (o *EpisodeFileListResource) SetEpisodeFileIds(v []int32) {
+func (o *EpisodeFileListResource) SetEpisodeFileIds(v []*int32) {
 	o.EpisodeFileIds = v
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodeFileListResource) GetLanguages() []Language {
+func (o *EpisodeFileListResource) GetLanguages() []*Language {
 	if o == nil {
-		var ret []Language
+		var ret []*Language
 		return ret
 	}
 	return o.Languages
@@ -85,7 +85,7 @@ func (o *EpisodeFileListResource) GetLanguages() []Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodeFileListResource) GetLanguagesOk() ([]Language, bool) {
+func (o *EpisodeFileListResource) GetLanguagesOk() ([]*Language, bool) {
 	if o == nil || isNil(o.Languages) {
     return nil, false
 	}
@@ -102,7 +102,7 @@ func (o *EpisodeFileListResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *EpisodeFileListResource) SetLanguages(v []Language) {
+func (o *EpisodeFileListResource) SetLanguages(v []*Language) {
 	o.Languages = v
 }
 

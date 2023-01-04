@@ -21,7 +21,7 @@ type SeriesStatisticsResource struct {
 	EpisodeCount *int32 `json:"episodeCount,omitempty"`
 	TotalEpisodeCount *int32 `json:"totalEpisodeCount,omitempty"`
 	SizeOnDisk *int64 `json:"sizeOnDisk,omitempty"`
-	ReleaseGroups []string `json:"releaseGroups,omitempty"`
+	ReleaseGroups []*string `json:"releaseGroups,omitempty"`
 	PercentOfEpisodes *float64 `json:"percentOfEpisodes,omitempty"`
 }
 
@@ -203,9 +203,9 @@ func (o *SeriesStatisticsResource) SetSizeOnDisk(v int64) {
 }
 
 // GetReleaseGroups returns the ReleaseGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesStatisticsResource) GetReleaseGroups() []string {
+func (o *SeriesStatisticsResource) GetReleaseGroups() []*string {
 	if o == nil {
-		var ret []string
+		var ret []*string
 		return ret
 	}
 	return o.ReleaseGroups
@@ -214,7 +214,7 @@ func (o *SeriesStatisticsResource) GetReleaseGroups() []string {
 // GetReleaseGroupsOk returns a tuple with the ReleaseGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesStatisticsResource) GetReleaseGroupsOk() ([]string, bool) {
+func (o *SeriesStatisticsResource) GetReleaseGroupsOk() ([]*string, bool) {
 	if o == nil || isNil(o.ReleaseGroups) {
     return nil, false
 	}
@@ -231,7 +231,7 @@ func (o *SeriesStatisticsResource) HasReleaseGroups() bool {
 }
 
 // SetReleaseGroups gets a reference to the given []string and assigns it to the ReleaseGroups field.
-func (o *SeriesStatisticsResource) SetReleaseGroups(v []string) {
+func (o *SeriesStatisticsResource) SetReleaseGroups(v []*string) {
 	o.ReleaseGroups = v
 }
 

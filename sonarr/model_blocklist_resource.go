@@ -19,11 +19,11 @@ import (
 type BlocklistResource struct {
 	Id *int32 `json:"id,omitempty"`
 	SeriesId *int32 `json:"seriesId,omitempty"`
-	EpisodeIds []int32 `json:"episodeIds,omitempty"`
+	EpisodeIds []*int32 `json:"episodeIds,omitempty"`
 	SourceTitle NullableString `json:"sourceTitle,omitempty"`
-	Languages []Language `json:"languages,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
 	Date *time.Time `json:"date,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	Indexer NullableString `json:"indexer,omitempty"`
@@ -113,9 +113,9 @@ func (o *BlocklistResource) SetSeriesId(v int32) {
 }
 
 // GetEpisodeIds returns the EpisodeIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResource) GetEpisodeIds() []int32 {
+func (o *BlocklistResource) GetEpisodeIds() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.EpisodeIds
@@ -124,7 +124,7 @@ func (o *BlocklistResource) GetEpisodeIds() []int32 {
 // GetEpisodeIdsOk returns a tuple with the EpisodeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResource) GetEpisodeIdsOk() ([]int32, bool) {
+func (o *BlocklistResource) GetEpisodeIdsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.EpisodeIds) {
     return nil, false
 	}
@@ -141,7 +141,7 @@ func (o *BlocklistResource) HasEpisodeIds() bool {
 }
 
 // SetEpisodeIds gets a reference to the given []int32 and assigns it to the EpisodeIds field.
-func (o *BlocklistResource) SetEpisodeIds(v []int32) {
+func (o *BlocklistResource) SetEpisodeIds(v []*int32) {
 	o.EpisodeIds = v
 }
 
@@ -188,9 +188,9 @@ func (o *BlocklistResource) UnsetSourceTitle() {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResource) GetLanguages() []Language {
+func (o *BlocklistResource) GetLanguages() []*Language {
 	if o == nil {
-		var ret []Language
+		var ret []*Language
 		return ret
 	}
 	return o.Languages
@@ -199,7 +199,7 @@ func (o *BlocklistResource) GetLanguages() []Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResource) GetLanguagesOk() ([]Language, bool) {
+func (o *BlocklistResource) GetLanguagesOk() ([]*Language, bool) {
 	if o == nil || isNil(o.Languages) {
     return nil, false
 	}
@@ -216,7 +216,7 @@ func (o *BlocklistResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *BlocklistResource) SetLanguages(v []Language) {
+func (o *BlocklistResource) SetLanguages(v []*Language) {
 	o.Languages = v
 }
 
@@ -253,9 +253,9 @@ func (o *BlocklistResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResource) GetCustomFormats() []CustomFormatResource {
+func (o *BlocklistResource) GetCustomFormats() []*CustomFormatResource {
 	if o == nil {
-		var ret []CustomFormatResource
+		var ret []*CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -264,7 +264,7 @@ func (o *BlocklistResource) GetCustomFormats() []CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+func (o *BlocklistResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
 	if o == nil || isNil(o.CustomFormats) {
     return nil, false
 	}
@@ -281,7 +281,7 @@ func (o *BlocklistResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *BlocklistResource) SetCustomFormats(v []CustomFormatResource) {
+func (o *BlocklistResource) SetCustomFormats(v []*CustomFormatResource) {
 	o.CustomFormats = v
 }
 

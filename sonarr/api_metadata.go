@@ -529,7 +529,7 @@ type ApiListMetadataRequest struct {
 	ApiService *MetadataApiService
 }
 
-func (r ApiListMetadataRequest) Execute() ([]MetadataResource, *http.Response, error) {
+func (r ApiListMetadataRequest) Execute() ([]*MetadataResource, *http.Response, error) {
 	return r.ApiService.ListMetadataExecute(r)
 }
 
@@ -548,12 +548,12 @@ func (a *MetadataApiService) ListMetadata(ctx context.Context) ApiListMetadataRe
 
 // Execute executes the request
 //  @return []MetadataResource
-func (a *MetadataApiService) ListMetadataExecute(r ApiListMetadataRequest) ([]MetadataResource, *http.Response, error) {
+func (a *MetadataApiService) ListMetadataExecute(r ApiListMetadataRequest) ([]*MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []MetadataResource
+		localVarReturnValue  []*MetadataResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.ListMetadata")
@@ -653,7 +653,7 @@ type ApiListMetadataSchemaRequest struct {
 	ApiService *MetadataApiService
 }
 
-func (r ApiListMetadataSchemaRequest) Execute() ([]MetadataResource, *http.Response, error) {
+func (r ApiListMetadataSchemaRequest) Execute() ([]*MetadataResource, *http.Response, error) {
 	return r.ApiService.ListMetadataSchemaExecute(r)
 }
 
@@ -672,12 +672,12 @@ func (a *MetadataApiService) ListMetadataSchema(ctx context.Context) ApiListMeta
 
 // Execute executes the request
 //  @return []MetadataResource
-func (a *MetadataApiService) ListMetadataSchemaExecute(r ApiListMetadataSchemaRequest) ([]MetadataResource, *http.Response, error) {
+func (a *MetadataApiService) ListMetadataSchemaExecute(r ApiListMetadataSchemaRequest) ([]*MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []MetadataResource
+		localVarReturnValue  []*MetadataResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataApiService.ListMetadataSchema")

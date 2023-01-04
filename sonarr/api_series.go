@@ -416,7 +416,7 @@ func (r ApiListSeriesRequest) IncludeSeasonImages(includeSeasonImages bool) ApiL
 	return r
 }
 
-func (r ApiListSeriesRequest) Execute() ([]SeriesResource, *http.Response, error) {
+func (r ApiListSeriesRequest) Execute() ([]*SeriesResource, *http.Response, error) {
 	return r.ApiService.ListSeriesExecute(r)
 }
 
@@ -435,12 +435,12 @@ func (a *SeriesApiService) ListSeries(ctx context.Context) ApiListSeriesRequest 
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesApiService) ListSeriesExecute(r ApiListSeriesRequest) ([]SeriesResource, *http.Response, error) {
+func (a *SeriesApiService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []SeriesResource
+		localVarReturnValue  []*SeriesResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesApiService.ListSeries")

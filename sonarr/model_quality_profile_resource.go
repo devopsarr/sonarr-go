@@ -20,10 +20,10 @@ type QualityProfileResource struct {
 	Name NullableString `json:"name,omitempty"`
 	UpgradeAllowed *bool `json:"upgradeAllowed,omitempty"`
 	Cutoff *int32 `json:"cutoff,omitempty"`
-	Items []QualityProfileQualityItemResource `json:"items,omitempty"`
+	Items []*QualityProfileQualityItemResource `json:"items,omitempty"`
 	MinFormatScore *int32 `json:"minFormatScore,omitempty"`
 	CutoffFormatScore *int32 `json:"cutoffFormatScore,omitempty"`
-	FormatItems []ProfileFormatItemResource `json:"formatItems,omitempty"`
+	FormatItems []*ProfileFormatItemResource `json:"formatItems,omitempty"`
 }
 
 // NewQualityProfileResource instantiates a new QualityProfileResource object
@@ -182,9 +182,9 @@ func (o *QualityProfileResource) SetCutoff(v int32) {
 }
 
 // GetItems returns the Items field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QualityProfileResource) GetItems() []QualityProfileQualityItemResource {
+func (o *QualityProfileResource) GetItems() []*QualityProfileQualityItemResource {
 	if o == nil {
-		var ret []QualityProfileQualityItemResource
+		var ret []*QualityProfileQualityItemResource
 		return ret
 	}
 	return o.Items
@@ -193,7 +193,7 @@ func (o *QualityProfileResource) GetItems() []QualityProfileQualityItemResource 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QualityProfileResource) GetItemsOk() ([]QualityProfileQualityItemResource, bool) {
+func (o *QualityProfileResource) GetItemsOk() ([]*QualityProfileQualityItemResource, bool) {
 	if o == nil || isNil(o.Items) {
     return nil, false
 	}
@@ -210,7 +210,7 @@ func (o *QualityProfileResource) HasItems() bool {
 }
 
 // SetItems gets a reference to the given []QualityProfileQualityItemResource and assigns it to the Items field.
-func (o *QualityProfileResource) SetItems(v []QualityProfileQualityItemResource) {
+func (o *QualityProfileResource) SetItems(v []*QualityProfileQualityItemResource) {
 	o.Items = v
 }
 
@@ -279,9 +279,9 @@ func (o *QualityProfileResource) SetCutoffFormatScore(v int32) {
 }
 
 // GetFormatItems returns the FormatItems field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QualityProfileResource) GetFormatItems() []ProfileFormatItemResource {
+func (o *QualityProfileResource) GetFormatItems() []*ProfileFormatItemResource {
 	if o == nil {
-		var ret []ProfileFormatItemResource
+		var ret []*ProfileFormatItemResource
 		return ret
 	}
 	return o.FormatItems
@@ -290,7 +290,7 @@ func (o *QualityProfileResource) GetFormatItems() []ProfileFormatItemResource {
 // GetFormatItemsOk returns a tuple with the FormatItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QualityProfileResource) GetFormatItemsOk() ([]ProfileFormatItemResource, bool) {
+func (o *QualityProfileResource) GetFormatItemsOk() ([]*ProfileFormatItemResource, bool) {
 	if o == nil || isNil(o.FormatItems) {
     return nil, false
 	}
@@ -307,7 +307,7 @@ func (o *QualityProfileResource) HasFormatItems() bool {
 }
 
 // SetFormatItems gets a reference to the given []ProfileFormatItemResource and assigns it to the FormatItems field.
-func (o *QualityProfileResource) SetFormatItems(v []ProfileFormatItemResource) {
+func (o *QualityProfileResource) SetFormatItems(v []*ProfileFormatItemResource) {
 	o.FormatItems = v
 }
 

@@ -404,7 +404,7 @@ type ApiListRootfolderRequest struct {
 	ApiService *RootFolderApiService
 }
 
-func (r ApiListRootfolderRequest) Execute() ([]RootFolderResource, *http.Response, error) {
+func (r ApiListRootfolderRequest) Execute() ([]*RootFolderResource, *http.Response, error) {
 	return r.ApiService.ListRootfolderExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *RootFolderApiService) ListRootfolder(ctx context.Context) ApiListRootfo
 
 // Execute executes the request
 //  @return []RootFolderResource
-func (a *RootFolderApiService) ListRootfolderExecute(r ApiListRootfolderRequest) ([]RootFolderResource, *http.Response, error) {
+func (a *RootFolderApiService) ListRootfolderExecute(r ApiListRootfolderRequest) ([]*RootFolderResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []RootFolderResource
+		localVarReturnValue  []*RootFolderResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderApiService.ListRootfolder")

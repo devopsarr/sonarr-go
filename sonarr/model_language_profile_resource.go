@@ -20,7 +20,7 @@ type LanguageProfileResource struct {
 	Name NullableString `json:"name,omitempty"`
 	UpgradeAllowed *bool `json:"upgradeAllowed,omitempty"`
 	Cutoff *Language `json:"cutoff,omitempty"`
-	Languages []LanguageProfileItemResource `json:"languages,omitempty"`
+	Languages []*LanguageProfileItemResource `json:"languages,omitempty"`
 }
 
 // NewLanguageProfileResource instantiates a new LanguageProfileResource object
@@ -179,9 +179,9 @@ func (o *LanguageProfileResource) SetCutoff(v Language) {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LanguageProfileResource) GetLanguages() []LanguageProfileItemResource {
+func (o *LanguageProfileResource) GetLanguages() []*LanguageProfileItemResource {
 	if o == nil {
-		var ret []LanguageProfileItemResource
+		var ret []*LanguageProfileItemResource
 		return ret
 	}
 	return o.Languages
@@ -190,7 +190,7 @@ func (o *LanguageProfileResource) GetLanguages() []LanguageProfileItemResource {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LanguageProfileResource) GetLanguagesOk() ([]LanguageProfileItemResource, bool) {
+func (o *LanguageProfileResource) GetLanguagesOk() ([]*LanguageProfileItemResource, bool) {
 	if o == nil || isNil(o.Languages) {
     return nil, false
 	}
@@ -207,7 +207,7 @@ func (o *LanguageProfileResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []LanguageProfileItemResource and assigns it to the Languages field.
-func (o *LanguageProfileResource) SetLanguages(v []LanguageProfileItemResource) {
+func (o *LanguageProfileResource) SetLanguages(v []*LanguageProfileItemResource) {
 	o.Languages = v
 }
 

@@ -180,7 +180,7 @@ func (r ApiListQueueDetailsRequest) IncludeEpisode(includeEpisode bool) ApiListQ
 	return r
 }
 
-func (r ApiListQueueDetailsRequest) Execute() ([]QueueResource, *http.Response, error) {
+func (r ApiListQueueDetailsRequest) Execute() ([]*QueueResource, *http.Response, error) {
 	return r.ApiService.ListQueueDetailsExecute(r)
 }
 
@@ -199,12 +199,12 @@ func (a *QueueDetailsApiService) ListQueueDetails(ctx context.Context) ApiListQu
 
 // Execute executes the request
 //  @return []QueueResource
-func (a *QueueDetailsApiService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]QueueResource, *http.Response, error) {
+func (a *QueueDetailsApiService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]*QueueResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []QueueResource
+		localVarReturnValue  []*QueueResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueDetailsApiService.ListQueueDetails")

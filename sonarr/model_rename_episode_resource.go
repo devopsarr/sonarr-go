@@ -19,7 +19,7 @@ type RenameEpisodeResource struct {
 	Id *int32 `json:"id,omitempty"`
 	SeriesId *int32 `json:"seriesId,omitempty"`
 	SeasonNumber *int32 `json:"seasonNumber,omitempty"`
-	EpisodeNumbers []int32 `json:"episodeNumbers,omitempty"`
+	EpisodeNumbers []*int32 `json:"episodeNumbers,omitempty"`
 	EpisodeFileId *int32 `json:"episodeFileId,omitempty"`
 	ExistingPath NullableString `json:"existingPath,omitempty"`
 	NewPath NullableString `json:"newPath,omitempty"`
@@ -139,9 +139,9 @@ func (o *RenameEpisodeResource) SetSeasonNumber(v int32) {
 }
 
 // GetEpisodeNumbers returns the EpisodeNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RenameEpisodeResource) GetEpisodeNumbers() []int32 {
+func (o *RenameEpisodeResource) GetEpisodeNumbers() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.EpisodeNumbers
@@ -150,7 +150,7 @@ func (o *RenameEpisodeResource) GetEpisodeNumbers() []int32 {
 // GetEpisodeNumbersOk returns a tuple with the EpisodeNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RenameEpisodeResource) GetEpisodeNumbersOk() ([]int32, bool) {
+func (o *RenameEpisodeResource) GetEpisodeNumbersOk() ([]*int32, bool) {
 	if o == nil || isNil(o.EpisodeNumbers) {
     return nil, false
 	}
@@ -167,7 +167,7 @@ func (o *RenameEpisodeResource) HasEpisodeNumbers() bool {
 }
 
 // SetEpisodeNumbers gets a reference to the given []int32 and assigns it to the EpisodeNumbers field.
-func (o *RenameEpisodeResource) SetEpisodeNumbers(v []int32) {
+func (o *RenameEpisodeResource) SetEpisodeNumbers(v []*int32) {
 	o.EpisodeNumbers = v
 }
 

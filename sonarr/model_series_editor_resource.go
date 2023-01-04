@@ -16,13 +16,13 @@ import (
 
 // SeriesEditorResource struct for SeriesEditorResource
 type SeriesEditorResource struct {
-	SeriesIds []int32 `json:"seriesIds,omitempty"`
+	SeriesIds []*int32 `json:"seriesIds,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
 	SeriesType *SeriesTypes `json:"seriesType,omitempty"`
 	SeasonFolder NullableBool `json:"seasonFolder,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
-	Tags []int32 `json:"tags,omitempty"`
+	Tags []*int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	MoveFiles *bool `json:"moveFiles,omitempty"`
 	DeleteFiles *bool `json:"deleteFiles,omitempty"`
@@ -47,9 +47,9 @@ func NewSeriesEditorResourceWithDefaults() *SeriesEditorResource {
 }
 
 // GetSeriesIds returns the SeriesIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesEditorResource) GetSeriesIds() []int32 {
+func (o *SeriesEditorResource) GetSeriesIds() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.SeriesIds
@@ -58,7 +58,7 @@ func (o *SeriesEditorResource) GetSeriesIds() []int32 {
 // GetSeriesIdsOk returns a tuple with the SeriesIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesEditorResource) GetSeriesIdsOk() ([]int32, bool) {
+func (o *SeriesEditorResource) GetSeriesIdsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.SeriesIds) {
     return nil, false
 	}
@@ -75,7 +75,7 @@ func (o *SeriesEditorResource) HasSeriesIds() bool {
 }
 
 // SetSeriesIds gets a reference to the given []int32 and assigns it to the SeriesIds field.
-func (o *SeriesEditorResource) SetSeriesIds(v []int32) {
+func (o *SeriesEditorResource) SetSeriesIds(v []*int32) {
 	o.SeriesIds = v
 }
 
@@ -280,9 +280,9 @@ func (o *SeriesEditorResource) UnsetRootFolderPath() {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesEditorResource) GetTags() []int32 {
+func (o *SeriesEditorResource) GetTags() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.Tags
@@ -291,7 +291,7 @@ func (o *SeriesEditorResource) GetTags() []int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesEditorResource) GetTagsOk() ([]int32, bool) {
+func (o *SeriesEditorResource) GetTagsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.Tags) {
     return nil, false
 	}
@@ -308,7 +308,7 @@ func (o *SeriesEditorResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *SeriesEditorResource) SetTags(v []int32) {
+func (o *SeriesEditorResource) SetTags(v []*int32) {
 	o.Tags = v
 }
 

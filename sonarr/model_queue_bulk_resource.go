@@ -16,7 +16,7 @@ import (
 
 // QueueBulkResource struct for QueueBulkResource
 type QueueBulkResource struct {
-	Ids []int32 `json:"ids,omitempty"`
+	Ids []*int32 `json:"ids,omitempty"`
 }
 
 // NewQueueBulkResource instantiates a new QueueBulkResource object
@@ -37,9 +37,9 @@ func NewQueueBulkResourceWithDefaults() *QueueBulkResource {
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueueBulkResource) GetIds() []int32 {
+func (o *QueueBulkResource) GetIds() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.Ids
@@ -48,7 +48,7 @@ func (o *QueueBulkResource) GetIds() []int32 {
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QueueBulkResource) GetIdsOk() ([]int32, bool) {
+func (o *QueueBulkResource) GetIdsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.Ids) {
     return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *QueueBulkResource) HasIds() bool {
 }
 
 // SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *QueueBulkResource) SetIds(v []int32) {
+func (o *QueueBulkResource) SetIds(v []*int32) {
 	o.Ids = v
 }
 

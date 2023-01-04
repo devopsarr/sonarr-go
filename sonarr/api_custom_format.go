@@ -517,7 +517,7 @@ type ApiListCustomformatRequest struct {
 	ApiService *CustomFormatApiService
 }
 
-func (r ApiListCustomformatRequest) Execute() ([]CustomFormatResource, *http.Response, error) {
+func (r ApiListCustomformatRequest) Execute() ([]*CustomFormatResource, *http.Response, error) {
 	return r.ApiService.ListCustomformatExecute(r)
 }
 
@@ -536,12 +536,12 @@ func (a *CustomFormatApiService) ListCustomformat(ctx context.Context) ApiListCu
 
 // Execute executes the request
 //  @return []CustomFormatResource
-func (a *CustomFormatApiService) ListCustomformatExecute(r ApiListCustomformatRequest) ([]CustomFormatResource, *http.Response, error) {
+func (a *CustomFormatApiService) ListCustomformatExecute(r ApiListCustomformatRequest) ([]*CustomFormatResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []CustomFormatResource
+		localVarReturnValue  []*CustomFormatResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.ListCustomformat")

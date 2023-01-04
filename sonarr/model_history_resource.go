@@ -21,9 +21,9 @@ type HistoryResource struct {
 	EpisodeId *int32 `json:"episodeId,omitempty"`
 	SeriesId *int32 `json:"seriesId,omitempty"`
 	SourceTitle NullableString `json:"sourceTitle,omitempty"`
-	Languages []Language `json:"languages,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
 	QualityCutoffNotMet *bool `json:"qualityCutoffNotMet,omitempty"`
 	Date *time.Time `json:"date,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
@@ -189,9 +189,9 @@ func (o *HistoryResource) UnsetSourceTitle() {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoryResource) GetLanguages() []Language {
+func (o *HistoryResource) GetLanguages() []*Language {
 	if o == nil {
-		var ret []Language
+		var ret []*Language
 		return ret
 	}
 	return o.Languages
@@ -200,7 +200,7 @@ func (o *HistoryResource) GetLanguages() []Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoryResource) GetLanguagesOk() ([]Language, bool) {
+func (o *HistoryResource) GetLanguagesOk() ([]*Language, bool) {
 	if o == nil || isNil(o.Languages) {
     return nil, false
 	}
@@ -217,7 +217,7 @@ func (o *HistoryResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *HistoryResource) SetLanguages(v []Language) {
+func (o *HistoryResource) SetLanguages(v []*Language) {
 	o.Languages = v
 }
 
@@ -254,9 +254,9 @@ func (o *HistoryResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoryResource) GetCustomFormats() []CustomFormatResource {
+func (o *HistoryResource) GetCustomFormats() []*CustomFormatResource {
 	if o == nil {
-		var ret []CustomFormatResource
+		var ret []*CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -265,7 +265,7 @@ func (o *HistoryResource) GetCustomFormats() []CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoryResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+func (o *HistoryResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
 	if o == nil || isNil(o.CustomFormats) {
     return nil, false
 	}
@@ -282,7 +282,7 @@ func (o *HistoryResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *HistoryResource) SetCustomFormats(v []CustomFormatResource) {
+func (o *HistoryResource) SetCustomFormats(v []*CustomFormatResource) {
 	o.CustomFormats = v
 }
 

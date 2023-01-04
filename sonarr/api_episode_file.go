@@ -406,7 +406,7 @@ func (r ApiListEpisodefileRequest) EpisodeFileIds(episodeFileIds []int32) ApiLis
 	return r
 }
 
-func (r ApiListEpisodefileRequest) Execute() ([]EpisodeFileResource, *http.Response, error) {
+func (r ApiListEpisodefileRequest) Execute() ([]*EpisodeFileResource, *http.Response, error) {
 	return r.ApiService.ListEpisodefileExecute(r)
 }
 
@@ -425,12 +425,12 @@ func (a *EpisodeFileApiService) ListEpisodefile(ctx context.Context) ApiListEpis
 
 // Execute executes the request
 //  @return []EpisodeFileResource
-func (a *EpisodeFileApiService) ListEpisodefileExecute(r ApiListEpisodefileRequest) ([]EpisodeFileResource, *http.Response, error) {
+func (a *EpisodeFileApiService) ListEpisodefileExecute(r ApiListEpisodefileRequest) ([]*EpisodeFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []EpisodeFileResource
+		localVarReturnValue  []*EpisodeFileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileApiService.ListEpisodefile")

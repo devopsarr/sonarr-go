@@ -404,7 +404,7 @@ type ApiListRemotepathmappingRequest struct {
 	ApiService *RemotePathMappingApiService
 }
 
-func (r ApiListRemotepathmappingRequest) Execute() ([]RemotePathMappingResource, *http.Response, error) {
+func (r ApiListRemotepathmappingRequest) Execute() ([]*RemotePathMappingResource, *http.Response, error) {
 	return r.ApiService.ListRemotepathmappingExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *RemotePathMappingApiService) ListRemotepathmapping(ctx context.Context)
 
 // Execute executes the request
 //  @return []RemotePathMappingResource
-func (a *RemotePathMappingApiService) ListRemotepathmappingExecute(r ApiListRemotepathmappingRequest) ([]RemotePathMappingResource, *http.Response, error) {
+func (a *RemotePathMappingApiService) ListRemotepathmappingExecute(r ApiListRemotepathmappingRequest) ([]*RemotePathMappingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []RemotePathMappingResource
+		localVarReturnValue  []*RemotePathMappingResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.ListRemotepathmapping")

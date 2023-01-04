@@ -25,7 +25,7 @@ type Field struct {
 	Value interface{} `json:"value,omitempty"`
 	Type NullableString `json:"type,omitempty"`
 	Advanced *bool `json:"advanced,omitempty"`
-	SelectOptions []SelectOption `json:"selectOptions,omitempty"`
+	SelectOptions []*SelectOption `json:"selectOptions,omitempty"`
 	SelectOptionsProviderAction NullableString `json:"selectOptionsProviderAction,omitempty"`
 	Section NullableString `json:"section,omitempty"`
 	Hidden NullableString `json:"hidden,omitempty"`
@@ -399,9 +399,9 @@ func (o *Field) SetAdvanced(v bool) {
 }
 
 // GetSelectOptions returns the SelectOptions field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Field) GetSelectOptions() []SelectOption {
+func (o *Field) GetSelectOptions() []*SelectOption {
 	if o == nil {
-		var ret []SelectOption
+		var ret []*SelectOption
 		return ret
 	}
 	return o.SelectOptions
@@ -410,7 +410,7 @@ func (o *Field) GetSelectOptions() []SelectOption {
 // GetSelectOptionsOk returns a tuple with the SelectOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Field) GetSelectOptionsOk() ([]SelectOption, bool) {
+func (o *Field) GetSelectOptionsOk() ([]*SelectOption, bool) {
 	if o == nil || isNil(o.SelectOptions) {
     return nil, false
 	}
@@ -427,7 +427,7 @@ func (o *Field) HasSelectOptions() bool {
 }
 
 // SetSelectOptions gets a reference to the given []SelectOption and assigns it to the SelectOptions field.
-func (o *Field) SetSelectOptions(v []SelectOption) {
+func (o *Field) SetSelectOptions(v []*SelectOption) {
 	o.SelectOptions = v
 }
 

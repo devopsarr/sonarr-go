@@ -144,7 +144,7 @@ type ApiListLogFileUpdateRequest struct {
 	ApiService *UpdateLogFileApiService
 }
 
-func (r ApiListLogFileUpdateRequest) Execute() ([]LogFileResource, *http.Response, error) {
+func (r ApiListLogFileUpdateRequest) Execute() ([]*LogFileResource, *http.Response, error) {
 	return r.ApiService.ListLogFileUpdateExecute(r)
 }
 
@@ -163,12 +163,12 @@ func (a *UpdateLogFileApiService) ListLogFileUpdate(ctx context.Context) ApiList
 
 // Execute executes the request
 //  @return []LogFileResource
-func (a *UpdateLogFileApiService) ListLogFileUpdateExecute(r ApiListLogFileUpdateRequest) ([]LogFileResource, *http.Response, error) {
+func (a *UpdateLogFileApiService) ListLogFileUpdateExecute(r ApiListLogFileUpdateRequest) ([]*LogFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []LogFileResource
+		localVarReturnValue  []*LogFileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateLogFileApiService.ListLogFileUpdate")

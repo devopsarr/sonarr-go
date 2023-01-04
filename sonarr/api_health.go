@@ -155,7 +155,7 @@ type ApiListHealthRequest struct {
 	ApiService *HealthApiService
 }
 
-func (r ApiListHealthRequest) Execute() ([]HealthResource, *http.Response, error) {
+func (r ApiListHealthRequest) Execute() ([]*HealthResource, *http.Response, error) {
 	return r.ApiService.ListHealthExecute(r)
 }
 
@@ -174,12 +174,12 @@ func (a *HealthApiService) ListHealth(ctx context.Context) ApiListHealthRequest 
 
 // Execute executes the request
 //  @return []HealthResource
-func (a *HealthApiService) ListHealthExecute(r ApiListHealthRequest) ([]HealthResource, *http.Response, error) {
+func (a *HealthApiService) ListHealthExecute(r ApiListHealthRequest) ([]*HealthResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []HealthResource
+		localVarReturnValue  []*HealthResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthApiService.ListHealth")

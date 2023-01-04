@@ -17,7 +17,7 @@ import (
 // TrackedDownloadStatusMessage struct for TrackedDownloadStatusMessage
 type TrackedDownloadStatusMessage struct {
 	Title NullableString `json:"title,omitempty"`
-	Messages []string `json:"messages,omitempty"`
+	Messages []*string `json:"messages,omitempty"`
 }
 
 // NewTrackedDownloadStatusMessage instantiates a new TrackedDownloadStatusMessage object
@@ -80,9 +80,9 @@ func (o *TrackedDownloadStatusMessage) UnsetTitle() {
 }
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TrackedDownloadStatusMessage) GetMessages() []string {
+func (o *TrackedDownloadStatusMessage) GetMessages() []*string {
 	if o == nil {
-		var ret []string
+		var ret []*string
 		return ret
 	}
 	return o.Messages
@@ -91,7 +91,7 @@ func (o *TrackedDownloadStatusMessage) GetMessages() []string {
 // GetMessagesOk returns a tuple with the Messages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TrackedDownloadStatusMessage) GetMessagesOk() ([]string, bool) {
+func (o *TrackedDownloadStatusMessage) GetMessagesOk() ([]*string, bool) {
 	if o == nil || isNil(o.Messages) {
     return nil, false
 	}
@@ -108,7 +108,7 @@ func (o *TrackedDownloadStatusMessage) HasMessages() bool {
 }
 
 // SetMessages gets a reference to the given []string and assigns it to the Messages field.
-func (o *TrackedDownloadStatusMessage) SetMessages(v []string) {
+func (o *TrackedDownloadStatusMessage) SetMessages(v []*string) {
 	o.Messages = v
 }
 

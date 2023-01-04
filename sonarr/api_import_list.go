@@ -529,7 +529,7 @@ type ApiListImportlistRequest struct {
 	ApiService *ImportListApiService
 }
 
-func (r ApiListImportlistRequest) Execute() ([]ImportListResource, *http.Response, error) {
+func (r ApiListImportlistRequest) Execute() ([]*ImportListResource, *http.Response, error) {
 	return r.ApiService.ListImportlistExecute(r)
 }
 
@@ -548,12 +548,12 @@ func (a *ImportListApiService) ListImportlist(ctx context.Context) ApiListImport
 
 // Execute executes the request
 //  @return []ImportListResource
-func (a *ImportListApiService) ListImportlistExecute(r ApiListImportlistRequest) ([]ImportListResource, *http.Response, error) {
+func (a *ImportListApiService) ListImportlistExecute(r ApiListImportlistRequest) ([]*ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ImportListResource
+		localVarReturnValue  []*ImportListResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.ListImportlist")
@@ -653,7 +653,7 @@ type ApiListImportlistSchemaRequest struct {
 	ApiService *ImportListApiService
 }
 
-func (r ApiListImportlistSchemaRequest) Execute() ([]ImportListResource, *http.Response, error) {
+func (r ApiListImportlistSchemaRequest) Execute() ([]*ImportListResource, *http.Response, error) {
 	return r.ApiService.ListImportlistSchemaExecute(r)
 }
 
@@ -672,12 +672,12 @@ func (a *ImportListApiService) ListImportlistSchema(ctx context.Context) ApiList
 
 // Execute executes the request
 //  @return []ImportListResource
-func (a *ImportListApiService) ListImportlistSchemaExecute(r ApiListImportlistSchemaRequest) ([]ImportListResource, *http.Response, error) {
+func (a *ImportListApiService) ListImportlistSchemaExecute(r ApiListImportlistSchemaRequest) ([]*ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ImportListResource
+		localVarReturnValue  []*ImportListResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.ListImportlistSchema")

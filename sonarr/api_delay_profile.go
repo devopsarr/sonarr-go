@@ -404,7 +404,7 @@ type ApiListDelayprofileRequest struct {
 	ApiService *DelayProfileApiService
 }
 
-func (r ApiListDelayprofileRequest) Execute() ([]DelayProfileResource, *http.Response, error) {
+func (r ApiListDelayprofileRequest) Execute() ([]*DelayProfileResource, *http.Response, error) {
 	return r.ApiService.ListDelayprofileExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *DelayProfileApiService) ListDelayprofile(ctx context.Context) ApiListDe
 
 // Execute executes the request
 //  @return []DelayProfileResource
-func (a *DelayProfileApiService) ListDelayprofileExecute(r ApiListDelayprofileRequest) ([]DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileApiService) ListDelayprofileExecute(r ApiListDelayprofileRequest) ([]*DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []DelayProfileResource
+		localVarReturnValue  []*DelayProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileApiService.ListDelayprofile")
@@ -671,7 +671,7 @@ func (r ApiUpdateDelayprofileReorderRequest) After(after int32) ApiUpdateDelaypr
 	return r
 }
 
-func (r ApiUpdateDelayprofileReorderRequest) Execute() ([]DelayProfileResource, *http.Response, error) {
+func (r ApiUpdateDelayprofileReorderRequest) Execute() ([]*DelayProfileResource, *http.Response, error) {
 	return r.ApiService.UpdateDelayprofileReorderExecute(r)
 }
 
@@ -692,12 +692,12 @@ func (a *DelayProfileApiService) UpdateDelayprofileReorder(ctx context.Context, 
 
 // Execute executes the request
 //  @return []DelayProfileResource
-func (a *DelayProfileApiService) UpdateDelayprofileReorderExecute(r ApiUpdateDelayprofileReorderRequest) ([]DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileApiService) UpdateDelayprofileReorderExecute(r ApiUpdateDelayprofileReorderRequest) ([]*DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []DelayProfileResource
+		localVarReturnValue  []*DelayProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileApiService.UpdateDelayprofileReorder")

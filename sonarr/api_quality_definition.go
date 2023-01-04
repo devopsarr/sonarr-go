@@ -155,7 +155,7 @@ type ApiListQualitydefinitionRequest struct {
 	ApiService *QualityDefinitionApiService
 }
 
-func (r ApiListQualitydefinitionRequest) Execute() ([]QualityDefinitionResource, *http.Response, error) {
+func (r ApiListQualitydefinitionRequest) Execute() ([]*QualityDefinitionResource, *http.Response, error) {
 	return r.ApiService.ListQualitydefinitionExecute(r)
 }
 
@@ -174,12 +174,12 @@ func (a *QualityDefinitionApiService) ListQualitydefinition(ctx context.Context)
 
 // Execute executes the request
 //  @return []QualityDefinitionResource
-func (a *QualityDefinitionApiService) ListQualitydefinitionExecute(r ApiListQualitydefinitionRequest) ([]QualityDefinitionResource, *http.Response, error) {
+func (a *QualityDefinitionApiService) ListQualitydefinitionExecute(r ApiListQualitydefinitionRequest) ([]*QualityDefinitionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []QualityDefinitionResource
+		localVarReturnValue  []*QualityDefinitionResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.ListQualitydefinition")

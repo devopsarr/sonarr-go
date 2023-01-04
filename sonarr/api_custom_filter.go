@@ -404,7 +404,7 @@ type ApiListCustomfilterRequest struct {
 	ApiService *CustomFilterApiService
 }
 
-func (r ApiListCustomfilterRequest) Execute() ([]CustomFilterResource, *http.Response, error) {
+func (r ApiListCustomfilterRequest) Execute() ([]*CustomFilterResource, *http.Response, error) {
 	return r.ApiService.ListCustomfilterExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *CustomFilterApiService) ListCustomfilter(ctx context.Context) ApiListCu
 
 // Execute executes the request
 //  @return []CustomFilterResource
-func (a *CustomFilterApiService) ListCustomfilterExecute(r ApiListCustomfilterRequest) ([]CustomFilterResource, *http.Response, error) {
+func (a *CustomFilterApiService) ListCustomfilterExecute(r ApiListCustomfilterRequest) ([]*CustomFilterResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []CustomFilterResource
+		localVarReturnValue  []*CustomFilterResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterApiService.ListCustomfilter")

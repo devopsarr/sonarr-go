@@ -404,7 +404,7 @@ type ApiListImportlistexclusionRequest struct {
 	ApiService *ImportListExclusionApiService
 }
 
-func (r ApiListImportlistexclusionRequest) Execute() ([]ImportListExclusionResource, *http.Response, error) {
+func (r ApiListImportlistexclusionRequest) Execute() ([]*ImportListExclusionResource, *http.Response, error) {
 	return r.ApiService.ListImportlistexclusionExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *ImportListExclusionApiService) ListImportlistexclusion(ctx context.Cont
 
 // Execute executes the request
 //  @return []ImportListExclusionResource
-func (a *ImportListExclusionApiService) ListImportlistexclusionExecute(r ApiListImportlistexclusionRequest) ([]ImportListExclusionResource, *http.Response, error) {
+func (a *ImportListExclusionApiService) ListImportlistexclusionExecute(r ApiListImportlistexclusionRequest) ([]*ImportListExclusionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ImportListExclusionResource
+		localVarReturnValue  []*ImportListExclusionResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionApiService.ListImportlistexclusion")

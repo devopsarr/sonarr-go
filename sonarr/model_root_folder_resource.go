@@ -20,7 +20,7 @@ type RootFolderResource struct {
 	Path NullableString `json:"path,omitempty"`
 	Accessible *bool `json:"accessible,omitempty"`
 	FreeSpace NullableInt64 `json:"freeSpace,omitempty"`
-	UnmappedFolders []UnmappedFolder `json:"unmappedFolders,omitempty"`
+	UnmappedFolders []*UnmappedFolder `json:"unmappedFolders,omitempty"`
 }
 
 // NewRootFolderResource instantiates a new RootFolderResource object
@@ -189,9 +189,9 @@ func (o *RootFolderResource) UnsetFreeSpace() {
 }
 
 // GetUnmappedFolders returns the UnmappedFolders field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RootFolderResource) GetUnmappedFolders() []UnmappedFolder {
+func (o *RootFolderResource) GetUnmappedFolders() []*UnmappedFolder {
 	if o == nil {
-		var ret []UnmappedFolder
+		var ret []*UnmappedFolder
 		return ret
 	}
 	return o.UnmappedFolders
@@ -200,7 +200,7 @@ func (o *RootFolderResource) GetUnmappedFolders() []UnmappedFolder {
 // GetUnmappedFoldersOk returns a tuple with the UnmappedFolders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RootFolderResource) GetUnmappedFoldersOk() ([]UnmappedFolder, bool) {
+func (o *RootFolderResource) GetUnmappedFoldersOk() ([]*UnmappedFolder, bool) {
 	if o == nil || isNil(o.UnmappedFolders) {
     return nil, false
 	}
@@ -217,7 +217,7 @@ func (o *RootFolderResource) HasUnmappedFolders() bool {
 }
 
 // SetUnmappedFolders gets a reference to the given []UnmappedFolder and assigns it to the UnmappedFolders field.
-func (o *RootFolderResource) SetUnmappedFolders(v []UnmappedFolder) {
+func (o *RootFolderResource) SetUnmappedFolders(v []*UnmappedFolder) {
 	o.UnmappedFolders = v
 }
 

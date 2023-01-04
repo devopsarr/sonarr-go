@@ -19,7 +19,7 @@ type CustomFormatResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	IncludeCustomFormatWhenRenaming *bool `json:"includeCustomFormatWhenRenaming,omitempty"`
-	Specifications []CustomFormatSpecificationSchema `json:"specifications,omitempty"`
+	Specifications []*CustomFormatSpecificationSchema `json:"specifications,omitempty"`
 }
 
 // NewCustomFormatResource instantiates a new CustomFormatResource object
@@ -146,9 +146,9 @@ func (o *CustomFormatResource) SetIncludeCustomFormatWhenRenaming(v bool) {
 }
 
 // GetSpecifications returns the Specifications field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomFormatResource) GetSpecifications() []CustomFormatSpecificationSchema {
+func (o *CustomFormatResource) GetSpecifications() []*CustomFormatSpecificationSchema {
 	if o == nil {
-		var ret []CustomFormatSpecificationSchema
+		var ret []*CustomFormatSpecificationSchema
 		return ret
 	}
 	return o.Specifications
@@ -157,7 +157,7 @@ func (o *CustomFormatResource) GetSpecifications() []CustomFormatSpecificationSc
 // GetSpecificationsOk returns a tuple with the Specifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomFormatResource) GetSpecificationsOk() ([]CustomFormatSpecificationSchema, bool) {
+func (o *CustomFormatResource) GetSpecificationsOk() ([]*CustomFormatSpecificationSchema, bool) {
 	if o == nil || isNil(o.Specifications) {
     return nil, false
 	}
@@ -174,7 +174,7 @@ func (o *CustomFormatResource) HasSpecifications() bool {
 }
 
 // SetSpecifications gets a reference to the given []CustomFormatSpecificationSchema and assigns it to the Specifications field.
-func (o *CustomFormatResource) SetSpecifications(v []CustomFormatSpecificationSchema) {
+func (o *CustomFormatResource) SetSpecifications(v []*CustomFormatSpecificationSchema) {
 	o.Specifications = v
 }
 

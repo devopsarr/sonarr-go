@@ -39,7 +39,7 @@ type EpisodeResource struct {
 	GrabDate NullableTime `json:"grabDate,omitempty"`
 	SeriesTitle NullableString `json:"seriesTitle,omitempty"`
 	Series *SeriesResource `json:"series,omitempty"`
-	Images []MediaCover `json:"images,omitempty"`
+	Images []*MediaCover `json:"images,omitempty"`
 	Grabbed *bool `json:"grabbed,omitempty"`
 }
 
@@ -875,9 +875,9 @@ func (o *EpisodeResource) SetSeries(v SeriesResource) {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodeResource) GetImages() []MediaCover {
+func (o *EpisodeResource) GetImages() []*MediaCover {
 	if o == nil {
-		var ret []MediaCover
+		var ret []*MediaCover
 		return ret
 	}
 	return o.Images
@@ -886,7 +886,7 @@ func (o *EpisodeResource) GetImages() []MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodeResource) GetImagesOk() ([]MediaCover, bool) {
+func (o *EpisodeResource) GetImagesOk() ([]*MediaCover, bool) {
 	if o == nil || isNil(o.Images) {
     return nil, false
 	}
@@ -903,7 +903,7 @@ func (o *EpisodeResource) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *EpisodeResource) SetImages(v []MediaCover) {
+func (o *EpisodeResource) SetImages(v []*MediaCover) {
 	o.Images = v
 }
 

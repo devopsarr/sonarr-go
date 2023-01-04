@@ -19,7 +19,7 @@ type CustomFilterResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Type NullableString `json:"type,omitempty"`
 	Label NullableString `json:"label,omitempty"`
-	Filters []map[string]interface{} `json:"filters,omitempty"`
+	Filters []*map[string]interface{} `json:"filters,omitempty"`
 }
 
 // NewCustomFilterResource instantiates a new CustomFilterResource object
@@ -156,9 +156,9 @@ func (o *CustomFilterResource) UnsetLabel() {
 }
 
 // GetFilters returns the Filters field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomFilterResource) GetFilters() []map[string]interface{} {
+func (o *CustomFilterResource) GetFilters() []*map[string]interface{} {
 	if o == nil {
-		var ret []map[string]interface{}
+		var ret []*map[string]interface{}
 		return ret
 	}
 	return o.Filters
@@ -167,7 +167,7 @@ func (o *CustomFilterResource) GetFilters() []map[string]interface{} {
 // GetFiltersOk returns a tuple with the Filters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomFilterResource) GetFiltersOk() ([]map[string]interface{}, bool) {
+func (o *CustomFilterResource) GetFiltersOk() ([]*map[string]interface{}, bool) {
 	if o == nil || isNil(o.Filters) {
     return nil, false
 	}
@@ -184,7 +184,7 @@ func (o *CustomFilterResource) HasFilters() bool {
 }
 
 // SetFilters gets a reference to the given []map[string]interface{} and assigns it to the Filters field.
-func (o *CustomFilterResource) SetFilters(v []map[string]interface{}) {
+func (o *CustomFilterResource) SetFilters(v []*map[string]interface{}) {
 	o.Filters = v
 }
 

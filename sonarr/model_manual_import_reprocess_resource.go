@@ -20,13 +20,13 @@ type ManualImportReprocessResource struct {
 	Path NullableString `json:"path,omitempty"`
 	SeriesId *int32 `json:"seriesId,omitempty"`
 	SeasonNumber NullableInt32 `json:"seasonNumber,omitempty"`
-	Episodes []EpisodeResource `json:"episodes,omitempty"`
-	EpisodeIds []int32 `json:"episodeIds,omitempty"`
+	Episodes []*EpisodeResource `json:"episodes,omitempty"`
+	EpisodeIds []*int32 `json:"episodeIds,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	Languages []Language `json:"languages,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
-	Rejections []Rejection `json:"rejections,omitempty"`
+	Rejections []*Rejection `json:"rejections,omitempty"`
 }
 
 // NewManualImportReprocessResource instantiates a new ManualImportReprocessResource object
@@ -195,9 +195,9 @@ func (o *ManualImportReprocessResource) UnsetSeasonNumber() {
 }
 
 // GetEpisodes returns the Episodes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportReprocessResource) GetEpisodes() []EpisodeResource {
+func (o *ManualImportReprocessResource) GetEpisodes() []*EpisodeResource {
 	if o == nil {
-		var ret []EpisodeResource
+		var ret []*EpisodeResource
 		return ret
 	}
 	return o.Episodes
@@ -206,7 +206,7 @@ func (o *ManualImportReprocessResource) GetEpisodes() []EpisodeResource {
 // GetEpisodesOk returns a tuple with the Episodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportReprocessResource) GetEpisodesOk() ([]EpisodeResource, bool) {
+func (o *ManualImportReprocessResource) GetEpisodesOk() ([]*EpisodeResource, bool) {
 	if o == nil || isNil(o.Episodes) {
     return nil, false
 	}
@@ -223,14 +223,14 @@ func (o *ManualImportReprocessResource) HasEpisodes() bool {
 }
 
 // SetEpisodes gets a reference to the given []EpisodeResource and assigns it to the Episodes field.
-func (o *ManualImportReprocessResource) SetEpisodes(v []EpisodeResource) {
+func (o *ManualImportReprocessResource) SetEpisodes(v []*EpisodeResource) {
 	o.Episodes = v
 }
 
 // GetEpisodeIds returns the EpisodeIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportReprocessResource) GetEpisodeIds() []int32 {
+func (o *ManualImportReprocessResource) GetEpisodeIds() []*int32 {
 	if o == nil {
-		var ret []int32
+		var ret []*int32
 		return ret
 	}
 	return o.EpisodeIds
@@ -239,7 +239,7 @@ func (o *ManualImportReprocessResource) GetEpisodeIds() []int32 {
 // GetEpisodeIdsOk returns a tuple with the EpisodeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportReprocessResource) GetEpisodeIdsOk() ([]int32, bool) {
+func (o *ManualImportReprocessResource) GetEpisodeIdsOk() ([]*int32, bool) {
 	if o == nil || isNil(o.EpisodeIds) {
     return nil, false
 	}
@@ -256,7 +256,7 @@ func (o *ManualImportReprocessResource) HasEpisodeIds() bool {
 }
 
 // SetEpisodeIds gets a reference to the given []int32 and assigns it to the EpisodeIds field.
-func (o *ManualImportReprocessResource) SetEpisodeIds(v []int32) {
+func (o *ManualImportReprocessResource) SetEpisodeIds(v []*int32) {
 	o.EpisodeIds = v
 }
 
@@ -293,9 +293,9 @@ func (o *ManualImportReprocessResource) SetQuality(v QualityModel) {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportReprocessResource) GetLanguages() []Language {
+func (o *ManualImportReprocessResource) GetLanguages() []*Language {
 	if o == nil {
-		var ret []Language
+		var ret []*Language
 		return ret
 	}
 	return o.Languages
@@ -304,7 +304,7 @@ func (o *ManualImportReprocessResource) GetLanguages() []Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportReprocessResource) GetLanguagesOk() ([]Language, bool) {
+func (o *ManualImportReprocessResource) GetLanguagesOk() ([]*Language, bool) {
 	if o == nil || isNil(o.Languages) {
     return nil, false
 	}
@@ -321,7 +321,7 @@ func (o *ManualImportReprocessResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *ManualImportReprocessResource) SetLanguages(v []Language) {
+func (o *ManualImportReprocessResource) SetLanguages(v []*Language) {
 	o.Languages = v
 }
 
@@ -410,9 +410,9 @@ func (o *ManualImportReprocessResource) UnsetDownloadId() {
 }
 
 // GetRejections returns the Rejections field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportReprocessResource) GetRejections() []Rejection {
+func (o *ManualImportReprocessResource) GetRejections() []*Rejection {
 	if o == nil {
-		var ret []Rejection
+		var ret []*Rejection
 		return ret
 	}
 	return o.Rejections
@@ -421,7 +421,7 @@ func (o *ManualImportReprocessResource) GetRejections() []Rejection {
 // GetRejectionsOk returns a tuple with the Rejections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportReprocessResource) GetRejectionsOk() ([]Rejection, bool) {
+func (o *ManualImportReprocessResource) GetRejectionsOk() ([]*Rejection, bool) {
 	if o == nil || isNil(o.Rejections) {
     return nil, false
 	}
@@ -438,7 +438,7 @@ func (o *ManualImportReprocessResource) HasRejections() bool {
 }
 
 // SetRejections gets a reference to the given []Rejection and assigns it to the Rejections field.
-func (o *ManualImportReprocessResource) SetRejections(v []Rejection) {
+func (o *ManualImportReprocessResource) SetRejections(v []*Rejection) {
 	o.Rejections = v
 }
 

@@ -404,7 +404,7 @@ type ApiListCommandRequest struct {
 	ApiService *CommandApiService
 }
 
-func (r ApiListCommandRequest) Execute() ([]CommandResource, *http.Response, error) {
+func (r ApiListCommandRequest) Execute() ([]*CommandResource, *http.Response, error) {
 	return r.ApiService.ListCommandExecute(r)
 }
 
@@ -423,12 +423,12 @@ func (a *CommandApiService) ListCommand(ctx context.Context) ApiListCommandReque
 
 // Execute executes the request
 //  @return []CommandResource
-func (a *CommandApiService) ListCommandExecute(r ApiListCommandRequest) ([]CommandResource, *http.Response, error) {
+func (a *CommandApiService) ListCommandExecute(r ApiListCommandRequest) ([]*CommandResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []CommandResource
+		localVarReturnValue  []*CommandResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandApiService.ListCommand")
