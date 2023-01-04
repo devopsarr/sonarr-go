@@ -19603,24 +19603,12 @@ components:
     SystemResource:
       additionalProperties: false
       example:
-        runtimeVersion:
-          major: 0
-          minor: 6
-          build: 1
-          majorRevision: 5
-          minorRevision: 2
-          revision: 5
+        runtimeVersion: runtimeVersion
         startupPath: startupPath
         instanceName: instanceName
         packageAuthor: packageAuthor
         packageUpdateMechanismMessage: packageUpdateMechanismMessage
-        sqliteVersion:
-          major: 0
-          minor: 6
-          build: 1
-          majorRevision: 5
-          minorRevision: 2
-          revision: 5
+        sqliteVersion: sqliteVersion
         packageUpdateMechanism: null
         branch: branch
         appData: appData
@@ -19640,7 +19628,7 @@ components:
         isAdmin: true
         osName: osName
         version: version
-        migrationVersion: 7
+        migrationVersion: 0
         urlBase: urlBase
         isDocker: true
         isOsx: true
@@ -19696,7 +19684,7 @@ components:
         authentication:
           $ref: '#/components/schemas/AuthenticationType'
         sqliteVersion:
-          $ref: '#/components/schemas/Version'
+          type: string
         migrationVersion:
           format: int32
           type: integer
@@ -19704,7 +19692,7 @@ components:
           nullable: true
           type: string
         runtimeVersion:
-          $ref: '#/components/schemas/Version'
+          type: string
         runtimeName:
           nullable: true
           type: string
@@ -20025,13 +20013,7 @@ components:
           - fixed
         id: 0
         installable: true
-        version:
-          major: 0
-          minor: 6
-          build: 1
-          majorRevision: 5
-          minorRevision: 2
-          revision: 5
+        version: version
         branch: branch
         url: url
         hash: hash
@@ -20041,7 +20023,7 @@ components:
           format: int32
           type: integer
         version:
-          $ref: '#/components/schemas/Version'
+          type: string
         branch:
           nullable: true
           type: string
@@ -20072,13 +20054,6 @@ components:
       type: object
     Version:
       additionalProperties: false
-      example:
-        major: 0
-        minor: 6
-        build: 1
-        majorRevision: 5
-        minorRevision: 2
-        revision: 5
       properties:
         major:
           format: int32

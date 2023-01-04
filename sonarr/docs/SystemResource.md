@@ -24,10 +24,10 @@ Name | Type | Description | Notes
 **Mode** | Pointer to [**RuntimeMode**](RuntimeMode.md) |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
 **Authentication** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
-**SqliteVersion** | Pointer to [**Version**](Version.md) |  | [optional] 
+**SqliteVersion** | Pointer to **string** |  | [optional] 
 **MigrationVersion** | Pointer to **int32** |  | [optional] 
 **UrlBase** | Pointer to **NullableString** |  | [optional] 
-**RuntimeVersion** | Pointer to [**Version**](Version.md) |  | [optional] 
+**RuntimeVersion** | Pointer to **string** |  | [optional] 
 **RuntimeName** | Pointer to **NullableString** |  | [optional] 
 **StartTime** | Pointer to **time.Time** |  | [optional] 
 **PackageVersion** | Pointer to **NullableString** |  | [optional] 
@@ -636,20 +636,20 @@ HasAuthentication returns a boolean if a field has been set.
 
 ### GetSqliteVersion
 
-`func (o *SystemResource) GetSqliteVersion() Version`
+`func (o *SystemResource) GetSqliteVersion() string`
 
 GetSqliteVersion returns the SqliteVersion field if non-nil, zero value otherwise.
 
 ### GetSqliteVersionOk
 
-`func (o *SystemResource) GetSqliteVersionOk() (*Version, bool)`
+`func (o *SystemResource) GetSqliteVersionOk() (*string, bool)`
 
 GetSqliteVersionOk returns a tuple with the SqliteVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSqliteVersion
 
-`func (o *SystemResource) SetSqliteVersion(v Version)`
+`func (o *SystemResource) SetSqliteVersion(v string)`
 
 SetSqliteVersion sets SqliteVersion field to given value.
 
@@ -721,20 +721,20 @@ HasUrlBase returns a boolean if a field has been set.
 UnsetUrlBase ensures that no value is present for UrlBase, not even an explicit nil
 ### GetRuntimeVersion
 
-`func (o *SystemResource) GetRuntimeVersion() Version`
+`func (o *SystemResource) GetRuntimeVersion() string`
 
 GetRuntimeVersion returns the RuntimeVersion field if non-nil, zero value otherwise.
 
 ### GetRuntimeVersionOk
 
-`func (o *SystemResource) GetRuntimeVersionOk() (*Version, bool)`
+`func (o *SystemResource) GetRuntimeVersionOk() (*string, bool)`
 
 GetRuntimeVersionOk returns a tuple with the RuntimeVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRuntimeVersion
 
-`func (o *SystemResource) SetRuntimeVersion(v Version)`
+`func (o *SystemResource) SetRuntimeVersion(v string)`
 
 SetRuntimeVersion sets RuntimeVersion field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**Version** | Pointer to [**Version**](Version.md) |  | [optional] 
+**Version** | Pointer to **string** |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
 **ReleaseDate** | Pointer to **time.Time** |  | [optional] 
 **FileName** | Pointer to **NullableString** |  | [optional] 
@@ -63,20 +63,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *UpdateResource) GetVersion() Version`
+`func (o *UpdateResource) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *UpdateResource) GetVersionOk() (*Version, bool)`
+`func (o *UpdateResource) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *UpdateResource) SetVersion(v Version)`
+`func (o *UpdateResource) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 

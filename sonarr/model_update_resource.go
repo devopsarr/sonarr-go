@@ -18,7 +18,7 @@ import (
 // UpdateResource struct for UpdateResource
 type UpdateResource struct {
 	Id *int32 `json:"id,omitempty"`
-	Version *Version `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
 	Branch NullableString `json:"branch,omitempty"`
 	ReleaseDate *time.Time `json:"releaseDate,omitempty"`
 	FileName NullableString `json:"fileName,omitempty"`
@@ -81,9 +81,9 @@ func (o *UpdateResource) SetId(v int32) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *UpdateResource) GetVersion() Version {
+func (o *UpdateResource) GetVersion() string {
 	if o == nil || isNil(o.Version) {
-		var ret Version
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -91,7 +91,7 @@ func (o *UpdateResource) GetVersion() Version {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateResource) GetVersionOk() (*Version, bool) {
+func (o *UpdateResource) GetVersionOk() (*string, bool) {
 	if o == nil || isNil(o.Version) {
     return nil, false
 	}
@@ -107,8 +107,8 @@ func (o *UpdateResource) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given Version and assigns it to the Version field.
-func (o *UpdateResource) SetVersion(v Version) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *UpdateResource) SetVersion(v string) {
 	o.Version = &v
 }
 

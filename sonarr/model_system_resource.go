@@ -37,10 +37,10 @@ type SystemResource struct {
 	Mode *RuntimeMode `json:"mode,omitempty"`
 	Branch NullableString `json:"branch,omitempty"`
 	Authentication *AuthenticationType `json:"authentication,omitempty"`
-	SqliteVersion *Version `json:"sqliteVersion,omitempty"`
+	SqliteVersion *string `json:"sqliteVersion,omitempty"`
 	MigrationVersion *int32 `json:"migrationVersion,omitempty"`
 	UrlBase NullableString `json:"urlBase,omitempty"`
-	RuntimeVersion *Version `json:"runtimeVersion,omitempty"`
+	RuntimeVersion *string `json:"runtimeVersion,omitempty"`
 	RuntimeName NullableString `json:"runtimeName,omitempty"`
 	StartTime *time.Time `json:"startTime,omitempty"`
 	PackageVersion NullableString `json:"packageVersion,omitempty"`
@@ -787,9 +787,9 @@ func (o *SystemResource) SetAuthentication(v AuthenticationType) {
 }
 
 // GetSqliteVersion returns the SqliteVersion field value if set, zero value otherwise.
-func (o *SystemResource) GetSqliteVersion() Version {
+func (o *SystemResource) GetSqliteVersion() string {
 	if o == nil || isNil(o.SqliteVersion) {
-		var ret Version
+		var ret string
 		return ret
 	}
 	return *o.SqliteVersion
@@ -797,7 +797,7 @@ func (o *SystemResource) GetSqliteVersion() Version {
 
 // GetSqliteVersionOk returns a tuple with the SqliteVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SystemResource) GetSqliteVersionOk() (*Version, bool) {
+func (o *SystemResource) GetSqliteVersionOk() (*string, bool) {
 	if o == nil || isNil(o.SqliteVersion) {
     return nil, false
 	}
@@ -813,8 +813,8 @@ func (o *SystemResource) HasSqliteVersion() bool {
 	return false
 }
 
-// SetSqliteVersion gets a reference to the given Version and assigns it to the SqliteVersion field.
-func (o *SystemResource) SetSqliteVersion(v Version) {
+// SetSqliteVersion gets a reference to the given string and assigns it to the SqliteVersion field.
+func (o *SystemResource) SetSqliteVersion(v string) {
 	o.SqliteVersion = &v
 }
 
@@ -893,9 +893,9 @@ func (o *SystemResource) UnsetUrlBase() {
 }
 
 // GetRuntimeVersion returns the RuntimeVersion field value if set, zero value otherwise.
-func (o *SystemResource) GetRuntimeVersion() Version {
+func (o *SystemResource) GetRuntimeVersion() string {
 	if o == nil || isNil(o.RuntimeVersion) {
-		var ret Version
+		var ret string
 		return ret
 	}
 	return *o.RuntimeVersion
@@ -903,7 +903,7 @@ func (o *SystemResource) GetRuntimeVersion() Version {
 
 // GetRuntimeVersionOk returns a tuple with the RuntimeVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SystemResource) GetRuntimeVersionOk() (*Version, bool) {
+func (o *SystemResource) GetRuntimeVersionOk() (*string, bool) {
 	if o == nil || isNil(o.RuntimeVersion) {
     return nil, false
 	}
@@ -919,8 +919,8 @@ func (o *SystemResource) HasRuntimeVersion() bool {
 	return false
 }
 
-// SetRuntimeVersion gets a reference to the given Version and assigns it to the RuntimeVersion field.
-func (o *SystemResource) SetRuntimeVersion(v Version) {
+// SetRuntimeVersion gets a reference to the given string and assigns it to the RuntimeVersion field.
+func (o *SystemResource) SetRuntimeVersion(v string) {
 	o.RuntimeVersion = &v
 }
 
