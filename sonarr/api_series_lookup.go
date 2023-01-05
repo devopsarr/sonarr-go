@@ -21,45 +21,47 @@ import (
 
 // SeriesLookupApiService SeriesLookupApi service
 type SeriesLookupApiService service
-type ApiGetSeriesLookupRequest struct {
+type ApiListSeriesLookupRequest struct {
 	ctx context.Context
 	ApiService *SeriesLookupApiService
 	term *string
 }
 
-func (r ApiGetSeriesLookupRequest) Term(term string) ApiGetSeriesLookupRequest {
+func (r ApiListSeriesLookupRequest) Term(term string) ApiListSeriesLookupRequest {
 	r.term = &term
 	return r
 }
 
-func (r ApiGetSeriesLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSeriesLookupExecute(r)
+func (r ApiListSeriesLookupRequest) Execute() ([]*SeriesResource, *http.Response, error) {
+	return r.ApiService.ListSeriesLookupExecute(r)
 }
 
 /*
-GetSeriesLookup Method for GetSeriesLookup
+ListSeriesLookup Method for ListSeriesLookup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSeriesLookupRequest
+ @return ApiListSeriesLookupRequest
 */
-func (a *SeriesLookupApiService) GetSeriesLookup(ctx context.Context) ApiGetSeriesLookupRequest {
-	return ApiGetSeriesLookupRequest{
+func (a *SeriesLookupApiService) ListSeriesLookup(ctx context.Context) ApiListSeriesLookupRequest {
+	return ApiListSeriesLookupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SeriesLookupApiService) GetSeriesLookupExecute(r ApiGetSeriesLookupRequest) (*http.Response, error) {
+//  @return []SeriesResource
+func (a *SeriesLookupApiService) ListSeriesLookupExecute(r ApiListSeriesLookupRequest) ([]*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  []*SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupApiService.GetSeriesLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupApiService.ListSeriesLookup")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v3/series/lookup"
@@ -81,7 +83,7 @@ func (a *SeriesLookupApiService) GetSeriesLookupExecute(r ApiGetSeriesLookupRequ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -118,19 +120,19 @@ func (a *SeriesLookupApiService) GetSeriesLookupExecute(r ApiGetSeriesLookupRequ
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -138,8 +140,17 @@ func (a *SeriesLookupApiService) GetSeriesLookupExecute(r ApiGetSeriesLookupRequ
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetSeriesLookup**](SeriesLookupApi.md#GetSeriesLookup) | **Get** /api/v3/series/lookup | 
+[**ListSeriesLookup**](SeriesLookupApi.md#ListSeriesLookup) | **Get** /api/v3/series/lookup | 
 
 
 
-## GetSeriesLookup
+## ListSeriesLookup
 
-> GetSeriesLookup(ctx).Term(term).Execute()
+> []SeriesResource ListSeriesLookup(ctx).Term(term).Execute()
 
 
 
@@ -31,11 +31,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SeriesLookupApi.GetSeriesLookup(context.Background()).Term(term).Execute()
+    resp, r, err := apiClient.SeriesLookupApi.ListSeriesLookup(context.Background()).Term(term).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SeriesLookupApi.GetSeriesLookup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SeriesLookupApi.ListSeriesLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ListSeriesLookup`: []SeriesResource
+    fmt.Fprintf(os.Stdout, "Response from `SeriesLookupApi.ListSeriesLookup`: %v\n", resp)
 }
 ```
 
@@ -45,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetSeriesLookupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSeriesLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -54,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]SeriesResource**](SeriesResource.md)
 
 ### Authorization
 
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

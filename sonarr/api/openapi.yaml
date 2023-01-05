@@ -4290,6 +4290,12 @@ paths:
         style: form
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/SeriesResource'
+                type: array
           description: Success
       tags:
       - SeriesLookup

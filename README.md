@@ -272,7 +272,7 @@ Class | Method | HTTP request | Description
 *SeriesEditorApi* | [**DeleteSeriesEditor**](docs/SeriesEditorApi.md#deleteserieseditor) | **Delete** /api/v3/series/editor | 
 *SeriesEditorApi* | [**PutSeriesEditor**](docs/SeriesEditorApi.md#putserieseditor) | **Put** /api/v3/series/editor | 
 *SeriesImportApi* | [**CreateSeriesImport**](docs/SeriesImportApi.md#createseriesimport) | **Post** /api/v3/series/import | 
-*SeriesLookupApi* | [**GetSeriesLookup**](docs/SeriesLookupApi.md#getserieslookup) | **Get** /api/v3/series/lookup | 
+*SeriesLookupApi* | [**ListSeriesLookup**](docs/SeriesLookupApi.md#listserieslookup) | **Get** /api/v3/series/lookup | 
 *StaticResourceApi* | [**Get**](docs/StaticResourceApi.md#get) | **Get** / | 
 *StaticResourceApi* | [**GetByPath**](docs/StaticResourceApi.md#getbypath) | **Get** /{path} | 
 *StaticResourceApi* | [**GetContentByPath**](docs/StaticResourceApi.md#getcontentbypath) | **Get** /content/{path} | 
