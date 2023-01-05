@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **SeasonFolder** | Pointer to **bool** |  | [optional] 
 **ListType** | Pointer to [**ImportListType**](ImportListType.md) |  | [optional] 
 **ListOrder** | Pointer to **int32** |  | [optional] 
+**LanguageProfileId** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -581,6 +582,31 @@ SetListOrder sets ListOrder field to given value.
 `func (o *ImportListResource) HasListOrder() bool`
 
 HasListOrder returns a boolean if a field has been set.
+
+### GetLanguageProfileId
+
+`func (o *ImportListResource) GetLanguageProfileId() int32`
+
+GetLanguageProfileId returns the LanguageProfileId field if non-nil, zero value otherwise.
+
+### GetLanguageProfileIdOk
+
+`func (o *ImportListResource) GetLanguageProfileIdOk() (*int32, bool)`
+
+GetLanguageProfileIdOk returns a tuple with the LanguageProfileId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguageProfileId
+
+`func (o *ImportListResource) SetLanguageProfileId(v int32)`
+
+SetLanguageProfileId sets LanguageProfileId field to given value.
+
+### HasLanguageProfileId
+
+`func (o *ImportListResource) HasLanguageProfileId() bool`
+
+HasLanguageProfileId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

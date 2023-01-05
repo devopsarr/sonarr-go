@@ -4279,7 +4279,7 @@ paths:
       - SeriesImport
   /api/v3/series/lookup:
     get:
-      operationId: GetSeriesLookup
+      operationId: ListSeriesLookup
       parameters:
       - explode: true
         in: query
@@ -11209,6 +11209,7 @@ components:
         implementationName: implementationName
         rootFolderPath: rootFolderPath
         implementation: implementation
+        languageProfileId: 5
         message:
           message: message
           type: null
@@ -11329,6 +11330,9 @@ components:
         listType:
           $ref: '#/components/schemas/ImportListType'
         listOrder:
+          format: int32
+          type: integer
+        languageProfileId:
           format: int32
           type: integer
       type: object
