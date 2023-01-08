@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetQualitydefinitionById**](QualityDefinitionApi.md#GetQualitydefinitionById) | **Get** /api/v3/qualitydefinition/{id} | 
-[**ListQualitydefinition**](QualityDefinitionApi.md#ListQualitydefinition) | **Get** /api/v3/qualitydefinition | 
-[**PutQualitydefinitionUpdate**](QualityDefinitionApi.md#PutQualitydefinitionUpdate) | **Put** /api/v3/qualitydefinition/update | 
-[**UpdateQualitydefinition**](QualityDefinitionApi.md#UpdateQualitydefinition) | **Put** /api/v3/qualitydefinition/{id} | 
+[**GetQualityDefinitionById**](QualityDefinitionApi.md#GetQualityDefinitionById) | **Get** /api/v3/qualitydefinition/{id} | 
+[**ListQualityDefinition**](QualityDefinitionApi.md#ListQualityDefinition) | **Get** /api/v3/qualitydefinition | 
+[**PutQualityDefinitionUpdate**](QualityDefinitionApi.md#PutQualityDefinitionUpdate) | **Put** /api/v3/qualitydefinition/update | 
+[**UpdateQualityDefinition**](QualityDefinitionApi.md#UpdateQualityDefinition) | **Put** /api/v3/qualitydefinition/{id} | 
 
 
 
-## GetQualitydefinitionById
+## GetQualityDefinitionById
 
-> QualityDefinitionResource GetQualitydefinitionById(ctx, id).Execute()
+> QualityDefinitionResource GetQualityDefinitionById(ctx, id).Execute()
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityDefinitionApi.GetQualitydefinitionById(context.Background(), id).Execute()
+    resp, r, err := apiClient.QualityDefinitionApi.GetQualityDefinitionById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.GetQualitydefinitionById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.GetQualityDefinitionById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetQualitydefinitionById`: QualityDefinitionResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.GetQualitydefinitionById`: %v\n", resp)
+    // response from `GetQualityDefinitionById`: QualityDefinitionResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.GetQualityDefinitionById`: %v\n", resp)
 }
 ```
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetQualitydefinitionByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetQualityDefinitionByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -79,9 +79,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListQualitydefinition
+## ListQualityDefinition
 
-> []QualityDefinitionResource ListQualitydefinition(ctx).Execute()
+> []QualityDefinitionResource ListQualityDefinition(ctx).Execute()
 
 
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityDefinitionApi.ListQualitydefinition(context.Background()).Execute()
+    resp, r, err := apiClient.QualityDefinitionApi.ListQualityDefinition(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.ListQualitydefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.ListQualityDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListQualitydefinition`: []QualityDefinitionResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.ListQualitydefinition`: %v\n", resp)
+    // response from `ListQualityDefinition`: []QualityDefinitionResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.ListQualityDefinition`: %v\n", resp)
 }
 ```
 
@@ -117,7 +117,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListQualitydefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListQualityDefinitionRequest struct via the builder pattern
 
 
 ### Return type
@@ -138,9 +138,9 @@ Other parameters are passed through a pointer to a apiListQualitydefinitionReque
 [[Back to README]](../README.md)
 
 
-## PutQualitydefinitionUpdate
+## PutQualityDefinitionUpdate
 
-> PutQualitydefinitionUpdate(ctx).QualityDefinitionResource(qualityDefinitionResource).Execute()
+> PutQualityDefinitionUpdate(ctx).QualityDefinitionResource(qualityDefinitionResource).Execute()
 
 
 
@@ -161,9 +161,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityDefinitionApi.PutQualitydefinitionUpdate(context.Background()).QualityDefinitionResource(qualityDefinitionResource).Execute()
+    resp, r, err := apiClient.QualityDefinitionApi.PutQualityDefinitionUpdate(context.Background()).QualityDefinitionResource(qualityDefinitionResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.PutQualitydefinitionUpdate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.PutQualityDefinitionUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -175,7 +175,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutQualitydefinitionUpdateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutQualityDefinitionUpdateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -200,9 +200,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateQualitydefinition
+## UpdateQualityDefinition
 
-> QualityDefinitionResource UpdateQualitydefinition(ctx, id).QualityDefinitionResource(qualityDefinitionResource).Execute()
+> QualityDefinitionResource UpdateQualityDefinition(ctx, id).QualityDefinitionResource(qualityDefinitionResource).Execute()
 
 
 
@@ -224,13 +224,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QualityDefinitionApi.UpdateQualitydefinition(context.Background(), id).QualityDefinitionResource(qualityDefinitionResource).Execute()
+    resp, r, err := apiClient.QualityDefinitionApi.UpdateQualityDefinition(context.Background(), id).QualityDefinitionResource(qualityDefinitionResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.UpdateQualitydefinition``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionApi.UpdateQualityDefinition``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateQualitydefinition`: QualityDefinitionResource
-    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.UpdateQualitydefinition`: %v\n", resp)
+    // response from `UpdateQualityDefinition`: QualityDefinitionResource
+    fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionApi.UpdateQualityDefinition`: %v\n", resp)
 }
 ```
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateQualitydefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateQualityDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

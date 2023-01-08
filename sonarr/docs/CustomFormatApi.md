@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCustomformat**](CustomFormatApi.md#CreateCustomformat) | **Post** /api/v3/customformat | 
-[**DeleteCustomformat**](CustomFormatApi.md#DeleteCustomformat) | **Delete** /api/v3/customformat/{id} | 
-[**GetCustomformatById**](CustomFormatApi.md#GetCustomformatById) | **Get** /api/v3/customformat/{id} | 
-[**GetCustomformatSchema**](CustomFormatApi.md#GetCustomformatSchema) | **Get** /api/v3/customformat/schema | 
-[**ListCustomformat**](CustomFormatApi.md#ListCustomformat) | **Get** /api/v3/customformat | 
-[**UpdateCustomformat**](CustomFormatApi.md#UpdateCustomformat) | **Put** /api/v3/customformat/{id} | 
+[**CreateCustomFormat**](CustomFormatApi.md#CreateCustomFormat) | **Post** /api/v3/customformat | 
+[**DeleteCustomFormat**](CustomFormatApi.md#DeleteCustomFormat) | **Delete** /api/v3/customformat/{id} | 
+[**GetCustomFormatById**](CustomFormatApi.md#GetCustomFormatById) | **Get** /api/v3/customformat/{id} | 
+[**GetCustomFormatSchema**](CustomFormatApi.md#GetCustomFormatSchema) | **Get** /api/v3/customformat/schema | 
+[**ListCustomFormat**](CustomFormatApi.md#ListCustomFormat) | **Get** /api/v3/customformat | 
+[**UpdateCustomFormat**](CustomFormatApi.md#UpdateCustomFormat) | **Put** /api/v3/customformat/{id} | 
 
 
 
-## CreateCustomformat
+## CreateCustomFormat
 
-> CustomFormatResource CreateCustomformat(ctx).CustomFormatResource(customFormatResource).Execute()
+> CustomFormatResource CreateCustomFormat(ctx).CustomFormatResource(customFormatResource).Execute()
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFormatApi.CreateCustomformat(context.Background()).CustomFormatResource(customFormatResource).Execute()
+    resp, r, err := apiClient.CustomFormatApi.CreateCustomFormat(context.Background()).CustomFormatResource(customFormatResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.CreateCustomformat``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.CreateCustomFormat``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateCustomformat`: CustomFormatResource
-    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.CreateCustomformat`: %v\n", resp)
+    // response from `CreateCustomFormat`: CustomFormatResource
+    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.CreateCustomFormat`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateCustomformatRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCustomFormatRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteCustomformat
+## DeleteCustomFormat
 
-> DeleteCustomformat(ctx, id).Execute()
+> DeleteCustomFormat(ctx, id).Execute()
 
 
 
@@ -100,9 +100,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFormatApi.DeleteCustomformat(context.Background(), id).Execute()
+    resp, r, err := apiClient.CustomFormatApi.DeleteCustomFormat(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.DeleteCustomformat``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.DeleteCustomFormat``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteCustomformatRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomFormatRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -143,9 +143,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCustomformatById
+## GetCustomFormatById
 
-> CustomFormatResource GetCustomformatById(ctx, id).Execute()
+> CustomFormatResource GetCustomFormatById(ctx, id).Execute()
 
 
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFormatApi.GetCustomformatById(context.Background(), id).Execute()
+    resp, r, err := apiClient.CustomFormatApi.GetCustomFormatById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.GetCustomformatById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.GetCustomFormatById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetCustomformatById`: CustomFormatResource
-    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.GetCustomformatById`: %v\n", resp)
+    // response from `GetCustomFormatById`: CustomFormatResource
+    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.GetCustomFormatById`: %v\n", resp)
 }
 ```
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCustomformatByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomFormatByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -211,9 +211,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCustomformatSchema
+## GetCustomFormatSchema
 
-> GetCustomformatSchema(ctx).Execute()
+> GetCustomFormatSchema(ctx).Execute()
 
 
 
@@ -233,9 +233,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFormatApi.GetCustomformatSchema(context.Background()).Execute()
+    resp, r, err := apiClient.CustomFormatApi.GetCustomFormatSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.GetCustomformatSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.GetCustomFormatSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -247,7 +247,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCustomformatSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomFormatSchemaRequest struct via the builder pattern
 
 
 ### Return type
@@ -268,9 +268,9 @@ Other parameters are passed through a pointer to a apiGetCustomformatSchemaReque
 [[Back to README]](../README.md)
 
 
-## ListCustomformat
+## ListCustomFormat
 
-> []CustomFormatResource ListCustomformat(ctx).Execute()
+> []CustomFormatResource ListCustomFormat(ctx).Execute()
 
 
 
@@ -290,13 +290,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFormatApi.ListCustomformat(context.Background()).Execute()
+    resp, r, err := apiClient.CustomFormatApi.ListCustomFormat(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.ListCustomformat``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.ListCustomFormat``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListCustomformat`: []CustomFormatResource
-    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.ListCustomformat`: %v\n", resp)
+    // response from `ListCustomFormat`: []CustomFormatResource
+    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.ListCustomFormat`: %v\n", resp)
 }
 ```
 
@@ -306,7 +306,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListCustomformatRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListCustomFormatRequest struct via the builder pattern
 
 
 ### Return type
@@ -327,9 +327,9 @@ Other parameters are passed through a pointer to a apiListCustomformatRequest st
 [[Back to README]](../README.md)
 
 
-## UpdateCustomformat
+## UpdateCustomFormat
 
-> CustomFormatResource UpdateCustomformat(ctx, id).CustomFormatResource(customFormatResource).Execute()
+> CustomFormatResource UpdateCustomFormat(ctx, id).CustomFormatResource(customFormatResource).Execute()
 
 
 
@@ -351,13 +351,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFormatApi.UpdateCustomformat(context.Background(), id).CustomFormatResource(customFormatResource).Execute()
+    resp, r, err := apiClient.CustomFormatApi.UpdateCustomFormat(context.Background(), id).CustomFormatResource(customFormatResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.UpdateCustomformat``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.UpdateCustomFormat``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateCustomformat`: CustomFormatResource
-    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.UpdateCustomformat`: %v\n", resp)
+    // response from `UpdateCustomFormat`: CustomFormatResource
+    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.UpdateCustomFormat`: %v\n", resp)
 }
 ```
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateCustomformatRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCustomFormatRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

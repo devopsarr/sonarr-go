@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateLanguageprofile**](LanguageProfileApi.md#CreateLanguageprofile) | **Post** /api/v3/languageprofile | 
-[**DeleteLanguageprofile**](LanguageProfileApi.md#DeleteLanguageprofile) | **Delete** /api/v3/languageprofile/{id} | 
-[**GetLanguageprofileById**](LanguageProfileApi.md#GetLanguageprofileById) | **Get** /api/v3/languageprofile/{id} | 
-[**ListLanguageprofile**](LanguageProfileApi.md#ListLanguageprofile) | **Get** /api/v3/languageprofile | 
-[**UpdateLanguageprofile**](LanguageProfileApi.md#UpdateLanguageprofile) | **Put** /api/v3/languageprofile/{id} | 
+[**CreateLanguageProfile**](LanguageProfileApi.md#CreateLanguageProfile) | **Post** /api/v3/languageprofile | 
+[**DeleteLanguageProfile**](LanguageProfileApi.md#DeleteLanguageProfile) | **Delete** /api/v3/languageprofile/{id} | 
+[**GetLanguageProfileById**](LanguageProfileApi.md#GetLanguageProfileById) | **Get** /api/v3/languageprofile/{id} | 
+[**ListLanguageProfile**](LanguageProfileApi.md#ListLanguageProfile) | **Get** /api/v3/languageprofile | 
+[**UpdateLanguageProfile**](LanguageProfileApi.md#UpdateLanguageProfile) | **Put** /api/v3/languageprofile/{id} | 
 
 
 
-## CreateLanguageprofile
+## CreateLanguageProfile
 
-> LanguageProfileResource CreateLanguageprofile(ctx).LanguageProfileResource(languageProfileResource).Execute()
+> LanguageProfileResource CreateLanguageProfile(ctx).LanguageProfileResource(languageProfileResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LanguageProfileApi.CreateLanguageprofile(context.Background()).LanguageProfileResource(languageProfileResource).Execute()
+    resp, r, err := apiClient.LanguageProfileApi.CreateLanguageProfile(context.Background()).LanguageProfileResource(languageProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.CreateLanguageprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.CreateLanguageProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateLanguageprofile`: LanguageProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `LanguageProfileApi.CreateLanguageprofile`: %v\n", resp)
+    // response from `CreateLanguageProfile`: LanguageProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `LanguageProfileApi.CreateLanguageProfile`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateLanguageprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateLanguageProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteLanguageprofile
+## DeleteLanguageProfile
 
-> DeleteLanguageprofile(ctx, id).Execute()
+> DeleteLanguageProfile(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LanguageProfileApi.DeleteLanguageprofile(context.Background(), id).Execute()
+    resp, r, err := apiClient.LanguageProfileApi.DeleteLanguageProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.DeleteLanguageprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.DeleteLanguageProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteLanguageprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteLanguageProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetLanguageprofileById
+## GetLanguageProfileById
 
-> LanguageProfileResource GetLanguageprofileById(ctx, id).Execute()
+> LanguageProfileResource GetLanguageProfileById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LanguageProfileApi.GetLanguageprofileById(context.Background(), id).Execute()
+    resp, r, err := apiClient.LanguageProfileApi.GetLanguageProfileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.GetLanguageprofileById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.GetLanguageProfileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetLanguageprofileById`: LanguageProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `LanguageProfileApi.GetLanguageprofileById`: %v\n", resp)
+    // response from `GetLanguageProfileById`: LanguageProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `LanguageProfileApi.GetLanguageProfileById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetLanguageprofileByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLanguageProfileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListLanguageprofile
+## ListLanguageProfile
 
-> []LanguageProfileResource ListLanguageprofile(ctx).Execute()
+> []LanguageProfileResource ListLanguageProfile(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LanguageProfileApi.ListLanguageprofile(context.Background()).Execute()
+    resp, r, err := apiClient.LanguageProfileApi.ListLanguageProfile(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.ListLanguageprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.ListLanguageProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListLanguageprofile`: []LanguageProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `LanguageProfileApi.ListLanguageprofile`: %v\n", resp)
+    // response from `ListLanguageProfile`: []LanguageProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `LanguageProfileApi.ListLanguageProfile`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListLanguageprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListLanguageProfileRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ Other parameters are passed through a pointer to a apiListLanguageprofileRequest
 [[Back to README]](../README.md)
 
 
-## UpdateLanguageprofile
+## UpdateLanguageProfile
 
-> LanguageProfileResource UpdateLanguageprofile(ctx, id).LanguageProfileResource(languageProfileResource).Execute()
+> LanguageProfileResource UpdateLanguageProfile(ctx, id).LanguageProfileResource(languageProfileResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LanguageProfileApi.UpdateLanguageprofile(context.Background(), id).LanguageProfileResource(languageProfileResource).Execute()
+    resp, r, err := apiClient.LanguageProfileApi.UpdateLanguageProfile(context.Background(), id).LanguageProfileResource(languageProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.UpdateLanguageprofile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `LanguageProfileApi.UpdateLanguageProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateLanguageprofile`: LanguageProfileResource
-    fmt.Fprintf(os.Stdout, "Response from `LanguageProfileApi.UpdateLanguageprofile`: %v\n", resp)
+    // response from `UpdateLanguageProfile`: LanguageProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `LanguageProfileApi.UpdateLanguageProfile`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateLanguageprofileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateLanguageProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

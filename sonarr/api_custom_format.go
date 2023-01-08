@@ -22,29 +22,29 @@ import (
 
 // CustomFormatApiService CustomFormatApi service
 type CustomFormatApiService service
-type ApiCreateCustomformatRequest struct {
+type ApiCreateCustomFormatRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatApiService
 	customFormatResource *CustomFormatResource
 }
 
-func (r ApiCreateCustomformatRequest) CustomFormatResource(customFormatResource CustomFormatResource) ApiCreateCustomformatRequest {
+func (r ApiCreateCustomFormatRequest) CustomFormatResource(customFormatResource CustomFormatResource) ApiCreateCustomFormatRequest {
 	r.customFormatResource = &customFormatResource
 	return r
 }
 
-func (r ApiCreateCustomformatRequest) Execute() (*CustomFormatResource, *http.Response, error) {
-	return r.ApiService.CreateCustomformatExecute(r)
+func (r ApiCreateCustomFormatRequest) Execute() (*CustomFormatResource, *http.Response, error) {
+	return r.ApiService.CreateCustomFormatExecute(r)
 }
 
 /*
-CreateCustomformat Method for CreateCustomformat
+CreateCustomFormat Method for CreateCustomFormat
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateCustomformatRequest
+ @return ApiCreateCustomFormatRequest
 */
-func (a *CustomFormatApiService) CreateCustomformat(ctx context.Context) ApiCreateCustomformatRequest {
-	return ApiCreateCustomformatRequest{
+func (a *CustomFormatApiService) CreateCustomFormat(ctx context.Context) ApiCreateCustomFormatRequest {
+	return ApiCreateCustomFormatRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *CustomFormatApiService) CreateCustomformat(ctx context.Context) ApiCrea
 
 // Execute executes the request
 //  @return CustomFormatResource
-func (a *CustomFormatApiService) CreateCustomformatExecute(r ApiCreateCustomformatRequest) (*CustomFormatResource, *http.Response, error) {
+func (a *CustomFormatApiService) CreateCustomFormatExecute(r ApiCreateCustomFormatRequest) (*CustomFormatResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *CustomFormatApiService) CreateCustomformatExecute(r ApiCreateCustomform
 		localVarReturnValue  *CustomFormatResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.CreateCustomformat")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.CreateCustomFormat")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,25 +154,25 @@ func (a *CustomFormatApiService) CreateCustomformatExecute(r ApiCreateCustomform
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteCustomformatRequest struct {
+type ApiDeleteCustomFormatRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatApiService
 	id int32
 }
 
-func (r ApiDeleteCustomformatRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteCustomformatExecute(r)
+func (r ApiDeleteCustomFormatRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCustomFormatExecute(r)
 }
 
 /*
-DeleteCustomformat Method for DeleteCustomformat
+DeleteCustomFormat Method for DeleteCustomFormat
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteCustomformatRequest
+ @return ApiDeleteCustomFormatRequest
 */
-func (a *CustomFormatApiService) DeleteCustomformat(ctx context.Context, id int32) ApiDeleteCustomformatRequest {
-	return ApiDeleteCustomformatRequest{
+func (a *CustomFormatApiService) DeleteCustomFormat(ctx context.Context, id int32) ApiDeleteCustomFormatRequest {
+	return ApiDeleteCustomFormatRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -180,14 +180,14 @@ func (a *CustomFormatApiService) DeleteCustomformat(ctx context.Context, id int3
 }
 
 // Execute executes the request
-func (a *CustomFormatApiService) DeleteCustomformatExecute(r ApiDeleteCustomformatRequest) (*http.Response, error) {
+func (a *CustomFormatApiService) DeleteCustomFormatExecute(r ApiDeleteCustomFormatRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.DeleteCustomformat")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.DeleteCustomFormat")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -271,25 +271,25 @@ func (a *CustomFormatApiService) DeleteCustomformatExecute(r ApiDeleteCustomform
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetCustomformatByIdRequest struct {
+type ApiGetCustomFormatByIdRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatApiService
 	id int32
 }
 
-func (r ApiGetCustomformatByIdRequest) Execute() (*CustomFormatResource, *http.Response, error) {
-	return r.ApiService.GetCustomformatByIdExecute(r)
+func (r ApiGetCustomFormatByIdRequest) Execute() (*CustomFormatResource, *http.Response, error) {
+	return r.ApiService.GetCustomFormatByIdExecute(r)
 }
 
 /*
-GetCustomformatById Method for GetCustomformatById
+GetCustomFormatById Method for GetCustomFormatById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetCustomformatByIdRequest
+ @return ApiGetCustomFormatByIdRequest
 */
-func (a *CustomFormatApiService) GetCustomformatById(ctx context.Context, id int32) ApiGetCustomformatByIdRequest {
-	return ApiGetCustomformatByIdRequest{
+func (a *CustomFormatApiService) GetCustomFormatById(ctx context.Context, id int32) ApiGetCustomFormatByIdRequest {
+	return ApiGetCustomFormatByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -298,7 +298,7 @@ func (a *CustomFormatApiService) GetCustomformatById(ctx context.Context, id int
 
 // Execute executes the request
 //  @return CustomFormatResource
-func (a *CustomFormatApiService) GetCustomformatByIdExecute(r ApiGetCustomformatByIdRequest) (*CustomFormatResource, *http.Response, error) {
+func (a *CustomFormatApiService) GetCustomFormatByIdExecute(r ApiGetCustomFormatByIdRequest) (*CustomFormatResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *CustomFormatApiService) GetCustomformatByIdExecute(r ApiGetCustomformat
 		localVarReturnValue  *CustomFormatResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.GetCustomformatById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.GetCustomFormatById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -399,37 +399,37 @@ func (a *CustomFormatApiService) GetCustomformatByIdExecute(r ApiGetCustomformat
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetCustomformatSchemaRequest struct {
+type ApiGetCustomFormatSchemaRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatApiService
 }
 
-func (r ApiGetCustomformatSchemaRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetCustomformatSchemaExecute(r)
+func (r ApiGetCustomFormatSchemaRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetCustomFormatSchemaExecute(r)
 }
 
 /*
-GetCustomformatSchema Method for GetCustomformatSchema
+GetCustomFormatSchema Method for GetCustomFormatSchema
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCustomformatSchemaRequest
+ @return ApiGetCustomFormatSchemaRequest
 */
-func (a *CustomFormatApiService) GetCustomformatSchema(ctx context.Context) ApiGetCustomformatSchemaRequest {
-	return ApiGetCustomformatSchemaRequest{
+func (a *CustomFormatApiService) GetCustomFormatSchema(ctx context.Context) ApiGetCustomFormatSchemaRequest {
+	return ApiGetCustomFormatSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomFormatApiService) GetCustomformatSchemaExecute(r ApiGetCustomformatSchemaRequest) (*http.Response, error) {
+func (a *CustomFormatApiService) GetCustomFormatSchemaExecute(r ApiGetCustomFormatSchemaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.GetCustomformatSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.GetCustomFormatSchema")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -512,23 +512,23 @@ func (a *CustomFormatApiService) GetCustomformatSchemaExecute(r ApiGetCustomform
 
 	return localVarHTTPResponse, nil
 }
-type ApiListCustomformatRequest struct {
+type ApiListCustomFormatRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatApiService
 }
 
-func (r ApiListCustomformatRequest) Execute() ([]*CustomFormatResource, *http.Response, error) {
-	return r.ApiService.ListCustomformatExecute(r)
+func (r ApiListCustomFormatRequest) Execute() ([]*CustomFormatResource, *http.Response, error) {
+	return r.ApiService.ListCustomFormatExecute(r)
 }
 
 /*
-ListCustomformat Method for ListCustomformat
+ListCustomFormat Method for ListCustomFormat
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCustomformatRequest
+ @return ApiListCustomFormatRequest
 */
-func (a *CustomFormatApiService) ListCustomformat(ctx context.Context) ApiListCustomformatRequest {
-	return ApiListCustomformatRequest{
+func (a *CustomFormatApiService) ListCustomFormat(ctx context.Context) ApiListCustomFormatRequest {
+	return ApiListCustomFormatRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -536,7 +536,7 @@ func (a *CustomFormatApiService) ListCustomformat(ctx context.Context) ApiListCu
 
 // Execute executes the request
 //  @return []CustomFormatResource
-func (a *CustomFormatApiService) ListCustomformatExecute(r ApiListCustomformatRequest) ([]*CustomFormatResource, *http.Response, error) {
+func (a *CustomFormatApiService) ListCustomFormatExecute(r ApiListCustomFormatRequest) ([]*CustomFormatResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -544,7 +544,7 @@ func (a *CustomFormatApiService) ListCustomformatExecute(r ApiListCustomformatRe
 		localVarReturnValue  []*CustomFormatResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.ListCustomformat")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.ListCustomFormat")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -636,31 +636,31 @@ func (a *CustomFormatApiService) ListCustomformatExecute(r ApiListCustomformatRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateCustomformatRequest struct {
+type ApiUpdateCustomFormatRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatApiService
 	id string
 	customFormatResource *CustomFormatResource
 }
 
-func (r ApiUpdateCustomformatRequest) CustomFormatResource(customFormatResource CustomFormatResource) ApiUpdateCustomformatRequest {
+func (r ApiUpdateCustomFormatRequest) CustomFormatResource(customFormatResource CustomFormatResource) ApiUpdateCustomFormatRequest {
 	r.customFormatResource = &customFormatResource
 	return r
 }
 
-func (r ApiUpdateCustomformatRequest) Execute() (*CustomFormatResource, *http.Response, error) {
-	return r.ApiService.UpdateCustomformatExecute(r)
+func (r ApiUpdateCustomFormatRequest) Execute() (*CustomFormatResource, *http.Response, error) {
+	return r.ApiService.UpdateCustomFormatExecute(r)
 }
 
 /*
-UpdateCustomformat Method for UpdateCustomformat
+UpdateCustomFormat Method for UpdateCustomFormat
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateCustomformatRequest
+ @return ApiUpdateCustomFormatRequest
 */
-func (a *CustomFormatApiService) UpdateCustomformat(ctx context.Context, id string) ApiUpdateCustomformatRequest {
-	return ApiUpdateCustomformatRequest{
+func (a *CustomFormatApiService) UpdateCustomFormat(ctx context.Context, id string) ApiUpdateCustomFormatRequest {
+	return ApiUpdateCustomFormatRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -669,7 +669,7 @@ func (a *CustomFormatApiService) UpdateCustomformat(ctx context.Context, id stri
 
 // Execute executes the request
 //  @return CustomFormatResource
-func (a *CustomFormatApiService) UpdateCustomformatExecute(r ApiUpdateCustomformatRequest) (*CustomFormatResource, *http.Response, error) {
+func (a *CustomFormatApiService) UpdateCustomFormatExecute(r ApiUpdateCustomFormatRequest) (*CustomFormatResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -677,7 +677,7 @@ func (a *CustomFormatApiService) UpdateCustomformatExecute(r ApiUpdateCustomform
 		localVarReturnValue  *CustomFormatResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.UpdateCustomformat")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatApiService.UpdateCustomFormat")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConfigHost**](HostConfigApi.md#GetConfigHost) | **Get** /api/v3/config/host | 
-[**GetConfigHostById**](HostConfigApi.md#GetConfigHostById) | **Get** /api/v3/config/host/{id} | 
-[**UpdateConfigHost**](HostConfigApi.md#UpdateConfigHost) | **Put** /api/v3/config/host/{id} | 
+[**GetHostConfig**](HostConfigApi.md#GetHostConfig) | **Get** /api/v3/config/host | 
+[**GetHostConfigById**](HostConfigApi.md#GetHostConfigById) | **Get** /api/v3/config/host/{id} | 
+[**UpdateHostConfig**](HostConfigApi.md#UpdateHostConfig) | **Put** /api/v3/config/host/{id} | 
 
 
 
-## GetConfigHost
+## GetHostConfig
 
-> HostConfigResource GetConfigHost(ctx).Execute()
+> HostConfigResource GetHostConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HostConfigApi.GetConfigHost(context.Background()).Execute()
+    resp, r, err := apiClient.HostConfigApi.GetHostConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.GetConfigHost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.GetHostConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigHost`: HostConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.GetConfigHost`: %v\n", resp)
+    // response from `GetHostConfig`: HostConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.GetHostConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigHostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHostConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetConfigHostRequest struc
 [[Back to README]](../README.md)
 
 
-## GetConfigHostById
+## GetHostConfigById
 
-> HostConfigResource GetConfigHostById(ctx, id).Execute()
+> HostConfigResource GetHostConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HostConfigApi.GetConfigHostById(context.Background(), id).Execute()
+    resp, r, err := apiClient.HostConfigApi.GetHostConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.GetConfigHostById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.GetHostConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigHostById`: HostConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.GetConfigHostById`: %v\n", resp)
+    // response from `GetHostConfigById`: HostConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.GetHostConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigHostByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHostConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateConfigHost
+## UpdateHostConfig
 
-> HostConfigResource UpdateConfigHost(ctx, id).HostConfigResource(hostConfigResource).Execute()
+> HostConfigResource UpdateHostConfig(ctx, id).HostConfigResource(hostConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HostConfigApi.UpdateConfigHost(context.Background(), id).HostConfigResource(hostConfigResource).Execute()
+    resp, r, err := apiClient.HostConfigApi.UpdateHostConfig(context.Background(), id).HostConfigResource(hostConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.UpdateConfigHost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HostConfigApi.UpdateHostConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateConfigHost`: HostConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.UpdateConfigHost`: %v\n", resp)
+    // response from `UpdateHostConfig`: HostConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `HostConfigApi.UpdateHostConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateConfigHostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateHostConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

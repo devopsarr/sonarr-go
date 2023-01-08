@@ -4,21 +4,21 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDownloadclient**](DownloadClientApi.md#CreateDownloadclient) | **Post** /api/v3/downloadclient | 
-[**CreateDownloadclientActionByName**](DownloadClientApi.md#CreateDownloadclientActionByName) | **Post** /api/v3/downloadclient/action/{name} | 
-[**DeleteDownloadclient**](DownloadClientApi.md#DeleteDownloadclient) | **Delete** /api/v3/downloadclient/{id} | 
-[**GetDownloadclientById**](DownloadClientApi.md#GetDownloadclientById) | **Get** /api/v3/downloadclient/{id} | 
-[**ListDownloadclient**](DownloadClientApi.md#ListDownloadclient) | **Get** /api/v3/downloadclient | 
-[**ListDownloadclientSchema**](DownloadClientApi.md#ListDownloadclientSchema) | **Get** /api/v3/downloadclient/schema | 
-[**TestDownloadclient**](DownloadClientApi.md#TestDownloadclient) | **Post** /api/v3/downloadclient/test | 
-[**TestallDownloadclient**](DownloadClientApi.md#TestallDownloadclient) | **Post** /api/v3/downloadclient/testall | 
-[**UpdateDownloadclient**](DownloadClientApi.md#UpdateDownloadclient) | **Put** /api/v3/downloadclient/{id} | 
+[**CreateDownloadClient**](DownloadClientApi.md#CreateDownloadClient) | **Post** /api/v3/downloadclient | 
+[**CreateDownloadClientActionByName**](DownloadClientApi.md#CreateDownloadClientActionByName) | **Post** /api/v3/downloadclient/action/{name} | 
+[**DeleteDownloadClient**](DownloadClientApi.md#DeleteDownloadClient) | **Delete** /api/v3/downloadclient/{id} | 
+[**GetDownloadClientById**](DownloadClientApi.md#GetDownloadClientById) | **Get** /api/v3/downloadclient/{id} | 
+[**ListDownloadClient**](DownloadClientApi.md#ListDownloadClient) | **Get** /api/v3/downloadclient | 
+[**ListDownloadClientSchema**](DownloadClientApi.md#ListDownloadClientSchema) | **Get** /api/v3/downloadclient/schema | 
+[**TestDownloadClient**](DownloadClientApi.md#TestDownloadClient) | **Post** /api/v3/downloadclient/test | 
+[**TestallDownloadClient**](DownloadClientApi.md#TestallDownloadClient) | **Post** /api/v3/downloadclient/testall | 
+[**UpdateDownloadClient**](DownloadClientApi.md#UpdateDownloadClient) | **Put** /api/v3/downloadclient/{id} | 
 
 
 
-## CreateDownloadclient
+## CreateDownloadClient
 
-> DownloadClientResource CreateDownloadclient(ctx).DownloadClientResource(downloadClientResource).Execute()
+> DownloadClientResource CreateDownloadClient(ctx).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -39,13 +39,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.CreateDownloadclient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.CreateDownloadClient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateDownloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateDownloadclient`: DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.CreateDownloadclient`: %v\n", resp)
+    // response from `CreateDownloadClient`: DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.CreateDownloadClient`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateDownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDownloadClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateDownloadclientActionByName
+## CreateDownloadClientActionByName
 
-> CreateDownloadclientActionByName(ctx, name).DownloadClientResource(downloadClientResource).Execute()
+> CreateDownloadClientActionByName(ctx, name).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -104,9 +104,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.CreateDownloadclientActionByName(context.Background(), name).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.CreateDownloadClientActionByName(context.Background(), name).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateDownloadclientActionByName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateDownloadClientActionByName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateDownloadclientActionByNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDownloadClientActionByNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteDownloadclient
+## DeleteDownloadClient
 
-> DeleteDownloadclient(ctx, id).Execute()
+> DeleteDownloadClient(ctx, id).Execute()
 
 
 
@@ -171,9 +171,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.DeleteDownloadclient(context.Background(), id).Execute()
+    resp, r, err := apiClient.DownloadClientApi.DeleteDownloadClient(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.DeleteDownloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.DeleteDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteDownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteDownloadClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -214,9 +214,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDownloadclientById
+## GetDownloadClientById
 
-> DownloadClientResource GetDownloadclientById(ctx, id).Execute()
+> DownloadClientResource GetDownloadClientById(ctx, id).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.GetDownloadclientById(context.Background(), id).Execute()
+    resp, r, err := apiClient.DownloadClientApi.GetDownloadClientById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.GetDownloadclientById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.GetDownloadClientById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetDownloadclientById`: DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.GetDownloadclientById`: %v\n", resp)
+    // response from `GetDownloadClientById`: DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.GetDownloadClientById`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDownloadclientByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDownloadClientByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListDownloadclient
+## ListDownloadClient
 
-> []DownloadClientResource ListDownloadclient(ctx).Execute()
+> []DownloadClientResource ListDownloadClient(ctx).Execute()
 
 
 
@@ -304,13 +304,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.ListDownloadclient(context.Background()).Execute()
+    resp, r, err := apiClient.DownloadClientApi.ListDownloadClient(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.ListDownloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.ListDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListDownloadclient`: []DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.ListDownloadclient`: %v\n", resp)
+    // response from `ListDownloadClient`: []DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.ListDownloadClient`: %v\n", resp)
 }
 ```
 
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListDownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListDownloadClientRequest struct via the builder pattern
 
 
 ### Return type
@@ -341,9 +341,9 @@ Other parameters are passed through a pointer to a apiListDownloadclientRequest 
 [[Back to README]](../README.md)
 
 
-## ListDownloadclientSchema
+## ListDownloadClientSchema
 
-> []DownloadClientResource ListDownloadclientSchema(ctx).Execute()
+> []DownloadClientResource ListDownloadClientSchema(ctx).Execute()
 
 
 
@@ -363,13 +363,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.ListDownloadclientSchema(context.Background()).Execute()
+    resp, r, err := apiClient.DownloadClientApi.ListDownloadClientSchema(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.ListDownloadclientSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.ListDownloadClientSchema``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListDownloadclientSchema`: []DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.ListDownloadclientSchema`: %v\n", resp)
+    // response from `ListDownloadClientSchema`: []DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.ListDownloadClientSchema`: %v\n", resp)
 }
 ```
 
@@ -379,7 +379,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListDownloadclientSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListDownloadClientSchemaRequest struct via the builder pattern
 
 
 ### Return type
@@ -400,9 +400,9 @@ Other parameters are passed through a pointer to a apiListDownloadclientSchemaRe
 [[Back to README]](../README.md)
 
 
-## TestDownloadclient
+## TestDownloadClient
 
-> TestDownloadclient(ctx).DownloadClientResource(downloadClientResource).Execute()
+> TestDownloadClient(ctx).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -423,9 +423,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.TestDownloadclient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.TestDownloadClient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.TestDownloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.TestDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -437,7 +437,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestDownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestDownloadClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -462,9 +462,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TestallDownloadclient
+## TestallDownloadClient
 
-> TestallDownloadclient(ctx).Execute()
+> TestallDownloadClient(ctx).Execute()
 
 
 
@@ -484,9 +484,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.TestallDownloadclient(context.Background()).Execute()
+    resp, r, err := apiClient.DownloadClientApi.TestallDownloadClient(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.TestallDownloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.TestallDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -498,7 +498,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestallDownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTestallDownloadClientRequest struct via the builder pattern
 
 
 ### Return type
@@ -519,9 +519,9 @@ Other parameters are passed through a pointer to a apiTestallDownloadclientReque
 [[Back to README]](../README.md)
 
 
-## UpdateDownloadclient
+## UpdateDownloadClient
 
-> DownloadClientResource UpdateDownloadclient(ctx, id).DownloadClientResource(downloadClientResource).Execute()
+> DownloadClientResource UpdateDownloadClient(ctx, id).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -543,13 +543,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.UpdateDownloadclient(context.Background(), id).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.UpdateDownloadClient(context.Background(), id).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.UpdateDownloadclient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.UpdateDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateDownloadclient`: DownloadClientResource
-    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.UpdateDownloadclient`: %v\n", resp)
+    // response from `UpdateDownloadClient`: DownloadClientResource
+    fmt.Fprintf(os.Stdout, "Response from `DownloadClientApi.UpdateDownloadClient`: %v\n", resp)
 }
 ```
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateDownloadclientRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateDownloadClientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

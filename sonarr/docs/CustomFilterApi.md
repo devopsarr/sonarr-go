@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCustomfilter**](CustomFilterApi.md#CreateCustomfilter) | **Post** /api/v3/customfilter | 
-[**DeleteCustomfilter**](CustomFilterApi.md#DeleteCustomfilter) | **Delete** /api/v3/customfilter/{id} | 
-[**GetCustomfilterById**](CustomFilterApi.md#GetCustomfilterById) | **Get** /api/v3/customfilter/{id} | 
-[**ListCustomfilter**](CustomFilterApi.md#ListCustomfilter) | **Get** /api/v3/customfilter | 
-[**UpdateCustomfilter**](CustomFilterApi.md#UpdateCustomfilter) | **Put** /api/v3/customfilter/{id} | 
+[**CreateCustomFilter**](CustomFilterApi.md#CreateCustomFilter) | **Post** /api/v3/customfilter | 
+[**DeleteCustomFilter**](CustomFilterApi.md#DeleteCustomFilter) | **Delete** /api/v3/customfilter/{id} | 
+[**GetCustomFilterById**](CustomFilterApi.md#GetCustomFilterById) | **Get** /api/v3/customfilter/{id} | 
+[**ListCustomFilter**](CustomFilterApi.md#ListCustomFilter) | **Get** /api/v3/customfilter | 
+[**UpdateCustomFilter**](CustomFilterApi.md#UpdateCustomFilter) | **Put** /api/v3/customfilter/{id} | 
 
 
 
-## CreateCustomfilter
+## CreateCustomFilter
 
-> CustomFilterResource CreateCustomfilter(ctx).CustomFilterResource(customFilterResource).Execute()
+> CustomFilterResource CreateCustomFilter(ctx).CustomFilterResource(customFilterResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFilterApi.CreateCustomfilter(context.Background()).CustomFilterResource(customFilterResource).Execute()
+    resp, r, err := apiClient.CustomFilterApi.CreateCustomFilter(context.Background()).CustomFilterResource(customFilterResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.CreateCustomfilter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.CreateCustomFilter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateCustomfilter`: CustomFilterResource
-    fmt.Fprintf(os.Stdout, "Response from `CustomFilterApi.CreateCustomfilter`: %v\n", resp)
+    // response from `CreateCustomFilter`: CustomFilterResource
+    fmt.Fprintf(os.Stdout, "Response from `CustomFilterApi.CreateCustomFilter`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateCustomfilterRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCustomFilterRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteCustomfilter
+## DeleteCustomFilter
 
-> DeleteCustomfilter(ctx, id).Execute()
+> DeleteCustomFilter(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFilterApi.DeleteCustomfilter(context.Background(), id).Execute()
+    resp, r, err := apiClient.CustomFilterApi.DeleteCustomFilter(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.DeleteCustomfilter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.DeleteCustomFilter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteCustomfilterRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomFilterRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCustomfilterById
+## GetCustomFilterById
 
-> CustomFilterResource GetCustomfilterById(ctx, id).Execute()
+> CustomFilterResource GetCustomFilterById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFilterApi.GetCustomfilterById(context.Background(), id).Execute()
+    resp, r, err := apiClient.CustomFilterApi.GetCustomFilterById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.GetCustomfilterById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.GetCustomFilterById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetCustomfilterById`: CustomFilterResource
-    fmt.Fprintf(os.Stdout, "Response from `CustomFilterApi.GetCustomfilterById`: %v\n", resp)
+    // response from `GetCustomFilterById`: CustomFilterResource
+    fmt.Fprintf(os.Stdout, "Response from `CustomFilterApi.GetCustomFilterById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCustomfilterByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomFilterByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListCustomfilter
+## ListCustomFilter
 
-> []CustomFilterResource ListCustomfilter(ctx).Execute()
+> []CustomFilterResource ListCustomFilter(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFilterApi.ListCustomfilter(context.Background()).Execute()
+    resp, r, err := apiClient.CustomFilterApi.ListCustomFilter(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.ListCustomfilter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.ListCustomFilter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListCustomfilter`: []CustomFilterResource
-    fmt.Fprintf(os.Stdout, "Response from `CustomFilterApi.ListCustomfilter`: %v\n", resp)
+    // response from `ListCustomFilter`: []CustomFilterResource
+    fmt.Fprintf(os.Stdout, "Response from `CustomFilterApi.ListCustomFilter`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListCustomfilterRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListCustomFilterRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ Other parameters are passed through a pointer to a apiListCustomfilterRequest st
 [[Back to README]](../README.md)
 
 
-## UpdateCustomfilter
+## UpdateCustomFilter
 
-> CustomFilterResource UpdateCustomfilter(ctx, id).CustomFilterResource(customFilterResource).Execute()
+> CustomFilterResource UpdateCustomFilter(ctx, id).CustomFilterResource(customFilterResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFilterApi.UpdateCustomfilter(context.Background(), id).CustomFilterResource(customFilterResource).Execute()
+    resp, r, err := apiClient.CustomFilterApi.UpdateCustomFilter(context.Background(), id).CustomFilterResource(customFilterResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.UpdateCustomfilter``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFilterApi.UpdateCustomFilter``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateCustomfilter`: CustomFilterResource
-    fmt.Fprintf(os.Stdout, "Response from `CustomFilterApi.UpdateCustomfilter`: %v\n", resp)
+    // response from `UpdateCustomFilter`: CustomFilterResource
+    fmt.Fprintf(os.Stdout, "Response from `CustomFilterApi.UpdateCustomFilter`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateCustomfilterRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCustomFilterRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

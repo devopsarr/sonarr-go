@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateImportlistexclusion**](ImportListExclusionApi.md#CreateImportlistexclusion) | **Post** /api/v3/importlistexclusion | 
-[**DeleteImportlistexclusion**](ImportListExclusionApi.md#DeleteImportlistexclusion) | **Delete** /api/v3/importlistexclusion/{id} | 
-[**GetImportlistexclusionById**](ImportListExclusionApi.md#GetImportlistexclusionById) | **Get** /api/v3/importlistexclusion/{id} | 
-[**ListImportlistexclusion**](ImportListExclusionApi.md#ListImportlistexclusion) | **Get** /api/v3/importlistexclusion | 
-[**UpdateImportlistexclusion**](ImportListExclusionApi.md#UpdateImportlistexclusion) | **Put** /api/v3/importlistexclusion/{id} | 
+[**CreateImportListExclusion**](ImportListExclusionApi.md#CreateImportListExclusion) | **Post** /api/v3/importlistexclusion | 
+[**DeleteImportListExclusion**](ImportListExclusionApi.md#DeleteImportListExclusion) | **Delete** /api/v3/importlistexclusion/{id} | 
+[**GetImportListExclusionById**](ImportListExclusionApi.md#GetImportListExclusionById) | **Get** /api/v3/importlistexclusion/{id} | 
+[**ListImportListExclusion**](ImportListExclusionApi.md#ListImportListExclusion) | **Get** /api/v3/importlistexclusion | 
+[**UpdateImportListExclusion**](ImportListExclusionApi.md#UpdateImportListExclusion) | **Put** /api/v3/importlistexclusion/{id} | 
 
 
 
-## CreateImportlistexclusion
+## CreateImportListExclusion
 
-> ImportListExclusionResource CreateImportlistexclusion(ctx).ImportListExclusionResource(importListExclusionResource).Execute()
+> ImportListExclusionResource CreateImportListExclusion(ctx).ImportListExclusionResource(importListExclusionResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListExclusionApi.CreateImportlistexclusion(context.Background()).ImportListExclusionResource(importListExclusionResource).Execute()
+    resp, r, err := apiClient.ImportListExclusionApi.CreateImportListExclusion(context.Background()).ImportListExclusionResource(importListExclusionResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.CreateImportlistexclusion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.CreateImportListExclusion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateImportlistexclusion`: ImportListExclusionResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionApi.CreateImportlistexclusion`: %v\n", resp)
+    // response from `CreateImportListExclusion`: ImportListExclusionResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionApi.CreateImportListExclusion`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateImportlistexclusionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateImportListExclusionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteImportlistexclusion
+## DeleteImportListExclusion
 
-> DeleteImportlistexclusion(ctx, id).Execute()
+> DeleteImportListExclusion(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListExclusionApi.DeleteImportlistexclusion(context.Background(), id).Execute()
+    resp, r, err := apiClient.ImportListExclusionApi.DeleteImportListExclusion(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.DeleteImportlistexclusion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.DeleteImportListExclusion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteImportlistexclusionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteImportListExclusionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetImportlistexclusionById
+## GetImportListExclusionById
 
-> ImportListExclusionResource GetImportlistexclusionById(ctx, id).Execute()
+> ImportListExclusionResource GetImportListExclusionById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListExclusionApi.GetImportlistexclusionById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ImportListExclusionApi.GetImportListExclusionById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.GetImportlistexclusionById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.GetImportListExclusionById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetImportlistexclusionById`: ImportListExclusionResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionApi.GetImportlistexclusionById`: %v\n", resp)
+    // response from `GetImportListExclusionById`: ImportListExclusionResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionApi.GetImportListExclusionById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetImportlistexclusionByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetImportListExclusionByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListImportlistexclusion
+## ListImportListExclusion
 
-> []ImportListExclusionResource ListImportlistexclusion(ctx).Execute()
+> []ImportListExclusionResource ListImportListExclusion(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListExclusionApi.ListImportlistexclusion(context.Background()).Execute()
+    resp, r, err := apiClient.ImportListExclusionApi.ListImportListExclusion(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.ListImportlistexclusion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.ListImportListExclusion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListImportlistexclusion`: []ImportListExclusionResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionApi.ListImportlistexclusion`: %v\n", resp)
+    // response from `ListImportListExclusion`: []ImportListExclusionResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionApi.ListImportListExclusion`: %v\n", resp)
 }
 ```
 
@@ -248,7 +248,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListImportlistexclusionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListImportListExclusionRequest struct via the builder pattern
 
 
 ### Return type
@@ -269,9 +269,9 @@ Other parameters are passed through a pointer to a apiListImportlistexclusionReq
 [[Back to README]](../README.md)
 
 
-## UpdateImportlistexclusion
+## UpdateImportListExclusion
 
-> ImportListExclusionResource UpdateImportlistexclusion(ctx, id).ImportListExclusionResource(importListExclusionResource).Execute()
+> ImportListExclusionResource UpdateImportListExclusion(ctx, id).ImportListExclusionResource(importListExclusionResource).Execute()
 
 
 
@@ -293,13 +293,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListExclusionApi.UpdateImportlistexclusion(context.Background(), id).ImportListExclusionResource(importListExclusionResource).Execute()
+    resp, r, err := apiClient.ImportListExclusionApi.UpdateImportListExclusion(context.Background(), id).ImportListExclusionResource(importListExclusionResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.UpdateImportlistexclusion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionApi.UpdateImportListExclusion``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateImportlistexclusion`: ImportListExclusionResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionApi.UpdateImportlistexclusion`: %v\n", resp)
+    // response from `UpdateImportListExclusion`: ImportListExclusionResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionApi.UpdateImportListExclusion`: %v\n", resp)
 }
 ```
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateImportlistexclusionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateImportListExclusionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

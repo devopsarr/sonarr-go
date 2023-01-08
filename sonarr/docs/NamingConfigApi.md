@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConfigNaming**](NamingConfigApi.md#GetConfigNaming) | **Get** /api/v3/config/naming | 
-[**GetConfigNamingById**](NamingConfigApi.md#GetConfigNamingById) | **Get** /api/v3/config/naming/{id} | 
-[**GetConfigNamingExamples**](NamingConfigApi.md#GetConfigNamingExamples) | **Get** /api/v3/config/naming/examples | 
-[**UpdateConfigNaming**](NamingConfigApi.md#UpdateConfigNaming) | **Put** /api/v3/config/naming/{id} | 
+[**GetNamingConfig**](NamingConfigApi.md#GetNamingConfig) | **Get** /api/v3/config/naming | 
+[**GetNamingConfigById**](NamingConfigApi.md#GetNamingConfigById) | **Get** /api/v3/config/naming/{id} | 
+[**GetNamingConfigExamples**](NamingConfigApi.md#GetNamingConfigExamples) | **Get** /api/v3/config/naming/examples | 
+[**UpdateNamingConfig**](NamingConfigApi.md#UpdateNamingConfig) | **Put** /api/v3/config/naming/{id} | 
 
 
 
-## GetConfigNaming
+## GetNamingConfig
 
-> NamingConfigResource GetConfigNaming(ctx).Execute()
+> NamingConfigResource GetNamingConfig(ctx).Execute()
 
 
 
@@ -33,13 +33,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.GetConfigNaming(context.Background()).Execute()
+    resp, r, err := apiClient.NamingConfigApi.GetNamingConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetConfigNaming``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetNamingConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigNaming`: NamingConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.GetConfigNaming`: %v\n", resp)
+    // response from `GetNamingConfig`: NamingConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.GetNamingConfig`: %v\n", resp)
 }
 ```
 
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigNamingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetNamingConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -70,9 +70,9 @@ Other parameters are passed through a pointer to a apiGetConfigNamingRequest str
 [[Back to README]](../README.md)
 
 
-## GetConfigNamingById
+## GetNamingConfigById
 
-> NamingConfigResource GetConfigNamingById(ctx, id).Execute()
+> NamingConfigResource GetNamingConfigById(ctx, id).Execute()
 
 
 
@@ -93,13 +93,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.GetConfigNamingById(context.Background(), id).Execute()
+    resp, r, err := apiClient.NamingConfigApi.GetNamingConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetConfigNamingById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetNamingConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigNamingById`: NamingConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.GetConfigNamingById`: %v\n", resp)
+    // response from `GetNamingConfigById`: NamingConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.GetNamingConfigById`: %v\n", resp)
 }
 ```
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigNamingByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetNamingConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -138,9 +138,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetConfigNamingExamples
+## GetNamingConfigExamples
 
-> GetConfigNamingExamples(ctx).RenameEpisodes(renameEpisodes).ReplaceIllegalCharacters(replaceIllegalCharacters).MultiEpisodeStyle(multiEpisodeStyle).StandardEpisodeFormat(standardEpisodeFormat).DailyEpisodeFormat(dailyEpisodeFormat).AnimeEpisodeFormat(animeEpisodeFormat).SeriesFolderFormat(seriesFolderFormat).SeasonFolderFormat(seasonFolderFormat).SpecialsFolderFormat(specialsFolderFormat).IncludeSeriesTitle(includeSeriesTitle).IncludeEpisodeTitle(includeEpisodeTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+> GetNamingConfigExamples(ctx).RenameEpisodes(renameEpisodes).ReplaceIllegalCharacters(replaceIllegalCharacters).MultiEpisodeStyle(multiEpisodeStyle).StandardEpisodeFormat(standardEpisodeFormat).DailyEpisodeFormat(dailyEpisodeFormat).AnimeEpisodeFormat(animeEpisodeFormat).SeriesFolderFormat(seriesFolderFormat).SeasonFolderFormat(seasonFolderFormat).SpecialsFolderFormat(specialsFolderFormat).IncludeSeriesTitle(includeSeriesTitle).IncludeEpisodeTitle(includeEpisodeTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
 
 
 
@@ -177,9 +177,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.GetConfigNamingExamples(context.Background()).RenameEpisodes(renameEpisodes).ReplaceIllegalCharacters(replaceIllegalCharacters).MultiEpisodeStyle(multiEpisodeStyle).StandardEpisodeFormat(standardEpisodeFormat).DailyEpisodeFormat(dailyEpisodeFormat).AnimeEpisodeFormat(animeEpisodeFormat).SeriesFolderFormat(seriesFolderFormat).SeasonFolderFormat(seasonFolderFormat).SpecialsFolderFormat(specialsFolderFormat).IncludeSeriesTitle(includeSeriesTitle).IncludeEpisodeTitle(includeEpisodeTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+    resp, r, err := apiClient.NamingConfigApi.GetNamingConfigExamples(context.Background()).RenameEpisodes(renameEpisodes).ReplaceIllegalCharacters(replaceIllegalCharacters).MultiEpisodeStyle(multiEpisodeStyle).StandardEpisodeFormat(standardEpisodeFormat).DailyEpisodeFormat(dailyEpisodeFormat).AnimeEpisodeFormat(animeEpisodeFormat).SeriesFolderFormat(seriesFolderFormat).SeasonFolderFormat(seasonFolderFormat).SpecialsFolderFormat(specialsFolderFormat).IncludeSeriesTitle(includeSeriesTitle).IncludeEpisodeTitle(includeEpisodeTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetConfigNamingExamples``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetNamingConfigExamples``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -191,7 +191,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigNamingExamplesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetNamingConfigExamplesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -232,9 +232,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateConfigNaming
+## UpdateNamingConfig
 
-> NamingConfigResource UpdateConfigNaming(ctx, id).NamingConfigResource(namingConfigResource).Execute()
+> NamingConfigResource UpdateNamingConfig(ctx, id).NamingConfigResource(namingConfigResource).Execute()
 
 
 
@@ -256,13 +256,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.UpdateConfigNaming(context.Background(), id).NamingConfigResource(namingConfigResource).Execute()
+    resp, r, err := apiClient.NamingConfigApi.UpdateNamingConfig(context.Background(), id).NamingConfigResource(namingConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.UpdateConfigNaming``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.UpdateNamingConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateConfigNaming`: NamingConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.UpdateConfigNaming`: %v\n", resp)
+    // response from `UpdateNamingConfig`: NamingConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `NamingConfigApi.UpdateNamingConfig`: %v\n", resp)
 }
 ```
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateConfigNamingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateNamingConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

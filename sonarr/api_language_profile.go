@@ -22,31 +22,31 @@ import (
 
 // LanguageProfileApiService LanguageProfileApi service
 type LanguageProfileApiService service
-type ApiCreateLanguageprofileRequest struct {
+type ApiCreateLanguageProfileRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileApiService
 	languageProfileResource *LanguageProfileResource
 }
 
-func (r ApiCreateLanguageprofileRequest) LanguageProfileResource(languageProfileResource LanguageProfileResource) ApiCreateLanguageprofileRequest {
+func (r ApiCreateLanguageProfileRequest) LanguageProfileResource(languageProfileResource LanguageProfileResource) ApiCreateLanguageProfileRequest {
 	r.languageProfileResource = &languageProfileResource
 	return r
 }
 
-func (r ApiCreateLanguageprofileRequest) Execute() (*LanguageProfileResource, *http.Response, error) {
-	return r.ApiService.CreateLanguageprofileExecute(r)
+func (r ApiCreateLanguageProfileRequest) Execute() (*LanguageProfileResource, *http.Response, error) {
+	return r.ApiService.CreateLanguageProfileExecute(r)
 }
 
 /*
-CreateLanguageprofile Method for CreateLanguageprofile
+CreateLanguageProfile Method for CreateLanguageProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateLanguageprofileRequest
+ @return ApiCreateLanguageProfileRequest
 
 Deprecated
 */
-func (a *LanguageProfileApiService) CreateLanguageprofile(ctx context.Context) ApiCreateLanguageprofileRequest {
-	return ApiCreateLanguageprofileRequest{
+func (a *LanguageProfileApiService) CreateLanguageProfile(ctx context.Context) ApiCreateLanguageProfileRequest {
+	return ApiCreateLanguageProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *LanguageProfileApiService) CreateLanguageprofile(ctx context.Context) A
 // Execute executes the request
 //  @return LanguageProfileResource
 // Deprecated
-func (a *LanguageProfileApiService) CreateLanguageprofileExecute(r ApiCreateLanguageprofileRequest) (*LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileApiService) CreateLanguageProfileExecute(r ApiCreateLanguageProfileRequest) (*LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *LanguageProfileApiService) CreateLanguageprofileExecute(r ApiCreateLang
 		localVarReturnValue  *LanguageProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.CreateLanguageprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.CreateLanguageProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -157,27 +157,27 @@ func (a *LanguageProfileApiService) CreateLanguageprofileExecute(r ApiCreateLang
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteLanguageprofileRequest struct {
+type ApiDeleteLanguageProfileRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileApiService
 	id int32
 }
 
-func (r ApiDeleteLanguageprofileRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteLanguageprofileExecute(r)
+func (r ApiDeleteLanguageProfileRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteLanguageProfileExecute(r)
 }
 
 /*
-DeleteLanguageprofile Method for DeleteLanguageprofile
+DeleteLanguageProfile Method for DeleteLanguageProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteLanguageprofileRequest
+ @return ApiDeleteLanguageProfileRequest
 
 Deprecated
 */
-func (a *LanguageProfileApiService) DeleteLanguageprofile(ctx context.Context, id int32) ApiDeleteLanguageprofileRequest {
-	return ApiDeleteLanguageprofileRequest{
+func (a *LanguageProfileApiService) DeleteLanguageProfile(ctx context.Context, id int32) ApiDeleteLanguageProfileRequest {
+	return ApiDeleteLanguageProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -186,14 +186,14 @@ func (a *LanguageProfileApiService) DeleteLanguageprofile(ctx context.Context, i
 
 // Execute executes the request
 // Deprecated
-func (a *LanguageProfileApiService) DeleteLanguageprofileExecute(r ApiDeleteLanguageprofileRequest) (*http.Response, error) {
+func (a *LanguageProfileApiService) DeleteLanguageProfileExecute(r ApiDeleteLanguageProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.DeleteLanguageprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.DeleteLanguageProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -277,25 +277,25 @@ func (a *LanguageProfileApiService) DeleteLanguageprofileExecute(r ApiDeleteLang
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetLanguageprofileByIdRequest struct {
+type ApiGetLanguageProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileApiService
 	id int32
 }
 
-func (r ApiGetLanguageprofileByIdRequest) Execute() (*LanguageProfileResource, *http.Response, error) {
-	return r.ApiService.GetLanguageprofileByIdExecute(r)
+func (r ApiGetLanguageProfileByIdRequest) Execute() (*LanguageProfileResource, *http.Response, error) {
+	return r.ApiService.GetLanguageProfileByIdExecute(r)
 }
 
 /*
-GetLanguageprofileById Method for GetLanguageprofileById
+GetLanguageProfileById Method for GetLanguageProfileById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetLanguageprofileByIdRequest
+ @return ApiGetLanguageProfileByIdRequest
 */
-func (a *LanguageProfileApiService) GetLanguageprofileById(ctx context.Context, id int32) ApiGetLanguageprofileByIdRequest {
-	return ApiGetLanguageprofileByIdRequest{
+func (a *LanguageProfileApiService) GetLanguageProfileById(ctx context.Context, id int32) ApiGetLanguageProfileByIdRequest {
+	return ApiGetLanguageProfileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -304,7 +304,7 @@ func (a *LanguageProfileApiService) GetLanguageprofileById(ctx context.Context, 
 
 // Execute executes the request
 //  @return LanguageProfileResource
-func (a *LanguageProfileApiService) GetLanguageprofileByIdExecute(r ApiGetLanguageprofileByIdRequest) (*LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileApiService) GetLanguageProfileByIdExecute(r ApiGetLanguageProfileByIdRequest) (*LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -312,7 +312,7 @@ func (a *LanguageProfileApiService) GetLanguageprofileByIdExecute(r ApiGetLangua
 		localVarReturnValue  *LanguageProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.GetLanguageprofileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.GetLanguageProfileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -405,25 +405,25 @@ func (a *LanguageProfileApiService) GetLanguageprofileByIdExecute(r ApiGetLangua
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListLanguageprofileRequest struct {
+type ApiListLanguageProfileRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileApiService
 }
 
-func (r ApiListLanguageprofileRequest) Execute() ([]*LanguageProfileResource, *http.Response, error) {
-	return r.ApiService.ListLanguageprofileExecute(r)
+func (r ApiListLanguageProfileRequest) Execute() ([]*LanguageProfileResource, *http.Response, error) {
+	return r.ApiService.ListLanguageProfileExecute(r)
 }
 
 /*
-ListLanguageprofile Method for ListLanguageprofile
+ListLanguageProfile Method for ListLanguageProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListLanguageprofileRequest
+ @return ApiListLanguageProfileRequest
 
 Deprecated
 */
-func (a *LanguageProfileApiService) ListLanguageprofile(ctx context.Context) ApiListLanguageprofileRequest {
-	return ApiListLanguageprofileRequest{
+func (a *LanguageProfileApiService) ListLanguageProfile(ctx context.Context) ApiListLanguageProfileRequest {
+	return ApiListLanguageProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -432,7 +432,7 @@ func (a *LanguageProfileApiService) ListLanguageprofile(ctx context.Context) Api
 // Execute executes the request
 //  @return []LanguageProfileResource
 // Deprecated
-func (a *LanguageProfileApiService) ListLanguageprofileExecute(r ApiListLanguageprofileRequest) ([]*LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileApiService) ListLanguageProfileExecute(r ApiListLanguageProfileRequest) ([]*LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -440,7 +440,7 @@ func (a *LanguageProfileApiService) ListLanguageprofileExecute(r ApiListLanguage
 		localVarReturnValue  []*LanguageProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.ListLanguageprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.ListLanguageProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -532,33 +532,33 @@ func (a *LanguageProfileApiService) ListLanguageprofileExecute(r ApiListLanguage
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateLanguageprofileRequest struct {
+type ApiUpdateLanguageProfileRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileApiService
 	id string
 	languageProfileResource *LanguageProfileResource
 }
 
-func (r ApiUpdateLanguageprofileRequest) LanguageProfileResource(languageProfileResource LanguageProfileResource) ApiUpdateLanguageprofileRequest {
+func (r ApiUpdateLanguageProfileRequest) LanguageProfileResource(languageProfileResource LanguageProfileResource) ApiUpdateLanguageProfileRequest {
 	r.languageProfileResource = &languageProfileResource
 	return r
 }
 
-func (r ApiUpdateLanguageprofileRequest) Execute() (*LanguageProfileResource, *http.Response, error) {
-	return r.ApiService.UpdateLanguageprofileExecute(r)
+func (r ApiUpdateLanguageProfileRequest) Execute() (*LanguageProfileResource, *http.Response, error) {
+	return r.ApiService.UpdateLanguageProfileExecute(r)
 }
 
 /*
-UpdateLanguageprofile Method for UpdateLanguageprofile
+UpdateLanguageProfile Method for UpdateLanguageProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateLanguageprofileRequest
+ @return ApiUpdateLanguageProfileRequest
 
 Deprecated
 */
-func (a *LanguageProfileApiService) UpdateLanguageprofile(ctx context.Context, id string) ApiUpdateLanguageprofileRequest {
-	return ApiUpdateLanguageprofileRequest{
+func (a *LanguageProfileApiService) UpdateLanguageProfile(ctx context.Context, id string) ApiUpdateLanguageProfileRequest {
+	return ApiUpdateLanguageProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -568,7 +568,7 @@ func (a *LanguageProfileApiService) UpdateLanguageprofile(ctx context.Context, i
 // Execute executes the request
 //  @return LanguageProfileResource
 // Deprecated
-func (a *LanguageProfileApiService) UpdateLanguageprofileExecute(r ApiUpdateLanguageprofileRequest) (*LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileApiService) UpdateLanguageProfileExecute(r ApiUpdateLanguageProfileRequest) (*LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -576,7 +576,7 @@ func (a *LanguageProfileApiService) UpdateLanguageprofileExecute(r ApiUpdateLang
 		localVarReturnValue  *LanguageProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.UpdateLanguageprofile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileApiService.UpdateLanguageProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -4,19 +4,19 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteEpisodefile**](EpisodeFileApi.md#DeleteEpisodefile) | **Delete** /api/v3/episodefile/{id} | 
-[**DeleteEpisodefileBulk**](EpisodeFileApi.md#DeleteEpisodefileBulk) | **Delete** /api/v3/episodefile/bulk | 
-[**GetEpisodefileById**](EpisodeFileApi.md#GetEpisodefileById) | **Get** /api/v3/episodefile/{id} | 
-[**ListEpisodefile**](EpisodeFileApi.md#ListEpisodefile) | **Get** /api/v3/episodefile | 
-[**PutEpisodefileBulk**](EpisodeFileApi.md#PutEpisodefileBulk) | **Put** /api/v3/episodefile/bulk | 
-[**PutEpisodefileEditor**](EpisodeFileApi.md#PutEpisodefileEditor) | **Put** /api/v3/episodefile/editor | 
-[**UpdateEpisodefile**](EpisodeFileApi.md#UpdateEpisodefile) | **Put** /api/v3/episodefile/{id} | 
+[**DeleteEpisodeFile**](EpisodeFileApi.md#DeleteEpisodeFile) | **Delete** /api/v3/episodefile/{id} | 
+[**DeleteEpisodeFileBulk**](EpisodeFileApi.md#DeleteEpisodeFileBulk) | **Delete** /api/v3/episodefile/bulk | 
+[**GetEpisodeFileById**](EpisodeFileApi.md#GetEpisodeFileById) | **Get** /api/v3/episodefile/{id} | 
+[**ListEpisodeFile**](EpisodeFileApi.md#ListEpisodeFile) | **Get** /api/v3/episodefile | 
+[**PutEpisodeFileBulk**](EpisodeFileApi.md#PutEpisodeFileBulk) | **Put** /api/v3/episodefile/bulk | 
+[**PutEpisodeFileEditor**](EpisodeFileApi.md#PutEpisodeFileEditor) | **Put** /api/v3/episodefile/editor | 
+[**UpdateEpisodeFile**](EpisodeFileApi.md#UpdateEpisodeFile) | **Put** /api/v3/episodefile/{id} | 
 
 
 
-## DeleteEpisodefile
+## DeleteEpisodeFile
 
-> DeleteEpisodefile(ctx, id).Execute()
+> DeleteEpisodeFile(ctx, id).Execute()
 
 
 
@@ -37,9 +37,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EpisodeFileApi.DeleteEpisodefile(context.Background(), id).Execute()
+    resp, r, err := apiClient.EpisodeFileApi.DeleteEpisodeFile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.DeleteEpisodefile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.DeleteEpisodeFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteEpisodefileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteEpisodeFileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteEpisodefileBulk
+## DeleteEpisodeFileBulk
 
-> DeleteEpisodefileBulk(ctx).EpisodeFileListResource(episodeFileListResource).Execute()
+> DeleteEpisodeFileBulk(ctx).EpisodeFileListResource(episodeFileListResource).Execute()
 
 
 
@@ -103,9 +103,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EpisodeFileApi.DeleteEpisodefileBulk(context.Background()).EpisodeFileListResource(episodeFileListResource).Execute()
+    resp, r, err := apiClient.EpisodeFileApi.DeleteEpisodeFileBulk(context.Background()).EpisodeFileListResource(episodeFileListResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.DeleteEpisodefileBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.DeleteEpisodeFileBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteEpisodefileBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteEpisodeFileBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetEpisodefileById
+## GetEpisodeFileById
 
-> EpisodeFileResource GetEpisodefileById(ctx, id).Execute()
+> EpisodeFileResource GetEpisodeFileById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EpisodeFileApi.GetEpisodefileById(context.Background(), id).Execute()
+    resp, r, err := apiClient.EpisodeFileApi.GetEpisodeFileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.GetEpisodefileById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.GetEpisodeFileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetEpisodefileById`: EpisodeFileResource
-    fmt.Fprintf(os.Stdout, "Response from `EpisodeFileApi.GetEpisodefileById`: %v\n", resp)
+    // response from `GetEpisodeFileById`: EpisodeFileResource
+    fmt.Fprintf(os.Stdout, "Response from `EpisodeFileApi.GetEpisodeFileById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetEpisodefileByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetEpisodeFileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListEpisodefile
+## ListEpisodeFile
 
-> []EpisodeFileResource ListEpisodefile(ctx).SeriesId(seriesId).EpisodeFileIds(episodeFileIds).Execute()
+> []EpisodeFileResource ListEpisodeFile(ctx).SeriesId(seriesId).EpisodeFileIds(episodeFileIds).Execute()
 
 
 
@@ -234,13 +234,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EpisodeFileApi.ListEpisodefile(context.Background()).SeriesId(seriesId).EpisodeFileIds(episodeFileIds).Execute()
+    resp, r, err := apiClient.EpisodeFileApi.ListEpisodeFile(context.Background()).SeriesId(seriesId).EpisodeFileIds(episodeFileIds).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.ListEpisodefile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.ListEpisodeFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListEpisodefile`: []EpisodeFileResource
-    fmt.Fprintf(os.Stdout, "Response from `EpisodeFileApi.ListEpisodefile`: %v\n", resp)
+    // response from `ListEpisodeFile`: []EpisodeFileResource
+    fmt.Fprintf(os.Stdout, "Response from `EpisodeFileApi.ListEpisodeFile`: %v\n", resp)
 }
 ```
 
@@ -250,7 +250,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListEpisodefileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListEpisodeFileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -276,9 +276,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PutEpisodefileBulk
+## PutEpisodeFileBulk
 
-> PutEpisodefileBulk(ctx).EpisodeFileResource(episodeFileResource).Execute()
+> PutEpisodeFileBulk(ctx).EpisodeFileResource(episodeFileResource).Execute()
 
 
 
@@ -299,9 +299,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EpisodeFileApi.PutEpisodefileBulk(context.Background()).EpisodeFileResource(episodeFileResource).Execute()
+    resp, r, err := apiClient.EpisodeFileApi.PutEpisodeFileBulk(context.Background()).EpisodeFileResource(episodeFileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.PutEpisodefileBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.PutEpisodeFileBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -313,7 +313,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutEpisodefileBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutEpisodeFileBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -338,9 +338,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PutEpisodefileEditor
+## PutEpisodeFileEditor
 
-> PutEpisodefileEditor(ctx).EpisodeFileListResource(episodeFileListResource).Execute()
+> PutEpisodeFileEditor(ctx).EpisodeFileListResource(episodeFileListResource).Execute()
 
 
 
@@ -361,9 +361,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EpisodeFileApi.PutEpisodefileEditor(context.Background()).EpisodeFileListResource(episodeFileListResource).Execute()
+    resp, r, err := apiClient.EpisodeFileApi.PutEpisodeFileEditor(context.Background()).EpisodeFileListResource(episodeFileListResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.PutEpisodefileEditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.PutEpisodeFileEditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -375,7 +375,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutEpisodefileEditorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutEpisodeFileEditorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -400,9 +400,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateEpisodefile
+## UpdateEpisodeFile
 
-> EpisodeFileResource UpdateEpisodefile(ctx, id).EpisodeFileResource(episodeFileResource).Execute()
+> EpisodeFileResource UpdateEpisodeFile(ctx, id).EpisodeFileResource(episodeFileResource).Execute()
 
 
 
@@ -424,13 +424,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EpisodeFileApi.UpdateEpisodefile(context.Background(), id).EpisodeFileResource(episodeFileResource).Execute()
+    resp, r, err := apiClient.EpisodeFileApi.UpdateEpisodeFile(context.Background(), id).EpisodeFileResource(episodeFileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.UpdateEpisodefile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `EpisodeFileApi.UpdateEpisodeFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateEpisodefile`: EpisodeFileResource
-    fmt.Fprintf(os.Stdout, "Response from `EpisodeFileApi.UpdateEpisodefile`: %v\n", resp)
+    // response from `UpdateEpisodeFile`: EpisodeFileResource
+    fmt.Fprintf(os.Stdout, "Response from `EpisodeFileApi.UpdateEpisodeFile`: %v\n", resp)
 }
 ```
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateEpisodefileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateEpisodeFileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

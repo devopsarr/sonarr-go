@@ -22,27 +22,27 @@ import (
 
 // MediaCoverApiService MediaCoverApi service
 type MediaCoverApiService service
-type ApiGetMediacoverseriesidByFilenameRequest struct {
+type ApiGetMediaCoverseriesIdByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverApiService
 	seriesId int32
 	filename string
 }
 
-func (r ApiGetMediacoverseriesidByFilenameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetMediacoverseriesidByFilenameExecute(r)
+func (r ApiGetMediaCoverseriesIdByFilenameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMediaCoverseriesIdByFilenameExecute(r)
 }
 
 /*
-GetMediacoverseriesidByFilename Method for GetMediacoverseriesidByFilename
+GetMediaCoverseriesIdByFilename Method for GetMediaCoverseriesIdByFilename
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param seriesId
  @param filename
- @return ApiGetMediacoverseriesidByFilenameRequest
+ @return ApiGetMediaCoverseriesIdByFilenameRequest
 */
-func (a *MediaCoverApiService) GetMediacoverseriesidByFilename(ctx context.Context, seriesId int32, filename string) ApiGetMediacoverseriesidByFilenameRequest {
-	return ApiGetMediacoverseriesidByFilenameRequest{
+func (a *MediaCoverApiService) GetMediaCoverseriesIdByFilename(ctx context.Context, seriesId int32, filename string) ApiGetMediaCoverseriesIdByFilenameRequest {
+	return ApiGetMediaCoverseriesIdByFilenameRequest{
 		ApiService: a,
 		ctx: ctx,
 		seriesId: seriesId,
@@ -51,14 +51,14 @@ func (a *MediaCoverApiService) GetMediacoverseriesidByFilename(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *MediaCoverApiService) GetMediacoverseriesidByFilenameExecute(r ApiGetMediacoverseriesidByFilenameRequest) (*http.Response, error) {
+func (a *MediaCoverApiService) GetMediaCoverseriesIdByFilenameExecute(r ApiGetMediaCoverseriesIdByFilenameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetMediacoverseriesidByFilename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetMediaCoverseriesIdByFilename")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

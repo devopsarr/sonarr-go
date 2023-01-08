@@ -22,29 +22,29 @@ import (
 
 // RemotePathMappingApiService RemotePathMappingApi service
 type RemotePathMappingApiService service
-type ApiCreateRemotepathmappingRequest struct {
+type ApiCreateRemotePathMappingRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingApiService
 	remotePathMappingResource *RemotePathMappingResource
 }
 
-func (r ApiCreateRemotepathmappingRequest) RemotePathMappingResource(remotePathMappingResource RemotePathMappingResource) ApiCreateRemotepathmappingRequest {
+func (r ApiCreateRemotePathMappingRequest) RemotePathMappingResource(remotePathMappingResource RemotePathMappingResource) ApiCreateRemotePathMappingRequest {
 	r.remotePathMappingResource = &remotePathMappingResource
 	return r
 }
 
-func (r ApiCreateRemotepathmappingRequest) Execute() (*RemotePathMappingResource, *http.Response, error) {
-	return r.ApiService.CreateRemotepathmappingExecute(r)
+func (r ApiCreateRemotePathMappingRequest) Execute() (*RemotePathMappingResource, *http.Response, error) {
+	return r.ApiService.CreateRemotePathMappingExecute(r)
 }
 
 /*
-CreateRemotepathmapping Method for CreateRemotepathmapping
+CreateRemotePathMapping Method for CreateRemotePathMapping
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRemotepathmappingRequest
+ @return ApiCreateRemotePathMappingRequest
 */
-func (a *RemotePathMappingApiService) CreateRemotepathmapping(ctx context.Context) ApiCreateRemotepathmappingRequest {
-	return ApiCreateRemotepathmappingRequest{
+func (a *RemotePathMappingApiService) CreateRemotePathMapping(ctx context.Context) ApiCreateRemotePathMappingRequest {
+	return ApiCreateRemotePathMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *RemotePathMappingApiService) CreateRemotepathmapping(ctx context.Contex
 
 // Execute executes the request
 //  @return RemotePathMappingResource
-func (a *RemotePathMappingApiService) CreateRemotepathmappingExecute(r ApiCreateRemotepathmappingRequest) (*RemotePathMappingResource, *http.Response, error) {
+func (a *RemotePathMappingApiService) CreateRemotePathMappingExecute(r ApiCreateRemotePathMappingRequest) (*RemotePathMappingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *RemotePathMappingApiService) CreateRemotepathmappingExecute(r ApiCreate
 		localVarReturnValue  *RemotePathMappingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.CreateRemotepathmapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.CreateRemotePathMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,25 +154,25 @@ func (a *RemotePathMappingApiService) CreateRemotepathmappingExecute(r ApiCreate
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteRemotepathmappingRequest struct {
+type ApiDeleteRemotePathMappingRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingApiService
 	id int32
 }
 
-func (r ApiDeleteRemotepathmappingRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteRemotepathmappingExecute(r)
+func (r ApiDeleteRemotePathMappingRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteRemotePathMappingExecute(r)
 }
 
 /*
-DeleteRemotepathmapping Method for DeleteRemotepathmapping
+DeleteRemotePathMapping Method for DeleteRemotePathMapping
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteRemotepathmappingRequest
+ @return ApiDeleteRemotePathMappingRequest
 */
-func (a *RemotePathMappingApiService) DeleteRemotepathmapping(ctx context.Context, id int32) ApiDeleteRemotepathmappingRequest {
-	return ApiDeleteRemotepathmappingRequest{
+func (a *RemotePathMappingApiService) DeleteRemotePathMapping(ctx context.Context, id int32) ApiDeleteRemotePathMappingRequest {
+	return ApiDeleteRemotePathMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -180,14 +180,14 @@ func (a *RemotePathMappingApiService) DeleteRemotepathmapping(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *RemotePathMappingApiService) DeleteRemotepathmappingExecute(r ApiDeleteRemotepathmappingRequest) (*http.Response, error) {
+func (a *RemotePathMappingApiService) DeleteRemotePathMappingExecute(r ApiDeleteRemotePathMappingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.DeleteRemotepathmapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.DeleteRemotePathMapping")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -271,25 +271,25 @@ func (a *RemotePathMappingApiService) DeleteRemotepathmappingExecute(r ApiDelete
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetRemotepathmappingByIdRequest struct {
+type ApiGetRemotePathMappingByIdRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingApiService
 	id int32
 }
 
-func (r ApiGetRemotepathmappingByIdRequest) Execute() (*RemotePathMappingResource, *http.Response, error) {
-	return r.ApiService.GetRemotepathmappingByIdExecute(r)
+func (r ApiGetRemotePathMappingByIdRequest) Execute() (*RemotePathMappingResource, *http.Response, error) {
+	return r.ApiService.GetRemotePathMappingByIdExecute(r)
 }
 
 /*
-GetRemotepathmappingById Method for GetRemotepathmappingById
+GetRemotePathMappingById Method for GetRemotePathMappingById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetRemotepathmappingByIdRequest
+ @return ApiGetRemotePathMappingByIdRequest
 */
-func (a *RemotePathMappingApiService) GetRemotepathmappingById(ctx context.Context, id int32) ApiGetRemotepathmappingByIdRequest {
-	return ApiGetRemotepathmappingByIdRequest{
+func (a *RemotePathMappingApiService) GetRemotePathMappingById(ctx context.Context, id int32) ApiGetRemotePathMappingByIdRequest {
+	return ApiGetRemotePathMappingByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -298,7 +298,7 @@ func (a *RemotePathMappingApiService) GetRemotepathmappingById(ctx context.Conte
 
 // Execute executes the request
 //  @return RemotePathMappingResource
-func (a *RemotePathMappingApiService) GetRemotepathmappingByIdExecute(r ApiGetRemotepathmappingByIdRequest) (*RemotePathMappingResource, *http.Response, error) {
+func (a *RemotePathMappingApiService) GetRemotePathMappingByIdExecute(r ApiGetRemotePathMappingByIdRequest) (*RemotePathMappingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *RemotePathMappingApiService) GetRemotepathmappingByIdExecute(r ApiGetRe
 		localVarReturnValue  *RemotePathMappingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.GetRemotepathmappingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.GetRemotePathMappingById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -399,23 +399,23 @@ func (a *RemotePathMappingApiService) GetRemotepathmappingByIdExecute(r ApiGetRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListRemotepathmappingRequest struct {
+type ApiListRemotePathMappingRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingApiService
 }
 
-func (r ApiListRemotepathmappingRequest) Execute() ([]*RemotePathMappingResource, *http.Response, error) {
-	return r.ApiService.ListRemotepathmappingExecute(r)
+func (r ApiListRemotePathMappingRequest) Execute() ([]*RemotePathMappingResource, *http.Response, error) {
+	return r.ApiService.ListRemotePathMappingExecute(r)
 }
 
 /*
-ListRemotepathmapping Method for ListRemotepathmapping
+ListRemotePathMapping Method for ListRemotePathMapping
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListRemotepathmappingRequest
+ @return ApiListRemotePathMappingRequest
 */
-func (a *RemotePathMappingApiService) ListRemotepathmapping(ctx context.Context) ApiListRemotepathmappingRequest {
-	return ApiListRemotepathmappingRequest{
+func (a *RemotePathMappingApiService) ListRemotePathMapping(ctx context.Context) ApiListRemotePathMappingRequest {
+	return ApiListRemotePathMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -423,7 +423,7 @@ func (a *RemotePathMappingApiService) ListRemotepathmapping(ctx context.Context)
 
 // Execute executes the request
 //  @return []RemotePathMappingResource
-func (a *RemotePathMappingApiService) ListRemotepathmappingExecute(r ApiListRemotepathmappingRequest) ([]*RemotePathMappingResource, *http.Response, error) {
+func (a *RemotePathMappingApiService) ListRemotePathMappingExecute(r ApiListRemotePathMappingRequest) ([]*RemotePathMappingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *RemotePathMappingApiService) ListRemotepathmappingExecute(r ApiListRemo
 		localVarReturnValue  []*RemotePathMappingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.ListRemotepathmapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.ListRemotePathMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -523,31 +523,31 @@ func (a *RemotePathMappingApiService) ListRemotepathmappingExecute(r ApiListRemo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateRemotepathmappingRequest struct {
+type ApiUpdateRemotePathMappingRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingApiService
 	id string
 	remotePathMappingResource *RemotePathMappingResource
 }
 
-func (r ApiUpdateRemotepathmappingRequest) RemotePathMappingResource(remotePathMappingResource RemotePathMappingResource) ApiUpdateRemotepathmappingRequest {
+func (r ApiUpdateRemotePathMappingRequest) RemotePathMappingResource(remotePathMappingResource RemotePathMappingResource) ApiUpdateRemotePathMappingRequest {
 	r.remotePathMappingResource = &remotePathMappingResource
 	return r
 }
 
-func (r ApiUpdateRemotepathmappingRequest) Execute() (*RemotePathMappingResource, *http.Response, error) {
-	return r.ApiService.UpdateRemotepathmappingExecute(r)
+func (r ApiUpdateRemotePathMappingRequest) Execute() (*RemotePathMappingResource, *http.Response, error) {
+	return r.ApiService.UpdateRemotePathMappingExecute(r)
 }
 
 /*
-UpdateRemotepathmapping Method for UpdateRemotepathmapping
+UpdateRemotePathMapping Method for UpdateRemotePathMapping
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateRemotepathmappingRequest
+ @return ApiUpdateRemotePathMappingRequest
 */
-func (a *RemotePathMappingApiService) UpdateRemotepathmapping(ctx context.Context, id string) ApiUpdateRemotepathmappingRequest {
-	return ApiUpdateRemotepathmappingRequest{
+func (a *RemotePathMappingApiService) UpdateRemotePathMapping(ctx context.Context, id string) ApiUpdateRemotePathMappingRequest {
+	return ApiUpdateRemotePathMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -556,7 +556,7 @@ func (a *RemotePathMappingApiService) UpdateRemotepathmapping(ctx context.Contex
 
 // Execute executes the request
 //  @return RemotePathMappingResource
-func (a *RemotePathMappingApiService) UpdateRemotepathmappingExecute(r ApiUpdateRemotepathmappingRequest) (*RemotePathMappingResource, *http.Response, error) {
+func (a *RemotePathMappingApiService) UpdateRemotePathMappingExecute(r ApiUpdateRemotePathMappingRequest) (*RemotePathMappingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -564,7 +564,7 @@ func (a *RemotePathMappingApiService) UpdateRemotepathmappingExecute(r ApiUpdate
 		localVarReturnValue  *RemotePathMappingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.UpdateRemotepathmapping")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingApiService.UpdateRemotePathMapping")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

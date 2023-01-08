@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateManualimport**](ManualImportApi.md#CreateManualimport) | **Post** /api/v3/manualimport | 
-[**ListManualimport**](ManualImportApi.md#ListManualimport) | **Get** /api/v3/manualimport | 
+[**CreateManualImport**](ManualImportApi.md#CreateManualImport) | **Post** /api/v3/manualimport | 
+[**ListManualImport**](ManualImportApi.md#ListManualImport) | **Get** /api/v3/manualimport | 
 
 
 
-## CreateManualimport
+## CreateManualImport
 
-> CreateManualimport(ctx).ManualImportReprocessResource(manualImportReprocessResource).Execute()
+> CreateManualImport(ctx).ManualImportReprocessResource(manualImportReprocessResource).Execute()
 
 
 
@@ -32,9 +32,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualImportApi.CreateManualimport(context.Background()).ManualImportReprocessResource(manualImportReprocessResource).Execute()
+    resp, r, err := apiClient.ManualImportApi.CreateManualImport(context.Background()).ManualImportReprocessResource(manualImportReprocessResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.CreateManualimport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.CreateManualImport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -46,7 +46,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateManualimportRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateManualImportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -71,9 +71,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListManualimport
+## ListManualImport
 
-> []ManualImportResource ListManualimport(ctx).Folder(folder).DownloadId(downloadId).SeriesId(seriesId).SeasonNumber(seasonNumber).FilterExistingFiles(filterExistingFiles).Execute()
+> []ManualImportResource ListManualImport(ctx).Folder(folder).DownloadId(downloadId).SeriesId(seriesId).SeasonNumber(seasonNumber).FilterExistingFiles(filterExistingFiles).Execute()
 
 
 
@@ -98,13 +98,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualImportApi.ListManualimport(context.Background()).Folder(folder).DownloadId(downloadId).SeriesId(seriesId).SeasonNumber(seasonNumber).FilterExistingFiles(filterExistingFiles).Execute()
+    resp, r, err := apiClient.ManualImportApi.ListManualImport(context.Background()).Folder(folder).DownloadId(downloadId).SeriesId(seriesId).SeasonNumber(seasonNumber).FilterExistingFiles(filterExistingFiles).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.ListManualimport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ManualImportApi.ListManualImport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListManualimport`: []ManualImportResource
-    fmt.Fprintf(os.Stdout, "Response from `ManualImportApi.ListManualimport`: %v\n", resp)
+    // response from `ListManualImport`: []ManualImportResource
+    fmt.Fprintf(os.Stdout, "Response from `ManualImportApi.ListManualImport`: %v\n", resp)
 }
 ```
 
@@ -114,7 +114,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListManualimportRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListManualImportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

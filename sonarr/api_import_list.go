@@ -22,29 +22,29 @@ import (
 
 // ImportListApiService ImportListApi service
 type ImportListApiService service
-type ApiCreateImportlistRequest struct {
+type ApiCreateImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 	importListResource *ImportListResource
 }
 
-func (r ApiCreateImportlistRequest) ImportListResource(importListResource ImportListResource) ApiCreateImportlistRequest {
+func (r ApiCreateImportListRequest) ImportListResource(importListResource ImportListResource) ApiCreateImportListRequest {
 	r.importListResource = &importListResource
 	return r
 }
 
-func (r ApiCreateImportlistRequest) Execute() (*ImportListResource, *http.Response, error) {
-	return r.ApiService.CreateImportlistExecute(r)
+func (r ApiCreateImportListRequest) Execute() (*ImportListResource, *http.Response, error) {
+	return r.ApiService.CreateImportListExecute(r)
 }
 
 /*
-CreateImportlist Method for CreateImportlist
+CreateImportList Method for CreateImportList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateImportlistRequest
+ @return ApiCreateImportListRequest
 */
-func (a *ImportListApiService) CreateImportlist(ctx context.Context) ApiCreateImportlistRequest {
-	return ApiCreateImportlistRequest{
+func (a *ImportListApiService) CreateImportList(ctx context.Context) ApiCreateImportListRequest {
+	return ApiCreateImportListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *ImportListApiService) CreateImportlist(ctx context.Context) ApiCreateIm
 
 // Execute executes the request
 //  @return ImportListResource
-func (a *ImportListApiService) CreateImportlistExecute(r ApiCreateImportlistRequest) (*ImportListResource, *http.Response, error) {
+func (a *ImportListApiService) CreateImportListExecute(r ApiCreateImportListRequest) (*ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ImportListApiService) CreateImportlistExecute(r ApiCreateImportlistRequ
 		localVarReturnValue  *ImportListResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.CreateImportlist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.CreateImportList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -154,31 +154,31 @@ func (a *ImportListApiService) CreateImportlistExecute(r ApiCreateImportlistRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiCreateImportlistActionByNameRequest struct {
+type ApiCreateImportListActionByNameRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 	name string
 	importListResource *ImportListResource
 }
 
-func (r ApiCreateImportlistActionByNameRequest) ImportListResource(importListResource ImportListResource) ApiCreateImportlistActionByNameRequest {
+func (r ApiCreateImportListActionByNameRequest) ImportListResource(importListResource ImportListResource) ApiCreateImportListActionByNameRequest {
 	r.importListResource = &importListResource
 	return r
 }
 
-func (r ApiCreateImportlistActionByNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateImportlistActionByNameExecute(r)
+func (r ApiCreateImportListActionByNameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateImportListActionByNameExecute(r)
 }
 
 /*
-CreateImportlistActionByName Method for CreateImportlistActionByName
+CreateImportListActionByName Method for CreateImportListActionByName
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
- @return ApiCreateImportlistActionByNameRequest
+ @return ApiCreateImportListActionByNameRequest
 */
-func (a *ImportListApiService) CreateImportlistActionByName(ctx context.Context, name string) ApiCreateImportlistActionByNameRequest {
-	return ApiCreateImportlistActionByNameRequest{
+func (a *ImportListApiService) CreateImportListActionByName(ctx context.Context, name string) ApiCreateImportListActionByNameRequest {
+	return ApiCreateImportListActionByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -186,14 +186,14 @@ func (a *ImportListApiService) CreateImportlistActionByName(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *ImportListApiService) CreateImportlistActionByNameExecute(r ApiCreateImportlistActionByNameRequest) (*http.Response, error) {
+func (a *ImportListApiService) CreateImportListActionByNameExecute(r ApiCreateImportListActionByNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.CreateImportlistActionByName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.CreateImportListActionByName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -279,25 +279,25 @@ func (a *ImportListApiService) CreateImportlistActionByNameExecute(r ApiCreateIm
 
 	return localVarHTTPResponse, nil
 }
-type ApiDeleteImportlistRequest struct {
+type ApiDeleteImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 	id int32
 }
 
-func (r ApiDeleteImportlistRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteImportlistExecute(r)
+func (r ApiDeleteImportListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteImportListExecute(r)
 }
 
 /*
-DeleteImportlist Method for DeleteImportlist
+DeleteImportList Method for DeleteImportList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteImportlistRequest
+ @return ApiDeleteImportListRequest
 */
-func (a *ImportListApiService) DeleteImportlist(ctx context.Context, id int32) ApiDeleteImportlistRequest {
-	return ApiDeleteImportlistRequest{
+func (a *ImportListApiService) DeleteImportList(ctx context.Context, id int32) ApiDeleteImportListRequest {
+	return ApiDeleteImportListRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -305,14 +305,14 @@ func (a *ImportListApiService) DeleteImportlist(ctx context.Context, id int32) A
 }
 
 // Execute executes the request
-func (a *ImportListApiService) DeleteImportlistExecute(r ApiDeleteImportlistRequest) (*http.Response, error) {
+func (a *ImportListApiService) DeleteImportListExecute(r ApiDeleteImportListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.DeleteImportlist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.DeleteImportList")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -396,25 +396,25 @@ func (a *ImportListApiService) DeleteImportlistExecute(r ApiDeleteImportlistRequ
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetImportlistByIdRequest struct {
+type ApiGetImportListByIdRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 	id int32
 }
 
-func (r ApiGetImportlistByIdRequest) Execute() (*ImportListResource, *http.Response, error) {
-	return r.ApiService.GetImportlistByIdExecute(r)
+func (r ApiGetImportListByIdRequest) Execute() (*ImportListResource, *http.Response, error) {
+	return r.ApiService.GetImportListByIdExecute(r)
 }
 
 /*
-GetImportlistById Method for GetImportlistById
+GetImportListById Method for GetImportListById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetImportlistByIdRequest
+ @return ApiGetImportListByIdRequest
 */
-func (a *ImportListApiService) GetImportlistById(ctx context.Context, id int32) ApiGetImportlistByIdRequest {
-	return ApiGetImportlistByIdRequest{
+func (a *ImportListApiService) GetImportListById(ctx context.Context, id int32) ApiGetImportListByIdRequest {
+	return ApiGetImportListByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -423,7 +423,7 @@ func (a *ImportListApiService) GetImportlistById(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return ImportListResource
-func (a *ImportListApiService) GetImportlistByIdExecute(r ApiGetImportlistByIdRequest) (*ImportListResource, *http.Response, error) {
+func (a *ImportListApiService) GetImportListByIdExecute(r ApiGetImportListByIdRequest) (*ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *ImportListApiService) GetImportlistByIdExecute(r ApiGetImportlistByIdRe
 		localVarReturnValue  *ImportListResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.GetImportlistById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.GetImportListById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -524,23 +524,23 @@ func (a *ImportListApiService) GetImportlistByIdExecute(r ApiGetImportlistByIdRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListImportlistRequest struct {
+type ApiListImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 }
 
-func (r ApiListImportlistRequest) Execute() ([]*ImportListResource, *http.Response, error) {
-	return r.ApiService.ListImportlistExecute(r)
+func (r ApiListImportListRequest) Execute() ([]*ImportListResource, *http.Response, error) {
+	return r.ApiService.ListImportListExecute(r)
 }
 
 /*
-ListImportlist Method for ListImportlist
+ListImportList Method for ListImportList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListImportlistRequest
+ @return ApiListImportListRequest
 */
-func (a *ImportListApiService) ListImportlist(ctx context.Context) ApiListImportlistRequest {
-	return ApiListImportlistRequest{
+func (a *ImportListApiService) ListImportList(ctx context.Context) ApiListImportListRequest {
+	return ApiListImportListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -548,7 +548,7 @@ func (a *ImportListApiService) ListImportlist(ctx context.Context) ApiListImport
 
 // Execute executes the request
 //  @return []ImportListResource
-func (a *ImportListApiService) ListImportlistExecute(r ApiListImportlistRequest) ([]*ImportListResource, *http.Response, error) {
+func (a *ImportListApiService) ListImportListExecute(r ApiListImportListRequest) ([]*ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -556,7 +556,7 @@ func (a *ImportListApiService) ListImportlistExecute(r ApiListImportlistRequest)
 		localVarReturnValue  []*ImportListResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.ListImportlist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.ListImportList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -648,23 +648,23 @@ func (a *ImportListApiService) ListImportlistExecute(r ApiListImportlistRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListImportlistSchemaRequest struct {
+type ApiListImportListSchemaRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 }
 
-func (r ApiListImportlistSchemaRequest) Execute() ([]*ImportListResource, *http.Response, error) {
-	return r.ApiService.ListImportlistSchemaExecute(r)
+func (r ApiListImportListSchemaRequest) Execute() ([]*ImportListResource, *http.Response, error) {
+	return r.ApiService.ListImportListSchemaExecute(r)
 }
 
 /*
-ListImportlistSchema Method for ListImportlistSchema
+ListImportListSchema Method for ListImportListSchema
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListImportlistSchemaRequest
+ @return ApiListImportListSchemaRequest
 */
-func (a *ImportListApiService) ListImportlistSchema(ctx context.Context) ApiListImportlistSchemaRequest {
-	return ApiListImportlistSchemaRequest{
+func (a *ImportListApiService) ListImportListSchema(ctx context.Context) ApiListImportListSchemaRequest {
+	return ApiListImportListSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -672,7 +672,7 @@ func (a *ImportListApiService) ListImportlistSchema(ctx context.Context) ApiList
 
 // Execute executes the request
 //  @return []ImportListResource
-func (a *ImportListApiService) ListImportlistSchemaExecute(r ApiListImportlistSchemaRequest) ([]*ImportListResource, *http.Response, error) {
+func (a *ImportListApiService) ListImportListSchemaExecute(r ApiListImportListSchemaRequest) ([]*ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -680,7 +680,7 @@ func (a *ImportListApiService) ListImportlistSchemaExecute(r ApiListImportlistSc
 		localVarReturnValue  []*ImportListResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.ListImportlistSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.ListImportListSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -772,43 +772,43 @@ func (a *ImportListApiService) ListImportlistSchemaExecute(r ApiListImportlistSc
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiTestImportlistRequest struct {
+type ApiTestImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 	importListResource *ImportListResource
 }
 
-func (r ApiTestImportlistRequest) ImportListResource(importListResource ImportListResource) ApiTestImportlistRequest {
+func (r ApiTestImportListRequest) ImportListResource(importListResource ImportListResource) ApiTestImportListRequest {
 	r.importListResource = &importListResource
 	return r
 }
 
-func (r ApiTestImportlistRequest) Execute() (*http.Response, error) {
-	return r.ApiService.TestImportlistExecute(r)
+func (r ApiTestImportListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TestImportListExecute(r)
 }
 
 /*
-TestImportlist Method for TestImportlist
+TestImportList Method for TestImportList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestImportlistRequest
+ @return ApiTestImportListRequest
 */
-func (a *ImportListApiService) TestImportlist(ctx context.Context) ApiTestImportlistRequest {
-	return ApiTestImportlistRequest{
+func (a *ImportListApiService) TestImportList(ctx context.Context) ApiTestImportListRequest {
+	return ApiTestImportListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImportListApiService) TestImportlistExecute(r ApiTestImportlistRequest) (*http.Response, error) {
+func (a *ImportListApiService) TestImportListExecute(r ApiTestImportListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.TestImportlist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.TestImportList")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -893,37 +893,37 @@ func (a *ImportListApiService) TestImportlistExecute(r ApiTestImportlistRequest)
 
 	return localVarHTTPResponse, nil
 }
-type ApiTestallImportlistRequest struct {
+type ApiTestallImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 }
 
-func (r ApiTestallImportlistRequest) Execute() (*http.Response, error) {
-	return r.ApiService.TestallImportlistExecute(r)
+func (r ApiTestallImportListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TestallImportListExecute(r)
 }
 
 /*
-TestallImportlist Method for TestallImportlist
+TestallImportList Method for TestallImportList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTestallImportlistRequest
+ @return ApiTestallImportListRequest
 */
-func (a *ImportListApiService) TestallImportlist(ctx context.Context) ApiTestallImportlistRequest {
-	return ApiTestallImportlistRequest{
+func (a *ImportListApiService) TestallImportList(ctx context.Context) ApiTestallImportListRequest {
+	return ApiTestallImportListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImportListApiService) TestallImportlistExecute(r ApiTestallImportlistRequest) (*http.Response, error) {
+func (a *ImportListApiService) TestallImportListExecute(r ApiTestallImportListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.TestallImportlist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.TestallImportList")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1006,31 +1006,31 @@ func (a *ImportListApiService) TestallImportlistExecute(r ApiTestallImportlistRe
 
 	return localVarHTTPResponse, nil
 }
-type ApiUpdateImportlistRequest struct {
+type ApiUpdateImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 	id string
 	importListResource *ImportListResource
 }
 
-func (r ApiUpdateImportlistRequest) ImportListResource(importListResource ImportListResource) ApiUpdateImportlistRequest {
+func (r ApiUpdateImportListRequest) ImportListResource(importListResource ImportListResource) ApiUpdateImportListRequest {
 	r.importListResource = &importListResource
 	return r
 }
 
-func (r ApiUpdateImportlistRequest) Execute() (*ImportListResource, *http.Response, error) {
-	return r.ApiService.UpdateImportlistExecute(r)
+func (r ApiUpdateImportListRequest) Execute() (*ImportListResource, *http.Response, error) {
+	return r.ApiService.UpdateImportListExecute(r)
 }
 
 /*
-UpdateImportlist Method for UpdateImportlist
+UpdateImportList Method for UpdateImportList
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateImportlistRequest
+ @return ApiUpdateImportListRequest
 */
-func (a *ImportListApiService) UpdateImportlist(ctx context.Context, id string) ApiUpdateImportlistRequest {
-	return ApiUpdateImportlistRequest{
+func (a *ImportListApiService) UpdateImportList(ctx context.Context, id string) ApiUpdateImportListRequest {
+	return ApiUpdateImportListRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -1039,7 +1039,7 @@ func (a *ImportListApiService) UpdateImportlist(ctx context.Context, id string) 
 
 // Execute executes the request
 //  @return ImportListResource
-func (a *ImportListApiService) UpdateImportlistExecute(r ApiUpdateImportlistRequest) (*ImportListResource, *http.Response, error) {
+func (a *ImportListApiService) UpdateImportListExecute(r ApiUpdateImportListRequest) (*ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -1047,7 +1047,7 @@ func (a *ImportListApiService) UpdateImportlistExecute(r ApiUpdateImportlistRequ
 		localVarReturnValue  *ImportListResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.UpdateImportlist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListApiService.UpdateImportList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

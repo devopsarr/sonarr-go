@@ -22,23 +22,23 @@ import (
 
 // DownloadClientConfigApiService DownloadClientConfigApi service
 type DownloadClientConfigApiService service
-type ApiGetConfigDownloadclientRequest struct {
+type ApiGetDownloadClientConfigRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientConfigApiService
 }
 
-func (r ApiGetConfigDownloadclientRequest) Execute() (*DownloadClientConfigResource, *http.Response, error) {
-	return r.ApiService.GetConfigDownloadclientExecute(r)
+func (r ApiGetDownloadClientConfigRequest) Execute() (*DownloadClientConfigResource, *http.Response, error) {
+	return r.ApiService.GetDownloadClientConfigExecute(r)
 }
 
 /*
-GetConfigDownloadclient Method for GetConfigDownloadclient
+GetDownloadClientConfig Method for GetDownloadClientConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetConfigDownloadclientRequest
+ @return ApiGetDownloadClientConfigRequest
 */
-func (a *DownloadClientConfigApiService) GetConfigDownloadclient(ctx context.Context) ApiGetConfigDownloadclientRequest {
-	return ApiGetConfigDownloadclientRequest{
+func (a *DownloadClientConfigApiService) GetDownloadClientConfig(ctx context.Context) ApiGetDownloadClientConfigRequest {
+	return ApiGetDownloadClientConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *DownloadClientConfigApiService) GetConfigDownloadclient(ctx context.Con
 
 // Execute executes the request
 //  @return DownloadClientConfigResource
-func (a *DownloadClientConfigApiService) GetConfigDownloadclientExecute(r ApiGetConfigDownloadclientRequest) (*DownloadClientConfigResource, *http.Response, error) {
+func (a *DownloadClientConfigApiService) GetDownloadClientConfigExecute(r ApiGetDownloadClientConfigRequest) (*DownloadClientConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *DownloadClientConfigApiService) GetConfigDownloadclientExecute(r ApiGet
 		localVarReturnValue  *DownloadClientConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientConfigApiService.GetConfigDownloadclient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientConfigApiService.GetDownloadClientConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,25 +146,25 @@ func (a *DownloadClientConfigApiService) GetConfigDownloadclientExecute(r ApiGet
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetConfigDownloadclientByIdRequest struct {
+type ApiGetDownloadClientConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientConfigApiService
 	id int32
 }
 
-func (r ApiGetConfigDownloadclientByIdRequest) Execute() (*DownloadClientConfigResource, *http.Response, error) {
-	return r.ApiService.GetConfigDownloadclientByIdExecute(r)
+func (r ApiGetDownloadClientConfigByIdRequest) Execute() (*DownloadClientConfigResource, *http.Response, error) {
+	return r.ApiService.GetDownloadClientConfigByIdExecute(r)
 }
 
 /*
-GetConfigDownloadclientById Method for GetConfigDownloadclientById
+GetDownloadClientConfigById Method for GetDownloadClientConfigById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetConfigDownloadclientByIdRequest
+ @return ApiGetDownloadClientConfigByIdRequest
 */
-func (a *DownloadClientConfigApiService) GetConfigDownloadclientById(ctx context.Context, id int32) ApiGetConfigDownloadclientByIdRequest {
-	return ApiGetConfigDownloadclientByIdRequest{
+func (a *DownloadClientConfigApiService) GetDownloadClientConfigById(ctx context.Context, id int32) ApiGetDownloadClientConfigByIdRequest {
+	return ApiGetDownloadClientConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -173,7 +173,7 @@ func (a *DownloadClientConfigApiService) GetConfigDownloadclientById(ctx context
 
 // Execute executes the request
 //  @return DownloadClientConfigResource
-func (a *DownloadClientConfigApiService) GetConfigDownloadclientByIdExecute(r ApiGetConfigDownloadclientByIdRequest) (*DownloadClientConfigResource, *http.Response, error) {
+func (a *DownloadClientConfigApiService) GetDownloadClientConfigByIdExecute(r ApiGetDownloadClientConfigByIdRequest) (*DownloadClientConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *DownloadClientConfigApiService) GetConfigDownloadclientByIdExecute(r Ap
 		localVarReturnValue  *DownloadClientConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientConfigApiService.GetConfigDownloadclientById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientConfigApiService.GetDownloadClientConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,31 +274,31 @@ func (a *DownloadClientConfigApiService) GetConfigDownloadclientByIdExecute(r Ap
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateConfigDownloadclientRequest struct {
+type ApiUpdateDownloadClientConfigRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientConfigApiService
 	id string
 	downloadClientConfigResource *DownloadClientConfigResource
 }
 
-func (r ApiUpdateConfigDownloadclientRequest) DownloadClientConfigResource(downloadClientConfigResource DownloadClientConfigResource) ApiUpdateConfigDownloadclientRequest {
+func (r ApiUpdateDownloadClientConfigRequest) DownloadClientConfigResource(downloadClientConfigResource DownloadClientConfigResource) ApiUpdateDownloadClientConfigRequest {
 	r.downloadClientConfigResource = &downloadClientConfigResource
 	return r
 }
 
-func (r ApiUpdateConfigDownloadclientRequest) Execute() (*DownloadClientConfigResource, *http.Response, error) {
-	return r.ApiService.UpdateConfigDownloadclientExecute(r)
+func (r ApiUpdateDownloadClientConfigRequest) Execute() (*DownloadClientConfigResource, *http.Response, error) {
+	return r.ApiService.UpdateDownloadClientConfigExecute(r)
 }
 
 /*
-UpdateConfigDownloadclient Method for UpdateConfigDownloadclient
+UpdateDownloadClientConfig Method for UpdateDownloadClientConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateConfigDownloadclientRequest
+ @return ApiUpdateDownloadClientConfigRequest
 */
-func (a *DownloadClientConfigApiService) UpdateConfigDownloadclient(ctx context.Context, id string) ApiUpdateConfigDownloadclientRequest {
-	return ApiUpdateConfigDownloadclientRequest{
+func (a *DownloadClientConfigApiService) UpdateDownloadClientConfig(ctx context.Context, id string) ApiUpdateDownloadClientConfigRequest {
+	return ApiUpdateDownloadClientConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -307,7 +307,7 @@ func (a *DownloadClientConfigApiService) UpdateConfigDownloadclient(ctx context.
 
 // Execute executes the request
 //  @return DownloadClientConfigResource
-func (a *DownloadClientConfigApiService) UpdateConfigDownloadclientExecute(r ApiUpdateConfigDownloadclientRequest) (*DownloadClientConfigResource, *http.Response, error) {
+func (a *DownloadClientConfigApiService) UpdateDownloadClientConfigExecute(r ApiUpdateDownloadClientConfigRequest) (*DownloadClientConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -315,7 +315,7 @@ func (a *DownloadClientConfigApiService) UpdateConfigDownloadclientExecute(r Api
 		localVarReturnValue  *DownloadClientConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientConfigApiService.UpdateConfigDownloadclient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientConfigApiService.UpdateDownloadClientConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -21,43 +21,43 @@ import (
 
 // SeasonPassApiService SeasonPassApi service
 type SeasonPassApiService service
-type ApiCreateSeasonpassRequest struct {
+type ApiCreateSeasonPassRequest struct {
 	ctx context.Context
 	ApiService *SeasonPassApiService
 	seasonPassResource *SeasonPassResource
 }
 
-func (r ApiCreateSeasonpassRequest) SeasonPassResource(seasonPassResource SeasonPassResource) ApiCreateSeasonpassRequest {
+func (r ApiCreateSeasonPassRequest) SeasonPassResource(seasonPassResource SeasonPassResource) ApiCreateSeasonPassRequest {
 	r.seasonPassResource = &seasonPassResource
 	return r
 }
 
-func (r ApiCreateSeasonpassRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateSeasonpassExecute(r)
+func (r ApiCreateSeasonPassRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateSeasonPassExecute(r)
 }
 
 /*
-CreateSeasonpass Method for CreateSeasonpass
+CreateSeasonPass Method for CreateSeasonPass
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateSeasonpassRequest
+ @return ApiCreateSeasonPassRequest
 */
-func (a *SeasonPassApiService) CreateSeasonpass(ctx context.Context) ApiCreateSeasonpassRequest {
-	return ApiCreateSeasonpassRequest{
+func (a *SeasonPassApiService) CreateSeasonPass(ctx context.Context) ApiCreateSeasonPassRequest {
+	return ApiCreateSeasonPassRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SeasonPassApiService) CreateSeasonpassExecute(r ApiCreateSeasonpassRequest) (*http.Response, error) {
+func (a *SeasonPassApiService) CreateSeasonPassExecute(r ApiCreateSeasonPassRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeasonPassApiService.CreateSeasonpass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeasonPassApiService.CreateSeasonPass")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

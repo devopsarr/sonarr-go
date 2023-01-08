@@ -22,25 +22,25 @@ import (
 
 // QualityDefinitionApiService QualityDefinitionApi service
 type QualityDefinitionApiService service
-type ApiGetQualitydefinitionByIdRequest struct {
+type ApiGetQualityDefinitionByIdRequest struct {
 	ctx context.Context
 	ApiService *QualityDefinitionApiService
 	id int32
 }
 
-func (r ApiGetQualitydefinitionByIdRequest) Execute() (*QualityDefinitionResource, *http.Response, error) {
-	return r.ApiService.GetQualitydefinitionByIdExecute(r)
+func (r ApiGetQualityDefinitionByIdRequest) Execute() (*QualityDefinitionResource, *http.Response, error) {
+	return r.ApiService.GetQualityDefinitionByIdExecute(r)
 }
 
 /*
-GetQualitydefinitionById Method for GetQualitydefinitionById
+GetQualityDefinitionById Method for GetQualityDefinitionById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetQualitydefinitionByIdRequest
+ @return ApiGetQualityDefinitionByIdRequest
 */
-func (a *QualityDefinitionApiService) GetQualitydefinitionById(ctx context.Context, id int32) ApiGetQualitydefinitionByIdRequest {
-	return ApiGetQualitydefinitionByIdRequest{
+func (a *QualityDefinitionApiService) GetQualityDefinitionById(ctx context.Context, id int32) ApiGetQualityDefinitionByIdRequest {
+	return ApiGetQualityDefinitionByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -49,7 +49,7 @@ func (a *QualityDefinitionApiService) GetQualitydefinitionById(ctx context.Conte
 
 // Execute executes the request
 //  @return QualityDefinitionResource
-func (a *QualityDefinitionApiService) GetQualitydefinitionByIdExecute(r ApiGetQualitydefinitionByIdRequest) (*QualityDefinitionResource, *http.Response, error) {
+func (a *QualityDefinitionApiService) GetQualityDefinitionByIdExecute(r ApiGetQualityDefinitionByIdRequest) (*QualityDefinitionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *QualityDefinitionApiService) GetQualitydefinitionByIdExecute(r ApiGetQu
 		localVarReturnValue  *QualityDefinitionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.GetQualitydefinitionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.GetQualityDefinitionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -150,23 +150,23 @@ func (a *QualityDefinitionApiService) GetQualitydefinitionByIdExecute(r ApiGetQu
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListQualitydefinitionRequest struct {
+type ApiListQualityDefinitionRequest struct {
 	ctx context.Context
 	ApiService *QualityDefinitionApiService
 }
 
-func (r ApiListQualitydefinitionRequest) Execute() ([]*QualityDefinitionResource, *http.Response, error) {
-	return r.ApiService.ListQualitydefinitionExecute(r)
+func (r ApiListQualityDefinitionRequest) Execute() ([]*QualityDefinitionResource, *http.Response, error) {
+	return r.ApiService.ListQualityDefinitionExecute(r)
 }
 
 /*
-ListQualitydefinition Method for ListQualitydefinition
+ListQualityDefinition Method for ListQualityDefinition
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListQualitydefinitionRequest
+ @return ApiListQualityDefinitionRequest
 */
-func (a *QualityDefinitionApiService) ListQualitydefinition(ctx context.Context) ApiListQualitydefinitionRequest {
-	return ApiListQualitydefinitionRequest{
+func (a *QualityDefinitionApiService) ListQualityDefinition(ctx context.Context) ApiListQualityDefinitionRequest {
+	return ApiListQualityDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -174,7 +174,7 @@ func (a *QualityDefinitionApiService) ListQualitydefinition(ctx context.Context)
 
 // Execute executes the request
 //  @return []QualityDefinitionResource
-func (a *QualityDefinitionApiService) ListQualitydefinitionExecute(r ApiListQualitydefinitionRequest) ([]*QualityDefinitionResource, *http.Response, error) {
+func (a *QualityDefinitionApiService) ListQualityDefinitionExecute(r ApiListQualityDefinitionRequest) ([]*QualityDefinitionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -182,7 +182,7 @@ func (a *QualityDefinitionApiService) ListQualitydefinitionExecute(r ApiListQual
 		localVarReturnValue  []*QualityDefinitionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.ListQualitydefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.ListQualityDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,43 +274,43 @@ func (a *QualityDefinitionApiService) ListQualitydefinitionExecute(r ApiListQual
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiPutQualitydefinitionUpdateRequest struct {
+type ApiPutQualityDefinitionUpdateRequest struct {
 	ctx context.Context
 	ApiService *QualityDefinitionApiService
 	qualityDefinitionResource *[]QualityDefinitionResource
 }
 
-func (r ApiPutQualitydefinitionUpdateRequest) QualityDefinitionResource(qualityDefinitionResource []QualityDefinitionResource) ApiPutQualitydefinitionUpdateRequest {
+func (r ApiPutQualityDefinitionUpdateRequest) QualityDefinitionResource(qualityDefinitionResource []QualityDefinitionResource) ApiPutQualityDefinitionUpdateRequest {
 	r.qualityDefinitionResource = &qualityDefinitionResource
 	return r
 }
 
-func (r ApiPutQualitydefinitionUpdateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PutQualitydefinitionUpdateExecute(r)
+func (r ApiPutQualityDefinitionUpdateRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PutQualityDefinitionUpdateExecute(r)
 }
 
 /*
-PutQualitydefinitionUpdate Method for PutQualitydefinitionUpdate
+PutQualityDefinitionUpdate Method for PutQualityDefinitionUpdate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPutQualitydefinitionUpdateRequest
+ @return ApiPutQualityDefinitionUpdateRequest
 */
-func (a *QualityDefinitionApiService) PutQualitydefinitionUpdate(ctx context.Context) ApiPutQualitydefinitionUpdateRequest {
-	return ApiPutQualitydefinitionUpdateRequest{
+func (a *QualityDefinitionApiService) PutQualityDefinitionUpdate(ctx context.Context) ApiPutQualityDefinitionUpdateRequest {
+	return ApiPutQualityDefinitionUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *QualityDefinitionApiService) PutQualitydefinitionUpdateExecute(r ApiPutQualitydefinitionUpdateRequest) (*http.Response, error) {
+func (a *QualityDefinitionApiService) PutQualityDefinitionUpdateExecute(r ApiPutQualityDefinitionUpdateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.PutQualitydefinitionUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.PutQualityDefinitionUpdate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -395,31 +395,31 @@ func (a *QualityDefinitionApiService) PutQualitydefinitionUpdateExecute(r ApiPut
 
 	return localVarHTTPResponse, nil
 }
-type ApiUpdateQualitydefinitionRequest struct {
+type ApiUpdateQualityDefinitionRequest struct {
 	ctx context.Context
 	ApiService *QualityDefinitionApiService
 	id string
 	qualityDefinitionResource *QualityDefinitionResource
 }
 
-func (r ApiUpdateQualitydefinitionRequest) QualityDefinitionResource(qualityDefinitionResource QualityDefinitionResource) ApiUpdateQualitydefinitionRequest {
+func (r ApiUpdateQualityDefinitionRequest) QualityDefinitionResource(qualityDefinitionResource QualityDefinitionResource) ApiUpdateQualityDefinitionRequest {
 	r.qualityDefinitionResource = &qualityDefinitionResource
 	return r
 }
 
-func (r ApiUpdateQualitydefinitionRequest) Execute() (*QualityDefinitionResource, *http.Response, error) {
-	return r.ApiService.UpdateQualitydefinitionExecute(r)
+func (r ApiUpdateQualityDefinitionRequest) Execute() (*QualityDefinitionResource, *http.Response, error) {
+	return r.ApiService.UpdateQualityDefinitionExecute(r)
 }
 
 /*
-UpdateQualitydefinition Method for UpdateQualitydefinition
+UpdateQualityDefinition Method for UpdateQualityDefinition
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateQualitydefinitionRequest
+ @return ApiUpdateQualityDefinitionRequest
 */
-func (a *QualityDefinitionApiService) UpdateQualitydefinition(ctx context.Context, id string) ApiUpdateQualitydefinitionRequest {
-	return ApiUpdateQualitydefinitionRequest{
+func (a *QualityDefinitionApiService) UpdateQualityDefinition(ctx context.Context, id string) ApiUpdateQualityDefinitionRequest {
+	return ApiUpdateQualityDefinitionRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -428,7 +428,7 @@ func (a *QualityDefinitionApiService) UpdateQualitydefinition(ctx context.Contex
 
 // Execute executes the request
 //  @return QualityDefinitionResource
-func (a *QualityDefinitionApiService) UpdateQualitydefinitionExecute(r ApiUpdateQualitydefinitionRequest) (*QualityDefinitionResource, *http.Response, error) {
+func (a *QualityDefinitionApiService) UpdateQualityDefinitionExecute(r ApiUpdateQualityDefinitionRequest) (*QualityDefinitionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -436,7 +436,7 @@ func (a *QualityDefinitionApiService) UpdateQualitydefinitionExecute(r ApiUpdate
 		localVarReturnValue  *QualityDefinitionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.UpdateQualitydefinition")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionApiService.UpdateQualityDefinition")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

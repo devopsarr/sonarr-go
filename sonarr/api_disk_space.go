@@ -21,23 +21,23 @@ import (
 
 // DiskSpaceApiService DiskSpaceApi service
 type DiskSpaceApiService service
-type ApiListDiskspaceRequest struct {
+type ApiListDiskSpaceRequest struct {
 	ctx context.Context
 	ApiService *DiskSpaceApiService
 }
 
-func (r ApiListDiskspaceRequest) Execute() ([]*DiskSpaceResource, *http.Response, error) {
-	return r.ApiService.ListDiskspaceExecute(r)
+func (r ApiListDiskSpaceRequest) Execute() ([]*DiskSpaceResource, *http.Response, error) {
+	return r.ApiService.ListDiskSpaceExecute(r)
 }
 
 /*
-ListDiskspace Method for ListDiskspace
+ListDiskSpace Method for ListDiskSpace
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListDiskspaceRequest
+ @return ApiListDiskSpaceRequest
 */
-func (a *DiskSpaceApiService) ListDiskspace(ctx context.Context) ApiListDiskspaceRequest {
-	return ApiListDiskspaceRequest{
+func (a *DiskSpaceApiService) ListDiskSpace(ctx context.Context) ApiListDiskSpaceRequest {
+	return ApiListDiskSpaceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *DiskSpaceApiService) ListDiskspace(ctx context.Context) ApiListDiskspac
 
 // Execute executes the request
 //  @return []DiskSpaceResource
-func (a *DiskSpaceApiService) ListDiskspaceExecute(r ApiListDiskspaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
+func (a *DiskSpaceApiService) ListDiskSpaceExecute(r ApiListDiskSpaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *DiskSpaceApiService) ListDiskspaceExecute(r ApiListDiskspaceRequest) ([
 		localVarReturnValue  []*DiskSpaceResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceApiService.ListDiskspace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceApiService.ListDiskSpace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

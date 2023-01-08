@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConfigIndexer**](IndexerConfigApi.md#GetConfigIndexer) | **Get** /api/v3/config/indexer | 
-[**GetConfigIndexerById**](IndexerConfigApi.md#GetConfigIndexerById) | **Get** /api/v3/config/indexer/{id} | 
-[**UpdateConfigIndexer**](IndexerConfigApi.md#UpdateConfigIndexer) | **Put** /api/v3/config/indexer/{id} | 
+[**GetIndexerConfig**](IndexerConfigApi.md#GetIndexerConfig) | **Get** /api/v3/config/indexer | 
+[**GetIndexerConfigById**](IndexerConfigApi.md#GetIndexerConfigById) | **Get** /api/v3/config/indexer/{id} | 
+[**UpdateIndexerConfig**](IndexerConfigApi.md#UpdateIndexerConfig) | **Put** /api/v3/config/indexer/{id} | 
 
 
 
-## GetConfigIndexer
+## GetIndexerConfig
 
-> IndexerConfigResource GetConfigIndexer(ctx).Execute()
+> IndexerConfigResource GetIndexerConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerConfigApi.GetConfigIndexer(context.Background()).Execute()
+    resp, r, err := apiClient.IndexerConfigApi.GetIndexerConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.GetConfigIndexer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.GetIndexerConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigIndexer`: IndexerConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.GetConfigIndexer`: %v\n", resp)
+    // response from `GetIndexerConfig`: IndexerConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.GetIndexerConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigIndexerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexerConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetConfigIndexerRequest st
 [[Back to README]](../README.md)
 
 
-## GetConfigIndexerById
+## GetIndexerConfigById
 
-> IndexerConfigResource GetConfigIndexerById(ctx, id).Execute()
+> IndexerConfigResource GetIndexerConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerConfigApi.GetConfigIndexerById(context.Background(), id).Execute()
+    resp, r, err := apiClient.IndexerConfigApi.GetIndexerConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.GetConfigIndexerById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.GetIndexerConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigIndexerById`: IndexerConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.GetConfigIndexerById`: %v\n", resp)
+    // response from `GetIndexerConfigById`: IndexerConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.GetIndexerConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigIndexerByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIndexerConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateConfigIndexer
+## UpdateIndexerConfig
 
-> IndexerConfigResource UpdateConfigIndexer(ctx, id).IndexerConfigResource(indexerConfigResource).Execute()
+> IndexerConfigResource UpdateIndexerConfig(ctx, id).IndexerConfigResource(indexerConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerConfigApi.UpdateConfigIndexer(context.Background(), id).IndexerConfigResource(indexerConfigResource).Execute()
+    resp, r, err := apiClient.IndexerConfigApi.UpdateIndexerConfig(context.Background(), id).IndexerConfigResource(indexerConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.UpdateConfigIndexer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `IndexerConfigApi.UpdateIndexerConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateConfigIndexer`: IndexerConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.UpdateConfigIndexer`: %v\n", resp)
+    // response from `UpdateIndexerConfig`: IndexerConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `IndexerConfigApi.UpdateIndexerConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateConfigIndexerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateIndexerConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

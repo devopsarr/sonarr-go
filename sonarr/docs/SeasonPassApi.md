@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8989*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateSeasonpass**](SeasonPassApi.md#CreateSeasonpass) | **Post** /api/v3/seasonpass | 
+[**CreateSeasonPass**](SeasonPassApi.md#CreateSeasonPass) | **Post** /api/v3/seasonpass | 
 
 
 
-## CreateSeasonpass
+## CreateSeasonPass
 
-> CreateSeasonpass(ctx).SeasonPassResource(seasonPassResource).Execute()
+> CreateSeasonPass(ctx).SeasonPassResource(seasonPassResource).Execute()
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SeasonPassApi.CreateSeasonpass(context.Background()).SeasonPassResource(seasonPassResource).Execute()
+    resp, r, err := apiClient.SeasonPassApi.CreateSeasonPass(context.Background()).SeasonPassResource(seasonPassResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SeasonPassApi.CreateSeasonpass``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SeasonPassApi.CreateSeasonPass``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -45,7 +45,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateSeasonpassRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSeasonPassRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
