@@ -34,7 +34,6 @@ type ImportListResource struct {
 	SeasonFolder *bool `json:"seasonFolder,omitempty"`
 	ListType *ImportListType `json:"listType,omitempty"`
 	ListOrder *int32 `json:"listOrder,omitempty"`
-	LanguageProfileId *int32 `json:"languageProfileId,omitempty"`
 }
 
 // NewImportListResource instantiates a new ImportListResource object
@@ -693,38 +692,6 @@ func (o *ImportListResource) SetListOrder(v int32) {
 	o.ListOrder = &v
 }
 
-// GetLanguageProfileId returns the LanguageProfileId field value if set, zero value otherwise.
-func (o *ImportListResource) GetLanguageProfileId() int32 {
-	if o == nil || isNil(o.LanguageProfileId) {
-		var ret int32
-		return ret
-	}
-	return *o.LanguageProfileId
-}
-
-// GetLanguageProfileIdOk returns a tuple with the LanguageProfileId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImportListResource) GetLanguageProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.LanguageProfileId) {
-    return nil, false
-	}
-	return o.LanguageProfileId, true
-}
-
-// HasLanguageProfileId returns a boolean if a field has been set.
-func (o *ImportListResource) HasLanguageProfileId() bool {
-	if o != nil && !isNil(o.LanguageProfileId) {
-		return true
-	}
-
-	return false
-}
-
-// SetLanguageProfileId gets a reference to the given int32 and assigns it to the LanguageProfileId field.
-func (o *ImportListResource) SetLanguageProfileId(v int32) {
-	o.LanguageProfileId = &v
-}
-
 func (o ImportListResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -780,9 +747,6 @@ func (o ImportListResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ListOrder) {
 		toSerialize["listOrder"] = o.ListOrder
-	}
-	if !isNil(o.LanguageProfileId) {
-		toSerialize["languageProfileId"] = o.LanguageProfileId
 	}
 	return json.Marshal(toSerialize)
 }
