@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/devopsarr/sonarr-go/compare/v0.1.0...v0.2.0) (2023-02-21)
+
+
+### Features
+
+* add autotagging ([08c0c9a](https://github.com/devopsarr/sonarr-go/commit/08c0c9ae1235e7716304e5838905b7ddbce2a333))
+
 ## 0.1.0 (2023-01-24)
 
 
