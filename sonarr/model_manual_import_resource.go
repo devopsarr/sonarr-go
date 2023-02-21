@@ -31,6 +31,7 @@ type ManualImportResource struct {
 	Languages []*Language `json:"languages,omitempty"`
 	QualityWeight *int32 `json:"qualityWeight,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
 	Rejections []*Rejection `json:"rejections,omitempty"`
 }
 
@@ -613,6 +614,39 @@ func (o *ManualImportResource) UnsetDownloadId() {
 	o.DownloadId.Unset()
 }
 
+// GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ManualImportResource) GetCustomFormats() []*CustomFormatResource {
+	if o == nil {
+		var ret []*CustomFormatResource
+		return ret
+	}
+	return o.CustomFormats
+}
+
+// GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ManualImportResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
+	if o == nil || isNil(o.CustomFormats) {
+    return nil, false
+	}
+	return o.CustomFormats, true
+}
+
+// HasCustomFormats returns a boolean if a field has been set.
+func (o *ManualImportResource) HasCustomFormats() bool {
+	if o != nil && isNil(o.CustomFormats) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
+func (o *ManualImportResource) SetCustomFormats(v []*CustomFormatResource) {
+	o.CustomFormats = v
+}
+
 // GetRejections returns the Rejections field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportResource) GetRejections() []*Rejection {
 	if o == nil {
@@ -692,6 +726,9 @@ func (o ManualImportResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.DownloadId.IsSet() {
 		toSerialize["downloadId"] = o.DownloadId.Get()
+	}
+	if o.CustomFormats != nil {
+		toSerialize["customFormats"] = o.CustomFormats
 	}
 	if o.Rejections != nil {
 		toSerialize["rejections"] = o.Rejections

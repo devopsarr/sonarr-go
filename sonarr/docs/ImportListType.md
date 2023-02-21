@@ -9,6 +9,8 @@
 
 * `TRAKT` (value: `"trakt"`)
 
+* `SIMKL` (value: `"simkl"`)
+
 * `OTHER` (value: `"other"`)
 
 * `ADVANCED` (value: `"advanced"`)

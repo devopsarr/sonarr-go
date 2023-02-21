@@ -9,7 +9,9 @@ Name | Type | Description | Notes
 **TaskName** | Pointer to **NullableString** |  | [optional] 
 **Interval** | Pointer to **int32** |  | [optional] 
 **LastExecution** | Pointer to **time.Time** |  | [optional] 
+**LastStartTime** | Pointer to **time.Time** |  | [optional] 
 **NextExecution** | Pointer to **time.Time** |  | [optional] 
+**LastDuration** | Pointer to [**TimeSpan**](TimeSpan.md) |  | [optional] 
 
 ## Methods
 
@@ -175,6 +177,31 @@ SetLastExecution sets LastExecution field to given value.
 
 HasLastExecution returns a boolean if a field has been set.
 
+### GetLastStartTime
+
+`func (o *TaskResource) GetLastStartTime() time.Time`
+
+GetLastStartTime returns the LastStartTime field if non-nil, zero value otherwise.
+
+### GetLastStartTimeOk
+
+`func (o *TaskResource) GetLastStartTimeOk() (*time.Time, bool)`
+
+GetLastStartTimeOk returns a tuple with the LastStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastStartTime
+
+`func (o *TaskResource) SetLastStartTime(v time.Time)`
+
+SetLastStartTime sets LastStartTime field to given value.
+
+### HasLastStartTime
+
+`func (o *TaskResource) HasLastStartTime() bool`
+
+HasLastStartTime returns a boolean if a field has been set.
+
 ### GetNextExecution
 
 `func (o *TaskResource) GetNextExecution() time.Time`
@@ -199,6 +226,31 @@ SetNextExecution sets NextExecution field to given value.
 `func (o *TaskResource) HasNextExecution() bool`
 
 HasNextExecution returns a boolean if a field has been set.
+
+### GetLastDuration
+
+`func (o *TaskResource) GetLastDuration() TimeSpan`
+
+GetLastDuration returns the LastDuration field if non-nil, zero value otherwise.
+
+### GetLastDurationOk
+
+`func (o *TaskResource) GetLastDurationOk() (*TimeSpan, bool)`
+
+GetLastDurationOk returns a tuple with the LastDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastDuration
+
+`func (o *TaskResource) SetLastDuration(v TimeSpan)`
+
+SetLastDuration sets LastDuration field to given value.
+
+### HasLastDuration
+
+`func (o *TaskResource) HasLastDuration() bool`
+
+HasLastDuration returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

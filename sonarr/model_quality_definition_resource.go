@@ -22,6 +22,7 @@ type QualityDefinitionResource struct {
 	Weight *int32 `json:"weight,omitempty"`
 	MinSize NullableFloat64 `json:"minSize,omitempty"`
 	MaxSize NullableFloat64 `json:"maxSize,omitempty"`
+	PreferredSize NullableFloat64 `json:"preferredSize,omitempty"`
 }
 
 // NewQualityDefinitionResource instantiates a new QualityDefinitionResource object
@@ -263,6 +264,48 @@ func (o *QualityDefinitionResource) UnsetMaxSize() {
 	o.MaxSize.Unset()
 }
 
+// GetPreferredSize returns the PreferredSize field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QualityDefinitionResource) GetPreferredSize() float64 {
+	if o == nil || isNil(o.PreferredSize.Get()) {
+		var ret float64
+		return ret
+	}
+	return *o.PreferredSize.Get()
+}
+
+// GetPreferredSizeOk returns a tuple with the PreferredSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QualityDefinitionResource) GetPreferredSizeOk() (*float64, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.PreferredSize.Get(), o.PreferredSize.IsSet()
+}
+
+// HasPreferredSize returns a boolean if a field has been set.
+func (o *QualityDefinitionResource) HasPreferredSize() bool {
+	if o != nil && o.PreferredSize.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPreferredSize gets a reference to the given NullableFloat64 and assigns it to the PreferredSize field.
+func (o *QualityDefinitionResource) SetPreferredSize(v float64) {
+	o.PreferredSize.Set(&v)
+}
+// SetPreferredSizeNil sets the value for PreferredSize to be an explicit nil
+func (o *QualityDefinitionResource) SetPreferredSizeNil() {
+	o.PreferredSize.Set(nil)
+}
+
+// UnsetPreferredSize ensures that no value is present for PreferredSize, not even an explicit nil
+func (o *QualityDefinitionResource) UnsetPreferredSize() {
+	o.PreferredSize.Unset()
+}
+
 func (o QualityDefinitionResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -282,6 +325,9 @@ func (o QualityDefinitionResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.MaxSize.IsSet() {
 		toSerialize["maxSize"] = o.MaxSize.Get()
+	}
+	if o.PreferredSize.IsSet() {
+		toSerialize["preferredSize"] = o.PreferredSize.Get()
 	}
 	return json.Marshal(toSerialize)
 }

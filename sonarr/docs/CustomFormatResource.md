@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
-**IncludeCustomFormatWhenRenaming** | Pointer to **bool** |  | [optional] 
+**IncludeCustomFormatWhenRenaming** | Pointer to **NullableBool** |  | [optional] 
 **Specifications** | Pointer to [**[]CustomFormatSpecificationSchema**](CustomFormatSpecificationSchema.md) |  | [optional] 
 
 ## Methods
@@ -113,6 +113,16 @@ SetIncludeCustomFormatWhenRenaming sets IncludeCustomFormatWhenRenaming field to
 
 HasIncludeCustomFormatWhenRenaming returns a boolean if a field has been set.
 
+### SetIncludeCustomFormatWhenRenamingNil
+
+`func (o *CustomFormatResource) SetIncludeCustomFormatWhenRenamingNil(b bool)`
+
+ SetIncludeCustomFormatWhenRenamingNil sets the value for IncludeCustomFormatWhenRenaming to be an explicit nil
+
+### UnsetIncludeCustomFormatWhenRenaming
+`func (o *CustomFormatResource) UnsetIncludeCustomFormatWhenRenaming()`
+
+UnsetIncludeCustomFormatWhenRenaming ensures that no value is present for IncludeCustomFormatWhenRenaming, not even an explicit nil
 ### GetSpecifications
 
 `func (o *CustomFormatResource) GetSpecifications() []CustomFormatSpecificationSchema`

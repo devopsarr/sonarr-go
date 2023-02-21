@@ -23,6 +23,7 @@ type TagDetailsResource struct {
 	NotificationIds []*int32 `json:"notificationIds,omitempty"`
 	RestrictionIds []*int32 `json:"restrictionIds,omitempty"`
 	IndexerIds []*int32 `json:"indexerIds,omitempty"`
+	AutoTagIds []*int32 `json:"autoTagIds,omitempty"`
 	SeriesIds []*int32 `json:"seriesIds,omitempty"`
 }
 
@@ -282,6 +283,39 @@ func (o *TagDetailsResource) SetIndexerIds(v []*int32) {
 	o.IndexerIds = v
 }
 
+// GetAutoTagIds returns the AutoTagIds field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TagDetailsResource) GetAutoTagIds() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.AutoTagIds
+}
+
+// GetAutoTagIdsOk returns a tuple with the AutoTagIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TagDetailsResource) GetAutoTagIdsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.AutoTagIds) {
+    return nil, false
+	}
+	return o.AutoTagIds, true
+}
+
+// HasAutoTagIds returns a boolean if a field has been set.
+func (o *TagDetailsResource) HasAutoTagIds() bool {
+	if o != nil && isNil(o.AutoTagIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoTagIds gets a reference to the given []int32 and assigns it to the AutoTagIds field.
+func (o *TagDetailsResource) SetAutoTagIds(v []*int32) {
+	o.AutoTagIds = v
+}
+
 // GetSeriesIds returns the SeriesIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TagDetailsResource) GetSeriesIds() []*int32 {
 	if o == nil {
@@ -337,6 +371,9 @@ func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.IndexerIds != nil {
 		toSerialize["indexerIds"] = o.IndexerIds
+	}
+	if o.AutoTagIds != nil {
+		toSerialize["autoTagIds"] = o.AutoTagIds
 	}
 	if o.SeriesIds != nil {
 		toSerialize["seriesIds"] = o.SeriesIds

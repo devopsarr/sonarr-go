@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Weight** | Pointer to **int32** |  | [optional] 
 **MinSize** | Pointer to **NullableFloat64** |  | [optional] 
 **MaxSize** | Pointer to **NullableFloat64** |  | [optional] 
+**PreferredSize** | Pointer to **NullableFloat64** |  | [optional] 
 
 ## Methods
 
@@ -210,6 +211,41 @@ HasMaxSize returns a boolean if a field has been set.
 `func (o *QualityDefinitionResource) UnsetMaxSize()`
 
 UnsetMaxSize ensures that no value is present for MaxSize, not even an explicit nil
+### GetPreferredSize
+
+`func (o *QualityDefinitionResource) GetPreferredSize() float64`
+
+GetPreferredSize returns the PreferredSize field if non-nil, zero value otherwise.
+
+### GetPreferredSizeOk
+
+`func (o *QualityDefinitionResource) GetPreferredSizeOk() (*float64, bool)`
+
+GetPreferredSizeOk returns a tuple with the PreferredSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreferredSize
+
+`func (o *QualityDefinitionResource) SetPreferredSize(v float64)`
+
+SetPreferredSize sets PreferredSize field to given value.
+
+### HasPreferredSize
+
+`func (o *QualityDefinitionResource) HasPreferredSize() bool`
+
+HasPreferredSize returns a boolean if a field has been set.
+
+### SetPreferredSizeNil
+
+`func (o *QualityDefinitionResource) SetPreferredSizeNil(b bool)`
+
+ SetPreferredSizeNil sets the value for PreferredSize to be an explicit nil
+
+### UnsetPreferredSize
+`func (o *QualityDefinitionResource) UnsetPreferredSize()`
+
+UnsetPreferredSize ensures that no value is present for PreferredSize, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

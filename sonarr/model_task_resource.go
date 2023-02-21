@@ -22,7 +22,9 @@ type TaskResource struct {
 	TaskName NullableString `json:"taskName,omitempty"`
 	Interval *int32 `json:"interval,omitempty"`
 	LastExecution *time.Time `json:"lastExecution,omitempty"`
+	LastStartTime *time.Time `json:"lastStartTime,omitempty"`
 	NextExecution *time.Time `json:"nextExecution,omitempty"`
+	LastDuration *TimeSpan `json:"lastDuration,omitempty"`
 }
 
 // NewTaskResource instantiates a new TaskResource object
@@ -222,6 +224,38 @@ func (o *TaskResource) SetLastExecution(v time.Time) {
 	o.LastExecution = &v
 }
 
+// GetLastStartTime returns the LastStartTime field value if set, zero value otherwise.
+func (o *TaskResource) GetLastStartTime() time.Time {
+	if o == nil || isNil(o.LastStartTime) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastStartTime
+}
+
+// GetLastStartTimeOk returns a tuple with the LastStartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TaskResource) GetLastStartTimeOk() (*time.Time, bool) {
+	if o == nil || isNil(o.LastStartTime) {
+    return nil, false
+	}
+	return o.LastStartTime, true
+}
+
+// HasLastStartTime returns a boolean if a field has been set.
+func (o *TaskResource) HasLastStartTime() bool {
+	if o != nil && !isNil(o.LastStartTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastStartTime gets a reference to the given time.Time and assigns it to the LastStartTime field.
+func (o *TaskResource) SetLastStartTime(v time.Time) {
+	o.LastStartTime = &v
+}
+
 // GetNextExecution returns the NextExecution field value if set, zero value otherwise.
 func (o *TaskResource) GetNextExecution() time.Time {
 	if o == nil || isNil(o.NextExecution) {
@@ -254,6 +288,38 @@ func (o *TaskResource) SetNextExecution(v time.Time) {
 	o.NextExecution = &v
 }
 
+// GetLastDuration returns the LastDuration field value if set, zero value otherwise.
+func (o *TaskResource) GetLastDuration() TimeSpan {
+	if o == nil || isNil(o.LastDuration) {
+		var ret TimeSpan
+		return ret
+	}
+	return *o.LastDuration
+}
+
+// GetLastDurationOk returns a tuple with the LastDuration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TaskResource) GetLastDurationOk() (*TimeSpan, bool) {
+	if o == nil || isNil(o.LastDuration) {
+    return nil, false
+	}
+	return o.LastDuration, true
+}
+
+// HasLastDuration returns a boolean if a field has been set.
+func (o *TaskResource) HasLastDuration() bool {
+	if o != nil && !isNil(o.LastDuration) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastDuration gets a reference to the given TimeSpan and assigns it to the LastDuration field.
+func (o *TaskResource) SetLastDuration(v TimeSpan) {
+	o.LastDuration = &v
+}
+
 func (o TaskResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -271,8 +337,14 @@ func (o TaskResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.LastExecution) {
 		toSerialize["lastExecution"] = o.LastExecution
 	}
+	if !isNil(o.LastStartTime) {
+		toSerialize["lastStartTime"] = o.LastStartTime
+	}
 	if !isNil(o.NextExecution) {
 		toSerialize["nextExecution"] = o.NextExecution
+	}
+	if !isNil(o.LastDuration) {
+		toSerialize["lastDuration"] = o.LastDuration
 	}
 	return json.Marshal(toSerialize)
 }

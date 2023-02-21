@@ -24,6 +24,7 @@ type HistoryResource struct {
 	Languages []*Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 	QualityCutoffNotMet *bool `json:"qualityCutoffNotMet,omitempty"`
 	Date *time.Time `json:"date,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
@@ -286,6 +287,38 @@ func (o *HistoryResource) SetCustomFormats(v []*CustomFormatResource) {
 	o.CustomFormats = v
 }
 
+// GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
+func (o *HistoryResource) GetCustomFormatScore() int32 {
+	if o == nil || isNil(o.CustomFormatScore) {
+		var ret int32
+		return ret
+	}
+	return *o.CustomFormatScore
+}
+
+// GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoryResource) GetCustomFormatScoreOk() (*int32, bool) {
+	if o == nil || isNil(o.CustomFormatScore) {
+    return nil, false
+	}
+	return o.CustomFormatScore, true
+}
+
+// HasCustomFormatScore returns a boolean if a field has been set.
+func (o *HistoryResource) HasCustomFormatScore() bool {
+	if o != nil && !isNil(o.CustomFormatScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormatScore gets a reference to the given int32 and assigns it to the CustomFormatScore field.
+func (o *HistoryResource) SetCustomFormatScore(v int32) {
+	o.CustomFormatScore = &v
+}
+
 // GetQualityCutoffNotMet returns the QualityCutoffNotMet field value if set, zero value otherwise.
 func (o *HistoryResource) GetQualityCutoffNotMet() bool {
 	if o == nil || isNil(o.QualityCutoffNotMet) {
@@ -543,6 +576,9 @@ func (o HistoryResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
+	}
+	if !isNil(o.CustomFormatScore) {
+		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
 	if !isNil(o.QualityCutoffNotMet) {
 		toSerialize["qualityCutoffNotMet"] = o.QualityCutoffNotMet

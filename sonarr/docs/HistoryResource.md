@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
+**CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
 **Date** | Pointer to **time.Time** |  | [optional] 
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
@@ -243,6 +244,31 @@ HasCustomFormats returns a boolean if a field has been set.
 `func (o *HistoryResource) UnsetCustomFormats()`
 
 UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
+### GetCustomFormatScore
+
+`func (o *HistoryResource) GetCustomFormatScore() int32`
+
+GetCustomFormatScore returns the CustomFormatScore field if non-nil, zero value otherwise.
+
+### GetCustomFormatScoreOk
+
+`func (o *HistoryResource) GetCustomFormatScoreOk() (*int32, bool)`
+
+GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormatScore
+
+`func (o *HistoryResource) SetCustomFormatScore(v int32)`
+
+SetCustomFormatScore sets CustomFormatScore field to given value.
+
+### HasCustomFormatScore
+
+`func (o *HistoryResource) HasCustomFormatScore() bool`
+
+HasCustomFormatScore returns a boolean if a field has been set.
+
 ### GetQualityCutoffNotMet
 
 `func (o *HistoryResource) GetQualityCutoffNotMet() bool`

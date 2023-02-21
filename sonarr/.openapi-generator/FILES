@@ -3,6 +3,7 @@ README.md
 api/openapi.yaml
 api_api_info.go
 api_authentication.go
+api_auto_tagging.go
 api_backup.go
 api_blocklist.go
 api_calendar.go
@@ -76,6 +77,9 @@ docs/ApplyTags.md
 docs/AuthenticationApi.md
 docs/AuthenticationRequiredType.md
 docs/AuthenticationType.md
+docs/AutoTaggingApi.md
+docs/AutoTaggingResource.md
+docs/AutoTaggingSpecificationSchema.md
 docs/BackupApi.md
 docs/BackupResource.md
 docs/BackupType.md
@@ -146,6 +150,7 @@ docs/LanguageProfileResource.md
 docs/LanguageProfileSchemaApi.md
 docs/LanguageResource.md
 docs/LocalizationApi.md
+docs/LocalizationLanguageResource.md
 docs/LocalizationResource.md
 docs/LogApi.md
 docs/LogFileApi.md
@@ -261,6 +266,8 @@ model_alternate_title_resource.go
 model_apply_tags.go
 model_authentication_required_type.go
 model_authentication_type.go
+model_auto_tagging_resource.go
+model_auto_tagging_specification_schema.go
 model_backup_resource.go
 model_backup_type.go
 model_blocklist_bulk_resource.go
@@ -304,6 +311,7 @@ model_language.go
 model_language_profile_item_resource.go
 model_language_profile_resource.go
 model_language_resource.go
+model_localization_language_resource.go
 model_localization_resource.go
 model_log_file_resource.go
 model_log_resource.go

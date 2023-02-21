@@ -23,6 +23,7 @@ const (
 	IMPORTLISTTYPE_PROGRAM ImportListType = "program"
 	IMPORTLISTTYPE_PLEX ImportListType = "plex"
 	IMPORTLISTTYPE_TRAKT ImportListType = "trakt"
+	IMPORTLISTTYPE_SIMKL ImportListType = "simkl"
 	IMPORTLISTTYPE_OTHER ImportListType = "other"
 	IMPORTLISTTYPE_ADVANCED ImportListType = "advanced"
 )
@@ -32,6 +33,7 @@ var AllowedImportListTypeEnumValues = []ImportListType{
 	"program",
 	"plex",
 	"trakt",
+	"simkl",
 	"other",
 	"advanced",
 }

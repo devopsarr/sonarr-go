@@ -23,6 +23,8 @@ type DelayProfileResource struct {
 	UsenetDelay *int32 `json:"usenetDelay,omitempty"`
 	TorrentDelay *int32 `json:"torrentDelay,omitempty"`
 	BypassIfHighestQuality *bool `json:"bypassIfHighestQuality,omitempty"`
+	BypassIfAboveCustomFormatScore *bool `json:"bypassIfAboveCustomFormatScore,omitempty"`
+	MinimumCustomFormatScore *int32 `json:"minimumCustomFormatScore,omitempty"`
 	Order *int32 `json:"order,omitempty"`
 	Tags []*int32 `json:"tags,omitempty"`
 }
@@ -268,6 +270,70 @@ func (o *DelayProfileResource) SetBypassIfHighestQuality(v bool) {
 	o.BypassIfHighestQuality = &v
 }
 
+// GetBypassIfAboveCustomFormatScore returns the BypassIfAboveCustomFormatScore field value if set, zero value otherwise.
+func (o *DelayProfileResource) GetBypassIfAboveCustomFormatScore() bool {
+	if o == nil || isNil(o.BypassIfAboveCustomFormatScore) {
+		var ret bool
+		return ret
+	}
+	return *o.BypassIfAboveCustomFormatScore
+}
+
+// GetBypassIfAboveCustomFormatScoreOk returns a tuple with the BypassIfAboveCustomFormatScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DelayProfileResource) GetBypassIfAboveCustomFormatScoreOk() (*bool, bool) {
+	if o == nil || isNil(o.BypassIfAboveCustomFormatScore) {
+    return nil, false
+	}
+	return o.BypassIfAboveCustomFormatScore, true
+}
+
+// HasBypassIfAboveCustomFormatScore returns a boolean if a field has been set.
+func (o *DelayProfileResource) HasBypassIfAboveCustomFormatScore() bool {
+	if o != nil && !isNil(o.BypassIfAboveCustomFormatScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetBypassIfAboveCustomFormatScore gets a reference to the given bool and assigns it to the BypassIfAboveCustomFormatScore field.
+func (o *DelayProfileResource) SetBypassIfAboveCustomFormatScore(v bool) {
+	o.BypassIfAboveCustomFormatScore = &v
+}
+
+// GetMinimumCustomFormatScore returns the MinimumCustomFormatScore field value if set, zero value otherwise.
+func (o *DelayProfileResource) GetMinimumCustomFormatScore() int32 {
+	if o == nil || isNil(o.MinimumCustomFormatScore) {
+		var ret int32
+		return ret
+	}
+	return *o.MinimumCustomFormatScore
+}
+
+// GetMinimumCustomFormatScoreOk returns a tuple with the MinimumCustomFormatScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DelayProfileResource) GetMinimumCustomFormatScoreOk() (*int32, bool) {
+	if o == nil || isNil(o.MinimumCustomFormatScore) {
+    return nil, false
+	}
+	return o.MinimumCustomFormatScore, true
+}
+
+// HasMinimumCustomFormatScore returns a boolean if a field has been set.
+func (o *DelayProfileResource) HasMinimumCustomFormatScore() bool {
+	if o != nil && !isNil(o.MinimumCustomFormatScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetMinimumCustomFormatScore gets a reference to the given int32 and assigns it to the MinimumCustomFormatScore field.
+func (o *DelayProfileResource) SetMinimumCustomFormatScore(v int32) {
+	o.MinimumCustomFormatScore = &v
+}
+
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetOrder() int32 {
 	if o == nil || isNil(o.Order) {
@@ -355,6 +421,12 @@ func (o DelayProfileResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.BypassIfHighestQuality) {
 		toSerialize["bypassIfHighestQuality"] = o.BypassIfHighestQuality
+	}
+	if !isNil(o.BypassIfAboveCustomFormatScore) {
+		toSerialize["bypassIfAboveCustomFormatScore"] = o.BypassIfAboveCustomFormatScore
+	}
+	if !isNil(o.MinimumCustomFormatScore) {
+		toSerialize["minimumCustomFormatScore"] = o.MinimumCustomFormatScore
 	}
 	if !isNil(o.Order) {
 		toSerialize["order"] = o.Order

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
 **QualityWeight** | Pointer to **int32** |  | [optional] 
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
+**CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **Rejections** | Pointer to [**[]Rejection**](Rejection.md) |  | [optional] 
 
 ## Methods
@@ -515,6 +516,41 @@ HasDownloadId returns a boolean if a field has been set.
 `func (o *ManualImportResource) UnsetDownloadId()`
 
 UnsetDownloadId ensures that no value is present for DownloadId, not even an explicit nil
+### GetCustomFormats
+
+`func (o *ManualImportResource) GetCustomFormats() []CustomFormatResource`
+
+GetCustomFormats returns the CustomFormats field if non-nil, zero value otherwise.
+
+### GetCustomFormatsOk
+
+`func (o *ManualImportResource) GetCustomFormatsOk() (*[]CustomFormatResource, bool)`
+
+GetCustomFormatsOk returns a tuple with the CustomFormats field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormats
+
+`func (o *ManualImportResource) SetCustomFormats(v []CustomFormatResource)`
+
+SetCustomFormats sets CustomFormats field to given value.
+
+### HasCustomFormats
+
+`func (o *ManualImportResource) HasCustomFormats() bool`
+
+HasCustomFormats returns a boolean if a field has been set.
+
+### SetCustomFormatsNil
+
+`func (o *ManualImportResource) SetCustomFormatsNil(b bool)`
+
+ SetCustomFormatsNil sets the value for CustomFormats to be an explicit nil
+
+### UnsetCustomFormats
+`func (o *ManualImportResource) UnsetCustomFormats()`
+
+UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
 ### GetRejections
 
 `func (o *ManualImportResource) GetRejections() []Rejection`

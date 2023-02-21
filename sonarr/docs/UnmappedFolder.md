@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Path** | Pointer to **NullableString** |  | [optional] 
+**RelativePath** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -96,6 +97,41 @@ HasPath returns a boolean if a field has been set.
 `func (o *UnmappedFolder) UnsetPath()`
 
 UnsetPath ensures that no value is present for Path, not even an explicit nil
+### GetRelativePath
+
+`func (o *UnmappedFolder) GetRelativePath() string`
+
+GetRelativePath returns the RelativePath field if non-nil, zero value otherwise.
+
+### GetRelativePathOk
+
+`func (o *UnmappedFolder) GetRelativePathOk() (*string, bool)`
+
+GetRelativePathOk returns a tuple with the RelativePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelativePath
+
+`func (o *UnmappedFolder) SetRelativePath(v string)`
+
+SetRelativePath sets RelativePath field to given value.
+
+### HasRelativePath
+
+`func (o *UnmappedFolder) HasRelativePath() bool`
+
+HasRelativePath returns a boolean if a field has been set.
+
+### SetRelativePathNil
+
+`func (o *UnmappedFolder) SetRelativePathNil(b bool)`
+
+ SetRelativePathNil sets the value for RelativePath to be an explicit nil
+
+### UnsetRelativePath
+`func (o *UnmappedFolder) UnsetRelativePath()`
+
+UnsetRelativePath ensures that no value is present for RelativePath, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

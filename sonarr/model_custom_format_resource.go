@@ -18,7 +18,7 @@ import (
 type CustomFormatResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	IncludeCustomFormatWhenRenaming *bool `json:"includeCustomFormatWhenRenaming,omitempty"`
+	IncludeCustomFormatWhenRenaming NullableBool `json:"includeCustomFormatWhenRenaming,omitempty"`
 	Specifications []*CustomFormatSpecificationSchema `json:"specifications,omitempty"`
 }
 
@@ -113,36 +113,46 @@ func (o *CustomFormatResource) UnsetName() {
 	o.Name.Unset()
 }
 
-// GetIncludeCustomFormatWhenRenaming returns the IncludeCustomFormatWhenRenaming field value if set, zero value otherwise.
+// GetIncludeCustomFormatWhenRenaming returns the IncludeCustomFormatWhenRenaming field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFormatResource) GetIncludeCustomFormatWhenRenaming() bool {
-	if o == nil || isNil(o.IncludeCustomFormatWhenRenaming) {
+	if o == nil || isNil(o.IncludeCustomFormatWhenRenaming.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.IncludeCustomFormatWhenRenaming
+	return *o.IncludeCustomFormatWhenRenaming.Get()
 }
 
 // GetIncludeCustomFormatWhenRenamingOk returns a tuple with the IncludeCustomFormatWhenRenaming field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFormatResource) GetIncludeCustomFormatWhenRenamingOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeCustomFormatWhenRenaming) {
+	if o == nil {
     return nil, false
 	}
-	return o.IncludeCustomFormatWhenRenaming, true
+	return o.IncludeCustomFormatWhenRenaming.Get(), o.IncludeCustomFormatWhenRenaming.IsSet()
 }
 
 // HasIncludeCustomFormatWhenRenaming returns a boolean if a field has been set.
 func (o *CustomFormatResource) HasIncludeCustomFormatWhenRenaming() bool {
-	if o != nil && !isNil(o.IncludeCustomFormatWhenRenaming) {
+	if o != nil && o.IncludeCustomFormatWhenRenaming.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIncludeCustomFormatWhenRenaming gets a reference to the given bool and assigns it to the IncludeCustomFormatWhenRenaming field.
+// SetIncludeCustomFormatWhenRenaming gets a reference to the given NullableBool and assigns it to the IncludeCustomFormatWhenRenaming field.
 func (o *CustomFormatResource) SetIncludeCustomFormatWhenRenaming(v bool) {
-	o.IncludeCustomFormatWhenRenaming = &v
+	o.IncludeCustomFormatWhenRenaming.Set(&v)
+}
+// SetIncludeCustomFormatWhenRenamingNil sets the value for IncludeCustomFormatWhenRenaming to be an explicit nil
+func (o *CustomFormatResource) SetIncludeCustomFormatWhenRenamingNil() {
+	o.IncludeCustomFormatWhenRenaming.Set(nil)
+}
+
+// UnsetIncludeCustomFormatWhenRenaming ensures that no value is present for IncludeCustomFormatWhenRenaming, not even an explicit nil
+func (o *CustomFormatResource) UnsetIncludeCustomFormatWhenRenaming() {
+	o.IncludeCustomFormatWhenRenaming.Unset()
 }
 
 // GetSpecifications returns the Specifications field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -186,8 +196,8 @@ func (o CustomFormatResource) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.IncludeCustomFormatWhenRenaming) {
-		toSerialize["includeCustomFormatWhenRenaming"] = o.IncludeCustomFormatWhenRenaming
+	if o.IncludeCustomFormatWhenRenaming.IsSet() {
+		toSerialize["includeCustomFormatWhenRenaming"] = o.IncludeCustomFormatWhenRenaming.Get()
 	}
 	if o.Specifications != nil {
 		toSerialize["specifications"] = o.Specifications

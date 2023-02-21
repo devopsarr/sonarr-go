@@ -34,6 +34,7 @@ type ImportListResource struct {
 	SeasonFolder *bool `json:"seasonFolder,omitempty"`
 	ListType *ImportListType `json:"listType,omitempty"`
 	ListOrder *int32 `json:"listOrder,omitempty"`
+	MinRefreshInterval *TimeSpan `json:"minRefreshInterval,omitempty"`
 }
 
 // NewImportListResource instantiates a new ImportListResource object
@@ -692,6 +693,38 @@ func (o *ImportListResource) SetListOrder(v int32) {
 	o.ListOrder = &v
 }
 
+// GetMinRefreshInterval returns the MinRefreshInterval field value if set, zero value otherwise.
+func (o *ImportListResource) GetMinRefreshInterval() TimeSpan {
+	if o == nil || isNil(o.MinRefreshInterval) {
+		var ret TimeSpan
+		return ret
+	}
+	return *o.MinRefreshInterval
+}
+
+// GetMinRefreshIntervalOk returns a tuple with the MinRefreshInterval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ImportListResource) GetMinRefreshIntervalOk() (*TimeSpan, bool) {
+	if o == nil || isNil(o.MinRefreshInterval) {
+    return nil, false
+	}
+	return o.MinRefreshInterval, true
+}
+
+// HasMinRefreshInterval returns a boolean if a field has been set.
+func (o *ImportListResource) HasMinRefreshInterval() bool {
+	if o != nil && !isNil(o.MinRefreshInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetMinRefreshInterval gets a reference to the given TimeSpan and assigns it to the MinRefreshInterval field.
+func (o *ImportListResource) SetMinRefreshInterval(v TimeSpan) {
+	o.MinRefreshInterval = &v
+}
+
 func (o ImportListResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -747,6 +780,9 @@ func (o ImportListResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ListOrder) {
 		toSerialize["listOrder"] = o.ListOrder
+	}
+	if !isNil(o.MinRefreshInterval) {
+		toSerialize["minRefreshInterval"] = o.MinRefreshInterval
 	}
 	return json.Marshal(toSerialize)
 }

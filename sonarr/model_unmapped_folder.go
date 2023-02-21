@@ -18,6 +18,7 @@ import (
 type UnmappedFolder struct {
 	Name NullableString `json:"name,omitempty"`
 	Path NullableString `json:"path,omitempty"`
+	RelativePath NullableString `json:"relativePath,omitempty"`
 }
 
 // NewUnmappedFolder instantiates a new UnmappedFolder object
@@ -121,6 +122,48 @@ func (o *UnmappedFolder) UnsetPath() {
 	o.Path.Unset()
 }
 
+// GetRelativePath returns the RelativePath field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *UnmappedFolder) GetRelativePath() string {
+	if o == nil || isNil(o.RelativePath.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.RelativePath.Get()
+}
+
+// GetRelativePathOk returns a tuple with the RelativePath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *UnmappedFolder) GetRelativePathOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.RelativePath.Get(), o.RelativePath.IsSet()
+}
+
+// HasRelativePath returns a boolean if a field has been set.
+func (o *UnmappedFolder) HasRelativePath() bool {
+	if o != nil && o.RelativePath.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRelativePath gets a reference to the given NullableString and assigns it to the RelativePath field.
+func (o *UnmappedFolder) SetRelativePath(v string) {
+	o.RelativePath.Set(&v)
+}
+// SetRelativePathNil sets the value for RelativePath to be an explicit nil
+func (o *UnmappedFolder) SetRelativePathNil() {
+	o.RelativePath.Set(nil)
+}
+
+// UnsetRelativePath ensures that no value is present for RelativePath, not even an explicit nil
+func (o *UnmappedFolder) UnsetRelativePath() {
+	o.RelativePath.Unset()
+}
+
 func (o UnmappedFolder) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name.IsSet() {
@@ -128,6 +171,9 @@ func (o UnmappedFolder) MarshalJSON() ([]byte, error) {
 	}
 	if o.Path.IsSet() {
 		toSerialize["path"] = o.Path.Get()
+	}
+	if o.RelativePath.IsSet() {
+		toSerialize["relativePath"] = o.RelativePath.Get()
 	}
 	return json.Marshal(toSerialize)
 }

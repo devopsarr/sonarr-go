@@ -81,6 +81,12 @@ Class | Method | HTTP request | Description
 *ApiInfoApi* | [**GetApi**](docs/ApiInfoApi.md#getapi) | **Get** /api | 
 *AuthenticationApi* | [**CreateLogin**](docs/AuthenticationApi.md#createlogin) | **Post** /login | 
 *AuthenticationApi* | [**GetLogout**](docs/AuthenticationApi.md#getlogout) | **Get** /logout | 
+*AutoTaggingApi* | [**CreateAutoTagging**](docs/AutoTaggingApi.md#createautotagging) | **Post** /api/v3/autotagging | 
+*AutoTaggingApi* | [**DeleteAutoTagging**](docs/AutoTaggingApi.md#deleteautotagging) | **Delete** /api/v3/autotagging/{id} | 
+*AutoTaggingApi* | [**GetAutoTaggingById**](docs/AutoTaggingApi.md#getautotaggingbyid) | **Get** /api/v3/autotagging/{id} | 
+*AutoTaggingApi* | [**GetAutoTaggingSchema**](docs/AutoTaggingApi.md#getautotaggingschema) | **Get** /api/v3/autotagging/schema | 
+*AutoTaggingApi* | [**ListAutoTagging**](docs/AutoTaggingApi.md#listautotagging) | **Get** /api/v3/autotagging | 
+*AutoTaggingApi* | [**UpdateAutoTagging**](docs/AutoTaggingApi.md#updateautotagging) | **Put** /api/v3/autotagging/{id} | 
 *BackupApi* | [**CreateSystemBackupRestoreById**](docs/BackupApi.md#createsystembackuprestorebyid) | **Post** /api/v3/system/backup/restore/{id} | 
 *BackupApi* | [**CreateSystemBackupRestoreUpload**](docs/BackupApi.md#createsystembackuprestoreupload) | **Post** /api/v3/system/backup/restore/upload | 
 *BackupApi* | [**DeleteSystemBackup**](docs/BackupApi.md#deletesystembackup) | **Delete** /api/v3/system/backup/{id} | 
@@ -188,6 +194,7 @@ Class | Method | HTTP request | Description
 *LanguageProfileSchemaApi* | [**GetLanguageprofileSchemaById**](docs/LanguageProfileSchemaApi.md#getlanguageprofileschemabyid) | **Get** /api/v3/languageprofile/schema/{id} | 
 *LocalizationApi* | [**GetLocalization**](docs/LocalizationApi.md#getlocalization) | **Get** /api/v3/localization | 
 *LocalizationApi* | [**GetLocalizationById**](docs/LocalizationApi.md#getlocalizationbyid) | **Get** /api/v3/localization/{id} | 
+*LocalizationApi* | [**GetLocalizationLanguage**](docs/LocalizationApi.md#getlocalizationlanguage) | **Get** /api/v3/localization/language | 
 *LogApi* | [**GetLog**](docs/LogApi.md#getlog) | **Get** /api/v3/log | 
 *LogFileApi* | [**GetLogFileByFilename**](docs/LogFileApi.md#getlogfilebyfilename) | **Get** /api/v3/log/file/{filename} | 
 *LogFileApi* | [**ListLogFile**](docs/LogFileApi.md#listlogfile) | **Get** /api/v3/log/file | 
@@ -306,6 +313,8 @@ Class | Method | HTTP request | Description
  - [ApplyTags](docs/ApplyTags.md)
  - [AuthenticationRequiredType](docs/AuthenticationRequiredType.md)
  - [AuthenticationType](docs/AuthenticationType.md)
+ - [AutoTaggingResource](docs/AutoTaggingResource.md)
+ - [AutoTaggingSpecificationSchema](docs/AutoTaggingSpecificationSchema.md)
  - [BackupResource](docs/BackupResource.md)
  - [BackupType](docs/BackupType.md)
  - [BlocklistBulkResource](docs/BlocklistBulkResource.md)
@@ -349,6 +358,7 @@ Class | Method | HTTP request | Description
  - [LanguageProfileItemResource](docs/LanguageProfileItemResource.md)
  - [LanguageProfileResource](docs/LanguageProfileResource.md)
  - [LanguageResource](docs/LanguageResource.md)
+ - [LocalizationLanguageResource](docs/LocalizationLanguageResource.md)
  - [LocalizationResource](docs/LocalizationResource.md)
  - [LogFileResource](docs/LogFileResource.md)
  - [LogResource](docs/LogResource.md)

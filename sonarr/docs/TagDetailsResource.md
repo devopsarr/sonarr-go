@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **NotificationIds** | Pointer to **[]int32** |  | [optional] 
 **RestrictionIds** | Pointer to **[]int32** |  | [optional] 
 **IndexerIds** | Pointer to **[]int32** |  | [optional] 
+**AutoTagIds** | Pointer to **[]int32** |  | [optional] 
 **SeriesIds** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
@@ -267,6 +268,41 @@ HasIndexerIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetIndexerIds()`
 
 UnsetIndexerIds ensures that no value is present for IndexerIds, not even an explicit nil
+### GetAutoTagIds
+
+`func (o *TagDetailsResource) GetAutoTagIds() []int32`
+
+GetAutoTagIds returns the AutoTagIds field if non-nil, zero value otherwise.
+
+### GetAutoTagIdsOk
+
+`func (o *TagDetailsResource) GetAutoTagIdsOk() (*[]int32, bool)`
+
+GetAutoTagIdsOk returns a tuple with the AutoTagIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoTagIds
+
+`func (o *TagDetailsResource) SetAutoTagIds(v []int32)`
+
+SetAutoTagIds sets AutoTagIds field to given value.
+
+### HasAutoTagIds
+
+`func (o *TagDetailsResource) HasAutoTagIds() bool`
+
+HasAutoTagIds returns a boolean if a field has been set.
+
+### SetAutoTagIdsNil
+
+`func (o *TagDetailsResource) SetAutoTagIdsNil(b bool)`
+
+ SetAutoTagIdsNil sets the value for AutoTagIds to be an explicit nil
+
+### UnsetAutoTagIds
+`func (o *TagDetailsResource) UnsetAutoTagIds()`
+
+UnsetAutoTagIds ensures that no value is present for AutoTagIds, not even an explicit nil
 ### GetSeriesIds
 
 `func (o *TagDetailsResource) GetSeriesIds() []int32`

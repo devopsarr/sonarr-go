@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **UsenetDelay** | Pointer to **int32** |  | [optional] 
 **TorrentDelay** | Pointer to **int32** |  | [optional] 
 **BypassIfHighestQuality** | Pointer to **bool** |  | [optional] 
+**BypassIfAboveCustomFormatScore** | Pointer to **bool** |  | [optional] 
+**MinimumCustomFormatScore** | Pointer to **int32** |  | [optional] 
 **Order** | Pointer to **int32** |  | [optional] 
 **Tags** | Pointer to **[]int32** |  | [optional] 
 
@@ -207,6 +209,56 @@ SetBypassIfHighestQuality sets BypassIfHighestQuality field to given value.
 `func (o *DelayProfileResource) HasBypassIfHighestQuality() bool`
 
 HasBypassIfHighestQuality returns a boolean if a field has been set.
+
+### GetBypassIfAboveCustomFormatScore
+
+`func (o *DelayProfileResource) GetBypassIfAboveCustomFormatScore() bool`
+
+GetBypassIfAboveCustomFormatScore returns the BypassIfAboveCustomFormatScore field if non-nil, zero value otherwise.
+
+### GetBypassIfAboveCustomFormatScoreOk
+
+`func (o *DelayProfileResource) GetBypassIfAboveCustomFormatScoreOk() (*bool, bool)`
+
+GetBypassIfAboveCustomFormatScoreOk returns a tuple with the BypassIfAboveCustomFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBypassIfAboveCustomFormatScore
+
+`func (o *DelayProfileResource) SetBypassIfAboveCustomFormatScore(v bool)`
+
+SetBypassIfAboveCustomFormatScore sets BypassIfAboveCustomFormatScore field to given value.
+
+### HasBypassIfAboveCustomFormatScore
+
+`func (o *DelayProfileResource) HasBypassIfAboveCustomFormatScore() bool`
+
+HasBypassIfAboveCustomFormatScore returns a boolean if a field has been set.
+
+### GetMinimumCustomFormatScore
+
+`func (o *DelayProfileResource) GetMinimumCustomFormatScore() int32`
+
+GetMinimumCustomFormatScore returns the MinimumCustomFormatScore field if non-nil, zero value otherwise.
+
+### GetMinimumCustomFormatScoreOk
+
+`func (o *DelayProfileResource) GetMinimumCustomFormatScoreOk() (*int32, bool)`
+
+GetMinimumCustomFormatScoreOk returns a tuple with the MinimumCustomFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinimumCustomFormatScore
+
+`func (o *DelayProfileResource) SetMinimumCustomFormatScore(v int32)`
+
+SetMinimumCustomFormatScore sets MinimumCustomFormatScore field to given value.
+
+### HasMinimumCustomFormatScore
+
+`func (o *DelayProfileResource) HasMinimumCustomFormatScore() bool`
+
+HasMinimumCustomFormatScore returns a boolean if a field has been set.
 
 ### GetOrder
 
