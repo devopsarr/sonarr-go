@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **SeasonFolder** | Pointer to **bool** |  | [optional] 
 **ListType** | Pointer to [**ImportListType**](ImportListType.md) |  | [optional] 
 **ListOrder** | Pointer to **int32** |  | [optional] 
-**MinRefreshInterval** | Pointer to **time.Time** |  | [optional] 
+**MinRefreshInterval** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -585,20 +585,20 @@ HasListOrder returns a boolean if a field has been set.
 
 ### GetMinRefreshInterval
 
-`func (o *ImportListResource) GetMinRefreshInterval() time.Time`
+`func (o *ImportListResource) GetMinRefreshInterval() string`
 
 GetMinRefreshInterval returns the MinRefreshInterval field if non-nil, zero value otherwise.
 
 ### GetMinRefreshIntervalOk
 
-`func (o *ImportListResource) GetMinRefreshIntervalOk() (*time.Time, bool)`
+`func (o *ImportListResource) GetMinRefreshIntervalOk() (*string, bool)`
 
 GetMinRefreshIntervalOk returns a tuple with the MinRefreshInterval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinRefreshInterval
 
-`func (o *ImportListResource) SetMinRefreshInterval(v time.Time)`
+`func (o *ImportListResource) SetMinRefreshInterval(v string)`
 
 SetMinRefreshInterval sets MinRefreshInterval field to given value.
 

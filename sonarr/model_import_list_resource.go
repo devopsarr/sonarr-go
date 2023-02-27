@@ -12,7 +12,6 @@ package sonarr
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // ImportListResource struct for ImportListResource
@@ -35,7 +34,7 @@ type ImportListResource struct {
 	SeasonFolder *bool `json:"seasonFolder,omitempty"`
 	ListType *ImportListType `json:"listType,omitempty"`
 	ListOrder *int32 `json:"listOrder,omitempty"`
-	MinRefreshInterval *time.Time `json:"minRefreshInterval,omitempty"`
+	MinRefreshInterval *string `json:"minRefreshInterval,omitempty"`
 }
 
 // NewImportListResource instantiates a new ImportListResource object
@@ -695,9 +694,9 @@ func (o *ImportListResource) SetListOrder(v int32) {
 }
 
 // GetMinRefreshInterval returns the MinRefreshInterval field value if set, zero value otherwise.
-func (o *ImportListResource) GetMinRefreshInterval() time.Time {
+func (o *ImportListResource) GetMinRefreshInterval() string {
 	if o == nil || isNil(o.MinRefreshInterval) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.MinRefreshInterval
@@ -705,7 +704,7 @@ func (o *ImportListResource) GetMinRefreshInterval() time.Time {
 
 // GetMinRefreshIntervalOk returns a tuple with the MinRefreshInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImportListResource) GetMinRefreshIntervalOk() (*time.Time, bool) {
+func (o *ImportListResource) GetMinRefreshIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinRefreshInterval) {
     return nil, false
 	}
@@ -721,8 +720,8 @@ func (o *ImportListResource) HasMinRefreshInterval() bool {
 	return false
 }
 
-// SetMinRefreshInterval gets a reference to the given time.Time and assigns it to the MinRefreshInterval field.
-func (o *ImportListResource) SetMinRefreshInterval(v time.Time) {
+// SetMinRefreshInterval gets a reference to the given string and assigns it to the MinRefreshInterval field.
+func (o *ImportListResource) SetMinRefreshInterval(v string) {
 	o.MinRefreshInterval = &v
 }
 

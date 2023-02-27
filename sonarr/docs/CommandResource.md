@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Queued** | Pointer to **time.Time** |  | [optional] 
 **Started** | Pointer to **NullableTime** |  | [optional] 
 **Ended** | Pointer to **NullableTime** |  | [optional] 
-**Duration** | Pointer to **time.Time** |  | [optional] 
+**Duration** | Pointer to **string** |  | [optional] 
 **Exception** | Pointer to **NullableString** |  | [optional] 
 **Trigger** | Pointer to [**CommandTrigger**](CommandTrigger.md) |  | [optional] 
 **ClientUserAgent** | Pointer to **NullableString** |  | [optional] 
@@ -344,20 +344,20 @@ HasEnded returns a boolean if a field has been set.
 UnsetEnded ensures that no value is present for Ended, not even an explicit nil
 ### GetDuration
 
-`func (o *CommandResource) GetDuration() time.Time`
+`func (o *CommandResource) GetDuration() string`
 
 GetDuration returns the Duration field if non-nil, zero value otherwise.
 
 ### GetDurationOk
 
-`func (o *CommandResource) GetDurationOk() (*time.Time, bool)`
+`func (o *CommandResource) GetDurationOk() (*string, bool)`
 
 GetDurationOk returns a tuple with the Duration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuration
 
-`func (o *CommandResource) SetDuration(v time.Time)`
+`func (o *CommandResource) SetDuration(v string)`
 
 SetDuration sets Duration field to given value.
 

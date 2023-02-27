@@ -28,7 +28,7 @@ type QueueResource struct {
 	Size *float64 `json:"size,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	Sizeleft *float64 `json:"sizeleft,omitempty"`
-	Timeleft *time.Time `json:"timeleft,omitempty"`
+	Timeleft *string `json:"timeleft,omitempty"`
 	EstimatedCompletionTime NullableTime `json:"estimatedCompletionTime,omitempty"`
 	Status NullableString `json:"status,omitempty"`
 	TrackedDownloadStatus *TrackedDownloadStatus `json:"trackedDownloadStatus,omitempty"`
@@ -444,9 +444,9 @@ func (o *QueueResource) SetSizeleft(v float64) {
 }
 
 // GetTimeleft returns the Timeleft field value if set, zero value otherwise.
-func (o *QueueResource) GetTimeleft() time.Time {
+func (o *QueueResource) GetTimeleft() string {
 	if o == nil || isNil(o.Timeleft) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.Timeleft
@@ -454,7 +454,7 @@ func (o *QueueResource) GetTimeleft() time.Time {
 
 // GetTimeleftOk returns a tuple with the Timeleft field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QueueResource) GetTimeleftOk() (*time.Time, bool) {
+func (o *QueueResource) GetTimeleftOk() (*string, bool) {
 	if o == nil || isNil(o.Timeleft) {
     return nil, false
 	}
@@ -470,8 +470,8 @@ func (o *QueueResource) HasTimeleft() bool {
 	return false
 }
 
-// SetTimeleft gets a reference to the given time.Time and assigns it to the Timeleft field.
-func (o *QueueResource) SetTimeleft(v time.Time) {
+// SetTimeleft gets a reference to the given string and assigns it to the Timeleft field.
+func (o *QueueResource) SetTimeleft(v string) {
 	o.Timeleft = &v
 }
 
