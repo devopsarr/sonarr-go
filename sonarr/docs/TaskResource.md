@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **LastExecution** | Pointer to **time.Time** |  | [optional] 
 **LastStartTime** | Pointer to **time.Time** |  | [optional] 
 **NextExecution** | Pointer to **time.Time** |  | [optional] 
-**LastDuration** | Pointer to [**TimeSpan**](TimeSpan.md) |  | [optional] 
+**LastDuration** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
 
@@ -229,20 +229,20 @@ HasNextExecution returns a boolean if a field has been set.
 
 ### GetLastDuration
 
-`func (o *TaskResource) GetLastDuration() TimeSpan`
+`func (o *TaskResource) GetLastDuration() time.Time`
 
 GetLastDuration returns the LastDuration field if non-nil, zero value otherwise.
 
 ### GetLastDurationOk
 
-`func (o *TaskResource) GetLastDurationOk() (*TimeSpan, bool)`
+`func (o *TaskResource) GetLastDurationOk() (*time.Time, bool)`
 
 GetLastDurationOk returns a tuple with the LastDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastDuration
 
-`func (o *TaskResource) SetLastDuration(v TimeSpan)`
+`func (o *TaskResource) SetLastDuration(v time.Time)`
 
 SetLastDuration sets LastDuration field to given value.
 

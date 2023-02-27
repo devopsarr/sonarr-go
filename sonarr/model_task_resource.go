@@ -24,7 +24,7 @@ type TaskResource struct {
 	LastExecution *time.Time `json:"lastExecution,omitempty"`
 	LastStartTime *time.Time `json:"lastStartTime,omitempty"`
 	NextExecution *time.Time `json:"nextExecution,omitempty"`
-	LastDuration *TimeSpan `json:"lastDuration,omitempty"`
+	LastDuration *time.Time `json:"lastDuration,omitempty"`
 }
 
 // NewTaskResource instantiates a new TaskResource object
@@ -289,9 +289,9 @@ func (o *TaskResource) SetNextExecution(v time.Time) {
 }
 
 // GetLastDuration returns the LastDuration field value if set, zero value otherwise.
-func (o *TaskResource) GetLastDuration() TimeSpan {
+func (o *TaskResource) GetLastDuration() time.Time {
 	if o == nil || isNil(o.LastDuration) {
-		var ret TimeSpan
+		var ret time.Time
 		return ret
 	}
 	return *o.LastDuration
@@ -299,7 +299,7 @@ func (o *TaskResource) GetLastDuration() TimeSpan {
 
 // GetLastDurationOk returns a tuple with the LastDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskResource) GetLastDurationOk() (*TimeSpan, bool) {
+func (o *TaskResource) GetLastDurationOk() (*time.Time, bool) {
 	if o == nil || isNil(o.LastDuration) {
     return nil, false
 	}
@@ -315,8 +315,8 @@ func (o *TaskResource) HasLastDuration() bool {
 	return false
 }
 
-// SetLastDuration gets a reference to the given TimeSpan and assigns it to the LastDuration field.
-func (o *TaskResource) SetLastDuration(v TimeSpan) {
+// SetLastDuration gets a reference to the given time.Time and assigns it to the LastDuration field.
+func (o *TaskResource) SetLastDuration(v time.Time) {
 	o.LastDuration = &v
 }
 

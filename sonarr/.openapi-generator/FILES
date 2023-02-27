@@ -247,7 +247,6 @@ docs/TagDetailsResource.md
 docs/TagResource.md
 docs/TaskApi.md
 docs/TaskResource.md
-docs/TimeSpan.md
 docs/TrackedDownloadState.md
 docs/TrackedDownloadStatus.md
 docs/TrackedDownloadStatusMessage.md
@@ -374,7 +373,6 @@ model_system_resource.go
 model_tag_details_resource.go
 model_tag_resource.go
 model_task_resource.go
-model_time_span.go
 model_tracked_download_state.go
 model_tracked_download_status.go
 model_tracked_download_status_message.go

@@ -6433,18 +6433,7 @@ components:
           sendUpdatesToClient: true
           updateScheduledTask: true
         priority: null
-        duration:
-          milliseconds: 5
-          hours: 5
-          seconds: 7
-          totalDays: 9.301444243932576
-          ticks: 6
-          totalHours: 3.616076749251911
-          totalMilliseconds: 2.027123023002322
-          totalMinutes: 4.145608029883936
-          minutes: 2
-          days: 1
-          totalSeconds: 7.386281948385884
+        duration: 2000-01-23T04:56:07.000+00:00
         commandName: commandName
         name: name
         ended: 2000-01-23T04:56:07.000+00:00
@@ -6484,7 +6473,8 @@ components:
           nullable: true
           type: string
         duration:
-          $ref: '#/components/schemas/TimeSpan'
+          format: date-time
+          type: string
         exception:
           nullable: true
           type: string
@@ -11560,18 +11550,7 @@ components:
     ImportListResource:
       additionalProperties: false
       example:
-        minRefreshInterval:
-          milliseconds: 5
-          hours: 5
-          seconds: 7
-          totalDays: 9.301444243932576
-          ticks: 6
-          totalHours: 3.616076749251911
-          totalMilliseconds: 2.027123023002322
-          totalMinutes: 4.145608029883936
-          minutes: 2
-          days: 1
-          totalSeconds: 7.386281948385884
+        minRefreshInterval: 2000-01-23T04:56:07.000+00:00
         implementationName: implementationName
         rootFolderPath: rootFolderPath
         implementation: implementation
@@ -11698,7 +11677,8 @@ components:
           format: int32
           type: integer
         minRefreshInterval:
-          $ref: '#/components/schemas/TimeSpan'
+          format: date-time
+          type: string
       type: object
     ImportListType:
       enum:
@@ -16941,18 +16921,7 @@ components:
         indexer: indexer
         episodeId: 1
         title: title
-        timeleft:
-          milliseconds: 5
-          hours: 5
-          seconds: 7
-          totalDays: 9.301444243932576
-          ticks: 6
-          totalHours: 3.616076749251911
-          totalMilliseconds: 2.027123023002322
-          totalMinutes: 4.145608029883936
-          minutes: 2
-          days: 1
-          totalSeconds: 7.386281948385884
+        timeleft: 2000-01-23T04:56:07.000+00:00
         trackedDownloadState: null
         trackedDownloadStatus: null
         seriesId: 6
@@ -17141,7 +17110,8 @@ components:
           format: double
           type: number
         timeleft:
-          $ref: '#/components/schemas/TimeSpan'
+          format: date-time
+          type: string
         estimatedCompletionTime:
           format: date-time
           nullable: true
@@ -17845,18 +17815,7 @@ components:
           indexer: indexer
           episodeId: 1
           title: title
-          timeleft:
-            milliseconds: 5
-            hours: 5
-            seconds: 7
-            totalDays: 9.301444243932576
-            ticks: 6
-            totalHours: 3.616076749251911
-            totalMilliseconds: 2.027123023002322
-            totalMinutes: 4.145608029883936
-            minutes: 2
-            days: 1
-            totalSeconds: 7.386281948385884
+          timeleft: 2000-01-23T04:56:07.000+00:00
           trackedDownloadState: null
           trackedDownloadStatus: null
           seriesId: 6
@@ -18669,18 +18628,7 @@ components:
           indexer: indexer
           episodeId: 1
           title: title
-          timeleft:
-            milliseconds: 5
-            hours: 5
-            seconds: 7
-            totalDays: 9.301444243932576
-            ticks: 6
-            totalHours: 3.616076749251911
-            totalMilliseconds: 2.027123023002322
-            totalMinutes: 4.145608029883936
-            minutes: 2
-            days: 1
-            totalSeconds: 7.386281948385884
+          timeleft: 2000-01-23T04:56:07.000+00:00
           trackedDownloadState: null
           trackedDownloadStatus: null
           seriesId: 6
@@ -20428,18 +20376,7 @@ components:
     TaskResource:
       additionalProperties: false
       example:
-        lastDuration:
-          milliseconds: 5
-          hours: 5
-          seconds: 7
-          totalDays: 9.301444243932576
-          ticks: 6
-          totalHours: 3.616076749251911
-          totalMilliseconds: 2.027123023002322
-          totalMinutes: 4.145608029883936
-          minutes: 2
-          days: 1
-          totalSeconds: 7.386281948385884
+        lastDuration: 2000-01-23T04:56:07.000+00:00
         lastExecution: 2000-01-23T04:56:07.000+00:00
         name: name
         lastStartTime: 2000-01-23T04:56:07.000+00:00
@@ -20470,67 +20407,12 @@ components:
           format: date-time
           type: string
         lastDuration:
-          $ref: '#/components/schemas/TimeSpan'
+          format: date-time
+          type: string
       type: object
     TimeSpan:
-      additionalProperties: false
-      example:
-        milliseconds: 5
-        hours: 5
-        seconds: 7
-        totalDays: 9.301444243932576
-        ticks: 6
-        totalHours: 3.616076749251911
-        totalMilliseconds: 2.027123023002322
-        totalMinutes: 4.145608029883936
-        minutes: 2
-        days: 1
-        totalSeconds: 7.386281948385884
-      properties:
-        ticks:
-          format: int64
-          type: integer
-        days:
-          format: int32
-          readOnly: true
-          type: integer
-        hours:
-          format: int32
-          readOnly: true
-          type: integer
-        milliseconds:
-          format: int32
-          readOnly: true
-          type: integer
-        minutes:
-          format: int32
-          readOnly: true
-          type: integer
-        seconds:
-          format: int32
-          readOnly: true
-          type: integer
-        totalDays:
-          format: double
-          readOnly: true
-          type: number
-        totalHours:
-          format: double
-          readOnly: true
-          type: number
-        totalMilliseconds:
-          format: double
-          readOnly: true
-          type: number
-        totalMinutes:
-          format: double
-          readOnly: true
-          type: number
-        totalSeconds:
-          format: double
-          readOnly: true
-          type: number
-      type: object
+      format: date-time
+      type: string
     TrackedDownloadState:
       enum:
       - downloading

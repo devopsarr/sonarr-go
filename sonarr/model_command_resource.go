@@ -27,7 +27,7 @@ type CommandResource struct {
 	Queued *time.Time `json:"queued,omitempty"`
 	Started NullableTime `json:"started,omitempty"`
 	Ended NullableTime `json:"ended,omitempty"`
-	Duration *TimeSpan `json:"duration,omitempty"`
+	Duration *time.Time `json:"duration,omitempty"`
 	Exception NullableString `json:"exception,omitempty"`
 	Trigger *CommandTrigger `json:"trigger,omitempty"`
 	ClientUserAgent NullableString `json:"clientUserAgent,omitempty"`
@@ -425,9 +425,9 @@ func (o *CommandResource) UnsetEnded() {
 }
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
-func (o *CommandResource) GetDuration() TimeSpan {
+func (o *CommandResource) GetDuration() time.Time {
 	if o == nil || isNil(o.Duration) {
-		var ret TimeSpan
+		var ret time.Time
 		return ret
 	}
 	return *o.Duration
@@ -435,7 +435,7 @@ func (o *CommandResource) GetDuration() TimeSpan {
 
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CommandResource) GetDurationOk() (*TimeSpan, bool) {
+func (o *CommandResource) GetDurationOk() (*time.Time, bool) {
 	if o == nil || isNil(o.Duration) {
     return nil, false
 	}
@@ -451,8 +451,8 @@ func (o *CommandResource) HasDuration() bool {
 	return false
 }
 
-// SetDuration gets a reference to the given TimeSpan and assigns it to the Duration field.
-func (o *CommandResource) SetDuration(v TimeSpan) {
+// SetDuration gets a reference to the given time.Time and assigns it to the Duration field.
+func (o *CommandResource) SetDuration(v time.Time) {
 	o.Duration = &v
 }
 

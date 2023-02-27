@@ -421,7 +421,6 @@ Class | Method | HTTP request | Description
  - [TagDetailsResource](docs/TagDetailsResource.md)
  - [TagResource](docs/TagResource.md)
  - [TaskResource](docs/TaskResource.md)
- - [TimeSpan](docs/TimeSpan.md)
  - [TrackedDownloadState](docs/TrackedDownloadState.md)
  - [TrackedDownloadStatus](docs/TrackedDownloadStatus.md)
  - [TrackedDownloadStatusMessage](docs/TrackedDownloadStatusMessage.md)
