@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/devopsarr/sonarr-go/compare/v0.2.1...v0.2.2) (2023-02-27)
+
+
+### Bug Fixes
+
+* use time span type as string ([76571f8](https://github.com/devopsarr/sonarr-go/commit/76571f82ab462137ed903b777c0036572a76f6db))
+
 ## [0.2.1](https://github.com/devopsarr/sonarr-go/compare/v0.2.0...v0.2.1) (2023-02-27)
 
 
