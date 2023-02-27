@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/devopsarr/sonarr-go/compare/v0.2.0...v0.2.1) (2023-02-27)
+
+
+### Bug Fixes
+
+* remove wrongly used time span ([85bf196](https://github.com/devopsarr/sonarr-go/commit/85bf196f9506dadf9fa1e2b6eaa915c0815f54b2))
+
 ## [0.2.0](https://github.com/devopsarr/sonarr-go/compare/v0.1.0...v0.2.0) (2023-02-21)
 
 
