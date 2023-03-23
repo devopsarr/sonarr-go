@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/devopsarr/sonarr-go/compare/v0.3.0...v0.4.0) (2023-03-23)
+
+
+### Features
+
+* sdk generation alignment ([989ad66](https://github.com/devopsarr/sonarr-go/commit/989ad665dcd6311b1e93dcd29e2ed23c7737b99a))
+
 ## [0.3.0](https://github.com/devopsarr/sonarr-go/compare/v0.2.2...v0.3.0) (2023-03-23)
 
 
