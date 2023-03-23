@@ -4402,7 +4402,7 @@ paths:
       - SeriesImport
   /api/v3/series/lookup:
     get:
-      operationId: ListSeriesLookup
+      operationId: GetSeriesLookup
       parameters:
       - explode: true
         in: query
@@ -8842,14 +8842,7 @@ components:
     HealthResource:
       additionalProperties: false
       example:
-        wikiUrl:
-          path: path
-          fragment: fragment
-          scheme: scheme
-          port: 6
-          query: query
-          host: host
-          fullUri: fullUri
+        wikiUrl: wikiUrl
         id: 0
         source: source
         type: null
@@ -8867,7 +8860,7 @@ components:
           nullable: true
           type: string
         wikiUrl:
-          $ref: '#/components/schemas/HttpUri'
+          type: string
       type: object
     HistoryResource:
       additionalProperties: false
@@ -11490,46 +11483,7 @@ components:
           type: integer
       type: object
     HttpUri:
-      additionalProperties: false
-      example:
-        path: path
-        fragment: fragment
-        scheme: scheme
-        port: 6
-        query: query
-        host: host
-        fullUri: fullUri
-      properties:
-        fullUri:
-          nullable: true
-          readOnly: true
-          type: string
-        scheme:
-          nullable: true
-          readOnly: true
-          type: string
-        host:
-          nullable: true
-          readOnly: true
-          type: string
-        port:
-          format: int32
-          nullable: true
-          readOnly: true
-          type: integer
-        path:
-          nullable: true
-          readOnly: true
-          type: string
-        query:
-          nullable: true
-          readOnly: true
-          type: string
-        fragment:
-          nullable: true
-          readOnly: true
-          type: string
-      type: object
+      type: string
     ImportListExclusionResource:
       additionalProperties: false
       example:
@@ -20591,33 +20545,7 @@ components:
           type: string
       type: object
     Version:
-      additionalProperties: false
-      properties:
-        major:
-          format: int32
-          readOnly: true
-          type: integer
-        minor:
-          format: int32
-          readOnly: true
-          type: integer
-        build:
-          format: int32
-          readOnly: true
-          type: integer
-        revision:
-          format: int32
-          readOnly: true
-          type: integer
-        majorRevision:
-          format: int32
-          readOnly: true
-          type: integer
-        minorRevision:
-          format: int32
-          readOnly: true
-          type: integer
-      type: object
+      type: string
     CreateLogin_request:
       properties:
         Username:

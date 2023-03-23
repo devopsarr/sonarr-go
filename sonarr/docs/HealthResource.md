@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Source** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**HealthCheckResult**](HealthCheckResult.md) |  | [optional] 
 **Message** | Pointer to **NullableString** |  | [optional] 
-**WikiUrl** | Pointer to [**HttpUri**](HttpUri.md) |  | [optional] 
+**WikiUrl** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasMessage returns a boolean if a field has been set.
 UnsetMessage ensures that no value is present for Message, not even an explicit nil
 ### GetWikiUrl
 
-`func (o *HealthResource) GetWikiUrl() HttpUri`
+`func (o *HealthResource) GetWikiUrl() string`
 
 GetWikiUrl returns the WikiUrl field if non-nil, zero value otherwise.
 
 ### GetWikiUrlOk
 
-`func (o *HealthResource) GetWikiUrlOk() (*HttpUri, bool)`
+`func (o *HealthResource) GetWikiUrlOk() (*string, bool)`
 
 GetWikiUrlOk returns a tuple with the WikiUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWikiUrl
 
-`func (o *HealthResource) SetWikiUrl(v HttpUri)`
+`func (o *HealthResource) SetWikiUrl(v string)`
 
 SetWikiUrl sets WikiUrl field to given value.
 

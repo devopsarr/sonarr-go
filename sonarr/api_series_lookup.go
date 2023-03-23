@@ -21,29 +21,29 @@ import (
 
 // SeriesLookupApiService SeriesLookupApi service
 type SeriesLookupApiService service
-type ApiListSeriesLookupRequest struct {
+type ApiGetSeriesLookupRequest struct {
 	ctx context.Context
 	ApiService *SeriesLookupApiService
 	term *string
 }
 
-func (r ApiListSeriesLookupRequest) Term(term string) ApiListSeriesLookupRequest {
+func (r ApiGetSeriesLookupRequest) Term(term string) ApiGetSeriesLookupRequest {
 	r.term = &term
 	return r
 }
 
-func (r ApiListSeriesLookupRequest) Execute() ([]*SeriesResource, *http.Response, error) {
-	return r.ApiService.ListSeriesLookupExecute(r)
+func (r ApiGetSeriesLookupRequest) Execute() ([]*SeriesResource, *http.Response, error) {
+	return r.ApiService.GetSeriesLookupExecute(r)
 }
 
 /*
-ListSeriesLookup Method for ListSeriesLookup
+GetSeriesLookup Method for GetSeriesLookup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListSeriesLookupRequest
+ @return ApiGetSeriesLookupRequest
 */
-func (a *SeriesLookupApiService) ListSeriesLookup(ctx context.Context) ApiListSeriesLookupRequest {
-	return ApiListSeriesLookupRequest{
+func (a *SeriesLookupApiService) GetSeriesLookup(ctx context.Context) ApiGetSeriesLookupRequest {
+	return ApiGetSeriesLookupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -51,7 +51,7 @@ func (a *SeriesLookupApiService) ListSeriesLookup(ctx context.Context) ApiListSe
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesLookupApiService) ListSeriesLookupExecute(r ApiListSeriesLookupRequest) ([]*SeriesResource, *http.Response, error) {
+func (a *SeriesLookupApiService) GetSeriesLookupExecute(r ApiGetSeriesLookupRequest) ([]*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *SeriesLookupApiService) ListSeriesLookupExecute(r ApiListSeriesLookupRe
 		localVarReturnValue  []*SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupApiService.ListSeriesLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupApiService.GetSeriesLookup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -93,20 +93,6 @@ func (a *SeriesLookupApiService) ListSeriesLookupExecute(r ApiListSeriesLookupRe
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["X-Api-Key"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["X-Api-Key"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["apikey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -115,6 +101,20 @@ func (a *SeriesLookupApiService) ListSeriesLookupExecute(r ApiListSeriesLookupRe
 					key = apiKey.Key
 				}
 				localVarQueryParams.Add("apikey", key)
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["X-Api-Key"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-Api-Key"] = key
 			}
 		}
 	}

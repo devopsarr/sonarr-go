@@ -131,7 +131,6 @@ docs/HistoryResource.md
 docs/HistoryResourcePagingResource.md
 docs/HostConfigApi.md
 docs/HostConfigResource.md
-docs/HttpUri.md
 docs/ImportListApi.md
 docs/ImportListExclusionApi.md
 docs/ImportListExclusionResource.md
@@ -258,7 +257,6 @@ docs/UpdateChanges.md
 docs/UpdateLogFileApi.md
 docs/UpdateMechanism.md
 docs/UpdateResource.md
-docs/Version.md
 go.mod
 model_add_series_options.go
 model_alternate_title_resource.go
@@ -300,7 +298,6 @@ model_health_resource.go
 model_history_resource.go
 model_history_resource_paging_resource.go
 model_host_config_resource.go
-model_http_uri.go
 model_import_list_exclusion_resource.go
 model_import_list_resource.go
 model_import_list_type.go
@@ -381,6 +378,5 @@ model_unmapped_folder.go
 model_update_changes.go
 model_update_mechanism.go
 model_update_resource.go
-model_version.go
 response.go
 utils.go

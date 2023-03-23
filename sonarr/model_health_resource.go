@@ -20,7 +20,7 @@ type HealthResource struct {
 	Source NullableString `json:"source,omitempty"`
 	Type *HealthCheckResult `json:"type,omitempty"`
 	Message NullableString `json:"message,omitempty"`
-	WikiUrl *HttpUri `json:"wikiUrl,omitempty"`
+	WikiUrl *string `json:"wikiUrl,omitempty"`
 }
 
 // NewHealthResource instantiates a new HealthResource object
@@ -189,9 +189,9 @@ func (o *HealthResource) UnsetMessage() {
 }
 
 // GetWikiUrl returns the WikiUrl field value if set, zero value otherwise.
-func (o *HealthResource) GetWikiUrl() HttpUri {
+func (o *HealthResource) GetWikiUrl() string {
 	if o == nil || isNil(o.WikiUrl) {
-		var ret HttpUri
+		var ret string
 		return ret
 	}
 	return *o.WikiUrl
@@ -199,7 +199,7 @@ func (o *HealthResource) GetWikiUrl() HttpUri {
 
 // GetWikiUrlOk returns a tuple with the WikiUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HealthResource) GetWikiUrlOk() (*HttpUri, bool) {
+func (o *HealthResource) GetWikiUrlOk() (*string, bool) {
 	if o == nil || isNil(o.WikiUrl) {
     return nil, false
 	}
@@ -215,8 +215,8 @@ func (o *HealthResource) HasWikiUrl() bool {
 	return false
 }
 
-// SetWikiUrl gets a reference to the given HttpUri and assigns it to the WikiUrl field.
-func (o *HealthResource) SetWikiUrl(v HttpUri) {
+// SetWikiUrl gets a reference to the given string and assigns it to the WikiUrl field.
+func (o *HealthResource) SetWikiUrl(v string) {
 	o.WikiUrl = &v
 }
 
