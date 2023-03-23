@@ -4402,7 +4402,7 @@ paths:
       - SeriesImport
   /api/v3/series/lookup:
     get:
-      operationId: GetSeriesLookup
+      operationId: ListSeriesLookup
       parameters:
       - explode: true
         in: query
