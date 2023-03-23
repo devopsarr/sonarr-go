@@ -283,7 +283,7 @@ Class | Method | HTTP request | Description
 *SeriesEditorApi* | [**DeleteSeriesEditor**](sonarr/docs/SeriesEditorApi.md#deleteserieseditor) | **Delete** /api/v3/series/editor | 
 *SeriesEditorApi* | [**PutSeriesEditor**](sonarr/docs/SeriesEditorApi.md#putserieseditor) | **Put** /api/v3/series/editor | 
 *SeriesImportApi* | [**CreateSeriesImport**](sonarr/docs/SeriesImportApi.md#createseriesimport) | **Post** /api/v3/series/import | 
-*SeriesLookupApi* | [**GetSeriesLookup**](sonarr/docs/SeriesLookupApi.md#getserieslookup) | **Get** /api/v3/series/lookup | 
+*SeriesLookupApi* | [**ListSeriesLookup**](sonarr/docs/SeriesLookupApi.md#listserieslookup) | **Get** /api/v3/series/lookup | 
 *StaticResourceApi* | [**Get**](sonarr/docs/StaticResourceApi.md#get) | **Get** / | 
 *StaticResourceApi* | [**GetByPath**](sonarr/docs/StaticResourceApi.md#getbypath) | **Get** /{path} | 
 *StaticResourceApi* | [**GetContentByPath**](sonarr/docs/StaticResourceApi.md#getcontentbypath) | **Get** /content/{path} | 

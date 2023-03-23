@@ -21,29 +21,29 @@ import (
 
 // SeriesLookupApiService SeriesLookupApi service
 type SeriesLookupApiService service
-type ApiGetSeriesLookupRequest struct {
+type ApiListSeriesLookupRequest struct {
 	ctx context.Context
 	ApiService *SeriesLookupApiService
 	term *string
 }
 
-func (r ApiGetSeriesLookupRequest) Term(term string) ApiGetSeriesLookupRequest {
+func (r ApiListSeriesLookupRequest) Term(term string) ApiListSeriesLookupRequest {
 	r.term = &term
 	return r
 }
 
-func (r ApiGetSeriesLookupRequest) Execute() ([]*SeriesResource, *http.Response, error) {
-	return r.ApiService.GetSeriesLookupExecute(r)
+func (r ApiListSeriesLookupRequest) Execute() ([]*SeriesResource, *http.Response, error) {
+	return r.ApiService.ListSeriesLookupExecute(r)
 }
 
 /*
-GetSeriesLookup Method for GetSeriesLookup
+ListSeriesLookup Method for ListSeriesLookup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSeriesLookupRequest
+ @return ApiListSeriesLookupRequest
 */
-func (a *SeriesLookupApiService) GetSeriesLookup(ctx context.Context) ApiGetSeriesLookupRequest {
-	return ApiGetSeriesLookupRequest{
+func (a *SeriesLookupApiService) ListSeriesLookup(ctx context.Context) ApiListSeriesLookupRequest {
+	return ApiListSeriesLookupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -51,7 +51,7 @@ func (a *SeriesLookupApiService) GetSeriesLookup(ctx context.Context) ApiGetSeri
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesLookupApiService) GetSeriesLookupExecute(r ApiGetSeriesLookupRequest) ([]*SeriesResource, *http.Response, error) {
+func (a *SeriesLookupApiService) ListSeriesLookupExecute(r ApiListSeriesLookupRequest) ([]*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *SeriesLookupApiService) GetSeriesLookupExecute(r ApiGetSeriesLookupRequ
 		localVarReturnValue  []*SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupApiService.GetSeriesLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupApiService.ListSeriesLookup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
