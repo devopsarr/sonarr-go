@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetPingRequest struct via 
 
 ### Authorization
 
-[X-Api-Key](../README.md#X-Api-Key), [apikey](../README.md#apikey)
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
 
 ### HTTP request headers
 
