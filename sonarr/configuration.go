@@ -102,7 +102,7 @@ func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
 		// x-release-please-start-version
-		UserAgent:        "sonarr-go/v0.4.0",
+		UserAgent:        "sonarr-go/v0.4.1",
 		// x-release-please-end
 		Debug:            false,
 		Servers:          ServerConfigurations{
