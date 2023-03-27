@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/devopsarr/sonarr-go/compare/v0.4.0...v0.4.1) (2023-03-27)
+
+
+### Bug Fixes
+
+* **devopsarr/sonarr-py#6:** remove timespan validator ([c1a2fb6](https://github.com/devopsarr/sonarr-go/commit/c1a2fb60d92b43b1555124c543792430058044f2))
+
 ## [0.4.0](https://github.com/devopsarr/sonarr-go/compare/v0.3.0...v0.4.0) (2023-03-23)
 
 
