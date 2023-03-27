@@ -6473,7 +6473,6 @@ components:
           nullable: true
           type: string
         duration:
-          pattern: "\\d{2}:\\d{2}:\\d{2}"
           type: string
         exception:
           nullable: true
@@ -11631,7 +11630,6 @@ components:
           format: int32
           type: integer
         minRefreshInterval:
-          pattern: "\\d{2}:\\d{2}:\\d{2}"
           type: string
       type: object
     ImportListType:
@@ -17064,7 +17062,6 @@ components:
           format: double
           type: number
         timeleft:
-          pattern: "\\d{2}:\\d{2}:\\d{2}"
           type: string
         estimatedCompletionTime:
           format: date-time
@@ -20361,11 +20358,9 @@ components:
           format: date-time
           type: string
         lastDuration:
-          pattern: "\\d{2}:\\d{2}:\\d{2}"
           type: string
       type: object
     TimeSpan:
-      pattern: "\\d{2}:\\d{2}:\\d{2}"
       type: string
     TrackedDownloadState:
       enum:
