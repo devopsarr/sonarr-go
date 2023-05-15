@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **SeriesId** | Pointer to **NullableInt32** |  | [optional] 
 **EpisodeId** | Pointer to **NullableInt32** |  | [optional] 
-**SeasonNumber** | Pointer to **NullableInt32** |  | [optional] 
 **Series** | Pointer to [**SeriesResource**](SeriesResource.md) |  | [optional] 
 **Episode** | Pointer to [**EpisodeResource**](EpisodeResource.md) |  | [optional] 
 **Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
@@ -28,7 +27,6 @@ Name | Type | Description | Notes
 **DownloadClient** | Pointer to **NullableString** |  | [optional] 
 **Indexer** | Pointer to **NullableString** |  | [optional] 
 **OutputPath** | Pointer to **NullableString** |  | [optional] 
-**EpisodeHasFile** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -144,41 +142,6 @@ HasEpisodeId returns a boolean if a field has been set.
 `func (o *QueueResource) UnsetEpisodeId()`
 
 UnsetEpisodeId ensures that no value is present for EpisodeId, not even an explicit nil
-### GetSeasonNumber
-
-`func (o *QueueResource) GetSeasonNumber() int32`
-
-GetSeasonNumber returns the SeasonNumber field if non-nil, zero value otherwise.
-
-### GetSeasonNumberOk
-
-`func (o *QueueResource) GetSeasonNumberOk() (*int32, bool)`
-
-GetSeasonNumberOk returns a tuple with the SeasonNumber field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeasonNumber
-
-`func (o *QueueResource) SetSeasonNumber(v int32)`
-
-SetSeasonNumber sets SeasonNumber field to given value.
-
-### HasSeasonNumber
-
-`func (o *QueueResource) HasSeasonNumber() bool`
-
-HasSeasonNumber returns a boolean if a field has been set.
-
-### SetSeasonNumberNil
-
-`func (o *QueueResource) SetSeasonNumberNil(b bool)`
-
- SetSeasonNumberNil sets the value for SeasonNumber to be an explicit nil
-
-### UnsetSeasonNumber
-`func (o *QueueResource) UnsetSeasonNumber()`
-
-UnsetSeasonNumber ensures that no value is present for SeasonNumber, not even an explicit nil
 ### GetSeries
 
 `func (o *QueueResource) GetSeries() SeriesResource`
@@ -789,31 +752,6 @@ HasOutputPath returns a boolean if a field has been set.
 `func (o *QueueResource) UnsetOutputPath()`
 
 UnsetOutputPath ensures that no value is present for OutputPath, not even an explicit nil
-### GetEpisodeHasFile
-
-`func (o *QueueResource) GetEpisodeHasFile() bool`
-
-GetEpisodeHasFile returns the EpisodeHasFile field if non-nil, zero value otherwise.
-
-### GetEpisodeHasFileOk
-
-`func (o *QueueResource) GetEpisodeHasFileOk() (*bool, bool)`
-
-GetEpisodeHasFileOk returns a tuple with the EpisodeHasFile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEpisodeHasFile
-
-`func (o *QueueResource) SetEpisodeHasFile(v bool)`
-
-SetEpisodeHasFile sets EpisodeHasFile field to given value.
-
-### HasEpisodeHasFile
-
-`func (o *QueueResource) HasEpisodeHasFile() bool`
-
-HasEpisodeHasFile returns a boolean if a field has been set.
-
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

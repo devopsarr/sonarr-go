@@ -20,11 +20,11 @@ import (
 )
 
 
-// NamingConfigAPIService NamingConfigAPI service
-type NamingConfigAPIService service
+// NamingConfigApiService NamingConfigApi service
+type NamingConfigApiService service
 type ApiGetNamingConfigRequest struct {
 	ctx context.Context
-	ApiService *NamingConfigAPIService
+	ApiService *NamingConfigApiService
 }
 
 func (r ApiGetNamingConfigRequest) Execute() (*NamingConfigResource, *http.Response, error) {
@@ -37,7 +37,7 @@ GetNamingConfig Method for GetNamingConfig
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetNamingConfigRequest
 */
-func (a *NamingConfigAPIService) GetNamingConfig(ctx context.Context) ApiGetNamingConfigRequest {
+func (a *NamingConfigApiService) GetNamingConfig(ctx context.Context) ApiGetNamingConfigRequest {
 	return ApiGetNamingConfigRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -46,7 +46,7 @@ func (a *NamingConfigAPIService) GetNamingConfig(ctx context.Context) ApiGetNami
 
 // Execute executes the request
 //  @return NamingConfigResource
-func (a *NamingConfigAPIService) GetNamingConfigExecute(r ApiGetNamingConfigRequest) (*NamingConfigResource, *http.Response, error) {
+func (a *NamingConfigApiService) GetNamingConfigExecute(r ApiGetNamingConfigRequest) (*NamingConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *NamingConfigAPIService) GetNamingConfigExecute(r ApiGetNamingConfigRequ
 		localVarReturnValue  *NamingConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigAPIService.GetNamingConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetNamingConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,7 +148,7 @@ func (a *NamingConfigAPIService) GetNamingConfigExecute(r ApiGetNamingConfigRequ
 }
 type ApiGetNamingConfigByIdRequest struct {
 	ctx context.Context
-	ApiService *NamingConfigAPIService
+	ApiService *NamingConfigApiService
 	id int32
 }
 
@@ -163,7 +163,7 @@ GetNamingConfigById Method for GetNamingConfigById
  @param id
  @return ApiGetNamingConfigByIdRequest
 */
-func (a *NamingConfigAPIService) GetNamingConfigById(ctx context.Context, id int32) ApiGetNamingConfigByIdRequest {
+func (a *NamingConfigApiService) GetNamingConfigById(ctx context.Context, id int32) ApiGetNamingConfigByIdRequest {
 	return ApiGetNamingConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -173,7 +173,7 @@ func (a *NamingConfigAPIService) GetNamingConfigById(ctx context.Context, id int
 
 // Execute executes the request
 //  @return NamingConfigResource
-func (a *NamingConfigAPIService) GetNamingConfigByIdExecute(r ApiGetNamingConfigByIdRequest) (*NamingConfigResource, *http.Response, error) {
+func (a *NamingConfigApiService) GetNamingConfigByIdExecute(r ApiGetNamingConfigByIdRequest) (*NamingConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *NamingConfigAPIService) GetNamingConfigByIdExecute(r ApiGetNamingConfig
 		localVarReturnValue  *NamingConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigAPIService.GetNamingConfigById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetNamingConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -276,10 +276,9 @@ func (a *NamingConfigAPIService) GetNamingConfigByIdExecute(r ApiGetNamingConfig
 }
 type ApiGetNamingConfigExamplesRequest struct {
 	ctx context.Context
-	ApiService *NamingConfigAPIService
+	ApiService *NamingConfigApiService
 	renameEpisodes *bool
 	replaceIllegalCharacters *bool
-	colonReplacementFormat *int32
 	multiEpisodeStyle *int32
 	standardEpisodeFormat *string
 	dailyEpisodeFormat *string
@@ -304,11 +303,6 @@ func (r ApiGetNamingConfigExamplesRequest) RenameEpisodes(renameEpisodes bool) A
 
 func (r ApiGetNamingConfigExamplesRequest) ReplaceIllegalCharacters(replaceIllegalCharacters bool) ApiGetNamingConfigExamplesRequest {
 	r.replaceIllegalCharacters = &replaceIllegalCharacters
-	return r
-}
-
-func (r ApiGetNamingConfigExamplesRequest) ColonReplacementFormat(colonReplacementFormat int32) ApiGetNamingConfigExamplesRequest {
-	r.colonReplacementFormat = &colonReplacementFormat
 	return r
 }
 
@@ -397,7 +391,7 @@ GetNamingConfigExamples Method for GetNamingConfigExamples
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetNamingConfigExamplesRequest
 */
-func (a *NamingConfigAPIService) GetNamingConfigExamples(ctx context.Context) ApiGetNamingConfigExamplesRequest {
+func (a *NamingConfigApiService) GetNamingConfigExamples(ctx context.Context) ApiGetNamingConfigExamplesRequest {
 	return ApiGetNamingConfigExamplesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -405,14 +399,14 @@ func (a *NamingConfigAPIService) GetNamingConfigExamples(ctx context.Context) Ap
 }
 
 // Execute executes the request
-func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingConfigExamplesRequest) (*http.Response, error) {
+func (a *NamingConfigApiService) GetNamingConfigExamplesExecute(r ApiGetNamingConfigExamplesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigAPIService.GetNamingConfigExamples")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.GetNamingConfigExamples")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -428,9 +422,6 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	}
 	if r.replaceIllegalCharacters != nil {
 		localVarQueryParams.Add("ReplaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
-	}
-	if r.colonReplacementFormat != nil {
-		localVarQueryParams.Add("ColonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
 	}
 	if r.multiEpisodeStyle != nil {
 		localVarQueryParams.Add("MultiEpisodeStyle", parameterToString(*r.multiEpisodeStyle, ""))
@@ -551,7 +542,7 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 }
 type ApiUpdateNamingConfigRequest struct {
 	ctx context.Context
-	ApiService *NamingConfigAPIService
+	ApiService *NamingConfigApiService
 	id string
 	namingConfigResource *NamingConfigResource
 }
@@ -572,7 +563,7 @@ UpdateNamingConfig Method for UpdateNamingConfig
  @param id
  @return ApiUpdateNamingConfigRequest
 */
-func (a *NamingConfigAPIService) UpdateNamingConfig(ctx context.Context, id string) ApiUpdateNamingConfigRequest {
+func (a *NamingConfigApiService) UpdateNamingConfig(ctx context.Context, id string) ApiUpdateNamingConfigRequest {
 	return ApiUpdateNamingConfigRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -582,7 +573,7 @@ func (a *NamingConfigAPIService) UpdateNamingConfig(ctx context.Context, id stri
 
 // Execute executes the request
 //  @return NamingConfigResource
-func (a *NamingConfigAPIService) UpdateNamingConfigExecute(r ApiUpdateNamingConfigRequest) (*NamingConfigResource, *http.Response, error) {
+func (a *NamingConfigApiService) UpdateNamingConfigExecute(r ApiUpdateNamingConfigRequest) (*NamingConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -590,7 +581,7 @@ func (a *NamingConfigAPIService) UpdateNamingConfigExecute(r ApiUpdateNamingConf
 		localVarReturnValue  *NamingConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigAPIService.UpdateNamingConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NamingConfigApiService.UpdateNamingConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

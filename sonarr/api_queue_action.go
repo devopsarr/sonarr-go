@@ -20,11 +20,11 @@ import (
 )
 
 
-// QueueActionAPIService QueueActionAPI service
-type QueueActionAPIService service
+// QueueActionApiService QueueActionApi service
+type QueueActionApiService service
 type ApiCreateQueueGrabBulkRequest struct {
 	ctx context.Context
-	ApiService *QueueActionAPIService
+	ApiService *QueueActionApiService
 	queueBulkResource *QueueBulkResource
 }
 
@@ -43,7 +43,7 @@ CreateQueueGrabBulk Method for CreateQueueGrabBulk
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateQueueGrabBulkRequest
 */
-func (a *QueueActionAPIService) CreateQueueGrabBulk(ctx context.Context) ApiCreateQueueGrabBulkRequest {
+func (a *QueueActionApiService) CreateQueueGrabBulk(ctx context.Context) ApiCreateQueueGrabBulkRequest {
 	return ApiCreateQueueGrabBulkRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,14 +51,14 @@ func (a *QueueActionAPIService) CreateQueueGrabBulk(ctx context.Context) ApiCrea
 }
 
 // Execute executes the request
-func (a *QueueActionAPIService) CreateQueueGrabBulkExecute(r ApiCreateQueueGrabBulkRequest) (*http.Response, error) {
+func (a *QueueActionApiService) CreateQueueGrabBulkExecute(r ApiCreateQueueGrabBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueActionAPIService.CreateQueueGrabBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueActionApiService.CreateQueueGrabBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -145,7 +145,7 @@ func (a *QueueActionAPIService) CreateQueueGrabBulkExecute(r ApiCreateQueueGrabB
 }
 type ApiCreateQueueGrabByIdRequest struct {
 	ctx context.Context
-	ApiService *QueueActionAPIService
+	ApiService *QueueActionApiService
 	id int32
 }
 
@@ -160,7 +160,7 @@ CreateQueueGrabById Method for CreateQueueGrabById
  @param id
  @return ApiCreateQueueGrabByIdRequest
 */
-func (a *QueueActionAPIService) CreateQueueGrabById(ctx context.Context, id int32) ApiCreateQueueGrabByIdRequest {
+func (a *QueueActionApiService) CreateQueueGrabById(ctx context.Context, id int32) ApiCreateQueueGrabByIdRequest {
 	return ApiCreateQueueGrabByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *QueueActionAPIService) CreateQueueGrabById(ctx context.Context, id int3
 }
 
 // Execute executes the request
-func (a *QueueActionAPIService) CreateQueueGrabByIdExecute(r ApiCreateQueueGrabByIdRequest) (*http.Response, error) {
+func (a *QueueActionApiService) CreateQueueGrabByIdExecute(r ApiCreateQueueGrabByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueActionAPIService.CreateQueueGrabById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueActionApiService.CreateQueueGrabById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -30,7 +30,6 @@ type Field struct {
 	Section NullableString `json:"section,omitempty"`
 	Hidden NullableString `json:"hidden,omitempty"`
 	Privacy *PrivacyLevel `json:"privacy,omitempty"`
-	Placeholder NullableString `json:"placeholder,omitempty"`
 }
 
 // NewField instantiates a new Field object
@@ -590,48 +589,6 @@ func (o *Field) SetPrivacy(v PrivacyLevel) {
 	o.Privacy = &v
 }
 
-// GetPlaceholder returns the Placeholder field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Field) GetPlaceholder() string {
-	if o == nil || isNil(o.Placeholder.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Placeholder.Get()
-}
-
-// GetPlaceholderOk returns a tuple with the Placeholder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Field) GetPlaceholderOk() (*string, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return o.Placeholder.Get(), o.Placeholder.IsSet()
-}
-
-// HasPlaceholder returns a boolean if a field has been set.
-func (o *Field) HasPlaceholder() bool {
-	if o != nil && o.Placeholder.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetPlaceholder gets a reference to the given NullableString and assigns it to the Placeholder field.
-func (o *Field) SetPlaceholder(v string) {
-	o.Placeholder.Set(&v)
-}
-// SetPlaceholderNil sets the value for Placeholder to be an explicit nil
-func (o *Field) SetPlaceholderNil() {
-	o.Placeholder.Set(nil)
-}
-
-// UnsetPlaceholder ensures that no value is present for Placeholder, not even an explicit nil
-func (o *Field) UnsetPlaceholder() {
-	o.Placeholder.Unset()
-}
-
 func (o Field) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Order) {
@@ -675,9 +632,6 @@ func (o Field) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Privacy) {
 		toSerialize["privacy"] = o.Privacy
-	}
-	if o.Placeholder.IsSet() {
-		toSerialize["placeholder"] = o.Placeholder.Get()
 	}
 	return json.Marshal(toSerialize)
 }

@@ -348,14 +348,6 @@ paths:
           default: false
           type: boolean
         style: form
-      - explode: true
-        in: query
-        name: tags
-        required: false
-        schema:
-          default: ""
-          type: string
-        style: form
       responses:
         "200":
           content:
@@ -412,7 +404,7 @@ paths:
         style: form
       - explode: true
         in: query
-        name: tags
+        name: tagList
         required: false
         schema:
           default: ""
@@ -1278,15 +1270,6 @@ paths:
   /api/v3/episode/monitor:
     put:
       operationId: PutEpisodeMonitor
-      parameters:
-      - explode: true
-        in: query
-        name: includeImages
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
       requestBody:
         content:
           application/json:
@@ -2968,14 +2951,6 @@ paths:
         style: form
       - explode: true
         in: query
-        name: ColonReplacementFormat
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-      - explode: true
-        in: query
         name: MultiEpisodeStyle
         required: false
         schema:
@@ -4308,22 +4283,6 @@ paths:
           format: int32
           type: integer
         style: simple
-      - explode: true
-        in: query
-        name: deleteFiles
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
-      - explode: true
-        in: query
-        name: addImportListExclusion
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
       responses:
         "200":
           description: Success
@@ -4352,14 +4311,6 @@ paths:
     put:
       operationId: UpdateSeries
       parameters:
-      - explode: true
-        in: query
-        name: moveFiles
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
       - explode: false
         in: path
         name: id
@@ -4956,7 +4907,6 @@ components:
             unit: unit
             helpLink: helpLink
             name: name
-            placeholder: placeholder
             value: ""
             order: 5
           - helpText: helpText
@@ -4979,7 +4929,6 @@ components:
             unit: unit
             helpLink: helpLink
             name: name
-            placeholder: placeholder
             value: ""
             order: 5
           required: true
@@ -5009,7 +4958,6 @@ components:
             unit: unit
             helpLink: helpLink
             name: name
-            placeholder: placeholder
             value: ""
             order: 5
           - helpText: helpText
@@ -5032,7 +4980,6 @@ components:
             unit: unit
             helpLink: helpLink
             name: name
-            placeholder: placeholder
             value: ""
             order: 5
           required: true
@@ -5090,7 +5037,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         - helpText: helpText
@@ -5113,7 +5059,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         required: true
@@ -5356,7 +5301,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -5379,7 +5323,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -5413,7 +5356,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -5436,7 +5378,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -5474,7 +5415,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -5497,7 +5437,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -5531,7 +5470,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -5554,7 +5492,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -5788,7 +5725,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -5811,7 +5747,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -5845,7 +5780,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -5868,7 +5802,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -5906,7 +5839,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -5929,7 +5861,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -5963,7 +5894,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -5986,7 +5916,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -6171,7 +6100,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -6194,7 +6122,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -6228,7 +6155,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -6251,7 +6177,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -6289,7 +6214,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -6312,7 +6236,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -6346,7 +6269,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -6369,7 +6291,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -6512,7 +6433,6 @@ components:
           sendUpdatesToClient: true
           updateScheduledTask: true
         priority: null
-        result: null
         duration: duration
         commandName: commandName
         name: name
@@ -6541,8 +6461,6 @@ components:
           $ref: '#/components/schemas/CommandPriority'
         status:
           $ref: '#/components/schemas/CommandStatus'
-        result:
-          $ref: '#/components/schemas/CommandResult'
         queued:
           format: date-time
           type: string
@@ -6577,12 +6495,6 @@ components:
           nullable: true
           type: string
       type: object
-    CommandResult:
-      enum:
-      - unknown
-      - successful
-      - unsuccessful
-      type: string
     CommandStatus:
       enum:
       - queued
@@ -6661,7 +6573,6 @@ components:
             unit: unit
             helpLink: helpLink
             name: name
-            placeholder: placeholder
             value: ""
             order: 5
           - helpText: helpText
@@ -6684,7 +6595,6 @@ components:
             unit: unit
             helpLink: helpLink
             name: name
-            placeholder: placeholder
             value: ""
             order: 5
           required: true
@@ -6718,7 +6628,6 @@ components:
             unit: unit
             helpLink: helpLink
             name: name
-            placeholder: placeholder
             value: ""
             order: 5
           - helpText: helpText
@@ -6741,7 +6650,6 @@ components:
             unit: unit
             helpLink: helpLink
             name: name
-            placeholder: placeholder
             value: ""
             order: 5
           required: true
@@ -6794,7 +6702,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         - helpText: helpText
@@ -6817,7 +6724,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         required: true
@@ -6990,7 +6896,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         - helpText: helpText
@@ -7013,7 +6918,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         infoLink: infoLink
@@ -7160,7 +7064,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -7183,7 +7086,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -7217,7 +7119,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -7240,7 +7141,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -7278,7 +7178,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -7301,7 +7200,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -7335,7 +7233,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -7358,13 +7255,12 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
             infoLink: infoLink
-        seasonNumber: 2
-        seriesId: 3
+        seasonNumber: 3
+        seriesId: 9
         dateAdded: 2000-01-23T04:56:07.000+00:00
         quality:
           quality:
@@ -7377,22 +7273,22 @@ components:
             version: 2
             isRepack: true
         path: path
-        size: 4
+        size: 2
         relativePath: relativePath
-        id: 9
+        id: 7
         mediaInfo:
           subtitles: subtitles
           audioLanguages: audioLanguages
           videoDynamicRange: videoDynamicRange
-          videoBitDepth: 6
+          videoBitDepth: 1
           audioStreamCount: 1
           audioCodec: audioCodec
           resolution: resolution
-          audioBitrate: 1
-          videoFps: 1.1730742509559433
-          videoBitrate: 7
-          audioChannels: 1.0246457001441578
-          id: 7
+          audioBitrate: 7
+          videoFps: 7.457744773683766
+          videoBitrate: 6
+          audioChannels: 1.2315135367772556
+          id: 4
           videoDynamicRangeType: videoDynamicRangeType
           runTime: runTime
           scanType: scanType
@@ -7458,20 +7354,8 @@ components:
     EpisodeResource:
       additionalProperties: false
       example:
-        sceneSeasonNumber: 9
-        airDateUtc: 2000-01-23T04:56:07.000+00:00
-        airDate: airDate
-        episodeFileId: 5
-        title: title
-        episodeNumber: 2
-        seriesId: 6
-        monitored: true
-        seriesTitle: seriesTitle
-        absoluteEpisodeNumber: 4
-        grabbed: true
-        id: 0
-        sceneAbsoluteEpisodeNumber: 5
         overview: overview
+        sceneSeasonNumber: 9
         images:
         - coverType: null
           remoteUrl: remoteUrl
@@ -7480,7 +7364,8 @@ components:
           remoteUrl: remoteUrl
           url: url
         tvdbId: 1
-        runtime: 7
+        airDateUtc: 2000-01-23T04:56:07.000+00:00
+        airDate: airDate
         episodeFile:
           languages:
           - name: name
@@ -7522,7 +7407,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -7545,7 +7429,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -7579,7 +7462,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -7602,7 +7484,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -7640,7 +7521,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -7663,7 +7543,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -7697,7 +7576,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -7720,13 +7598,12 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
               infoLink: infoLink
-          seasonNumber: 2
-          seriesId: 3
+          seasonNumber: 3
+          seriesId: 9
           dateAdded: 2000-01-23T04:56:07.000+00:00
           quality:
             quality:
@@ -7739,30 +7616,37 @@ components:
               version: 2
               isRepack: true
           path: path
-          size: 4
+          size: 2
           relativePath: relativePath
-          id: 9
+          id: 7
           mediaInfo:
             subtitles: subtitles
             audioLanguages: audioLanguages
             videoDynamicRange: videoDynamicRange
-            videoBitDepth: 6
+            videoBitDepth: 1
             audioStreamCount: 1
             audioCodec: audioCodec
             resolution: resolution
-            audioBitrate: 1
-            videoFps: 1.1730742509559433
-            videoBitrate: 7
-            audioChannels: 1.0246457001441578
-            id: 7
+            audioBitrate: 7
+            videoFps: 7.457744773683766
+            videoBitrate: 6
+            audioChannels: 1.2315135367772556
+            id: 4
             videoDynamicRangeType: videoDynamicRangeType
             runTime: runTime
             scanType: scanType
             videoCodec: videoCodec
           qualityCutoffNotMet: true
           releaseGroup: releaseGroup
+        episodeFileId: 5
         seasonNumber: 5
-        sceneEpisodeNumber: 9
+        title: title
+        episodeNumber: 2
+        seriesId: 6
+        monitored: true
+        sceneEpisodeNumber: 5
+        seriesTitle: seriesTitle
+        absoluteEpisodeNumber: 1
         grabDate: 2000-01-23T04:56:07.000+00:00
         hasFile: true
         series:
@@ -7887,7 +7771,10 @@ components:
             sizeOnDisk: 3
             episodeFileCount: 5
         unverifiedSceneNumbering: true
+        grabbed: true
+        id: 0
         endTime: 2000-01-23T04:56:07.000+00:00
+        sceneAbsoluteEpisodeNumber: 4
       properties:
         id:
           format: int32
@@ -7917,9 +7804,6 @@ components:
           format: date-time
           nullable: true
           type: string
-        runtime:
-          format: int32
-          type: integer
         overview:
           nullable: true
           type: string
@@ -7975,20 +7859,8 @@ components:
         totalRecords: 1
         sortKey: sortKey
         records:
-        - sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
-          grabbed: true
-          id: 0
-          sceneAbsoluteEpisodeNumber: 5
-          overview: overview
+        - overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -7997,7 +7869,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -8039,7 +7912,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -8062,7 +7934,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -8096,7 +7967,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -8119,7 +7989,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -8157,7 +8026,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -8180,7 +8048,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -8214,7 +8081,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -8237,13 +8103,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -8256,30 +8121,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -8404,21 +8276,12 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
-          endTime: 2000-01-23T04:56:07.000+00:00
-        - sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
-          overview: overview
+          endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
+        - overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -8427,7 +8290,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -8469,7 +8333,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -8492,7 +8355,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -8526,7 +8388,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -8549,7 +8410,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -8587,7 +8447,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -8610,7 +8469,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -8644,7 +8502,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -8667,13 +8524,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -8686,30 +8542,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -8834,7 +8697,10 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
+          grabbed: true
+          id: 0
           endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
         pageSize: 6
         page: 0
         filters:
@@ -8914,7 +8780,6 @@ components:
         unit: unit
         helpLink: helpLink
         name: name
-        placeholder: placeholder
         value: ""
         order: 5
       properties:
@@ -8959,9 +8824,6 @@ components:
           type: string
         privacy:
           $ref: '#/components/schemas/PrivacyLevel'
-        placeholder:
-          nullable: true
-          type: string
       type: object
     FileDateType:
       enum:
@@ -9044,7 +8906,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -9067,7 +8928,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -9101,7 +8961,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -9124,7 +8983,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -9162,7 +9020,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -9185,7 +9042,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -9219,7 +9075,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -9242,7 +9097,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -9250,20 +9104,8 @@ components:
         sourceTitle: sourceTitle
         downloadId: downloadId
         episode:
-          sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
-          grabbed: true
-          id: 0
-          sceneAbsoluteEpisodeNumber: 5
           overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -9272,7 +9114,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -9314,7 +9157,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -9337,7 +9179,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -9371,7 +9212,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -9394,7 +9234,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -9432,7 +9271,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -9455,7 +9293,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -9489,7 +9326,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -9512,13 +9348,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -9531,30 +9366,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -9679,7 +9521,10 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
+          grabbed: true
+          id: 0
           endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
         eventType: null
         episodeId: 5
         customFormatScore: 7
@@ -9915,7 +9760,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -9938,7 +9782,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -9972,7 +9815,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -9995,7 +9837,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -10033,7 +9874,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -10056,7 +9896,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -10090,7 +9929,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -10113,7 +9951,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -10121,20 +9958,8 @@ components:
           sourceTitle: sourceTitle
           downloadId: downloadId
           episode:
-            sceneSeasonNumber: 9
-            airDateUtc: 2000-01-23T04:56:07.000+00:00
-            airDate: airDate
-            episodeFileId: 5
-            title: title
-            episodeNumber: 2
-            seriesId: 6
-            monitored: true
-            seriesTitle: seriesTitle
-            absoluteEpisodeNumber: 4
-            grabbed: true
-            id: 0
-            sceneAbsoluteEpisodeNumber: 5
             overview: overview
+            sceneSeasonNumber: 9
             images:
             - coverType: null
               remoteUrl: remoteUrl
@@ -10143,7 +9968,8 @@ components:
               remoteUrl: remoteUrl
               url: url
             tvdbId: 1
-            runtime: 7
+            airDateUtc: 2000-01-23T04:56:07.000+00:00
+            airDate: airDate
             episodeFile:
               languages:
               - name: name
@@ -10185,7 +10011,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -10208,7 +10033,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -10242,7 +10066,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -10265,7 +10088,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -10303,7 +10125,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -10326,7 +10147,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -10360,7 +10180,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -10383,13 +10202,12 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
                   infoLink: infoLink
-              seasonNumber: 2
-              seriesId: 3
+              seasonNumber: 3
+              seriesId: 9
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -10402,30 +10220,37 @@ components:
                   version: 2
                   isRepack: true
               path: path
-              size: 4
+              size: 2
               relativePath: relativePath
-              id: 9
+              id: 7
               mediaInfo:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoDynamicRange: videoDynamicRange
-                videoBitDepth: 6
+                videoBitDepth: 1
                 audioStreamCount: 1
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 1
-                videoFps: 1.1730742509559433
-                videoBitrate: 7
-                audioChannels: 1.0246457001441578
-                id: 7
+                audioBitrate: 7
+                videoFps: 7.457744773683766
+                videoBitrate: 6
+                audioChannels: 1.2315135367772556
+                id: 4
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
                 videoCodec: videoCodec
               qualityCutoffNotMet: true
               releaseGroup: releaseGroup
+            episodeFileId: 5
             seasonNumber: 5
-            sceneEpisodeNumber: 9
+            title: title
+            episodeNumber: 2
+            seriesId: 6
+            monitored: true
+            sceneEpisodeNumber: 5
+            seriesTitle: seriesTitle
+            absoluteEpisodeNumber: 1
             grabDate: 2000-01-23T04:56:07.000+00:00
             hasFile: true
             series:
@@ -10550,7 +10375,10 @@ components:
                 sizeOnDisk: 3
                 episodeFileCount: 5
             unverifiedSceneNumbering: true
+            grabbed: true
+            id: 0
             endTime: 2000-01-23T04:56:07.000+00:00
+            sceneAbsoluteEpisodeNumber: 4
           eventType: null
           episodeId: 5
           customFormatScore: 7
@@ -10730,7 +10558,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -10753,7 +10580,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -10787,7 +10613,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -10810,7 +10635,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -10848,7 +10672,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -10871,7 +10694,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -10905,7 +10727,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               - helpText: helpText
@@ -10928,7 +10749,6 @@ components:
                 unit: unit
                 helpLink: helpLink
                 name: name
-                placeholder: placeholder
                 value: ""
                 order: 5
               required: true
@@ -10936,20 +10756,8 @@ components:
           sourceTitle: sourceTitle
           downloadId: downloadId
           episode:
-            sceneSeasonNumber: 9
-            airDateUtc: 2000-01-23T04:56:07.000+00:00
-            airDate: airDate
-            episodeFileId: 5
-            title: title
-            episodeNumber: 2
-            seriesId: 6
-            monitored: true
-            seriesTitle: seriesTitle
-            absoluteEpisodeNumber: 4
-            grabbed: true
-            id: 0
-            sceneAbsoluteEpisodeNumber: 5
             overview: overview
+            sceneSeasonNumber: 9
             images:
             - coverType: null
               remoteUrl: remoteUrl
@@ -10958,7 +10766,8 @@ components:
               remoteUrl: remoteUrl
               url: url
             tvdbId: 1
-            runtime: 7
+            airDateUtc: 2000-01-23T04:56:07.000+00:00
+            airDate: airDate
             episodeFile:
               languages:
               - name: name
@@ -11000,7 +10809,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -11023,7 +10831,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -11057,7 +10864,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -11080,7 +10886,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -11118,7 +10923,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -11141,7 +10945,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -11175,7 +10978,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -11198,13 +11000,12 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
                   infoLink: infoLink
-              seasonNumber: 2
-              seriesId: 3
+              seasonNumber: 3
+              seriesId: 9
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -11217,30 +11018,37 @@ components:
                   version: 2
                   isRepack: true
               path: path
-              size: 4
+              size: 2
               relativePath: relativePath
-              id: 9
+              id: 7
               mediaInfo:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoDynamicRange: videoDynamicRange
-                videoBitDepth: 6
+                videoBitDepth: 1
                 audioStreamCount: 1
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 1
-                videoFps: 1.1730742509559433
-                videoBitrate: 7
-                audioChannels: 1.0246457001441578
-                id: 7
+                audioBitrate: 7
+                videoFps: 7.457744773683766
+                videoBitrate: 6
+                audioChannels: 1.2315135367772556
+                id: 4
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
                 videoCodec: videoCodec
               qualityCutoffNotMet: true
               releaseGroup: releaseGroup
+            episodeFileId: 5
             seasonNumber: 5
-            sceneEpisodeNumber: 9
+            title: title
+            episodeNumber: 2
+            seriesId: 6
+            monitored: true
+            sceneEpisodeNumber: 5
+            seriesTitle: seriesTitle
+            absoluteEpisodeNumber: 1
             grabDate: 2000-01-23T04:56:07.000+00:00
             hasFile: true
             series:
@@ -11365,7 +11173,10 @@ components:
                 sizeOnDisk: 3
                 episodeFileCount: 5
             unverifiedSceneNumbering: true
+            grabbed: true
+            id: 0
             endTime: 2000-01-23T04:56:07.000+00:00
+            sceneAbsoluteEpisodeNumber: 4
           eventType: null
           episodeId: 5
           customFormatScore: 7
@@ -11736,7 +11547,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         - helpText: helpText
@@ -11759,7 +11569,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         infoLink: infoLink
@@ -11904,7 +11713,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         - helpText: helpText
@@ -11927,7 +11735,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         infoLink: infoLink
@@ -12242,20 +12049,8 @@ components:
         seasonNumber: 1
         seriesId: 6
         episodes:
-        - sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
-          grabbed: true
-          id: 0
-          sceneAbsoluteEpisodeNumber: 5
-          overview: overview
+        - overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -12264,7 +12059,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -12306,7 +12102,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -12329,7 +12124,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -12363,7 +12157,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -12386,7 +12179,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -12424,7 +12216,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -12447,7 +12238,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -12481,7 +12271,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -12504,13 +12293,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -12523,30 +12311,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -12671,21 +12466,12 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
-          endTime: 2000-01-23T04:56:07.000+00:00
-        - sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
-          overview: overview
+          endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
+        - overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -12694,7 +12480,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -12736,7 +12523,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -12759,7 +12545,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -12793,7 +12578,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -12816,7 +12600,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -12854,7 +12637,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -12877,7 +12659,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -12911,7 +12692,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -12934,13 +12714,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -12953,30 +12732,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -13101,7 +12887,10 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
+          grabbed: true
+          id: 0
           endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
         quality:
           quality:
             name: name
@@ -13204,7 +12993,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -13227,7 +13015,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -13261,7 +13048,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -13284,7 +13070,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -13322,7 +13107,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -13345,7 +13129,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -13379,7 +13162,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -13402,7 +13184,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -13549,20 +13330,8 @@ components:
         folderName: folderName
         qualityWeight: 5
         episodes:
-        - sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
-          grabbed: true
-          id: 0
-          sceneAbsoluteEpisodeNumber: 5
-          overview: overview
+        - overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -13571,7 +13340,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -13613,7 +13383,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -13636,7 +13405,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -13670,7 +13438,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -13693,7 +13460,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -13731,7 +13497,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -13754,7 +13519,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -13788,7 +13552,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -13811,13 +13574,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -13830,30 +13592,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -13978,21 +13747,12 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
-          endTime: 2000-01-23T04:56:07.000+00:00
-        - sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
-          overview: overview
+          endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
+        - overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -14001,7 +13761,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -14043,7 +13804,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -14066,7 +13826,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -14100,7 +13859,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -14123,7 +13881,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -14161,7 +13918,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -14184,7 +13940,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -14218,7 +13973,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -14241,13 +13995,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -14260,30 +14013,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -14408,7 +14168,10 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
+          grabbed: true
+          id: 0
           endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
         releaseGroup: releaseGroup
       properties:
         id:
@@ -14502,15 +14265,15 @@ components:
         subtitles: subtitles
         audioLanguages: audioLanguages
         videoDynamicRange: videoDynamicRange
-        videoBitDepth: 6
+        videoBitDepth: 1
         audioStreamCount: 1
         audioCodec: audioCodec
         resolution: resolution
-        audioBitrate: 1
-        videoFps: 1.1730742509559433
-        videoBitrate: 7
-        audioChannels: 1.0246457001441578
-        id: 7
+        audioBitrate: 7
+        videoFps: 7.457744773683766
+        videoBitrate: 6
+        audioChannels: 1.2315135367772556
+        id: 4
         videoDynamicRangeType: videoDynamicRangeType
         runTime: runTime
         scanType: scanType
@@ -14667,7 +14430,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         - helpText: helpText
@@ -14690,7 +14452,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         message:
@@ -14751,8 +14512,6 @@ components:
       - firstSeason
       - latestSeason
       - pilot
-      - monitorSpecials
-      - unmonitorSpecials
       - none
       type: string
     MonitoringOptions:
@@ -14774,7 +14533,7 @@ components:
       example:
         replaceIllegalCharacters: true
         renameEpisodes: true
-        multiEpisodeStyle: 1
+        multiEpisodeStyle: 6
         standardEpisodeFormat: standardEpisodeFormat
         seasonFolderFormat: seasonFolderFormat
         specialsFolderFormat: specialsFolderFormat
@@ -14788,7 +14547,6 @@ components:
         id: 0
         dailyEpisodeFormat: dailyEpisodeFormat
         includeSeriesTitle: true
-        colonReplacementFormat: 6
       properties:
         id:
           format: int32
@@ -14797,9 +14555,6 @@ components:
           type: boolean
         replaceIllegalCharacters:
           type: boolean
-        colonReplacementFormat:
-          format: int32
-          type: integer
         multiEpisodeStyle:
           format: int32
           type: integer
@@ -14844,9 +14599,7 @@ components:
         supportsOnRename: true
         link: link
         supportsOnEpisodeFileDelete: true
-        supportsOnManualInteractionRequired: true
         onGrab: true
-        onHealthRestored: true
         supportsOnDownload: true
         id: 0
         onHealthIssue: true
@@ -14861,7 +14614,6 @@ components:
         message:
           message: message
           type: null
-        supportsOnSeriesAdd: true
         onApplicationUpdate: true
         supportsOnSeriesDelete: true
         supportsOnHealthIssue: true
@@ -14872,9 +14624,7 @@ components:
         - null
         - null
         onDownload: true
-        supportsOnHealthRestored: true
         configContract: configContract
-        onManualInteractionRequired: true
         name: name
         includeHealthWarnings: true
         fields:
@@ -14898,7 +14648,6 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         - helpText: helpText
@@ -14921,12 +14670,10 @@ components:
           unit: unit
           helpLink: helpLink
           name: name
-          placeholder: placeholder
           value: ""
           order: 5
         supportsOnApplicationUpdate: true
         onRename: true
-        onSeriesAdd: true
         onEpisodeFileDelete: true
       properties:
         id:
@@ -14977,8 +14724,6 @@ components:
           type: boolean
         onRename:
           type: boolean
-        onSeriesAdd:
-          type: boolean
         onSeriesDelete:
           type: boolean
         onEpisodeFileDelete:
@@ -14987,11 +14732,7 @@ components:
           type: boolean
         onHealthIssue:
           type: boolean
-        onHealthRestored:
-          type: boolean
         onApplicationUpdate:
-          type: boolean
-        onManualInteractionRequired:
           type: boolean
         supportsOnGrab:
           type: boolean
@@ -15001,8 +14742,6 @@ components:
           type: boolean
         supportsOnRename:
           type: boolean
-        supportsOnSeriesAdd:
-          type: boolean
         supportsOnSeriesDelete:
           type: boolean
         supportsOnEpisodeFileDelete:
@@ -15011,11 +14750,7 @@ components:
           type: boolean
         supportsOnHealthIssue:
           type: boolean
-        supportsOnHealthRestored:
-          type: boolean
         supportsOnApplicationUpdate:
-          type: boolean
-        supportsOnManualInteractionRequired:
           type: boolean
         includeHealthWarnings:
           type: boolean
@@ -15213,20 +14948,8 @@ components:
         id: 0
         title: title
         episodes:
-        - sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
-          grabbed: true
-          id: 0
-          sceneAbsoluteEpisodeNumber: 5
-          overview: overview
+        - overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -15235,7 +14958,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -15277,7 +15001,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -15300,7 +15023,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -15334,7 +15056,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -15357,7 +15078,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -15395,7 +15115,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -15418,7 +15137,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -15452,7 +15170,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -15475,13 +15192,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -15494,30 +15210,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -15642,21 +15365,12 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
-          endTime: 2000-01-23T04:56:07.000+00:00
-        - sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
-          overview: overview
+          endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
+        - overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -15665,7 +15379,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -15707,7 +15422,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -15730,7 +15444,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -15764,7 +15477,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -15787,7 +15499,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -15825,7 +15536,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -15848,7 +15558,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -15882,7 +15591,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -15905,13 +15613,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -15924,30 +15631,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -16072,7 +15786,10 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
+          grabbed: true
+          id: 0
           endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
       properties:
         id:
           format: int32
@@ -16494,22 +16211,246 @@ components:
     QueueResource:
       additionalProperties: false
       example:
+        languages:
+        - name: name
+          id: 7
+        - name: name
+          id: 7
+        estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
+        customFormats:
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 7
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              unit: unit
+              helpLink: helpLink
+              name: name
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              unit: unit
+              helpLink: helpLink
+              name: name
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              unit: unit
+              helpLink: helpLink
+              name: name
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              unit: unit
+              helpLink: helpLink
+              name: name
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 7
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              unit: unit
+              helpLink: helpLink
+              name: name
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              unit: unit
+              helpLink: helpLink
+              name: name
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              unit: unit
+              helpLink: helpLink
+              name: name
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              unit: unit
+              helpLink: helpLink
+              name: name
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+        errorMessage: errorMessage
         downloadId: downloadId
         episode:
-          sceneSeasonNumber: 9
-          airDateUtc: 2000-01-23T04:56:07.000+00:00
-          airDate: airDate
-          episodeFileId: 5
-          title: title
-          episodeNumber: 2
-          seriesId: 6
-          monitored: true
-          seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
-          grabbed: true
-          id: 0
-          sceneAbsoluteEpisodeNumber: 5
           overview: overview
+          sceneSeasonNumber: 9
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -16518,7 +16459,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           tvdbId: 1
-          runtime: 7
+          airDateUtc: 2000-01-23T04:56:07.000+00:00
+          airDate: airDate
           episodeFile:
             languages:
             - name: name
@@ -16560,7 +16502,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -16583,7 +16524,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -16617,7 +16557,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -16640,7 +16579,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -16678,7 +16616,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -16701,7 +16638,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
@@ -16735,7 +16671,6 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 - helpText: helpText
@@ -16758,13 +16693,12 @@ components:
                   unit: unit
                   helpLink: helpLink
                   name: name
-                  placeholder: placeholder
                   value: ""
                   order: 5
                 required: true
                 infoLink: infoLink
-            seasonNumber: 2
-            seriesId: 3
+            seasonNumber: 3
+            seriesId: 9
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -16777,30 +16711,37 @@ components:
                 version: 2
                 isRepack: true
             path: path
-            size: 4
+            size: 2
             relativePath: relativePath
-            id: 9
+            id: 7
             mediaInfo:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
+              videoBitDepth: 1
               audioStreamCount: 1
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              audioBitrate: 7
+              videoFps: 7.457744773683766
+              videoBitrate: 6
+              audioChannels: 1.2315135367772556
+              id: 4
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
               videoCodec: videoCodec
             qualityCutoffNotMet: true
             releaseGroup: releaseGroup
+          episodeFileId: 5
           seasonNumber: 5
-          sceneEpisodeNumber: 9
+          title: title
+          episodeNumber: 2
+          seriesId: 6
+          monitored: true
+          sceneEpisodeNumber: 5
+          seriesTitle: seriesTitle
+          absoluteEpisodeNumber: 1
           grabDate: 2000-01-23T04:56:07.000+00:00
           hasFile: true
           series:
@@ -16925,274 +16866,18 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           unverifiedSceneNumbering: true
+          grabbed: true
+          id: 0
           endTime: 2000-01-23T04:56:07.000+00:00
+          sceneAbsoluteEpisodeNumber: 4
+        indexer: indexer
         episodeId: 1
         title: title
-        seriesId: 6
-        sizeleft: 2.3021358869347655
-        statusMessages:
-        - messages:
-          - messages
-          - messages
-          title: title
-        - messages:
-          - messages
-          - messages
-          title: title
-        protocol: null
-        outputPath: outputPath
-        id: 0
-        downloadClient: downloadClient
-        languages:
-        - name: name
-          id: 7
-        - name: name
-          id: 7
-        estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
-        customFormats:
-        - name: name
-          includeCustomFormatWhenRenaming: true
-          id: 7
-          specifications:
-          - presets:
-            - null
-            - null
-            implementationName: implementationName
-            negate: true
-            implementation: implementation
-            name: name
-            id: 1
-            fields:
-            - helpText: helpText
-              hidden: hidden
-              advanced: true
-              selectOptions:
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              privacy: null
-              selectOptionsProviderAction: selectOptionsProviderAction
-              section: section
-              label: label
-              type: type
-              unit: unit
-              helpLink: helpLink
-              name: name
-              placeholder: placeholder
-              value: ""
-              order: 5
-            - helpText: helpText
-              hidden: hidden
-              advanced: true
-              selectOptions:
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              privacy: null
-              selectOptionsProviderAction: selectOptionsProviderAction
-              section: section
-              label: label
-              type: type
-              unit: unit
-              helpLink: helpLink
-              name: name
-              placeholder: placeholder
-              value: ""
-              order: 5
-            required: true
-            infoLink: infoLink
-          - presets:
-            - null
-            - null
-            implementationName: implementationName
-            negate: true
-            implementation: implementation
-            name: name
-            id: 1
-            fields:
-            - helpText: helpText
-              hidden: hidden
-              advanced: true
-              selectOptions:
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              privacy: null
-              selectOptionsProviderAction: selectOptionsProviderAction
-              section: section
-              label: label
-              type: type
-              unit: unit
-              helpLink: helpLink
-              name: name
-              placeholder: placeholder
-              value: ""
-              order: 5
-            - helpText: helpText
-              hidden: hidden
-              advanced: true
-              selectOptions:
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              privacy: null
-              selectOptionsProviderAction: selectOptionsProviderAction
-              section: section
-              label: label
-              type: type
-              unit: unit
-              helpLink: helpLink
-              name: name
-              placeholder: placeholder
-              value: ""
-              order: 5
-            required: true
-            infoLink: infoLink
-        - name: name
-          includeCustomFormatWhenRenaming: true
-          id: 7
-          specifications:
-          - presets:
-            - null
-            - null
-            implementationName: implementationName
-            negate: true
-            implementation: implementation
-            name: name
-            id: 1
-            fields:
-            - helpText: helpText
-              hidden: hidden
-              advanced: true
-              selectOptions:
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              privacy: null
-              selectOptionsProviderAction: selectOptionsProviderAction
-              section: section
-              label: label
-              type: type
-              unit: unit
-              helpLink: helpLink
-              name: name
-              placeholder: placeholder
-              value: ""
-              order: 5
-            - helpText: helpText
-              hidden: hidden
-              advanced: true
-              selectOptions:
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              privacy: null
-              selectOptionsProviderAction: selectOptionsProviderAction
-              section: section
-              label: label
-              type: type
-              unit: unit
-              helpLink: helpLink
-              name: name
-              placeholder: placeholder
-              value: ""
-              order: 5
-            required: true
-            infoLink: infoLink
-          - presets:
-            - null
-            - null
-            implementationName: implementationName
-            negate: true
-            implementation: implementation
-            name: name
-            id: 1
-            fields:
-            - helpText: helpText
-              hidden: hidden
-              advanced: true
-              selectOptions:
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              privacy: null
-              selectOptionsProviderAction: selectOptionsProviderAction
-              section: section
-              label: label
-              type: type
-              unit: unit
-              helpLink: helpLink
-              name: name
-              placeholder: placeholder
-              value: ""
-              order: 5
-            - helpText: helpText
-              hidden: hidden
-              advanced: true
-              selectOptions:
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              - hint: hint
-                name: name
-                value: 5
-                order: 2
-              privacy: null
-              selectOptionsProviderAction: selectOptionsProviderAction
-              section: section
-              label: label
-              type: type
-              unit: unit
-              helpLink: helpLink
-              name: name
-              placeholder: placeholder
-              value: ""
-              order: 5
-            required: true
-            infoLink: infoLink
-        errorMessage: errorMessage
-        episodeHasFile: true
-        seasonNumber: 5
-        indexer: indexer
         timeleft: timeleft
         trackedDownloadState: null
         trackedDownloadStatus: null
+        seriesId: 6
+        sizeleft: 5.637376656633329
         quality:
           quality:
             name: name
@@ -17203,7 +16888,17 @@ components:
             real: 4
             version: 2
             isRepack: true
-        size: 5.637376656633329
+        statusMessages:
+        - messages:
+          - messages
+          - messages
+          title: title
+        - messages:
+          - messages
+          - messages
+          title: title
+        protocol: null
+        size: 5.962133916683182
         series:
           profileName: profileName
           tvMazeId: 6
@@ -17325,7 +17020,10 @@ components:
             percentOfEpisodes: 7.143538047012306
             sizeOnDisk: 3
             episodeFileCount: 5
+        outputPath: outputPath
+        id: 0
         status: status
+        downloadClient: downloadClient
       properties:
         id:
           format: int32
@@ -17335,10 +17033,6 @@ components:
           nullable: true
           type: integer
         episodeId:
-          format: int32
-          nullable: true
-          type: integer
-        seasonNumber:
           format: int32
           nullable: true
           type: integer
@@ -17402,8 +17096,6 @@ components:
         outputPath:
           nullable: true
           type: string
-        episodeHasFile:
-          type: boolean
       type: object
     QueueResourcePagingResource:
       additionalProperties: false
@@ -17412,22 +17104,246 @@ components:
         totalRecords: 1
         sortKey: sortKey
         records:
-        - downloadId: downloadId
+        - languages:
+          - name: name
+            id: 7
+          - name: name
+            id: 7
+          estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
+          customFormats:
+          - name: name
+            includeCustomFormatWhenRenaming: true
+            id: 7
+            specifications:
+            - presets:
+              - null
+              - null
+              implementationName: implementationName
+              negate: true
+              implementation: implementation
+              name: name
+              id: 1
+              fields:
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              required: true
+              infoLink: infoLink
+            - presets:
+              - null
+              - null
+              implementationName: implementationName
+              negate: true
+              implementation: implementation
+              name: name
+              id: 1
+              fields:
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              required: true
+              infoLink: infoLink
+          - name: name
+            includeCustomFormatWhenRenaming: true
+            id: 7
+            specifications:
+            - presets:
+              - null
+              - null
+              implementationName: implementationName
+              negate: true
+              implementation: implementation
+              name: name
+              id: 1
+              fields:
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              required: true
+              infoLink: infoLink
+            - presets:
+              - null
+              - null
+              implementationName: implementationName
+              negate: true
+              implementation: implementation
+              name: name
+              id: 1
+              fields:
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              required: true
+              infoLink: infoLink
+          errorMessage: errorMessage
+          downloadId: downloadId
           episode:
-            sceneSeasonNumber: 9
-            airDateUtc: 2000-01-23T04:56:07.000+00:00
-            airDate: airDate
-            episodeFileId: 5
-            title: title
-            episodeNumber: 2
-            seriesId: 6
-            monitored: true
-            seriesTitle: seriesTitle
-            absoluteEpisodeNumber: 4
-            grabbed: true
-            id: 0
-            sceneAbsoluteEpisodeNumber: 5
             overview: overview
+            sceneSeasonNumber: 9
             images:
             - coverType: null
               remoteUrl: remoteUrl
@@ -17436,7 +17352,8 @@ components:
               remoteUrl: remoteUrl
               url: url
             tvdbId: 1
-            runtime: 7
+            airDateUtc: 2000-01-23T04:56:07.000+00:00
+            airDate: airDate
             episodeFile:
               languages:
               - name: name
@@ -17478,7 +17395,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -17501,7 +17417,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -17535,7 +17450,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -17558,7 +17472,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -17596,7 +17509,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -17619,7 +17531,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -17653,7 +17564,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -17676,13 +17586,12 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
                   infoLink: infoLink
-              seasonNumber: 2
-              seriesId: 3
+              seasonNumber: 3
+              seriesId: 9
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -17695,30 +17604,37 @@ components:
                   version: 2
                   isRepack: true
               path: path
-              size: 4
+              size: 2
               relativePath: relativePath
-              id: 9
+              id: 7
               mediaInfo:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoDynamicRange: videoDynamicRange
-                videoBitDepth: 6
+                videoBitDepth: 1
                 audioStreamCount: 1
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 1
-                videoFps: 1.1730742509559433
-                videoBitrate: 7
-                audioChannels: 1.0246457001441578
-                id: 7
+                audioBitrate: 7
+                videoFps: 7.457744773683766
+                videoBitrate: 6
+                audioChannels: 1.2315135367772556
+                id: 4
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
                 videoCodec: videoCodec
               qualityCutoffNotMet: true
               releaseGroup: releaseGroup
+            episodeFileId: 5
             seasonNumber: 5
-            sceneEpisodeNumber: 9
+            title: title
+            episodeNumber: 2
+            seriesId: 6
+            monitored: true
+            sceneEpisodeNumber: 5
+            seriesTitle: seriesTitle
+            absoluteEpisodeNumber: 1
             grabDate: 2000-01-23T04:56:07.000+00:00
             hasFile: true
             series:
@@ -17843,274 +17759,18 @@ components:
                 sizeOnDisk: 3
                 episodeFileCount: 5
             unverifiedSceneNumbering: true
+            grabbed: true
+            id: 0
             endTime: 2000-01-23T04:56:07.000+00:00
+            sceneAbsoluteEpisodeNumber: 4
+          indexer: indexer
           episodeId: 1
           title: title
-          seriesId: 6
-          sizeleft: 2.3021358869347655
-          statusMessages:
-          - messages:
-            - messages
-            - messages
-            title: title
-          - messages:
-            - messages
-            - messages
-            title: title
-          protocol: null
-          outputPath: outputPath
-          id: 0
-          downloadClient: downloadClient
-          languages:
-          - name: name
-            id: 7
-          - name: name
-            id: 7
-          estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
-          customFormats:
-          - name: name
-            includeCustomFormatWhenRenaming: true
-            id: 7
-            specifications:
-            - presets:
-              - null
-              - null
-              implementationName: implementationName
-              negate: true
-              implementation: implementation
-              name: name
-              id: 1
-              fields:
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              required: true
-              infoLink: infoLink
-            - presets:
-              - null
-              - null
-              implementationName: implementationName
-              negate: true
-              implementation: implementation
-              name: name
-              id: 1
-              fields:
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              required: true
-              infoLink: infoLink
-          - name: name
-            includeCustomFormatWhenRenaming: true
-            id: 7
-            specifications:
-            - presets:
-              - null
-              - null
-              implementationName: implementationName
-              negate: true
-              implementation: implementation
-              name: name
-              id: 1
-              fields:
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              required: true
-              infoLink: infoLink
-            - presets:
-              - null
-              - null
-              implementationName: implementationName
-              negate: true
-              implementation: implementation
-              name: name
-              id: 1
-              fields:
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              required: true
-              infoLink: infoLink
-          errorMessage: errorMessage
-          episodeHasFile: true
-          seasonNumber: 5
-          indexer: indexer
           timeleft: timeleft
           trackedDownloadState: null
           trackedDownloadStatus: null
+          seriesId: 6
+          sizeleft: 5.637376656633329
           quality:
             quality:
               name: name
@@ -18121,7 +17781,17 @@ components:
               real: 4
               version: 2
               isRepack: true
-          size: 5.637376656633329
+          statusMessages:
+          - messages:
+            - messages
+            - messages
+            title: title
+          - messages:
+            - messages
+            - messages
+            title: title
+          protocol: null
+          size: 5.962133916683182
           series:
             profileName: profileName
             tvMazeId: 6
@@ -18243,23 +17913,250 @@ components:
               percentOfEpisodes: 7.143538047012306
               sizeOnDisk: 3
               episodeFileCount: 5
+          outputPath: outputPath
+          id: 0
           status: status
-        - downloadId: downloadId
+          downloadClient: downloadClient
+        - languages:
+          - name: name
+            id: 7
+          - name: name
+            id: 7
+          estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
+          customFormats:
+          - name: name
+            includeCustomFormatWhenRenaming: true
+            id: 7
+            specifications:
+            - presets:
+              - null
+              - null
+              implementationName: implementationName
+              negate: true
+              implementation: implementation
+              name: name
+              id: 1
+              fields:
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              required: true
+              infoLink: infoLink
+            - presets:
+              - null
+              - null
+              implementationName: implementationName
+              negate: true
+              implementation: implementation
+              name: name
+              id: 1
+              fields:
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              required: true
+              infoLink: infoLink
+          - name: name
+            includeCustomFormatWhenRenaming: true
+            id: 7
+            specifications:
+            - presets:
+              - null
+              - null
+              implementationName: implementationName
+              negate: true
+              implementation: implementation
+              name: name
+              id: 1
+              fields:
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              required: true
+              infoLink: infoLink
+            - presets:
+              - null
+              - null
+              implementationName: implementationName
+              negate: true
+              implementation: implementation
+              name: name
+              id: 1
+              fields:
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              - helpText: helpText
+                hidden: hidden
+                advanced: true
+                selectOptions:
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                - hint: hint
+                  name: name
+                  value: 5
+                  order: 2
+                privacy: null
+                selectOptionsProviderAction: selectOptionsProviderAction
+                section: section
+                label: label
+                type: type
+                unit: unit
+                helpLink: helpLink
+                name: name
+                value: ""
+                order: 5
+              required: true
+              infoLink: infoLink
+          errorMessage: errorMessage
+          downloadId: downloadId
           episode:
-            sceneSeasonNumber: 9
-            airDateUtc: 2000-01-23T04:56:07.000+00:00
-            airDate: airDate
-            episodeFileId: 5
-            title: title
-            episodeNumber: 2
-            seriesId: 6
-            monitored: true
-            seriesTitle: seriesTitle
-            absoluteEpisodeNumber: 4
-            grabbed: true
-            id: 0
-            sceneAbsoluteEpisodeNumber: 5
             overview: overview
+            sceneSeasonNumber: 9
             images:
             - coverType: null
               remoteUrl: remoteUrl
@@ -18268,7 +18165,8 @@ components:
               remoteUrl: remoteUrl
               url: url
             tvdbId: 1
-            runtime: 7
+            airDateUtc: 2000-01-23T04:56:07.000+00:00
+            airDate: airDate
             episodeFile:
               languages:
               - name: name
@@ -18310,7 +18208,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -18333,7 +18230,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -18367,7 +18263,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -18390,7 +18285,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -18428,7 +18322,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -18451,7 +18344,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
@@ -18485,7 +18377,6 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   - helpText: helpText
@@ -18508,13 +18399,12 @@ components:
                     unit: unit
                     helpLink: helpLink
                     name: name
-                    placeholder: placeholder
                     value: ""
                     order: 5
                   required: true
                   infoLink: infoLink
-              seasonNumber: 2
-              seriesId: 3
+              seasonNumber: 3
+              seriesId: 9
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -18527,30 +18417,37 @@ components:
                   version: 2
                   isRepack: true
               path: path
-              size: 4
+              size: 2
               relativePath: relativePath
-              id: 9
+              id: 7
               mediaInfo:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoDynamicRange: videoDynamicRange
-                videoBitDepth: 6
+                videoBitDepth: 1
                 audioStreamCount: 1
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 1
-                videoFps: 1.1730742509559433
-                videoBitrate: 7
-                audioChannels: 1.0246457001441578
-                id: 7
+                audioBitrate: 7
+                videoFps: 7.457744773683766
+                videoBitrate: 6
+                audioChannels: 1.2315135367772556
+                id: 4
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
                 videoCodec: videoCodec
               qualityCutoffNotMet: true
               releaseGroup: releaseGroup
+            episodeFileId: 5
             seasonNumber: 5
-            sceneEpisodeNumber: 9
+            title: title
+            episodeNumber: 2
+            seriesId: 6
+            monitored: true
+            sceneEpisodeNumber: 5
+            seriesTitle: seriesTitle
+            absoluteEpisodeNumber: 1
             grabDate: 2000-01-23T04:56:07.000+00:00
             hasFile: true
             series:
@@ -18675,274 +18572,18 @@ components:
                 sizeOnDisk: 3
                 episodeFileCount: 5
             unverifiedSceneNumbering: true
+            grabbed: true
+            id: 0
             endTime: 2000-01-23T04:56:07.000+00:00
+            sceneAbsoluteEpisodeNumber: 4
+          indexer: indexer
           episodeId: 1
           title: title
-          seriesId: 6
-          sizeleft: 2.3021358869347655
-          statusMessages:
-          - messages:
-            - messages
-            - messages
-            title: title
-          - messages:
-            - messages
-            - messages
-            title: title
-          protocol: null
-          outputPath: outputPath
-          id: 0
-          downloadClient: downloadClient
-          languages:
-          - name: name
-            id: 7
-          - name: name
-            id: 7
-          estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
-          customFormats:
-          - name: name
-            includeCustomFormatWhenRenaming: true
-            id: 7
-            specifications:
-            - presets:
-              - null
-              - null
-              implementationName: implementationName
-              negate: true
-              implementation: implementation
-              name: name
-              id: 1
-              fields:
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              required: true
-              infoLink: infoLink
-            - presets:
-              - null
-              - null
-              implementationName: implementationName
-              negate: true
-              implementation: implementation
-              name: name
-              id: 1
-              fields:
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              required: true
-              infoLink: infoLink
-          - name: name
-            includeCustomFormatWhenRenaming: true
-            id: 7
-            specifications:
-            - presets:
-              - null
-              - null
-              implementationName: implementationName
-              negate: true
-              implementation: implementation
-              name: name
-              id: 1
-              fields:
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              required: true
-              infoLink: infoLink
-            - presets:
-              - null
-              - null
-              implementationName: implementationName
-              negate: true
-              implementation: implementation
-              name: name
-              id: 1
-              fields:
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              - helpText: helpText
-                hidden: hidden
-                advanced: true
-                selectOptions:
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                - hint: hint
-                  name: name
-                  value: 5
-                  order: 2
-                privacy: null
-                selectOptionsProviderAction: selectOptionsProviderAction
-                section: section
-                label: label
-                type: type
-                unit: unit
-                helpLink: helpLink
-                name: name
-                placeholder: placeholder
-                value: ""
-                order: 5
-              required: true
-              infoLink: infoLink
-          errorMessage: errorMessage
-          episodeHasFile: true
-          seasonNumber: 5
-          indexer: indexer
           timeleft: timeleft
           trackedDownloadState: null
           trackedDownloadStatus: null
+          seriesId: 6
+          sizeleft: 5.637376656633329
           quality:
             quality:
               name: name
@@ -18953,7 +18594,17 @@ components:
               real: 4
               version: 2
               isRepack: true
-          size: 5.637376656633329
+          statusMessages:
+          - messages:
+            - messages
+            - messages
+            title: title
+          - messages:
+            - messages
+            - messages
+            title: title
+          protocol: null
+          size: 5.962133916683182
           series:
             profileName: profileName
             tvMazeId: 6
@@ -19075,7 +18726,10 @@ components:
               percentOfEpisodes: 7.143538047012306
               sizeOnDisk: 3
               episodeFileCount: 5
+          outputPath: outputPath
+          id: 0
           status: status
+          downloadClient: downloadClient
         pageSize: 6
         page: 0
         filters:
@@ -19172,32 +18826,6 @@ components:
       - permanent
       - temporary
       type: string
-    ReleaseEpisodeResource:
-      additionalProperties: false
-      example:
-        absoluteEpisodeNumber: 4
-        id: 6
-        seasonNumber: 7
-        title: title
-        episodeNumber: 1
-      properties:
-        id:
-          format: int32
-          type: integer
-        seasonNumber:
-          format: int32
-          type: integer
-        episodeNumber:
-          format: int32
-          type: integer
-        absoluteEpisodeNumber:
-          format: int32
-          nullable: true
-          type: integer
-        title:
-          nullable: true
-          type: string
-      type: object
     ReleaseProfileResource:
       additionalProperties: false
       example:
@@ -19238,14 +18866,13 @@ components:
       additionalProperties: false
       example:
         ageMinutes: 5.637376656633329
-        leechers: 9
+        leechers: 5
         releaseHash: releaseHash
         commentUrl: commentUrl
         publishDate: 2000-01-23T04:56:07.000+00:00
         downloadUrl: downloadUrl
-        episodeId: 3
-        seriesId: 6
-        shouldOverride: true
+        episodeId: 9
+        seriesId: 9
         approved: true
         protocol: null
         infoUrl: infoUrl
@@ -19262,13 +18889,12 @@ components:
         episodeNumbers:
         - 2
         - 2
-        mappedSeriesId: 1
-        tvdbId: 5
+        tvdbId: 1
         subGroup: subGroup
         ageHours: 5.962133916683182
         isPossibleSpecialEpisode: true
         indexer: indexer
-        customFormatScore: 6
+        customFormatScore: 1
         quality:
           quality:
             name: name
@@ -19296,29 +18922,17 @@ components:
         rejections:
         - rejections
         - rejections
-        downloadClientId: 1
         rejected: true
         airDate: airDate
-        mappedEpisodeInfo:
-        - absoluteEpisodeNumber: 4
-          id: 6
-          seasonNumber: 7
-          title: title
-          episodeNumber: 1
-        - absoluteEpisodeNumber: 4
-          id: 6
-          seasonNumber: 7
-          title: title
-          episodeNumber: 1
         mappedAbsoluteEpisodeNumbers:
         - 1
         - 1
         infoHash: infoHash
         title: title
         seriesTitle: seriesTitle
-        seeders: 8
+        seeders: 4
         fullSeason: true
-        releaseWeight: 9
+        releaseWeight: 7
         languages:
         - name: name
           id: 7
@@ -19358,7 +18972,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -19381,7 +18994,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -19415,7 +19027,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -19438,7 +19049,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -19476,7 +19086,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -19499,7 +19108,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -19533,7 +19141,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             - helpText: helpText
@@ -19556,7 +19163,6 @@ components:
               unit: unit
               helpLink: helpLink
               name: name
-              placeholder: placeholder
               value: ""
               order: 5
             required: true
@@ -19565,11 +19171,8 @@ components:
         temporarilyRejected: true
         seasonNumber: 9
         special: true
-        episodeIds:
-        - 6
-        - 6
         mappedSeasonNumber: 7
-        tvRageId: 9
+        tvRageId: 6
         age: 1
       properties:
         id:
@@ -19662,15 +19265,6 @@ components:
             type: integer
           nullable: true
           type: array
-        mappedSeriesId:
-          format: int32
-          nullable: true
-          type: integer
-        mappedEpisodeInfo:
-          items:
-            $ref: '#/components/schemas/ReleaseEpisodeResource'
-          nullable: true
-          type: array
         approved:
           type: boolean
         temporarilyRejected:
@@ -19749,19 +19343,6 @@ components:
           format: int32
           nullable: true
           type: integer
-        episodeIds:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        downloadClientId:
-          format: int32
-          nullable: true
-          type: integer
-        shouldOverride:
-          nullable: true
-          type: boolean
       type: object
     RemotePathMappingResource:
       additionalProperties: false

@@ -19,11 +19,11 @@ import (
 )
 
 
-// SystemAPIService SystemAPI service
-type SystemAPIService service
+// SystemApiService SystemApi service
+type SystemApiService service
 type ApiCreateSystemRestartRequest struct {
 	ctx context.Context
-	ApiService *SystemAPIService
+	ApiService *SystemApiService
 }
 
 func (r ApiCreateSystemRestartRequest) Execute() (*http.Response, error) {
@@ -36,7 +36,7 @@ CreateSystemRestart Method for CreateSystemRestart
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSystemRestartRequest
 */
-func (a *SystemAPIService) CreateSystemRestart(ctx context.Context) ApiCreateSystemRestartRequest {
+func (a *SystemApiService) CreateSystemRestart(ctx context.Context) ApiCreateSystemRestartRequest {
 	return ApiCreateSystemRestartRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -44,14 +44,14 @@ func (a *SystemAPIService) CreateSystemRestart(ctx context.Context) ApiCreateSys
 }
 
 // Execute executes the request
-func (a *SystemAPIService) CreateSystemRestartExecute(r ApiCreateSystemRestartRequest) (*http.Response, error) {
+func (a *SystemApiService) CreateSystemRestartExecute(r ApiCreateSystemRestartRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.CreateSystemRestart")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.CreateSystemRestart")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -136,7 +136,7 @@ func (a *SystemAPIService) CreateSystemRestartExecute(r ApiCreateSystemRestartRe
 }
 type ApiCreateSystemShutdownRequest struct {
 	ctx context.Context
-	ApiService *SystemAPIService
+	ApiService *SystemApiService
 }
 
 func (r ApiCreateSystemShutdownRequest) Execute() (*http.Response, error) {
@@ -149,7 +149,7 @@ CreateSystemShutdown Method for CreateSystemShutdown
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSystemShutdownRequest
 */
-func (a *SystemAPIService) CreateSystemShutdown(ctx context.Context) ApiCreateSystemShutdownRequest {
+func (a *SystemApiService) CreateSystemShutdown(ctx context.Context) ApiCreateSystemShutdownRequest {
 	return ApiCreateSystemShutdownRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -157,14 +157,14 @@ func (a *SystemAPIService) CreateSystemShutdown(ctx context.Context) ApiCreateSy
 }
 
 // Execute executes the request
-func (a *SystemAPIService) CreateSystemShutdownExecute(r ApiCreateSystemShutdownRequest) (*http.Response, error) {
+func (a *SystemApiService) CreateSystemShutdownExecute(r ApiCreateSystemShutdownRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.CreateSystemShutdown")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.CreateSystemShutdown")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -249,7 +249,7 @@ func (a *SystemAPIService) CreateSystemShutdownExecute(r ApiCreateSystemShutdown
 }
 type ApiGetSystemRoutesRequest struct {
 	ctx context.Context
-	ApiService *SystemAPIService
+	ApiService *SystemApiService
 }
 
 func (r ApiGetSystemRoutesRequest) Execute() (*http.Response, error) {
@@ -262,7 +262,7 @@ GetSystemRoutes Method for GetSystemRoutes
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSystemRoutesRequest
 */
-func (a *SystemAPIService) GetSystemRoutes(ctx context.Context) ApiGetSystemRoutesRequest {
+func (a *SystemApiService) GetSystemRoutes(ctx context.Context) ApiGetSystemRoutesRequest {
 	return ApiGetSystemRoutesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -270,14 +270,14 @@ func (a *SystemAPIService) GetSystemRoutes(ctx context.Context) ApiGetSystemRout
 }
 
 // Execute executes the request
-func (a *SystemAPIService) GetSystemRoutesExecute(r ApiGetSystemRoutesRequest) (*http.Response, error) {
+func (a *SystemApiService) GetSystemRoutesExecute(r ApiGetSystemRoutesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetSystemRoutes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSystemRoutes")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -362,7 +362,7 @@ func (a *SystemAPIService) GetSystemRoutesExecute(r ApiGetSystemRoutesRequest) (
 }
 type ApiGetSystemRoutesDuplicateRequest struct {
 	ctx context.Context
-	ApiService *SystemAPIService
+	ApiService *SystemApiService
 }
 
 func (r ApiGetSystemRoutesDuplicateRequest) Execute() (*http.Response, error) {
@@ -375,7 +375,7 @@ GetSystemRoutesDuplicate Method for GetSystemRoutesDuplicate
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSystemRoutesDuplicateRequest
 */
-func (a *SystemAPIService) GetSystemRoutesDuplicate(ctx context.Context) ApiGetSystemRoutesDuplicateRequest {
+func (a *SystemApiService) GetSystemRoutesDuplicate(ctx context.Context) ApiGetSystemRoutesDuplicateRequest {
 	return ApiGetSystemRoutesDuplicateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -383,14 +383,14 @@ func (a *SystemAPIService) GetSystemRoutesDuplicate(ctx context.Context) ApiGetS
 }
 
 // Execute executes the request
-func (a *SystemAPIService) GetSystemRoutesDuplicateExecute(r ApiGetSystemRoutesDuplicateRequest) (*http.Response, error) {
+func (a *SystemApiService) GetSystemRoutesDuplicateExecute(r ApiGetSystemRoutesDuplicateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetSystemRoutesDuplicate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSystemRoutesDuplicate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -475,7 +475,7 @@ func (a *SystemAPIService) GetSystemRoutesDuplicateExecute(r ApiGetSystemRoutesD
 }
 type ApiGetSystemStatusRequest struct {
 	ctx context.Context
-	ApiService *SystemAPIService
+	ApiService *SystemApiService
 }
 
 func (r ApiGetSystemStatusRequest) Execute() (*SystemResource, *http.Response, error) {
@@ -488,7 +488,7 @@ GetSystemStatus Method for GetSystemStatus
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSystemStatusRequest
 */
-func (a *SystemAPIService) GetSystemStatus(ctx context.Context) ApiGetSystemStatusRequest {
+func (a *SystemApiService) GetSystemStatus(ctx context.Context) ApiGetSystemStatusRequest {
 	return ApiGetSystemStatusRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -497,7 +497,7 @@ func (a *SystemAPIService) GetSystemStatus(ctx context.Context) ApiGetSystemStat
 
 // Execute executes the request
 //  @return SystemResource
-func (a *SystemAPIService) GetSystemStatusExecute(r ApiGetSystemStatusRequest) (*SystemResource, *http.Response, error) {
+func (a *SystemApiService) GetSystemStatusExecute(r ApiGetSystemStatusRequest) (*SystemResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -505,7 +505,7 @@ func (a *SystemAPIService) GetSystemStatusExecute(r ApiGetSystemStatusRequest) (
 		localVarReturnValue  *SystemResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetSystemStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSystemStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

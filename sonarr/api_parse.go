@@ -19,11 +19,11 @@ import (
 )
 
 
-// ParseAPIService ParseAPI service
-type ParseAPIService service
+// ParseApiService ParseApi service
+type ParseApiService service
 type ApiGetParseRequest struct {
 	ctx context.Context
-	ApiService *ParseAPIService
+	ApiService *ParseApiService
 	title *string
 	path *string
 }
@@ -48,7 +48,7 @@ GetParse Method for GetParse
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetParseRequest
 */
-func (a *ParseAPIService) GetParse(ctx context.Context) ApiGetParseRequest {
+func (a *ParseApiService) GetParse(ctx context.Context) ApiGetParseRequest {
 	return ApiGetParseRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,7 +57,7 @@ func (a *ParseAPIService) GetParse(ctx context.Context) ApiGetParseRequest {
 
 // Execute executes the request
 //  @return ParseResource
-func (a *ParseAPIService) GetParseExecute(r ApiGetParseRequest) (*ParseResource, *http.Response, error) {
+func (a *ParseApiService) GetParseExecute(r ApiGetParseRequest) (*ParseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -65,7 +65,7 @@ func (a *ParseAPIService) GetParseExecute(r ApiGetParseRequest) (*ParseResource,
 		localVarReturnValue  *ParseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParseAPIService.GetParse")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParseApiService.GetParse")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

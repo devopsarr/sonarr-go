@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **Section** | Pointer to **NullableString** |  | [optional] 
 **Hidden** | Pointer to **NullableString** |  | [optional] 
 **Privacy** | Pointer to [**PrivacyLevel**](PrivacyLevel.md) |  | [optional] 
-**Placeholder** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -499,41 +498,6 @@ SetPrivacy sets Privacy field to given value.
 
 HasPrivacy returns a boolean if a field has been set.
 
-### GetPlaceholder
-
-`func (o *Field) GetPlaceholder() string`
-
-GetPlaceholder returns the Placeholder field if non-nil, zero value otherwise.
-
-### GetPlaceholderOk
-
-`func (o *Field) GetPlaceholderOk() (*string, bool)`
-
-GetPlaceholderOk returns a tuple with the Placeholder field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPlaceholder
-
-`func (o *Field) SetPlaceholder(v string)`
-
-SetPlaceholder sets Placeholder field to given value.
-
-### HasPlaceholder
-
-`func (o *Field) HasPlaceholder() bool`
-
-HasPlaceholder returns a boolean if a field has been set.
-
-### SetPlaceholderNil
-
-`func (o *Field) SetPlaceholderNil(b bool)`
-
- SetPlaceholderNil sets the value for Placeholder to be an explicit nil
-
-### UnsetPlaceholder
-`func (o *Field) UnsetPlaceholder()`
-
-UnsetPlaceholder ensures that no value is present for Placeholder, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

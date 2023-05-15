@@ -19,11 +19,11 @@ import (
 )
 
 
-// SeriesImportAPIService SeriesImportAPI service
-type SeriesImportAPIService service
+// SeriesImportApiService SeriesImportApi service
+type SeriesImportApiService service
 type ApiCreateSeriesImportRequest struct {
 	ctx context.Context
-	ApiService *SeriesImportAPIService
+	ApiService *SeriesImportApiService
 	seriesResource *[]SeriesResource
 }
 
@@ -42,7 +42,7 @@ CreateSeriesImport Method for CreateSeriesImport
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSeriesImportRequest
 */
-func (a *SeriesImportAPIService) CreateSeriesImport(ctx context.Context) ApiCreateSeriesImportRequest {
+func (a *SeriesImportApiService) CreateSeriesImport(ctx context.Context) ApiCreateSeriesImportRequest {
 	return ApiCreateSeriesImportRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *SeriesImportAPIService) CreateSeriesImport(ctx context.Context) ApiCrea
 }
 
 // Execute executes the request
-func (a *SeriesImportAPIService) CreateSeriesImportExecute(r ApiCreateSeriesImportRequest) (*http.Response, error) {
+func (a *SeriesImportApiService) CreateSeriesImportExecute(r ApiCreateSeriesImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesImportAPIService.CreateSeriesImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesImportApiService.CreateSeriesImport")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,10 +19,6 @@
 
 * `PILOT` (value: `"pilot"`)
 
-* `MONITOR_SPECIALS` (value: `"monitorSpecials"`)
-
-* `UNMONITOR_SPECIALS` (value: `"unmonitorSpecials"`)
-
 * `NONE` (value: `"none"`)
 
 

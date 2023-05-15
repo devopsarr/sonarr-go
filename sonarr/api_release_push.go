@@ -20,11 +20,11 @@ import (
 )
 
 
-// ReleasePushAPIService ReleasePushAPI service
-type ReleasePushAPIService service
+// ReleasePushApiService ReleasePushApi service
+type ReleasePushApiService service
 type ApiCreateReleasePushRequest struct {
 	ctx context.Context
-	ApiService *ReleasePushAPIService
+	ApiService *ReleasePushApiService
 	releaseResource *ReleaseResource
 }
 
@@ -43,7 +43,7 @@ CreateReleasePush Method for CreateReleasePush
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateReleasePushRequest
 */
-func (a *ReleasePushAPIService) CreateReleasePush(ctx context.Context) ApiCreateReleasePushRequest {
+func (a *ReleasePushApiService) CreateReleasePush(ctx context.Context) ApiCreateReleasePushRequest {
 	return ApiCreateReleasePushRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *ReleasePushAPIService) CreateReleasePush(ctx context.Context) ApiCreate
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleasePushAPIService) CreateReleasePushExecute(r ApiCreateReleasePushRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *ReleasePushApiService) CreateReleasePushExecute(r ApiCreateReleasePushRequest) ([]*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ReleasePushAPIService) CreateReleasePushExecute(r ApiCreateReleasePushR
 		localVarReturnValue  []*ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePushAPIService.CreateReleasePush")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePushApiService.CreateReleasePush")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *ReleasePushAPIService) CreateReleasePushExecute(r ApiCreateReleasePushR
 }
 type ApiGetReleasePushByIdRequest struct {
 	ctx context.Context
-	ApiService *ReleasePushAPIService
+	ApiService *ReleasePushApiService
 	id int32
 }
 
@@ -171,7 +171,7 @@ GetReleasePushById Method for GetReleasePushById
  @param id
  @return ApiGetReleasePushByIdRequest
 */
-func (a *ReleasePushAPIService) GetReleasePushById(ctx context.Context, id int32) ApiGetReleasePushByIdRequest {
+func (a *ReleasePushApiService) GetReleasePushById(ctx context.Context, id int32) ApiGetReleasePushByIdRequest {
 	return ApiGetReleasePushByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -181,7 +181,7 @@ func (a *ReleasePushAPIService) GetReleasePushById(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return ReleaseResource
-func (a *ReleasePushAPIService) GetReleasePushByIdExecute(r ApiGetReleasePushByIdRequest) (*ReleaseResource, *http.Response, error) {
+func (a *ReleasePushApiService) GetReleasePushByIdExecute(r ApiGetReleasePushByIdRequest) (*ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -189,7 +189,7 @@ func (a *ReleasePushAPIService) GetReleasePushByIdExecute(r ApiGetReleasePushByI
 		localVarReturnValue  *ReleaseResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePushAPIService.GetReleasePushById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePushApiService.GetReleasePushById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
