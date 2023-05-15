@@ -20,11 +20,11 @@ import (
 )
 
 
-// HostConfigAPIService HostConfigAPI service
-type HostConfigAPIService service
+// HostConfigApiService HostConfigApi service
+type HostConfigApiService service
 type ApiGetHostConfigRequest struct {
 	ctx context.Context
-	ApiService *HostConfigAPIService
+	ApiService *HostConfigApiService
 }
 
 func (r ApiGetHostConfigRequest) Execute() (*HostConfigResource, *http.Response, error) {
@@ -37,7 +37,7 @@ GetHostConfig Method for GetHostConfig
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetHostConfigRequest
 */
-func (a *HostConfigAPIService) GetHostConfig(ctx context.Context) ApiGetHostConfigRequest {
+func (a *HostConfigApiService) GetHostConfig(ctx context.Context) ApiGetHostConfigRequest {
 	return ApiGetHostConfigRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -46,7 +46,7 @@ func (a *HostConfigAPIService) GetHostConfig(ctx context.Context) ApiGetHostConf
 
 // Execute executes the request
 //  @return HostConfigResource
-func (a *HostConfigAPIService) GetHostConfigExecute(r ApiGetHostConfigRequest) (*HostConfigResource, *http.Response, error) {
+func (a *HostConfigApiService) GetHostConfigExecute(r ApiGetHostConfigRequest) (*HostConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *HostConfigAPIService) GetHostConfigExecute(r ApiGetHostConfigRequest) (
 		localVarReturnValue  *HostConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostConfigAPIService.GetHostConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostConfigApiService.GetHostConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,7 +148,7 @@ func (a *HostConfigAPIService) GetHostConfigExecute(r ApiGetHostConfigRequest) (
 }
 type ApiGetHostConfigByIdRequest struct {
 	ctx context.Context
-	ApiService *HostConfigAPIService
+	ApiService *HostConfigApiService
 	id int32
 }
 
@@ -163,7 +163,7 @@ GetHostConfigById Method for GetHostConfigById
  @param id
  @return ApiGetHostConfigByIdRequest
 */
-func (a *HostConfigAPIService) GetHostConfigById(ctx context.Context, id int32) ApiGetHostConfigByIdRequest {
+func (a *HostConfigApiService) GetHostConfigById(ctx context.Context, id int32) ApiGetHostConfigByIdRequest {
 	return ApiGetHostConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -173,7 +173,7 @@ func (a *HostConfigAPIService) GetHostConfigById(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return HostConfigResource
-func (a *HostConfigAPIService) GetHostConfigByIdExecute(r ApiGetHostConfigByIdRequest) (*HostConfigResource, *http.Response, error) {
+func (a *HostConfigApiService) GetHostConfigByIdExecute(r ApiGetHostConfigByIdRequest) (*HostConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *HostConfigAPIService) GetHostConfigByIdExecute(r ApiGetHostConfigByIdRe
 		localVarReturnValue  *HostConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostConfigAPIService.GetHostConfigById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostConfigApiService.GetHostConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -276,7 +276,7 @@ func (a *HostConfigAPIService) GetHostConfigByIdExecute(r ApiGetHostConfigByIdRe
 }
 type ApiUpdateHostConfigRequest struct {
 	ctx context.Context
-	ApiService *HostConfigAPIService
+	ApiService *HostConfigApiService
 	id string
 	hostConfigResource *HostConfigResource
 }
@@ -297,7 +297,7 @@ UpdateHostConfig Method for UpdateHostConfig
  @param id
  @return ApiUpdateHostConfigRequest
 */
-func (a *HostConfigAPIService) UpdateHostConfig(ctx context.Context, id string) ApiUpdateHostConfigRequest {
+func (a *HostConfigApiService) UpdateHostConfig(ctx context.Context, id string) ApiUpdateHostConfigRequest {
 	return ApiUpdateHostConfigRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -307,7 +307,7 @@ func (a *HostConfigAPIService) UpdateHostConfig(ctx context.Context, id string) 
 
 // Execute executes the request
 //  @return HostConfigResource
-func (a *HostConfigAPIService) UpdateHostConfigExecute(r ApiUpdateHostConfigRequest) (*HostConfigResource, *http.Response, error) {
+func (a *HostConfigApiService) UpdateHostConfigExecute(r ApiUpdateHostConfigRequest) (*HostConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -315,7 +315,7 @@ func (a *HostConfigAPIService) UpdateHostConfigExecute(r ApiUpdateHostConfigRequ
 		localVarReturnValue  *HostConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostConfigAPIService.UpdateHostConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostConfigApiService.UpdateHostConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

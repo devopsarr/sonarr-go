@@ -20,11 +20,11 @@ import (
 )
 
 
-// LanguageProfileSchemaAPIService LanguageProfileSchemaAPI service
-type LanguageProfileSchemaAPIService service
+// LanguageProfileSchemaApiService LanguageProfileSchemaApi service
+type LanguageProfileSchemaApiService service
 type ApiGetLanguageprofileSchemaRequest struct {
 	ctx context.Context
-	ApiService *LanguageProfileSchemaAPIService
+	ApiService *LanguageProfileSchemaApiService
 }
 
 func (r ApiGetLanguageprofileSchemaRequest) Execute() (*LanguageProfileResource, *http.Response, error) {
@@ -39,7 +39,7 @@ GetLanguageprofileSchema Method for GetLanguageprofileSchema
 
 Deprecated
 */
-func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchema(ctx context.Context) ApiGetLanguageprofileSchemaRequest {
+func (a *LanguageProfileSchemaApiService) GetLanguageprofileSchema(ctx context.Context) ApiGetLanguageprofileSchemaRequest {
 	return ApiGetLanguageprofileSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,7 +49,7 @@ func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchema(ctx context.C
 // Execute executes the request
 //  @return LanguageProfileResource
 // Deprecated
-func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchemaExecute(r ApiGetLanguageprofileSchemaRequest) (*LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileSchemaApiService) GetLanguageprofileSchemaExecute(r ApiGetLanguageprofileSchemaRequest) (*LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchemaExecute(r ApiG
 		localVarReturnValue  *LanguageProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileSchemaAPIService.GetLanguageprofileSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileSchemaApiService.GetLanguageprofileSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,7 +151,7 @@ func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchemaExecute(r ApiG
 }
 type ApiGetLanguageprofileSchemaByIdRequest struct {
 	ctx context.Context
-	ApiService *LanguageProfileSchemaAPIService
+	ApiService *LanguageProfileSchemaApiService
 	id int32
 }
 
@@ -166,7 +166,7 @@ GetLanguageprofileSchemaById Method for GetLanguageprofileSchemaById
  @param id
  @return ApiGetLanguageprofileSchemaByIdRequest
 */
-func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchemaById(ctx context.Context, id int32) ApiGetLanguageprofileSchemaByIdRequest {
+func (a *LanguageProfileSchemaApiService) GetLanguageprofileSchemaById(ctx context.Context, id int32) ApiGetLanguageprofileSchemaByIdRequest {
 	return ApiGetLanguageprofileSchemaByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -176,7 +176,7 @@ func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchemaById(ctx conte
 
 // Execute executes the request
 //  @return LanguageProfileResource
-func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchemaByIdExecute(r ApiGetLanguageprofileSchemaByIdRequest) (*LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileSchemaApiService) GetLanguageprofileSchemaByIdExecute(r ApiGetLanguageprofileSchemaByIdRequest) (*LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -184,7 +184,7 @@ func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchemaByIdExecute(r 
 		localVarReturnValue  *LanguageProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileSchemaAPIService.GetLanguageprofileSchemaById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileSchemaApiService.GetLanguageprofileSchemaById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

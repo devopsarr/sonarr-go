@@ -19,11 +19,11 @@ import (
 )
 
 
-// PingAPIService PingAPI service
-type PingAPIService service
+// PingApiService PingApi service
+type PingApiService service
 type ApiGetPingRequest struct {
 	ctx context.Context
-	ApiService *PingAPIService
+	ApiService *PingApiService
 }
 
 func (r ApiGetPingRequest) Execute() (*PingResource, *http.Response, error) {
@@ -36,7 +36,7 @@ GetPing Method for GetPing
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetPingRequest
 */
-func (a *PingAPIService) GetPing(ctx context.Context) ApiGetPingRequest {
+func (a *PingApiService) GetPing(ctx context.Context) ApiGetPingRequest {
 	return ApiGetPingRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *PingAPIService) GetPing(ctx context.Context) ApiGetPingRequest {
 
 // Execute executes the request
 //  @return PingResource
-func (a *PingAPIService) GetPingExecute(r ApiGetPingRequest) (*PingResource, *http.Response, error) {
+func (a *PingApiService) GetPingExecute(r ApiGetPingRequest) (*PingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *PingAPIService) GetPingExecute(r ApiGetPingRequest) (*PingResource, *ht
 		localVarReturnValue  *PingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingAPIService.GetPing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PingApiService.GetPing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -31,26 +31,20 @@ type NotificationResource struct {
 	OnDownload *bool `json:"onDownload,omitempty"`
 	OnUpgrade *bool `json:"onUpgrade,omitempty"`
 	OnRename *bool `json:"onRename,omitempty"`
-	OnSeriesAdd *bool `json:"onSeriesAdd,omitempty"`
 	OnSeriesDelete *bool `json:"onSeriesDelete,omitempty"`
 	OnEpisodeFileDelete *bool `json:"onEpisodeFileDelete,omitempty"`
 	OnEpisodeFileDeleteForUpgrade *bool `json:"onEpisodeFileDeleteForUpgrade,omitempty"`
 	OnHealthIssue *bool `json:"onHealthIssue,omitempty"`
-	OnHealthRestored *bool `json:"onHealthRestored,omitempty"`
 	OnApplicationUpdate *bool `json:"onApplicationUpdate,omitempty"`
-	OnManualInteractionRequired *bool `json:"onManualInteractionRequired,omitempty"`
 	SupportsOnGrab *bool `json:"supportsOnGrab,omitempty"`
 	SupportsOnDownload *bool `json:"supportsOnDownload,omitempty"`
 	SupportsOnUpgrade *bool `json:"supportsOnUpgrade,omitempty"`
 	SupportsOnRename *bool `json:"supportsOnRename,omitempty"`
-	SupportsOnSeriesAdd *bool `json:"supportsOnSeriesAdd,omitempty"`
 	SupportsOnSeriesDelete *bool `json:"supportsOnSeriesDelete,omitempty"`
 	SupportsOnEpisodeFileDelete *bool `json:"supportsOnEpisodeFileDelete,omitempty"`
 	SupportsOnEpisodeFileDeleteForUpgrade *bool `json:"supportsOnEpisodeFileDeleteForUpgrade,omitempty"`
 	SupportsOnHealthIssue *bool `json:"supportsOnHealthIssue,omitempty"`
-	SupportsOnHealthRestored *bool `json:"supportsOnHealthRestored,omitempty"`
 	SupportsOnApplicationUpdate *bool `json:"supportsOnApplicationUpdate,omitempty"`
-	SupportsOnManualInteractionRequired *bool `json:"supportsOnManualInteractionRequired,omitempty"`
 	IncludeHealthWarnings *bool `json:"includeHealthWarnings,omitempty"`
 	TestCommand NullableString `json:"testCommand,omitempty"`
 }
@@ -615,38 +609,6 @@ func (o *NotificationResource) SetOnRename(v bool) {
 	o.OnRename = &v
 }
 
-// GetOnSeriesAdd returns the OnSeriesAdd field value if set, zero value otherwise.
-func (o *NotificationResource) GetOnSeriesAdd() bool {
-	if o == nil || isNil(o.OnSeriesAdd) {
-		var ret bool
-		return ret
-	}
-	return *o.OnSeriesAdd
-}
-
-// GetOnSeriesAddOk returns a tuple with the OnSeriesAdd field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NotificationResource) GetOnSeriesAddOk() (*bool, bool) {
-	if o == nil || isNil(o.OnSeriesAdd) {
-    return nil, false
-	}
-	return o.OnSeriesAdd, true
-}
-
-// HasOnSeriesAdd returns a boolean if a field has been set.
-func (o *NotificationResource) HasOnSeriesAdd() bool {
-	if o != nil && !isNil(o.OnSeriesAdd) {
-		return true
-	}
-
-	return false
-}
-
-// SetOnSeriesAdd gets a reference to the given bool and assigns it to the OnSeriesAdd field.
-func (o *NotificationResource) SetOnSeriesAdd(v bool) {
-	o.OnSeriesAdd = &v
-}
-
 // GetOnSeriesDelete returns the OnSeriesDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnSeriesDelete() bool {
 	if o == nil || isNil(o.OnSeriesDelete) {
@@ -775,38 +737,6 @@ func (o *NotificationResource) SetOnHealthIssue(v bool) {
 	o.OnHealthIssue = &v
 }
 
-// GetOnHealthRestored returns the OnHealthRestored field value if set, zero value otherwise.
-func (o *NotificationResource) GetOnHealthRestored() bool {
-	if o == nil || isNil(o.OnHealthRestored) {
-		var ret bool
-		return ret
-	}
-	return *o.OnHealthRestored
-}
-
-// GetOnHealthRestoredOk returns a tuple with the OnHealthRestored field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NotificationResource) GetOnHealthRestoredOk() (*bool, bool) {
-	if o == nil || isNil(o.OnHealthRestored) {
-    return nil, false
-	}
-	return o.OnHealthRestored, true
-}
-
-// HasOnHealthRestored returns a boolean if a field has been set.
-func (o *NotificationResource) HasOnHealthRestored() bool {
-	if o != nil && !isNil(o.OnHealthRestored) {
-		return true
-	}
-
-	return false
-}
-
-// SetOnHealthRestored gets a reference to the given bool and assigns it to the OnHealthRestored field.
-func (o *NotificationResource) SetOnHealthRestored(v bool) {
-	o.OnHealthRestored = &v
-}
-
 // GetOnApplicationUpdate returns the OnApplicationUpdate field value if set, zero value otherwise.
 func (o *NotificationResource) GetOnApplicationUpdate() bool {
 	if o == nil || isNil(o.OnApplicationUpdate) {
@@ -837,38 +767,6 @@ func (o *NotificationResource) HasOnApplicationUpdate() bool {
 // SetOnApplicationUpdate gets a reference to the given bool and assigns it to the OnApplicationUpdate field.
 func (o *NotificationResource) SetOnApplicationUpdate(v bool) {
 	o.OnApplicationUpdate = &v
-}
-
-// GetOnManualInteractionRequired returns the OnManualInteractionRequired field value if set, zero value otherwise.
-func (o *NotificationResource) GetOnManualInteractionRequired() bool {
-	if o == nil || isNil(o.OnManualInteractionRequired) {
-		var ret bool
-		return ret
-	}
-	return *o.OnManualInteractionRequired
-}
-
-// GetOnManualInteractionRequiredOk returns a tuple with the OnManualInteractionRequired field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NotificationResource) GetOnManualInteractionRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.OnManualInteractionRequired) {
-    return nil, false
-	}
-	return o.OnManualInteractionRequired, true
-}
-
-// HasOnManualInteractionRequired returns a boolean if a field has been set.
-func (o *NotificationResource) HasOnManualInteractionRequired() bool {
-	if o != nil && !isNil(o.OnManualInteractionRequired) {
-		return true
-	}
-
-	return false
-}
-
-// SetOnManualInteractionRequired gets a reference to the given bool and assigns it to the OnManualInteractionRequired field.
-func (o *NotificationResource) SetOnManualInteractionRequired(v bool) {
-	o.OnManualInteractionRequired = &v
 }
 
 // GetSupportsOnGrab returns the SupportsOnGrab field value if set, zero value otherwise.
@@ -999,38 +897,6 @@ func (o *NotificationResource) SetSupportsOnRename(v bool) {
 	o.SupportsOnRename = &v
 }
 
-// GetSupportsOnSeriesAdd returns the SupportsOnSeriesAdd field value if set, zero value otherwise.
-func (o *NotificationResource) GetSupportsOnSeriesAdd() bool {
-	if o == nil || isNil(o.SupportsOnSeriesAdd) {
-		var ret bool
-		return ret
-	}
-	return *o.SupportsOnSeriesAdd
-}
-
-// GetSupportsOnSeriesAddOk returns a tuple with the SupportsOnSeriesAdd field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NotificationResource) GetSupportsOnSeriesAddOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnSeriesAdd) {
-    return nil, false
-	}
-	return o.SupportsOnSeriesAdd, true
-}
-
-// HasSupportsOnSeriesAdd returns a boolean if a field has been set.
-func (o *NotificationResource) HasSupportsOnSeriesAdd() bool {
-	if o != nil && !isNil(o.SupportsOnSeriesAdd) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportsOnSeriesAdd gets a reference to the given bool and assigns it to the SupportsOnSeriesAdd field.
-func (o *NotificationResource) SetSupportsOnSeriesAdd(v bool) {
-	o.SupportsOnSeriesAdd = &v
-}
-
 // GetSupportsOnSeriesDelete returns the SupportsOnSeriesDelete field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnSeriesDelete() bool {
 	if o == nil || isNil(o.SupportsOnSeriesDelete) {
@@ -1159,38 +1025,6 @@ func (o *NotificationResource) SetSupportsOnHealthIssue(v bool) {
 	o.SupportsOnHealthIssue = &v
 }
 
-// GetSupportsOnHealthRestored returns the SupportsOnHealthRestored field value if set, zero value otherwise.
-func (o *NotificationResource) GetSupportsOnHealthRestored() bool {
-	if o == nil || isNil(o.SupportsOnHealthRestored) {
-		var ret bool
-		return ret
-	}
-	return *o.SupportsOnHealthRestored
-}
-
-// GetSupportsOnHealthRestoredOk returns a tuple with the SupportsOnHealthRestored field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NotificationResource) GetSupportsOnHealthRestoredOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnHealthRestored) {
-    return nil, false
-	}
-	return o.SupportsOnHealthRestored, true
-}
-
-// HasSupportsOnHealthRestored returns a boolean if a field has been set.
-func (o *NotificationResource) HasSupportsOnHealthRestored() bool {
-	if o != nil && !isNil(o.SupportsOnHealthRestored) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportsOnHealthRestored gets a reference to the given bool and assigns it to the SupportsOnHealthRestored field.
-func (o *NotificationResource) SetSupportsOnHealthRestored(v bool) {
-	o.SupportsOnHealthRestored = &v
-}
-
 // GetSupportsOnApplicationUpdate returns the SupportsOnApplicationUpdate field value if set, zero value otherwise.
 func (o *NotificationResource) GetSupportsOnApplicationUpdate() bool {
 	if o == nil || isNil(o.SupportsOnApplicationUpdate) {
@@ -1221,38 +1055,6 @@ func (o *NotificationResource) HasSupportsOnApplicationUpdate() bool {
 // SetSupportsOnApplicationUpdate gets a reference to the given bool and assigns it to the SupportsOnApplicationUpdate field.
 func (o *NotificationResource) SetSupportsOnApplicationUpdate(v bool) {
 	o.SupportsOnApplicationUpdate = &v
-}
-
-// GetSupportsOnManualInteractionRequired returns the SupportsOnManualInteractionRequired field value if set, zero value otherwise.
-func (o *NotificationResource) GetSupportsOnManualInteractionRequired() bool {
-	if o == nil || isNil(o.SupportsOnManualInteractionRequired) {
-		var ret bool
-		return ret
-	}
-	return *o.SupportsOnManualInteractionRequired
-}
-
-// GetSupportsOnManualInteractionRequiredOk returns a tuple with the SupportsOnManualInteractionRequired field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NotificationResource) GetSupportsOnManualInteractionRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnManualInteractionRequired) {
-    return nil, false
-	}
-	return o.SupportsOnManualInteractionRequired, true
-}
-
-// HasSupportsOnManualInteractionRequired returns a boolean if a field has been set.
-func (o *NotificationResource) HasSupportsOnManualInteractionRequired() bool {
-	if o != nil && !isNil(o.SupportsOnManualInteractionRequired) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupportsOnManualInteractionRequired gets a reference to the given bool and assigns it to the SupportsOnManualInteractionRequired field.
-func (o *NotificationResource) SetSupportsOnManualInteractionRequired(v bool) {
-	o.SupportsOnManualInteractionRequired = &v
 }
 
 // GetIncludeHealthWarnings returns the IncludeHealthWarnings field value if set, zero value otherwise.
@@ -1376,9 +1178,6 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.OnRename) {
 		toSerialize["onRename"] = o.OnRename
 	}
-	if !isNil(o.OnSeriesAdd) {
-		toSerialize["onSeriesAdd"] = o.OnSeriesAdd
-	}
 	if !isNil(o.OnSeriesDelete) {
 		toSerialize["onSeriesDelete"] = o.OnSeriesDelete
 	}
@@ -1391,14 +1190,8 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.OnHealthIssue) {
 		toSerialize["onHealthIssue"] = o.OnHealthIssue
 	}
-	if !isNil(o.OnHealthRestored) {
-		toSerialize["onHealthRestored"] = o.OnHealthRestored
-	}
 	if !isNil(o.OnApplicationUpdate) {
 		toSerialize["onApplicationUpdate"] = o.OnApplicationUpdate
-	}
-	if !isNil(o.OnManualInteractionRequired) {
-		toSerialize["onManualInteractionRequired"] = o.OnManualInteractionRequired
 	}
 	if !isNil(o.SupportsOnGrab) {
 		toSerialize["supportsOnGrab"] = o.SupportsOnGrab
@@ -1412,9 +1205,6 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.SupportsOnRename) {
 		toSerialize["supportsOnRename"] = o.SupportsOnRename
 	}
-	if !isNil(o.SupportsOnSeriesAdd) {
-		toSerialize["supportsOnSeriesAdd"] = o.SupportsOnSeriesAdd
-	}
 	if !isNil(o.SupportsOnSeriesDelete) {
 		toSerialize["supportsOnSeriesDelete"] = o.SupportsOnSeriesDelete
 	}
@@ -1427,14 +1217,8 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.SupportsOnHealthIssue) {
 		toSerialize["supportsOnHealthIssue"] = o.SupportsOnHealthIssue
 	}
-	if !isNil(o.SupportsOnHealthRestored) {
-		toSerialize["supportsOnHealthRestored"] = o.SupportsOnHealthRestored
-	}
 	if !isNil(o.SupportsOnApplicationUpdate) {
 		toSerialize["supportsOnApplicationUpdate"] = o.SupportsOnApplicationUpdate
-	}
-	if !isNil(o.SupportsOnManualInteractionRequired) {
-		toSerialize["supportsOnManualInteractionRequired"] = o.SupportsOnManualInteractionRequired
 	}
 	if !isNil(o.IncludeHealthWarnings) {
 		toSerialize["includeHealthWarnings"] = o.IncludeHealthWarnings

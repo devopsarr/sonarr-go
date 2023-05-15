@@ -19,11 +19,11 @@ import (
 )
 
 
-// InitializeJsAPIService InitializeJsAPI service
-type InitializeJsAPIService service
+// InitializeJsApiService InitializeJsApi service
+type InitializeJsApiService service
 type ApiGetInitializeJsRequest struct {
 	ctx context.Context
-	ApiService *InitializeJsAPIService
+	ApiService *InitializeJsApiService
 }
 
 func (r ApiGetInitializeJsRequest) Execute() (*http.Response, error) {
@@ -36,7 +36,7 @@ GetInitializeJs Method for GetInitializeJs
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetInitializeJsRequest
 */
-func (a *InitializeJsAPIService) GetInitializeJs(ctx context.Context) ApiGetInitializeJsRequest {
+func (a *InitializeJsApiService) GetInitializeJs(ctx context.Context) ApiGetInitializeJsRequest {
 	return ApiGetInitializeJsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -44,14 +44,14 @@ func (a *InitializeJsAPIService) GetInitializeJs(ctx context.Context) ApiGetInit
 }
 
 // Execute executes the request
-func (a *InitializeJsAPIService) GetInitializeJsExecute(r ApiGetInitializeJsRequest) (*http.Response, error) {
+func (a *InitializeJsApiService) GetInitializeJsExecute(r ApiGetInitializeJsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InitializeJsAPIService.GetInitializeJs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InitializeJsApiService.GetInitializeJs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

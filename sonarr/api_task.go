@@ -20,11 +20,11 @@ import (
 )
 
 
-// TaskAPIService TaskAPI service
-type TaskAPIService service
+// TaskApiService TaskApi service
+type TaskApiService service
 type ApiGetSystemTaskByIdRequest struct {
 	ctx context.Context
-	ApiService *TaskAPIService
+	ApiService *TaskApiService
 	id int32
 }
 
@@ -39,7 +39,7 @@ GetSystemTaskById Method for GetSystemTaskById
  @param id
  @return ApiGetSystemTaskByIdRequest
 */
-func (a *TaskAPIService) GetSystemTaskById(ctx context.Context, id int32) ApiGetSystemTaskByIdRequest {
+func (a *TaskApiService) GetSystemTaskById(ctx context.Context, id int32) ApiGetSystemTaskByIdRequest {
 	return ApiGetSystemTaskByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,7 +49,7 @@ func (a *TaskAPIService) GetSystemTaskById(ctx context.Context, id int32) ApiGet
 
 // Execute executes the request
 //  @return TaskResource
-func (a *TaskAPIService) GetSystemTaskByIdExecute(r ApiGetSystemTaskByIdRequest) (*TaskResource, *http.Response, error) {
+func (a *TaskApiService) GetSystemTaskByIdExecute(r ApiGetSystemTaskByIdRequest) (*TaskResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *TaskAPIService) GetSystemTaskByIdExecute(r ApiGetSystemTaskByIdRequest)
 		localVarReturnValue  *TaskResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskAPIService.GetSystemTaskById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskApiService.GetSystemTaskById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,7 +152,7 @@ func (a *TaskAPIService) GetSystemTaskByIdExecute(r ApiGetSystemTaskByIdRequest)
 }
 type ApiListSystemTaskRequest struct {
 	ctx context.Context
-	ApiService *TaskAPIService
+	ApiService *TaskApiService
 }
 
 func (r ApiListSystemTaskRequest) Execute() ([]*TaskResource, *http.Response, error) {
@@ -165,7 +165,7 @@ ListSystemTask Method for ListSystemTask
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSystemTaskRequest
 */
-func (a *TaskAPIService) ListSystemTask(ctx context.Context) ApiListSystemTaskRequest {
+func (a *TaskApiService) ListSystemTask(ctx context.Context) ApiListSystemTaskRequest {
 	return ApiListSystemTaskRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -174,7 +174,7 @@ func (a *TaskAPIService) ListSystemTask(ctx context.Context) ApiListSystemTaskRe
 
 // Execute executes the request
 //  @return []TaskResource
-func (a *TaskAPIService) ListSystemTaskExecute(r ApiListSystemTaskRequest) ([]*TaskResource, *http.Response, error) {
+func (a *TaskApiService) ListSystemTaskExecute(r ApiListSystemTaskRequest) ([]*TaskResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -182,7 +182,7 @@ func (a *TaskAPIService) ListSystemTaskExecute(r ApiListSystemTaskRequest) ([]*T
 		localVarReturnValue  []*TaskResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskAPIService.ListSystemTask")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskApiService.ListSystemTask")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

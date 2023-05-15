@@ -21,11 +21,11 @@ import (
 )
 
 
-// EpisodeFileAPIService EpisodeFileAPI service
-type EpisodeFileAPIService service
+// EpisodeFileApiService EpisodeFileApi service
+type EpisodeFileApiService service
 type ApiDeleteEpisodeFileRequest struct {
 	ctx context.Context
-	ApiService *EpisodeFileAPIService
+	ApiService *EpisodeFileApiService
 	id int32
 }
 
@@ -40,7 +40,7 @@ DeleteEpisodeFile Method for DeleteEpisodeFile
  @param id
  @return ApiDeleteEpisodeFileRequest
 */
-func (a *EpisodeFileAPIService) DeleteEpisodeFile(ctx context.Context, id int32) ApiDeleteEpisodeFileRequest {
+func (a *EpisodeFileApiService) DeleteEpisodeFile(ctx context.Context, id int32) ApiDeleteEpisodeFileRequest {
 	return ApiDeleteEpisodeFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,14 +49,14 @@ func (a *EpisodeFileAPIService) DeleteEpisodeFile(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-func (a *EpisodeFileAPIService) DeleteEpisodeFileExecute(r ApiDeleteEpisodeFileRequest) (*http.Response, error) {
+func (a *EpisodeFileApiService) DeleteEpisodeFileExecute(r ApiDeleteEpisodeFileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileAPIService.DeleteEpisodeFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileApiService.DeleteEpisodeFile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -142,7 +142,7 @@ func (a *EpisodeFileAPIService) DeleteEpisodeFileExecute(r ApiDeleteEpisodeFileR
 }
 type ApiDeleteEpisodeFileBulkRequest struct {
 	ctx context.Context
-	ApiService *EpisodeFileAPIService
+	ApiService *EpisodeFileApiService
 	episodeFileListResource *EpisodeFileListResource
 }
 
@@ -161,7 +161,7 @@ DeleteEpisodeFileBulk Method for DeleteEpisodeFileBulk
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteEpisodeFileBulkRequest
 */
-func (a *EpisodeFileAPIService) DeleteEpisodeFileBulk(ctx context.Context) ApiDeleteEpisodeFileBulkRequest {
+func (a *EpisodeFileApiService) DeleteEpisodeFileBulk(ctx context.Context) ApiDeleteEpisodeFileBulkRequest {
 	return ApiDeleteEpisodeFileBulkRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *EpisodeFileAPIService) DeleteEpisodeFileBulk(ctx context.Context) ApiDe
 }
 
 // Execute executes the request
-func (a *EpisodeFileAPIService) DeleteEpisodeFileBulkExecute(r ApiDeleteEpisodeFileBulkRequest) (*http.Response, error) {
+func (a *EpisodeFileApiService) DeleteEpisodeFileBulkExecute(r ApiDeleteEpisodeFileBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileAPIService.DeleteEpisodeFileBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileApiService.DeleteEpisodeFileBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -263,7 +263,7 @@ func (a *EpisodeFileAPIService) DeleteEpisodeFileBulkExecute(r ApiDeleteEpisodeF
 }
 type ApiGetEpisodeFileByIdRequest struct {
 	ctx context.Context
-	ApiService *EpisodeFileAPIService
+	ApiService *EpisodeFileApiService
 	id int32
 }
 
@@ -278,7 +278,7 @@ GetEpisodeFileById Method for GetEpisodeFileById
  @param id
  @return ApiGetEpisodeFileByIdRequest
 */
-func (a *EpisodeFileAPIService) GetEpisodeFileById(ctx context.Context, id int32) ApiGetEpisodeFileByIdRequest {
+func (a *EpisodeFileApiService) GetEpisodeFileById(ctx context.Context, id int32) ApiGetEpisodeFileByIdRequest {
 	return ApiGetEpisodeFileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -288,7 +288,7 @@ func (a *EpisodeFileAPIService) GetEpisodeFileById(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return EpisodeFileResource
-func (a *EpisodeFileAPIService) GetEpisodeFileByIdExecute(r ApiGetEpisodeFileByIdRequest) (*EpisodeFileResource, *http.Response, error) {
+func (a *EpisodeFileApiService) GetEpisodeFileByIdExecute(r ApiGetEpisodeFileByIdRequest) (*EpisodeFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -296,7 +296,7 @@ func (a *EpisodeFileAPIService) GetEpisodeFileByIdExecute(r ApiGetEpisodeFileByI
 		localVarReturnValue  *EpisodeFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileAPIService.GetEpisodeFileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileApiService.GetEpisodeFileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -391,7 +391,7 @@ func (a *EpisodeFileAPIService) GetEpisodeFileByIdExecute(r ApiGetEpisodeFileByI
 }
 type ApiListEpisodeFileRequest struct {
 	ctx context.Context
-	ApiService *EpisodeFileAPIService
+	ApiService *EpisodeFileApiService
 	seriesId *int32
 	episodeFileIds *[]int32
 }
@@ -416,7 +416,7 @@ ListEpisodeFile Method for ListEpisodeFile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListEpisodeFileRequest
 */
-func (a *EpisodeFileAPIService) ListEpisodeFile(ctx context.Context) ApiListEpisodeFileRequest {
+func (a *EpisodeFileApiService) ListEpisodeFile(ctx context.Context) ApiListEpisodeFileRequest {
 	return ApiListEpisodeFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -425,7 +425,7 @@ func (a *EpisodeFileAPIService) ListEpisodeFile(ctx context.Context) ApiListEpis
 
 // Execute executes the request
 //  @return []EpisodeFileResource
-func (a *EpisodeFileAPIService) ListEpisodeFileExecute(r ApiListEpisodeFileRequest) ([]*EpisodeFileResource, *http.Response, error) {
+func (a *EpisodeFileApiService) ListEpisodeFileExecute(r ApiListEpisodeFileRequest) ([]*EpisodeFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -433,7 +433,7 @@ func (a *EpisodeFileAPIService) ListEpisodeFileExecute(r ApiListEpisodeFileReque
 		localVarReturnValue  []*EpisodeFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileAPIService.ListEpisodeFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileApiService.ListEpisodeFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -541,7 +541,7 @@ func (a *EpisodeFileAPIService) ListEpisodeFileExecute(r ApiListEpisodeFileReque
 }
 type ApiPutEpisodeFileBulkRequest struct {
 	ctx context.Context
-	ApiService *EpisodeFileAPIService
+	ApiService *EpisodeFileApiService
 	episodeFileResource *[]EpisodeFileResource
 }
 
@@ -560,7 +560,7 @@ PutEpisodeFileBulk Method for PutEpisodeFileBulk
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutEpisodeFileBulkRequest
 */
-func (a *EpisodeFileAPIService) PutEpisodeFileBulk(ctx context.Context) ApiPutEpisodeFileBulkRequest {
+func (a *EpisodeFileApiService) PutEpisodeFileBulk(ctx context.Context) ApiPutEpisodeFileBulkRequest {
 	return ApiPutEpisodeFileBulkRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -568,14 +568,14 @@ func (a *EpisodeFileAPIService) PutEpisodeFileBulk(ctx context.Context) ApiPutEp
 }
 
 // Execute executes the request
-func (a *EpisodeFileAPIService) PutEpisodeFileBulkExecute(r ApiPutEpisodeFileBulkRequest) (*http.Response, error) {
+func (a *EpisodeFileApiService) PutEpisodeFileBulkExecute(r ApiPutEpisodeFileBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileAPIService.PutEpisodeFileBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileApiService.PutEpisodeFileBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -662,7 +662,7 @@ func (a *EpisodeFileAPIService) PutEpisodeFileBulkExecute(r ApiPutEpisodeFileBul
 }
 type ApiPutEpisodeFileEditorRequest struct {
 	ctx context.Context
-	ApiService *EpisodeFileAPIService
+	ApiService *EpisodeFileApiService
 	episodeFileListResource *EpisodeFileListResource
 }
 
@@ -681,7 +681,7 @@ PutEpisodeFileEditor Method for PutEpisodeFileEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutEpisodeFileEditorRequest
 */
-func (a *EpisodeFileAPIService) PutEpisodeFileEditor(ctx context.Context) ApiPutEpisodeFileEditorRequest {
+func (a *EpisodeFileApiService) PutEpisodeFileEditor(ctx context.Context) ApiPutEpisodeFileEditorRequest {
 	return ApiPutEpisodeFileEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -689,14 +689,14 @@ func (a *EpisodeFileAPIService) PutEpisodeFileEditor(ctx context.Context) ApiPut
 }
 
 // Execute executes the request
-func (a *EpisodeFileAPIService) PutEpisodeFileEditorExecute(r ApiPutEpisodeFileEditorRequest) (*http.Response, error) {
+func (a *EpisodeFileApiService) PutEpisodeFileEditorExecute(r ApiPutEpisodeFileEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileAPIService.PutEpisodeFileEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileApiService.PutEpisodeFileEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -783,7 +783,7 @@ func (a *EpisodeFileAPIService) PutEpisodeFileEditorExecute(r ApiPutEpisodeFileE
 }
 type ApiUpdateEpisodeFileRequest struct {
 	ctx context.Context
-	ApiService *EpisodeFileAPIService
+	ApiService *EpisodeFileApiService
 	id string
 	episodeFileResource *EpisodeFileResource
 }
@@ -804,7 +804,7 @@ UpdateEpisodeFile Method for UpdateEpisodeFile
  @param id
  @return ApiUpdateEpisodeFileRequest
 */
-func (a *EpisodeFileAPIService) UpdateEpisodeFile(ctx context.Context, id string) ApiUpdateEpisodeFileRequest {
+func (a *EpisodeFileApiService) UpdateEpisodeFile(ctx context.Context, id string) ApiUpdateEpisodeFileRequest {
 	return ApiUpdateEpisodeFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -814,7 +814,7 @@ func (a *EpisodeFileAPIService) UpdateEpisodeFile(ctx context.Context, id string
 
 // Execute executes the request
 //  @return EpisodeFileResource
-func (a *EpisodeFileAPIService) UpdateEpisodeFileExecute(r ApiUpdateEpisodeFileRequest) (*EpisodeFileResource, *http.Response, error) {
+func (a *EpisodeFileApiService) UpdateEpisodeFileExecute(r ApiUpdateEpisodeFileRequest) (*EpisodeFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -822,7 +822,7 @@ func (a *EpisodeFileAPIService) UpdateEpisodeFileExecute(r ApiUpdateEpisodeFileR
 		localVarReturnValue  *EpisodeFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileAPIService.UpdateEpisodeFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileApiService.UpdateEpisodeFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

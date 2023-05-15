@@ -19,11 +19,11 @@ import (
 )
 
 
-// QualityProfileSchemaAPIService QualityProfileSchemaAPI service
-type QualityProfileSchemaAPIService service
+// QualityProfileSchemaApiService QualityProfileSchemaApi service
+type QualityProfileSchemaApiService service
 type ApiGetQualityprofileSchemaRequest struct {
 	ctx context.Context
-	ApiService *QualityProfileSchemaAPIService
+	ApiService *QualityProfileSchemaApiService
 }
 
 func (r ApiGetQualityprofileSchemaRequest) Execute() (*QualityProfileResource, *http.Response, error) {
@@ -36,7 +36,7 @@ GetQualityprofileSchema Method for GetQualityprofileSchema
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetQualityprofileSchemaRequest
 */
-func (a *QualityProfileSchemaAPIService) GetQualityprofileSchema(ctx context.Context) ApiGetQualityprofileSchemaRequest {
+func (a *QualityProfileSchemaApiService) GetQualityprofileSchema(ctx context.Context) ApiGetQualityprofileSchemaRequest {
 	return ApiGetQualityprofileSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *QualityProfileSchemaAPIService) GetQualityprofileSchema(ctx context.Con
 
 // Execute executes the request
 //  @return QualityProfileResource
-func (a *QualityProfileSchemaAPIService) GetQualityprofileSchemaExecute(r ApiGetQualityprofileSchemaRequest) (*QualityProfileResource, *http.Response, error) {
+func (a *QualityProfileSchemaApiService) GetQualityprofileSchemaExecute(r ApiGetQualityprofileSchemaRequest) (*QualityProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *QualityProfileSchemaAPIService) GetQualityprofileSchemaExecute(r ApiGet
 		localVarReturnValue  *QualityProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileSchemaAPIService.GetQualityprofileSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileSchemaApiService.GetQualityprofileSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

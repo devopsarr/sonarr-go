@@ -43,8 +43,6 @@ type ReleaseResource struct {
 	MappedSeasonNumber NullableInt32 `json:"mappedSeasonNumber,omitempty"`
 	MappedEpisodeNumbers []*int32 `json:"mappedEpisodeNumbers,omitempty"`
 	MappedAbsoluteEpisodeNumbers []*int32 `json:"mappedAbsoluteEpisodeNumbers,omitempty"`
-	MappedSeriesId NullableInt32 `json:"mappedSeriesId,omitempty"`
-	MappedEpisodeInfo []*ReleaseEpisodeResource `json:"mappedEpisodeInfo,omitempty"`
 	Approved *bool `json:"approved,omitempty"`
 	TemporarilyRejected *bool `json:"temporarilyRejected,omitempty"`
 	Rejected *bool `json:"rejected,omitempty"`
@@ -72,9 +70,6 @@ type ReleaseResource struct {
 	Special *bool `json:"special,omitempty"`
 	SeriesId NullableInt32 `json:"seriesId,omitempty"`
 	EpisodeId NullableInt32 `json:"episodeId,omitempty"`
-	EpisodeIds []*int32 `json:"episodeIds,omitempty"`
-	DownloadClientId NullableInt32 `json:"downloadClientId,omitempty"`
-	ShouldOverride NullableBool `json:"shouldOverride,omitempty"`
 }
 
 // NewReleaseResource instantiates a new ReleaseResource object
@@ -1019,81 +1014,6 @@ func (o *ReleaseResource) HasMappedAbsoluteEpisodeNumbers() bool {
 // SetMappedAbsoluteEpisodeNumbers gets a reference to the given []int32 and assigns it to the MappedAbsoluteEpisodeNumbers field.
 func (o *ReleaseResource) SetMappedAbsoluteEpisodeNumbers(v []*int32) {
 	o.MappedAbsoluteEpisodeNumbers = v
-}
-
-// GetMappedSeriesId returns the MappedSeriesId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseResource) GetMappedSeriesId() int32 {
-	if o == nil || isNil(o.MappedSeriesId.Get()) {
-		var ret int32
-		return ret
-	}
-	return *o.MappedSeriesId.Get()
-}
-
-// GetMappedSeriesIdOk returns a tuple with the MappedSeriesId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseResource) GetMappedSeriesIdOk() (*int32, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return o.MappedSeriesId.Get(), o.MappedSeriesId.IsSet()
-}
-
-// HasMappedSeriesId returns a boolean if a field has been set.
-func (o *ReleaseResource) HasMappedSeriesId() bool {
-	if o != nil && o.MappedSeriesId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetMappedSeriesId gets a reference to the given NullableInt32 and assigns it to the MappedSeriesId field.
-func (o *ReleaseResource) SetMappedSeriesId(v int32) {
-	o.MappedSeriesId.Set(&v)
-}
-// SetMappedSeriesIdNil sets the value for MappedSeriesId to be an explicit nil
-func (o *ReleaseResource) SetMappedSeriesIdNil() {
-	o.MappedSeriesId.Set(nil)
-}
-
-// UnsetMappedSeriesId ensures that no value is present for MappedSeriesId, not even an explicit nil
-func (o *ReleaseResource) UnsetMappedSeriesId() {
-	o.MappedSeriesId.Unset()
-}
-
-// GetMappedEpisodeInfo returns the MappedEpisodeInfo field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseResource) GetMappedEpisodeInfo() []*ReleaseEpisodeResource {
-	if o == nil {
-		var ret []*ReleaseEpisodeResource
-		return ret
-	}
-	return o.MappedEpisodeInfo
-}
-
-// GetMappedEpisodeInfoOk returns a tuple with the MappedEpisodeInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseResource) GetMappedEpisodeInfoOk() ([]*ReleaseEpisodeResource, bool) {
-	if o == nil || isNil(o.MappedEpisodeInfo) {
-    return nil, false
-	}
-	return o.MappedEpisodeInfo, true
-}
-
-// HasMappedEpisodeInfo returns a boolean if a field has been set.
-func (o *ReleaseResource) HasMappedEpisodeInfo() bool {
-	if o != nil && isNil(o.MappedEpisodeInfo) {
-		return true
-	}
-
-	return false
-}
-
-// SetMappedEpisodeInfo gets a reference to the given []ReleaseEpisodeResource and assigns it to the MappedEpisodeInfo field.
-func (o *ReleaseResource) SetMappedEpisodeInfo(v []*ReleaseEpisodeResource) {
-	o.MappedEpisodeInfo = v
 }
 
 // GetApproved returns the Approved field value if set, zero value otherwise.
@@ -2052,123 +1972,6 @@ func (o *ReleaseResource) UnsetEpisodeId() {
 	o.EpisodeId.Unset()
 }
 
-// GetEpisodeIds returns the EpisodeIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseResource) GetEpisodeIds() []*int32 {
-	if o == nil {
-		var ret []*int32
-		return ret
-	}
-	return o.EpisodeIds
-}
-
-// GetEpisodeIdsOk returns a tuple with the EpisodeIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseResource) GetEpisodeIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.EpisodeIds) {
-    return nil, false
-	}
-	return o.EpisodeIds, true
-}
-
-// HasEpisodeIds returns a boolean if a field has been set.
-func (o *ReleaseResource) HasEpisodeIds() bool {
-	if o != nil && isNil(o.EpisodeIds) {
-		return true
-	}
-
-	return false
-}
-
-// SetEpisodeIds gets a reference to the given []int32 and assigns it to the EpisodeIds field.
-func (o *ReleaseResource) SetEpisodeIds(v []*int32) {
-	o.EpisodeIds = v
-}
-
-// GetDownloadClientId returns the DownloadClientId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseResource) GetDownloadClientId() int32 {
-	if o == nil || isNil(o.DownloadClientId.Get()) {
-		var ret int32
-		return ret
-	}
-	return *o.DownloadClientId.Get()
-}
-
-// GetDownloadClientIdOk returns a tuple with the DownloadClientId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseResource) GetDownloadClientIdOk() (*int32, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return o.DownloadClientId.Get(), o.DownloadClientId.IsSet()
-}
-
-// HasDownloadClientId returns a boolean if a field has been set.
-func (o *ReleaseResource) HasDownloadClientId() bool {
-	if o != nil && o.DownloadClientId.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetDownloadClientId gets a reference to the given NullableInt32 and assigns it to the DownloadClientId field.
-func (o *ReleaseResource) SetDownloadClientId(v int32) {
-	o.DownloadClientId.Set(&v)
-}
-// SetDownloadClientIdNil sets the value for DownloadClientId to be an explicit nil
-func (o *ReleaseResource) SetDownloadClientIdNil() {
-	o.DownloadClientId.Set(nil)
-}
-
-// UnsetDownloadClientId ensures that no value is present for DownloadClientId, not even an explicit nil
-func (o *ReleaseResource) UnsetDownloadClientId() {
-	o.DownloadClientId.Unset()
-}
-
-// GetShouldOverride returns the ShouldOverride field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseResource) GetShouldOverride() bool {
-	if o == nil || isNil(o.ShouldOverride.Get()) {
-		var ret bool
-		return ret
-	}
-	return *o.ShouldOverride.Get()
-}
-
-// GetShouldOverrideOk returns a tuple with the ShouldOverride field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseResource) GetShouldOverrideOk() (*bool, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return o.ShouldOverride.Get(), o.ShouldOverride.IsSet()
-}
-
-// HasShouldOverride returns a boolean if a field has been set.
-func (o *ReleaseResource) HasShouldOverride() bool {
-	if o != nil && o.ShouldOverride.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetShouldOverride gets a reference to the given NullableBool and assigns it to the ShouldOverride field.
-func (o *ReleaseResource) SetShouldOverride(v bool) {
-	o.ShouldOverride.Set(&v)
-}
-// SetShouldOverrideNil sets the value for ShouldOverride to be an explicit nil
-func (o *ReleaseResource) SetShouldOverrideNil() {
-	o.ShouldOverride.Set(nil)
-}
-
-// UnsetShouldOverride ensures that no value is present for ShouldOverride, not even an explicit nil
-func (o *ReleaseResource) UnsetShouldOverride() {
-	o.ShouldOverride.Unset()
-}
-
 func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -2248,12 +2051,6 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.MappedAbsoluteEpisodeNumbers != nil {
 		toSerialize["mappedAbsoluteEpisodeNumbers"] = o.MappedAbsoluteEpisodeNumbers
-	}
-	if o.MappedSeriesId.IsSet() {
-		toSerialize["mappedSeriesId"] = o.MappedSeriesId.Get()
-	}
-	if o.MappedEpisodeInfo != nil {
-		toSerialize["mappedEpisodeInfo"] = o.MappedEpisodeInfo
 	}
 	if !isNil(o.Approved) {
 		toSerialize["approved"] = o.Approved
@@ -2335,15 +2132,6 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.EpisodeId.IsSet() {
 		toSerialize["episodeId"] = o.EpisodeId.Get()
-	}
-	if o.EpisodeIds != nil {
-		toSerialize["episodeIds"] = o.EpisodeIds
-	}
-	if o.DownloadClientId.IsSet() {
-		toSerialize["downloadClientId"] = o.DownloadClientId.Get()
-	}
-	if o.ShouldOverride.IsSet() {
-		toSerialize["shouldOverride"] = o.ShouldOverride.Get()
 	}
 	return json.Marshal(toSerialize)
 }

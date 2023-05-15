@@ -20,11 +20,11 @@ import (
 )
 
 
-// DelayProfileAPIService DelayProfileAPI service
-type DelayProfileAPIService service
+// DelayProfileApiService DelayProfileApi service
+type DelayProfileApiService service
 type ApiCreateDelayProfileRequest struct {
 	ctx context.Context
-	ApiService *DelayProfileAPIService
+	ApiService *DelayProfileApiService
 	delayProfileResource *DelayProfileResource
 }
 
@@ -43,7 +43,7 @@ CreateDelayProfile Method for CreateDelayProfile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateDelayProfileRequest
 */
-func (a *DelayProfileAPIService) CreateDelayProfile(ctx context.Context) ApiCreateDelayProfileRequest {
+func (a *DelayProfileApiService) CreateDelayProfile(ctx context.Context) ApiCreateDelayProfileRequest {
 	return ApiCreateDelayProfileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *DelayProfileAPIService) CreateDelayProfile(ctx context.Context) ApiCrea
 
 // Execute executes the request
 //  @return DelayProfileResource
-func (a *DelayProfileAPIService) CreateDelayProfileExecute(r ApiCreateDelayProfileRequest) (*DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileApiService) CreateDelayProfileExecute(r ApiCreateDelayProfileRequest) (*DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *DelayProfileAPIService) CreateDelayProfileExecute(r ApiCreateDelayProfi
 		localVarReturnValue  *DelayProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileAPIService.CreateDelayProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileApiService.CreateDelayProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *DelayProfileAPIService) CreateDelayProfileExecute(r ApiCreateDelayProfi
 }
 type ApiDeleteDelayProfileRequest struct {
 	ctx context.Context
-	ApiService *DelayProfileAPIService
+	ApiService *DelayProfileApiService
 	id int32
 }
 
@@ -171,7 +171,7 @@ DeleteDelayProfile Method for DeleteDelayProfile
  @param id
  @return ApiDeleteDelayProfileRequest
 */
-func (a *DelayProfileAPIService) DeleteDelayProfile(ctx context.Context, id int32) ApiDeleteDelayProfileRequest {
+func (a *DelayProfileApiService) DeleteDelayProfile(ctx context.Context, id int32) ApiDeleteDelayProfileRequest {
 	return ApiDeleteDelayProfileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -180,14 +180,14 @@ func (a *DelayProfileAPIService) DeleteDelayProfile(ctx context.Context, id int3
 }
 
 // Execute executes the request
-func (a *DelayProfileAPIService) DeleteDelayProfileExecute(r ApiDeleteDelayProfileRequest) (*http.Response, error) {
+func (a *DelayProfileApiService) DeleteDelayProfileExecute(r ApiDeleteDelayProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileAPIService.DeleteDelayProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileApiService.DeleteDelayProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -273,7 +273,7 @@ func (a *DelayProfileAPIService) DeleteDelayProfileExecute(r ApiDeleteDelayProfi
 }
 type ApiGetDelayProfileByIdRequest struct {
 	ctx context.Context
-	ApiService *DelayProfileAPIService
+	ApiService *DelayProfileApiService
 	id int32
 }
 
@@ -288,7 +288,7 @@ GetDelayProfileById Method for GetDelayProfileById
  @param id
  @return ApiGetDelayProfileByIdRequest
 */
-func (a *DelayProfileAPIService) GetDelayProfileById(ctx context.Context, id int32) ApiGetDelayProfileByIdRequest {
+func (a *DelayProfileApiService) GetDelayProfileById(ctx context.Context, id int32) ApiGetDelayProfileByIdRequest {
 	return ApiGetDelayProfileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -298,7 +298,7 @@ func (a *DelayProfileAPIService) GetDelayProfileById(ctx context.Context, id int
 
 // Execute executes the request
 //  @return DelayProfileResource
-func (a *DelayProfileAPIService) GetDelayProfileByIdExecute(r ApiGetDelayProfileByIdRequest) (*DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileApiService) GetDelayProfileByIdExecute(r ApiGetDelayProfileByIdRequest) (*DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *DelayProfileAPIService) GetDelayProfileByIdExecute(r ApiGetDelayProfile
 		localVarReturnValue  *DelayProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileAPIService.GetDelayProfileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileApiService.GetDelayProfileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -401,7 +401,7 @@ func (a *DelayProfileAPIService) GetDelayProfileByIdExecute(r ApiGetDelayProfile
 }
 type ApiListDelayProfileRequest struct {
 	ctx context.Context
-	ApiService *DelayProfileAPIService
+	ApiService *DelayProfileApiService
 }
 
 func (r ApiListDelayProfileRequest) Execute() ([]*DelayProfileResource, *http.Response, error) {
@@ -414,7 +414,7 @@ ListDelayProfile Method for ListDelayProfile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListDelayProfileRequest
 */
-func (a *DelayProfileAPIService) ListDelayProfile(ctx context.Context) ApiListDelayProfileRequest {
+func (a *DelayProfileApiService) ListDelayProfile(ctx context.Context) ApiListDelayProfileRequest {
 	return ApiListDelayProfileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -423,7 +423,7 @@ func (a *DelayProfileAPIService) ListDelayProfile(ctx context.Context) ApiListDe
 
 // Execute executes the request
 //  @return []DelayProfileResource
-func (a *DelayProfileAPIService) ListDelayProfileExecute(r ApiListDelayProfileRequest) ([]*DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileApiService) ListDelayProfileExecute(r ApiListDelayProfileRequest) ([]*DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *DelayProfileAPIService) ListDelayProfileExecute(r ApiListDelayProfileRe
 		localVarReturnValue  []*DelayProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileAPIService.ListDelayProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileApiService.ListDelayProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -525,7 +525,7 @@ func (a *DelayProfileAPIService) ListDelayProfileExecute(r ApiListDelayProfileRe
 }
 type ApiUpdateDelayProfileRequest struct {
 	ctx context.Context
-	ApiService *DelayProfileAPIService
+	ApiService *DelayProfileApiService
 	id string
 	delayProfileResource *DelayProfileResource
 }
@@ -546,7 +546,7 @@ UpdateDelayProfile Method for UpdateDelayProfile
  @param id
  @return ApiUpdateDelayProfileRequest
 */
-func (a *DelayProfileAPIService) UpdateDelayProfile(ctx context.Context, id string) ApiUpdateDelayProfileRequest {
+func (a *DelayProfileApiService) UpdateDelayProfile(ctx context.Context, id string) ApiUpdateDelayProfileRequest {
 	return ApiUpdateDelayProfileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -556,7 +556,7 @@ func (a *DelayProfileAPIService) UpdateDelayProfile(ctx context.Context, id stri
 
 // Execute executes the request
 //  @return DelayProfileResource
-func (a *DelayProfileAPIService) UpdateDelayProfileExecute(r ApiUpdateDelayProfileRequest) (*DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileApiService) UpdateDelayProfileExecute(r ApiUpdateDelayProfileRequest) (*DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -564,7 +564,7 @@ func (a *DelayProfileAPIService) UpdateDelayProfileExecute(r ApiUpdateDelayProfi
 		localVarReturnValue  *DelayProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileAPIService.UpdateDelayProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileApiService.UpdateDelayProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -661,7 +661,7 @@ func (a *DelayProfileAPIService) UpdateDelayProfileExecute(r ApiUpdateDelayProfi
 }
 type ApiUpdateDelayProfileReorderRequest struct {
 	ctx context.Context
-	ApiService *DelayProfileAPIService
+	ApiService *DelayProfileApiService
 	id int32
 	after *int32
 }
@@ -682,7 +682,7 @@ UpdateDelayProfileReorder Method for UpdateDelayProfileReorder
  @param id
  @return ApiUpdateDelayProfileReorderRequest
 */
-func (a *DelayProfileAPIService) UpdateDelayProfileReorder(ctx context.Context, id int32) ApiUpdateDelayProfileReorderRequest {
+func (a *DelayProfileApiService) UpdateDelayProfileReorder(ctx context.Context, id int32) ApiUpdateDelayProfileReorderRequest {
 	return ApiUpdateDelayProfileReorderRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -692,7 +692,7 @@ func (a *DelayProfileAPIService) UpdateDelayProfileReorder(ctx context.Context, 
 
 // Execute executes the request
 //  @return []DelayProfileResource
-func (a *DelayProfileAPIService) UpdateDelayProfileReorderExecute(r ApiUpdateDelayProfileReorderRequest) ([]*DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileApiService) UpdateDelayProfileReorderExecute(r ApiUpdateDelayProfileReorderRequest) ([]*DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -700,7 +700,7 @@ func (a *DelayProfileAPIService) UpdateDelayProfileReorderExecute(r ApiUpdateDel
 		localVarReturnValue  []*DelayProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileAPIService.UpdateDelayProfileReorder")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileApiService.UpdateDelayProfileReorder")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

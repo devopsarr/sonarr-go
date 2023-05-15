@@ -24,7 +24,6 @@ type CommandResource struct {
 	Body *Command `json:"body,omitempty"`
 	Priority *CommandPriority `json:"priority,omitempty"`
 	Status *CommandStatus `json:"status,omitempty"`
-	Result *CommandResult `json:"result,omitempty"`
 	Queued *time.Time `json:"queued,omitempty"`
 	Started NullableTime `json:"started,omitempty"`
 	Ended NullableTime `json:"ended,omitempty"`
@@ -307,38 +306,6 @@ func (o *CommandResource) HasStatus() bool {
 // SetStatus gets a reference to the given CommandStatus and assigns it to the Status field.
 func (o *CommandResource) SetStatus(v CommandStatus) {
 	o.Status = &v
-}
-
-// GetResult returns the Result field value if set, zero value otherwise.
-func (o *CommandResource) GetResult() CommandResult {
-	if o == nil || isNil(o.Result) {
-		var ret CommandResult
-		return ret
-	}
-	return *o.Result
-}
-
-// GetResultOk returns a tuple with the Result field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CommandResource) GetResultOk() (*CommandResult, bool) {
-	if o == nil || isNil(o.Result) {
-    return nil, false
-	}
-	return o.Result, true
-}
-
-// HasResult returns a boolean if a field has been set.
-func (o *CommandResource) HasResult() bool {
-	if o != nil && !isNil(o.Result) {
-		return true
-	}
-
-	return false
-}
-
-// SetResult gets a reference to the given CommandResult and assigns it to the Result field.
-func (o *CommandResource) SetResult(v CommandResult) {
-	o.Result = &v
 }
 
 // GetQueued returns the Queued field value if set, zero value otherwise.
@@ -775,9 +742,6 @@ func (o CommandResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
-	}
-	if !isNil(o.Result) {
-		toSerialize["result"] = o.Result
 	}
 	if !isNil(o.Queued) {
 		toSerialize["queued"] = o.Queued

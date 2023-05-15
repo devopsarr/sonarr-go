@@ -21,11 +21,11 @@ import (
 )
 
 
-// CalendarAPIService CalendarAPI service
-type CalendarAPIService service
+// CalendarApiService CalendarApi service
+type CalendarApiService service
 type ApiGetCalendarByIdRequest struct {
 	ctx context.Context
-	ApiService *CalendarAPIService
+	ApiService *CalendarApiService
 	id int32
 }
 
@@ -40,7 +40,7 @@ GetCalendarById Method for GetCalendarById
  @param id
  @return ApiGetCalendarByIdRequest
 */
-func (a *CalendarAPIService) GetCalendarById(ctx context.Context, id int32) ApiGetCalendarByIdRequest {
+func (a *CalendarApiService) GetCalendarById(ctx context.Context, id int32) ApiGetCalendarByIdRequest {
 	return ApiGetCalendarByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,7 +50,7 @@ func (a *CalendarAPIService) GetCalendarById(ctx context.Context, id int32) ApiG
 
 // Execute executes the request
 //  @return EpisodeResource
-func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest) (*EpisodeResource, *http.Response, error) {
+func (a *CalendarApiService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest) (*EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest)
 		localVarReturnValue  *EpisodeResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarAPIService.GetCalendarById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.GetCalendarById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -153,14 +153,13 @@ func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest)
 }
 type ApiListCalendarRequest struct {
 	ctx context.Context
-	ApiService *CalendarAPIService
+	ApiService *CalendarApiService
 	start *time.Time
 	end *time.Time
 	unmonitored *bool
 	includeSeries *bool
 	includeEpisodeFile *bool
 	includeEpisodeImages *bool
-	tags *string
 }
 
 func (r ApiListCalendarRequest) Start(start time.Time) ApiListCalendarRequest {
@@ -193,11 +192,6 @@ func (r ApiListCalendarRequest) IncludeEpisodeImages(includeEpisodeImages bool) 
 	return r
 }
 
-func (r ApiListCalendarRequest) Tags(tags string) ApiListCalendarRequest {
-	r.tags = &tags
-	return r
-}
-
 func (r ApiListCalendarRequest) Execute() ([]*EpisodeResource, *http.Response, error) {
 	return r.ApiService.ListCalendarExecute(r)
 }
@@ -208,7 +202,7 @@ ListCalendar Method for ListCalendar
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListCalendarRequest
 */
-func (a *CalendarAPIService) ListCalendar(ctx context.Context) ApiListCalendarRequest {
+func (a *CalendarApiService) ListCalendar(ctx context.Context) ApiListCalendarRequest {
 	return ApiListCalendarRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -217,7 +211,7 @@ func (a *CalendarAPIService) ListCalendar(ctx context.Context) ApiListCalendarRe
 
 // Execute executes the request
 //  @return []EpisodeResource
-func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*EpisodeResource, *http.Response, error) {
+func (a *CalendarApiService) ListCalendarExecute(r ApiListCalendarRequest) ([]*EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -225,7 +219,7 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*E
 		localVarReturnValue  []*EpisodeResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarAPIService.ListCalendar")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.ListCalendar")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -253,9 +247,6 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*E
 	}
 	if r.includeEpisodeImages != nil {
 		localVarQueryParams.Add("includeEpisodeImages", parameterToString(*r.includeEpisodeImages, ""))
-	}
-	if r.tags != nil {
-		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

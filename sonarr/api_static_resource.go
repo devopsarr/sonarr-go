@@ -20,11 +20,11 @@ import (
 )
 
 
-// StaticResourceAPIService StaticResourceAPI service
-type StaticResourceAPIService service
+// StaticResourceApiService StaticResourceApi service
+type StaticResourceApiService service
 type ApiGetRequest struct {
 	ctx context.Context
-	ApiService *StaticResourceAPIService
+	ApiService *StaticResourceApiService
 	path string
 }
 
@@ -39,7 +39,7 @@ Get Method for Get
  @param path
  @return ApiGetRequest
 */
-func (a *StaticResourceAPIService) Get(ctx context.Context, path string) ApiGetRequest {
+func (a *StaticResourceApiService) Get(ctx context.Context, path string) ApiGetRequest {
 	return ApiGetRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -48,14 +48,14 @@ func (a *StaticResourceAPIService) Get(ctx context.Context, path string) ApiGetR
 }
 
 // Execute executes the request
-func (a *StaticResourceAPIService) GetExecute(r ApiGetRequest) (*http.Response, error) {
+func (a *StaticResourceApiService) GetExecute(r ApiGetRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticResourceAPIService.Get")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticResourceApiService.Get")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -141,7 +141,7 @@ func (a *StaticResourceAPIService) GetExecute(r ApiGetRequest) (*http.Response, 
 }
 type ApiGetByPathRequest struct {
 	ctx context.Context
-	ApiService *StaticResourceAPIService
+	ApiService *StaticResourceApiService
 	path string
 }
 
@@ -156,7 +156,7 @@ GetByPath Method for GetByPath
  @param path
  @return ApiGetByPathRequest
 */
-func (a *StaticResourceAPIService) GetByPath(ctx context.Context, path string) ApiGetByPathRequest {
+func (a *StaticResourceApiService) GetByPath(ctx context.Context, path string) ApiGetByPathRequest {
 	return ApiGetByPathRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -165,14 +165,14 @@ func (a *StaticResourceAPIService) GetByPath(ctx context.Context, path string) A
 }
 
 // Execute executes the request
-func (a *StaticResourceAPIService) GetByPathExecute(r ApiGetByPathRequest) (*http.Response, error) {
+func (a *StaticResourceApiService) GetByPathExecute(r ApiGetByPathRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticResourceAPIService.GetByPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticResourceApiService.GetByPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -258,7 +258,7 @@ func (a *StaticResourceAPIService) GetByPathExecute(r ApiGetByPathRequest) (*htt
 }
 type ApiGetContentByPathRequest struct {
 	ctx context.Context
-	ApiService *StaticResourceAPIService
+	ApiService *StaticResourceApiService
 	path string
 }
 
@@ -273,7 +273,7 @@ GetContentByPath Method for GetContentByPath
  @param path
  @return ApiGetContentByPathRequest
 */
-func (a *StaticResourceAPIService) GetContentByPath(ctx context.Context, path string) ApiGetContentByPathRequest {
+func (a *StaticResourceApiService) GetContentByPath(ctx context.Context, path string) ApiGetContentByPathRequest {
 	return ApiGetContentByPathRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -282,14 +282,14 @@ func (a *StaticResourceAPIService) GetContentByPath(ctx context.Context, path st
 }
 
 // Execute executes the request
-func (a *StaticResourceAPIService) GetContentByPathExecute(r ApiGetContentByPathRequest) (*http.Response, error) {
+func (a *StaticResourceApiService) GetContentByPathExecute(r ApiGetContentByPathRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticResourceAPIService.GetContentByPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticResourceApiService.GetContentByPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -375,7 +375,7 @@ func (a *StaticResourceAPIService) GetContentByPathExecute(r ApiGetContentByPath
 }
 type ApiGetLoginRequest struct {
 	ctx context.Context
-	ApiService *StaticResourceAPIService
+	ApiService *StaticResourceApiService
 }
 
 func (r ApiGetLoginRequest) Execute() (*http.Response, error) {
@@ -388,7 +388,7 @@ GetLogin Method for GetLogin
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetLoginRequest
 */
-func (a *StaticResourceAPIService) GetLogin(ctx context.Context) ApiGetLoginRequest {
+func (a *StaticResourceApiService) GetLogin(ctx context.Context) ApiGetLoginRequest {
 	return ApiGetLoginRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -396,14 +396,14 @@ func (a *StaticResourceAPIService) GetLogin(ctx context.Context) ApiGetLoginRequ
 }
 
 // Execute executes the request
-func (a *StaticResourceAPIService) GetLoginExecute(r ApiGetLoginRequest) (*http.Response, error) {
+func (a *StaticResourceApiService) GetLoginExecute(r ApiGetLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticResourceAPIService.GetLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StaticResourceApiService.GetLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
