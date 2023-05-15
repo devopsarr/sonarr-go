@@ -19,11 +19,11 @@ import (
 )
 
 
-// RenameEpisodeApiService RenameEpisodeApi service
-type RenameEpisodeApiService service
+// RenameEpisodeAPIService RenameEpisodeAPI service
+type RenameEpisodeAPIService service
 type ApiListRenameRequest struct {
 	ctx context.Context
-	ApiService *RenameEpisodeApiService
+	ApiService *RenameEpisodeAPIService
 	seriesId *int32
 	seasonNumber *int32
 }
@@ -48,7 +48,7 @@ ListRename Method for ListRename
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListRenameRequest
 */
-func (a *RenameEpisodeApiService) ListRename(ctx context.Context) ApiListRenameRequest {
+func (a *RenameEpisodeAPIService) ListRename(ctx context.Context) ApiListRenameRequest {
 	return ApiListRenameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,7 +57,7 @@ func (a *RenameEpisodeApiService) ListRename(ctx context.Context) ApiListRenameR
 
 // Execute executes the request
 //  @return []RenameEpisodeResource
-func (a *RenameEpisodeApiService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameEpisodeResource, *http.Response, error) {
+func (a *RenameEpisodeAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameEpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -65,7 +65,7 @@ func (a *RenameEpisodeApiService) ListRenameExecute(r ApiListRenameRequest) ([]*
 		localVarReturnValue  []*RenameEpisodeResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameEpisodeApiService.ListRename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameEpisodeAPIService.ListRename")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

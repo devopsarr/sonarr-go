@@ -19,11 +19,11 @@ import (
 )
 
 
-// UpdateApiService UpdateApi service
-type UpdateApiService service
+// UpdateAPIService UpdateAPI service
+type UpdateAPIService service
 type ApiListUpdateRequest struct {
 	ctx context.Context
-	ApiService *UpdateApiService
+	ApiService *UpdateAPIService
 }
 
 func (r ApiListUpdateRequest) Execute() ([]*UpdateResource, *http.Response, error) {
@@ -36,7 +36,7 @@ ListUpdate Method for ListUpdate
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListUpdateRequest
 */
-func (a *UpdateApiService) ListUpdate(ctx context.Context) ApiListUpdateRequest {
+func (a *UpdateAPIService) ListUpdate(ctx context.Context) ApiListUpdateRequest {
 	return ApiListUpdateRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *UpdateApiService) ListUpdate(ctx context.Context) ApiListUpdateRequest 
 
 // Execute executes the request
 //  @return []UpdateResource
-func (a *UpdateApiService) ListUpdateExecute(r ApiListUpdateRequest) ([]*UpdateResource, *http.Response, error) {
+func (a *UpdateAPIService) ListUpdateExecute(r ApiListUpdateRequest) ([]*UpdateResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *UpdateApiService) ListUpdateExecute(r ApiListUpdateRequest) ([]*UpdateR
 		localVarReturnValue  []*UpdateResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateApiService.ListUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateAPIService.ListUpdate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

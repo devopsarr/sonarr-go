@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **RenameEpisodes** | Pointer to **bool** |  | [optional] 
 **ReplaceIllegalCharacters** | Pointer to **bool** |  | [optional] 
+**ColonReplacementFormat** | Pointer to **int32** |  | [optional] 
 **MultiEpisodeStyle** | Pointer to **int32** |  | [optional] 
 **StandardEpisodeFormat** | Pointer to **NullableString** |  | [optional] 
 **DailyEpisodeFormat** | Pointer to **NullableString** |  | [optional] 
@@ -114,6 +115,31 @@ SetReplaceIllegalCharacters sets ReplaceIllegalCharacters field to given value.
 `func (o *NamingConfigResource) HasReplaceIllegalCharacters() bool`
 
 HasReplaceIllegalCharacters returns a boolean if a field has been set.
+
+### GetColonReplacementFormat
+
+`func (o *NamingConfigResource) GetColonReplacementFormat() int32`
+
+GetColonReplacementFormat returns the ColonReplacementFormat field if non-nil, zero value otherwise.
+
+### GetColonReplacementFormatOk
+
+`func (o *NamingConfigResource) GetColonReplacementFormatOk() (*int32, bool)`
+
+GetColonReplacementFormatOk returns a tuple with the ColonReplacementFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColonReplacementFormat
+
+`func (o *NamingConfigResource) SetColonReplacementFormat(v int32)`
+
+SetColonReplacementFormat sets ColonReplacementFormat field to given value.
+
+### HasColonReplacementFormat
+
+`func (o *NamingConfigResource) HasColonReplacementFormat() bool`
+
+HasColonReplacementFormat returns a boolean if a field has been set.
 
 ### GetMultiEpisodeStyle
 

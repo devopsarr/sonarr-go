@@ -19,11 +19,11 @@ import (
 )
 
 
-// SeriesLookupApiService SeriesLookupApi service
-type SeriesLookupApiService service
+// SeriesLookupAPIService SeriesLookupAPI service
+type SeriesLookupAPIService service
 type ApiListSeriesLookupRequest struct {
 	ctx context.Context
-	ApiService *SeriesLookupApiService
+	ApiService *SeriesLookupAPIService
 	term *string
 }
 
@@ -42,7 +42,7 @@ ListSeriesLookup Method for ListSeriesLookup
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSeriesLookupRequest
 */
-func (a *SeriesLookupApiService) ListSeriesLookup(ctx context.Context) ApiListSeriesLookupRequest {
+func (a *SeriesLookupAPIService) ListSeriesLookup(ctx context.Context) ApiListSeriesLookupRequest {
 	return ApiListSeriesLookupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,7 +51,7 @@ func (a *SeriesLookupApiService) ListSeriesLookup(ctx context.Context) ApiListSe
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesLookupApiService) ListSeriesLookupExecute(r ApiListSeriesLookupRequest) ([]*SeriesResource, *http.Response, error) {
+func (a *SeriesLookupAPIService) ListSeriesLookupExecute(r ApiListSeriesLookupRequest) ([]*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *SeriesLookupApiService) ListSeriesLookupExecute(r ApiListSeriesLookupRe
 		localVarReturnValue  []*SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupApiService.ListSeriesLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupAPIService.ListSeriesLookup")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

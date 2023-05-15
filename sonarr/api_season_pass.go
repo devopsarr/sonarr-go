@@ -19,11 +19,11 @@ import (
 )
 
 
-// SeasonPassApiService SeasonPassApi service
-type SeasonPassApiService service
+// SeasonPassAPIService SeasonPassAPI service
+type SeasonPassAPIService service
 type ApiCreateSeasonPassRequest struct {
 	ctx context.Context
-	ApiService *SeasonPassApiService
+	ApiService *SeasonPassAPIService
 	seasonPassResource *SeasonPassResource
 }
 
@@ -42,7 +42,7 @@ CreateSeasonPass Method for CreateSeasonPass
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSeasonPassRequest
 */
-func (a *SeasonPassApiService) CreateSeasonPass(ctx context.Context) ApiCreateSeasonPassRequest {
+func (a *SeasonPassAPIService) CreateSeasonPass(ctx context.Context) ApiCreateSeasonPassRequest {
 	return ApiCreateSeasonPassRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *SeasonPassApiService) CreateSeasonPass(ctx context.Context) ApiCreateSe
 }
 
 // Execute executes the request
-func (a *SeasonPassApiService) CreateSeasonPassExecute(r ApiCreateSeasonPassRequest) (*http.Response, error) {
+func (a *SeasonPassAPIService) CreateSeasonPassExecute(r ApiCreateSeasonPassRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeasonPassApiService.CreateSeasonPass")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeasonPassAPIService.CreateSeasonPass")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -28,6 +28,8 @@ const (
 	MONITORTYPES_FIRST_SEASON MonitorTypes = "firstSeason"
 	MONITORTYPES_LATEST_SEASON MonitorTypes = "latestSeason"
 	MONITORTYPES_PILOT MonitorTypes = "pilot"
+	MONITORTYPES_MONITOR_SPECIALS MonitorTypes = "monitorSpecials"
+	MONITORTYPES_UNMONITOR_SPECIALS MonitorTypes = "unmonitorSpecials"
 	MONITORTYPES_NONE MonitorTypes = "none"
 )
 
@@ -41,6 +43,8 @@ var AllowedMonitorTypesEnumValues = []MonitorTypes{
 	"firstSeason",
 	"latestSeason",
 	"pilot",
+	"monitorSpecials",
+	"unmonitorSpecials",
 	"none",
 }
 
