@@ -331,7 +331,13 @@ func (a *EpisodeApiService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*Epis
 type ApiPutEpisodeMonitorRequest struct {
 	ctx context.Context
 	ApiService *EpisodeApiService
+	includeImages *bool
 	episodesMonitoredResource *EpisodesMonitoredResource
+}
+
+func (r ApiPutEpisodeMonitorRequest) IncludeImages(includeImages bool) ApiPutEpisodeMonitorRequest {
+	r.includeImages = &includeImages
+	return r
 }
 
 func (r ApiPutEpisodeMonitorRequest) EpisodesMonitoredResource(episodesMonitoredResource EpisodesMonitoredResource) ApiPutEpisodeMonitorRequest {
@@ -375,6 +381,9 @@ func (a *EpisodeApiService) PutEpisodeMonitorExecute(r ApiPutEpisodeMonitorReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.includeImages != nil {
+		localVarQueryParams.Add("includeImages", parameterToString(*r.includeImages, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

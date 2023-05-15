@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **MappedSeasonNumber** | Pointer to **NullableInt32** |  | [optional] 
 **MappedEpisodeNumbers** | Pointer to **[]int32** |  | [optional] 
 **MappedAbsoluteEpisodeNumbers** | Pointer to **[]int32** |  | [optional] 
+**MappedSeriesId** | Pointer to **NullableInt32** |  | [optional] 
+**MappedEpisodeInfo** | Pointer to [**[]ReleaseEpisodeResource**](ReleaseEpisodeResource.md) |  | [optional] 
 **Approved** | Pointer to **bool** |  | [optional] 
 **TemporarilyRejected** | Pointer to **bool** |  | [optional] 
 **Rejected** | Pointer to **bool** |  | [optional] 
@@ -57,6 +59,9 @@ Name | Type | Description | Notes
 **Special** | Pointer to **bool** |  | [optional] 
 **SeriesId** | Pointer to **NullableInt32** |  | [optional] 
 **EpisodeId** | Pointer to **NullableInt32** |  | [optional] 
+**EpisodeIds** | Pointer to **[]int32** |  | [optional] 
+**DownloadClientId** | Pointer to **NullableInt32** |  | [optional] 
+**ShouldOverride** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -867,6 +872,76 @@ HasMappedAbsoluteEpisodeNumbers returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetMappedAbsoluteEpisodeNumbers()`
 
 UnsetMappedAbsoluteEpisodeNumbers ensures that no value is present for MappedAbsoluteEpisodeNumbers, not even an explicit nil
+### GetMappedSeriesId
+
+`func (o *ReleaseResource) GetMappedSeriesId() int32`
+
+GetMappedSeriesId returns the MappedSeriesId field if non-nil, zero value otherwise.
+
+### GetMappedSeriesIdOk
+
+`func (o *ReleaseResource) GetMappedSeriesIdOk() (*int32, bool)`
+
+GetMappedSeriesIdOk returns a tuple with the MappedSeriesId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMappedSeriesId
+
+`func (o *ReleaseResource) SetMappedSeriesId(v int32)`
+
+SetMappedSeriesId sets MappedSeriesId field to given value.
+
+### HasMappedSeriesId
+
+`func (o *ReleaseResource) HasMappedSeriesId() bool`
+
+HasMappedSeriesId returns a boolean if a field has been set.
+
+### SetMappedSeriesIdNil
+
+`func (o *ReleaseResource) SetMappedSeriesIdNil(b bool)`
+
+ SetMappedSeriesIdNil sets the value for MappedSeriesId to be an explicit nil
+
+### UnsetMappedSeriesId
+`func (o *ReleaseResource) UnsetMappedSeriesId()`
+
+UnsetMappedSeriesId ensures that no value is present for MappedSeriesId, not even an explicit nil
+### GetMappedEpisodeInfo
+
+`func (o *ReleaseResource) GetMappedEpisodeInfo() []ReleaseEpisodeResource`
+
+GetMappedEpisodeInfo returns the MappedEpisodeInfo field if non-nil, zero value otherwise.
+
+### GetMappedEpisodeInfoOk
+
+`func (o *ReleaseResource) GetMappedEpisodeInfoOk() (*[]ReleaseEpisodeResource, bool)`
+
+GetMappedEpisodeInfoOk returns a tuple with the MappedEpisodeInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMappedEpisodeInfo
+
+`func (o *ReleaseResource) SetMappedEpisodeInfo(v []ReleaseEpisodeResource)`
+
+SetMappedEpisodeInfo sets MappedEpisodeInfo field to given value.
+
+### HasMappedEpisodeInfo
+
+`func (o *ReleaseResource) HasMappedEpisodeInfo() bool`
+
+HasMappedEpisodeInfo returns a boolean if a field has been set.
+
+### SetMappedEpisodeInfoNil
+
+`func (o *ReleaseResource) SetMappedEpisodeInfoNil(b bool)`
+
+ SetMappedEpisodeInfoNil sets the value for MappedEpisodeInfo to be an explicit nil
+
+### UnsetMappedEpisodeInfo
+`func (o *ReleaseResource) UnsetMappedEpisodeInfo()`
+
+UnsetMappedEpisodeInfo ensures that no value is present for MappedEpisodeInfo, not even an explicit nil
 ### GetApproved
 
 `func (o *ReleaseResource) GetApproved() bool`
@@ -1652,6 +1727,111 @@ HasEpisodeId returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetEpisodeId()`
 
 UnsetEpisodeId ensures that no value is present for EpisodeId, not even an explicit nil
+### GetEpisodeIds
+
+`func (o *ReleaseResource) GetEpisodeIds() []int32`
+
+GetEpisodeIds returns the EpisodeIds field if non-nil, zero value otherwise.
+
+### GetEpisodeIdsOk
+
+`func (o *ReleaseResource) GetEpisodeIdsOk() (*[]int32, bool)`
+
+GetEpisodeIdsOk returns a tuple with the EpisodeIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEpisodeIds
+
+`func (o *ReleaseResource) SetEpisodeIds(v []int32)`
+
+SetEpisodeIds sets EpisodeIds field to given value.
+
+### HasEpisodeIds
+
+`func (o *ReleaseResource) HasEpisodeIds() bool`
+
+HasEpisodeIds returns a boolean if a field has been set.
+
+### SetEpisodeIdsNil
+
+`func (o *ReleaseResource) SetEpisodeIdsNil(b bool)`
+
+ SetEpisodeIdsNil sets the value for EpisodeIds to be an explicit nil
+
+### UnsetEpisodeIds
+`func (o *ReleaseResource) UnsetEpisodeIds()`
+
+UnsetEpisodeIds ensures that no value is present for EpisodeIds, not even an explicit nil
+### GetDownloadClientId
+
+`func (o *ReleaseResource) GetDownloadClientId() int32`
+
+GetDownloadClientId returns the DownloadClientId field if non-nil, zero value otherwise.
+
+### GetDownloadClientIdOk
+
+`func (o *ReleaseResource) GetDownloadClientIdOk() (*int32, bool)`
+
+GetDownloadClientIdOk returns a tuple with the DownloadClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadClientId
+
+`func (o *ReleaseResource) SetDownloadClientId(v int32)`
+
+SetDownloadClientId sets DownloadClientId field to given value.
+
+### HasDownloadClientId
+
+`func (o *ReleaseResource) HasDownloadClientId() bool`
+
+HasDownloadClientId returns a boolean if a field has been set.
+
+### SetDownloadClientIdNil
+
+`func (o *ReleaseResource) SetDownloadClientIdNil(b bool)`
+
+ SetDownloadClientIdNil sets the value for DownloadClientId to be an explicit nil
+
+### UnsetDownloadClientId
+`func (o *ReleaseResource) UnsetDownloadClientId()`
+
+UnsetDownloadClientId ensures that no value is present for DownloadClientId, not even an explicit nil
+### GetShouldOverride
+
+`func (o *ReleaseResource) GetShouldOverride() bool`
+
+GetShouldOverride returns the ShouldOverride field if non-nil, zero value otherwise.
+
+### GetShouldOverrideOk
+
+`func (o *ReleaseResource) GetShouldOverrideOk() (*bool, bool)`
+
+GetShouldOverrideOk returns a tuple with the ShouldOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShouldOverride
+
+`func (o *ReleaseResource) SetShouldOverride(v bool)`
+
+SetShouldOverride sets ShouldOverride field to given value.
+
+### HasShouldOverride
+
+`func (o *ReleaseResource) HasShouldOverride() bool`
+
+HasShouldOverride returns a boolean if a field has been set.
+
+### SetShouldOverrideNil
+
+`func (o *ReleaseResource) SetShouldOverrideNil(b bool)`
+
+ SetShouldOverrideNil sets the value for ShouldOverride to be an explicit nil
+
+### UnsetShouldOverride
+`func (o *ReleaseResource) UnsetShouldOverride()`
+
+UnsetShouldOverride ensures that no value is present for ShouldOverride, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
