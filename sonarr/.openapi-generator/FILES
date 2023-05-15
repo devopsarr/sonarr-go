@@ -94,6 +94,7 @@ docs/Command.md
 docs/CommandApi.md
 docs/CommandPriority.md
 docs/CommandResource.md
+docs/CommandResult.md
 docs/CommandStatus.md
 docs/CommandTrigger.md
 docs/CustomFilterApi.md
@@ -207,6 +208,7 @@ docs/Ratings.md
 docs/Rejection.md
 docs/RejectionType.md
 docs/ReleaseApi.md
+docs/ReleaseEpisodeResource.md
 docs/ReleaseProfileApi.md
 docs/ReleaseProfileResource.md
 docs/ReleasePushApi.md
@@ -274,6 +276,7 @@ model_certificate_validation_type.go
 model_command.go
 model_command_priority.go
 model_command_resource.go
+model_command_result.go
 model_command_status.go
 model_command_trigger.go
 model_custom_filter_resource.go
@@ -346,6 +349,7 @@ model_queue_status_resource.go
 model_ratings.go
 model_rejection.go
 model_rejection_type.go
+model_release_episode_resource.go
 model_release_profile_resource.go
 model_release_resource.go
 model_remote_path_mapping_resource.go

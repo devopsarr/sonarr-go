@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## ListCalendar
 
-> []EpisodeResource ListCalendar(ctx).Start(start).End(end).Unmonitored(unmonitored).IncludeSeries(includeSeries).IncludeEpisodeFile(includeEpisodeFile).IncludeEpisodeImages(includeEpisodeImages).Execute()
+> []EpisodeResource ListCalendar(ctx).Start(start).End(end).Unmonitored(unmonitored).IncludeSeries(includeSeries).IncludeEpisodeFile(includeEpisodeFile).IncludeEpisodeImages(includeEpisodeImages).Tags(tags).Execute()
 
 
 
@@ -103,10 +103,11 @@ func main() {
     includeSeries := true // bool |  (optional) (default to false)
     includeEpisodeFile := true // bool |  (optional) (default to false)
     includeEpisodeImages := true // bool |  (optional) (default to false)
+    tags := "tags_example" // string |  (optional) (default to "")
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CalendarApi.ListCalendar(context.Background()).Start(start).End(end).Unmonitored(unmonitored).IncludeSeries(includeSeries).IncludeEpisodeFile(includeEpisodeFile).IncludeEpisodeImages(includeEpisodeImages).Execute()
+    resp, r, err := apiClient.CalendarApi.ListCalendar(context.Background()).Start(start).End(end).Unmonitored(unmonitored).IncludeSeries(includeSeries).IncludeEpisodeFile(includeEpisodeFile).IncludeEpisodeImages(includeEpisodeImages).Tags(tags).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CalendarApi.ListCalendar``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -133,6 +134,7 @@ Name | Type | Description  | Notes
  **includeSeries** | **bool** |  | [default to false]
  **includeEpisodeFile** | **bool** |  | [default to false]
  **includeEpisodeImages** | **bool** |  | [default to false]
+ **tags** | **string** |  | [default to &quot;&quot;]
 
 ### Return type
 

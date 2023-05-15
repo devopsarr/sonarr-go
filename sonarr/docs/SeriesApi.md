@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSeries
 
-> DeleteSeries(ctx, id).Execute()
+> DeleteSeries(ctx, id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
 
 
 
@@ -96,10 +96,12 @@ import (
 
 func main() {
     id := int32(56) // int32 | 
+    deleteFiles := true // bool |  (optional) (default to false)
+    addImportListExclusion := true // bool |  (optional) (default to false)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SeriesApi.DeleteSeries(context.Background(), id).Execute()
+    resp, r, err := apiClient.SeriesApi.DeleteSeries(context.Background(), id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SeriesApi.DeleteSeries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -123,6 +125,8 @@ Other parameters are passed through a pointer to a apiDeleteSeriesRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **deleteFiles** | **bool** |  | [default to false]
+ **addImportListExclusion** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -278,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSeries
 
-> SeriesResource UpdateSeries(ctx, id).SeriesResource(seriesResource).Execute()
+> SeriesResource UpdateSeries(ctx, id).MoveFiles(moveFiles).SeriesResource(seriesResource).Execute()
 
 
 
@@ -296,11 +300,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    moveFiles := true // bool |  (optional) (default to false)
     seriesResource := *sonarrClient.NewSeriesResource() // SeriesResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SeriesApi.UpdateSeries(context.Background(), id).SeriesResource(seriesResource).Execute()
+    resp, r, err := apiClient.SeriesApi.UpdateSeries(context.Background(), id).MoveFiles(moveFiles).SeriesResource(seriesResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SeriesApi.UpdateSeries``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -326,6 +331,7 @@ Other parameters are passed through a pointer to a apiUpdateSeriesRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **moveFiles** | **bool** |  | [default to false]
  **seriesResource** | [**SeriesResource**](SeriesResource.md) |  | 
 
 ### Return type

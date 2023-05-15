@@ -279,6 +279,7 @@ type ApiGetNamingConfigExamplesRequest struct {
 	ApiService *NamingConfigApiService
 	renameEpisodes *bool
 	replaceIllegalCharacters *bool
+	colonReplacementFormat *int32
 	multiEpisodeStyle *int32
 	standardEpisodeFormat *string
 	dailyEpisodeFormat *string
@@ -303,6 +304,11 @@ func (r ApiGetNamingConfigExamplesRequest) RenameEpisodes(renameEpisodes bool) A
 
 func (r ApiGetNamingConfigExamplesRequest) ReplaceIllegalCharacters(replaceIllegalCharacters bool) ApiGetNamingConfigExamplesRequest {
 	r.replaceIllegalCharacters = &replaceIllegalCharacters
+	return r
+}
+
+func (r ApiGetNamingConfigExamplesRequest) ColonReplacementFormat(colonReplacementFormat int32) ApiGetNamingConfigExamplesRequest {
+	r.colonReplacementFormat = &colonReplacementFormat
 	return r
 }
 
@@ -422,6 +428,9 @@ func (a *NamingConfigApiService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	}
 	if r.replaceIllegalCharacters != nil {
 		localVarQueryParams.Add("ReplaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+	}
+	if r.colonReplacementFormat != nil {
+		localVarQueryParams.Add("ColonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
 	}
 	if r.multiEpisodeStyle != nil {
 		localVarQueryParams.Add("MultiEpisodeStyle", parameterToString(*r.multiEpisodeStyle, ""))

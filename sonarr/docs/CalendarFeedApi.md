@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetFeedV3CalendarSonarrIcs
 
-> GetFeedV3CalendarSonarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).PremieresOnly(premieresOnly).AsAllDay(asAllDay).Execute()
+> GetFeedV3CalendarSonarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).Tags(tags).Unmonitored(unmonitored).PremieresOnly(premieresOnly).AsAllDay(asAllDay).Execute()
 
 
 
@@ -29,14 +29,14 @@ import (
 func main() {
     pastDays := int32(56) // int32 |  (optional) (default to 7)
     futureDays := int32(56) // int32 |  (optional) (default to 28)
-    tagList := "tagList_example" // string |  (optional) (default to "")
+    tags := "tags_example" // string |  (optional) (default to "")
     unmonitored := true // bool |  (optional) (default to false)
     premieresOnly := true // bool |  (optional) (default to false)
     asAllDay := true // bool |  (optional) (default to false)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CalendarFeedApi.GetFeedV3CalendarSonarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).PremieresOnly(premieresOnly).AsAllDay(asAllDay).Execute()
+    resp, r, err := apiClient.CalendarFeedApi.GetFeedV3CalendarSonarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).Tags(tags).Unmonitored(unmonitored).PremieresOnly(premieresOnly).AsAllDay(asAllDay).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CalendarFeedApi.GetFeedV3CalendarSonarrIcs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pastDays** | **int32** |  | [default to 7]
  **futureDays** | **int32** |  | [default to 28]
- **tagList** | **string** |  | [default to &quot;&quot;]
+ **tags** | **string** |  | [default to &quot;&quot;]
  **unmonitored** | **bool** |  | [default to false]
  **premieresOnly** | **bool** |  | [default to false]
  **asAllDay** | **bool** |  | [default to false]

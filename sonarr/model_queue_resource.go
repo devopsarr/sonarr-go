@@ -20,6 +20,7 @@ type QueueResource struct {
 	Id *int32 `json:"id,omitempty"`
 	SeriesId NullableInt32 `json:"seriesId,omitempty"`
 	EpisodeId NullableInt32 `json:"episodeId,omitempty"`
+	SeasonNumber NullableInt32 `json:"seasonNumber,omitempty"`
 	Series *SeriesResource `json:"series,omitempty"`
 	Episode *EpisodeResource `json:"episode,omitempty"`
 	Languages []*Language `json:"languages,omitempty"`
@@ -40,6 +41,7 @@ type QueueResource struct {
 	DownloadClient NullableString `json:"downloadClient,omitempty"`
 	Indexer NullableString `json:"indexer,omitempty"`
 	OutputPath NullableString `json:"outputPath,omitempty"`
+	EpisodeHasFile *bool `json:"episodeHasFile,omitempty"`
 }
 
 // NewQueueResource instantiates a new QueueResource object
@@ -173,6 +175,48 @@ func (o *QueueResource) SetEpisodeIdNil() {
 // UnsetEpisodeId ensures that no value is present for EpisodeId, not even an explicit nil
 func (o *QueueResource) UnsetEpisodeId() {
 	o.EpisodeId.Unset()
+}
+
+// GetSeasonNumber returns the SeasonNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QueueResource) GetSeasonNumber() int32 {
+	if o == nil || isNil(o.SeasonNumber.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.SeasonNumber.Get()
+}
+
+// GetSeasonNumberOk returns a tuple with the SeasonNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QueueResource) GetSeasonNumberOk() (*int32, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.SeasonNumber.Get(), o.SeasonNumber.IsSet()
+}
+
+// HasSeasonNumber returns a boolean if a field has been set.
+func (o *QueueResource) HasSeasonNumber() bool {
+	if o != nil && o.SeasonNumber.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSeasonNumber gets a reference to the given NullableInt32 and assigns it to the SeasonNumber field.
+func (o *QueueResource) SetSeasonNumber(v int32) {
+	o.SeasonNumber.Set(&v)
+}
+// SetSeasonNumberNil sets the value for SeasonNumber to be an explicit nil
+func (o *QueueResource) SetSeasonNumberNil() {
+	o.SeasonNumber.Set(nil)
+}
+
+// UnsetSeasonNumber ensures that no value is present for SeasonNumber, not even an explicit nil
+func (o *QueueResource) UnsetSeasonNumber() {
+	o.SeasonNumber.Unset()
 }
 
 // GetSeries returns the Series field value if set, zero value otherwise.
@@ -898,6 +942,38 @@ func (o *QueueResource) UnsetOutputPath() {
 	o.OutputPath.Unset()
 }
 
+// GetEpisodeHasFile returns the EpisodeHasFile field value if set, zero value otherwise.
+func (o *QueueResource) GetEpisodeHasFile() bool {
+	if o == nil || isNil(o.EpisodeHasFile) {
+		var ret bool
+		return ret
+	}
+	return *o.EpisodeHasFile
+}
+
+// GetEpisodeHasFileOk returns a tuple with the EpisodeHasFile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QueueResource) GetEpisodeHasFileOk() (*bool, bool) {
+	if o == nil || isNil(o.EpisodeHasFile) {
+    return nil, false
+	}
+	return o.EpisodeHasFile, true
+}
+
+// HasEpisodeHasFile returns a boolean if a field has been set.
+func (o *QueueResource) HasEpisodeHasFile() bool {
+	if o != nil && !isNil(o.EpisodeHasFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetEpisodeHasFile gets a reference to the given bool and assigns it to the EpisodeHasFile field.
+func (o *QueueResource) SetEpisodeHasFile(v bool) {
+	o.EpisodeHasFile = &v
+}
+
 func (o QueueResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -908,6 +984,9 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.EpisodeId.IsSet() {
 		toSerialize["episodeId"] = o.EpisodeId.Get()
+	}
+	if o.SeasonNumber.IsSet() {
+		toSerialize["seasonNumber"] = o.SeasonNumber.Get()
 	}
 	if !isNil(o.Series) {
 		toSerialize["series"] = o.Series
@@ -968,6 +1047,9 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.OutputPath.IsSet() {
 		toSerialize["outputPath"] = o.OutputPath.Get()
+	}
+	if !isNil(o.EpisodeHasFile) {
+		toSerialize["episodeHasFile"] = o.EpisodeHasFile
 	}
 	return json.Marshal(toSerialize)
 }

@@ -158,6 +158,18 @@ type ApiDeleteSeriesRequest struct {
 	ctx context.Context
 	ApiService *SeriesApiService
 	id int32
+	deleteFiles *bool
+	addImportListExclusion *bool
+}
+
+func (r ApiDeleteSeriesRequest) DeleteFiles(deleteFiles bool) ApiDeleteSeriesRequest {
+	r.deleteFiles = &deleteFiles
+	return r
+}
+
+func (r ApiDeleteSeriesRequest) AddImportListExclusion(addImportListExclusion bool) ApiDeleteSeriesRequest {
+	r.addImportListExclusion = &addImportListExclusion
+	return r
 }
 
 func (r ApiDeleteSeriesRequest) Execute() (*http.Response, error) {
@@ -199,6 +211,12 @@ func (a *SeriesApiService) DeleteSeriesExecute(r ApiDeleteSeriesRequest) (*http.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.deleteFiles != nil {
+		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+	}
+	if r.addImportListExclusion != nil {
+		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -545,7 +563,13 @@ type ApiUpdateSeriesRequest struct {
 	ctx context.Context
 	ApiService *SeriesApiService
 	id string
+	moveFiles *bool
 	seriesResource *SeriesResource
+}
+
+func (r ApiUpdateSeriesRequest) MoveFiles(moveFiles bool) ApiUpdateSeriesRequest {
+	r.moveFiles = &moveFiles
+	return r
 }
 
 func (r ApiUpdateSeriesRequest) SeriesResource(seriesResource SeriesResource) ApiUpdateSeriesRequest {
@@ -594,6 +618,9 @@ func (a *SeriesApiService) UpdateSeriesExecute(r ApiUpdateSeriesRequest) (*Serie
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.moveFiles != nil {
+		localVarQueryParams.Add("moveFiles", parameterToString(*r.moveFiles, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Title** | Pointer to **NullableString** |  | [optional] 
 **AirDate** | Pointer to **NullableString** |  | [optional] 
 **AirDateUtc** | Pointer to **NullableTime** |  | [optional] 
+**Runtime** | Pointer to **int32** |  | [optional] 
 **Overview** | Pointer to **NullableString** |  | [optional] 
 **EpisodeFile** | Pointer to [**EpisodeFileResource**](EpisodeFileResource.md) |  | [optional] 
 **HasFile** | Pointer to **bool** |  | [optional] 
@@ -303,6 +304,31 @@ HasAirDateUtc returns a boolean if a field has been set.
 `func (o *EpisodeResource) UnsetAirDateUtc()`
 
 UnsetAirDateUtc ensures that no value is present for AirDateUtc, not even an explicit nil
+### GetRuntime
+
+`func (o *EpisodeResource) GetRuntime() int32`
+
+GetRuntime returns the Runtime field if non-nil, zero value otherwise.
+
+### GetRuntimeOk
+
+`func (o *EpisodeResource) GetRuntimeOk() (*int32, bool)`
+
+GetRuntimeOk returns a tuple with the Runtime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRuntime
+
+`func (o *EpisodeResource) SetRuntime(v int32)`
+
+SetRuntime sets Runtime field to given value.
+
+### HasRuntime
+
+`func (o *EpisodeResource) HasRuntime() bool`
+
+HasRuntime returns a boolean if a field has been set.
+
 ### GetOverview
 
 `func (o *EpisodeResource) GetOverview() string`

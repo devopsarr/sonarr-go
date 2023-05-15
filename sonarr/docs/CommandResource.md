@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Body** | Pointer to [**Command**](Command.md) |  | [optional] 
 **Priority** | Pointer to [**CommandPriority**](CommandPriority.md) |  | [optional] 
 **Status** | Pointer to [**CommandStatus**](CommandStatus.md) |  | [optional] 
+**Result** | Pointer to [**CommandResult**](CommandResult.md) |  | [optional] 
 **Queued** | Pointer to **time.Time** |  | [optional] 
 **Started** | Pointer to **NullableTime** |  | [optional] 
 **Ended** | Pointer to **NullableTime** |  | [optional] 
@@ -246,6 +247,31 @@ SetStatus sets Status field to given value.
 `func (o *CommandResource) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetResult
+
+`func (o *CommandResource) GetResult() CommandResult`
+
+GetResult returns the Result field if non-nil, zero value otherwise.
+
+### GetResultOk
+
+`func (o *CommandResource) GetResultOk() (*CommandResult, bool)`
+
+GetResultOk returns a tuple with the Result field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResult
+
+`func (o *CommandResource) SetResult(v CommandResult)`
+
+SetResult sets Result field to given value.
+
+### HasResult
+
+`func (o *CommandResource) HasResult() bool`
+
+HasResult returns a boolean if a field has been set.
 
 ### GetQueued
 

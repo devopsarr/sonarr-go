@@ -160,6 +160,7 @@ type ApiListCalendarRequest struct {
 	includeSeries *bool
 	includeEpisodeFile *bool
 	includeEpisodeImages *bool
+	tags *string
 }
 
 func (r ApiListCalendarRequest) Start(start time.Time) ApiListCalendarRequest {
@@ -189,6 +190,11 @@ func (r ApiListCalendarRequest) IncludeEpisodeFile(includeEpisodeFile bool) ApiL
 
 func (r ApiListCalendarRequest) IncludeEpisodeImages(includeEpisodeImages bool) ApiListCalendarRequest {
 	r.includeEpisodeImages = &includeEpisodeImages
+	return r
+}
+
+func (r ApiListCalendarRequest) Tags(tags string) ApiListCalendarRequest {
+	r.tags = &tags
 	return r
 }
 
@@ -247,6 +253,9 @@ func (a *CalendarApiService) ListCalendarExecute(r ApiListCalendarRequest) ([]*E
 	}
 	if r.includeEpisodeImages != nil {
 		localVarQueryParams.Add("includeEpisodeImages", parameterToString(*r.includeEpisodeImages, ""))
+	}
+	if r.tags != nil {
+		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

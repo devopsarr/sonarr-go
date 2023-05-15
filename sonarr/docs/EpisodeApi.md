@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## PutEpisodeMonitor
 
-> PutEpisodeMonitor(ctx).EpisodesMonitoredResource(episodesMonitoredResource).Execute()
+> PutEpisodeMonitor(ctx).IncludeImages(includeImages).EpisodesMonitoredResource(episodesMonitoredResource).Execute()
 
 
 
@@ -170,11 +170,12 @@ import (
 )
 
 func main() {
+    includeImages := true // bool |  (optional) (default to false)
     episodesMonitoredResource := *sonarrClient.NewEpisodesMonitoredResource() // EpisodesMonitoredResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EpisodeApi.PutEpisodeMonitor(context.Background()).EpisodesMonitoredResource(episodesMonitoredResource).Execute()
+    resp, r, err := apiClient.EpisodeApi.PutEpisodeMonitor(context.Background()).IncludeImages(includeImages).EpisodesMonitoredResource(episodesMonitoredResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EpisodeApi.PutEpisodeMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -193,6 +194,7 @@ Other parameters are passed through a pointer to a apiPutEpisodeMonitorRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **includeImages** | **bool** |  | [default to false]
  **episodesMonitoredResource** | [**EpisodesMonitoredResource**](EpisodesMonitoredResource.md) |  | 
 
 ### Return type
