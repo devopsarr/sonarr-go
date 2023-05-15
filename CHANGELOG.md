@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/devopsarr/sonarr-go/compare/v0.4.1...v0.5.0) (2023-05-15)
+
+
+### Features
+
+* pin openapi version and add version management ([087c1d5](https://github.com/devopsarr/sonarr-go/commit/087c1d5c0742d94a18d7302faf22e8427d023dcf))
+
 ## [0.4.1](https://github.com/devopsarr/sonarr-go/compare/v0.4.0...v0.4.1) (2023-03-27)
 
 
