@@ -20,11 +20,11 @@ import (
 )
 
 
-// CutoffApiService CutoffApi service
-type CutoffApiService service
+// CutoffAPIService CutoffAPI service
+type CutoffAPIService service
 type ApiGetWantedCutoffRequest struct {
 	ctx context.Context
-	ApiService *CutoffApiService
+	ApiService *CutoffAPIService
 	includeSeries *bool
 	includeEpisodeFile *bool
 	includeImages *bool
@@ -55,7 +55,7 @@ GetWantedCutoff Method for GetWantedCutoff
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetWantedCutoffRequest
 */
-func (a *CutoffApiService) GetWantedCutoff(ctx context.Context) ApiGetWantedCutoffRequest {
+func (a *CutoffAPIService) GetWantedCutoff(ctx context.Context) ApiGetWantedCutoffRequest {
 	return ApiGetWantedCutoffRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -64,7 +64,7 @@ func (a *CutoffApiService) GetWantedCutoff(ctx context.Context) ApiGetWantedCuto
 
 // Execute executes the request
 //  @return EpisodeResourcePagingResource
-func (a *CutoffApiService) GetWantedCutoffExecute(r ApiGetWantedCutoffRequest) (*EpisodeResourcePagingResource, *http.Response, error) {
+func (a *CutoffAPIService) GetWantedCutoffExecute(r ApiGetWantedCutoffRequest) (*EpisodeResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -72,7 +72,7 @@ func (a *CutoffApiService) GetWantedCutoffExecute(r ApiGetWantedCutoffRequest) (
 		localVarReturnValue  *EpisodeResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CutoffApiService.GetWantedCutoff")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CutoffAPIService.GetWantedCutoff")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -175,7 +175,7 @@ func (a *CutoffApiService) GetWantedCutoffExecute(r ApiGetWantedCutoffRequest) (
 }
 type ApiGetWantedCutoffByIdRequest struct {
 	ctx context.Context
-	ApiService *CutoffApiService
+	ApiService *CutoffAPIService
 	id int32
 }
 
@@ -190,7 +190,7 @@ GetWantedCutoffById Method for GetWantedCutoffById
  @param id
  @return ApiGetWantedCutoffByIdRequest
 */
-func (a *CutoffApiService) GetWantedCutoffById(ctx context.Context, id int32) ApiGetWantedCutoffByIdRequest {
+func (a *CutoffAPIService) GetWantedCutoffById(ctx context.Context, id int32) ApiGetWantedCutoffByIdRequest {
 	return ApiGetWantedCutoffByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -200,7 +200,7 @@ func (a *CutoffApiService) GetWantedCutoffById(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return EpisodeResource
-func (a *CutoffApiService) GetWantedCutoffByIdExecute(r ApiGetWantedCutoffByIdRequest) (*EpisodeResource, *http.Response, error) {
+func (a *CutoffAPIService) GetWantedCutoffByIdExecute(r ApiGetWantedCutoffByIdRequest) (*EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -208,7 +208,7 @@ func (a *CutoffApiService) GetWantedCutoffByIdExecute(r ApiGetWantedCutoffByIdRe
 		localVarReturnValue  *EpisodeResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CutoffApiService.GetWantedCutoffById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CutoffAPIService.GetWantedCutoffById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

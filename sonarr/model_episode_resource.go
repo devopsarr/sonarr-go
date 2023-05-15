@@ -26,6 +26,7 @@ type EpisodeResource struct {
 	Title NullableString `json:"title,omitempty"`
 	AirDate NullableString `json:"airDate,omitempty"`
 	AirDateUtc NullableTime `json:"airDateUtc,omitempty"`
+	Runtime *int32 `json:"runtime,omitempty"`
 	Overview NullableString `json:"overview,omitempty"`
 	EpisodeFile *EpisodeFileResource `json:"episodeFile,omitempty"`
 	HasFile *bool `json:"hasFile,omitempty"`
@@ -376,6 +377,38 @@ func (o *EpisodeResource) SetAirDateUtcNil() {
 // UnsetAirDateUtc ensures that no value is present for AirDateUtc, not even an explicit nil
 func (o *EpisodeResource) UnsetAirDateUtc() {
 	o.AirDateUtc.Unset()
+}
+
+// GetRuntime returns the Runtime field value if set, zero value otherwise.
+func (o *EpisodeResource) GetRuntime() int32 {
+	if o == nil || isNil(o.Runtime) {
+		var ret int32
+		return ret
+	}
+	return *o.Runtime
+}
+
+// GetRuntimeOk returns a tuple with the Runtime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EpisodeResource) GetRuntimeOk() (*int32, bool) {
+	if o == nil || isNil(o.Runtime) {
+    return nil, false
+	}
+	return o.Runtime, true
+}
+
+// HasRuntime returns a boolean if a field has been set.
+func (o *EpisodeResource) HasRuntime() bool {
+	if o != nil && !isNil(o.Runtime) {
+		return true
+	}
+
+	return false
+}
+
+// SetRuntime gets a reference to the given int32 and assigns it to the Runtime field.
+func (o *EpisodeResource) SetRuntime(v int32) {
+	o.Runtime = &v
 }
 
 // GetOverview returns the Overview field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -967,6 +1000,9 @@ func (o EpisodeResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.AirDateUtc.IsSet() {
 		toSerialize["airDateUtc"] = o.AirDateUtc.Get()
+	}
+	if !isNil(o.Runtime) {
+		toSerialize["runtime"] = o.Runtime
 	}
 	if o.Overview.IsSet() {
 		toSerialize["overview"] = o.Overview.Get()

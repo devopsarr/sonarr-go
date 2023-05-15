@@ -19,11 +19,11 @@ import (
 )
 
 
-// SeriesEditorApiService SeriesEditorApi service
-type SeriesEditorApiService service
+// SeriesEditorAPIService SeriesEditorAPI service
+type SeriesEditorAPIService service
 type ApiDeleteSeriesEditorRequest struct {
 	ctx context.Context
-	ApiService *SeriesEditorApiService
+	ApiService *SeriesEditorAPIService
 	seriesEditorResource *SeriesEditorResource
 }
 
@@ -42,7 +42,7 @@ DeleteSeriesEditor Method for DeleteSeriesEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSeriesEditorRequest
 */
-func (a *SeriesEditorApiService) DeleteSeriesEditor(ctx context.Context) ApiDeleteSeriesEditorRequest {
+func (a *SeriesEditorAPIService) DeleteSeriesEditor(ctx context.Context) ApiDeleteSeriesEditorRequest {
 	return ApiDeleteSeriesEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *SeriesEditorApiService) DeleteSeriesEditor(ctx context.Context) ApiDele
 }
 
 // Execute executes the request
-func (a *SeriesEditorApiService) DeleteSeriesEditorExecute(r ApiDeleteSeriesEditorRequest) (*http.Response, error) {
+func (a *SeriesEditorAPIService) DeleteSeriesEditorExecute(r ApiDeleteSeriesEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesEditorApiService.DeleteSeriesEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesEditorAPIService.DeleteSeriesEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *SeriesEditorApiService) DeleteSeriesEditorExecute(r ApiDeleteSeriesEdit
 }
 type ApiPutSeriesEditorRequest struct {
 	ctx context.Context
-	ApiService *SeriesEditorApiService
+	ApiService *SeriesEditorAPIService
 	seriesEditorResource *SeriesEditorResource
 }
 
@@ -163,7 +163,7 @@ PutSeriesEditor Method for PutSeriesEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutSeriesEditorRequest
 */
-func (a *SeriesEditorApiService) PutSeriesEditor(ctx context.Context) ApiPutSeriesEditorRequest {
+func (a *SeriesEditorAPIService) PutSeriesEditor(ctx context.Context) ApiPutSeriesEditorRequest {
 	return ApiPutSeriesEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,14 +171,14 @@ func (a *SeriesEditorApiService) PutSeriesEditor(ctx context.Context) ApiPutSeri
 }
 
 // Execute executes the request
-func (a *SeriesEditorApiService) PutSeriesEditorExecute(r ApiPutSeriesEditorRequest) (*http.Response, error) {
+func (a *SeriesEditorAPIService) PutSeriesEditorExecute(r ApiPutSeriesEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesEditorApiService.PutSeriesEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesEditorAPIService.PutSeriesEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

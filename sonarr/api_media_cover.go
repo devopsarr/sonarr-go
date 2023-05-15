@@ -20,11 +20,11 @@ import (
 )
 
 
-// MediaCoverApiService MediaCoverApi service
-type MediaCoverApiService service
+// MediaCoverAPIService MediaCoverAPI service
+type MediaCoverAPIService service
 type ApiGetMediaCoverseriesIdByFilenameRequest struct {
 	ctx context.Context
-	ApiService *MediaCoverApiService
+	ApiService *MediaCoverAPIService
 	seriesId int32
 	filename string
 }
@@ -41,7 +41,7 @@ GetMediaCoverseriesIdByFilename Method for GetMediaCoverseriesIdByFilename
  @param filename
  @return ApiGetMediaCoverseriesIdByFilenameRequest
 */
-func (a *MediaCoverApiService) GetMediaCoverseriesIdByFilename(ctx context.Context, seriesId int32, filename string) ApiGetMediaCoverseriesIdByFilenameRequest {
+func (a *MediaCoverAPIService) GetMediaCoverseriesIdByFilename(ctx context.Context, seriesId int32, filename string) ApiGetMediaCoverseriesIdByFilenameRequest {
 	return ApiGetMediaCoverseriesIdByFilenameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,14 +51,14 @@ func (a *MediaCoverApiService) GetMediaCoverseriesIdByFilename(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *MediaCoverApiService) GetMediaCoverseriesIdByFilenameExecute(r ApiGetMediaCoverseriesIdByFilenameRequest) (*http.Response, error) {
+func (a *MediaCoverAPIService) GetMediaCoverseriesIdByFilenameExecute(r ApiGetMediaCoverseriesIdByFilenameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetMediaCoverseriesIdByFilename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverAPIService.GetMediaCoverseriesIdByFilename")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

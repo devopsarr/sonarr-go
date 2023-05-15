@@ -20,11 +20,11 @@ import (
 )
 
 
-// QueueStatusApiService QueueStatusApi service
-type QueueStatusApiService service
+// QueueStatusAPIService QueueStatusAPI service
+type QueueStatusAPIService service
 type ApiGetQueueStatusRequest struct {
 	ctx context.Context
-	ApiService *QueueStatusApiService
+	ApiService *QueueStatusAPIService
 }
 
 func (r ApiGetQueueStatusRequest) Execute() (*QueueStatusResource, *http.Response, error) {
@@ -37,7 +37,7 @@ GetQueueStatus Method for GetQueueStatus
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetQueueStatusRequest
 */
-func (a *QueueStatusApiService) GetQueueStatus(ctx context.Context) ApiGetQueueStatusRequest {
+func (a *QueueStatusAPIService) GetQueueStatus(ctx context.Context) ApiGetQueueStatusRequest {
 	return ApiGetQueueStatusRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -46,7 +46,7 @@ func (a *QueueStatusApiService) GetQueueStatus(ctx context.Context) ApiGetQueueS
 
 // Execute executes the request
 //  @return QueueStatusResource
-func (a *QueueStatusApiService) GetQueueStatusExecute(r ApiGetQueueStatusRequest) (*QueueStatusResource, *http.Response, error) {
+func (a *QueueStatusAPIService) GetQueueStatusExecute(r ApiGetQueueStatusRequest) (*QueueStatusResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *QueueStatusApiService) GetQueueStatusExecute(r ApiGetQueueStatusRequest
 		localVarReturnValue  *QueueStatusResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueStatusApiService.GetQueueStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueStatusAPIService.GetQueueStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,7 +148,7 @@ func (a *QueueStatusApiService) GetQueueStatusExecute(r ApiGetQueueStatusRequest
 }
 type ApiGetQueueStatusByIdRequest struct {
 	ctx context.Context
-	ApiService *QueueStatusApiService
+	ApiService *QueueStatusAPIService
 	id int32
 }
 
@@ -163,7 +163,7 @@ GetQueueStatusById Method for GetQueueStatusById
  @param id
  @return ApiGetQueueStatusByIdRequest
 */
-func (a *QueueStatusApiService) GetQueueStatusById(ctx context.Context, id int32) ApiGetQueueStatusByIdRequest {
+func (a *QueueStatusAPIService) GetQueueStatusById(ctx context.Context, id int32) ApiGetQueueStatusByIdRequest {
 	return ApiGetQueueStatusByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -173,7 +173,7 @@ func (a *QueueStatusApiService) GetQueueStatusById(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return QueueStatusResource
-func (a *QueueStatusApiService) GetQueueStatusByIdExecute(r ApiGetQueueStatusByIdRequest) (*QueueStatusResource, *http.Response, error) {
+func (a *QueueStatusAPIService) GetQueueStatusByIdExecute(r ApiGetQueueStatusByIdRequest) (*QueueStatusResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *QueueStatusApiService) GetQueueStatusByIdExecute(r ApiGetQueueStatusByI
 		localVarReturnValue  *QueueStatusResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueStatusApiService.GetQueueStatusById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueStatusAPIService.GetQueueStatusById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
