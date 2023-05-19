@@ -521,7 +521,7 @@ Other parameters are passed through a pointer to a apiTestallNotificationRequest
 
 ## UpdateNotification
 
-> NotificationResource UpdateNotification(ctx, id).NotificationResource(notificationResource).Execute()
+> NotificationResource UpdateNotification(ctx, id).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
 
 
 
@@ -539,11 +539,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     notificationResource := *sonarrClient.NewNotificationResource() // NotificationResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.UpdateNotification(context.Background(), id).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.UpdateNotification(context.Background(), id).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.UpdateNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +570,7 @@ Other parameters are passed through a pointer to a apiUpdateNotificationRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **notificationResource** | [**NotificationResource**](NotificationResource.md) |  | 
 
 ### Return type

@@ -1010,7 +1010,13 @@ type ApiUpdateImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
 	id string
+	forceSave *bool
 	importListResource *ImportListResource
+}
+
+func (r ApiUpdateImportListRequest) ForceSave(forceSave bool) ApiUpdateImportListRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiUpdateImportListRequest) ImportListResource(importListResource ImportListResource) ApiUpdateImportListRequest {
@@ -1059,6 +1065,9 @@ func (a *ImportListApiService) UpdateImportListExecute(r ApiUpdateImportListRequ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

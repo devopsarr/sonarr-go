@@ -1010,7 +1010,13 @@ type ApiUpdateMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
 	id string
+	forceSave *bool
 	metadataResource *MetadataResource
+}
+
+func (r ApiUpdateMetadataRequest) ForceSave(forceSave bool) ApiUpdateMetadataRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiUpdateMetadataRequest) MetadataResource(metadataResource MetadataResource) ApiUpdateMetadataRequest {
@@ -1059,6 +1065,9 @@ func (a *MetadataApiService) UpdateMetadataExecute(r ApiUpdateMetadataRequest) (
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

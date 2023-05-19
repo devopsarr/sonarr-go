@@ -521,7 +521,7 @@ Other parameters are passed through a pointer to a apiTestallIndexerRequest stru
 
 ## UpdateIndexer
 
-> IndexerResource UpdateIndexer(ctx, id).IndexerResource(indexerResource).Execute()
+> IndexerResource UpdateIndexer(ctx, id).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
 
 
 
@@ -539,11 +539,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     indexerResource := *sonarrClient.NewIndexerResource() // IndexerResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerApi.UpdateIndexer(context.Background(), id).IndexerResource(indexerResource).Execute()
+    resp, r, err := apiClient.IndexerApi.UpdateIndexer(context.Background(), id).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IndexerApi.UpdateIndexer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +570,7 @@ Other parameters are passed through a pointer to a apiUpdateIndexerRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **indexerResource** | [**IndexerResource**](IndexerResource.md) |  | 
 
 ### Return type

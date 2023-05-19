@@ -521,7 +521,7 @@ Other parameters are passed through a pointer to a apiTestallDownloadClientReque
 
 ## UpdateDownloadClient
 
-> DownloadClientResource UpdateDownloadClient(ctx, id).DownloadClientResource(downloadClientResource).Execute()
+> DownloadClientResource UpdateDownloadClient(ctx, id).ForceSave(forceSave).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -539,11 +539,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     downloadClientResource := *sonarrClient.NewDownloadClientResource() // DownloadClientResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.UpdateDownloadClient(context.Background(), id).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.UpdateDownloadClient(context.Background(), id).ForceSave(forceSave).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.UpdateDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +570,7 @@ Other parameters are passed through a pointer to a apiUpdateDownloadClientReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **downloadClientResource** | [**DownloadClientResource**](DownloadClientResource.md) |  | 
 
 ### Return type
