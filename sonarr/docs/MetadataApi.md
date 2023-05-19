@@ -521,7 +521,7 @@ Other parameters are passed through a pointer to a apiTestallMetadataRequest str
 
 ## UpdateMetadata
 
-> MetadataResource UpdateMetadata(ctx, id).MetadataResource(metadataResource).Execute()
+> MetadataResource UpdateMetadata(ctx, id).ForceSave(forceSave).MetadataResource(metadataResource).Execute()
 
 
 
@@ -539,11 +539,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     metadataResource := *sonarrClient.NewMetadataResource() // MetadataResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.UpdateMetadata(context.Background(), id).MetadataResource(metadataResource).Execute()
+    resp, r, err := apiClient.MetadataApi.UpdateMetadata(context.Background(), id).ForceSave(forceSave).MetadataResource(metadataResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +570,7 @@ Other parameters are passed through a pointer to a apiUpdateMetadataRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **metadataResource** | [**MetadataResource**](MetadataResource.md) |  | 
 
 ### Return type

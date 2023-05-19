@@ -521,7 +521,7 @@ Other parameters are passed through a pointer to a apiTestallImportListRequest s
 
 ## UpdateImportList
 
-> ImportListResource UpdateImportList(ctx, id).ImportListResource(importListResource).Execute()
+> ImportListResource UpdateImportList(ctx, id).ForceSave(forceSave).ImportListResource(importListResource).Execute()
 
 
 
@@ -539,11 +539,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    forceSave := true // bool |  (optional) (default to false)
     importListResource := *sonarrClient.NewImportListResource() // ImportListResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.UpdateImportList(context.Background(), id).ImportListResource(importListResource).Execute()
+    resp, r, err := apiClient.ImportListApi.UpdateImportList(context.Background(), id).ForceSave(forceSave).ImportListResource(importListResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.UpdateImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,6 +570,7 @@ Other parameters are passed through a pointer to a apiUpdateImportListRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **forceSave** | **bool** |  | [default to false]
  **importListResource** | [**ImportListResource**](ImportListResource.md) |  | 
 
 ### Return type
