@@ -14616,7 +14616,9 @@ components:
         fileDate: null
         rescanAfterRefresh: null
         minimumFreeSpaceWhenImporting: 1
+        scriptImportPath: scriptImportPath
         chownGroup: chownGroup
+        useScriptImport: true
         extraFileExtensions: extraFileExtensions
         enableMediaInfo: true
         chmodFolder: chmodFolder
@@ -14666,6 +14668,10 @@ components:
           type: integer
         copyUsingHardlinks:
           type: boolean
+        useScriptImport:
+          type: boolean
+        scriptImportPath:
+          type: string
         importExtraFiles:
           type: boolean
         extraFileExtensions:
