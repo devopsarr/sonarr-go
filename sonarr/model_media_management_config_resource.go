@@ -32,6 +32,8 @@ type MediaManagementConfigResource struct {
 	SkipFreeSpaceCheckWhenImporting *bool `json:"skipFreeSpaceCheckWhenImporting,omitempty"`
 	MinimumFreeSpaceWhenImporting *int32 `json:"minimumFreeSpaceWhenImporting,omitempty"`
 	CopyUsingHardlinks *bool `json:"copyUsingHardlinks,omitempty"`
+	UseScriptImport *bool `json:"useScriptImport,omitempty"`
+	ScriptImportPath *string `json:"scriptImportPath,omitempty"`
 	ImportExtraFiles *bool `json:"importExtraFiles,omitempty"`
 	ExtraFileExtensions NullableString `json:"extraFileExtensions,omitempty"`
 	EnableMediaInfo *bool `json:"enableMediaInfo,omitempty"`
@@ -596,6 +598,70 @@ func (o *MediaManagementConfigResource) SetCopyUsingHardlinks(v bool) {
 	o.CopyUsingHardlinks = &v
 }
 
+// GetUseScriptImport returns the UseScriptImport field value if set, zero value otherwise.
+func (o *MediaManagementConfigResource) GetUseScriptImport() bool {
+	if o == nil || isNil(o.UseScriptImport) {
+		var ret bool
+		return ret
+	}
+	return *o.UseScriptImport
+}
+
+// GetUseScriptImportOk returns a tuple with the UseScriptImport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MediaManagementConfigResource) GetUseScriptImportOk() (*bool, bool) {
+	if o == nil || isNil(o.UseScriptImport) {
+    return nil, false
+	}
+	return o.UseScriptImport, true
+}
+
+// HasUseScriptImport returns a boolean if a field has been set.
+func (o *MediaManagementConfigResource) HasUseScriptImport() bool {
+	if o != nil && !isNil(o.UseScriptImport) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseScriptImport gets a reference to the given bool and assigns it to the UseScriptImport field.
+func (o *MediaManagementConfigResource) SetUseScriptImport(v bool) {
+	o.UseScriptImport = &v
+}
+
+// GetScriptImportPath returns the ScriptImportPath field value if set, zero value otherwise.
+func (o *MediaManagementConfigResource) GetScriptImportPath() string {
+	if o == nil || isNil(o.ScriptImportPath) {
+		var ret string
+		return ret
+	}
+	return *o.ScriptImportPath
+}
+
+// GetScriptImportPathOk returns a tuple with the ScriptImportPath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MediaManagementConfigResource) GetScriptImportPathOk() (*string, bool) {
+	if o == nil || isNil(o.ScriptImportPath) {
+    return nil, false
+	}
+	return o.ScriptImportPath, true
+}
+
+// HasScriptImportPath returns a boolean if a field has been set.
+func (o *MediaManagementConfigResource) HasScriptImportPath() bool {
+	if o != nil && !isNil(o.ScriptImportPath) {
+		return true
+	}
+
+	return false
+}
+
+// SetScriptImportPath gets a reference to the given string and assigns it to the ScriptImportPath field.
+func (o *MediaManagementConfigResource) SetScriptImportPath(v string) {
+	o.ScriptImportPath = &v
+}
+
 // GetImportExtraFiles returns the ImportExtraFiles field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetImportExtraFiles() bool {
 	if o == nil || isNil(o.ImportExtraFiles) {
@@ -751,6 +817,12 @@ func (o MediaManagementConfigResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.CopyUsingHardlinks) {
 		toSerialize["copyUsingHardlinks"] = o.CopyUsingHardlinks
+	}
+	if !isNil(o.UseScriptImport) {
+		toSerialize["useScriptImport"] = o.UseScriptImport
+	}
+	if !isNil(o.ScriptImportPath) {
+		toSerialize["scriptImportPath"] = o.ScriptImportPath
 	}
 	if !isNil(o.ImportExtraFiles) {
 		toSerialize["importExtraFiles"] = o.ImportExtraFiles
