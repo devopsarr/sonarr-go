@@ -14535,6 +14535,7 @@ components:
       - fanart
       - screenshot
       - headshot
+      - clearlogo
       type: string
     MediaInfoResource:
       additionalProperties: false
@@ -14671,6 +14672,7 @@ components:
         useScriptImport:
           type: boolean
         scriptImportPath:
+          nullable: true
           type: string
         importExtraFiles:
           type: boolean
