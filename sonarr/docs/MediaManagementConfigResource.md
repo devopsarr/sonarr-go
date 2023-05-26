@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **MinimumFreeSpaceWhenImporting** | Pointer to **int32** |  | [optional] 
 **CopyUsingHardlinks** | Pointer to **bool** |  | [optional] 
 **UseScriptImport** | Pointer to **bool** |  | [optional] 
-**ScriptImportPath** | Pointer to **string** |  | [optional] 
+**ScriptImportPath** | Pointer to **NullableString** |  | [optional] 
 **ImportExtraFiles** | Pointer to **bool** |  | [optional] 
 **ExtraFileExtensions** | Pointer to **NullableString** |  | [optional] 
 **EnableMediaInfo** | Pointer to **bool** |  | [optional] 
@@ -525,6 +525,16 @@ SetScriptImportPath sets ScriptImportPath field to given value.
 
 HasScriptImportPath returns a boolean if a field has been set.
 
+### SetScriptImportPathNil
+
+`func (o *MediaManagementConfigResource) SetScriptImportPathNil(b bool)`
+
+ SetScriptImportPathNil sets the value for ScriptImportPath to be an explicit nil
+
+### UnsetScriptImportPath
+`func (o *MediaManagementConfigResource) UnsetScriptImportPath()`
+
+UnsetScriptImportPath ensures that no value is present for ScriptImportPath, not even an explicit nil
 ### GetImportExtraFiles
 
 `func (o *MediaManagementConfigResource) GetImportExtraFiles() bool`

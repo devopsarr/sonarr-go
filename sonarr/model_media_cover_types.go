@@ -26,6 +26,7 @@ const (
 	MEDIACOVERTYPES_FANART MediaCoverTypes = "fanart"
 	MEDIACOVERTYPES_SCREENSHOT MediaCoverTypes = "screenshot"
 	MEDIACOVERTYPES_HEADSHOT MediaCoverTypes = "headshot"
+	MEDIACOVERTYPES_CLEARLOGO MediaCoverTypes = "clearlogo"
 )
 
 // All allowed values of MediaCoverTypes enum
@@ -36,6 +37,7 @@ var AllowedMediaCoverTypesEnumValues = []MediaCoverTypes{
 	"fanart",
 	"screenshot",
 	"headshot",
+	"clearlogo",
 }
 
 func (v *MediaCoverTypes) UnmarshalJSON(src []byte) error {
