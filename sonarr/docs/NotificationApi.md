@@ -7,9 +7,11 @@ Method | HTTP request | Description
 [**CreateNotification**](NotificationApi.md#CreateNotification) | **Post** /api/v3/notification | 
 [**CreateNotificationActionByName**](NotificationApi.md#CreateNotificationActionByName) | **Post** /api/v3/notification/action/{name} | 
 [**DeleteNotification**](NotificationApi.md#DeleteNotification) | **Delete** /api/v3/notification/{id} | 
+[**DeleteNotificationBulk**](NotificationApi.md#DeleteNotificationBulk) | **Delete** /api/v3/notification/bulk | 
 [**GetNotificationById**](NotificationApi.md#GetNotificationById) | **Get** /api/v3/notification/{id} | 
 [**ListNotification**](NotificationApi.md#ListNotification) | **Get** /api/v3/notification | 
 [**ListNotificationSchema**](NotificationApi.md#ListNotificationSchema) | **Get** /api/v3/notification/schema | 
+[**PutNotificationBulk**](NotificationApi.md#PutNotificationBulk) | **Put** /api/v3/notification/bulk | 
 [**TestNotification**](NotificationApi.md#TestNotification) | **Post** /api/v3/notification/test | 
 [**TestallNotification**](NotificationApi.md#TestallNotification) | **Post** /api/v3/notification/testall | 
 [**UpdateNotification**](NotificationApi.md#UpdateNotification) | **Put** /api/v3/notification/{id} | 
@@ -18,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateNotification
 
-> NotificationResource CreateNotification(ctx).NotificationResource(notificationResource).Execute()
+> NotificationResource CreateNotification(ctx).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
 
 
 
@@ -35,11 +37,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     notificationResource := *sonarrClient.NewNotificationResource() // NotificationResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NotificationApi.CreateNotification(context.Background()).NotificationResource(notificationResource).Execute()
+    resp, r, err := apiClient.NotificationApi.CreateNotification(context.Background()).ForceSave(forceSave).NotificationResource(notificationResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.CreateNotification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +63,7 @@ Other parameters are passed through a pointer to a apiCreateNotificationRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **notificationResource** | [**NotificationResource**](NotificationResource.md) |  | 
 
 ### Return type
@@ -207,6 +211,68 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteNotificationBulk
+
+> DeleteNotificationBulk(ctx).NotificationBulkResource(notificationBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    sonarrClient "./openapi"
+)
+
+func main() {
+    notificationBulkResource := *sonarrClient.NewNotificationBulkResource() // NotificationBulkResource |  (optional)
+
+    configuration := sonarrClient.NewConfiguration()
+    apiClient := sonarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NotificationApi.DeleteNotificationBulk(context.Background()).NotificationBulkResource(notificationBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.DeleteNotificationBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteNotificationBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notificationBulkResource** | [**NotificationBulkResource**](NotificationBulkResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -394,6 +460,70 @@ Other parameters are passed through a pointer to a apiListNotificationSchemaRequ
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutNotificationBulk
+
+> NotificationResource PutNotificationBulk(ctx).NotificationBulkResource(notificationBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    sonarrClient "./openapi"
+)
+
+func main() {
+    notificationBulkResource := *sonarrClient.NewNotificationBulkResource() // NotificationBulkResource |  (optional)
+
+    configuration := sonarrClient.NewConfiguration()
+    apiClient := sonarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NotificationApi.PutNotificationBulk(context.Background()).NotificationBulkResource(notificationBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationApi.PutNotificationBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PutNotificationBulk`: NotificationResource
+    fmt.Fprintf(os.Stdout, "Response from `NotificationApi.PutNotificationBulk`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutNotificationBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **notificationBulkResource** | [**NotificationBulkResource**](NotificationBulkResource.md) |  | 
+
+### Return type
+
+[**NotificationResource**](NotificationResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -7,9 +7,11 @@ Method | HTTP request | Description
 [**CreateImportList**](ImportListApi.md#CreateImportList) | **Post** /api/v3/importlist | 
 [**CreateImportListActionByName**](ImportListApi.md#CreateImportListActionByName) | **Post** /api/v3/importlist/action/{name} | 
 [**DeleteImportList**](ImportListApi.md#DeleteImportList) | **Delete** /api/v3/importlist/{id} | 
+[**DeleteImportListBulk**](ImportListApi.md#DeleteImportListBulk) | **Delete** /api/v3/importlist/bulk | 
 [**GetImportListById**](ImportListApi.md#GetImportListById) | **Get** /api/v3/importlist/{id} | 
 [**ListImportList**](ImportListApi.md#ListImportList) | **Get** /api/v3/importlist | 
 [**ListImportListSchema**](ImportListApi.md#ListImportListSchema) | **Get** /api/v3/importlist/schema | 
+[**PutImportListBulk**](ImportListApi.md#PutImportListBulk) | **Put** /api/v3/importlist/bulk | 
 [**TestImportList**](ImportListApi.md#TestImportList) | **Post** /api/v3/importlist/test | 
 [**TestallImportList**](ImportListApi.md#TestallImportList) | **Post** /api/v3/importlist/testall | 
 [**UpdateImportList**](ImportListApi.md#UpdateImportList) | **Put** /api/v3/importlist/{id} | 
@@ -18,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateImportList
 
-> ImportListResource CreateImportList(ctx).ImportListResource(importListResource).Execute()
+> ImportListResource CreateImportList(ctx).ForceSave(forceSave).ImportListResource(importListResource).Execute()
 
 
 
@@ -35,11 +37,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     importListResource := *sonarrClient.NewImportListResource() // ImportListResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.CreateImportList(context.Background()).ImportListResource(importListResource).Execute()
+    resp, r, err := apiClient.ImportListApi.CreateImportList(context.Background()).ForceSave(forceSave).ImportListResource(importListResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.CreateImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +63,7 @@ Other parameters are passed through a pointer to a apiCreateImportListRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **importListResource** | [**ImportListResource**](ImportListResource.md) |  | 
 
 ### Return type
@@ -207,6 +211,68 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteImportListBulk
+
+> DeleteImportListBulk(ctx).ImportListBulkResource(importListBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    sonarrClient "./openapi"
+)
+
+func main() {
+    importListBulkResource := *sonarrClient.NewImportListBulkResource() // ImportListBulkResource |  (optional)
+
+    configuration := sonarrClient.NewConfiguration()
+    apiClient := sonarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportListApi.DeleteImportListBulk(context.Background()).ImportListBulkResource(importListBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.DeleteImportListBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteImportListBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importListBulkResource** | [**ImportListBulkResource**](ImportListBulkResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -394,6 +460,70 @@ Other parameters are passed through a pointer to a apiListImportListSchemaReques
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutImportListBulk
+
+> ImportListResource PutImportListBulk(ctx).ImportListBulkResource(importListBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    sonarrClient "./openapi"
+)
+
+func main() {
+    importListBulkResource := *sonarrClient.NewImportListBulkResource() // ImportListBulkResource |  (optional)
+
+    configuration := sonarrClient.NewConfiguration()
+    apiClient := sonarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportListApi.PutImportListBulk(context.Background()).ImportListBulkResource(importListBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.PutImportListBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PutImportListBulk`: ImportListResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.PutImportListBulk`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutImportListBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importListBulkResource** | [**ImportListBulkResource**](ImportListBulkResource.md) |  | 
+
+### Return type
+
+[**ImportListResource**](ImportListResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

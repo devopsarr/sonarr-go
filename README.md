@@ -128,9 +128,11 @@ Class | Method | HTTP request | Description
 *DownloadClientApi* | [**CreateDownloadClient**](sonarr/docs/DownloadClientApi.md#createdownloadclient) | **Post** /api/v3/downloadclient | 
 *DownloadClientApi* | [**CreateDownloadClientActionByName**](sonarr/docs/DownloadClientApi.md#createdownloadclientactionbyname) | **Post** /api/v3/downloadclient/action/{name} | 
 *DownloadClientApi* | [**DeleteDownloadClient**](sonarr/docs/DownloadClientApi.md#deletedownloadclient) | **Delete** /api/v3/downloadclient/{id} | 
+*DownloadClientApi* | [**DeleteDownloadClientBulk**](sonarr/docs/DownloadClientApi.md#deletedownloadclientbulk) | **Delete** /api/v3/downloadclient/bulk | 
 *DownloadClientApi* | [**GetDownloadClientById**](sonarr/docs/DownloadClientApi.md#getdownloadclientbyid) | **Get** /api/v3/downloadclient/{id} | 
 *DownloadClientApi* | [**ListDownloadClient**](sonarr/docs/DownloadClientApi.md#listdownloadclient) | **Get** /api/v3/downloadclient | 
 *DownloadClientApi* | [**ListDownloadClientSchema**](sonarr/docs/DownloadClientApi.md#listdownloadclientschema) | **Get** /api/v3/downloadclient/schema | 
+*DownloadClientApi* | [**PutDownloadClientBulk**](sonarr/docs/DownloadClientApi.md#putdownloadclientbulk) | **Put** /api/v3/downloadclient/bulk | 
 *DownloadClientApi* | [**TestDownloadClient**](sonarr/docs/DownloadClientApi.md#testdownloadclient) | **Post** /api/v3/downloadclient/test | 
 *DownloadClientApi* | [**TestallDownloadClient**](sonarr/docs/DownloadClientApi.md#testalldownloadclient) | **Post** /api/v3/downloadclient/testall | 
 *DownloadClientApi* | [**UpdateDownloadClient**](sonarr/docs/DownloadClientApi.md#updatedownloadclient) | **Put** /api/v3/downloadclient/{id} | 
@@ -163,9 +165,11 @@ Class | Method | HTTP request | Description
 *ImportListApi* | [**CreateImportList**](sonarr/docs/ImportListApi.md#createimportlist) | **Post** /api/v3/importlist | 
 *ImportListApi* | [**CreateImportListActionByName**](sonarr/docs/ImportListApi.md#createimportlistactionbyname) | **Post** /api/v3/importlist/action/{name} | 
 *ImportListApi* | [**DeleteImportList**](sonarr/docs/ImportListApi.md#deleteimportlist) | **Delete** /api/v3/importlist/{id} | 
+*ImportListApi* | [**DeleteImportListBulk**](sonarr/docs/ImportListApi.md#deleteimportlistbulk) | **Delete** /api/v3/importlist/bulk | 
 *ImportListApi* | [**GetImportListById**](sonarr/docs/ImportListApi.md#getimportlistbyid) | **Get** /api/v3/importlist/{id} | 
 *ImportListApi* | [**ListImportList**](sonarr/docs/ImportListApi.md#listimportlist) | **Get** /api/v3/importlist | 
 *ImportListApi* | [**ListImportListSchema**](sonarr/docs/ImportListApi.md#listimportlistschema) | **Get** /api/v3/importlist/schema | 
+*ImportListApi* | [**PutImportListBulk**](sonarr/docs/ImportListApi.md#putimportlistbulk) | **Put** /api/v3/importlist/bulk | 
 *ImportListApi* | [**TestImportList**](sonarr/docs/ImportListApi.md#testimportlist) | **Post** /api/v3/importlist/test | 
 *ImportListApi* | [**TestallImportList**](sonarr/docs/ImportListApi.md#testallimportlist) | **Post** /api/v3/importlist/testall | 
 *ImportListApi* | [**UpdateImportList**](sonarr/docs/ImportListApi.md#updateimportlist) | **Put** /api/v3/importlist/{id} | 
@@ -177,9 +181,11 @@ Class | Method | HTTP request | Description
 *IndexerApi* | [**CreateIndexer**](sonarr/docs/IndexerApi.md#createindexer) | **Post** /api/v3/indexer | 
 *IndexerApi* | [**CreateIndexerActionByName**](sonarr/docs/IndexerApi.md#createindexeractionbyname) | **Post** /api/v3/indexer/action/{name} | 
 *IndexerApi* | [**DeleteIndexer**](sonarr/docs/IndexerApi.md#deleteindexer) | **Delete** /api/v3/indexer/{id} | 
+*IndexerApi* | [**DeleteIndexerBulk**](sonarr/docs/IndexerApi.md#deleteindexerbulk) | **Delete** /api/v3/indexer/bulk | 
 *IndexerApi* | [**GetIndexerById**](sonarr/docs/IndexerApi.md#getindexerbyid) | **Get** /api/v3/indexer/{id} | 
 *IndexerApi* | [**ListIndexer**](sonarr/docs/IndexerApi.md#listindexer) | **Get** /api/v3/indexer | 
 *IndexerApi* | [**ListIndexerSchema**](sonarr/docs/IndexerApi.md#listindexerschema) | **Get** /api/v3/indexer/schema | 
+*IndexerApi* | [**PutIndexerBulk**](sonarr/docs/IndexerApi.md#putindexerbulk) | **Put** /api/v3/indexer/bulk | 
 *IndexerApi* | [**TestIndexer**](sonarr/docs/IndexerApi.md#testindexer) | **Post** /api/v3/indexer/test | 
 *IndexerApi* | [**TestallIndexer**](sonarr/docs/IndexerApi.md#testallindexer) | **Post** /api/v3/indexer/testall | 
 *IndexerApi* | [**UpdateIndexer**](sonarr/docs/IndexerApi.md#updateindexer) | **Put** /api/v3/indexer/{id} | 
@@ -211,9 +217,11 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**CreateMetadata**](sonarr/docs/MetadataApi.md#createmetadata) | **Post** /api/v3/metadata | 
 *MetadataApi* | [**CreateMetadataActionByName**](sonarr/docs/MetadataApi.md#createmetadataactionbyname) | **Post** /api/v3/metadata/action/{name} | 
 *MetadataApi* | [**DeleteMetadata**](sonarr/docs/MetadataApi.md#deletemetadata) | **Delete** /api/v3/metadata/{id} | 
+*MetadataApi* | [**DeleteMetadataBulk**](sonarr/docs/MetadataApi.md#deletemetadatabulk) | **Delete** /api/v3/metadata/bulk | 
 *MetadataApi* | [**GetMetadataById**](sonarr/docs/MetadataApi.md#getmetadatabyid) | **Get** /api/v3/metadata/{id} | 
 *MetadataApi* | [**ListMetadata**](sonarr/docs/MetadataApi.md#listmetadata) | **Get** /api/v3/metadata | 
 *MetadataApi* | [**ListMetadataSchema**](sonarr/docs/MetadataApi.md#listmetadataschema) | **Get** /api/v3/metadata/schema | 
+*MetadataApi* | [**PutMetadataBulk**](sonarr/docs/MetadataApi.md#putmetadatabulk) | **Put** /api/v3/metadata/bulk | 
 *MetadataApi* | [**TestMetadata**](sonarr/docs/MetadataApi.md#testmetadata) | **Post** /api/v3/metadata/test | 
 *MetadataApi* | [**TestallMetadata**](sonarr/docs/MetadataApi.md#testallmetadata) | **Post** /api/v3/metadata/testall | 
 *MetadataApi* | [**UpdateMetadata**](sonarr/docs/MetadataApi.md#updatemetadata) | **Put** /api/v3/metadata/{id} | 
@@ -226,9 +234,11 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**CreateNotification**](sonarr/docs/NotificationApi.md#createnotification) | **Post** /api/v3/notification | 
 *NotificationApi* | [**CreateNotificationActionByName**](sonarr/docs/NotificationApi.md#createnotificationactionbyname) | **Post** /api/v3/notification/action/{name} | 
 *NotificationApi* | [**DeleteNotification**](sonarr/docs/NotificationApi.md#deletenotification) | **Delete** /api/v3/notification/{id} | 
+*NotificationApi* | [**DeleteNotificationBulk**](sonarr/docs/NotificationApi.md#deletenotificationbulk) | **Delete** /api/v3/notification/bulk | 
 *NotificationApi* | [**GetNotificationById**](sonarr/docs/NotificationApi.md#getnotificationbyid) | **Get** /api/v3/notification/{id} | 
 *NotificationApi* | [**ListNotification**](sonarr/docs/NotificationApi.md#listnotification) | **Get** /api/v3/notification | 
 *NotificationApi* | [**ListNotificationSchema**](sonarr/docs/NotificationApi.md#listnotificationschema) | **Get** /api/v3/notification/schema | 
+*NotificationApi* | [**PutNotificationBulk**](sonarr/docs/NotificationApi.md#putnotificationbulk) | **Put** /api/v3/notification/bulk | 
 *NotificationApi* | [**TestNotification**](sonarr/docs/NotificationApi.md#testnotification) | **Post** /api/v3/notification/test | 
 *NotificationApi* | [**TestallNotification**](sonarr/docs/NotificationApi.md#testallnotification) | **Post** /api/v3/notification/testall | 
 *NotificationApi* | [**UpdateNotification**](sonarr/docs/NotificationApi.md#updatenotification) | **Put** /api/v3/notification/{id} | 
@@ -336,6 +346,7 @@ Class | Method | HTTP request | Description
  - [CustomFormatSpecificationSchema](docs/CustomFormatSpecificationSchema.md)
  - [DelayProfileResource](docs/DelayProfileResource.md)
  - [DiskSpaceResource](docs/DiskSpaceResource.md)
+ - [DownloadClientBulkResource](docs/DownloadClientBulkResource.md)
  - [DownloadClientConfigResource](docs/DownloadClientConfigResource.md)
  - [DownloadClientResource](docs/DownloadClientResource.md)
  - [DownloadProtocol](docs/DownloadProtocol.md)
@@ -353,9 +364,11 @@ Class | Method | HTTP request | Description
  - [HistoryResource](docs/HistoryResource.md)
  - [HistoryResourcePagingResource](docs/HistoryResourcePagingResource.md)
  - [HostConfigResource](docs/HostConfigResource.md)
+ - [ImportListBulkResource](docs/ImportListBulkResource.md)
  - [ImportListExclusionResource](docs/ImportListExclusionResource.md)
  - [ImportListResource](docs/ImportListResource.md)
  - [ImportListType](docs/ImportListType.md)
+ - [IndexerBulkResource](docs/IndexerBulkResource.md)
  - [IndexerConfigResource](docs/IndexerConfigResource.md)
  - [IndexerResource](docs/IndexerResource.md)
  - [Language](docs/Language.md)
@@ -373,10 +386,12 @@ Class | Method | HTTP request | Description
  - [MediaCoverTypes](docs/MediaCoverTypes.md)
  - [MediaInfoResource](docs/MediaInfoResource.md)
  - [MediaManagementConfigResource](docs/MediaManagementConfigResource.md)
+ - [MetadataBulkResource](docs/MetadataBulkResource.md)
  - [MetadataResource](docs/MetadataResource.md)
  - [MonitorTypes](docs/MonitorTypes.md)
  - [MonitoringOptions](docs/MonitoringOptions.md)
  - [NamingConfigResource](docs/NamingConfigResource.md)
+ - [NotificationBulkResource](docs/NotificationBulkResource.md)
  - [NotificationResource](docs/NotificationResource.md)
  - [PagingResourceFilter](docs/PagingResourceFilter.md)
  - [ParseResource](docs/ParseResource.md)
