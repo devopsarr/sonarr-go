@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/devopsarr/sonarr-go/compare/v0.5.0...v0.5.1) (2023-06-21)
+
+
+### Bug Fixes
+
+* sonarr release profile required and ignored list ([391a45b](https://github.com/devopsarr/sonarr-go/commit/391a45bd3787971a7624224b1f922cd8ce8b2f03))
+
 ## [0.5.0](https://github.com/devopsarr/sonarr-go/compare/v0.4.1...v0.5.0) (2023-05-15)
 
 
