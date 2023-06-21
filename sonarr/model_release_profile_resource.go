@@ -19,8 +19,8 @@ type ReleaseProfileResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
-	Required interface{} `json:"required,omitempty"`
-	Ignored interface{} `json:"ignored,omitempty"`
+	Required []*string `json:"required,omitempty"`
+	Ignored []*string `json:"ignored,omitempty"`
 	IndexerId *int32 `json:"indexerId,omitempty"`
 	Tags []*int32 `json:"tags,omitempty"`
 }
@@ -149,9 +149,9 @@ func (o *ReleaseProfileResource) SetEnabled(v bool) {
 }
 
 // GetRequired returns the Required field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseProfileResource) GetRequired() interface{} {
+func (o *ReleaseProfileResource) GetRequired() []*string {
 	if o == nil {
-		var ret interface{}
+		var ret []*string
 		return ret
 	}
 	return o.Required
@@ -160,11 +160,11 @@ func (o *ReleaseProfileResource) GetRequired() interface{} {
 // GetRequiredOk returns a tuple with the Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseProfileResource) GetRequiredOk() (*interface{}, bool) {
+func (o *ReleaseProfileResource) GetRequiredOk() ([]*string, bool) {
 	if o == nil || isNil(o.Required) {
     return nil, false
 	}
-	return &o.Required, true
+	return o.Required, true
 }
 
 // HasRequired returns a boolean if a field has been set.
@@ -176,15 +176,15 @@ func (o *ReleaseProfileResource) HasRequired() bool {
 	return false
 }
 
-// SetRequired gets a reference to the given interface{} and assigns it to the Required field.
-func (o *ReleaseProfileResource) SetRequired(v interface{}) {
+// SetRequired gets a reference to the given []string and assigns it to the Required field.
+func (o *ReleaseProfileResource) SetRequired(v []*string) {
 	o.Required = v
 }
 
 // GetIgnored returns the Ignored field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseProfileResource) GetIgnored() interface{} {
+func (o *ReleaseProfileResource) GetIgnored() []*string {
 	if o == nil {
-		var ret interface{}
+		var ret []*string
 		return ret
 	}
 	return o.Ignored
@@ -193,11 +193,11 @@ func (o *ReleaseProfileResource) GetIgnored() interface{} {
 // GetIgnoredOk returns a tuple with the Ignored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseProfileResource) GetIgnoredOk() (*interface{}, bool) {
+func (o *ReleaseProfileResource) GetIgnoredOk() ([]*string, bool) {
 	if o == nil || isNil(o.Ignored) {
     return nil, false
 	}
-	return &o.Ignored, true
+	return o.Ignored, true
 }
 
 // HasIgnored returns a boolean if a field has been set.
@@ -209,8 +209,8 @@ func (o *ReleaseProfileResource) HasIgnored() bool {
 	return false
 }
 
-// SetIgnored gets a reference to the given interface{} and assigns it to the Ignored field.
-func (o *ReleaseProfileResource) SetIgnored(v interface{}) {
+// SetIgnored gets a reference to the given []string and assigns it to the Ignored field.
+func (o *ReleaseProfileResource) SetIgnored(v []*string) {
 	o.Ignored = v
 }
 

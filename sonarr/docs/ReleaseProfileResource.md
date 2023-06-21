@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Required** | Pointer to **interface{}** |  | [optional] 
-**Ignored** | Pointer to **interface{}** |  | [optional] 
+**Required** | Pointer to **[]string** |  | [optional] 
+**Ignored** | Pointer to **[]string** |  | [optional] 
 **IndexerId** | Pointer to **int32** |  | [optional] 
 **Tags** | Pointer to **[]int32** |  | [optional] 
 
@@ -118,20 +118,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetRequired
 
-`func (o *ReleaseProfileResource) GetRequired() interface{}`
+`func (o *ReleaseProfileResource) GetRequired() []string`
 
 GetRequired returns the Required field if non-nil, zero value otherwise.
 
 ### GetRequiredOk
 
-`func (o *ReleaseProfileResource) GetRequiredOk() (*interface{}, bool)`
+`func (o *ReleaseProfileResource) GetRequiredOk() (*[]string, bool)`
 
 GetRequiredOk returns a tuple with the Required field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequired
 
-`func (o *ReleaseProfileResource) SetRequired(v interface{})`
+`func (o *ReleaseProfileResource) SetRequired(v []string)`
 
 SetRequired sets Required field to given value.
 
@@ -153,20 +153,20 @@ HasRequired returns a boolean if a field has been set.
 UnsetRequired ensures that no value is present for Required, not even an explicit nil
 ### GetIgnored
 
-`func (o *ReleaseProfileResource) GetIgnored() interface{}`
+`func (o *ReleaseProfileResource) GetIgnored() []string`
 
 GetIgnored returns the Ignored field if non-nil, zero value otherwise.
 
 ### GetIgnoredOk
 
-`func (o *ReleaseProfileResource) GetIgnoredOk() (*interface{}, bool)`
+`func (o *ReleaseProfileResource) GetIgnoredOk() (*[]string, bool)`
 
 GetIgnoredOk returns a tuple with the Ignored field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIgnored
 
-`func (o *ReleaseProfileResource) SetIgnored(v interface{})`
+`func (o *ReleaseProfileResource) SetIgnored(v []string)`
 
 SetIgnored sets Ignored field to given value.
 
