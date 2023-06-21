@@ -153,7 +153,6 @@ Class | Method | HTTP request | Description
 *FileSystemApi* | [**GetFileSystem**](sonarr/docs/FileSystemApi.md#getfilesystem) | **Get** /api/v3/filesystem | 
 *FileSystemApi* | [**GetFileSystemMediafiles**](sonarr/docs/FileSystemApi.md#getfilesystemmediafiles) | **Get** /api/v3/filesystem/mediafiles | 
 *FileSystemApi* | [**GetFileSystemType**](sonarr/docs/FileSystemApi.md#getfilesystemtype) | **Get** /api/v3/filesystem/type | 
-*HealthApi* | [**GetHealthById**](sonarr/docs/HealthApi.md#gethealthbyid) | **Get** /api/v3/health/{id} | 
 *HealthApi* | [**ListHealth**](sonarr/docs/HealthApi.md#listhealth) | **Get** /api/v3/health | 
 *HistoryApi* | [**CreateHistoryFailedById**](sonarr/docs/HistoryApi.md#createhistoryfailedbyid) | **Post** /api/v3/history/failed/{id} | 
 *HistoryApi* | [**GetHistory**](sonarr/docs/HistoryApi.md#gethistory) | **Get** /api/v3/history | 
@@ -201,7 +200,6 @@ Class | Method | HTTP request | Description
 *LanguageProfileApi* | [**ListLanguageProfile**](sonarr/docs/LanguageProfileApi.md#listlanguageprofile) | **Get** /api/v3/languageprofile | 
 *LanguageProfileApi* | [**UpdateLanguageProfile**](sonarr/docs/LanguageProfileApi.md#updatelanguageprofile) | **Put** /api/v3/languageprofile/{id} | 
 *LanguageProfileSchemaApi* | [**GetLanguageprofileSchema**](sonarr/docs/LanguageProfileSchemaApi.md#getlanguageprofileschema) | **Get** /api/v3/languageprofile/schema | 
-*LanguageProfileSchemaApi* | [**GetLanguageprofileSchemaById**](sonarr/docs/LanguageProfileSchemaApi.md#getlanguageprofileschemabyid) | **Get** /api/v3/languageprofile/schema/{id} | 
 *LocalizationApi* | [**GetLocalization**](sonarr/docs/LocalizationApi.md#getlocalization) | **Get** /api/v3/localization | 
 *LocalizationApi* | [**GetLocalizationById**](sonarr/docs/LocalizationApi.md#getlocalizationbyid) | **Get** /api/v3/localization/{id} | 
 *LocalizationApi* | [**GetLocalizationLanguage**](sonarr/docs/LocalizationApi.md#getlocalizationlanguage) | **Get** /api/v3/localization/language | 
@@ -257,15 +255,11 @@ Class | Method | HTTP request | Description
 *QueueApi* | [**DeleteQueue**](sonarr/docs/QueueApi.md#deletequeue) | **Delete** /api/v3/queue/{id} | 
 *QueueApi* | [**DeleteQueueBulk**](sonarr/docs/QueueApi.md#deletequeuebulk) | **Delete** /api/v3/queue/bulk | 
 *QueueApi* | [**GetQueue**](sonarr/docs/QueueApi.md#getqueue) | **Get** /api/v3/queue | 
-*QueueApi* | [**GetQueueById**](sonarr/docs/QueueApi.md#getqueuebyid) | **Get** /api/v3/queue/{id} | 
 *QueueActionApi* | [**CreateQueueGrabBulk**](sonarr/docs/QueueActionApi.md#createqueuegrabbulk) | **Post** /api/v3/queue/grab/bulk | 
 *QueueActionApi* | [**CreateQueueGrabById**](sonarr/docs/QueueActionApi.md#createqueuegrabbyid) | **Post** /api/v3/queue/grab/{id} | 
-*QueueDetailsApi* | [**GetQueueDetailsById**](sonarr/docs/QueueDetailsApi.md#getqueuedetailsbyid) | **Get** /api/v3/queue/details/{id} | 
 *QueueDetailsApi* | [**ListQueueDetails**](sonarr/docs/QueueDetailsApi.md#listqueuedetails) | **Get** /api/v3/queue/details | 
 *QueueStatusApi* | [**GetQueueStatus**](sonarr/docs/QueueStatusApi.md#getqueuestatus) | **Get** /api/v3/queue/status | 
-*QueueStatusApi* | [**GetQueueStatusById**](sonarr/docs/QueueStatusApi.md#getqueuestatusbyid) | **Get** /api/v3/queue/status/{id} | 
 *ReleaseApi* | [**CreateRelease**](sonarr/docs/ReleaseApi.md#createrelease) | **Post** /api/v3/release | 
-*ReleaseApi* | [**GetReleaseById**](sonarr/docs/ReleaseApi.md#getreleasebyid) | **Get** /api/v3/release/{id} | 
 *ReleaseApi* | [**ListRelease**](sonarr/docs/ReleaseApi.md#listrelease) | **Get** /api/v3/release | 
 *ReleaseProfileApi* | [**CreateReleaseProfile**](sonarr/docs/ReleaseProfileApi.md#createreleaseprofile) | **Post** /api/v3/releaseprofile | 
 *ReleaseProfileApi* | [**DeleteReleaseProfile**](sonarr/docs/ReleaseProfileApi.md#deletereleaseprofile) | **Delete** /api/v3/releaseprofile/{id} | 
@@ -273,7 +267,6 @@ Class | Method | HTTP request | Description
 *ReleaseProfileApi* | [**ListReleaseProfile**](sonarr/docs/ReleaseProfileApi.md#listreleaseprofile) | **Get** /api/v3/releaseprofile | 
 *ReleaseProfileApi* | [**UpdateReleaseProfile**](sonarr/docs/ReleaseProfileApi.md#updatereleaseprofile) | **Put** /api/v3/releaseprofile/{id} | 
 *ReleasePushApi* | [**CreateReleasePush**](sonarr/docs/ReleasePushApi.md#createreleasepush) | **Post** /api/v3/release/push | 
-*ReleasePushApi* | [**GetReleasePushById**](sonarr/docs/ReleasePushApi.md#getreleasepushbyid) | **Get** /api/v3/release/push/{id} | 
 *RemotePathMappingApi* | [**CreateRemotePathMapping**](sonarr/docs/RemotePathMappingApi.md#createremotepathmapping) | **Post** /api/v3/remotepathmapping | 
 *RemotePathMappingApi* | [**DeleteRemotePathMapping**](sonarr/docs/RemotePathMappingApi.md#deleteremotepathmapping) | **Delete** /api/v3/remotepathmapping/{id} | 
 *RemotePathMappingApi* | [**GetRemotePathMappingById**](sonarr/docs/RemotePathMappingApi.md#getremotepathmappingbyid) | **Get** /api/v3/remotepathmapping/{id} | 

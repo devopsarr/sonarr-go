@@ -977,13 +977,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/DownloadClientResource'
           description: Success
@@ -1052,13 +1046,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/DownloadClientResource'
           description: Success
@@ -1087,13 +1075,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/DownloadClientResource'
           description: Success
@@ -1567,27 +1549,6 @@ paths:
           description: Success
       tags:
       - Health
-  /api/v3/health/{id}:
-    get:
-      operationId: GetHealthById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HealthResource'
-          description: Success
-      tags:
-      - Health
   /api/v3/history:
     get:
       operationId: GetHistory
@@ -1840,13 +1801,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/ImportListResource'
           description: Success
@@ -1915,13 +1870,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/ImportListResource'
           description: Success
@@ -1950,13 +1899,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/ImportListResource'
           description: Success
@@ -2154,13 +2097,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/IndexerResource'
           description: Success
@@ -2229,13 +2166,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/IndexerResource'
           description: Success
@@ -2264,13 +2195,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/IndexerResource'
           description: Success
@@ -2556,27 +2481,6 @@ paths:
           description: Success
       tags:
       - LanguageProfileSchema
-  /api/v3/languageprofile/schema/{id}:
-    get:
-      operationId: GetLanguageprofileSchemaById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/LanguageProfileResource'
-          description: Success
-      tags:
-      - LanguageProfileSchema
   /api/v3/localization:
     get:
       operationId: GetLocalization
@@ -2853,13 +2757,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/MetadataResource'
           description: Success
@@ -2928,13 +2826,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/MetadataResource'
           description: Success
@@ -2963,13 +2855,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/MetadataResource'
           description: Success
@@ -3327,13 +3213,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/NotificationResource'
           description: Success
@@ -3402,13 +3282,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/NotificationResource'
           description: Success
@@ -3437,13 +3311,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/NotificationResource'
           description: Success
@@ -3804,26 +3672,6 @@ paths:
           description: Success
       tags:
       - Queue
-    get:
-      operationId: GetQueueById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/QueueResource'
-          description: Success
-      tags:
-      - Queue
   /api/v3/queue/bulk:
     delete:
       operationId: DeleteQueueBulk
@@ -3976,51 +3824,9 @@ paths:
           description: Success
       tags:
       - QueueDetails
-  /api/v3/queue/details/{id}:
-    get:
-      operationId: GetQueueDetailsById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/QueueResource'
-          description: Success
-      tags:
-      - QueueDetails
   /api/v3/queue/status:
     get:
       operationId: GetQueueStatus
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/QueueStatusResource'
-          description: Success
-      tags:
-      - QueueStatus
-  /api/v3/queue/status/{id}:
-    get:
-      operationId: GetQueueStatusById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
       responses:
         "200":
           content:
@@ -4078,27 +3884,6 @@ paths:
               $ref: '#/components/schemas/ReleaseResource'
       responses:
         "200":
-          description: Success
-      tags:
-      - Release
-  /api/v3/release/{id}:
-    get:
-      operationId: GetReleaseById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReleaseResource'
           description: Success
       tags:
       - Release
@@ -4253,27 +4038,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/ReleaseResource'
                 type: array
-          description: Success
-      tags:
-      - ReleasePush
-  /api/v3/release/push/{id}:
-    get:
-      operationId: GetReleasePushById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReleaseResource'
           description: Success
       tags:
       - ReleasePush
@@ -17371,10 +17135,10 @@ components:
               episodeFileCount: 5
           unverifiedSceneNumbering: true
           endTime: 2000-01-23T04:56:07.000+00:00
-        episodeId: 1
+        episodeId: 2
         title: title
-        seriesId: 6
-        sizeleft: 2.3021358869347655
+        seriesId: 5
+        sizeleft: 3.616076749251911
         statusMessages:
         - messages:
           - messages
@@ -17386,7 +17150,7 @@ components:
           title: title
         protocol: null
         outputPath: outputPath
-        id: 0
+        id: 5
         downloadClient: downloadClient
         languages:
         - name: name
@@ -17633,7 +17397,7 @@ components:
             infoLink: infoLink
         errorMessage: errorMessage
         episodeHasFile: true
-        seasonNumber: 5
+        seasonNumber: 7
         indexer: indexer
         timeleft: timeleft
         trackedDownloadState: null
@@ -17648,7 +17412,7 @@ components:
             real: 4
             version: 2
             isRepack: true
-        size: 5.637376656633329
+        size: 9.301444243932576
         series:
           profileName: profileName
           tvMazeId: 6
@@ -18289,10 +18053,10 @@ components:
                 episodeFileCount: 5
             unverifiedSceneNumbering: true
             endTime: 2000-01-23T04:56:07.000+00:00
-          episodeId: 1
+          episodeId: 2
           title: title
-          seriesId: 6
-          sizeleft: 2.3021358869347655
+          seriesId: 5
+          sizeleft: 3.616076749251911
           statusMessages:
           - messages:
             - messages
@@ -18304,7 +18068,7 @@ components:
             title: title
           protocol: null
           outputPath: outputPath
-          id: 0
+          id: 5
           downloadClient: downloadClient
           languages:
           - name: name
@@ -18551,7 +18315,7 @@ components:
               infoLink: infoLink
           errorMessage: errorMessage
           episodeHasFile: true
-          seasonNumber: 5
+          seasonNumber: 7
           indexer: indexer
           timeleft: timeleft
           trackedDownloadState: null
@@ -18566,7 +18330,7 @@ components:
               real: 4
               version: 2
               isRepack: true
-          size: 5.637376656633329
+          size: 9.301444243932576
           series:
             profileName: profileName
             tvMazeId: 6
@@ -19121,10 +18885,10 @@ components:
                 episodeFileCount: 5
             unverifiedSceneNumbering: true
             endTime: 2000-01-23T04:56:07.000+00:00
-          episodeId: 1
+          episodeId: 2
           title: title
-          seriesId: 6
-          sizeleft: 2.3021358869347655
+          seriesId: 5
+          sizeleft: 3.616076749251911
           statusMessages:
           - messages:
             - messages
@@ -19136,7 +18900,7 @@ components:
             title: title
           protocol: null
           outputPath: outputPath
-          id: 0
+          id: 5
           downloadClient: downloadClient
           languages:
           - name: name
@@ -19383,7 +19147,7 @@ components:
               infoLink: infoLink
           errorMessage: errorMessage
           episodeHasFile: true
-          seasonNumber: 5
+          seasonNumber: 7
           indexer: indexer
           timeleft: timeleft
           trackedDownloadState: null
@@ -19398,7 +19162,7 @@ components:
               real: 4
               version: 2
               isRepack: true
-          size: 5.637376656633329
+          size: 9.301444243932576
           series:
             profileName: profileName
             tvMazeId: 6
