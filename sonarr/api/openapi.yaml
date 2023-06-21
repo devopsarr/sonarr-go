@@ -19410,12 +19410,16 @@ components:
     ReleaseProfileResource:
       additionalProperties: false
       example:
-        ignored: ""
+        ignored:
+        - ignored
+        - ignored
         name: name
         id: 0
         indexerId: 6
         enabled: true
-        required: ""
+        required:
+        - required
+        - required
         tags:
         - 1
         - 1
@@ -19429,9 +19433,15 @@ components:
         enabled:
           type: boolean
         required:
+          items:
+            type: string
           nullable: true
+          type: array
         ignored:
+          items:
+            type: string
           nullable: true
+          type: array
         indexerId:
           format: int32
           type: integer
