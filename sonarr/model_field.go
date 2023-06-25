@@ -21,6 +21,7 @@ type Field struct {
 	Label NullableString `json:"label,omitempty"`
 	Unit NullableString `json:"unit,omitempty"`
 	HelpText NullableString `json:"helpText,omitempty"`
+	HelpTextWarning NullableString `json:"helpTextWarning,omitempty"`
 	HelpLink NullableString `json:"helpLink,omitempty"`
 	Value interface{} `json:"value,omitempty"`
 	Type NullableString `json:"type,omitempty"`
@@ -248,6 +249,48 @@ func (o *Field) SetHelpTextNil() {
 // UnsetHelpText ensures that no value is present for HelpText, not even an explicit nil
 func (o *Field) UnsetHelpText() {
 	o.HelpText.Unset()
+}
+
+// GetHelpTextWarning returns the HelpTextWarning field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Field) GetHelpTextWarning() string {
+	if o == nil || isNil(o.HelpTextWarning.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.HelpTextWarning.Get()
+}
+
+// GetHelpTextWarningOk returns a tuple with the HelpTextWarning field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Field) GetHelpTextWarningOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.HelpTextWarning.Get(), o.HelpTextWarning.IsSet()
+}
+
+// HasHelpTextWarning returns a boolean if a field has been set.
+func (o *Field) HasHelpTextWarning() bool {
+	if o != nil && o.HelpTextWarning.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetHelpTextWarning gets a reference to the given NullableString and assigns it to the HelpTextWarning field.
+func (o *Field) SetHelpTextWarning(v string) {
+	o.HelpTextWarning.Set(&v)
+}
+// SetHelpTextWarningNil sets the value for HelpTextWarning to be an explicit nil
+func (o *Field) SetHelpTextWarningNil() {
+	o.HelpTextWarning.Set(nil)
+}
+
+// UnsetHelpTextWarning ensures that no value is present for HelpTextWarning, not even an explicit nil
+func (o *Field) UnsetHelpTextWarning() {
+	o.HelpTextWarning.Unset()
 }
 
 // GetHelpLink returns the HelpLink field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -648,6 +691,9 @@ func (o Field) MarshalJSON() ([]byte, error) {
 	}
 	if o.HelpText.IsSet() {
 		toSerialize["helpText"] = o.HelpText.Get()
+	}
+	if o.HelpTextWarning.IsSet() {
+		toSerialize["helpTextWarning"] = o.HelpTextWarning.Get()
 	}
 	if o.HelpLink.IsSet() {
 		toSerialize["helpLink"] = o.HelpLink.Get()

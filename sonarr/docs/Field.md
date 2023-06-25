@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Label** | Pointer to **NullableString** |  | [optional] 
 **Unit** | Pointer to **NullableString** |  | [optional] 
 **HelpText** | Pointer to **NullableString** |  | [optional] 
+**HelpTextWarning** | Pointer to **NullableString** |  | [optional] 
 **HelpLink** | Pointer to **NullableString** |  | [optional] 
 **Value** | Pointer to **interface{}** |  | [optional] 
 **Type** | Pointer to **NullableString** |  | [optional] 
@@ -204,6 +205,41 @@ HasHelpText returns a boolean if a field has been set.
 `func (o *Field) UnsetHelpText()`
 
 UnsetHelpText ensures that no value is present for HelpText, not even an explicit nil
+### GetHelpTextWarning
+
+`func (o *Field) GetHelpTextWarning() string`
+
+GetHelpTextWarning returns the HelpTextWarning field if non-nil, zero value otherwise.
+
+### GetHelpTextWarningOk
+
+`func (o *Field) GetHelpTextWarningOk() (*string, bool)`
+
+GetHelpTextWarningOk returns a tuple with the HelpTextWarning field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHelpTextWarning
+
+`func (o *Field) SetHelpTextWarning(v string)`
+
+SetHelpTextWarning sets HelpTextWarning field to given value.
+
+### HasHelpTextWarning
+
+`func (o *Field) HasHelpTextWarning() bool`
+
+HasHelpTextWarning returns a boolean if a field has been set.
+
+### SetHelpTextWarningNil
+
+`func (o *Field) SetHelpTextWarningNil(b bool)`
+
+ SetHelpTextWarningNil sets the value for HelpTextWarning to be an explicit nil
+
+### UnsetHelpTextWarning
+`func (o *Field) UnsetHelpTextWarning()`
+
+UnsetHelpTextWarning ensures that no value is present for HelpTextWarning, not even an explicit nil
 ### GetHelpLink
 
 `func (o *Field) GetHelpLink() string`
