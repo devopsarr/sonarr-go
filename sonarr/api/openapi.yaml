@@ -2832,35 +2832,6 @@ paths:
           description: Success
       tags:
       - Metadata
-  /api/v3/metadata/bulk:
-    delete:
-      operationId: DeleteMetadataBulk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MetadataBulkResource'
-      responses:
-        "200":
-          description: Success
-      tags:
-      - Metadata
-    put:
-      operationId: PutMetadataBulk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MetadataBulkResource'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
-          description: Success
-      tags:
-      - Metadata
   /api/v3/metadata/schema:
     get:
       operationId: ListMetadataSchema
@@ -3279,35 +3250,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/NotificationResource'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
-          description: Success
-      tags:
-      - Notification
-  /api/v3/notification/bulk:
-    delete:
-      operationId: DeleteNotificationBulk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/NotificationBulkResource'
-      responses:
-        "200":
-          description: Success
-      tags:
-      - Notification
-    put:
-      operationId: PutNotificationBulk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/NotificationBulkResource'
       responses:
         "200":
           content:
@@ -7477,6 +7419,7 @@ components:
             required: true
             infoLink: infoLink
         seasonNumber: 2
+        customFormatScore: 7
         seriesId: 3
         dateAdded: 2000-01-23T04:56:07.000+00:00
         quality:
@@ -7497,15 +7440,15 @@ components:
           subtitles: subtitles
           audioLanguages: audioLanguages
           videoDynamicRange: videoDynamicRange
-          videoBitDepth: 6
-          audioStreamCount: 1
+          videoBitDepth: 7
+          audioStreamCount: 6
           audioCodec: audioCodec
           resolution: resolution
           audioBitrate: 1
-          videoFps: 1.1730742509559433
-          videoBitrate: 7
-          audioChannels: 1.0246457001441578
-          id: 7
+          videoFps: 4.965218492984954
+          videoBitrate: 1
+          audioChannels: 1.4894159098541704
+          id: 1
           videoDynamicRangeType: videoDynamicRangeType
           runTime: runTime
           scanType: scanType
@@ -7552,6 +7495,9 @@ components:
             $ref: '#/components/schemas/CustomFormatResource'
           nullable: true
           type: array
+        customFormatScore:
+          format: int32
+          type: integer
         mediaInfo:
           $ref: '#/components/schemas/MediaInfoResource'
         qualityCutoffNotMet:
@@ -7571,7 +7517,7 @@ components:
     EpisodeResource:
       additionalProperties: false
       example:
-        sceneSeasonNumber: 9
+        sceneSeasonNumber: 6
         airDateUtc: 2000-01-23T04:56:07.000+00:00
         airDate: airDate
         episodeFileId: 5
@@ -7580,10 +7526,10 @@ components:
         seriesId: 6
         monitored: true
         seriesTitle: seriesTitle
-        absoluteEpisodeNumber: 4
+        absoluteEpisodeNumber: 5
         grabbed: true
         id: 0
-        sceneAbsoluteEpisodeNumber: 5
+        sceneAbsoluteEpisodeNumber: 9
         overview: overview
         images:
         - coverType: null
@@ -7847,6 +7793,7 @@ components:
               required: true
               infoLink: infoLink
           seasonNumber: 2
+          customFormatScore: 7
           seriesId: 3
           dateAdded: 2000-01-23T04:56:07.000+00:00
           quality:
@@ -7867,15 +7814,15 @@ components:
             subtitles: subtitles
             audioLanguages: audioLanguages
             videoDynamicRange: videoDynamicRange
-            videoBitDepth: 6
-            audioStreamCount: 1
+            videoBitDepth: 7
+            audioStreamCount: 6
             audioCodec: audioCodec
             resolution: resolution
             audioBitrate: 1
-            videoFps: 1.1730742509559433
-            videoBitrate: 7
-            audioChannels: 1.0246457001441578
-            id: 7
+            videoFps: 4.965218492984954
+            videoBitrate: 1
+            audioChannels: 1.4894159098541704
+            id: 1
             videoDynamicRangeType: videoDynamicRangeType
             runTime: runTime
             scanType: scanType
@@ -8096,7 +8043,7 @@ components:
         totalRecords: 1
         sortKey: sortKey
         records:
-        - sceneSeasonNumber: 9
+        - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -8105,10 +8052,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -8372,6 +8319,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -8392,15 +8340,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -8534,7 +8482,7 @@ components:
               episodeFileCount: 5
           unverifiedSceneNumbering: true
           endTime: 2000-01-23T04:56:07.000+00:00
-        - sceneSeasonNumber: 9
+        - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -8543,10 +8491,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -8810,6 +8758,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -8830,15 +8779,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -9399,7 +9348,7 @@ components:
         sourceTitle: sourceTitle
         downloadId: downloadId
         episode:
-          sceneSeasonNumber: 9
+          sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -9408,10 +9357,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -9675,6 +9624,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -9695,15 +9645,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -10286,7 +10236,7 @@ components:
           sourceTitle: sourceTitle
           downloadId: downloadId
           episode:
-            sceneSeasonNumber: 9
+            sceneSeasonNumber: 6
             airDateUtc: 2000-01-23T04:56:07.000+00:00
             airDate: airDate
             episodeFileId: 5
@@ -10295,10 +10245,10 @@ components:
             seriesId: 6
             monitored: true
             seriesTitle: seriesTitle
-            absoluteEpisodeNumber: 4
+            absoluteEpisodeNumber: 5
             grabbed: true
             id: 0
-            sceneAbsoluteEpisodeNumber: 5
+            sceneAbsoluteEpisodeNumber: 9
             overview: overview
             images:
             - coverType: null
@@ -10562,6 +10512,7 @@ components:
                   required: true
                   infoLink: infoLink
               seasonNumber: 2
+              customFormatScore: 7
               seriesId: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
@@ -10582,15 +10533,15 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoDynamicRange: videoDynamicRange
-                videoBitDepth: 6
-                audioStreamCount: 1
+                videoBitDepth: 7
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
                 audioBitrate: 1
-                videoFps: 1.1730742509559433
-                videoBitrate: 7
-                audioChannels: 1.0246457001441578
-                id: 7
+                videoFps: 4.965218492984954
+                videoBitrate: 1
+                audioChannels: 1.4894159098541704
+                id: 1
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -11117,7 +11068,7 @@ components:
           sourceTitle: sourceTitle
           downloadId: downloadId
           episode:
-            sceneSeasonNumber: 9
+            sceneSeasonNumber: 6
             airDateUtc: 2000-01-23T04:56:07.000+00:00
             airDate: airDate
             episodeFileId: 5
@@ -11126,10 +11077,10 @@ components:
             seriesId: 6
             monitored: true
             seriesTitle: seriesTitle
-            absoluteEpisodeNumber: 4
+            absoluteEpisodeNumber: 5
             grabbed: true
             id: 0
-            sceneAbsoluteEpisodeNumber: 5
+            sceneAbsoluteEpisodeNumber: 9
             overview: overview
             images:
             - coverType: null
@@ -11393,6 +11344,7 @@ components:
                   required: true
                   infoLink: infoLink
               seasonNumber: 2
+              customFormatScore: 7
               seriesId: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
@@ -11413,15 +11365,15 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoDynamicRange: videoDynamicRange
-                videoBitDepth: 6
-                audioStreamCount: 1
+                videoBitDepth: 7
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
                 audioBitrate: 1
-                videoFps: 1.1730742509559433
-                videoBitrate: 7
-                audioChannels: 1.0246457001441578
-                id: 7
+                videoFps: 4.965218492984954
+                videoBitrate: 1
+                audioChannels: 1.4894159098541704
+                id: 1
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -12517,7 +12469,7 @@ components:
         seasonNumber: 1
         seriesId: 6
         episodes:
-        - sceneSeasonNumber: 9
+        - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -12526,10 +12478,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -12793,6 +12745,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -12813,15 +12766,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -12955,7 +12908,7 @@ components:
               episodeFileCount: 5
           unverifiedSceneNumbering: true
           endTime: 2000-01-23T04:56:07.000+00:00
-        - sceneSeasonNumber: 9
+        - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -12964,10 +12917,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -13231,6 +13184,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -13251,15 +13205,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -13848,7 +13802,7 @@ components:
         folderName: folderName
         qualityWeight: 5
         episodes:
-        - sceneSeasonNumber: 9
+        - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -13857,10 +13811,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -14124,6 +14078,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -14144,15 +14099,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -14286,7 +14241,7 @@ components:
               episodeFileCount: 5
           unverifiedSceneNumbering: true
           endTime: 2000-01-23T04:56:07.000+00:00
-        - sceneSeasonNumber: 9
+        - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -14295,10 +14250,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -14562,6 +14517,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -14582,15 +14538,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -14818,15 +14774,15 @@ components:
         subtitles: subtitles
         audioLanguages: audioLanguages
         videoDynamicRange: videoDynamicRange
-        videoBitDepth: 6
-        audioStreamCount: 1
+        videoBitDepth: 7
+        audioStreamCount: 6
         audioCodec: audioCodec
         resolution: resolution
         audioBitrate: 1
-        videoFps: 1.1730742509559433
-        videoBitrate: 7
-        audioChannels: 1.0246457001441578
-        id: 7
+        videoFps: 4.965218492984954
+        videoBitrate: 1
+        audioChannels: 1.4894159098541704
+        id: 1
         videoDynamicRangeType: videoDynamicRangeType
         runTime: runTime
         scanType: scanType
@@ -14956,32 +14912,6 @@ components:
           type: string
         enableMediaInfo:
           type: boolean
-      type: object
-    MetadataBulkResource:
-      additionalProperties: false
-      example:
-        applyTags: null
-        ids:
-        - 0
-        - 0
-        tags:
-        - 6
-        - 6
-      properties:
-        ids:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        tags:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        applyTags:
-          $ref: '#/components/schemas/ApplyTags'
       type: object
     MetadataResource:
       additionalProperties: false
@@ -15186,32 +15116,6 @@ components:
         numberStyle:
           nullable: true
           type: string
-      type: object
-    NotificationBulkResource:
-      additionalProperties: false
-      example:
-        applyTags: null
-        ids:
-        - 0
-        - 0
-        tags:
-        - 6
-        - 6
-      properties:
-        ids:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        tags:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        applyTags:
-          $ref: '#/components/schemas/ApplyTags'
       type: object
     NotificationResource:
       additionalProperties: false
@@ -15468,6 +15372,11 @@ components:
           isPartialSeason: true
           isPossibleSceneSeasonSpecial: true
           releaseGroup: releaseGroup
+        languages:
+        - name: name
+          id: 7
+        - name: name
+          id: 7
         series:
           profileName: profileName
           tvMazeId: 6
@@ -15589,10 +15498,256 @@ components:
             percentOfEpisodes: 7.143538047012306
             sizeOnDisk: 3
             episodeFileCount: 5
+        customFormats:
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 7
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 7
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
         id: 0
         title: title
+        customFormatScore: 3
         episodes:
-        - sceneSeasonNumber: 9
+        - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -15601,10 +15756,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -15868,6 +16023,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -15888,15 +16044,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -16030,7 +16186,7 @@ components:
               episodeFileCount: 5
           unverifiedSceneNumbering: true
           endTime: 2000-01-23T04:56:07.000+00:00
-        - sceneSeasonNumber: 9
+        - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -16039,10 +16195,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -16306,6 +16462,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -16326,15 +16483,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -16484,6 +16641,19 @@ components:
             $ref: '#/components/schemas/EpisodeResource'
           nullable: true
           type: array
+        languages:
+          items:
+            $ref: '#/components/schemas/Language'
+          nullable: true
+          type: array
+        customFormats:
+          items:
+            $ref: '#/components/schemas/CustomFormatResource'
+          nullable: true
+          type: array
+        customFormatScore:
+          format: int32
+          type: integer
       type: object
     ParsedEpisodeInfo:
       additionalProperties: false
@@ -16891,7 +17061,7 @@ components:
       example:
         downloadId: downloadId
         episode:
-          sceneSeasonNumber: 9
+          sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
           airDate: airDate
           episodeFileId: 5
@@ -16900,10 +17070,10 @@ components:
           seriesId: 6
           monitored: true
           seriesTitle: seriesTitle
-          absoluteEpisodeNumber: 4
+          absoluteEpisodeNumber: 5
           grabbed: true
           id: 0
-          sceneAbsoluteEpisodeNumber: 5
+          sceneAbsoluteEpisodeNumber: 9
           overview: overview
           images:
           - coverType: null
@@ -17167,6 +17337,7 @@ components:
                 required: true
                 infoLink: infoLink
             seasonNumber: 2
+            customFormatScore: 7
             seriesId: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
@@ -17187,15 +17358,15 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoDynamicRange: videoDynamicRange
-              videoBitDepth: 6
-              audioStreamCount: 1
+              videoBitDepth: 7
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
               audioBitrate: 1
-              videoFps: 1.1730742509559433
-              videoBitrate: 7
-              audioChannels: 1.0246457001441578
-              id: 7
+              videoFps: 4.965218492984954
+              videoBitrate: 1
+              audioChannels: 1.4894159098541704
+              id: 1
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -17332,7 +17503,7 @@ components:
         episodeId: 2
         title: title
         seriesId: 5
-        sizeleft: 3.616076749251911
+        sizeleft: 2.027123023002322
         statusMessages:
         - messages:
           - messages
@@ -17603,6 +17774,7 @@ components:
         indexer: indexer
         timeleft: timeleft
         trackedDownloadState: null
+        customFormatScore: 9
         trackedDownloadStatus: null
         quality:
           quality:
@@ -17614,7 +17786,7 @@ components:
             real: 4
             version: 2
             isRepack: true
-        size: 9.301444243932576
+        size: 3.616076749251911
         series:
           profileName: profileName
           tvMazeId: 6
@@ -17769,6 +17941,9 @@ components:
             $ref: '#/components/schemas/CustomFormatResource'
           nullable: true
           type: array
+        customFormatScore:
+          format: int32
+          type: integer
         size:
           format: double
           type: number
@@ -17825,7 +18000,7 @@ components:
         records:
         - downloadId: downloadId
           episode:
-            sceneSeasonNumber: 9
+            sceneSeasonNumber: 6
             airDateUtc: 2000-01-23T04:56:07.000+00:00
             airDate: airDate
             episodeFileId: 5
@@ -17834,10 +18009,10 @@ components:
             seriesId: 6
             monitored: true
             seriesTitle: seriesTitle
-            absoluteEpisodeNumber: 4
+            absoluteEpisodeNumber: 5
             grabbed: true
             id: 0
-            sceneAbsoluteEpisodeNumber: 5
+            sceneAbsoluteEpisodeNumber: 9
             overview: overview
             images:
             - coverType: null
@@ -18101,6 +18276,7 @@ components:
                   required: true
                   infoLink: infoLink
               seasonNumber: 2
+              customFormatScore: 7
               seriesId: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
@@ -18121,15 +18297,15 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoDynamicRange: videoDynamicRange
-                videoBitDepth: 6
-                audioStreamCount: 1
+                videoBitDepth: 7
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
                 audioBitrate: 1
-                videoFps: 1.1730742509559433
-                videoBitrate: 7
-                audioChannels: 1.0246457001441578
-                id: 7
+                videoFps: 4.965218492984954
+                videoBitrate: 1
+                audioChannels: 1.4894159098541704
+                id: 1
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -18266,7 +18442,7 @@ components:
           episodeId: 2
           title: title
           seriesId: 5
-          sizeleft: 3.616076749251911
+          sizeleft: 2.027123023002322
           statusMessages:
           - messages:
             - messages
@@ -18537,6 +18713,7 @@ components:
           indexer: indexer
           timeleft: timeleft
           trackedDownloadState: null
+          customFormatScore: 9
           trackedDownloadStatus: null
           quality:
             quality:
@@ -18548,7 +18725,7 @@ components:
               real: 4
               version: 2
               isRepack: true
-          size: 9.301444243932576
+          size: 3.616076749251911
           series:
             profileName: profileName
             tvMazeId: 6
@@ -18673,7 +18850,7 @@ components:
           status: status
         - downloadId: downloadId
           episode:
-            sceneSeasonNumber: 9
+            sceneSeasonNumber: 6
             airDateUtc: 2000-01-23T04:56:07.000+00:00
             airDate: airDate
             episodeFileId: 5
@@ -18682,10 +18859,10 @@ components:
             seriesId: 6
             monitored: true
             seriesTitle: seriesTitle
-            absoluteEpisodeNumber: 4
+            absoluteEpisodeNumber: 5
             grabbed: true
             id: 0
-            sceneAbsoluteEpisodeNumber: 5
+            sceneAbsoluteEpisodeNumber: 9
             overview: overview
             images:
             - coverType: null
@@ -18949,6 +19126,7 @@ components:
                   required: true
                   infoLink: infoLink
               seasonNumber: 2
+              customFormatScore: 7
               seriesId: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
@@ -18969,15 +19147,15 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoDynamicRange: videoDynamicRange
-                videoBitDepth: 6
-                audioStreamCount: 1
+                videoBitDepth: 7
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
                 audioBitrate: 1
-                videoFps: 1.1730742509559433
-                videoBitrate: 7
-                audioChannels: 1.0246457001441578
-                id: 7
+                videoFps: 4.965218492984954
+                videoBitrate: 1
+                audioChannels: 1.4894159098541704
+                id: 1
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -19114,7 +19292,7 @@ components:
           episodeId: 2
           title: title
           seriesId: 5
-          sizeleft: 3.616076749251911
+          sizeleft: 2.027123023002322
           statusMessages:
           - messages:
             - messages
@@ -19385,6 +19563,7 @@ components:
           indexer: indexer
           timeleft: timeleft
           trackedDownloadState: null
+          customFormatScore: 9
           trackedDownloadStatus: null
           quality:
             quality:
@@ -19396,7 +19575,7 @@ components:
               real: 4
               version: 2
               isRepack: true
-          size: 9.301444243932576
+          size: 3.616076749251911
           series:
             profileName: profileName
             tvMazeId: 6
@@ -21128,16 +21307,19 @@ components:
         - 5
         - 5
         autoTagIds:
-        - 7
-        - 7
+        - 9
+        - 9
         id: 0
         label: label
+        downloadClientIds:
+        - 7
+        - 7
         importListIds:
         - 1
         - 1
         seriesIds:
-        - 9
-        - 9
+        - 3
+        - 3
         delayProfileIds:
         - 6
         - 6
@@ -21173,6 +21355,12 @@ components:
           nullable: true
           type: array
         indexerIds:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        downloadClientIds:
           items:
             format: int32
             type: integer

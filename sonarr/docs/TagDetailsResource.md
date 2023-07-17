@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **NotificationIds** | Pointer to **[]int32** |  | [optional] 
 **RestrictionIds** | Pointer to **[]int32** |  | [optional] 
 **IndexerIds** | Pointer to **[]int32** |  | [optional] 
+**DownloadClientIds** | Pointer to **[]int32** |  | [optional] 
 **AutoTagIds** | Pointer to **[]int32** |  | [optional] 
 **SeriesIds** | Pointer to **[]int32** |  | [optional] 
 
@@ -268,6 +269,41 @@ HasIndexerIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetIndexerIds()`
 
 UnsetIndexerIds ensures that no value is present for IndexerIds, not even an explicit nil
+### GetDownloadClientIds
+
+`func (o *TagDetailsResource) GetDownloadClientIds() []int32`
+
+GetDownloadClientIds returns the DownloadClientIds field if non-nil, zero value otherwise.
+
+### GetDownloadClientIdsOk
+
+`func (o *TagDetailsResource) GetDownloadClientIdsOk() (*[]int32, bool)`
+
+GetDownloadClientIdsOk returns a tuple with the DownloadClientIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadClientIds
+
+`func (o *TagDetailsResource) SetDownloadClientIds(v []int32)`
+
+SetDownloadClientIds sets DownloadClientIds field to given value.
+
+### HasDownloadClientIds
+
+`func (o *TagDetailsResource) HasDownloadClientIds() bool`
+
+HasDownloadClientIds returns a boolean if a field has been set.
+
+### SetDownloadClientIdsNil
+
+`func (o *TagDetailsResource) SetDownloadClientIdsNil(b bool)`
+
+ SetDownloadClientIdsNil sets the value for DownloadClientIds to be an explicit nil
+
+### UnsetDownloadClientIds
+`func (o *TagDetailsResource) UnsetDownloadClientIds()`
+
+UnsetDownloadClientIds ensures that no value is present for DownloadClientIds, not even an explicit nil
 ### GetAutoTagIds
 
 `func (o *TagDetailsResource) GetAutoTagIds() []int32`

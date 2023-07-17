@@ -21,6 +21,9 @@ type ParseResource struct {
 	ParsedEpisodeInfo *ParsedEpisodeInfo `json:"parsedEpisodeInfo,omitempty"`
 	Series *SeriesResource `json:"series,omitempty"`
 	Episodes []*EpisodeResource `json:"episodes,omitempty"`
+	Languages []*Language `json:"languages,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 }
 
 // NewParseResource instantiates a new ParseResource object
@@ -211,6 +214,104 @@ func (o *ParseResource) SetEpisodes(v []*EpisodeResource) {
 	o.Episodes = v
 }
 
+// GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ParseResource) GetLanguages() []*Language {
+	if o == nil {
+		var ret []*Language
+		return ret
+	}
+	return o.Languages
+}
+
+// GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ParseResource) GetLanguagesOk() ([]*Language, bool) {
+	if o == nil || isNil(o.Languages) {
+    return nil, false
+	}
+	return o.Languages, true
+}
+
+// HasLanguages returns a boolean if a field has been set.
+func (o *ParseResource) HasLanguages() bool {
+	if o != nil && isNil(o.Languages) {
+		return true
+	}
+
+	return false
+}
+
+// SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
+func (o *ParseResource) SetLanguages(v []*Language) {
+	o.Languages = v
+}
+
+// GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ParseResource) GetCustomFormats() []*CustomFormatResource {
+	if o == nil {
+		var ret []*CustomFormatResource
+		return ret
+	}
+	return o.CustomFormats
+}
+
+// GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ParseResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
+	if o == nil || isNil(o.CustomFormats) {
+    return nil, false
+	}
+	return o.CustomFormats, true
+}
+
+// HasCustomFormats returns a boolean if a field has been set.
+func (o *ParseResource) HasCustomFormats() bool {
+	if o != nil && isNil(o.CustomFormats) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
+func (o *ParseResource) SetCustomFormats(v []*CustomFormatResource) {
+	o.CustomFormats = v
+}
+
+// GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
+func (o *ParseResource) GetCustomFormatScore() int32 {
+	if o == nil || isNil(o.CustomFormatScore) {
+		var ret int32
+		return ret
+	}
+	return *o.CustomFormatScore
+}
+
+// GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ParseResource) GetCustomFormatScoreOk() (*int32, bool) {
+	if o == nil || isNil(o.CustomFormatScore) {
+    return nil, false
+	}
+	return o.CustomFormatScore, true
+}
+
+// HasCustomFormatScore returns a boolean if a field has been set.
+func (o *ParseResource) HasCustomFormatScore() bool {
+	if o != nil && !isNil(o.CustomFormatScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormatScore gets a reference to the given int32 and assigns it to the CustomFormatScore field.
+func (o *ParseResource) SetCustomFormatScore(v int32) {
+	o.CustomFormatScore = &v
+}
+
 func (o ParseResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -227,6 +328,15 @@ func (o ParseResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.Episodes != nil {
 		toSerialize["episodes"] = o.Episodes
+	}
+	if o.Languages != nil {
+		toSerialize["languages"] = o.Languages
+	}
+	if o.CustomFormats != nil {
+		toSerialize["customFormats"] = o.CustomFormats
+	}
+	if !isNil(o.CustomFormatScore) {
+		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
 	return json.Marshal(toSerialize)
 }

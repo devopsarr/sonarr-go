@@ -215,11 +215,9 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**CreateMetadata**](sonarr/docs/MetadataApi.md#createmetadata) | **Post** /api/v3/metadata | 
 *MetadataApi* | [**CreateMetadataActionByName**](sonarr/docs/MetadataApi.md#createmetadataactionbyname) | **Post** /api/v3/metadata/action/{name} | 
 *MetadataApi* | [**DeleteMetadata**](sonarr/docs/MetadataApi.md#deletemetadata) | **Delete** /api/v3/metadata/{id} | 
-*MetadataApi* | [**DeleteMetadataBulk**](sonarr/docs/MetadataApi.md#deletemetadatabulk) | **Delete** /api/v3/metadata/bulk | 
 *MetadataApi* | [**GetMetadataById**](sonarr/docs/MetadataApi.md#getmetadatabyid) | **Get** /api/v3/metadata/{id} | 
 *MetadataApi* | [**ListMetadata**](sonarr/docs/MetadataApi.md#listmetadata) | **Get** /api/v3/metadata | 
 *MetadataApi* | [**ListMetadataSchema**](sonarr/docs/MetadataApi.md#listmetadataschema) | **Get** /api/v3/metadata/schema | 
-*MetadataApi* | [**PutMetadataBulk**](sonarr/docs/MetadataApi.md#putmetadatabulk) | **Put** /api/v3/metadata/bulk | 
 *MetadataApi* | [**TestMetadata**](sonarr/docs/MetadataApi.md#testmetadata) | **Post** /api/v3/metadata/test | 
 *MetadataApi* | [**TestallMetadata**](sonarr/docs/MetadataApi.md#testallmetadata) | **Post** /api/v3/metadata/testall | 
 *MetadataApi* | [**UpdateMetadata**](sonarr/docs/MetadataApi.md#updatemetadata) | **Put** /api/v3/metadata/{id} | 
@@ -232,11 +230,9 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**CreateNotification**](sonarr/docs/NotificationApi.md#createnotification) | **Post** /api/v3/notification | 
 *NotificationApi* | [**CreateNotificationActionByName**](sonarr/docs/NotificationApi.md#createnotificationactionbyname) | **Post** /api/v3/notification/action/{name} | 
 *NotificationApi* | [**DeleteNotification**](sonarr/docs/NotificationApi.md#deletenotification) | **Delete** /api/v3/notification/{id} | 
-*NotificationApi* | [**DeleteNotificationBulk**](sonarr/docs/NotificationApi.md#deletenotificationbulk) | **Delete** /api/v3/notification/bulk | 
 *NotificationApi* | [**GetNotificationById**](sonarr/docs/NotificationApi.md#getnotificationbyid) | **Get** /api/v3/notification/{id} | 
 *NotificationApi* | [**ListNotification**](sonarr/docs/NotificationApi.md#listnotification) | **Get** /api/v3/notification | 
 *NotificationApi* | [**ListNotificationSchema**](sonarr/docs/NotificationApi.md#listnotificationschema) | **Get** /api/v3/notification/schema | 
-*NotificationApi* | [**PutNotificationBulk**](sonarr/docs/NotificationApi.md#putnotificationbulk) | **Put** /api/v3/notification/bulk | 
 *NotificationApi* | [**TestNotification**](sonarr/docs/NotificationApi.md#testnotification) | **Post** /api/v3/notification/test | 
 *NotificationApi* | [**TestallNotification**](sonarr/docs/NotificationApi.md#testallnotification) | **Post** /api/v3/notification/testall | 
 *NotificationApi* | [**UpdateNotification**](sonarr/docs/NotificationApi.md#updatenotification) | **Put** /api/v3/notification/{id} | 
@@ -379,12 +375,10 @@ Class | Method | HTTP request | Description
  - [MediaCoverTypes](docs/MediaCoverTypes.md)
  - [MediaInfoResource](docs/MediaInfoResource.md)
  - [MediaManagementConfigResource](docs/MediaManagementConfigResource.md)
- - [MetadataBulkResource](docs/MetadataBulkResource.md)
  - [MetadataResource](docs/MetadataResource.md)
  - [MonitorTypes](docs/MonitorTypes.md)
  - [MonitoringOptions](docs/MonitoringOptions.md)
  - [NamingConfigResource](docs/NamingConfigResource.md)
- - [NotificationBulkResource](docs/NotificationBulkResource.md)
  - [NotificationResource](docs/NotificationResource.md)
  - [PagingResourceFilter](docs/PagingResourceFilter.md)
  - [ParseResource](docs/ParseResource.md)
