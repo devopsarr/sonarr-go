@@ -170,7 +170,6 @@ docs/MediaInfoResource.md
 docs/MediaManagementConfigApi.md
 docs/MediaManagementConfigResource.md
 docs/MetadataApi.md
-docs/MetadataBulkResource.md
 docs/MetadataResource.md
 docs/MissingApi.md
 docs/MonitorTypes.md
@@ -178,7 +177,6 @@ docs/MonitoringOptions.md
 docs/NamingConfigApi.md
 docs/NamingConfigResource.md
 docs/NotificationApi.md
-docs/NotificationBulkResource.md
 docs/NotificationResource.md
 docs/PagingResourceFilter.md
 docs/ParseApi.md
@@ -329,12 +327,10 @@ model_media_cover.go
 model_media_cover_types.go
 model_media_info_resource.go
 model_media_management_config_resource.go
-model_metadata_bulk_resource.go
 model_metadata_resource.go
 model_monitor_types.go
 model_monitoring_options.go
 model_naming_config_resource.go
-model_notification_bulk_resource.go
 model_notification_resource.go
 model_paging_resource_filter.go
 model_parse_resource.go

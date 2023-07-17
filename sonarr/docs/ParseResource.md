@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **ParsedEpisodeInfo** | Pointer to [**ParsedEpisodeInfo**](ParsedEpisodeInfo.md) |  | [optional] 
 **Series** | Pointer to [**SeriesResource**](SeriesResource.md) |  | [optional] 
 **Episodes** | Pointer to [**[]EpisodeResource**](EpisodeResource.md) |  | [optional] 
+**Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
+**CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
+**CustomFormatScore** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -174,6 +177,101 @@ HasEpisodes returns a boolean if a field has been set.
 `func (o *ParseResource) UnsetEpisodes()`
 
 UnsetEpisodes ensures that no value is present for Episodes, not even an explicit nil
+### GetLanguages
+
+`func (o *ParseResource) GetLanguages() []Language`
+
+GetLanguages returns the Languages field if non-nil, zero value otherwise.
+
+### GetLanguagesOk
+
+`func (o *ParseResource) GetLanguagesOk() (*[]Language, bool)`
+
+GetLanguagesOk returns a tuple with the Languages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguages
+
+`func (o *ParseResource) SetLanguages(v []Language)`
+
+SetLanguages sets Languages field to given value.
+
+### HasLanguages
+
+`func (o *ParseResource) HasLanguages() bool`
+
+HasLanguages returns a boolean if a field has been set.
+
+### SetLanguagesNil
+
+`func (o *ParseResource) SetLanguagesNil(b bool)`
+
+ SetLanguagesNil sets the value for Languages to be an explicit nil
+
+### UnsetLanguages
+`func (o *ParseResource) UnsetLanguages()`
+
+UnsetLanguages ensures that no value is present for Languages, not even an explicit nil
+### GetCustomFormats
+
+`func (o *ParseResource) GetCustomFormats() []CustomFormatResource`
+
+GetCustomFormats returns the CustomFormats field if non-nil, zero value otherwise.
+
+### GetCustomFormatsOk
+
+`func (o *ParseResource) GetCustomFormatsOk() (*[]CustomFormatResource, bool)`
+
+GetCustomFormatsOk returns a tuple with the CustomFormats field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormats
+
+`func (o *ParseResource) SetCustomFormats(v []CustomFormatResource)`
+
+SetCustomFormats sets CustomFormats field to given value.
+
+### HasCustomFormats
+
+`func (o *ParseResource) HasCustomFormats() bool`
+
+HasCustomFormats returns a boolean if a field has been set.
+
+### SetCustomFormatsNil
+
+`func (o *ParseResource) SetCustomFormatsNil(b bool)`
+
+ SetCustomFormatsNil sets the value for CustomFormats to be an explicit nil
+
+### UnsetCustomFormats
+`func (o *ParseResource) UnsetCustomFormats()`
+
+UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
+### GetCustomFormatScore
+
+`func (o *ParseResource) GetCustomFormatScore() int32`
+
+GetCustomFormatScore returns the CustomFormatScore field if non-nil, zero value otherwise.
+
+### GetCustomFormatScoreOk
+
+`func (o *ParseResource) GetCustomFormatScoreOk() (*int32, bool)`
+
+GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormatScore
+
+`func (o *ParseResource) SetCustomFormatScore(v int32)`
+
+SetCustomFormatScore sets CustomFormatScore field to given value.
+
+### HasCustomFormatScore
+
+`func (o *ParseResource) HasCustomFormatScore() bool`
+
+HasCustomFormatScore returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

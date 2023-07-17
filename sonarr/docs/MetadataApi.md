@@ -7,11 +7,9 @@ Method | HTTP request | Description
 [**CreateMetadata**](MetadataApi.md#CreateMetadata) | **Post** /api/v3/metadata | 
 [**CreateMetadataActionByName**](MetadataApi.md#CreateMetadataActionByName) | **Post** /api/v3/metadata/action/{name} | 
 [**DeleteMetadata**](MetadataApi.md#DeleteMetadata) | **Delete** /api/v3/metadata/{id} | 
-[**DeleteMetadataBulk**](MetadataApi.md#DeleteMetadataBulk) | **Delete** /api/v3/metadata/bulk | 
 [**GetMetadataById**](MetadataApi.md#GetMetadataById) | **Get** /api/v3/metadata/{id} | 
 [**ListMetadata**](MetadataApi.md#ListMetadata) | **Get** /api/v3/metadata | 
 [**ListMetadataSchema**](MetadataApi.md#ListMetadataSchema) | **Get** /api/v3/metadata/schema | 
-[**PutMetadataBulk**](MetadataApi.md#PutMetadataBulk) | **Put** /api/v3/metadata/bulk | 
 [**TestMetadata**](MetadataApi.md#TestMetadata) | **Post** /api/v3/metadata/test | 
 [**TestallMetadata**](MetadataApi.md#TestallMetadata) | **Post** /api/v3/metadata/testall | 
 [**UpdateMetadata**](MetadataApi.md#UpdateMetadata) | **Put** /api/v3/metadata/{id} | 
@@ -218,68 +216,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteMetadataBulk
-
-> DeleteMetadataBulk(ctx).MetadataBulkResource(metadataBulkResource).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    sonarrClient "./openapi"
-)
-
-func main() {
-    metadataBulkResource := *sonarrClient.NewMetadataBulkResource() // MetadataBulkResource |  (optional)
-
-    configuration := sonarrClient.NewConfiguration()
-    apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.DeleteMetadataBulk(context.Background()).MetadataBulkResource(metadataBulkResource).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.DeleteMetadataBulk``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteMetadataBulkRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **metadataBulkResource** | [**MetadataBulkResource**](MetadataBulkResource.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GetMetadataById
 
 > MetadataResource GetMetadataById(ctx, id).Execute()
@@ -459,70 +395,6 @@ Other parameters are passed through a pointer to a apiListMetadataSchemaRequest 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PutMetadataBulk
-
-> MetadataResource PutMetadataBulk(ctx).MetadataBulkResource(metadataBulkResource).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    sonarrClient "./openapi"
-)
-
-func main() {
-    metadataBulkResource := *sonarrClient.NewMetadataBulkResource() // MetadataBulkResource |  (optional)
-
-    configuration := sonarrClient.NewConfiguration()
-    apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataApi.PutMetadataBulk(context.Background()).MetadataBulkResource(metadataBulkResource).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.PutMetadataBulk``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `PutMetadataBulk`: MetadataResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataApi.PutMetadataBulk`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPutMetadataBulkRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **metadataBulkResource** | [**MetadataBulkResource**](MetadataBulkResource.md) |  | 
-
-### Return type
-
-[**MetadataResource**](MetadataResource.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

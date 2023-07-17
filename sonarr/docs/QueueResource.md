@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
+**CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **Size** | Pointer to **float64** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
 **Sizeleft** | Pointer to **float64** |  | [optional] 
@@ -324,6 +325,31 @@ HasCustomFormats returns a boolean if a field has been set.
 `func (o *QueueResource) UnsetCustomFormats()`
 
 UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
+### GetCustomFormatScore
+
+`func (o *QueueResource) GetCustomFormatScore() int32`
+
+GetCustomFormatScore returns the CustomFormatScore field if non-nil, zero value otherwise.
+
+### GetCustomFormatScoreOk
+
+`func (o *QueueResource) GetCustomFormatScoreOk() (*int32, bool)`
+
+GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormatScore
+
+`func (o *QueueResource) SetCustomFormatScore(v int32)`
+
+SetCustomFormatScore sets CustomFormatScore field to given value.
+
+### HasCustomFormatScore
+
+`func (o *QueueResource) HasCustomFormatScore() bool`
+
+HasCustomFormatScore returns a boolean if a field has been set.
+
 ### GetSize
 
 `func (o *QueueResource) GetSize() float64`
