@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/devopsarr/sonarr-go/compare/v0.5.1...v0.6.0) (2023-07-21)
+
+
+### Features
+
+* **sonarr:** add response type to custom format ([8864f7a](https://github.com/devopsarr/sonarr-go/commit/8864f7a090ba2716666599b32314aa5f6313a774))
+
+
+### Bug Fixes
+
+* set pydantic version ([85a91e0](https://github.com/devopsarr/sonarr-go/commit/85a91e0416f16e8dcf3f7942450f9e1f6d9f68de))
+
 ## [0.5.1](https://github.com/devopsarr/sonarr-go/compare/v0.5.0...v0.5.1) (2023-06-21)
 
 
