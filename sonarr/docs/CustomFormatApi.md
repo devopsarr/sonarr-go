@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**CreateCustomFormat**](CustomFormatApi.md#CreateCustomFormat) | **Post** /api/v3/customformat | 
 [**DeleteCustomFormat**](CustomFormatApi.md#DeleteCustomFormat) | **Delete** /api/v3/customformat/{id} | 
 [**GetCustomFormatById**](CustomFormatApi.md#GetCustomFormatById) | **Get** /api/v3/customformat/{id} | 
-[**GetCustomFormatSchema**](CustomFormatApi.md#GetCustomFormatSchema) | **Get** /api/v3/customformat/schema | 
 [**ListCustomFormat**](CustomFormatApi.md#ListCustomFormat) | **Get** /api/v3/customformat | 
+[**ListCustomFormatSchema**](CustomFormatApi.md#ListCustomFormatSchema) | **Get** /api/v3/customformat/schema | 
 [**UpdateCustomFormat**](CustomFormatApi.md#UpdateCustomFormat) | **Put** /api/v3/customformat/{id} | 
 
 
@@ -211,63 +211,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCustomFormatSchema
-
-> GetCustomFormatSchema(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    sonarrClient "./openapi"
-)
-
-func main() {
-
-    configuration := sonarrClient.NewConfiguration()
-    apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomFormatApi.GetCustomFormatSchema(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.GetCustomFormatSchema``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCustomFormatSchemaRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ListCustomFormat
 
 > []CustomFormatResource ListCustomFormat(ctx).Execute()
@@ -312,6 +255,65 @@ Other parameters are passed through a pointer to a apiListCustomFormatRequest st
 ### Return type
 
 [**[]CustomFormatResource**](CustomFormatResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListCustomFormatSchema
+
+> []CustomFormatSpecificationSchema ListCustomFormatSchema(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    sonarrClient "./openapi"
+)
+
+func main() {
+
+    configuration := sonarrClient.NewConfiguration()
+    apiClient := sonarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CustomFormatApi.ListCustomFormatSchema(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatApi.ListCustomFormatSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListCustomFormatSchema`: []CustomFormatSpecificationSchema
+    fmt.Fprintf(os.Stdout, "Response from `CustomFormatApi.ListCustomFormatSchema`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListCustomFormatSchemaRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]CustomFormatSpecificationSchema**](CustomFormatSpecificationSchema.md)
 
 ### Authorization
 

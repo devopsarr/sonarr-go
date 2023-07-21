@@ -722,9 +722,15 @@ paths:
       - CustomFormat
   /api/v3/customformat/schema:
     get:
-      operationId: GetCustomFormatSchema
+      operationId: ListCustomFormatSchema
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CustomFormatSpecificationSchema'
+                type: array
           description: Success
       tags:
       - CustomFormat
