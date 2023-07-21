@@ -26,7 +26,6 @@ api_import_list.go
 api_import_list_exclusion.go
 api_indexer.go
 api_indexer_config.go
-api_initialize_js_.go
 api_language.go
 api_language_profile.go
 api_language_profile_schema.go
@@ -144,7 +143,6 @@ docs/IndexerBulkResource.md
 docs/IndexerConfigApi.md
 docs/IndexerConfigResource.md
 docs/IndexerResource.md
-docs/InitializeJsApi.md
 docs/Language.md
 docs/LanguageApi.md
 docs/LanguageProfileApi.md

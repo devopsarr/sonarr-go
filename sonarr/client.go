@@ -72,7 +72,6 @@ type APIClient struct {
 	ImportListExclusionApi *ImportListExclusionApiService
 	IndexerApi *IndexerApiService
 	IndexerConfigApi *IndexerConfigApiService
-	InitializeJsApi *InitializeJsApiService
 	LanguageApi *LanguageApiService
 	LanguageProfileApi *LanguageProfileApiService
 	LanguageProfileSchemaApi *LanguageProfileSchemaApiService
@@ -157,7 +156,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ImportListExclusionApi = (*ImportListExclusionApiService)(&c.common)
 	c.IndexerApi = (*IndexerApiService)(&c.common)
 	c.IndexerConfigApi = (*IndexerConfigApiService)(&c.common)
-	c.InitializeJsApi = (*InitializeJsApiService)(&c.common)
 	c.LanguageApi = (*LanguageApiService)(&c.common)
 	c.LanguageProfileApi = (*LanguageProfileApiService)(&c.common)
 	c.LanguageProfileSchemaApi = (*LanguageProfileSchemaApiService)(&c.common)

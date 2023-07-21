@@ -113,8 +113,8 @@ Class | Method | HTTP request | Description
 *CustomFormatApi* | [**CreateCustomFormat**](sonarr/docs/CustomFormatApi.md#createcustomformat) | **Post** /api/v3/customformat | 
 *CustomFormatApi* | [**DeleteCustomFormat**](sonarr/docs/CustomFormatApi.md#deletecustomformat) | **Delete** /api/v3/customformat/{id} | 
 *CustomFormatApi* | [**GetCustomFormatById**](sonarr/docs/CustomFormatApi.md#getcustomformatbyid) | **Get** /api/v3/customformat/{id} | 
-*CustomFormatApi* | [**GetCustomFormatSchema**](sonarr/docs/CustomFormatApi.md#getcustomformatschema) | **Get** /api/v3/customformat/schema | 
 *CustomFormatApi* | [**ListCustomFormat**](sonarr/docs/CustomFormatApi.md#listcustomformat) | **Get** /api/v3/customformat | 
+*CustomFormatApi* | [**ListCustomFormatSchema**](sonarr/docs/CustomFormatApi.md#listcustomformatschema) | **Get** /api/v3/customformat/schema | 
 *CustomFormatApi* | [**UpdateCustomFormat**](sonarr/docs/CustomFormatApi.md#updatecustomformat) | **Put** /api/v3/customformat/{id} | 
 *CutoffApi* | [**GetWantedCutoff**](sonarr/docs/CutoffApi.md#getwantedcutoff) | **Get** /api/v3/wanted/cutoff | 
 *CutoffApi* | [**GetWantedCutoffById**](sonarr/docs/CutoffApi.md#getwantedcutoffbyid) | **Get** /api/v3/wanted/cutoff/{id} | 
@@ -191,7 +191,6 @@ Class | Method | HTTP request | Description
 *IndexerConfigApi* | [**GetIndexerConfig**](sonarr/docs/IndexerConfigApi.md#getindexerconfig) | **Get** /api/v3/config/indexer | 
 *IndexerConfigApi* | [**GetIndexerConfigById**](sonarr/docs/IndexerConfigApi.md#getindexerconfigbyid) | **Get** /api/v3/config/indexer/{id} | 
 *IndexerConfigApi* | [**UpdateIndexerConfig**](sonarr/docs/IndexerConfigApi.md#updateindexerconfig) | **Put** /api/v3/config/indexer/{id} | 
-*InitializeJsApi* | [**GetInitializeJs**](sonarr/docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
 *LanguageApi* | [**GetLanguageById**](sonarr/docs/LanguageApi.md#getlanguagebyid) | **Get** /api/v3/language/{id} | 
 *LanguageApi* | [**ListLanguage**](sonarr/docs/LanguageApi.md#listlanguage) | **Get** /api/v3/language | 
 *LanguageProfileApi* | [**CreateLanguageProfile**](sonarr/docs/LanguageProfileApi.md#createlanguageprofile) | **Post** /api/v3/languageprofile | 

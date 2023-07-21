@@ -722,9 +722,15 @@ paths:
       - CustomFormat
   /api/v3/customformat/schema:
     get:
-      operationId: GetCustomFormatSchema
+      operationId: ListCustomFormatSchema
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CustomFormatSpecificationSchema'
+                type: array
           description: Success
       tags:
       - CustomFormat
@@ -2320,14 +2326,6 @@ paths:
           description: Success
       tags:
       - IndexerConfig
-  /initialize.js:
-    get:
-      operationId: GetInitialize.js
-      responses:
-        "200":
-          description: Success
-      tags:
-      - InitializeJs
   /api/v3/language:
     get:
       operationId: ListLanguage
@@ -13663,6 +13661,7 @@ components:
         downloadId: downloadId
         seasonNumber: 1
         episodeFileId: 5
+        customFormatScore: 2
         quality:
           quality:
             name: name
@@ -14736,6 +14735,9 @@ components:
             $ref: '#/components/schemas/CustomFormatResource'
           nullable: true
           type: array
+        customFormatScore:
+          format: int32
+          type: integer
         rejections:
           items:
             $ref: '#/components/schemas/Rejection'

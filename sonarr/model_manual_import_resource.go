@@ -32,6 +32,7 @@ type ManualImportResource struct {
 	QualityWeight *int32 `json:"qualityWeight,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
 	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 	Rejections []*Rejection `json:"rejections,omitempty"`
 }
 
@@ -647,6 +648,38 @@ func (o *ManualImportResource) SetCustomFormats(v []*CustomFormatResource) {
 	o.CustomFormats = v
 }
 
+// GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
+func (o *ManualImportResource) GetCustomFormatScore() int32 {
+	if o == nil || isNil(o.CustomFormatScore) {
+		var ret int32
+		return ret
+	}
+	return *o.CustomFormatScore
+}
+
+// GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ManualImportResource) GetCustomFormatScoreOk() (*int32, bool) {
+	if o == nil || isNil(o.CustomFormatScore) {
+    return nil, false
+	}
+	return o.CustomFormatScore, true
+}
+
+// HasCustomFormatScore returns a boolean if a field has been set.
+func (o *ManualImportResource) HasCustomFormatScore() bool {
+	if o != nil && !isNil(o.CustomFormatScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormatScore gets a reference to the given int32 and assigns it to the CustomFormatScore field.
+func (o *ManualImportResource) SetCustomFormatScore(v int32) {
+	o.CustomFormatScore = &v
+}
+
 // GetRejections returns the Rejections field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportResource) GetRejections() []*Rejection {
 	if o == nil {
@@ -729,6 +762,9 @@ func (o ManualImportResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
+	}
+	if !isNil(o.CustomFormatScore) {
+		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
 	if o.Rejections != nil {
 		toSerialize["rejections"] = o.Rejections
