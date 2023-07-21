@@ -191,7 +191,6 @@ Class | Method | HTTP request | Description
 *IndexerConfigApi* | [**GetIndexerConfig**](sonarr/docs/IndexerConfigApi.md#getindexerconfig) | **Get** /api/v3/config/indexer | 
 *IndexerConfigApi* | [**GetIndexerConfigById**](sonarr/docs/IndexerConfigApi.md#getindexerconfigbyid) | **Get** /api/v3/config/indexer/{id} | 
 *IndexerConfigApi* | [**UpdateIndexerConfig**](sonarr/docs/IndexerConfigApi.md#updateindexerconfig) | **Put** /api/v3/config/indexer/{id} | 
-*InitializeJsApi* | [**GetInitializeJs**](sonarr/docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
 *LanguageApi* | [**GetLanguageById**](sonarr/docs/LanguageApi.md#getlanguagebyid) | **Get** /api/v3/language/{id} | 
 *LanguageApi* | [**ListLanguage**](sonarr/docs/LanguageApi.md#listlanguage) | **Get** /api/v3/language | 
 *LanguageProfileApi* | [**CreateLanguageProfile**](sonarr/docs/LanguageProfileApi.md#createlanguageprofile) | **Post** /api/v3/languageprofile | 
