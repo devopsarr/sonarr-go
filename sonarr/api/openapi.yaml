@@ -3607,6 +3607,14 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: skipRedownload
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "200":
           description: Success
@@ -3627,6 +3635,14 @@ paths:
       - explode: true
         in: query
         name: blocklist
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: skipRedownload
         required: false
         schema:
           default: false
