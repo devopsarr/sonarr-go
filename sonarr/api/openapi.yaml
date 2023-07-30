@@ -12464,10 +12464,6 @@ components:
     ManualImportReprocessResource:
       additionalProperties: false
       example:
-        path: path
-        episodeIds:
-        - 5
-        - 5
         rejections:
         - reason: reason
           type: null
@@ -12478,10 +12474,270 @@ components:
           id: 7
         - name: name
           id: 7
+        customFormats:
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 7
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 7
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 1
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
         downloadId: downloadId
-        id: 0
         seasonNumber: 1
+        customFormatScore: 5
         seriesId: 6
+        quality:
+          quality:
+            name: name
+            id: 9
+            source: null
+            resolution: 3
+          revision:
+            real: 4
+            version: 2
+            isRepack: true
+        path: path
+        episodeIds:
+        - 5
+        - 5
+        id: 0
         episodes:
         - sceneSeasonNumber: 6
           airDateUtc: 2000-01-23T04:56:07.000+00:00
@@ -13361,16 +13617,6 @@ components:
               episodeFileCount: 5
           unverifiedSceneNumbering: true
           endTime: 2000-01-23T04:56:07.000+00:00
-        quality:
-          quality:
-            name: name
-            id: 9
-            source: null
-            resolution: 3
-          revision:
-            real: 4
-            version: 2
-            isRepack: true
         releaseGroup: releaseGroup
       properties:
         id:
@@ -13410,6 +13656,14 @@ components:
         downloadId:
           nullable: true
           type: string
+        customFormats:
+          items:
+            $ref: '#/components/schemas/CustomFormatResource'
+          nullable: true
+          type: array
+        customFormatScore:
+          format: int32
+          type: integer
         rejections:
           items:
             $ref: '#/components/schemas/Rejection'

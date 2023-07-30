@@ -26,6 +26,8 @@ type ManualImportReprocessResource struct {
 	Languages []*Language `json:"languages,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 	Rejections []*Rejection `json:"rejections,omitempty"`
 }
 
@@ -409,6 +411,71 @@ func (o *ManualImportReprocessResource) UnsetDownloadId() {
 	o.DownloadId.Unset()
 }
 
+// GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ManualImportReprocessResource) GetCustomFormats() []*CustomFormatResource {
+	if o == nil {
+		var ret []*CustomFormatResource
+		return ret
+	}
+	return o.CustomFormats
+}
+
+// GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ManualImportReprocessResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
+	if o == nil || isNil(o.CustomFormats) {
+    return nil, false
+	}
+	return o.CustomFormats, true
+}
+
+// HasCustomFormats returns a boolean if a field has been set.
+func (o *ManualImportReprocessResource) HasCustomFormats() bool {
+	if o != nil && isNil(o.CustomFormats) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
+func (o *ManualImportReprocessResource) SetCustomFormats(v []*CustomFormatResource) {
+	o.CustomFormats = v
+}
+
+// GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
+func (o *ManualImportReprocessResource) GetCustomFormatScore() int32 {
+	if o == nil || isNil(o.CustomFormatScore) {
+		var ret int32
+		return ret
+	}
+	return *o.CustomFormatScore
+}
+
+// GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ManualImportReprocessResource) GetCustomFormatScoreOk() (*int32, bool) {
+	if o == nil || isNil(o.CustomFormatScore) {
+    return nil, false
+	}
+	return o.CustomFormatScore, true
+}
+
+// HasCustomFormatScore returns a boolean if a field has been set.
+func (o *ManualImportReprocessResource) HasCustomFormatScore() bool {
+	if o != nil && !isNil(o.CustomFormatScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormatScore gets a reference to the given int32 and assigns it to the CustomFormatScore field.
+func (o *ManualImportReprocessResource) SetCustomFormatScore(v int32) {
+	o.CustomFormatScore = &v
+}
+
 // GetRejections returns the Rejections field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportReprocessResource) GetRejections() []*Rejection {
 	if o == nil {
@@ -473,6 +540,12 @@ func (o ManualImportReprocessResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.DownloadId.IsSet() {
 		toSerialize["downloadId"] = o.DownloadId.Get()
+	}
+	if o.CustomFormats != nil {
+		toSerialize["customFormats"] = o.CustomFormats
+	}
+	if !isNil(o.CustomFormatScore) {
+		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
 	if o.Rejections != nil {
 		toSerialize["rejections"] = o.Rejections
