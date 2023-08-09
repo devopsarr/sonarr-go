@@ -1,7 +1,7 @@
 /*
 Sonarr
 
-Sonarr API docs
+Sonarr API docs - The v3 API docs apply to both v3 and v4 versions of Sonarr. Some functionality may only be available in v4 of the Sonarr application.
 
 API version: 3.0.0
 */
