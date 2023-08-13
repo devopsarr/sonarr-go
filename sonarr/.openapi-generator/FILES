@@ -102,6 +102,7 @@ docs/CustomFormatApi.md
 docs/CustomFormatResource.md
 docs/CustomFormatSpecificationSchema.md
 docs/CutoffApi.md
+docs/DatabaseType.md
 docs/DelayProfileApi.md
 docs/DelayProfileResource.md
 docs/DiskSpaceApi.md
@@ -283,6 +284,7 @@ model_command_trigger.go
 model_custom_filter_resource.go
 model_custom_format_resource.go
 model_custom_format_specification_schema.go
+model_database_type.go
 model_delay_profile_resource.go
 model_disk_space_resource.go
 model_download_client_bulk_resource.go

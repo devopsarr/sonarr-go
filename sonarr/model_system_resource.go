@@ -47,6 +47,8 @@ type SystemResource struct {
 	PackageAuthor NullableString `json:"packageAuthor,omitempty"`
 	PackageUpdateMechanism *UpdateMechanism `json:"packageUpdateMechanism,omitempty"`
 	PackageUpdateMechanismMessage NullableString `json:"packageUpdateMechanismMessage,omitempty"`
+	DatabaseVersion *string `json:"databaseVersion,omitempty"`
+	DatabaseType *DatabaseType `json:"databaseType,omitempty"`
 }
 
 // NewSystemResource instantiates a new SystemResource object
@@ -1156,6 +1158,70 @@ func (o *SystemResource) UnsetPackageUpdateMechanismMessage() {
 	o.PackageUpdateMechanismMessage.Unset()
 }
 
+// GetDatabaseVersion returns the DatabaseVersion field value if set, zero value otherwise.
+func (o *SystemResource) GetDatabaseVersion() string {
+	if o == nil || isNil(o.DatabaseVersion) {
+		var ret string
+		return ret
+	}
+	return *o.DatabaseVersion
+}
+
+// GetDatabaseVersionOk returns a tuple with the DatabaseVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SystemResource) GetDatabaseVersionOk() (*string, bool) {
+	if o == nil || isNil(o.DatabaseVersion) {
+    return nil, false
+	}
+	return o.DatabaseVersion, true
+}
+
+// HasDatabaseVersion returns a boolean if a field has been set.
+func (o *SystemResource) HasDatabaseVersion() bool {
+	if o != nil && !isNil(o.DatabaseVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetDatabaseVersion gets a reference to the given string and assigns it to the DatabaseVersion field.
+func (o *SystemResource) SetDatabaseVersion(v string) {
+	o.DatabaseVersion = &v
+}
+
+// GetDatabaseType returns the DatabaseType field value if set, zero value otherwise.
+func (o *SystemResource) GetDatabaseType() DatabaseType {
+	if o == nil || isNil(o.DatabaseType) {
+		var ret DatabaseType
+		return ret
+	}
+	return *o.DatabaseType
+}
+
+// GetDatabaseTypeOk returns a tuple with the DatabaseType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SystemResource) GetDatabaseTypeOk() (*DatabaseType, bool) {
+	if o == nil || isNil(o.DatabaseType) {
+    return nil, false
+	}
+	return o.DatabaseType, true
+}
+
+// HasDatabaseType returns a boolean if a field has been set.
+func (o *SystemResource) HasDatabaseType() bool {
+	if o != nil && !isNil(o.DatabaseType) {
+		return true
+	}
+
+	return false
+}
+
+// SetDatabaseType gets a reference to the given DatabaseType and assigns it to the DatabaseType field.
+func (o *SystemResource) SetDatabaseType(v DatabaseType) {
+	o.DatabaseType = &v
+}
+
 func (o SystemResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AppName.IsSet() {
@@ -1247,6 +1313,12 @@ func (o SystemResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.PackageUpdateMechanismMessage.IsSet() {
 		toSerialize["packageUpdateMechanismMessage"] = o.PackageUpdateMechanismMessage.Get()
+	}
+	if !isNil(o.DatabaseVersion) {
+		toSerialize["databaseVersion"] = o.DatabaseVersion
+	}
+	if !isNil(o.DatabaseType) {
+		toSerialize["databaseType"] = o.DatabaseType
 	}
 	return json.Marshal(toSerialize)
 }

@@ -6870,6 +6870,11 @@ components:
           nullable: true
           type: array
       type: object
+    DatabaseType:
+      enum:
+      - sqLite
+      - postgreSQL
+      type: string
     DelayProfileResource:
       additionalProperties: false
       example:
@@ -21467,6 +21472,7 @@ components:
         sqliteVersion: sqliteVersion
         packageUpdateMechanism: null
         branch: branch
+        databaseVersion: databaseVersion
         appData: appData
         isDebug: true
         mode: null
@@ -21485,6 +21491,7 @@ components:
         osName: osName
         version: version
         migrationVersion: 0
+        databaseType: null
         urlBase: urlBase
         isDocker: true
         isOsx: true
@@ -21566,6 +21573,10 @@ components:
         packageUpdateMechanismMessage:
           nullable: true
           type: string
+        databaseVersion:
+          type: string
+        databaseType:
+          $ref: '#/components/schemas/DatabaseType'
       type: object
     TagDetailsResource:
       additionalProperties: false
