@@ -34,6 +34,8 @@ Name | Type | Description | Notes
 **PackageAuthor** | Pointer to **NullableString** |  | [optional] 
 **PackageUpdateMechanism** | Pointer to [**UpdateMechanism**](UpdateMechanism.md) |  | [optional] 
 **PackageUpdateMechanismMessage** | Pointer to **NullableString** |  | [optional] 
+**DatabaseVersion** | Pointer to **string** |  | [optional] 
+**DatabaseType** | Pointer to [**DatabaseType**](DatabaseType.md) |  | [optional] 
 
 ## Methods
 
@@ -934,6 +936,56 @@ HasPackageUpdateMechanismMessage returns a boolean if a field has been set.
 `func (o *SystemResource) UnsetPackageUpdateMechanismMessage()`
 
 UnsetPackageUpdateMechanismMessage ensures that no value is present for PackageUpdateMechanismMessage, not even an explicit nil
+### GetDatabaseVersion
+
+`func (o *SystemResource) GetDatabaseVersion() string`
+
+GetDatabaseVersion returns the DatabaseVersion field if non-nil, zero value otherwise.
+
+### GetDatabaseVersionOk
+
+`func (o *SystemResource) GetDatabaseVersionOk() (*string, bool)`
+
+GetDatabaseVersionOk returns a tuple with the DatabaseVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatabaseVersion
+
+`func (o *SystemResource) SetDatabaseVersion(v string)`
+
+SetDatabaseVersion sets DatabaseVersion field to given value.
+
+### HasDatabaseVersion
+
+`func (o *SystemResource) HasDatabaseVersion() bool`
+
+HasDatabaseVersion returns a boolean if a field has been set.
+
+### GetDatabaseType
+
+`func (o *SystemResource) GetDatabaseType() DatabaseType`
+
+GetDatabaseType returns the DatabaseType field if non-nil, zero value otherwise.
+
+### GetDatabaseTypeOk
+
+`func (o *SystemResource) GetDatabaseTypeOk() (*DatabaseType, bool)`
+
+GetDatabaseTypeOk returns a tuple with the DatabaseType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatabaseType
+
+`func (o *SystemResource) SetDatabaseType(v DatabaseType)`
+
+SetDatabaseType sets DatabaseType field to given value.
+
+### HasDatabaseType
+
+`func (o *SystemResource) HasDatabaseType() bool`
+
+HasDatabaseType returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
