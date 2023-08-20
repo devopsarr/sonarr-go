@@ -27,6 +27,7 @@ type EpisodeResource struct {
 	AirDate NullableString `json:"airDate,omitempty"`
 	AirDateUtc NullableTime `json:"airDateUtc,omitempty"`
 	Runtime *int32 `json:"runtime,omitempty"`
+	FinaleType NullableString `json:"finaleType,omitempty"`
 	Overview NullableString `json:"overview,omitempty"`
 	EpisodeFile *EpisodeFileResource `json:"episodeFile,omitempty"`
 	HasFile *bool `json:"hasFile,omitempty"`
@@ -409,6 +410,48 @@ func (o *EpisodeResource) HasRuntime() bool {
 // SetRuntime gets a reference to the given int32 and assigns it to the Runtime field.
 func (o *EpisodeResource) SetRuntime(v int32) {
 	o.Runtime = &v
+}
+
+// GetFinaleType returns the FinaleType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *EpisodeResource) GetFinaleType() string {
+	if o == nil || isNil(o.FinaleType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.FinaleType.Get()
+}
+
+// GetFinaleTypeOk returns a tuple with the FinaleType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EpisodeResource) GetFinaleTypeOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.FinaleType.Get(), o.FinaleType.IsSet()
+}
+
+// HasFinaleType returns a boolean if a field has been set.
+func (o *EpisodeResource) HasFinaleType() bool {
+	if o != nil && o.FinaleType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFinaleType gets a reference to the given NullableString and assigns it to the FinaleType field.
+func (o *EpisodeResource) SetFinaleType(v string) {
+	o.FinaleType.Set(&v)
+}
+// SetFinaleTypeNil sets the value for FinaleType to be an explicit nil
+func (o *EpisodeResource) SetFinaleTypeNil() {
+	o.FinaleType.Set(nil)
+}
+
+// UnsetFinaleType ensures that no value is present for FinaleType, not even an explicit nil
+func (o *EpisodeResource) UnsetFinaleType() {
+	o.FinaleType.Unset()
 }
 
 // GetOverview returns the Overview field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1003,6 +1046,9 @@ func (o EpisodeResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Runtime) {
 		toSerialize["runtime"] = o.Runtime
+	}
+	if o.FinaleType.IsSet() {
+		toSerialize["finaleType"] = o.FinaleType.Get()
 	}
 	if o.Overview.IsSet() {
 		toSerialize["overview"] = o.Overview.Get()

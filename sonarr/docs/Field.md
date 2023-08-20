@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Hidden** | Pointer to **NullableString** |  | [optional] 
 **Privacy** | Pointer to [**PrivacyLevel**](PrivacyLevel.md) |  | [optional] 
 **Placeholder** | Pointer to **NullableString** |  | [optional] 
+**IsFloat** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -570,6 +571,31 @@ HasPlaceholder returns a boolean if a field has been set.
 `func (o *Field) UnsetPlaceholder()`
 
 UnsetPlaceholder ensures that no value is present for Placeholder, not even an explicit nil
+### GetIsFloat
+
+`func (o *Field) GetIsFloat() bool`
+
+GetIsFloat returns the IsFloat field if non-nil, zero value otherwise.
+
+### GetIsFloatOk
+
+`func (o *Field) GetIsFloatOk() (*bool, bool)`
+
+GetIsFloatOk returns a tuple with the IsFloat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFloat
+
+`func (o *Field) SetIsFloat(v bool)`
+
+SetIsFloat sets IsFloat field to given value.
+
+### HasIsFloat
+
+`func (o *Field) HasIsFloat() bool`
+
+HasIsFloat returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
