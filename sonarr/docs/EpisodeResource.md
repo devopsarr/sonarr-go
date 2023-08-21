@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **AirDate** | Pointer to **NullableString** |  | [optional] 
 **AirDateUtc** | Pointer to **NullableTime** |  | [optional] 
 **Runtime** | Pointer to **int32** |  | [optional] 
+**FinaleType** | Pointer to **NullableString** |  | [optional] 
 **Overview** | Pointer to **NullableString** |  | [optional] 
 **EpisodeFile** | Pointer to [**EpisodeFileResource**](EpisodeFileResource.md) |  | [optional] 
 **HasFile** | Pointer to **bool** |  | [optional] 
@@ -329,6 +330,41 @@ SetRuntime sets Runtime field to given value.
 
 HasRuntime returns a boolean if a field has been set.
 
+### GetFinaleType
+
+`func (o *EpisodeResource) GetFinaleType() string`
+
+GetFinaleType returns the FinaleType field if non-nil, zero value otherwise.
+
+### GetFinaleTypeOk
+
+`func (o *EpisodeResource) GetFinaleTypeOk() (*string, bool)`
+
+GetFinaleTypeOk returns a tuple with the FinaleType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFinaleType
+
+`func (o *EpisodeResource) SetFinaleType(v string)`
+
+SetFinaleType sets FinaleType field to given value.
+
+### HasFinaleType
+
+`func (o *EpisodeResource) HasFinaleType() bool`
+
+HasFinaleType returns a boolean if a field has been set.
+
+### SetFinaleTypeNil
+
+`func (o *EpisodeResource) SetFinaleTypeNil(b bool)`
+
+ SetFinaleTypeNil sets the value for FinaleType to be an explicit nil
+
+### UnsetFinaleType
+`func (o *EpisodeResource) UnsetFinaleType()`
+
+UnsetFinaleType ensures that no value is present for FinaleType, not even an explicit nil
 ### GetOverview
 
 `func (o *EpisodeResource) GetOverview() string`
