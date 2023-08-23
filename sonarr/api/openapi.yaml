@@ -177,9 +177,15 @@ paths:
       - AutoTagging
   /api/v3/autotagging/schema:
     get:
-      operationId: GetAutoTaggingSchema
+      operationId: ListAutoTaggingSchema
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/AutoTaggingSpecificationSchema'
+                type: array
           description: Success
       tags:
       - AutoTagging

@@ -88,8 +88,8 @@ Class | Method | HTTP request | Description
 *AutoTaggingApi* | [**CreateAutoTagging**](sonarr/docs/AutoTaggingApi.md#createautotagging) | **Post** /api/v3/autotagging | 
 *AutoTaggingApi* | [**DeleteAutoTagging**](sonarr/docs/AutoTaggingApi.md#deleteautotagging) | **Delete** /api/v3/autotagging/{id} | 
 *AutoTaggingApi* | [**GetAutoTaggingById**](sonarr/docs/AutoTaggingApi.md#getautotaggingbyid) | **Get** /api/v3/autotagging/{id} | 
-*AutoTaggingApi* | [**GetAutoTaggingSchema**](sonarr/docs/AutoTaggingApi.md#getautotaggingschema) | **Get** /api/v3/autotagging/schema | 
 *AutoTaggingApi* | [**ListAutoTagging**](sonarr/docs/AutoTaggingApi.md#listautotagging) | **Get** /api/v3/autotagging | 
+*AutoTaggingApi* | [**ListAutoTaggingSchema**](sonarr/docs/AutoTaggingApi.md#listautotaggingschema) | **Get** /api/v3/autotagging/schema | 
 *AutoTaggingApi* | [**UpdateAutoTagging**](sonarr/docs/AutoTaggingApi.md#updateautotagging) | **Put** /api/v3/autotagging/{id} | 
 *BackupApi* | [**CreateSystemBackupRestoreById**](sonarr/docs/BackupApi.md#createsystembackuprestorebyid) | **Post** /api/v3/system/backup/restore/{id} | 
 *BackupApi* | [**CreateSystemBackupRestoreUpload**](sonarr/docs/BackupApi.md#createsystembackuprestoreupload) | **Post** /api/v3/system/backup/restore/upload | 

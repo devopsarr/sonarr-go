@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**CreateAutoTagging**](AutoTaggingApi.md#CreateAutoTagging) | **Post** /api/v3/autotagging | 
 [**DeleteAutoTagging**](AutoTaggingApi.md#DeleteAutoTagging) | **Delete** /api/v3/autotagging/{id} | 
 [**GetAutoTaggingById**](AutoTaggingApi.md#GetAutoTaggingById) | **Get** /api/v3/autotagging/{id} | 
-[**GetAutoTaggingSchema**](AutoTaggingApi.md#GetAutoTaggingSchema) | **Get** /api/v3/autotagging/schema | 
 [**ListAutoTagging**](AutoTaggingApi.md#ListAutoTagging) | **Get** /api/v3/autotagging | 
+[**ListAutoTaggingSchema**](AutoTaggingApi.md#ListAutoTaggingSchema) | **Get** /api/v3/autotagging/schema | 
 [**UpdateAutoTagging**](AutoTaggingApi.md#UpdateAutoTagging) | **Put** /api/v3/autotagging/{id} | 
 
 
@@ -211,63 +211,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAutoTaggingSchema
-
-> GetAutoTaggingSchema(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    sonarrClient "./openapi"
-)
-
-func main() {
-
-    configuration := sonarrClient.NewConfiguration()
-    apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AutoTaggingApi.GetAutoTaggingSchema(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AutoTaggingApi.GetAutoTaggingSchema``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAutoTaggingSchemaRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ListAutoTagging
 
 > []AutoTaggingResource ListAutoTagging(ctx).Execute()
@@ -312,6 +255,65 @@ Other parameters are passed through a pointer to a apiListAutoTaggingRequest str
 ### Return type
 
 [**[]AutoTaggingResource**](AutoTaggingResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListAutoTaggingSchema
+
+> []AutoTaggingSpecificationSchema ListAutoTaggingSchema(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    sonarrClient "./openapi"
+)
+
+func main() {
+
+    configuration := sonarrClient.NewConfiguration()
+    apiClient := sonarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AutoTaggingApi.ListAutoTaggingSchema(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AutoTaggingApi.ListAutoTaggingSchema``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListAutoTaggingSchema`: []AutoTaggingSpecificationSchema
+    fmt.Fprintf(os.Stdout, "Response from `AutoTaggingApi.ListAutoTaggingSchema`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListAutoTaggingSchemaRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]AutoTaggingSpecificationSchema**](AutoTaggingSpecificationSchema.md)
 
 ### Authorization
 
