@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ## GetSeriesById
 
-> SeriesResource GetSeriesById(ctx, id).Execute()
+> SeriesResource GetSeriesById(ctx, id).IncludeSeasonImages(includeSeasonImages).Execute()
 
 
 
@@ -166,10 +166,11 @@ import (
 
 func main() {
     id := int32(56) // int32 | 
+    includeSeasonImages := true // bool |  (optional) (default to false)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SeriesApi.GetSeriesById(context.Background(), id).Execute()
+    resp, r, err := apiClient.SeriesApi.GetSeriesById(context.Background(), id).IncludeSeasonImages(includeSeasonImages).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SeriesApi.GetSeriesById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -195,6 +196,7 @@ Other parameters are passed through a pointer to a apiGetSeriesByIdRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **includeSeasonImages** | **bool** |  | [default to false]
 
 ### Return type
 

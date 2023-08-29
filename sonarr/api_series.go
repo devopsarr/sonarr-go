@@ -293,6 +293,12 @@ type ApiGetSeriesByIdRequest struct {
 	ctx context.Context
 	ApiService *SeriesApiService
 	id int32
+	includeSeasonImages *bool
+}
+
+func (r ApiGetSeriesByIdRequest) IncludeSeasonImages(includeSeasonImages bool) ApiGetSeriesByIdRequest {
+	r.includeSeasonImages = &includeSeasonImages
+	return r
 }
 
 func (r ApiGetSeriesByIdRequest) Execute() (*SeriesResource, *http.Response, error) {
@@ -336,6 +342,9 @@ func (a *SeriesApiService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*Ser
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.includeSeasonImages != nil {
+		localVarQueryParams.Add("includeSeasonImages", parameterToString(*r.includeSeasonImages, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
