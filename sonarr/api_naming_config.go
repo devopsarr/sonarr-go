@@ -424,58 +424,58 @@ func (a *NamingConfigApiService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameEpisodes != nil {
-		localVarQueryParams.Add("RenameEpisodes", parameterToString(*r.renameEpisodes, ""))
+		localVarQueryParams.Add("renameEpisodes", parameterToString(*r.renameEpisodes, ""))
 	}
 	if r.replaceIllegalCharacters != nil {
-		localVarQueryParams.Add("ReplaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+		localVarQueryParams.Add("replaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
 	}
 	if r.colonReplacementFormat != nil {
-		localVarQueryParams.Add("ColonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
+		localVarQueryParams.Add("colonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
 	}
 	if r.multiEpisodeStyle != nil {
-		localVarQueryParams.Add("MultiEpisodeStyle", parameterToString(*r.multiEpisodeStyle, ""))
+		localVarQueryParams.Add("multiEpisodeStyle", parameterToString(*r.multiEpisodeStyle, ""))
 	}
 	if r.standardEpisodeFormat != nil {
-		localVarQueryParams.Add("StandardEpisodeFormat", parameterToString(*r.standardEpisodeFormat, ""))
+		localVarQueryParams.Add("standardEpisodeFormat", parameterToString(*r.standardEpisodeFormat, ""))
 	}
 	if r.dailyEpisodeFormat != nil {
-		localVarQueryParams.Add("DailyEpisodeFormat", parameterToString(*r.dailyEpisodeFormat, ""))
+		localVarQueryParams.Add("dailyEpisodeFormat", parameterToString(*r.dailyEpisodeFormat, ""))
 	}
 	if r.animeEpisodeFormat != nil {
-		localVarQueryParams.Add("AnimeEpisodeFormat", parameterToString(*r.animeEpisodeFormat, ""))
+		localVarQueryParams.Add("animeEpisodeFormat", parameterToString(*r.animeEpisodeFormat, ""))
 	}
 	if r.seriesFolderFormat != nil {
-		localVarQueryParams.Add("SeriesFolderFormat", parameterToString(*r.seriesFolderFormat, ""))
+		localVarQueryParams.Add("seriesFolderFormat", parameterToString(*r.seriesFolderFormat, ""))
 	}
 	if r.seasonFolderFormat != nil {
-		localVarQueryParams.Add("SeasonFolderFormat", parameterToString(*r.seasonFolderFormat, ""))
+		localVarQueryParams.Add("seasonFolderFormat", parameterToString(*r.seasonFolderFormat, ""))
 	}
 	if r.specialsFolderFormat != nil {
-		localVarQueryParams.Add("SpecialsFolderFormat", parameterToString(*r.specialsFolderFormat, ""))
+		localVarQueryParams.Add("specialsFolderFormat", parameterToString(*r.specialsFolderFormat, ""))
 	}
 	if r.includeSeriesTitle != nil {
-		localVarQueryParams.Add("IncludeSeriesTitle", parameterToString(*r.includeSeriesTitle, ""))
+		localVarQueryParams.Add("includeSeriesTitle", parameterToString(*r.includeSeriesTitle, ""))
 	}
 	if r.includeEpisodeTitle != nil {
-		localVarQueryParams.Add("IncludeEpisodeTitle", parameterToString(*r.includeEpisodeTitle, ""))
+		localVarQueryParams.Add("includeEpisodeTitle", parameterToString(*r.includeEpisodeTitle, ""))
 	}
 	if r.includeQuality != nil {
-		localVarQueryParams.Add("IncludeQuality", parameterToString(*r.includeQuality, ""))
+		localVarQueryParams.Add("includeQuality", parameterToString(*r.includeQuality, ""))
 	}
 	if r.replaceSpaces != nil {
-		localVarQueryParams.Add("ReplaceSpaces", parameterToString(*r.replaceSpaces, ""))
+		localVarQueryParams.Add("replaceSpaces", parameterToString(*r.replaceSpaces, ""))
 	}
 	if r.separator != nil {
-		localVarQueryParams.Add("Separator", parameterToString(*r.separator, ""))
+		localVarQueryParams.Add("separator", parameterToString(*r.separator, ""))
 	}
 	if r.numberStyle != nil {
-		localVarQueryParams.Add("NumberStyle", parameterToString(*r.numberStyle, ""))
+		localVarQueryParams.Add("numberStyle", parameterToString(*r.numberStyle, ""))
 	}
 	if r.id != nil {
-		localVarQueryParams.Add("Id", parameterToString(*r.id, ""))
+		localVarQueryParams.Add("id", parameterToString(*r.id, ""))
 	}
 	if r.resourceName != nil {
-		localVarQueryParams.Add("ResourceName", parameterToString(*r.resourceName, ""))
+		localVarQueryParams.Add("resourceName", parameterToString(*r.resourceName, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

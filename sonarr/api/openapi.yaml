@@ -51,11 +51,11 @@ paths:
         content:
           multipart/form-data:
             encoding:
-              Username:
+              username:
                 style: form
-              Password:
+              password:
                 style: form
-              RememberMe:
+              rememberMe:
                 style: form
             schema:
               $ref: '#/components/schemas/CreateLogin_request'
@@ -258,6 +258,39 @@ paths:
   /api/v3/blocklist:
     get:
       operationId: GetBlocklist
+      parameters:
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sortKey
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sortDirection
+        required: false
+        schema:
+          $ref: '#/components/schemas/SortDirection'
+        style: form
       responses:
         "200":
           content:
@@ -747,6 +780,38 @@ paths:
       parameters:
       - explode: true
         in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sortKey
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sortDirection
+        required: false
+        schema:
+          $ref: '#/components/schemas/SortDirection'
+        style: form
+      - explode: true
+        in: query
         name: includeSeries
         required: false
         schema:
@@ -767,6 +832,14 @@ paths:
         required: false
         schema:
           default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: monitored
+        required: false
+        schema:
+          default: true
           type: boolean
         style: form
       responses:
@@ -1568,6 +1641,38 @@ paths:
       parameters:
       - explode: true
         in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sortKey
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sortDirection
+        required: false
+        schema:
+          $ref: '#/components/schemas/SortDirection'
+        style: form
+      - explode: true
+        in: query
         name: includeSeries
         required: false
         schema:
@@ -1579,6 +1684,29 @@ paths:
         required: false
         schema:
           type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: eventType
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: episodeId
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: downloadId
+        required: false
+        schema:
+          type: string
         style: form
       responses:
         "200":
@@ -2534,6 +2662,46 @@ paths:
   /api/v3/log:
     get:
       operationId: GetLog
+      parameters:
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sortKey
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sortDirection
+        required: false
+        schema:
+          $ref: '#/components/schemas/SortDirection'
+        style: form
+      - explode: true
+        in: query
+        name: level
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -2899,6 +3067,38 @@ paths:
       parameters:
       - explode: true
         in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sortKey
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sortDirection
+        required: false
+        schema:
+          $ref: '#/components/schemas/SortDirection'
+        style: form
+      - explode: true
+        in: query
         name: includeSeries
         required: false
         schema:
@@ -2911,6 +3111,14 @@ paths:
         required: false
         schema:
           default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: monitored
+        required: false
+        schema:
+          default: true
           type: boolean
         style: form
       responses:
@@ -3024,21 +3232,21 @@ paths:
       parameters:
       - explode: true
         in: query
-        name: RenameEpisodes
+        name: renameEpisodes
         required: false
         schema:
           type: boolean
         style: form
       - explode: true
         in: query
-        name: ReplaceIllegalCharacters
+        name: replaceIllegalCharacters
         required: false
         schema:
           type: boolean
         style: form
       - explode: true
         in: query
-        name: ColonReplacementFormat
+        name: colonReplacementFormat
         required: false
         schema:
           format: int32
@@ -3046,7 +3254,7 @@ paths:
         style: form
       - explode: true
         in: query
-        name: MultiEpisodeStyle
+        name: multiEpisodeStyle
         required: false
         schema:
           format: int32
@@ -3054,91 +3262,91 @@ paths:
         style: form
       - explode: true
         in: query
-        name: StandardEpisodeFormat
+        name: standardEpisodeFormat
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: DailyEpisodeFormat
+        name: dailyEpisodeFormat
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: AnimeEpisodeFormat
+        name: animeEpisodeFormat
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: SeriesFolderFormat
+        name: seriesFolderFormat
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: SeasonFolderFormat
+        name: seasonFolderFormat
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: SpecialsFolderFormat
+        name: specialsFolderFormat
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: IncludeSeriesTitle
+        name: includeSeriesTitle
         required: false
         schema:
           type: boolean
         style: form
       - explode: true
         in: query
-        name: IncludeEpisodeTitle
+        name: includeEpisodeTitle
         required: false
         schema:
           type: boolean
         style: form
       - explode: true
         in: query
-        name: IncludeQuality
+        name: includeQuality
         required: false
         schema:
           type: boolean
         style: form
       - explode: true
         in: query
-        name: ReplaceSpaces
+        name: replaceSpaces
         required: false
         schema:
           type: boolean
         style: form
       - explode: true
         in: query
-        name: Separator
+        name: separator
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: NumberStyle
+        name: numberStyle
         required: false
         schema:
           type: string
         style: form
       - explode: true
         in: query
-        name: Id
+        name: id
         required: false
         schema:
           format: int32
@@ -3146,7 +3354,7 @@ paths:
         style: form
       - explode: true
         in: query
-        name: ResourceName
+        name: resourceName
         required: false
         schema:
           type: string
@@ -3675,6 +3883,38 @@ paths:
     get:
       operationId: GetQueue
       parameters:
+      - explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          default: 10
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sortKey
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sortDirection
+        required: false
+        schema:
+          $ref: '#/components/schemas/SortDirection'
+        style: form
       - explode: true
         in: query
         name: includeUnknownSeriesItems
@@ -6446,11 +6686,6 @@ components:
               isRepack: true
         pageSize: 6
         page: 0
-        filters:
-        - value: value
-          key: key
-        - value: value
-          key: key
       properties:
         page:
           format: int32
@@ -6463,11 +6698,6 @@ components:
           type: string
         sortDirection:
           $ref: '#/components/schemas/SortDirection'
-        filters:
-          items:
-            $ref: '#/components/schemas/PagingResourceFilter'
-          nullable: true
-          type: array
         totalRecords:
           format: int32
           type: integer
@@ -7046,6 +7276,7 @@ components:
     DownloadClientConfigResource:
       additionalProperties: false
       example:
+        autoRedownloadFailedFromInteractiveSearch: true
         enableCompletedDownloadHandling: true
         id: 0
         autoRedownloadFailed: true
@@ -7060,6 +7291,8 @@ components:
         enableCompletedDownloadHandling:
           type: boolean
         autoRedownloadFailed:
+          type: boolean
+        autoRedownloadFailedFromInteractiveSearch:
           type: boolean
       type: object
     DownloadClientResource:
@@ -9033,11 +9266,6 @@ components:
           endTime: 2000-01-23T04:56:07.000+00:00
         pageSize: 6
         page: 0
-        filters:
-        - value: value
-          key: key
-        - value: value
-          key: key
       properties:
         page:
           format: int32
@@ -9050,11 +9278,6 @@ components:
           type: string
         sortDirection:
           $ref: '#/components/schemas/SortDirection'
-        filters:
-          items:
-            $ref: '#/components/schemas/PagingResourceFilter'
-          nullable: true
-          type: array
         totalRecords:
           format: int32
           type: integer
@@ -11810,11 +12033,6 @@ components:
           qualityCutoffNotMet: true
         pageSize: 6
         page: 0
-        filters:
-        - value: value
-          key: key
-        - value: value
-          key: key
       properties:
         page:
           format: int32
@@ -11827,11 +12045,6 @@ components:
           type: string
         sortDirection:
           $ref: '#/components/schemas/SortDirection'
-        filters:
-          items:
-            $ref: '#/components/schemas/PagingResourceFilter'
-          nullable: true
-          type: array
         totalRecords:
           format: int32
           type: integer
@@ -12110,6 +12323,7 @@ components:
           placeholder: placeholder
           value: ""
           order: 5
+        searchForMissingEpisodes: true
         infoLink: infoLink
       properties:
         id:
@@ -12150,6 +12364,8 @@ components:
           nullable: true
           type: array
         enableAutomaticAdd:
+          type: boolean
+        searchForMissingEpisodes:
           type: boolean
         shouldMonitor:
           $ref: '#/components/schemas/MonitorTypes'
@@ -12584,11 +12800,6 @@ components:
           message: message
         pageSize: 6
         page: 0
-        filters:
-        - value: value
-          key: key
-        - value: value
-          key: key
       properties:
         page:
           format: int32
@@ -12601,11 +12812,6 @@ components:
           type: string
         sortDirection:
           $ref: '#/components/schemas/SortDirection'
-        filters:
-          items:
-            $ref: '#/components/schemas/PagingResourceFilter'
-          nullable: true
-          type: array
         totalRecords:
           format: int32
           type: integer
@@ -15785,19 +15991,6 @@ components:
         includeHealthWarnings:
           type: boolean
         testCommand:
-          nullable: true
-          type: string
-      type: object
-    PagingResourceFilter:
-      additionalProperties: false
-      example:
-        value: value
-        key: key
-      properties:
-        key:
-          nullable: true
-          type: string
-        value:
           nullable: true
           type: string
       type: object
@@ -20259,11 +20452,6 @@ components:
           status: status
         pageSize: 6
         page: 0
-        filters:
-        - value: value
-          key: key
-        - value: value
-          key: key
       properties:
         page:
           format: int32
@@ -20276,11 +20464,6 @@ components:
           type: string
         sortDirection:
           $ref: '#/components/schemas/SortDirection'
-        filters:
-          items:
-            $ref: '#/components/schemas/PagingResourceFilter'
-          nullable: true
-          type: array
         totalRecords:
           format: int32
           type: integer
@@ -22184,11 +22367,11 @@ components:
       type: string
     CreateLogin_request:
       properties:
-        Username:
+        username:
           type: string
-        Password:
+        password:
           type: string
-        RememberMe:
+        rememberMe:
           type: string
       type: object
   securitySchemes:

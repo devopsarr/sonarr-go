@@ -177,7 +177,6 @@ docs/NamingConfigApi.md
 docs/NamingConfigResource.md
 docs/NotificationApi.md
 docs/NotificationResource.md
-docs/PagingResourceFilter.md
 docs/ParseApi.md
 docs/ParseResource.md
 docs/ParsedEpisodeInfo.md
@@ -332,7 +331,6 @@ model_monitor_types.go
 model_monitoring_options.go
 model_naming_config_resource.go
 model_notification_resource.go
-model_paging_resource_filter.go
 model_parse_resource.go
 model_parsed_episode_info.go
 model_ping_resource.go

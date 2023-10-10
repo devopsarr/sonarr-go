@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## GetHistory
 
-> HistoryResourcePagingResource GetHistory(ctx).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).EventType(eventType).EpisodeId(episodeId).DownloadId(downloadId).Execute()
 
 
 
@@ -96,12 +96,19 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := sonarrClient.SortDirection("default") // SortDirection |  (optional)
     includeSeries := true // bool |  (optional)
     includeEpisode := true // bool |  (optional)
+    eventType := int32(56) // int32 |  (optional)
+    episodeId := int32(56) // int32 |  (optional)
+    downloadId := "downloadId_example" // string |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).Execute()
+    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).EventType(eventType).EpisodeId(episodeId).DownloadId(downloadId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,8 +129,15 @@ Other parameters are passed through a pointer to a apiGetHistoryRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeSeries** | **bool** |  | 
  **includeEpisode** | **bool** |  | 
+ **eventType** | **int32** |  | 
+ **episodeId** | **int32** |  | 
+ **downloadId** | **string** |  | 
 
 ### Return type
 

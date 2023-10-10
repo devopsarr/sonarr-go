@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetQueue
 
-> QueueResourcePagingResource GetQueue(ctx).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).Execute()
+> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).Execute()
 
 
 
@@ -169,13 +169,17 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := sonarrClient.SortDirection("default") // SortDirection |  (optional)
     includeUnknownSeriesItems := true // bool |  (optional) (default to false)
     includeSeries := true // bool |  (optional) (default to false)
     includeEpisode := true // bool |  (optional) (default to false)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.GetQueue(context.Background()).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).Execute()
+    resp, r, err := apiClient.QueueApi.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.GetQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -196,6 +200,10 @@ Other parameters are passed through a pointer to a apiGetQueueRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeUnknownSeriesItems** | **bool** |  | [default to false]
  **includeSeries** | **bool** |  | [default to false]
  **includeEpisode** | **bool** |  | [default to false]

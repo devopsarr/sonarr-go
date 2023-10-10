@@ -143,8 +143,35 @@ func (a *HistoryApiService) CreateHistoryFailedByIdExecute(r ApiCreateHistoryFai
 type ApiGetHistoryRequest struct {
 	ctx context.Context
 	ApiService *HistoryApiService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
 	includeSeries *bool
 	includeEpisode *bool
+	eventType *int32
+	episodeId *int32
+	downloadId *string
+}
+
+func (r ApiGetHistoryRequest) Page(page int32) ApiGetHistoryRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetHistoryRequest) PageSize(pageSize int32) ApiGetHistoryRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetHistoryRequest) SortKey(sortKey string) ApiGetHistoryRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetHistoryRequest) SortDirection(sortDirection SortDirection) ApiGetHistoryRequest {
+	r.sortDirection = &sortDirection
+	return r
 }
 
 func (r ApiGetHistoryRequest) IncludeSeries(includeSeries bool) ApiGetHistoryRequest {
@@ -154,6 +181,21 @@ func (r ApiGetHistoryRequest) IncludeSeries(includeSeries bool) ApiGetHistoryReq
 
 func (r ApiGetHistoryRequest) IncludeEpisode(includeEpisode bool) ApiGetHistoryRequest {
 	r.includeEpisode = &includeEpisode
+	return r
+}
+
+func (r ApiGetHistoryRequest) EventType(eventType int32) ApiGetHistoryRequest {
+	r.eventType = &eventType
+	return r
+}
+
+func (r ApiGetHistoryRequest) EpisodeId(episodeId int32) ApiGetHistoryRequest {
+	r.episodeId = &episodeId
+	return r
+}
+
+func (r ApiGetHistoryRequest) DownloadId(downloadId string) ApiGetHistoryRequest {
+	r.downloadId = &downloadId
 	return r
 }
 
@@ -195,11 +237,32 @@ func (a *HistoryApiService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
 	if r.includeSeries != nil {
 		localVarQueryParams.Add("includeSeries", parameterToString(*r.includeSeries, ""))
 	}
 	if r.includeEpisode != nil {
 		localVarQueryParams.Add("includeEpisode", parameterToString(*r.includeEpisode, ""))
+	}
+	if r.eventType != nil {
+		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+	}
+	if r.episodeId != nil {
+		localVarQueryParams.Add("episodeId", parameterToString(*r.episodeId, ""))
+	}
+	if r.downloadId != nil {
+		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

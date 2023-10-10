@@ -20,7 +20,6 @@ type LogResourcePagingResource struct {
 	PageSize *int32 `json:"pageSize,omitempty"`
 	SortKey NullableString `json:"sortKey,omitempty"`
 	SortDirection *SortDirection `json:"sortDirection,omitempty"`
-	Filters []*PagingResourceFilter `json:"filters,omitempty"`
 	TotalRecords *int32 `json:"totalRecords,omitempty"`
 	Records []*LogResource `json:"records,omitempty"`
 }
@@ -180,39 +179,6 @@ func (o *LogResourcePagingResource) SetSortDirection(v SortDirection) {
 	o.SortDirection = &v
 }
 
-// GetFilters returns the Filters field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LogResourcePagingResource) GetFilters() []*PagingResourceFilter {
-	if o == nil {
-		var ret []*PagingResourceFilter
-		return ret
-	}
-	return o.Filters
-}
-
-// GetFiltersOk returns a tuple with the Filters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LogResourcePagingResource) GetFiltersOk() ([]*PagingResourceFilter, bool) {
-	if o == nil || isNil(o.Filters) {
-    return nil, false
-	}
-	return o.Filters, true
-}
-
-// HasFilters returns a boolean if a field has been set.
-func (o *LogResourcePagingResource) HasFilters() bool {
-	if o != nil && isNil(o.Filters) {
-		return true
-	}
-
-	return false
-}
-
-// SetFilters gets a reference to the given []PagingResourceFilter and assigns it to the Filters field.
-func (o *LogResourcePagingResource) SetFilters(v []*PagingResourceFilter) {
-	o.Filters = v
-}
-
 // GetTotalRecords returns the TotalRecords field value if set, zero value otherwise.
 func (o *LogResourcePagingResource) GetTotalRecords() int32 {
 	if o == nil || isNil(o.TotalRecords) {
@@ -291,9 +257,6 @@ func (o LogResourcePagingResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.SortDirection) {
 		toSerialize["sortDirection"] = o.SortDirection
-	}
-	if o.Filters != nil {
-		toSerialize["filters"] = o.Filters
 	}
 	if !isNil(o.TotalRecords) {
 		toSerialize["totalRecords"] = o.TotalRecords

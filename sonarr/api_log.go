@@ -24,6 +24,36 @@ type LogApiService service
 type ApiGetLogRequest struct {
 	ctx context.Context
 	ApiService *LogApiService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
+	level *string
+}
+
+func (r ApiGetLogRequest) Page(page int32) ApiGetLogRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetLogRequest) PageSize(pageSize int32) ApiGetLogRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetLogRequest) SortKey(sortKey string) ApiGetLogRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetLogRequest) SortDirection(sortDirection SortDirection) ApiGetLogRequest {
+	r.sortDirection = &sortDirection
+	return r
+}
+
+func (r ApiGetLogRequest) Level(level string) ApiGetLogRequest {
+	r.level = &level
+	return r
 }
 
 func (r ApiGetLogRequest) Execute() (*LogResourcePagingResource, *http.Response, error) {
@@ -64,6 +94,21 @@ func (a *LogApiService) GetLogExecute(r ApiGetLogRequest) (*LogResourcePagingRes
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
+	if r.level != nil {
+		localVarQueryParams.Add("level", parameterToString(*r.level, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
