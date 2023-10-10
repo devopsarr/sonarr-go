@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetLog
 
-> LogResourcePagingResource GetLog(ctx).Execute()
+> LogResourcePagingResource GetLog(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).Level(level).Execute()
 
 
 
@@ -27,10 +27,15 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := sonarrClient.SortDirection("default") // SortDirection |  (optional)
+    level := "level_example" // string |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LogApi.GetLog(context.Background()).Execute()
+    resp, r, err := apiClient.LogApi.GetLog(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).Level(level).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LogApi.GetLog``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -42,12 +47,20 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetLogRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
+ **level** | **string** |  | 
 
 ### Return type
 

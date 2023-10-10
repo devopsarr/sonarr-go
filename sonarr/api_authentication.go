@@ -107,13 +107,13 @@ func (a *AuthenticationApiService) CreateLoginExecute(r ApiCreateLoginRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.username != nil {
-		localVarFormParams.Add("Username", parameterToString(*r.username, ""))
+		localVarFormParams.Add("username", parameterToString(*r.username, ""))
 	}
 	if r.password != nil {
-		localVarFormParams.Add("Password", parameterToString(*r.password, ""))
+		localVarFormParams.Add("password", parameterToString(*r.password, ""))
 	}
 	if r.rememberMe != nil {
-		localVarFormParams.Add("RememberMe", parameterToString(*r.rememberMe, ""))
+		localVarFormParams.Add("rememberMe", parameterToString(*r.rememberMe, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

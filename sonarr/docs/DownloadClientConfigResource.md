@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DownloadClientWorkingFolders** | Pointer to **NullableString** |  | [optional] 
 **EnableCompletedDownloadHandling** | Pointer to **bool** |  | [optional] 
 **AutoRedownloadFailed** | Pointer to **bool** |  | [optional] 
+**AutoRedownloadFailedFromInteractiveSearch** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -137,6 +138,31 @@ SetAutoRedownloadFailed sets AutoRedownloadFailed field to given value.
 `func (o *DownloadClientConfigResource) HasAutoRedownloadFailed() bool`
 
 HasAutoRedownloadFailed returns a boolean if a field has been set.
+
+### GetAutoRedownloadFailedFromInteractiveSearch
+
+`func (o *DownloadClientConfigResource) GetAutoRedownloadFailedFromInteractiveSearch() bool`
+
+GetAutoRedownloadFailedFromInteractiveSearch returns the AutoRedownloadFailedFromInteractiveSearch field if non-nil, zero value otherwise.
+
+### GetAutoRedownloadFailedFromInteractiveSearchOk
+
+`func (o *DownloadClientConfigResource) GetAutoRedownloadFailedFromInteractiveSearchOk() (*bool, bool)`
+
+GetAutoRedownloadFailedFromInteractiveSearchOk returns a tuple with the AutoRedownloadFailedFromInteractiveSearch field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoRedownloadFailedFromInteractiveSearch
+
+`func (o *DownloadClientConfigResource) SetAutoRedownloadFailedFromInteractiveSearch(v bool)`
+
+SetAutoRedownloadFailedFromInteractiveSearch sets AutoRedownloadFailedFromInteractiveSearch field to given value.
+
+### HasAutoRedownloadFailedFromInteractiveSearch
+
+`func (o *DownloadClientConfigResource) HasAutoRedownloadFailedFromInteractiveSearch() bool`
+
+HasAutoRedownloadFailedFromInteractiveSearch returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

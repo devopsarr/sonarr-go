@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **PageSize** | Pointer to **int32** |  | [optional] 
 **SortKey** | Pointer to **NullableString** |  | [optional] 
 **SortDirection** | Pointer to [**SortDirection**](SortDirection.md) |  | [optional] 
-**Filters** | Pointer to [**[]PagingResourceFilter**](PagingResourceFilter.md) |  | [optional] 
 **TotalRecords** | Pointer to **int32** |  | [optional] 
 **Records** | Pointer to [**[]EpisodeResource**](EpisodeResource.md) |  | [optional] 
 
@@ -141,41 +140,6 @@ SetSortDirection sets SortDirection field to given value.
 
 HasSortDirection returns a boolean if a field has been set.
 
-### GetFilters
-
-`func (o *EpisodeResourcePagingResource) GetFilters() []PagingResourceFilter`
-
-GetFilters returns the Filters field if non-nil, zero value otherwise.
-
-### GetFiltersOk
-
-`func (o *EpisodeResourcePagingResource) GetFiltersOk() (*[]PagingResourceFilter, bool)`
-
-GetFiltersOk returns a tuple with the Filters field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFilters
-
-`func (o *EpisodeResourcePagingResource) SetFilters(v []PagingResourceFilter)`
-
-SetFilters sets Filters field to given value.
-
-### HasFilters
-
-`func (o *EpisodeResourcePagingResource) HasFilters() bool`
-
-HasFilters returns a boolean if a field has been set.
-
-### SetFiltersNil
-
-`func (o *EpisodeResourcePagingResource) SetFiltersNil(b bool)`
-
- SetFiltersNil sets the value for Filters to be an explicit nil
-
-### UnsetFilters
-`func (o *EpisodeResourcePagingResource) UnsetFilters()`
-
-UnsetFilters ensures that no value is present for Filters, not even an explicit nil
 ### GetTotalRecords
 
 `func (o *EpisodeResourcePagingResource) GetTotalRecords() int32`

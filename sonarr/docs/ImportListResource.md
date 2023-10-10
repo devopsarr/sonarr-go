@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Tags** | Pointer to **[]int32** |  | [optional] 
 **Presets** | Pointer to [**[]ImportListResource**](ImportListResource.md) |  | [optional] 
 **EnableAutomaticAdd** | Pointer to **bool** |  | [optional] 
+**SearchForMissingEpisodes** | Pointer to **bool** |  | [optional] 
 **ShouldMonitor** | Pointer to [**MonitorTypes**](MonitorTypes.md) |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
 **QualityProfileId** | Pointer to **int32** |  | [optional] 
@@ -397,6 +398,31 @@ SetEnableAutomaticAdd sets EnableAutomaticAdd field to given value.
 `func (o *ImportListResource) HasEnableAutomaticAdd() bool`
 
 HasEnableAutomaticAdd returns a boolean if a field has been set.
+
+### GetSearchForMissingEpisodes
+
+`func (o *ImportListResource) GetSearchForMissingEpisodes() bool`
+
+GetSearchForMissingEpisodes returns the SearchForMissingEpisodes field if non-nil, zero value otherwise.
+
+### GetSearchForMissingEpisodesOk
+
+`func (o *ImportListResource) GetSearchForMissingEpisodesOk() (*bool, bool)`
+
+GetSearchForMissingEpisodesOk returns a tuple with the SearchForMissingEpisodes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchForMissingEpisodes
+
+`func (o *ImportListResource) SetSearchForMissingEpisodes(v bool)`
+
+SetSearchForMissingEpisodes sets SearchForMissingEpisodes field to given value.
+
+### HasSearchForMissingEpisodes
+
+`func (o *ImportListResource) HasSearchForMissingEpisodes() bool`
+
+HasSearchForMissingEpisodes returns a boolean if a field has been set.
 
 ### GetShouldMonitor
 

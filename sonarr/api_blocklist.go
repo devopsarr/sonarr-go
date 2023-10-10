@@ -263,6 +263,30 @@ func (a *BlocklistApiService) DeleteBlocklistBulkExecute(r ApiDeleteBlocklistBul
 type ApiGetBlocklistRequest struct {
 	ctx context.Context
 	ApiService *BlocklistApiService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
+}
+
+func (r ApiGetBlocklistRequest) Page(page int32) ApiGetBlocklistRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetBlocklistRequest) PageSize(pageSize int32) ApiGetBlocklistRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetBlocklistRequest) SortKey(sortKey string) ApiGetBlocklistRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetBlocklistRequest) SortDirection(sortDirection SortDirection) ApiGetBlocklistRequest {
+	r.sortDirection = &sortDirection
+	return r
 }
 
 func (r ApiGetBlocklistRequest) Execute() (*BlocklistResourcePagingResource, *http.Response, error) {
@@ -303,6 +327,18 @@ func (a *BlocklistApiService) GetBlocklistExecute(r ApiGetBlocklistRequest) (*Bl
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

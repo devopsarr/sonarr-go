@@ -27,6 +27,7 @@ type ImportListResource struct {
 	Tags []*int32 `json:"tags,omitempty"`
 	Presets []*ImportListResource `json:"presets,omitempty"`
 	EnableAutomaticAdd *bool `json:"enableAutomaticAdd,omitempty"`
+	SearchForMissingEpisodes *bool `json:"searchForMissingEpisodes,omitempty"`
 	ShouldMonitor *MonitorTypes `json:"shouldMonitor,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
@@ -459,6 +460,38 @@ func (o *ImportListResource) SetEnableAutomaticAdd(v bool) {
 	o.EnableAutomaticAdd = &v
 }
 
+// GetSearchForMissingEpisodes returns the SearchForMissingEpisodes field value if set, zero value otherwise.
+func (o *ImportListResource) GetSearchForMissingEpisodes() bool {
+	if o == nil || isNil(o.SearchForMissingEpisodes) {
+		var ret bool
+		return ret
+	}
+	return *o.SearchForMissingEpisodes
+}
+
+// GetSearchForMissingEpisodesOk returns a tuple with the SearchForMissingEpisodes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ImportListResource) GetSearchForMissingEpisodesOk() (*bool, bool) {
+	if o == nil || isNil(o.SearchForMissingEpisodes) {
+    return nil, false
+	}
+	return o.SearchForMissingEpisodes, true
+}
+
+// HasSearchForMissingEpisodes returns a boolean if a field has been set.
+func (o *ImportListResource) HasSearchForMissingEpisodes() bool {
+	if o != nil && !isNil(o.SearchForMissingEpisodes) {
+		return true
+	}
+
+	return false
+}
+
+// SetSearchForMissingEpisodes gets a reference to the given bool and assigns it to the SearchForMissingEpisodes field.
+func (o *ImportListResource) SetSearchForMissingEpisodes(v bool) {
+	o.SearchForMissingEpisodes = &v
+}
+
 // GetShouldMonitor returns the ShouldMonitor field value if set, zero value otherwise.
 func (o *ImportListResource) GetShouldMonitor() MonitorTypes {
 	if o == nil || isNil(o.ShouldMonitor) {
@@ -759,6 +792,9 @@ func (o ImportListResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.EnableAutomaticAdd) {
 		toSerialize["enableAutomaticAdd"] = o.EnableAutomaticAdd
+	}
+	if !isNil(o.SearchForMissingEpisodes) {
+		toSerialize["searchForMissingEpisodes"] = o.SearchForMissingEpisodes
 	}
 	if !isNil(o.ShouldMonitor) {
 		toSerialize["shouldMonitor"] = o.ShouldMonitor
