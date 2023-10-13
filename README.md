@@ -207,7 +207,7 @@ Class | Method | HTTP request | Description
 *LogFileApi* | [**ListLogFile**](sonarr/docs/LogFileApi.md#listlogfile) | **Get** /api/v3/log/file | 
 *ManualImportApi* | [**CreateManualImport**](sonarr/docs/ManualImportApi.md#createmanualimport) | **Post** /api/v3/manualimport | 
 *ManualImportApi* | [**ListManualImport**](sonarr/docs/ManualImportApi.md#listmanualimport) | **Get** /api/v3/manualimport | 
-*MediaCoverApi* | [**GetMediaCoverseriesIdByFilename**](sonarr/docs/MediaCoverApi.md#getmediacoverseriesidbyfilename) | **Get** /api/v3/mediacover/{seriesId}/{filename} | 
+*MediaCoverApi* | [**GetMediaCoverByFilename**](sonarr/docs/MediaCoverApi.md#getmediacoverbyfilename) | **Get** /api/v3/mediacover/{seriesId}/{filename} | 
 *MediaManagementConfigApi* | [**GetMediaManagementConfig**](sonarr/docs/MediaManagementConfigApi.md#getmediamanagementconfig) | **Get** /api/v3/config/mediamanagement | 
 *MediaManagementConfigApi* | [**GetMediaManagementConfigById**](sonarr/docs/MediaManagementConfigApi.md#getmediamanagementconfigbyid) | **Get** /api/v3/config/mediamanagement/{id} | 
 *MediaManagementConfigApi* | [**UpdateMediaManagementConfig**](sonarr/docs/MediaManagementConfigApi.md#updatemediamanagementconfig) | **Put** /api/v3/config/mediamanagement/{id} | 
