@@ -2811,7 +2811,7 @@ paths:
       - ManualImport
   /api/v3/mediacover/{seriesId}/{filename}:
     get:
-      operationId: "GetMediaCover{seriesId}ByFilename"
+      operationId: GetMediaCoverByFilename
       parameters:
       - explode: false
         in: path
