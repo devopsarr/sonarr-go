@@ -20,11 +20,11 @@ import (
 )
 
 
-// QueueDetailsApiService QueueDetailsApi service
-type QueueDetailsApiService service
+// QueueDetailsAPIService QueueDetailsAPI service
+type QueueDetailsAPIService service
 type ApiListQueueDetailsRequest struct {
 	ctx context.Context
-	ApiService *QueueDetailsApiService
+	ApiService *QueueDetailsAPIService
 	seriesId *int32
 	episodeIds *[]int32
 	includeSeries *bool
@@ -61,7 +61,7 @@ ListQueueDetails Method for ListQueueDetails
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListQueueDetailsRequest
 */
-func (a *QueueDetailsApiService) ListQueueDetails(ctx context.Context) ApiListQueueDetailsRequest {
+func (a *QueueDetailsAPIService) ListQueueDetails(ctx context.Context) ApiListQueueDetailsRequest {
 	return ApiListQueueDetailsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -70,7 +70,7 @@ func (a *QueueDetailsApiService) ListQueueDetails(ctx context.Context) ApiListQu
 
 // Execute executes the request
 //  @return []QueueResource
-func (a *QueueDetailsApiService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]*QueueResource, *http.Response, error) {
+func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]*QueueResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -78,7 +78,7 @@ func (a *QueueDetailsApiService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 		localVarReturnValue  []*QueueResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueDetailsApiService.ListQueueDetails")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueDetailsAPIService.ListQueueDetails")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -19,11 +19,11 @@ import (
 )
 
 
-// LanguageProfileSchemaApiService LanguageProfileSchemaApi service
-type LanguageProfileSchemaApiService service
+// LanguageProfileSchemaAPIService LanguageProfileSchemaAPI service
+type LanguageProfileSchemaAPIService service
 type ApiGetLanguageprofileSchemaRequest struct {
 	ctx context.Context
-	ApiService *LanguageProfileSchemaApiService
+	ApiService *LanguageProfileSchemaAPIService
 }
 
 func (r ApiGetLanguageprofileSchemaRequest) Execute() (*LanguageProfileResource, *http.Response, error) {
@@ -38,7 +38,7 @@ GetLanguageprofileSchema Method for GetLanguageprofileSchema
 
 Deprecated
 */
-func (a *LanguageProfileSchemaApiService) GetLanguageprofileSchema(ctx context.Context) ApiGetLanguageprofileSchemaRequest {
+func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchema(ctx context.Context) ApiGetLanguageprofileSchemaRequest {
 	return ApiGetLanguageprofileSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -48,7 +48,7 @@ func (a *LanguageProfileSchemaApiService) GetLanguageprofileSchema(ctx context.C
 // Execute executes the request
 //  @return LanguageProfileResource
 // Deprecated
-func (a *LanguageProfileSchemaApiService) GetLanguageprofileSchemaExecute(r ApiGetLanguageprofileSchemaRequest) (*LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileSchemaAPIService) GetLanguageprofileSchemaExecute(r ApiGetLanguageprofileSchemaRequest) (*LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -56,7 +56,7 @@ func (a *LanguageProfileSchemaApiService) GetLanguageprofileSchemaExecute(r ApiG
 		localVarReturnValue  *LanguageProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileSchemaApiService.GetLanguageprofileSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileSchemaAPIService.GetLanguageprofileSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

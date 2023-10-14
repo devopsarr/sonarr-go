@@ -20,11 +20,11 @@ import (
 )
 
 
-// SeriesApiService SeriesApi service
-type SeriesApiService service
+// SeriesAPIService SeriesAPI service
+type SeriesAPIService service
 type ApiCreateSeriesRequest struct {
 	ctx context.Context
-	ApiService *SeriesApiService
+	ApiService *SeriesAPIService
 	seriesResource *SeriesResource
 }
 
@@ -43,7 +43,7 @@ CreateSeries Method for CreateSeries
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateSeriesRequest
 */
-func (a *SeriesApiService) CreateSeries(ctx context.Context) ApiCreateSeriesRequest {
+func (a *SeriesAPIService) CreateSeries(ctx context.Context) ApiCreateSeriesRequest {
 	return ApiCreateSeriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *SeriesApiService) CreateSeries(ctx context.Context) ApiCreateSeriesRequ
 
 // Execute executes the request
 //  @return SeriesResource
-func (a *SeriesApiService) CreateSeriesExecute(r ApiCreateSeriesRequest) (*SeriesResource, *http.Response, error) {
+func (a *SeriesAPIService) CreateSeriesExecute(r ApiCreateSeriesRequest) (*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SeriesApiService) CreateSeriesExecute(r ApiCreateSeriesRequest) (*Serie
 		localVarReturnValue  *SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesApiService.CreateSeries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesAPIService.CreateSeries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *SeriesApiService) CreateSeriesExecute(r ApiCreateSeriesRequest) (*Serie
 }
 type ApiDeleteSeriesRequest struct {
 	ctx context.Context
-	ApiService *SeriesApiService
+	ApiService *SeriesAPIService
 	id int32
 	deleteFiles *bool
 	addImportListExclusion *bool
@@ -183,7 +183,7 @@ DeleteSeries Method for DeleteSeries
  @param id
  @return ApiDeleteSeriesRequest
 */
-func (a *SeriesApiService) DeleteSeries(ctx context.Context, id int32) ApiDeleteSeriesRequest {
+func (a *SeriesAPIService) DeleteSeries(ctx context.Context, id int32) ApiDeleteSeriesRequest {
 	return ApiDeleteSeriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -192,14 +192,14 @@ func (a *SeriesApiService) DeleteSeries(ctx context.Context, id int32) ApiDelete
 }
 
 // Execute executes the request
-func (a *SeriesApiService) DeleteSeriesExecute(r ApiDeleteSeriesRequest) (*http.Response, error) {
+func (a *SeriesAPIService) DeleteSeriesExecute(r ApiDeleteSeriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesApiService.DeleteSeries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesAPIService.DeleteSeries")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -291,7 +291,7 @@ func (a *SeriesApiService) DeleteSeriesExecute(r ApiDeleteSeriesRequest) (*http.
 }
 type ApiGetSeriesByIdRequest struct {
 	ctx context.Context
-	ApiService *SeriesApiService
+	ApiService *SeriesAPIService
 	id int32
 	includeSeasonImages *bool
 }
@@ -312,7 +312,7 @@ GetSeriesById Method for GetSeriesById
  @param id
  @return ApiGetSeriesByIdRequest
 */
-func (a *SeriesApiService) GetSeriesById(ctx context.Context, id int32) ApiGetSeriesByIdRequest {
+func (a *SeriesAPIService) GetSeriesById(ctx context.Context, id int32) ApiGetSeriesByIdRequest {
 	return ApiGetSeriesByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -322,7 +322,7 @@ func (a *SeriesApiService) GetSeriesById(ctx context.Context, id int32) ApiGetSe
 
 // Execute executes the request
 //  @return SeriesResource
-func (a *SeriesApiService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*SeriesResource, *http.Response, error) {
+func (a *SeriesAPIService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -330,7 +330,7 @@ func (a *SeriesApiService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*Ser
 		localVarReturnValue  *SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesApiService.GetSeriesById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesAPIService.GetSeriesById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -428,7 +428,7 @@ func (a *SeriesApiService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*Ser
 }
 type ApiListSeriesRequest struct {
 	ctx context.Context
-	ApiService *SeriesApiService
+	ApiService *SeriesAPIService
 	tvdbId *int32
 	includeSeasonImages *bool
 }
@@ -453,7 +453,7 @@ ListSeries Method for ListSeries
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListSeriesRequest
 */
-func (a *SeriesApiService) ListSeries(ctx context.Context) ApiListSeriesRequest {
+func (a *SeriesAPIService) ListSeries(ctx context.Context) ApiListSeriesRequest {
 	return ApiListSeriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -462,7 +462,7 @@ func (a *SeriesApiService) ListSeries(ctx context.Context) ApiListSeriesRequest 
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesApiService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesResource, *http.Response, error) {
+func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -470,7 +470,7 @@ func (a *SeriesApiService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesR
 		localVarReturnValue  []*SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesApiService.ListSeries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesAPIService.ListSeries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -570,7 +570,7 @@ func (a *SeriesApiService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesR
 }
 type ApiUpdateSeriesRequest struct {
 	ctx context.Context
-	ApiService *SeriesApiService
+	ApiService *SeriesAPIService
 	id string
 	moveFiles *bool
 	seriesResource *SeriesResource
@@ -597,7 +597,7 @@ UpdateSeries Method for UpdateSeries
  @param id
  @return ApiUpdateSeriesRequest
 */
-func (a *SeriesApiService) UpdateSeries(ctx context.Context, id string) ApiUpdateSeriesRequest {
+func (a *SeriesAPIService) UpdateSeries(ctx context.Context, id string) ApiUpdateSeriesRequest {
 	return ApiUpdateSeriesRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -607,7 +607,7 @@ func (a *SeriesApiService) UpdateSeries(ctx context.Context, id string) ApiUpdat
 
 // Execute executes the request
 //  @return SeriesResource
-func (a *SeriesApiService) UpdateSeriesExecute(r ApiUpdateSeriesRequest) (*SeriesResource, *http.Response, error) {
+func (a *SeriesAPIService) UpdateSeriesExecute(r ApiUpdateSeriesRequest) (*SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -615,7 +615,7 @@ func (a *SeriesApiService) UpdateSeriesExecute(r ApiUpdateSeriesRequest) (*Serie
 		localVarReturnValue  *SeriesResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesApiService.UpdateSeries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesAPIService.UpdateSeries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

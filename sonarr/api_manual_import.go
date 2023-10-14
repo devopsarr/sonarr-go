@@ -19,11 +19,11 @@ import (
 )
 
 
-// ManualImportApiService ManualImportApi service
-type ManualImportApiService service
+// ManualImportAPIService ManualImportAPI service
+type ManualImportAPIService service
 type ApiCreateManualImportRequest struct {
 	ctx context.Context
-	ApiService *ManualImportApiService
+	ApiService *ManualImportAPIService
 	manualImportReprocessResource *[]ManualImportReprocessResource
 }
 
@@ -42,7 +42,7 @@ CreateManualImport Method for CreateManualImport
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateManualImportRequest
 */
-func (a *ManualImportApiService) CreateManualImport(ctx context.Context) ApiCreateManualImportRequest {
+func (a *ManualImportAPIService) CreateManualImport(ctx context.Context) ApiCreateManualImportRequest {
 	return ApiCreateManualImportRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *ManualImportApiService) CreateManualImport(ctx context.Context) ApiCrea
 }
 
 // Execute executes the request
-func (a *ManualImportApiService) CreateManualImportExecute(r ApiCreateManualImportRequest) (*http.Response, error) {
+func (a *ManualImportAPIService) CreateManualImportExecute(r ApiCreateManualImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.CreateManualImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportAPIService.CreateManualImport")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *ManualImportApiService) CreateManualImportExecute(r ApiCreateManualImpo
 }
 type ApiListManualImportRequest struct {
 	ctx context.Context
-	ApiService *ManualImportApiService
+	ApiService *ManualImportAPIService
 	folder *string
 	downloadId *string
 	seriesId *int32
@@ -187,7 +187,7 @@ ListManualImport Method for ListManualImport
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListManualImportRequest
 */
-func (a *ManualImportApiService) ListManualImport(ctx context.Context) ApiListManualImportRequest {
+func (a *ManualImportAPIService) ListManualImport(ctx context.Context) ApiListManualImportRequest {
 	return ApiListManualImportRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -196,7 +196,7 @@ func (a *ManualImportApiService) ListManualImport(ctx context.Context) ApiListMa
 
 // Execute executes the request
 //  @return []ManualImportResource
-func (a *ManualImportApiService) ListManualImportExecute(r ApiListManualImportRequest) ([]*ManualImportResource, *http.Response, error) {
+func (a *ManualImportAPIService) ListManualImportExecute(r ApiListManualImportRequest) ([]*ManualImportResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -204,7 +204,7 @@ func (a *ManualImportApiService) ListManualImportExecute(r ApiListManualImportRe
 		localVarReturnValue  []*ManualImportResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportApiService.ListManualImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportAPIService.ListManualImport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -20,11 +20,11 @@ import (
 )
 
 
-// QualityProfileApiService QualityProfileApi service
-type QualityProfileApiService service
+// QualityProfileAPIService QualityProfileAPI service
+type QualityProfileAPIService service
 type ApiCreateQualityProfileRequest struct {
 	ctx context.Context
-	ApiService *QualityProfileApiService
+	ApiService *QualityProfileAPIService
 	qualityProfileResource *QualityProfileResource
 }
 
@@ -43,7 +43,7 @@ CreateQualityProfile Method for CreateQualityProfile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateQualityProfileRequest
 */
-func (a *QualityProfileApiService) CreateQualityProfile(ctx context.Context) ApiCreateQualityProfileRequest {
+func (a *QualityProfileAPIService) CreateQualityProfile(ctx context.Context) ApiCreateQualityProfileRequest {
 	return ApiCreateQualityProfileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *QualityProfileApiService) CreateQualityProfile(ctx context.Context) Api
 
 // Execute executes the request
 //  @return QualityProfileResource
-func (a *QualityProfileApiService) CreateQualityProfileExecute(r ApiCreateQualityProfileRequest) (*QualityProfileResource, *http.Response, error) {
+func (a *QualityProfileAPIService) CreateQualityProfileExecute(r ApiCreateQualityProfileRequest) (*QualityProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *QualityProfileApiService) CreateQualityProfileExecute(r ApiCreateQualit
 		localVarReturnValue  *QualityProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileApiService.CreateQualityProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileAPIService.CreateQualityProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *QualityProfileApiService) CreateQualityProfileExecute(r ApiCreateQualit
 }
 type ApiDeleteQualityProfileRequest struct {
 	ctx context.Context
-	ApiService *QualityProfileApiService
+	ApiService *QualityProfileAPIService
 	id int32
 }
 
@@ -171,7 +171,7 @@ DeleteQualityProfile Method for DeleteQualityProfile
  @param id
  @return ApiDeleteQualityProfileRequest
 */
-func (a *QualityProfileApiService) DeleteQualityProfile(ctx context.Context, id int32) ApiDeleteQualityProfileRequest {
+func (a *QualityProfileAPIService) DeleteQualityProfile(ctx context.Context, id int32) ApiDeleteQualityProfileRequest {
 	return ApiDeleteQualityProfileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -180,14 +180,14 @@ func (a *QualityProfileApiService) DeleteQualityProfile(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *QualityProfileApiService) DeleteQualityProfileExecute(r ApiDeleteQualityProfileRequest) (*http.Response, error) {
+func (a *QualityProfileAPIService) DeleteQualityProfileExecute(r ApiDeleteQualityProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileApiService.DeleteQualityProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileAPIService.DeleteQualityProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -273,7 +273,7 @@ func (a *QualityProfileApiService) DeleteQualityProfileExecute(r ApiDeleteQualit
 }
 type ApiGetQualityProfileByIdRequest struct {
 	ctx context.Context
-	ApiService *QualityProfileApiService
+	ApiService *QualityProfileAPIService
 	id int32
 }
 
@@ -288,7 +288,7 @@ GetQualityProfileById Method for GetQualityProfileById
  @param id
  @return ApiGetQualityProfileByIdRequest
 */
-func (a *QualityProfileApiService) GetQualityProfileById(ctx context.Context, id int32) ApiGetQualityProfileByIdRequest {
+func (a *QualityProfileAPIService) GetQualityProfileById(ctx context.Context, id int32) ApiGetQualityProfileByIdRequest {
 	return ApiGetQualityProfileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -298,7 +298,7 @@ func (a *QualityProfileApiService) GetQualityProfileById(ctx context.Context, id
 
 // Execute executes the request
 //  @return QualityProfileResource
-func (a *QualityProfileApiService) GetQualityProfileByIdExecute(r ApiGetQualityProfileByIdRequest) (*QualityProfileResource, *http.Response, error) {
+func (a *QualityProfileAPIService) GetQualityProfileByIdExecute(r ApiGetQualityProfileByIdRequest) (*QualityProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *QualityProfileApiService) GetQualityProfileByIdExecute(r ApiGetQualityP
 		localVarReturnValue  *QualityProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileApiService.GetQualityProfileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileAPIService.GetQualityProfileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -401,7 +401,7 @@ func (a *QualityProfileApiService) GetQualityProfileByIdExecute(r ApiGetQualityP
 }
 type ApiListQualityProfileRequest struct {
 	ctx context.Context
-	ApiService *QualityProfileApiService
+	ApiService *QualityProfileAPIService
 }
 
 func (r ApiListQualityProfileRequest) Execute() ([]*QualityProfileResource, *http.Response, error) {
@@ -414,7 +414,7 @@ ListQualityProfile Method for ListQualityProfile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListQualityProfileRequest
 */
-func (a *QualityProfileApiService) ListQualityProfile(ctx context.Context) ApiListQualityProfileRequest {
+func (a *QualityProfileAPIService) ListQualityProfile(ctx context.Context) ApiListQualityProfileRequest {
 	return ApiListQualityProfileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -423,7 +423,7 @@ func (a *QualityProfileApiService) ListQualityProfile(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []QualityProfileResource
-func (a *QualityProfileApiService) ListQualityProfileExecute(r ApiListQualityProfileRequest) ([]*QualityProfileResource, *http.Response, error) {
+func (a *QualityProfileAPIService) ListQualityProfileExecute(r ApiListQualityProfileRequest) ([]*QualityProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *QualityProfileApiService) ListQualityProfileExecute(r ApiListQualityPro
 		localVarReturnValue  []*QualityProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileApiService.ListQualityProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileAPIService.ListQualityProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -525,7 +525,7 @@ func (a *QualityProfileApiService) ListQualityProfileExecute(r ApiListQualityPro
 }
 type ApiUpdateQualityProfileRequest struct {
 	ctx context.Context
-	ApiService *QualityProfileApiService
+	ApiService *QualityProfileAPIService
 	id string
 	qualityProfileResource *QualityProfileResource
 }
@@ -546,7 +546,7 @@ UpdateQualityProfile Method for UpdateQualityProfile
  @param id
  @return ApiUpdateQualityProfileRequest
 */
-func (a *QualityProfileApiService) UpdateQualityProfile(ctx context.Context, id string) ApiUpdateQualityProfileRequest {
+func (a *QualityProfileAPIService) UpdateQualityProfile(ctx context.Context, id string) ApiUpdateQualityProfileRequest {
 	return ApiUpdateQualityProfileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -556,7 +556,7 @@ func (a *QualityProfileApiService) UpdateQualityProfile(ctx context.Context, id 
 
 // Execute executes the request
 //  @return QualityProfileResource
-func (a *QualityProfileApiService) UpdateQualityProfileExecute(r ApiUpdateQualityProfileRequest) (*QualityProfileResource, *http.Response, error) {
+func (a *QualityProfileAPIService) UpdateQualityProfileExecute(r ApiUpdateQualityProfileRequest) (*QualityProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -564,7 +564,7 @@ func (a *QualityProfileApiService) UpdateQualityProfileExecute(r ApiUpdateQualit
 		localVarReturnValue  *QualityProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileApiService.UpdateQualityProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileAPIService.UpdateQualityProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

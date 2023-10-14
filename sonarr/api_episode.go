@@ -21,11 +21,11 @@ import (
 )
 
 
-// EpisodeApiService EpisodeApi service
-type EpisodeApiService service
+// EpisodeAPIService EpisodeAPI service
+type EpisodeAPIService service
 type ApiGetEpisodeByIdRequest struct {
 	ctx context.Context
-	ApiService *EpisodeApiService
+	ApiService *EpisodeAPIService
 	id int32
 }
 
@@ -40,7 +40,7 @@ GetEpisodeById Method for GetEpisodeById
  @param id
  @return ApiGetEpisodeByIdRequest
 */
-func (a *EpisodeApiService) GetEpisodeById(ctx context.Context, id int32) ApiGetEpisodeByIdRequest {
+func (a *EpisodeAPIService) GetEpisodeById(ctx context.Context, id int32) ApiGetEpisodeByIdRequest {
 	return ApiGetEpisodeByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,7 +50,7 @@ func (a *EpisodeApiService) GetEpisodeById(ctx context.Context, id int32) ApiGet
 
 // Execute executes the request
 //  @return EpisodeResource
-func (a *EpisodeApiService) GetEpisodeByIdExecute(r ApiGetEpisodeByIdRequest) (*EpisodeResource, *http.Response, error) {
+func (a *EpisodeAPIService) GetEpisodeByIdExecute(r ApiGetEpisodeByIdRequest) (*EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *EpisodeApiService) GetEpisodeByIdExecute(r ApiGetEpisodeByIdRequest) (*
 		localVarReturnValue  *EpisodeResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeApiService.GetEpisodeById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeAPIService.GetEpisodeById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -153,7 +153,7 @@ func (a *EpisodeApiService) GetEpisodeByIdExecute(r ApiGetEpisodeByIdRequest) (*
 }
 type ApiListEpisodeRequest struct {
 	ctx context.Context
-	ApiService *EpisodeApiService
+	ApiService *EpisodeAPIService
 	seriesId *int32
 	seasonNumber *int32
 	episodeIds *[]int32
@@ -196,7 +196,7 @@ ListEpisode Method for ListEpisode
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListEpisodeRequest
 */
-func (a *EpisodeApiService) ListEpisode(ctx context.Context) ApiListEpisodeRequest {
+func (a *EpisodeAPIService) ListEpisode(ctx context.Context) ApiListEpisodeRequest {
 	return ApiListEpisodeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -205,7 +205,7 @@ func (a *EpisodeApiService) ListEpisode(ctx context.Context) ApiListEpisodeReque
 
 // Execute executes the request
 //  @return []EpisodeResource
-func (a *EpisodeApiService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*EpisodeResource, *http.Response, error) {
+func (a *EpisodeAPIService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -213,7 +213,7 @@ func (a *EpisodeApiService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*Epis
 		localVarReturnValue  []*EpisodeResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeApiService.ListEpisode")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeAPIService.ListEpisode")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -330,7 +330,7 @@ func (a *EpisodeApiService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*Epis
 }
 type ApiPutEpisodeMonitorRequest struct {
 	ctx context.Context
-	ApiService *EpisodeApiService
+	ApiService *EpisodeAPIService
 	includeImages *bool
 	episodesMonitoredResource *EpisodesMonitoredResource
 }
@@ -355,7 +355,7 @@ PutEpisodeMonitor Method for PutEpisodeMonitor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutEpisodeMonitorRequest
 */
-func (a *EpisodeApiService) PutEpisodeMonitor(ctx context.Context) ApiPutEpisodeMonitorRequest {
+func (a *EpisodeAPIService) PutEpisodeMonitor(ctx context.Context) ApiPutEpisodeMonitorRequest {
 	return ApiPutEpisodeMonitorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -363,14 +363,14 @@ func (a *EpisodeApiService) PutEpisodeMonitor(ctx context.Context) ApiPutEpisode
 }
 
 // Execute executes the request
-func (a *EpisodeApiService) PutEpisodeMonitorExecute(r ApiPutEpisodeMonitorRequest) (*http.Response, error) {
+func (a *EpisodeAPIService) PutEpisodeMonitorExecute(r ApiPutEpisodeMonitorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeApiService.PutEpisodeMonitor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeAPIService.PutEpisodeMonitor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -460,7 +460,7 @@ func (a *EpisodeApiService) PutEpisodeMonitorExecute(r ApiPutEpisodeMonitorReque
 }
 type ApiUpdateEpisodeRequest struct {
 	ctx context.Context
-	ApiService *EpisodeApiService
+	ApiService *EpisodeAPIService
 	id int32
 	episodeResource *EpisodeResource
 }
@@ -481,7 +481,7 @@ UpdateEpisode Method for UpdateEpisode
  @param id
  @return ApiUpdateEpisodeRequest
 */
-func (a *EpisodeApiService) UpdateEpisode(ctx context.Context, id int32) ApiUpdateEpisodeRequest {
+func (a *EpisodeAPIService) UpdateEpisode(ctx context.Context, id int32) ApiUpdateEpisodeRequest {
 	return ApiUpdateEpisodeRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -491,7 +491,7 @@ func (a *EpisodeApiService) UpdateEpisode(ctx context.Context, id int32) ApiUpda
 
 // Execute executes the request
 //  @return EpisodeResource
-func (a *EpisodeApiService) UpdateEpisodeExecute(r ApiUpdateEpisodeRequest) (*EpisodeResource, *http.Response, error) {
+func (a *EpisodeAPIService) UpdateEpisodeExecute(r ApiUpdateEpisodeRequest) (*EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -499,7 +499,7 @@ func (a *EpisodeApiService) UpdateEpisodeExecute(r ApiUpdateEpisodeRequest) (*Ep
 		localVarReturnValue  *EpisodeResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeApiService.UpdateEpisode")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeAPIService.UpdateEpisode")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
