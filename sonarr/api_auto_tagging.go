@@ -20,11 +20,11 @@ import (
 )
 
 
-// AutoTaggingApiService AutoTaggingApi service
-type AutoTaggingApiService service
+// AutoTaggingAPIService AutoTaggingAPI service
+type AutoTaggingAPIService service
 type ApiCreateAutoTaggingRequest struct {
 	ctx context.Context
-	ApiService *AutoTaggingApiService
+	ApiService *AutoTaggingAPIService
 	autoTaggingResource *AutoTaggingResource
 }
 
@@ -43,7 +43,7 @@ CreateAutoTagging Method for CreateAutoTagging
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateAutoTaggingRequest
 */
-func (a *AutoTaggingApiService) CreateAutoTagging(ctx context.Context) ApiCreateAutoTaggingRequest {
+func (a *AutoTaggingAPIService) CreateAutoTagging(ctx context.Context) ApiCreateAutoTaggingRequest {
 	return ApiCreateAutoTaggingRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *AutoTaggingApiService) CreateAutoTagging(ctx context.Context) ApiCreate
 
 // Execute executes the request
 //  @return AutoTaggingResource
-func (a *AutoTaggingApiService) CreateAutoTaggingExecute(r ApiCreateAutoTaggingRequest) (*AutoTaggingResource, *http.Response, error) {
+func (a *AutoTaggingAPIService) CreateAutoTaggingExecute(r ApiCreateAutoTaggingRequest) (*AutoTaggingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *AutoTaggingApiService) CreateAutoTaggingExecute(r ApiCreateAutoTaggingR
 		localVarReturnValue  *AutoTaggingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingApiService.CreateAutoTagging")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingAPIService.CreateAutoTagging")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *AutoTaggingApiService) CreateAutoTaggingExecute(r ApiCreateAutoTaggingR
 }
 type ApiDeleteAutoTaggingRequest struct {
 	ctx context.Context
-	ApiService *AutoTaggingApiService
+	ApiService *AutoTaggingAPIService
 	id int32
 }
 
@@ -171,7 +171,7 @@ DeleteAutoTagging Method for DeleteAutoTagging
  @param id
  @return ApiDeleteAutoTaggingRequest
 */
-func (a *AutoTaggingApiService) DeleteAutoTagging(ctx context.Context, id int32) ApiDeleteAutoTaggingRequest {
+func (a *AutoTaggingAPIService) DeleteAutoTagging(ctx context.Context, id int32) ApiDeleteAutoTaggingRequest {
 	return ApiDeleteAutoTaggingRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -180,14 +180,14 @@ func (a *AutoTaggingApiService) DeleteAutoTagging(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-func (a *AutoTaggingApiService) DeleteAutoTaggingExecute(r ApiDeleteAutoTaggingRequest) (*http.Response, error) {
+func (a *AutoTaggingAPIService) DeleteAutoTaggingExecute(r ApiDeleteAutoTaggingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingApiService.DeleteAutoTagging")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingAPIService.DeleteAutoTagging")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -273,7 +273,7 @@ func (a *AutoTaggingApiService) DeleteAutoTaggingExecute(r ApiDeleteAutoTaggingR
 }
 type ApiGetAutoTaggingByIdRequest struct {
 	ctx context.Context
-	ApiService *AutoTaggingApiService
+	ApiService *AutoTaggingAPIService
 	id int32
 }
 
@@ -288,7 +288,7 @@ GetAutoTaggingById Method for GetAutoTaggingById
  @param id
  @return ApiGetAutoTaggingByIdRequest
 */
-func (a *AutoTaggingApiService) GetAutoTaggingById(ctx context.Context, id int32) ApiGetAutoTaggingByIdRequest {
+func (a *AutoTaggingAPIService) GetAutoTaggingById(ctx context.Context, id int32) ApiGetAutoTaggingByIdRequest {
 	return ApiGetAutoTaggingByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -298,7 +298,7 @@ func (a *AutoTaggingApiService) GetAutoTaggingById(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return AutoTaggingResource
-func (a *AutoTaggingApiService) GetAutoTaggingByIdExecute(r ApiGetAutoTaggingByIdRequest) (*AutoTaggingResource, *http.Response, error) {
+func (a *AutoTaggingAPIService) GetAutoTaggingByIdExecute(r ApiGetAutoTaggingByIdRequest) (*AutoTaggingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *AutoTaggingApiService) GetAutoTaggingByIdExecute(r ApiGetAutoTaggingByI
 		localVarReturnValue  *AutoTaggingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingApiService.GetAutoTaggingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingAPIService.GetAutoTaggingById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -401,7 +401,7 @@ func (a *AutoTaggingApiService) GetAutoTaggingByIdExecute(r ApiGetAutoTaggingByI
 }
 type ApiListAutoTaggingRequest struct {
 	ctx context.Context
-	ApiService *AutoTaggingApiService
+	ApiService *AutoTaggingAPIService
 }
 
 func (r ApiListAutoTaggingRequest) Execute() ([]*AutoTaggingResource, *http.Response, error) {
@@ -414,7 +414,7 @@ ListAutoTagging Method for ListAutoTagging
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListAutoTaggingRequest
 */
-func (a *AutoTaggingApiService) ListAutoTagging(ctx context.Context) ApiListAutoTaggingRequest {
+func (a *AutoTaggingAPIService) ListAutoTagging(ctx context.Context) ApiListAutoTaggingRequest {
 	return ApiListAutoTaggingRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -423,7 +423,7 @@ func (a *AutoTaggingApiService) ListAutoTagging(ctx context.Context) ApiListAuto
 
 // Execute executes the request
 //  @return []AutoTaggingResource
-func (a *AutoTaggingApiService) ListAutoTaggingExecute(r ApiListAutoTaggingRequest) ([]*AutoTaggingResource, *http.Response, error) {
+func (a *AutoTaggingAPIService) ListAutoTaggingExecute(r ApiListAutoTaggingRequest) ([]*AutoTaggingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *AutoTaggingApiService) ListAutoTaggingExecute(r ApiListAutoTaggingReque
 		localVarReturnValue  []*AutoTaggingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingApiService.ListAutoTagging")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingAPIService.ListAutoTagging")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -525,7 +525,7 @@ func (a *AutoTaggingApiService) ListAutoTaggingExecute(r ApiListAutoTaggingReque
 }
 type ApiListAutoTaggingSchemaRequest struct {
 	ctx context.Context
-	ApiService *AutoTaggingApiService
+	ApiService *AutoTaggingAPIService
 }
 
 func (r ApiListAutoTaggingSchemaRequest) Execute() ([]*AutoTaggingSpecificationSchema, *http.Response, error) {
@@ -538,7 +538,7 @@ ListAutoTaggingSchema Method for ListAutoTaggingSchema
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListAutoTaggingSchemaRequest
 */
-func (a *AutoTaggingApiService) ListAutoTaggingSchema(ctx context.Context) ApiListAutoTaggingSchemaRequest {
+func (a *AutoTaggingAPIService) ListAutoTaggingSchema(ctx context.Context) ApiListAutoTaggingSchemaRequest {
 	return ApiListAutoTaggingSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -547,7 +547,7 @@ func (a *AutoTaggingApiService) ListAutoTaggingSchema(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []AutoTaggingSpecificationSchema
-func (a *AutoTaggingApiService) ListAutoTaggingSchemaExecute(r ApiListAutoTaggingSchemaRequest) ([]*AutoTaggingSpecificationSchema, *http.Response, error) {
+func (a *AutoTaggingAPIService) ListAutoTaggingSchemaExecute(r ApiListAutoTaggingSchemaRequest) ([]*AutoTaggingSpecificationSchema, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -555,7 +555,7 @@ func (a *AutoTaggingApiService) ListAutoTaggingSchemaExecute(r ApiListAutoTaggin
 		localVarReturnValue  []*AutoTaggingSpecificationSchema
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingApiService.ListAutoTaggingSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingAPIService.ListAutoTaggingSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -649,7 +649,7 @@ func (a *AutoTaggingApiService) ListAutoTaggingSchemaExecute(r ApiListAutoTaggin
 }
 type ApiUpdateAutoTaggingRequest struct {
 	ctx context.Context
-	ApiService *AutoTaggingApiService
+	ApiService *AutoTaggingAPIService
 	id string
 	autoTaggingResource *AutoTaggingResource
 }
@@ -670,7 +670,7 @@ UpdateAutoTagging Method for UpdateAutoTagging
  @param id
  @return ApiUpdateAutoTaggingRequest
 */
-func (a *AutoTaggingApiService) UpdateAutoTagging(ctx context.Context, id string) ApiUpdateAutoTaggingRequest {
+func (a *AutoTaggingAPIService) UpdateAutoTagging(ctx context.Context, id string) ApiUpdateAutoTaggingRequest {
 	return ApiUpdateAutoTaggingRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -680,7 +680,7 @@ func (a *AutoTaggingApiService) UpdateAutoTagging(ctx context.Context, id string
 
 // Execute executes the request
 //  @return AutoTaggingResource
-func (a *AutoTaggingApiService) UpdateAutoTaggingExecute(r ApiUpdateAutoTaggingRequest) (*AutoTaggingResource, *http.Response, error) {
+func (a *AutoTaggingAPIService) UpdateAutoTaggingExecute(r ApiUpdateAutoTaggingRequest) (*AutoTaggingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -688,7 +688,7 @@ func (a *AutoTaggingApiService) UpdateAutoTaggingExecute(r ApiUpdateAutoTaggingR
 		localVarReturnValue  *AutoTaggingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingApiService.UpdateAutoTagging")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingAPIService.UpdateAutoTagging")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

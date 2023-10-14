@@ -19,11 +19,11 @@ import (
 )
 
 
-// DiskSpaceApiService DiskSpaceApi service
-type DiskSpaceApiService service
+// DiskSpaceAPIService DiskSpaceAPI service
+type DiskSpaceAPIService service
 type ApiListDiskSpaceRequest struct {
 	ctx context.Context
-	ApiService *DiskSpaceApiService
+	ApiService *DiskSpaceAPIService
 }
 
 func (r ApiListDiskSpaceRequest) Execute() ([]*DiskSpaceResource, *http.Response, error) {
@@ -36,7 +36,7 @@ ListDiskSpace Method for ListDiskSpace
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListDiskSpaceRequest
 */
-func (a *DiskSpaceApiService) ListDiskSpace(ctx context.Context) ApiListDiskSpaceRequest {
+func (a *DiskSpaceAPIService) ListDiskSpace(ctx context.Context) ApiListDiskSpaceRequest {
 	return ApiListDiskSpaceRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *DiskSpaceApiService) ListDiskSpace(ctx context.Context) ApiListDiskSpac
 
 // Execute executes the request
 //  @return []DiskSpaceResource
-func (a *DiskSpaceApiService) ListDiskSpaceExecute(r ApiListDiskSpaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
+func (a *DiskSpaceAPIService) ListDiskSpaceExecute(r ApiListDiskSpaceRequest) ([]*DiskSpaceResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *DiskSpaceApiService) ListDiskSpaceExecute(r ApiListDiskSpaceRequest) ([
 		localVarReturnValue  []*DiskSpaceResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceApiService.ListDiskSpace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceAPIService.ListDiskSpace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

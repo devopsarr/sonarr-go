@@ -19,11 +19,11 @@ import (
 )
 
 
-// LogApiService LogApi service
-type LogApiService service
+// LogAPIService LogAPI service
+type LogAPIService service
 type ApiGetLogRequest struct {
 	ctx context.Context
-	ApiService *LogApiService
+	ApiService *LogAPIService
 	page *int32
 	pageSize *int32
 	sortKey *string
@@ -66,7 +66,7 @@ GetLog Method for GetLog
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetLogRequest
 */
-func (a *LogApiService) GetLog(ctx context.Context) ApiGetLogRequest {
+func (a *LogAPIService) GetLog(ctx context.Context) ApiGetLogRequest {
 	return ApiGetLogRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -75,7 +75,7 @@ func (a *LogApiService) GetLog(ctx context.Context) ApiGetLogRequest {
 
 // Execute executes the request
 //  @return LogResourcePagingResource
-func (a *LogApiService) GetLogExecute(r ApiGetLogRequest) (*LogResourcePagingResource, *http.Response, error) {
+func (a *LogAPIService) GetLogExecute(r ApiGetLogRequest) (*LogResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -83,7 +83,7 @@ func (a *LogApiService) GetLogExecute(r ApiGetLogRequest) (*LogResourcePagingRes
 		localVarReturnValue  *LogResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogApiService.GetLog")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogAPIService.GetLog")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

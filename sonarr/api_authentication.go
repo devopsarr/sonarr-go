@@ -19,11 +19,11 @@ import (
 )
 
 
-// AuthenticationApiService AuthenticationApi service
-type AuthenticationApiService service
+// AuthenticationAPIService AuthenticationAPI service
+type AuthenticationAPIService service
 type ApiCreateLoginRequest struct {
 	ctx context.Context
-	ApiService *AuthenticationApiService
+	ApiService *AuthenticationAPIService
 	returnUrl *string
 	username *string
 	password *string
@@ -60,7 +60,7 @@ CreateLogin Method for CreateLogin
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateLoginRequest
 */
-func (a *AuthenticationApiService) CreateLogin(ctx context.Context) ApiCreateLoginRequest {
+func (a *AuthenticationAPIService) CreateLogin(ctx context.Context) ApiCreateLoginRequest {
 	return ApiCreateLoginRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -68,14 +68,14 @@ func (a *AuthenticationApiService) CreateLogin(ctx context.Context) ApiCreateLog
 }
 
 // Execute executes the request
-func (a *AuthenticationApiService) CreateLoginExecute(r ApiCreateLoginRequest) (*http.Response, error) {
+func (a *AuthenticationAPIService) CreateLoginExecute(r ApiCreateLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiService.CreateLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationAPIService.CreateLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -172,7 +172,7 @@ func (a *AuthenticationApiService) CreateLoginExecute(r ApiCreateLoginRequest) (
 }
 type ApiGetLogoutRequest struct {
 	ctx context.Context
-	ApiService *AuthenticationApiService
+	ApiService *AuthenticationAPIService
 }
 
 func (r ApiGetLogoutRequest) Execute() (*http.Response, error) {
@@ -185,7 +185,7 @@ GetLogout Method for GetLogout
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetLogoutRequest
 */
-func (a *AuthenticationApiService) GetLogout(ctx context.Context) ApiGetLogoutRequest {
+func (a *AuthenticationAPIService) GetLogout(ctx context.Context) ApiGetLogoutRequest {
 	return ApiGetLogoutRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -193,14 +193,14 @@ func (a *AuthenticationApiService) GetLogout(ctx context.Context) ApiGetLogoutRe
 }
 
 // Execute executes the request
-func (a *AuthenticationApiService) GetLogoutExecute(r ApiGetLogoutRequest) (*http.Response, error) {
+func (a *AuthenticationAPIService) GetLogoutExecute(r ApiGetLogoutRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationApiService.GetLogout")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticationAPIService.GetLogout")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
