@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"reflect"
 	"time"
 )
 
@@ -152,6 +153,9 @@ type ApiGetHistoryRequest struct {
 	eventType *int32
 	episodeId *int32
 	downloadId *string
+	seriesIds *[]int32
+	languages *[]int32
+	quality *[]int32
 }
 
 func (r ApiGetHistoryRequest) Page(page int32) ApiGetHistoryRequest {
@@ -196,6 +200,21 @@ func (r ApiGetHistoryRequest) EpisodeId(episodeId int32) ApiGetHistoryRequest {
 
 func (r ApiGetHistoryRequest) DownloadId(downloadId string) ApiGetHistoryRequest {
 	r.downloadId = &downloadId
+	return r
+}
+
+func (r ApiGetHistoryRequest) SeriesIds(seriesIds []int32) ApiGetHistoryRequest {
+	r.seriesIds = &seriesIds
+	return r
+}
+
+func (r ApiGetHistoryRequest) Languages(languages []int32) ApiGetHistoryRequest {
+	r.languages = &languages
+	return r
+}
+
+func (r ApiGetHistoryRequest) Quality(quality []int32) ApiGetHistoryRequest {
+	r.quality = &quality
 	return r
 }
 
@@ -263,6 +282,39 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	}
 	if r.downloadId != nil {
 		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+	}
+	if r.seriesIds != nil {
+		t := *r.seriesIds
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("seriesIds", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("seriesIds", parameterToString(t, "multi"))
+		}
+	}
+	if r.languages != nil {
+		t := *r.languages
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("languages", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("languages", parameterToString(t, "multi"))
+		}
+	}
+	if r.quality != nil {
+		t := *r.quality
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("quality", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("quality", parameterToString(t, "multi"))
+		}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

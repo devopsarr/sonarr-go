@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **TvRageId** | Pointer to **int32** |  | [optional] 
 **TvMazeId** | Pointer to **int32** |  | [optional] 
 **FirstAired** | Pointer to **NullableTime** |  | [optional] 
+**LastAired** | Pointer to **NullableTime** |  | [optional] 
 **SeriesType** | Pointer to [**SeriesTypes**](SeriesTypes.md) |  | [optional] 
 **CleanTitle** | Pointer to **NullableString** |  | [optional] 
 **ImdbId** | Pointer to **NullableString** |  | [optional] 
@@ -881,6 +882,41 @@ HasFirstAired returns a boolean if a field has been set.
 `func (o *SeriesResource) UnsetFirstAired()`
 
 UnsetFirstAired ensures that no value is present for FirstAired, not even an explicit nil
+### GetLastAired
+
+`func (o *SeriesResource) GetLastAired() time.Time`
+
+GetLastAired returns the LastAired field if non-nil, zero value otherwise.
+
+### GetLastAiredOk
+
+`func (o *SeriesResource) GetLastAiredOk() (*time.Time, bool)`
+
+GetLastAiredOk returns a tuple with the LastAired field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastAired
+
+`func (o *SeriesResource) SetLastAired(v time.Time)`
+
+SetLastAired sets LastAired field to given value.
+
+### HasLastAired
+
+`func (o *SeriesResource) HasLastAired() bool`
+
+HasLastAired returns a boolean if a field has been set.
+
+### SetLastAiredNil
+
+`func (o *SeriesResource) SetLastAiredNil(b bool)`
+
+ SetLastAiredNil sets the value for LastAired to be an explicit nil
+
+### UnsetLastAired
+`func (o *SeriesResource) UnsetLastAired()`
+
+UnsetLastAired ensures that no value is present for LastAired, not even an explicit nil
 ### GetSeriesType
 
 `func (o *SeriesResource) GetSeriesType() SeriesTypes`

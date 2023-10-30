@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## GetHistory
 
-> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).EventType(eventType).EpisodeId(episodeId).DownloadId(downloadId).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).EventType(eventType).EpisodeId(episodeId).DownloadId(downloadId).SeriesIds(seriesIds).Languages(languages).Quality(quality).Execute()
 
 
 
@@ -105,10 +105,13 @@ func main() {
     eventType := int32(56) // int32 |  (optional)
     episodeId := int32(56) // int32 |  (optional)
     downloadId := "downloadId_example" // string |  (optional)
+    seriesIds := []int32{int32(123)} // []int32 |  (optional)
+    languages := []int32{int32(123)} // []int32 |  (optional)
+    quality := []int32{int32(123)} // []int32 |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).EventType(eventType).EpisodeId(episodeId).DownloadId(downloadId).Execute()
+    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).EventType(eventType).EpisodeId(episodeId).DownloadId(downloadId).SeriesIds(seriesIds).Languages(languages).Quality(quality).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryAPI.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -138,6 +141,9 @@ Name | Type | Description  | Notes
  **eventType** | **int32** |  | 
  **episodeId** | **int32** |  | 
  **downloadId** | **string** |  | 
+ **seriesIds** | **[]int32** |  | 
+ **languages** | **[]int32** |  | 
+ **quality** | **[]int32** |  | 
 
 ### Return type
 

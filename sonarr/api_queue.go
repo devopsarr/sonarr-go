@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"reflect"
 )
 
 
@@ -324,6 +325,10 @@ type ApiGetQueueRequest struct {
 	includeUnknownSeriesItems *bool
 	includeSeries *bool
 	includeEpisode *bool
+	seriesIds *[]int32
+	protocol *DownloadProtocol
+	languages *[]int32
+	quality *int32
 }
 
 func (r ApiGetQueueRequest) Page(page int32) ApiGetQueueRequest {
@@ -358,6 +363,26 @@ func (r ApiGetQueueRequest) IncludeSeries(includeSeries bool) ApiGetQueueRequest
 
 func (r ApiGetQueueRequest) IncludeEpisode(includeEpisode bool) ApiGetQueueRequest {
 	r.includeEpisode = &includeEpisode
+	return r
+}
+
+func (r ApiGetQueueRequest) SeriesIds(seriesIds []int32) ApiGetQueueRequest {
+	r.seriesIds = &seriesIds
+	return r
+}
+
+func (r ApiGetQueueRequest) Protocol(protocol DownloadProtocol) ApiGetQueueRequest {
+	r.protocol = &protocol
+	return r
+}
+
+func (r ApiGetQueueRequest) Languages(languages []int32) ApiGetQueueRequest {
+	r.languages = &languages
+	return r
+}
+
+func (r ApiGetQueueRequest) Quality(quality int32) ApiGetQueueRequest {
+	r.quality = &quality
 	return r
 }
 
@@ -419,6 +444,34 @@ func (a *QueueAPIService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	}
 	if r.includeEpisode != nil {
 		localVarQueryParams.Add("includeEpisode", parameterToString(*r.includeEpisode, ""))
+	}
+	if r.seriesIds != nil {
+		t := *r.seriesIds
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("seriesIds", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("seriesIds", parameterToString(t, "multi"))
+		}
+	}
+	if r.protocol != nil {
+		localVarQueryParams.Add("protocol", parameterToString(*r.protocol, ""))
+	}
+	if r.languages != nil {
+		t := *r.languages
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("languages", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("languages", parameterToString(t, "multi"))
+		}
+	}
+	if r.quality != nil {
+		localVarQueryParams.Add("quality", parameterToString(*r.quality, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
