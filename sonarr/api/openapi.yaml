@@ -1708,6 +1708,36 @@ paths:
         schema:
           type: string
         style: form
+      - explode: true
+        in: query
+        name: seriesIds
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: languages
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: quality
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
       responses:
         "200":
           content:
@@ -3939,6 +3969,41 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: seriesIds
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: protocol
+        required: false
+        schema:
+          $ref: '#/components/schemas/DownloadProtocol'
+        style: form
+      - explode: true
+        in: query
+        name: languages
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: quality
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -5538,6 +5603,7 @@ components:
               nextAiring: 2000-01-23T04:56:07.000+00:00
               episodeFileCount: 1
           tvdbId: 6
+          lastAired: 2000-01-23T04:56:07.000+00:00
           firstAired: 2000-01-23T04:56:07.000+00:00
           runtime: 9
           originalLanguage:
@@ -5986,6 +6052,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -6385,6 +6452,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -8245,6 +8313,7 @@ components:
               nextAiring: 2000-01-23T04:56:07.000+00:00
               episodeFileCount: 1
           tvdbId: 6
+          lastAired: 2000-01-23T04:56:07.000+00:00
           firstAired: 2000-01-23T04:56:07.000+00:00
           runtime: 9
           originalLanguage:
@@ -8783,6 +8852,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -9231,6 +9301,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -10107,6 +10178,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -10244,6 +10316,7 @@ components:
               nextAiring: 2000-01-23T04:56:07.000+00:00
               episodeFileCount: 1
           tvdbId: 6
+          lastAired: 2000-01-23T04:56:07.000+00:00
           firstAired: 2000-01-23T04:56:07.000+00:00
           runtime: 9
           originalLanguage:
@@ -11012,6 +11085,7 @@ components:
                   nextAiring: 2000-01-23T04:56:07.000+00:00
                   episodeFileCount: 1
               tvdbId: 6
+              lastAired: 2000-01-23T04:56:07.000+00:00
               firstAired: 2000-01-23T04:56:07.000+00:00
               runtime: 9
               originalLanguage:
@@ -11149,6 +11223,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -11861,6 +11936,7 @@ components:
                   nextAiring: 2000-01-23T04:56:07.000+00:00
                   episodeFileCount: 1
               tvdbId: 6
+              lastAired: 2000-01-23T04:56:07.000+00:00
               firstAired: 2000-01-23T04:56:07.000+00:00
               runtime: 9
               originalLanguage:
@@ -11998,6 +12074,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -13522,6 +13599,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -13970,6 +14048,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -14429,6 +14508,7 @@ components:
               nextAiring: 2000-01-23T04:56:07.000+00:00
               episodeFileCount: 1
           tvdbId: 6
+          lastAired: 2000-01-23T04:56:07.000+00:00
           firstAired: 2000-01-23T04:56:07.000+00:00
           runtime: 9
           originalLanguage:
@@ -14880,6 +14960,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -15328,6 +15409,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -16142,6 +16224,7 @@ components:
               nextAiring: 2000-01-23T04:56:07.000+00:00
               episodeFileCount: 1
           tvdbId: 6
+          lastAired: 2000-01-23T04:56:07.000+00:00
           firstAired: 2000-01-23T04:56:07.000+00:00
           runtime: 9
           originalLanguage:
@@ -16845,6 +16928,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -17293,6 +17377,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -18177,6 +18262,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -18595,6 +18681,7 @@ components:
               nextAiring: 2000-01-23T04:56:07.000+00:00
               episodeFileCount: 1
           tvdbId: 6
+          lastAired: 2000-01-23T04:56:07.000+00:00
           firstAired: 2000-01-23T04:56:07.000+00:00
           runtime: 9
           originalLanguage:
@@ -19133,6 +19220,7 @@ components:
                   nextAiring: 2000-01-23T04:56:07.000+00:00
                   episodeFileCount: 1
               tvdbId: 6
+              lastAired: 2000-01-23T04:56:07.000+00:00
               firstAired: 2000-01-23T04:56:07.000+00:00
               runtime: 9
               originalLanguage:
@@ -19551,6 +19639,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -20000,6 +20089,7 @@ components:
                   nextAiring: 2000-01-23T04:56:07.000+00:00
                   episodeFileCount: 1
               tvdbId: 6
+              lastAired: 2000-01-23T04:56:07.000+00:00
               firstAired: 2000-01-23T04:56:07.000+00:00
               runtime: 9
               originalLanguage:
@@ -20418,6 +20508,7 @@ components:
                 nextAiring: 2000-01-23T04:56:07.000+00:00
                 episodeFileCount: 1
             tvdbId: 6
+            lastAired: 2000-01-23T04:56:07.000+00:00
             firstAired: 2000-01-23T04:56:07.000+00:00
             runtime: 9
             originalLanguage:
@@ -21684,6 +21775,7 @@ components:
             nextAiring: 2000-01-23T04:56:07.000+00:00
             episodeFileCount: 1
         tvdbId: 6
+        lastAired: 2000-01-23T04:56:07.000+00:00
         firstAired: 2000-01-23T04:56:07.000+00:00
         runtime: 9
         originalLanguage:
@@ -21798,6 +21890,10 @@ components:
           format: int32
           type: integer
         firstAired:
+          format: date-time
+          nullable: true
+          type: string
+        lastAired:
           format: date-time
           nullable: true
           type: string

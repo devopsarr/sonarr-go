@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetQueue
 
-> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).Execute()
+> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).SeriesIds(seriesIds).Protocol(protocol).Languages(languages).Quality(quality).Execute()
 
 
 
@@ -176,10 +176,14 @@ func main() {
     includeUnknownSeriesItems := true // bool |  (optional) (default to false)
     includeSeries := true // bool |  (optional) (default to false)
     includeEpisode := true // bool |  (optional) (default to false)
+    seriesIds := []int32{int32(123)} // []int32 |  (optional)
+    protocol := sonarrClient.DownloadProtocol("unknown") // DownloadProtocol |  (optional)
+    languages := []int32{int32(123)} // []int32 |  (optional)
+    quality := int32(56) // int32 |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).Execute()
+    resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).SeriesIds(seriesIds).Protocol(protocol).Languages(languages).Quality(quality).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.GetQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -207,6 +211,10 @@ Name | Type | Description  | Notes
  **includeUnknownSeriesItems** | **bool** |  | [default to false]
  **includeSeries** | **bool** |  | [default to false]
  **includeEpisode** | **bool** |  | [default to false]
+ **seriesIds** | **[]int32** |  | 
+ **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | 
+ **languages** | **[]int32** |  | 
+ **quality** | **int32** |  | 
 
 ### Return type
 

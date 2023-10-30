@@ -44,6 +44,7 @@ type SeriesResource struct {
 	TvRageId *int32 `json:"tvRageId,omitempty"`
 	TvMazeId *int32 `json:"tvMazeId,omitempty"`
 	FirstAired NullableTime `json:"firstAired,omitempty"`
+	LastAired NullableTime `json:"lastAired,omitempty"`
 	SeriesType *SeriesTypes `json:"seriesType,omitempty"`
 	CleanTitle NullableString `json:"cleanTitle,omitempty"`
 	ImdbId NullableString `json:"imdbId,omitempty"`
@@ -1056,6 +1057,48 @@ func (o *SeriesResource) UnsetFirstAired() {
 	o.FirstAired.Unset()
 }
 
+// GetLastAired returns the LastAired field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SeriesResource) GetLastAired() time.Time {
+	if o == nil || isNil(o.LastAired.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastAired.Get()
+}
+
+// GetLastAiredOk returns a tuple with the LastAired field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SeriesResource) GetLastAiredOk() (*time.Time, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.LastAired.Get(), o.LastAired.IsSet()
+}
+
+// HasLastAired returns a boolean if a field has been set.
+func (o *SeriesResource) HasLastAired() bool {
+	if o != nil && o.LastAired.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastAired gets a reference to the given NullableTime and assigns it to the LastAired field.
+func (o *SeriesResource) SetLastAired(v time.Time) {
+	o.LastAired.Set(&v)
+}
+// SetLastAiredNil sets the value for LastAired to be an explicit nil
+func (o *SeriesResource) SetLastAiredNil() {
+	o.LastAired.Set(nil)
+}
+
+// UnsetLastAired ensures that no value is present for LastAired, not even an explicit nil
+func (o *SeriesResource) UnsetLastAired() {
+	o.LastAired.Unset()
+}
+
 // GetSeriesType returns the SeriesType field value if set, zero value otherwise.
 func (o *SeriesResource) GetSeriesType() SeriesTypes {
 	if o == nil || isNil(o.SeriesType) {
@@ -1693,6 +1736,9 @@ func (o SeriesResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.FirstAired.IsSet() {
 		toSerialize["firstAired"] = o.FirstAired.Get()
+	}
+	if o.LastAired.IsSet() {
+		toSerialize["lastAired"] = o.LastAired.Get()
 	}
 	if !isNil(o.SeriesType) {
 		toSerialize["seriesType"] = o.SeriesType
