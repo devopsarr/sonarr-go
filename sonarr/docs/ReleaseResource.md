@@ -61,6 +61,7 @@ Name | Type | Description | Notes
 **EpisodeId** | Pointer to **NullableInt32** |  | [optional] 
 **EpisodeIds** | Pointer to **[]int32** |  | [optional] 
 **DownloadClientId** | Pointer to **NullableInt32** |  | [optional] 
+**DownloadClient** | Pointer to **NullableString** |  | [optional] 
 **ShouldOverride** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
@@ -1797,6 +1798,41 @@ HasDownloadClientId returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetDownloadClientId()`
 
 UnsetDownloadClientId ensures that no value is present for DownloadClientId, not even an explicit nil
+### GetDownloadClient
+
+`func (o *ReleaseResource) GetDownloadClient() string`
+
+GetDownloadClient returns the DownloadClient field if non-nil, zero value otherwise.
+
+### GetDownloadClientOk
+
+`func (o *ReleaseResource) GetDownloadClientOk() (*string, bool)`
+
+GetDownloadClientOk returns a tuple with the DownloadClient field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadClient
+
+`func (o *ReleaseResource) SetDownloadClient(v string)`
+
+SetDownloadClient sets DownloadClient field to given value.
+
+### HasDownloadClient
+
+`func (o *ReleaseResource) HasDownloadClient() bool`
+
+HasDownloadClient returns a boolean if a field has been set.
+
+### SetDownloadClientNil
+
+`func (o *ReleaseResource) SetDownloadClientNil(b bool)`
+
+ SetDownloadClientNil sets the value for DownloadClient to be an explicit nil
+
+### UnsetDownloadClient
+`func (o *ReleaseResource) UnsetDownloadClient()`
+
+UnsetDownloadClient ensures that no value is present for DownloadClient, not even an explicit nil
 ### GetShouldOverride
 
 `func (o *ReleaseResource) GetShouldOverride() bool`

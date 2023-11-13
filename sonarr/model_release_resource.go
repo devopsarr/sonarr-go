@@ -74,6 +74,7 @@ type ReleaseResource struct {
 	EpisodeId NullableInt32 `json:"episodeId,omitempty"`
 	EpisodeIds []*int32 `json:"episodeIds,omitempty"`
 	DownloadClientId NullableInt32 `json:"downloadClientId,omitempty"`
+	DownloadClient NullableString `json:"downloadClient,omitempty"`
 	ShouldOverride NullableBool `json:"shouldOverride,omitempty"`
 }
 
@@ -2127,6 +2128,48 @@ func (o *ReleaseResource) UnsetDownloadClientId() {
 	o.DownloadClientId.Unset()
 }
 
+// GetDownloadClient returns the DownloadClient field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReleaseResource) GetDownloadClient() string {
+	if o == nil || isNil(o.DownloadClient.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.DownloadClient.Get()
+}
+
+// GetDownloadClientOk returns a tuple with the DownloadClient field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReleaseResource) GetDownloadClientOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.DownloadClient.Get(), o.DownloadClient.IsSet()
+}
+
+// HasDownloadClient returns a boolean if a field has been set.
+func (o *ReleaseResource) HasDownloadClient() bool {
+	if o != nil && o.DownloadClient.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDownloadClient gets a reference to the given NullableString and assigns it to the DownloadClient field.
+func (o *ReleaseResource) SetDownloadClient(v string) {
+	o.DownloadClient.Set(&v)
+}
+// SetDownloadClientNil sets the value for DownloadClient to be an explicit nil
+func (o *ReleaseResource) SetDownloadClientNil() {
+	o.DownloadClient.Set(nil)
+}
+
+// UnsetDownloadClient ensures that no value is present for DownloadClient, not even an explicit nil
+func (o *ReleaseResource) UnsetDownloadClient() {
+	o.DownloadClient.Unset()
+}
+
 // GetShouldOverride returns the ShouldOverride field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseResource) GetShouldOverride() bool {
 	if o == nil || isNil(o.ShouldOverride.Get()) {
@@ -2341,6 +2384,9 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.DownloadClientId.IsSet() {
 		toSerialize["downloadClientId"] = o.DownloadClientId.Get()
+	}
+	if o.DownloadClient.IsSet() {
+		toSerialize["downloadClient"] = o.DownloadClient.Get()
 	}
 	if o.ShouldOverride.IsSet() {
 		toSerialize["shouldOverride"] = o.ShouldOverride.Get()

@@ -20784,6 +20784,7 @@ components:
         seeders: 8
         fullSeason: true
         releaseWeight: 9
+        downloadClient: downloadClient
         languages:
         - name: name
           id: 7
@@ -21240,6 +21241,9 @@ components:
           format: int32
           nullable: true
           type: integer
+        downloadClient:
+          nullable: true
+          type: string
         shouldOverride:
           nullable: true
           type: boolean
