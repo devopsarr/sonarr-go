@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **QualityProfileId** | Pointer to **int32** |  | [optional] 
 **SeasonFolder** | Pointer to **bool** |  | [optional] 
 **Monitored** | Pointer to **bool** |  | [optional] 
+**MonitorNewItems** | Pointer to [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 **UseSceneNumbering** | Pointer to **bool** |  | [optional] 
 **Runtime** | Pointer to **int32** |  | [optional] 
 **TvdbId** | Pointer to **int32** |  | [optional] 
@@ -721,6 +722,31 @@ SetMonitored sets Monitored field to given value.
 `func (o *SeriesResource) HasMonitored() bool`
 
 HasMonitored returns a boolean if a field has been set.
+
+### GetMonitorNewItems
+
+`func (o *SeriesResource) GetMonitorNewItems() NewItemMonitorTypes`
+
+GetMonitorNewItems returns the MonitorNewItems field if non-nil, zero value otherwise.
+
+### GetMonitorNewItemsOk
+
+`func (o *SeriesResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool)`
+
+GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorNewItems
+
+`func (o *SeriesResource) SetMonitorNewItems(v NewItemMonitorTypes)`
+
+SetMonitorNewItems sets MonitorNewItems field to given value.
+
+### HasMonitorNewItems
+
+`func (o *SeriesResource) HasMonitorNewItems() bool`
+
+HasMonitorNewItems returns a boolean if a field has been set.
 
 ### GetUseSceneNumbering
 

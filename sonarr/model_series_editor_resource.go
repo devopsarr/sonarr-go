@@ -18,6 +18,7 @@ import (
 type SeriesEditorResource struct {
 	SeriesIds []*int32 `json:"seriesIds,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
+	MonitorNewItems *NewItemMonitorTypes `json:"monitorNewItems,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
 	SeriesType *SeriesTypes `json:"seriesType,omitempty"`
 	SeasonFolder NullableBool `json:"seasonFolder,omitempty"`
@@ -119,6 +120,38 @@ func (o *SeriesEditorResource) SetMonitoredNil() {
 // UnsetMonitored ensures that no value is present for Monitored, not even an explicit nil
 func (o *SeriesEditorResource) UnsetMonitored() {
 	o.Monitored.Unset()
+}
+
+// GetMonitorNewItems returns the MonitorNewItems field value if set, zero value otherwise.
+func (o *SeriesEditorResource) GetMonitorNewItems() NewItemMonitorTypes {
+	if o == nil || isNil(o.MonitorNewItems) {
+		var ret NewItemMonitorTypes
+		return ret
+	}
+	return *o.MonitorNewItems
+}
+
+// GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SeriesEditorResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool) {
+	if o == nil || isNil(o.MonitorNewItems) {
+    return nil, false
+	}
+	return o.MonitorNewItems, true
+}
+
+// HasMonitorNewItems returns a boolean if a field has been set.
+func (o *SeriesEditorResource) HasMonitorNewItems() bool {
+	if o != nil && !isNil(o.MonitorNewItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetMonitorNewItems gets a reference to the given NewItemMonitorTypes and assigns it to the MonitorNewItems field.
+func (o *SeriesEditorResource) SetMonitorNewItems(v NewItemMonitorTypes) {
+	o.MonitorNewItems = &v
 }
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -447,6 +480,9 @@ func (o SeriesEditorResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.Monitored.IsSet() {
 		toSerialize["monitored"] = o.Monitored.Get()
+	}
+	if !isNil(o.MonitorNewItems) {
+		toSerialize["monitorNewItems"] = o.MonitorNewItems
 	}
 	if o.QualityProfileId.IsSet() {
 		toSerialize["qualityProfileId"] = o.QualityProfileId.Get()

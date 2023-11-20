@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **EnableAutomaticAdd** | Pointer to **bool** |  | [optional] 
 **SearchForMissingEpisodes** | Pointer to **bool** |  | [optional] 
 **ShouldMonitor** | Pointer to [**MonitorTypes**](MonitorTypes.md) |  | [optional] 
+**MonitorNewItems** | Pointer to [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
 **QualityProfileId** | Pointer to **int32** |  | [optional] 
 **SeriesType** | Pointer to [**SeriesTypes**](SeriesTypes.md) |  | [optional] 
@@ -448,6 +449,31 @@ SetShouldMonitor sets ShouldMonitor field to given value.
 `func (o *ImportListResource) HasShouldMonitor() bool`
 
 HasShouldMonitor returns a boolean if a field has been set.
+
+### GetMonitorNewItems
+
+`func (o *ImportListResource) GetMonitorNewItems() NewItemMonitorTypes`
+
+GetMonitorNewItems returns the MonitorNewItems field if non-nil, zero value otherwise.
+
+### GetMonitorNewItemsOk
+
+`func (o *ImportListResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool)`
+
+GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonitorNewItems
+
+`func (o *ImportListResource) SetMonitorNewItems(v NewItemMonitorTypes)`
+
+SetMonitorNewItems sets MonitorNewItems field to given value.
+
+### HasMonitorNewItems
+
+`func (o *ImportListResource) HasMonitorNewItems() bool`
+
+HasMonitorNewItems returns a boolean if a field has been set.
 
 ### GetRootFolderPath
 

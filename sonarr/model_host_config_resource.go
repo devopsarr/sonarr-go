@@ -27,6 +27,7 @@ type HostConfigResource struct {
 	AnalyticsEnabled *bool `json:"analyticsEnabled,omitempty"`
 	Username NullableString `json:"username,omitempty"`
 	Password NullableString `json:"password,omitempty"`
+	PasswordConfirmation NullableString `json:"passwordConfirmation,omitempty"`
 	LogLevel NullableString `json:"logLevel,omitempty"`
 	ConsoleLogLevel NullableString `json:"consoleLogLevel,omitempty"`
 	Branch NullableString `json:"branch,omitempty"`
@@ -450,6 +451,48 @@ func (o *HostConfigResource) SetPasswordNil() {
 // UnsetPassword ensures that no value is present for Password, not even an explicit nil
 func (o *HostConfigResource) UnsetPassword() {
 	o.Password.Unset()
+}
+
+// GetPasswordConfirmation returns the PasswordConfirmation field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *HostConfigResource) GetPasswordConfirmation() string {
+	if o == nil || isNil(o.PasswordConfirmation.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.PasswordConfirmation.Get()
+}
+
+// GetPasswordConfirmationOk returns a tuple with the PasswordConfirmation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *HostConfigResource) GetPasswordConfirmationOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.PasswordConfirmation.Get(), o.PasswordConfirmation.IsSet()
+}
+
+// HasPasswordConfirmation returns a boolean if a field has been set.
+func (o *HostConfigResource) HasPasswordConfirmation() bool {
+	if o != nil && o.PasswordConfirmation.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPasswordConfirmation gets a reference to the given NullableString and assigns it to the PasswordConfirmation field.
+func (o *HostConfigResource) SetPasswordConfirmation(v string) {
+	o.PasswordConfirmation.Set(&v)
+}
+// SetPasswordConfirmationNil sets the value for PasswordConfirmation to be an explicit nil
+func (o *HostConfigResource) SetPasswordConfirmationNil() {
+	o.PasswordConfirmation.Set(nil)
+}
+
+// UnsetPasswordConfirmation ensures that no value is present for PasswordConfirmation, not even an explicit nil
+func (o *HostConfigResource) UnsetPasswordConfirmation() {
+	o.PasswordConfirmation.Unset()
 }
 
 // GetLogLevel returns the LogLevel field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1404,6 +1447,9 @@ func (o HostConfigResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.Password.IsSet() {
 		toSerialize["password"] = o.Password.Get()
+	}
+	if o.PasswordConfirmation.IsSet() {
+		toSerialize["passwordConfirmation"] = o.PasswordConfirmation.Get()
 	}
 	if o.LogLevel.IsSet() {
 		toSerialize["logLevel"] = o.LogLevel.Get()

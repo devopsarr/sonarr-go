@@ -29,6 +29,7 @@ type ImportListResource struct {
 	EnableAutomaticAdd *bool `json:"enableAutomaticAdd,omitempty"`
 	SearchForMissingEpisodes *bool `json:"searchForMissingEpisodes,omitempty"`
 	ShouldMonitor *MonitorTypes `json:"shouldMonitor,omitempty"`
+	MonitorNewItems *NewItemMonitorTypes `json:"monitorNewItems,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
 	SeriesType *SeriesTypes `json:"seriesType,omitempty"`
@@ -524,6 +525,38 @@ func (o *ImportListResource) SetShouldMonitor(v MonitorTypes) {
 	o.ShouldMonitor = &v
 }
 
+// GetMonitorNewItems returns the MonitorNewItems field value if set, zero value otherwise.
+func (o *ImportListResource) GetMonitorNewItems() NewItemMonitorTypes {
+	if o == nil || isNil(o.MonitorNewItems) {
+		var ret NewItemMonitorTypes
+		return ret
+	}
+	return *o.MonitorNewItems
+}
+
+// GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ImportListResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool) {
+	if o == nil || isNil(o.MonitorNewItems) {
+    return nil, false
+	}
+	return o.MonitorNewItems, true
+}
+
+// HasMonitorNewItems returns a boolean if a field has been set.
+func (o *ImportListResource) HasMonitorNewItems() bool {
+	if o != nil && !isNil(o.MonitorNewItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetMonitorNewItems gets a reference to the given NewItemMonitorTypes and assigns it to the MonitorNewItems field.
+func (o *ImportListResource) SetMonitorNewItems(v NewItemMonitorTypes) {
+	o.MonitorNewItems = &v
+}
+
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListResource) GetRootFolderPath() string {
 	if o == nil || isNil(o.RootFolderPath.Get()) {
@@ -798,6 +831,9 @@ func (o ImportListResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ShouldMonitor) {
 		toSerialize["shouldMonitor"] = o.ShouldMonitor
+	}
+	if !isNil(o.MonitorNewItems) {
+		toSerialize["monitorNewItems"] = o.MonitorNewItems
 	}
 	if o.RootFolderPath.IsSet() {
 		toSerialize["rootFolderPath"] = o.RootFolderPath.Get()

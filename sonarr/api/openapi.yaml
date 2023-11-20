@@ -5541,6 +5541,7 @@ components:
           path: path
           titleSlug: titleSlug
           episodesChanged: true
+          monitorNewItems: null
           qualityProfileId: 8
           seriesType: null
           genres:
@@ -5990,6 +5991,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -6390,6 +6392,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -8251,6 +8254,7 @@ components:
           path: path
           titleSlug: titleSlug
           episodesChanged: true
+          monitorNewItems: null
           qualityProfileId: 8
           seriesType: null
           genres:
@@ -8790,6 +8794,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -9239,6 +9244,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -10116,6 +10122,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -10254,6 +10261,7 @@ components:
           path: path
           titleSlug: titleSlug
           episodesChanged: true
+          monitorNewItems: null
           qualityProfileId: 8
           seriesType: null
           genres:
@@ -11023,6 +11031,7 @@ components:
               path: path
               titleSlug: titleSlug
               episodesChanged: true
+              monitorNewItems: null
               qualityProfileId: 8
               seriesType: null
               genres:
@@ -11161,6 +11170,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -11874,6 +11884,7 @@ components:
               path: path
               titleSlug: titleSlug
               episodesChanged: true
+              monitorNewItems: null
               qualityProfileId: 8
               seriesType: null
               genres:
@@ -12012,6 +12023,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -12161,6 +12173,7 @@ components:
         sslPort: 1
         bindAddress: bindAddress
         updateMechanism: null
+        passwordConfirmation: passwordConfirmation
         backupRetention: 2
         urlBase: urlBase
         port: 6
@@ -12196,6 +12209,9 @@ components:
           nullable: true
           type: string
         password:
+          nullable: true
+          type: string
+        passwordConfirmation:
           nullable: true
           type: string
         logLevel:
@@ -12342,6 +12358,7 @@ components:
         - null
         enableAutomaticAdd: true
         configContract: configContract
+        monitorNewItems: null
         qualityProfileId: 1
         seriesType: null
         listOrder: 5
@@ -12446,6 +12463,8 @@ components:
           type: boolean
         shouldMonitor:
           $ref: '#/components/schemas/MonitorTypes'
+        monitorNewItems:
+          $ref: '#/components/schemas/NewItemMonitorTypes'
         rootFolderPath:
           nullable: true
           type: string
@@ -13537,6 +13556,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -13986,6 +14006,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -14446,6 +14467,7 @@ components:
           path: path
           titleSlug: titleSlug
           episodesChanged: true
+          monitorNewItems: null
           qualityProfileId: 8
           seriesType: null
           genres:
@@ -14898,6 +14920,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -15347,6 +15370,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -15798,8 +15822,10 @@ components:
       - missing
       - existing
       - firstSeason
+      - lastSeason
       - latestSeason
       - pilot
+      - recent
       - monitorSpecials
       - unmonitorSpecials
       - none
@@ -15885,6 +15911,11 @@ components:
           nullable: true
           type: string
       type: object
+    NewItemMonitorTypes:
+      enum:
+      - all
+      - none
+      type: string
     NotificationResource:
       additionalProperties: false
       example:
@@ -16162,6 +16193,7 @@ components:
           path: path
           titleSlug: titleSlug
           episodesChanged: true
+          monitorNewItems: null
           qualityProfileId: 8
           seriesType: null
           genres:
@@ -16866,6 +16898,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -17315,6 +17348,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -18200,6 +18234,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -18619,6 +18654,7 @@ components:
           path: path
           titleSlug: titleSlug
           episodesChanged: true
+          monitorNewItems: null
           qualityProfileId: 8
           seriesType: null
           genres:
@@ -19158,6 +19194,7 @@ components:
               path: path
               titleSlug: titleSlug
               episodesChanged: true
+              monitorNewItems: null
               qualityProfileId: 8
               seriesType: null
               genres:
@@ -19577,6 +19614,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -20027,6 +20065,7 @@ components:
               path: path
               titleSlug: titleSlug
               episodesChanged: true
+              monitorNewItems: null
               qualityProfileId: 8
               seriesType: null
               genres:
@@ -20446,6 +20485,7 @@ components:
             path: path
             titleSlug: titleSlug
             episodesChanged: true
+            monitorNewItems: null
             qualityProfileId: 8
             seriesType: null
             genres:
@@ -21638,6 +21678,7 @@ components:
         applyTags: null
         deleteFiles: true
         addImportListExclusion: true
+        monitorNewItems: null
         rootFolderPath: rootFolderPath
         qualityProfileId: 6
         seriesType: null
@@ -21660,6 +21701,8 @@ components:
         monitored:
           nullable: true
           type: boolean
+        monitorNewItems:
+          $ref: '#/components/schemas/NewItemMonitorTypes'
         qualityProfileId:
           format: int32
           nullable: true
@@ -21717,6 +21760,7 @@ components:
         path: path
         titleSlug: titleSlug
         episodesChanged: true
+        monitorNewItems: null
         qualityProfileId: 8
         seriesType: null
         genres:
@@ -21879,6 +21923,8 @@ components:
           type: boolean
         monitored:
           type: boolean
+        monitorNewItems:
+          $ref: '#/components/schemas/NewItemMonitorTypes'
         useSceneNumbering:
           type: boolean
         runtime:

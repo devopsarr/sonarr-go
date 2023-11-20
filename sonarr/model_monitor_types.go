@@ -26,8 +26,10 @@ const (
 	MONITORTYPES_MISSING MonitorTypes = "missing"
 	MONITORTYPES_EXISTING MonitorTypes = "existing"
 	MONITORTYPES_FIRST_SEASON MonitorTypes = "firstSeason"
+	MONITORTYPES_LAST_SEASON MonitorTypes = "lastSeason"
 	MONITORTYPES_LATEST_SEASON MonitorTypes = "latestSeason"
 	MONITORTYPES_PILOT MonitorTypes = "pilot"
+	MONITORTYPES_RECENT MonitorTypes = "recent"
 	MONITORTYPES_MONITOR_SPECIALS MonitorTypes = "monitorSpecials"
 	MONITORTYPES_UNMONITOR_SPECIALS MonitorTypes = "unmonitorSpecials"
 	MONITORTYPES_NONE MonitorTypes = "none"
@@ -41,8 +43,10 @@ var AllowedMonitorTypesEnumValues = []MonitorTypes{
 	"missing",
 	"existing",
 	"firstSeason",
+	"lastSeason",
 	"latestSeason",
 	"pilot",
+	"recent",
 	"monitorSpecials",
 	"unmonitorSpecials",
 	"none",
