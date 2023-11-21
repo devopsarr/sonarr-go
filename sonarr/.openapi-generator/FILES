@@ -175,6 +175,7 @@ docs/MonitorTypes.md
 docs/MonitoringOptions.md
 docs/NamingConfigAPI.md
 docs/NamingConfigResource.md
+docs/NewItemMonitorTypes.md
 docs/NotificationAPI.md
 docs/NotificationResource.md
 docs/ParseAPI.md
@@ -330,6 +331,7 @@ model_metadata_resource.go
 model_monitor_types.go
 model_monitoring_options.go
 model_naming_config_resource.go
+model_new_item_monitor_types.go
 model_notification_resource.go
 model_parse_resource.go
 model_parsed_episode_info.go

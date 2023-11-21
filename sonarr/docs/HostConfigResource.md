@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **AnalyticsEnabled** | Pointer to **bool** |  | [optional] 
 **Username** | Pointer to **NullableString** |  | [optional] 
 **Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordConfirmation** | Pointer to **NullableString** |  | [optional] 
 **LogLevel** | Pointer to **NullableString** |  | [optional] 
 **ConsoleLogLevel** | Pointer to **NullableString** |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
@@ -364,6 +365,41 @@ HasPassword returns a boolean if a field has been set.
 `func (o *HostConfigResource) UnsetPassword()`
 
 UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordConfirmation
+
+`func (o *HostConfigResource) GetPasswordConfirmation() string`
+
+GetPasswordConfirmation returns the PasswordConfirmation field if non-nil, zero value otherwise.
+
+### GetPasswordConfirmationOk
+
+`func (o *HostConfigResource) GetPasswordConfirmationOk() (*string, bool)`
+
+GetPasswordConfirmationOk returns a tuple with the PasswordConfirmation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPasswordConfirmation
+
+`func (o *HostConfigResource) SetPasswordConfirmation(v string)`
+
+SetPasswordConfirmation sets PasswordConfirmation field to given value.
+
+### HasPasswordConfirmation
+
+`func (o *HostConfigResource) HasPasswordConfirmation() bool`
+
+HasPasswordConfirmation returns a boolean if a field has been set.
+
+### SetPasswordConfirmationNil
+
+`func (o *HostConfigResource) SetPasswordConfirmationNil(b bool)`
+
+ SetPasswordConfirmationNil sets the value for PasswordConfirmation to be an explicit nil
+
+### UnsetPasswordConfirmation
+`func (o *HostConfigResource) UnsetPasswordConfirmation()`
+
+UnsetPasswordConfirmation ensures that no value is present for PasswordConfirmation, not even an explicit nil
 ### GetLogLevel
 
 `func (o *HostConfigResource) GetLogLevel() string`

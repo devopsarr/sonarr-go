@@ -38,6 +38,7 @@ type SeriesResource struct {
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
 	SeasonFolder *bool `json:"seasonFolder,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
+	MonitorNewItems *NewItemMonitorTypes `json:"monitorNewItems,omitempty"`
 	UseSceneNumbering *bool `json:"useSceneNumbering,omitempty"`
 	Runtime *int32 `json:"runtime,omitempty"`
 	TvdbId *int32 `json:"tvdbId,omitempty"`
@@ -853,6 +854,38 @@ func (o *SeriesResource) HasMonitored() bool {
 // SetMonitored gets a reference to the given bool and assigns it to the Monitored field.
 func (o *SeriesResource) SetMonitored(v bool) {
 	o.Monitored = &v
+}
+
+// GetMonitorNewItems returns the MonitorNewItems field value if set, zero value otherwise.
+func (o *SeriesResource) GetMonitorNewItems() NewItemMonitorTypes {
+	if o == nil || isNil(o.MonitorNewItems) {
+		var ret NewItemMonitorTypes
+		return ret
+	}
+	return *o.MonitorNewItems
+}
+
+// GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SeriesResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool) {
+	if o == nil || isNil(o.MonitorNewItems) {
+    return nil, false
+	}
+	return o.MonitorNewItems, true
+}
+
+// HasMonitorNewItems returns a boolean if a field has been set.
+func (o *SeriesResource) HasMonitorNewItems() bool {
+	if o != nil && !isNil(o.MonitorNewItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetMonitorNewItems gets a reference to the given NewItemMonitorTypes and assigns it to the MonitorNewItems field.
+func (o *SeriesResource) SetMonitorNewItems(v NewItemMonitorTypes) {
+	o.MonitorNewItems = &v
 }
 
 // GetUseSceneNumbering returns the UseSceneNumbering field value if set, zero value otherwise.
@@ -1718,6 +1751,9 @@ func (o SeriesResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
+	}
+	if !isNil(o.MonitorNewItems) {
+		toSerialize["monitorNewItems"] = o.MonitorNewItems
 	}
 	if !isNil(o.UseSceneNumbering) {
 		toSerialize["useSceneNumbering"] = o.UseSceneNumbering

@@ -15,9 +15,13 @@
 
 * `FIRST_SEASON` (value: `"firstSeason"`)
 
+* `LAST_SEASON` (value: `"lastSeason"`)
+
 * `LATEST_SEASON` (value: `"latestSeason"`)
 
 * `PILOT` (value: `"pilot"`)
+
+* `RECENT` (value: `"recent"`)
 
 * `MONITOR_SPECIALS` (value: `"monitorSpecials"`)
 
