@@ -32,6 +32,7 @@ type QueueResource struct {
 	Sizeleft *float64 `json:"sizeleft,omitempty"`
 	Timeleft *string `json:"timeleft,omitempty"`
 	EstimatedCompletionTime NullableTime `json:"estimatedCompletionTime,omitempty"`
+	Added NullableTime `json:"added,omitempty"`
 	Status NullableString `json:"status,omitempty"`
 	TrackedDownloadStatus *TrackedDownloadStatus `json:"trackedDownloadStatus,omitempty"`
 	TrackedDownloadState *TrackedDownloadState `json:"trackedDownloadState,omitempty"`
@@ -594,6 +595,48 @@ func (o *QueueResource) UnsetEstimatedCompletionTime() {
 	o.EstimatedCompletionTime.Unset()
 }
 
+// GetAdded returns the Added field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *QueueResource) GetAdded() time.Time {
+	if o == nil || isNil(o.Added.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.Added.Get()
+}
+
+// GetAddedOk returns a tuple with the Added field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *QueueResource) GetAddedOk() (*time.Time, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.Added.Get(), o.Added.IsSet()
+}
+
+// HasAdded returns a boolean if a field has been set.
+func (o *QueueResource) HasAdded() bool {
+	if o != nil && o.Added.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAdded gets a reference to the given NullableTime and assigns it to the Added field.
+func (o *QueueResource) SetAdded(v time.Time) {
+	o.Added.Set(&v)
+}
+// SetAddedNil sets the value for Added to be an explicit nil
+func (o *QueueResource) SetAddedNil() {
+	o.Added.Set(nil)
+}
+
+// UnsetAdded ensures that no value is present for Added, not even an explicit nil
+func (o *QueueResource) UnsetAdded() {
+	o.Added.Unset()
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetStatus() string {
 	if o == nil || isNil(o.Status.Get()) {
@@ -1053,6 +1096,9 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.EstimatedCompletionTime.IsSet() {
 		toSerialize["estimatedCompletionTime"] = o.EstimatedCompletionTime.Get()
+	}
+	if o.Added.IsSet() {
+		toSerialize["added"] = o.Added.Get()
 	}
 	if o.Status.IsSet() {
 		toSerialize["status"] = o.Status.Get()

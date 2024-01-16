@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Sizeleft** | Pointer to **float64** |  | [optional] 
 **Timeleft** | Pointer to **string** |  | [optional] 
 **EstimatedCompletionTime** | Pointer to **NullableTime** |  | [optional] 
+**Added** | Pointer to **NullableTime** |  | [optional] 
 **Status** | Pointer to **NullableString** |  | [optional] 
 **TrackedDownloadStatus** | Pointer to [**TrackedDownloadStatus**](TrackedDownloadStatus.md) |  | [optional] 
 **TrackedDownloadState** | Pointer to [**TrackedDownloadState**](TrackedDownloadState.md) |  | [optional] 
@@ -495,6 +496,41 @@ HasEstimatedCompletionTime returns a boolean if a field has been set.
 `func (o *QueueResource) UnsetEstimatedCompletionTime()`
 
 UnsetEstimatedCompletionTime ensures that no value is present for EstimatedCompletionTime, not even an explicit nil
+### GetAdded
+
+`func (o *QueueResource) GetAdded() time.Time`
+
+GetAdded returns the Added field if non-nil, zero value otherwise.
+
+### GetAddedOk
+
+`func (o *QueueResource) GetAddedOk() (*time.Time, bool)`
+
+GetAddedOk returns a tuple with the Added field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdded
+
+`func (o *QueueResource) SetAdded(v time.Time)`
+
+SetAdded sets Added field to given value.
+
+### HasAdded
+
+`func (o *QueueResource) HasAdded() bool`
+
+HasAdded returns a boolean if a field has been set.
+
+### SetAddedNil
+
+`func (o *QueueResource) SetAddedNil(b bool)`
+
+ SetAddedNil sets the value for Added to be an explicit nil
+
+### UnsetAdded
+`func (o *QueueResource) UnsetAdded()`
+
+UnsetAdded ensures that no value is present for Added, not even an explicit nil
 ### GetStatus
 
 `func (o *QueueResource) GetStatus() string`
