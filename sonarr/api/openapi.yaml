@@ -17879,6 +17879,7 @@ components:
     QueueResource:
       additionalProperties: false
       example:
+        added: 2000-01-23T04:56:07.000+00:00
         downloadId: downloadId
         episode:
           sceneSeasonNumber: 6
@@ -18800,6 +18801,10 @@ components:
           format: date-time
           nullable: true
           type: string
+        added:
+          format: date-time
+          nullable: true
+          type: string
         status:
           nullable: true
           type: string
@@ -18839,7 +18844,8 @@ components:
         totalRecords: 1
         sortKey: sortKey
         records:
-        - downloadId: downloadId
+        - added: 2000-01-23T04:56:07.000+00:00
+          downloadId: downloadId
           episode:
             sceneSeasonNumber: 6
             airDateUtc: 2000-01-23T04:56:07.000+00:00
@@ -19710,7 +19716,8 @@ components:
               sizeOnDisk: 3
               episodeFileCount: 5
           status: status
-        - downloadId: downloadId
+        - added: 2000-01-23T04:56:07.000+00:00
+          downloadId: downloadId
           episode:
             sceneSeasonNumber: 6
             airDateUtc: 2000-01-23T04:56:07.000+00:00
