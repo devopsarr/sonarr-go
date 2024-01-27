@@ -30,6 +30,7 @@ type ApiDeleteQueueRequest struct {
 	removeFromClient *bool
 	blocklist *bool
 	skipRedownload *bool
+	changeCategory *bool
 }
 
 func (r ApiDeleteQueueRequest) RemoveFromClient(removeFromClient bool) ApiDeleteQueueRequest {
@@ -44,6 +45,11 @@ func (r ApiDeleteQueueRequest) Blocklist(blocklist bool) ApiDeleteQueueRequest {
 
 func (r ApiDeleteQueueRequest) SkipRedownload(skipRedownload bool) ApiDeleteQueueRequest {
 	r.skipRedownload = &skipRedownload
+	return r
+}
+
+func (r ApiDeleteQueueRequest) ChangeCategory(changeCategory bool) ApiDeleteQueueRequest {
+	r.changeCategory = &changeCategory
 	return r
 }
 
@@ -94,6 +100,9 @@ func (a *QueueAPIService) DeleteQueueExecute(r ApiDeleteQueueRequest) (*http.Res
 	}
 	if r.skipRedownload != nil {
 		localVarQueryParams.Add("skipRedownload", parameterToString(*r.skipRedownload, ""))
+	}
+	if r.changeCategory != nil {
+		localVarQueryParams.Add("changeCategory", parameterToString(*r.changeCategory, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -173,6 +182,7 @@ type ApiDeleteQueueBulkRequest struct {
 	removeFromClient *bool
 	blocklist *bool
 	skipRedownload *bool
+	changeCategory *bool
 	queueBulkResource *QueueBulkResource
 }
 
@@ -188,6 +198,11 @@ func (r ApiDeleteQueueBulkRequest) Blocklist(blocklist bool) ApiDeleteQueueBulkR
 
 func (r ApiDeleteQueueBulkRequest) SkipRedownload(skipRedownload bool) ApiDeleteQueueBulkRequest {
 	r.skipRedownload = &skipRedownload
+	return r
+}
+
+func (r ApiDeleteQueueBulkRequest) ChangeCategory(changeCategory bool) ApiDeleteQueueBulkRequest {
+	r.changeCategory = &changeCategory
 	return r
 }
 
@@ -240,6 +255,9 @@ func (a *QueueAPIService) DeleteQueueBulkExecute(r ApiDeleteQueueBulkRequest) (*
 	}
 	if r.skipRedownload != nil {
 		localVarQueryParams.Add("skipRedownload", parameterToString(*r.skipRedownload, ""))
+	}
+	if r.changeCategory != nil {
+		localVarQueryParams.Add("changeCategory", parameterToString(*r.changeCategory, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
