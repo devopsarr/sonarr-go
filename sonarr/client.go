@@ -69,6 +69,7 @@ type APIClient struct {
 	HistoryAPI *HistoryAPIService
 	HostConfigAPI *HostConfigAPIService
 	ImportListAPI *ImportListAPIService
+	ImportListConfigAPI *ImportListConfigAPIService
 	ImportListExclusionAPI *ImportListExclusionAPIService
 	IndexerAPI *IndexerAPIService
 	IndexerConfigAPI *IndexerConfigAPIService
@@ -153,6 +154,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.HistoryAPI = (*HistoryAPIService)(&c.common)
 	c.HostConfigAPI = (*HostConfigAPIService)(&c.common)
 	c.ImportListAPI = (*ImportListAPIService)(&c.common)
+	c.ImportListConfigAPI = (*ImportListConfigAPIService)(&c.common)
 	c.ImportListExclusionAPI = (*ImportListExclusionAPIService)(&c.common)
 	c.IndexerAPI = (*IndexerAPIService)(&c.common)
 	c.IndexerConfigAPI = (*IndexerConfigAPIService)(&c.common)
