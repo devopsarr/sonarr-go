@@ -1690,10 +1690,8 @@ paths:
         name: eventType
         required: false
         schema:
-          items:
-            format: int32
-            type: integer
-          type: array
+          format: int32
+          type: integer
         style: form
       - explode: true
         in: query
@@ -2134,69 +2132,6 @@ paths:
           description: Success
       tags:
       - ImportList
-  /api/v3/config/importlist:
-    get:
-      operationId: GetImportListConfig
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListConfigResource'
-          description: Success
-      tags:
-      - ImportListConfig
-  /api/v3/config/importlist/{id}:
-    get:
-      operationId: GetImportListConfigById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListConfigResource'
-          description: Success
-      tags:
-      - ImportListConfig
-    put:
-      operationId: UpdateImportListConfig
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ImportListConfigResource'
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ImportListConfigResource'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListConfigResource'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/ImportListConfigResource'
-          description: Success
-      tags:
-      - ImportListConfig
   /api/v3/importlistexclusion:
     get:
       operationId: ListImportListExclusion
@@ -3925,14 +3860,6 @@ paths:
           default: false
           type: boolean
         style: form
-      - explode: true
-        in: query
-        name: changeCategory
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
       responses:
         "200":
           description: Success
@@ -3961,14 +3888,6 @@ paths:
       - explode: true
         in: query
         name: skipRedownload
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
-      - explode: true
-        in: query
-        name: changeCategory
         required: false
         schema:
           default: false
@@ -12403,22 +12322,6 @@ components:
           nullable: true
           type: integer
       type: object
-    ImportListConfigResource:
-      additionalProperties: false
-      example:
-        listSyncLevel: null
-        id: 0
-        listSyncTag: 6
-      properties:
-        id:
-          format: int32
-          type: integer
-        listSyncLevel:
-          $ref: '#/components/schemas/ListSyncLevelType'
-        listSyncTag:
-          format: int32
-          type: integer
-      type: object
     ImportListExclusionResource:
       additionalProperties: false
       example:
@@ -12880,13 +12783,6 @@ components:
           readOnly: true
           type: string
       type: object
-    ListSyncLevelType:
-      enum:
-      - disabled
-      - logOnly
-      - keepAndUnmonitor
-      - keepAndTag
-      type: string
     LocalizationLanguageResource:
       additionalProperties: false
       example:
@@ -18731,7 +18627,6 @@ components:
             version: 2
             isRepack: true
         size: 3.616076749251911
-        downloadClientHasPostImportCategory: true
         series:
           profileName: profileName
           tvMazeId: 6
@@ -18933,8 +18828,6 @@ components:
         downloadClient:
           nullable: true
           type: string
-        downloadClientHasPostImportCategory:
-          type: boolean
         indexer:
           nullable: true
           type: string
@@ -19699,7 +19592,6 @@ components:
               version: 2
               isRepack: true
           size: 3.616076749251911
-          downloadClientHasPostImportCategory: true
           series:
             profileName: profileName
             tvMazeId: 6
@@ -20572,7 +20464,6 @@ components:
               version: 2
               isRepack: true
           size: 3.616076749251911
-          downloadClientHasPostImportCategory: true
           series:
             profileName: profileName
             tvMazeId: 6

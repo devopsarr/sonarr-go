@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## DeleteQueue
 
-> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).ChangeCategory(changeCategory).Execute()
+> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).Execute()
 
 
 
@@ -33,11 +33,10 @@ func main() {
     removeFromClient := true // bool |  (optional) (default to true)
     blocklist := true // bool |  (optional) (default to false)
     skipRedownload := true // bool |  (optional) (default to false)
-    changeCategory := true // bool |  (optional) (default to false)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueAPI.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).ChangeCategory(changeCategory).Execute()
+    resp, r, err := apiClient.QueueAPI.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.DeleteQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +63,6 @@ Name | Type | Description  | Notes
  **removeFromClient** | **bool** |  | [default to true]
  **blocklist** | **bool** |  | [default to false]
  **skipRedownload** | **bool** |  | [default to false]
- **changeCategory** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -86,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## DeleteQueueBulk
 
-> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).ChangeCategory(changeCategory).QueueBulkResource(queueBulkResource).Execute()
+> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).QueueBulkResource(queueBulkResource).Execute()
 
 
 
@@ -106,12 +104,11 @@ func main() {
     removeFromClient := true // bool |  (optional) (default to true)
     blocklist := true // bool |  (optional) (default to false)
     skipRedownload := true // bool |  (optional) (default to false)
-    changeCategory := true // bool |  (optional) (default to false)
     queueBulkResource := *sonarrClient.NewQueueBulkResource() // QueueBulkResource |  (optional)
 
     configuration := sonarrClient.NewConfiguration()
     apiClient := sonarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueAPI.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).ChangeCategory(changeCategory).QueueBulkResource(queueBulkResource).Execute()
+    resp, r, err := apiClient.QueueAPI.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).QueueBulkResource(queueBulkResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.DeleteQueueBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -133,7 +130,6 @@ Name | Type | Description  | Notes
  **removeFromClient** | **bool** |  | [default to true]
  **blocklist** | **bool** |  | [default to false]
  **skipRedownload** | **bool** |  | [default to false]
- **changeCategory** | **bool** |  | [default to false]
  **queueBulkResource** | [**QueueBulkResource**](QueueBulkResource.md) |  | 
 
 ### Return type

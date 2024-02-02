@@ -102,7 +102,7 @@ func main() {
     sortDirection := sonarrClient.SortDirection("default") // SortDirection |  (optional)
     includeSeries := true // bool |  (optional)
     includeEpisode := true // bool |  (optional)
-    eventType := []int32{int32(123)} // []int32 |  (optional)
+    eventType := int32(56) // int32 |  (optional)
     episodeId := int32(56) // int32 |  (optional)
     downloadId := "downloadId_example" // string |  (optional)
     seriesIds := []int32{int32(123)} // []int32 |  (optional)
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
  **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeSeries** | **bool** |  | 
  **includeEpisode** | **bool** |  | 
- **eventType** | **[]int32** |  | 
+ **eventType** | **int32** |  | 
  **episodeId** | **int32** |  | 
  **downloadId** | **string** |  | 
  **seriesIds** | **[]int32** |  | 
