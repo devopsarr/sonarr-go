@@ -28,7 +28,6 @@ Name | Type | Description | Notes
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **DownloadClient** | Pointer to **NullableString** |  | [optional] 
-**DownloadClientHasPostImportCategory** | Pointer to **bool** |  | [optional] 
 **Indexer** | Pointer to **NullableString** |  | [optional] 
 **OutputPath** | Pointer to **NullableString** |  | [optional] 
 **EpisodeHasFile** | Pointer to **bool** |  | [optional] 
@@ -782,31 +781,6 @@ HasDownloadClient returns a boolean if a field has been set.
 `func (o *QueueResource) UnsetDownloadClient()`
 
 UnsetDownloadClient ensures that no value is present for DownloadClient, not even an explicit nil
-### GetDownloadClientHasPostImportCategory
-
-`func (o *QueueResource) GetDownloadClientHasPostImportCategory() bool`
-
-GetDownloadClientHasPostImportCategory returns the DownloadClientHasPostImportCategory field if non-nil, zero value otherwise.
-
-### GetDownloadClientHasPostImportCategoryOk
-
-`func (o *QueueResource) GetDownloadClientHasPostImportCategoryOk() (*bool, bool)`
-
-GetDownloadClientHasPostImportCategoryOk returns a tuple with the DownloadClientHasPostImportCategory field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDownloadClientHasPostImportCategory
-
-`func (o *QueueResource) SetDownloadClientHasPostImportCategory(v bool)`
-
-SetDownloadClientHasPostImportCategory sets DownloadClientHasPostImportCategory field to given value.
-
-### HasDownloadClientHasPostImportCategory
-
-`func (o *QueueResource) HasDownloadClientHasPostImportCategory() bool`
-
-HasDownloadClientHasPostImportCategory returns a boolean if a field has been set.
-
 ### GetIndexer
 
 `func (o *QueueResource) GetIndexer() string`

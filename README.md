@@ -172,9 +172,6 @@ Class | Method | HTTP request | Description
 *ImportListAPI* | [**TestImportList**](sonarr/docs/ImportListAPI.md#testimportlist) | **Post** /api/v3/importlist/test | 
 *ImportListAPI* | [**TestallImportList**](sonarr/docs/ImportListAPI.md#testallimportlist) | **Post** /api/v3/importlist/testall | 
 *ImportListAPI* | [**UpdateImportList**](sonarr/docs/ImportListAPI.md#updateimportlist) | **Put** /api/v3/importlist/{id} | 
-*ImportListConfigAPI* | [**GetImportListConfig**](sonarr/docs/ImportListConfigAPI.md#getimportlistconfig) | **Get** /api/v3/config/importlist | 
-*ImportListConfigAPI* | [**GetImportListConfigById**](sonarr/docs/ImportListConfigAPI.md#getimportlistconfigbyid) | **Get** /api/v3/config/importlist/{id} | 
-*ImportListConfigAPI* | [**UpdateImportListConfig**](sonarr/docs/ImportListConfigAPI.md#updateimportlistconfig) | **Put** /api/v3/config/importlist/{id} | 
 *ImportListExclusionAPI* | [**CreateImportListExclusion**](sonarr/docs/ImportListExclusionAPI.md#createimportlistexclusion) | **Post** /api/v3/importlistexclusion | 
 *ImportListExclusionAPI* | [**DeleteImportListExclusion**](sonarr/docs/ImportListExclusionAPI.md#deleteimportlistexclusion) | **Delete** /api/v3/importlistexclusion/{id} | 
 *ImportListExclusionAPI* | [**GetImportListExclusionById**](sonarr/docs/ImportListExclusionAPI.md#getimportlistexclusionbyid) | **Get** /api/v3/importlistexclusion/{id} | 
@@ -357,7 +354,6 @@ Class | Method | HTTP request | Description
  - [HistoryResourcePagingResource](docs/HistoryResourcePagingResource.md)
  - [HostConfigResource](docs/HostConfigResource.md)
  - [ImportListBulkResource](docs/ImportListBulkResource.md)
- - [ImportListConfigResource](docs/ImportListConfigResource.md)
  - [ImportListExclusionResource](docs/ImportListExclusionResource.md)
  - [ImportListResource](docs/ImportListResource.md)
  - [ImportListType](docs/ImportListType.md)
@@ -368,7 +364,6 @@ Class | Method | HTTP request | Description
  - [LanguageProfileItemResource](docs/LanguageProfileItemResource.md)
  - [LanguageProfileResource](docs/LanguageProfileResource.md)
  - [LanguageResource](docs/LanguageResource.md)
- - [ListSyncLevelType](docs/ListSyncLevelType.md)
  - [LocalizationLanguageResource](docs/LocalizationLanguageResource.md)
  - [LocalizationResource](docs/LocalizationResource.md)
  - [LogFileResource](docs/LogFileResource.md)
