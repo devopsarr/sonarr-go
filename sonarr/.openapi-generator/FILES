@@ -23,6 +23,7 @@ api_health.go
 api_history.go
 api_host_config.go
 api_import_list.go
+api_import_list_config.go
 api_import_list_exclusion.go
 api_indexer.go
 api_indexer_config.go
@@ -135,6 +136,8 @@ docs/HostConfigAPI.md
 docs/HostConfigResource.md
 docs/ImportListAPI.md
 docs/ImportListBulkResource.md
+docs/ImportListConfigAPI.md
+docs/ImportListConfigResource.md
 docs/ImportListExclusionAPI.md
 docs/ImportListExclusionResource.md
 docs/ImportListResource.md
@@ -151,6 +154,7 @@ docs/LanguageProfileItemResource.md
 docs/LanguageProfileResource.md
 docs/LanguageProfileSchemaAPI.md
 docs/LanguageResource.md
+docs/ListSyncLevelType.md
 docs/LocalizationAPI.md
 docs/LocalizationLanguageResource.md
 docs/LocalizationResource.md
@@ -306,6 +310,7 @@ model_history_resource.go
 model_history_resource_paging_resource.go
 model_host_config_resource.go
 model_import_list_bulk_resource.go
+model_import_list_config_resource.go
 model_import_list_exclusion_resource.go
 model_import_list_resource.go
 model_import_list_type.go
@@ -316,6 +321,7 @@ model_language.go
 model_language_profile_item_resource.go
 model_language_profile_resource.go
 model_language_resource.go
+model_list_sync_level_type.go
 model_localization_language_resource.go
 model_localization_resource.go
 model_log_file_resource.go
