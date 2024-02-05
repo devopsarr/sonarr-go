@@ -41,7 +41,6 @@ type QueueResource struct {
 	DownloadId NullableString `json:"downloadId,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	DownloadClient NullableString `json:"downloadClient,omitempty"`
-	DownloadClientHasPostImportCategory *bool `json:"downloadClientHasPostImportCategory,omitempty"`
 	Indexer NullableString `json:"indexer,omitempty"`
 	OutputPath NullableString `json:"outputPath,omitempty"`
 	EpisodeHasFile *bool `json:"episodeHasFile,omitempty"`
@@ -935,38 +934,6 @@ func (o *QueueResource) UnsetDownloadClient() {
 	o.DownloadClient.Unset()
 }
 
-// GetDownloadClientHasPostImportCategory returns the DownloadClientHasPostImportCategory field value if set, zero value otherwise.
-func (o *QueueResource) GetDownloadClientHasPostImportCategory() bool {
-	if o == nil || isNil(o.DownloadClientHasPostImportCategory) {
-		var ret bool
-		return ret
-	}
-	return *o.DownloadClientHasPostImportCategory
-}
-
-// GetDownloadClientHasPostImportCategoryOk returns a tuple with the DownloadClientHasPostImportCategory field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *QueueResource) GetDownloadClientHasPostImportCategoryOk() (*bool, bool) {
-	if o == nil || isNil(o.DownloadClientHasPostImportCategory) {
-    return nil, false
-	}
-	return o.DownloadClientHasPostImportCategory, true
-}
-
-// HasDownloadClientHasPostImportCategory returns a boolean if a field has been set.
-func (o *QueueResource) HasDownloadClientHasPostImportCategory() bool {
-	if o != nil && !isNil(o.DownloadClientHasPostImportCategory) {
-		return true
-	}
-
-	return false
-}
-
-// SetDownloadClientHasPostImportCategory gets a reference to the given bool and assigns it to the DownloadClientHasPostImportCategory field.
-func (o *QueueResource) SetDownloadClientHasPostImportCategory(v bool) {
-	o.DownloadClientHasPostImportCategory = &v
-}
-
 // GetIndexer returns the Indexer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetIndexer() string {
 	if o == nil || isNil(o.Indexer.Get()) {
@@ -1156,9 +1123,6 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.DownloadClient.IsSet() {
 		toSerialize["downloadClient"] = o.DownloadClient.Get()
-	}
-	if !isNil(o.DownloadClientHasPostImportCategory) {
-		toSerialize["downloadClientHasPostImportCategory"] = o.DownloadClientHasPostImportCategory
 	}
 	if o.Indexer.IsSet() {
 		toSerialize["indexer"] = o.Indexer.Get()
