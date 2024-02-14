@@ -6,7 +6,7 @@ info:
     name: GPL-3.0
     url: https://github.com/Sonarr/Sonarr/blob/develop/LICENSE
   title: Sonarr
-  version: 3.0.0
+  version: v4.0.1.929
 servers:
 - url: "{protocol}://{hostpath}"
   variables:
