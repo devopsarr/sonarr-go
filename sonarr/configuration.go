@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "sonarr-go/v0.6.0",
+		UserAgent:        "sonarr-go/v0.6.0", // x-release-please-version
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
