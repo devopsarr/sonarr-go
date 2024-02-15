@@ -22,6 +22,7 @@ import (
 
 // RemotePathMappingAPIService RemotePathMappingAPI service
 type RemotePathMappingAPIService service
+
 type ApiCreateRemotePathMappingRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingAPIService
@@ -154,6 +155,7 @@ func (a *RemotePathMappingAPIService) CreateRemotePathMappingExecute(r ApiCreate
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteRemotePathMappingRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingAPIService
@@ -193,7 +195,7 @@ func (a *RemotePathMappingAPIService) DeleteRemotePathMappingExecute(r ApiDelete
 	}
 
 	localVarPath := localBasePath + "/api/v3/remotepathmapping/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *RemotePathMappingAPIService) DeleteRemotePathMappingExecute(r ApiDelete
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetRemotePathMappingByIdRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingAPIService
@@ -312,7 +315,7 @@ func (a *RemotePathMappingAPIService) GetRemotePathMappingByIdExecute(r ApiGetRe
 	}
 
 	localVarPath := localBasePath + "/api/v3/remotepathmapping/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *RemotePathMappingAPIService) GetRemotePathMappingByIdExecute(r ApiGetRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListRemotePathMappingRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingAPIService
 }
 
-func (r ApiListRemotePathMappingRequest) Execute() ([]*RemotePathMappingResource, *http.Response, error) {
+func (r ApiListRemotePathMappingRequest) Execute() ([]RemotePathMappingResource, *http.Response, error) {
 	return r.ApiService.ListRemotePathMappingExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *RemotePathMappingAPIService) ListRemotePathMapping(ctx context.Context)
 
 // Execute executes the request
 //  @return []RemotePathMappingResource
-func (a *RemotePathMappingAPIService) ListRemotePathMappingExecute(r ApiListRemotePathMappingRequest) ([]*RemotePathMappingResource, *http.Response, error) {
+func (a *RemotePathMappingAPIService) ListRemotePathMappingExecute(r ApiListRemotePathMappingRequest) ([]RemotePathMappingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*RemotePathMappingResource
+		localVarReturnValue  []RemotePathMappingResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemotePathMappingAPIService.ListRemotePathMapping")
@@ -523,6 +527,7 @@ func (a *RemotePathMappingAPIService) ListRemotePathMappingExecute(r ApiListRemo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateRemotePathMappingRequest struct {
 	ctx context.Context
 	ApiService *RemotePathMappingAPIService
@@ -570,7 +575,7 @@ func (a *RemotePathMappingAPIService) UpdateRemotePathMappingExecute(r ApiUpdate
 	}
 
 	localVarPath := localBasePath + "/api/v3/remotepathmapping/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

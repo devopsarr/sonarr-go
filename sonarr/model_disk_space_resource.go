@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DiskSpaceResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DiskSpaceResource{}
+
 // DiskSpaceResource struct for DiskSpaceResource
 type DiskSpaceResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -42,7 +45,7 @@ func NewDiskSpaceResourceWithDefaults() *DiskSpaceResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *DiskSpaceResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *DiskSpaceResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *DiskSpaceResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *DiskSpaceResource) SetId(v int32) {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DiskSpaceResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *DiskSpaceResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DiskSpaceResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *DiskSpaceResource) UnsetPath() {
 
 // GetLabel returns the Label field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DiskSpaceResource) GetLabel() string {
-	if o == nil || isNil(o.Label.Get()) {
+	if o == nil || IsNil(o.Label.Get()) {
 		var ret string
 		return ret
 	}
@@ -128,7 +131,7 @@ func (o *DiskSpaceResource) GetLabel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DiskSpaceResource) GetLabelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Label.Get(), o.Label.IsSet()
 }
@@ -158,7 +161,7 @@ func (o *DiskSpaceResource) UnsetLabel() {
 
 // GetFreeSpace returns the FreeSpace field value if set, zero value otherwise.
 func (o *DiskSpaceResource) GetFreeSpace() int64 {
-	if o == nil || isNil(o.FreeSpace) {
+	if o == nil || IsNil(o.FreeSpace) {
 		var ret int64
 		return ret
 	}
@@ -168,15 +171,15 @@ func (o *DiskSpaceResource) GetFreeSpace() int64 {
 // GetFreeSpaceOk returns a tuple with the FreeSpace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceResource) GetFreeSpaceOk() (*int64, bool) {
-	if o == nil || isNil(o.FreeSpace) {
-    return nil, false
+	if o == nil || IsNil(o.FreeSpace) {
+		return nil, false
 	}
 	return o.FreeSpace, true
 }
 
 // HasFreeSpace returns a boolean if a field has been set.
 func (o *DiskSpaceResource) HasFreeSpace() bool {
-	if o != nil && !isNil(o.FreeSpace) {
+	if o != nil && !IsNil(o.FreeSpace) {
 		return true
 	}
 
@@ -190,7 +193,7 @@ func (o *DiskSpaceResource) SetFreeSpace(v int64) {
 
 // GetTotalSpace returns the TotalSpace field value if set, zero value otherwise.
 func (o *DiskSpaceResource) GetTotalSpace() int64 {
-	if o == nil || isNil(o.TotalSpace) {
+	if o == nil || IsNil(o.TotalSpace) {
 		var ret int64
 		return ret
 	}
@@ -200,15 +203,15 @@ func (o *DiskSpaceResource) GetTotalSpace() int64 {
 // GetTotalSpaceOk returns a tuple with the TotalSpace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceResource) GetTotalSpaceOk() (*int64, bool) {
-	if o == nil || isNil(o.TotalSpace) {
-    return nil, false
+	if o == nil || IsNil(o.TotalSpace) {
+		return nil, false
 	}
 	return o.TotalSpace, true
 }
 
 // HasTotalSpace returns a boolean if a field has been set.
 func (o *DiskSpaceResource) HasTotalSpace() bool {
-	if o != nil && !isNil(o.TotalSpace) {
+	if o != nil && !IsNil(o.TotalSpace) {
 		return true
 	}
 
@@ -221,8 +224,16 @@ func (o *DiskSpaceResource) SetTotalSpace(v int64) {
 }
 
 func (o DiskSpaceResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o DiskSpaceResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Path.IsSet() {
@@ -231,13 +242,13 @@ func (o DiskSpaceResource) MarshalJSON() ([]byte, error) {
 	if o.Label.IsSet() {
 		toSerialize["label"] = o.Label.Get()
 	}
-	if !isNil(o.FreeSpace) {
+	if !IsNil(o.FreeSpace) {
 		toSerialize["freeSpace"] = o.FreeSpace
 	}
-	if !isNil(o.TotalSpace) {
+	if !IsNil(o.TotalSpace) {
 		toSerialize["totalSpace"] = o.TotalSpace
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableDiskSpaceResource struct {

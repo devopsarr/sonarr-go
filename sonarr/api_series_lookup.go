@@ -21,6 +21,7 @@ import (
 
 // SeriesLookupAPIService SeriesLookupAPI service
 type SeriesLookupAPIService service
+
 type ApiListSeriesLookupRequest struct {
 	ctx context.Context
 	ApiService *SeriesLookupAPIService
@@ -32,7 +33,7 @@ func (r ApiListSeriesLookupRequest) Term(term string) ApiListSeriesLookupRequest
 	return r
 }
 
-func (r ApiListSeriesLookupRequest) Execute() ([]*SeriesResource, *http.Response, error) {
+func (r ApiListSeriesLookupRequest) Execute() ([]SeriesResource, *http.Response, error) {
 	return r.ApiService.ListSeriesLookupExecute(r)
 }
 
@@ -51,12 +52,12 @@ func (a *SeriesLookupAPIService) ListSeriesLookup(ctx context.Context) ApiListSe
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesLookupAPIService) ListSeriesLookupExecute(r ApiListSeriesLookupRequest) ([]*SeriesResource, *http.Response, error) {
+func (a *SeriesLookupAPIService) ListSeriesLookupExecute(r ApiListSeriesLookupRequest) ([]SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*SeriesResource
+		localVarReturnValue  []SeriesResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesLookupAPIService.ListSeriesLookup")
@@ -71,7 +72,7 @@ func (a *SeriesLookupAPIService) ListSeriesLookupExecute(r ApiListSeriesLookupRe
 	localVarFormParams := url.Values{}
 
 	if r.term != nil {
-		localVarQueryParams.Add("term", parameterToString(*r.term, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

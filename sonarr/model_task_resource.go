@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the TaskResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaskResource{}
+
 // TaskResource struct for TaskResource
 type TaskResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -46,7 +49,7 @@ func NewTaskResourceWithDefaults() *TaskResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *TaskResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -56,15 +59,15 @@ func (o *TaskResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *TaskResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -78,7 +81,7 @@ func (o *TaskResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TaskResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -90,7 +93,7 @@ func (o *TaskResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TaskResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -120,7 +123,7 @@ func (o *TaskResource) UnsetName() {
 
 // GetTaskName returns the TaskName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TaskResource) GetTaskName() string {
-	if o == nil || isNil(o.TaskName.Get()) {
+	if o == nil || IsNil(o.TaskName.Get()) {
 		var ret string
 		return ret
 	}
@@ -132,7 +135,7 @@ func (o *TaskResource) GetTaskName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TaskResource) GetTaskNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TaskName.Get(), o.TaskName.IsSet()
 }
@@ -162,7 +165,7 @@ func (o *TaskResource) UnsetTaskName() {
 
 // GetInterval returns the Interval field value if set, zero value otherwise.
 func (o *TaskResource) GetInterval() int32 {
-	if o == nil || isNil(o.Interval) {
+	if o == nil || IsNil(o.Interval) {
 		var ret int32
 		return ret
 	}
@@ -172,15 +175,15 @@ func (o *TaskResource) GetInterval() int32 {
 // GetIntervalOk returns a tuple with the Interval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskResource) GetIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.Interval) {
-    return nil, false
+	if o == nil || IsNil(o.Interval) {
+		return nil, false
 	}
 	return o.Interval, true
 }
 
 // HasInterval returns a boolean if a field has been set.
 func (o *TaskResource) HasInterval() bool {
-	if o != nil && !isNil(o.Interval) {
+	if o != nil && !IsNil(o.Interval) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *TaskResource) SetInterval(v int32) {
 
 // GetLastExecution returns the LastExecution field value if set, zero value otherwise.
 func (o *TaskResource) GetLastExecution() time.Time {
-	if o == nil || isNil(o.LastExecution) {
+	if o == nil || IsNil(o.LastExecution) {
 		var ret time.Time
 		return ret
 	}
@@ -204,15 +207,15 @@ func (o *TaskResource) GetLastExecution() time.Time {
 // GetLastExecutionOk returns a tuple with the LastExecution field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskResource) GetLastExecutionOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LastExecution) {
-    return nil, false
+	if o == nil || IsNil(o.LastExecution) {
+		return nil, false
 	}
 	return o.LastExecution, true
 }
 
 // HasLastExecution returns a boolean if a field has been set.
 func (o *TaskResource) HasLastExecution() bool {
-	if o != nil && !isNil(o.LastExecution) {
+	if o != nil && !IsNil(o.LastExecution) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *TaskResource) SetLastExecution(v time.Time) {
 
 // GetLastStartTime returns the LastStartTime field value if set, zero value otherwise.
 func (o *TaskResource) GetLastStartTime() time.Time {
-	if o == nil || isNil(o.LastStartTime) {
+	if o == nil || IsNil(o.LastStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -236,15 +239,15 @@ func (o *TaskResource) GetLastStartTime() time.Time {
 // GetLastStartTimeOk returns a tuple with the LastStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskResource) GetLastStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LastStartTime) {
-    return nil, false
+	if o == nil || IsNil(o.LastStartTime) {
+		return nil, false
 	}
 	return o.LastStartTime, true
 }
 
 // HasLastStartTime returns a boolean if a field has been set.
 func (o *TaskResource) HasLastStartTime() bool {
-	if o != nil && !isNil(o.LastStartTime) {
+	if o != nil && !IsNil(o.LastStartTime) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *TaskResource) SetLastStartTime(v time.Time) {
 
 // GetNextExecution returns the NextExecution field value if set, zero value otherwise.
 func (o *TaskResource) GetNextExecution() time.Time {
-	if o == nil || isNil(o.NextExecution) {
+	if o == nil || IsNil(o.NextExecution) {
 		var ret time.Time
 		return ret
 	}
@@ -268,15 +271,15 @@ func (o *TaskResource) GetNextExecution() time.Time {
 // GetNextExecutionOk returns a tuple with the NextExecution field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskResource) GetNextExecutionOk() (*time.Time, bool) {
-	if o == nil || isNil(o.NextExecution) {
-    return nil, false
+	if o == nil || IsNil(o.NextExecution) {
+		return nil, false
 	}
 	return o.NextExecution, true
 }
 
 // HasNextExecution returns a boolean if a field has been set.
 func (o *TaskResource) HasNextExecution() bool {
-	if o != nil && !isNil(o.NextExecution) {
+	if o != nil && !IsNil(o.NextExecution) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *TaskResource) SetNextExecution(v time.Time) {
 
 // GetLastDuration returns the LastDuration field value if set, zero value otherwise.
 func (o *TaskResource) GetLastDuration() string {
-	if o == nil || isNil(o.LastDuration) {
+	if o == nil || IsNil(o.LastDuration) {
 		var ret string
 		return ret
 	}
@@ -300,15 +303,15 @@ func (o *TaskResource) GetLastDuration() string {
 // GetLastDurationOk returns a tuple with the LastDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskResource) GetLastDurationOk() (*string, bool) {
-	if o == nil || isNil(o.LastDuration) {
-    return nil, false
+	if o == nil || IsNil(o.LastDuration) {
+		return nil, false
 	}
 	return o.LastDuration, true
 }
 
 // HasLastDuration returns a boolean if a field has been set.
 func (o *TaskResource) HasLastDuration() bool {
-	if o != nil && !isNil(o.LastDuration) {
+	if o != nil && !IsNil(o.LastDuration) {
 		return true
 	}
 
@@ -321,8 +324,16 @@ func (o *TaskResource) SetLastDuration(v string) {
 }
 
 func (o TaskResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TaskResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -331,22 +342,22 @@ func (o TaskResource) MarshalJSON() ([]byte, error) {
 	if o.TaskName.IsSet() {
 		toSerialize["taskName"] = o.TaskName.Get()
 	}
-	if !isNil(o.Interval) {
+	if !IsNil(o.Interval) {
 		toSerialize["interval"] = o.Interval
 	}
-	if !isNil(o.LastExecution) {
+	if !IsNil(o.LastExecution) {
 		toSerialize["lastExecution"] = o.LastExecution
 	}
-	if !isNil(o.LastStartTime) {
+	if !IsNil(o.LastStartTime) {
 		toSerialize["lastStartTime"] = o.LastStartTime
 	}
-	if !isNil(o.NextExecution) {
+	if !IsNil(o.NextExecution) {
 		toSerialize["nextExecution"] = o.NextExecution
 	}
-	if !isNil(o.LastDuration) {
+	if !IsNil(o.LastDuration) {
 		toSerialize["lastDuration"] = o.LastDuration
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTaskResource struct {

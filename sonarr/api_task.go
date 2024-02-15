@@ -22,6 +22,7 @@ import (
 
 // TaskAPIService TaskAPI service
 type TaskAPIService service
+
 type ApiGetSystemTaskByIdRequest struct {
 	ctx context.Context
 	ApiService *TaskAPIService
@@ -63,7 +64,7 @@ func (a *TaskAPIService) GetSystemTaskByIdExecute(r ApiGetSystemTaskByIdRequest)
 	}
 
 	localVarPath := localBasePath + "/api/v3/system/task/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,12 +151,13 @@ func (a *TaskAPIService) GetSystemTaskByIdExecute(r ApiGetSystemTaskByIdRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListSystemTaskRequest struct {
 	ctx context.Context
 	ApiService *TaskAPIService
 }
 
-func (r ApiListSystemTaskRequest) Execute() ([]*TaskResource, *http.Response, error) {
+func (r ApiListSystemTaskRequest) Execute() ([]TaskResource, *http.Response, error) {
 	return r.ApiService.ListSystemTaskExecute(r)
 }
 
@@ -174,12 +176,12 @@ func (a *TaskAPIService) ListSystemTask(ctx context.Context) ApiListSystemTaskRe
 
 // Execute executes the request
 //  @return []TaskResource
-func (a *TaskAPIService) ListSystemTaskExecute(r ApiListSystemTaskRequest) ([]*TaskResource, *http.Response, error) {
+func (a *TaskAPIService) ListSystemTaskExecute(r ApiListSystemTaskRequest) ([]TaskResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*TaskResource
+		localVarReturnValue  []TaskResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaskAPIService.ListSystemTask")

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ProfileFormatItemResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProfileFormatItemResource{}
+
 // ProfileFormatItemResource struct for ProfileFormatItemResource
 type ProfileFormatItemResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -41,7 +44,7 @@ func NewProfileFormatItemResourceWithDefaults() *ProfileFormatItemResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ProfileFormatItemResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *ProfileFormatItemResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileFormatItemResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ProfileFormatItemResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *ProfileFormatItemResource) SetId(v int32) {
 
 // GetFormat returns the Format field value if set, zero value otherwise.
 func (o *ProfileFormatItemResource) GetFormat() int32 {
-	if o == nil || isNil(o.Format) {
+	if o == nil || IsNil(o.Format) {
 		var ret int32
 		return ret
 	}
@@ -83,15 +86,15 @@ func (o *ProfileFormatItemResource) GetFormat() int32 {
 // GetFormatOk returns a tuple with the Format field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileFormatItemResource) GetFormatOk() (*int32, bool) {
-	if o == nil || isNil(o.Format) {
-    return nil, false
+	if o == nil || IsNil(o.Format) {
+		return nil, false
 	}
 	return o.Format, true
 }
 
 // HasFormat returns a boolean if a field has been set.
 func (o *ProfileFormatItemResource) HasFormat() bool {
-	if o != nil && !isNil(o.Format) {
+	if o != nil && !IsNil(o.Format) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *ProfileFormatItemResource) SetFormat(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProfileFormatItemResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -117,7 +120,7 @@ func (o *ProfileFormatItemResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProfileFormatItemResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -147,7 +150,7 @@ func (o *ProfileFormatItemResource) UnsetName() {
 
 // GetScore returns the Score field value if set, zero value otherwise.
 func (o *ProfileFormatItemResource) GetScore() int32 {
-	if o == nil || isNil(o.Score) {
+	if o == nil || IsNil(o.Score) {
 		var ret int32
 		return ret
 	}
@@ -157,15 +160,15 @@ func (o *ProfileFormatItemResource) GetScore() int32 {
 // GetScoreOk returns a tuple with the Score field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileFormatItemResource) GetScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.Score) {
-    return nil, false
+	if o == nil || IsNil(o.Score) {
+		return nil, false
 	}
 	return o.Score, true
 }
 
 // HasScore returns a boolean if a field has been set.
 func (o *ProfileFormatItemResource) HasScore() bool {
-	if o != nil && !isNil(o.Score) {
+	if o != nil && !IsNil(o.Score) {
 		return true
 	}
 
@@ -178,20 +181,28 @@ func (o *ProfileFormatItemResource) SetScore(v int32) {
 }
 
 func (o ProfileFormatItemResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ProfileFormatItemResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.Format) {
+	if !IsNil(o.Format) {
 		toSerialize["format"] = o.Format
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.Score) {
+	if !IsNil(o.Score) {
 		toSerialize["score"] = o.Score
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableProfileFormatItemResource struct {

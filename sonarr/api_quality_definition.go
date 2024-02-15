@@ -22,6 +22,7 @@ import (
 
 // QualityDefinitionAPIService QualityDefinitionAPI service
 type QualityDefinitionAPIService service
+
 type ApiGetQualityDefinitionByIdRequest struct {
 	ctx context.Context
 	ApiService *QualityDefinitionAPIService
@@ -63,7 +64,7 @@ func (a *QualityDefinitionAPIService) GetQualityDefinitionByIdExecute(r ApiGetQu
 	}
 
 	localVarPath := localBasePath + "/api/v3/qualitydefinition/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,12 +151,13 @@ func (a *QualityDefinitionAPIService) GetQualityDefinitionByIdExecute(r ApiGetQu
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListQualityDefinitionRequest struct {
 	ctx context.Context
 	ApiService *QualityDefinitionAPIService
 }
 
-func (r ApiListQualityDefinitionRequest) Execute() ([]*QualityDefinitionResource, *http.Response, error) {
+func (r ApiListQualityDefinitionRequest) Execute() ([]QualityDefinitionResource, *http.Response, error) {
 	return r.ApiService.ListQualityDefinitionExecute(r)
 }
 
@@ -174,12 +176,12 @@ func (a *QualityDefinitionAPIService) ListQualityDefinition(ctx context.Context)
 
 // Execute executes the request
 //  @return []QualityDefinitionResource
-func (a *QualityDefinitionAPIService) ListQualityDefinitionExecute(r ApiListQualityDefinitionRequest) ([]*QualityDefinitionResource, *http.Response, error) {
+func (a *QualityDefinitionAPIService) ListQualityDefinitionExecute(r ApiListQualityDefinitionRequest) ([]QualityDefinitionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*QualityDefinitionResource
+		localVarReturnValue  []QualityDefinitionResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityDefinitionAPIService.ListQualityDefinition")
@@ -274,6 +276,7 @@ func (a *QualityDefinitionAPIService) ListQualityDefinitionExecute(r ApiListQual
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutQualityDefinitionUpdateRequest struct {
 	ctx context.Context
 	ApiService *QualityDefinitionAPIService
@@ -395,6 +398,7 @@ func (a *QualityDefinitionAPIService) PutQualityDefinitionUpdateExecute(r ApiPut
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateQualityDefinitionRequest struct {
 	ctx context.Context
 	ApiService *QualityDefinitionAPIService
@@ -442,7 +446,7 @@ func (a *QualityDefinitionAPIService) UpdateQualityDefinitionExecute(r ApiUpdate
 	}
 
 	localVarPath := localBasePath + "/api/v3/qualitydefinition/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

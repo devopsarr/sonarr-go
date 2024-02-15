@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSeriesOptions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSeriesOptions{}
+
 // AddSeriesOptions struct for AddSeriesOptions
 type AddSeriesOptions struct {
 	IgnoreEpisodesWithFiles *bool `json:"ignoreEpisodesWithFiles,omitempty"`
@@ -42,7 +45,7 @@ func NewAddSeriesOptionsWithDefaults() *AddSeriesOptions {
 
 // GetIgnoreEpisodesWithFiles returns the IgnoreEpisodesWithFiles field value if set, zero value otherwise.
 func (o *AddSeriesOptions) GetIgnoreEpisodesWithFiles() bool {
-	if o == nil || isNil(o.IgnoreEpisodesWithFiles) {
+	if o == nil || IsNil(o.IgnoreEpisodesWithFiles) {
 		var ret bool
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *AddSeriesOptions) GetIgnoreEpisodesWithFiles() bool {
 // GetIgnoreEpisodesWithFilesOk returns a tuple with the IgnoreEpisodesWithFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSeriesOptions) GetIgnoreEpisodesWithFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.IgnoreEpisodesWithFiles) {
-    return nil, false
+	if o == nil || IsNil(o.IgnoreEpisodesWithFiles) {
+		return nil, false
 	}
 	return o.IgnoreEpisodesWithFiles, true
 }
 
 // HasIgnoreEpisodesWithFiles returns a boolean if a field has been set.
 func (o *AddSeriesOptions) HasIgnoreEpisodesWithFiles() bool {
-	if o != nil && !isNil(o.IgnoreEpisodesWithFiles) {
+	if o != nil && !IsNil(o.IgnoreEpisodesWithFiles) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *AddSeriesOptions) SetIgnoreEpisodesWithFiles(v bool) {
 
 // GetIgnoreEpisodesWithoutFiles returns the IgnoreEpisodesWithoutFiles field value if set, zero value otherwise.
 func (o *AddSeriesOptions) GetIgnoreEpisodesWithoutFiles() bool {
-	if o == nil || isNil(o.IgnoreEpisodesWithoutFiles) {
+	if o == nil || IsNil(o.IgnoreEpisodesWithoutFiles) {
 		var ret bool
 		return ret
 	}
@@ -84,15 +87,15 @@ func (o *AddSeriesOptions) GetIgnoreEpisodesWithoutFiles() bool {
 // GetIgnoreEpisodesWithoutFilesOk returns a tuple with the IgnoreEpisodesWithoutFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSeriesOptions) GetIgnoreEpisodesWithoutFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.IgnoreEpisodesWithoutFiles) {
-    return nil, false
+	if o == nil || IsNil(o.IgnoreEpisodesWithoutFiles) {
+		return nil, false
 	}
 	return o.IgnoreEpisodesWithoutFiles, true
 }
 
 // HasIgnoreEpisodesWithoutFiles returns a boolean if a field has been set.
 func (o *AddSeriesOptions) HasIgnoreEpisodesWithoutFiles() bool {
-	if o != nil && !isNil(o.IgnoreEpisodesWithoutFiles) {
+	if o != nil && !IsNil(o.IgnoreEpisodesWithoutFiles) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *AddSeriesOptions) SetIgnoreEpisodesWithoutFiles(v bool) {
 
 // GetMonitor returns the Monitor field value if set, zero value otherwise.
 func (o *AddSeriesOptions) GetMonitor() MonitorTypes {
-	if o == nil || isNil(o.Monitor) {
+	if o == nil || IsNil(o.Monitor) {
 		var ret MonitorTypes
 		return ret
 	}
@@ -116,15 +119,15 @@ func (o *AddSeriesOptions) GetMonitor() MonitorTypes {
 // GetMonitorOk returns a tuple with the Monitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSeriesOptions) GetMonitorOk() (*MonitorTypes, bool) {
-	if o == nil || isNil(o.Monitor) {
-    return nil, false
+	if o == nil || IsNil(o.Monitor) {
+		return nil, false
 	}
 	return o.Monitor, true
 }
 
 // HasMonitor returns a boolean if a field has been set.
 func (o *AddSeriesOptions) HasMonitor() bool {
-	if o != nil && !isNil(o.Monitor) {
+	if o != nil && !IsNil(o.Monitor) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *AddSeriesOptions) SetMonitor(v MonitorTypes) {
 
 // GetSearchForMissingEpisodes returns the SearchForMissingEpisodes field value if set, zero value otherwise.
 func (o *AddSeriesOptions) GetSearchForMissingEpisodes() bool {
-	if o == nil || isNil(o.SearchForMissingEpisodes) {
+	if o == nil || IsNil(o.SearchForMissingEpisodes) {
 		var ret bool
 		return ret
 	}
@@ -148,15 +151,15 @@ func (o *AddSeriesOptions) GetSearchForMissingEpisodes() bool {
 // GetSearchForMissingEpisodesOk returns a tuple with the SearchForMissingEpisodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSeriesOptions) GetSearchForMissingEpisodesOk() (*bool, bool) {
-	if o == nil || isNil(o.SearchForMissingEpisodes) {
-    return nil, false
+	if o == nil || IsNil(o.SearchForMissingEpisodes) {
+		return nil, false
 	}
 	return o.SearchForMissingEpisodes, true
 }
 
 // HasSearchForMissingEpisodes returns a boolean if a field has been set.
 func (o *AddSeriesOptions) HasSearchForMissingEpisodes() bool {
-	if o != nil && !isNil(o.SearchForMissingEpisodes) {
+	if o != nil && !IsNil(o.SearchForMissingEpisodes) {
 		return true
 	}
 
@@ -170,7 +173,7 @@ func (o *AddSeriesOptions) SetSearchForMissingEpisodes(v bool) {
 
 // GetSearchForCutoffUnmetEpisodes returns the SearchForCutoffUnmetEpisodes field value if set, zero value otherwise.
 func (o *AddSeriesOptions) GetSearchForCutoffUnmetEpisodes() bool {
-	if o == nil || isNil(o.SearchForCutoffUnmetEpisodes) {
+	if o == nil || IsNil(o.SearchForCutoffUnmetEpisodes) {
 		var ret bool
 		return ret
 	}
@@ -180,15 +183,15 @@ func (o *AddSeriesOptions) GetSearchForCutoffUnmetEpisodes() bool {
 // GetSearchForCutoffUnmetEpisodesOk returns a tuple with the SearchForCutoffUnmetEpisodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSeriesOptions) GetSearchForCutoffUnmetEpisodesOk() (*bool, bool) {
-	if o == nil || isNil(o.SearchForCutoffUnmetEpisodes) {
-    return nil, false
+	if o == nil || IsNil(o.SearchForCutoffUnmetEpisodes) {
+		return nil, false
 	}
 	return o.SearchForCutoffUnmetEpisodes, true
 }
 
 // HasSearchForCutoffUnmetEpisodes returns a boolean if a field has been set.
 func (o *AddSeriesOptions) HasSearchForCutoffUnmetEpisodes() bool {
-	if o != nil && !isNil(o.SearchForCutoffUnmetEpisodes) {
+	if o != nil && !IsNil(o.SearchForCutoffUnmetEpisodes) {
 		return true
 	}
 
@@ -201,23 +204,31 @@ func (o *AddSeriesOptions) SetSearchForCutoffUnmetEpisodes(v bool) {
 }
 
 func (o AddSeriesOptions) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.IgnoreEpisodesWithFiles) {
-		toSerialize["ignoreEpisodesWithFiles"] = o.IgnoreEpisodesWithFiles
-	}
-	if !isNil(o.IgnoreEpisodesWithoutFiles) {
-		toSerialize["ignoreEpisodesWithoutFiles"] = o.IgnoreEpisodesWithoutFiles
-	}
-	if !isNil(o.Monitor) {
-		toSerialize["monitor"] = o.Monitor
-	}
-	if !isNil(o.SearchForMissingEpisodes) {
-		toSerialize["searchForMissingEpisodes"] = o.SearchForMissingEpisodes
-	}
-	if !isNil(o.SearchForCutoffUnmetEpisodes) {
-		toSerialize["searchForCutoffUnmetEpisodes"] = o.SearchForCutoffUnmetEpisodes
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSeriesOptions) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.IgnoreEpisodesWithFiles) {
+		toSerialize["ignoreEpisodesWithFiles"] = o.IgnoreEpisodesWithFiles
+	}
+	if !IsNil(o.IgnoreEpisodesWithoutFiles) {
+		toSerialize["ignoreEpisodesWithoutFiles"] = o.IgnoreEpisodesWithoutFiles
+	}
+	if !IsNil(o.Monitor) {
+		toSerialize["monitor"] = o.Monitor
+	}
+	if !IsNil(o.SearchForMissingEpisodes) {
+		toSerialize["searchForMissingEpisodes"] = o.SearchForMissingEpisodes
+	}
+	if !IsNil(o.SearchForCutoffUnmetEpisodes) {
+		toSerialize["searchForCutoffUnmetEpisodes"] = o.SearchForCutoffUnmetEpisodes
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSeriesOptions struct {

@@ -22,6 +22,7 @@ import (
 
 // StaticResourceAPIService StaticResourceAPI service
 type StaticResourceAPIService service
+
 type ApiGetRequest struct {
 	ctx context.Context
 	ApiService *StaticResourceAPIService
@@ -61,7 +62,7 @@ func (a *StaticResourceAPIService) GetExecute(r ApiGetRequest) (*http.Response, 
 	}
 
 	localVarPath := localBasePath + "/"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterValueToString(r.path, "path")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -139,6 +140,7 @@ func (a *StaticResourceAPIService) GetExecute(r ApiGetRequest) (*http.Response, 
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetByPathRequest struct {
 	ctx context.Context
 	ApiService *StaticResourceAPIService
@@ -178,7 +180,7 @@ func (a *StaticResourceAPIService) GetByPathExecute(r ApiGetByPathRequest) (*htt
 	}
 
 	localVarPath := localBasePath + "/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterValueToString(r.path, "path")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -256,6 +258,7 @@ func (a *StaticResourceAPIService) GetByPathExecute(r ApiGetByPathRequest) (*htt
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetContentByPathRequest struct {
 	ctx context.Context
 	ApiService *StaticResourceAPIService
@@ -295,7 +298,7 @@ func (a *StaticResourceAPIService) GetContentByPathExecute(r ApiGetContentByPath
 	}
 
 	localVarPath := localBasePath + "/content/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterValueToString(r.path, "path")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,6 +376,7 @@ func (a *StaticResourceAPIService) GetContentByPathExecute(r ApiGetContentByPath
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetLoginRequest struct {
 	ctx context.Context
 	ApiService *StaticResourceAPIService

@@ -21,12 +21,13 @@ import (
 
 // UpdateAPIService UpdateAPI service
 type UpdateAPIService service
+
 type ApiListUpdateRequest struct {
 	ctx context.Context
 	ApiService *UpdateAPIService
 }
 
-func (r ApiListUpdateRequest) Execute() ([]*UpdateResource, *http.Response, error) {
+func (r ApiListUpdateRequest) Execute() ([]UpdateResource, *http.Response, error) {
 	return r.ApiService.ListUpdateExecute(r)
 }
 
@@ -45,12 +46,12 @@ func (a *UpdateAPIService) ListUpdate(ctx context.Context) ApiListUpdateRequest 
 
 // Execute executes the request
 //  @return []UpdateResource
-func (a *UpdateAPIService) ListUpdateExecute(r ApiListUpdateRequest) ([]*UpdateResource, *http.Response, error) {
+func (a *UpdateAPIService) ListUpdateExecute(r ApiListUpdateRequest) ([]UpdateResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*UpdateResource
+		localVarReturnValue  []UpdateResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateAPIService.ListUpdate")

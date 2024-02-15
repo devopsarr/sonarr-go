@@ -14,10 +14,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the TrackedDownloadStatusMessage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TrackedDownloadStatusMessage{}
+
 // TrackedDownloadStatusMessage struct for TrackedDownloadStatusMessage
 type TrackedDownloadStatusMessage struct {
 	Title NullableString `json:"title,omitempty"`
-	Messages []*string `json:"messages,omitempty"`
+	Messages []string `json:"messages,omitempty"`
 }
 
 // NewTrackedDownloadStatusMessage instantiates a new TrackedDownloadStatusMessage object
@@ -39,7 +42,7 @@ func NewTrackedDownloadStatusMessageWithDefaults() *TrackedDownloadStatusMessage
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrackedDownloadStatusMessage) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *TrackedDownloadStatusMessage) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TrackedDownloadStatusMessage) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -80,9 +83,9 @@ func (o *TrackedDownloadStatusMessage) UnsetTitle() {
 }
 
 // GetMessages returns the Messages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TrackedDownloadStatusMessage) GetMessages() []*string {
+func (o *TrackedDownloadStatusMessage) GetMessages() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Messages
@@ -91,16 +94,16 @@ func (o *TrackedDownloadStatusMessage) GetMessages() []*string {
 // GetMessagesOk returns a tuple with the Messages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TrackedDownloadStatusMessage) GetMessagesOk() ([]*string, bool) {
-	if o == nil || isNil(o.Messages) {
-    return nil, false
+func (o *TrackedDownloadStatusMessage) GetMessagesOk() ([]string, bool) {
+	if o == nil || IsNil(o.Messages) {
+		return nil, false
 	}
 	return o.Messages, true
 }
 
 // HasMessages returns a boolean if a field has been set.
 func (o *TrackedDownloadStatusMessage) HasMessages() bool {
-	if o != nil && isNil(o.Messages) {
+	if o != nil && IsNil(o.Messages) {
 		return true
 	}
 
@@ -108,11 +111,19 @@ func (o *TrackedDownloadStatusMessage) HasMessages() bool {
 }
 
 // SetMessages gets a reference to the given []string and assigns it to the Messages field.
-func (o *TrackedDownloadStatusMessage) SetMessages(v []*string) {
+func (o *TrackedDownloadStatusMessage) SetMessages(v []string) {
 	o.Messages = v
 }
 
 func (o TrackedDownloadStatusMessage) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TrackedDownloadStatusMessage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
@@ -120,7 +131,7 @@ func (o TrackedDownloadStatusMessage) MarshalJSON() ([]byte, error) {
 	if o.Messages != nil {
 		toSerialize["messages"] = o.Messages
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTrackedDownloadStatusMessage struct {

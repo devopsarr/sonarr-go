@@ -22,6 +22,7 @@ import (
 
 // QueueActionAPIService QueueActionAPI service
 type QueueActionAPIService service
+
 type ApiCreateQueueGrabBulkRequest struct {
 	ctx context.Context
 	ApiService *QueueActionAPIService
@@ -143,6 +144,7 @@ func (a *QueueActionAPIService) CreateQueueGrabBulkExecute(r ApiCreateQueueGrabB
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiCreateQueueGrabByIdRequest struct {
 	ctx context.Context
 	ApiService *QueueActionAPIService
@@ -182,7 +184,7 @@ func (a *QueueActionAPIService) CreateQueueGrabByIdExecute(r ApiCreateQueueGrabB
 	}
 
 	localVarPath := localBasePath + "/api/v3/queue/grab/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -22,6 +22,7 @@ import (
 
 // AutoTaggingAPIService AutoTaggingAPI service
 type AutoTaggingAPIService service
+
 type ApiCreateAutoTaggingRequest struct {
 	ctx context.Context
 	ApiService *AutoTaggingAPIService
@@ -154,6 +155,7 @@ func (a *AutoTaggingAPIService) CreateAutoTaggingExecute(r ApiCreateAutoTaggingR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteAutoTaggingRequest struct {
 	ctx context.Context
 	ApiService *AutoTaggingAPIService
@@ -193,7 +195,7 @@ func (a *AutoTaggingAPIService) DeleteAutoTaggingExecute(r ApiDeleteAutoTaggingR
 	}
 
 	localVarPath := localBasePath + "/api/v3/autotagging/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *AutoTaggingAPIService) DeleteAutoTaggingExecute(r ApiDeleteAutoTaggingR
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetAutoTaggingByIdRequest struct {
 	ctx context.Context
 	ApiService *AutoTaggingAPIService
@@ -312,7 +315,7 @@ func (a *AutoTaggingAPIService) GetAutoTaggingByIdExecute(r ApiGetAutoTaggingByI
 	}
 
 	localVarPath := localBasePath + "/api/v3/autotagging/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *AutoTaggingAPIService) GetAutoTaggingByIdExecute(r ApiGetAutoTaggingByI
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListAutoTaggingRequest struct {
 	ctx context.Context
 	ApiService *AutoTaggingAPIService
 }
 
-func (r ApiListAutoTaggingRequest) Execute() ([]*AutoTaggingResource, *http.Response, error) {
+func (r ApiListAutoTaggingRequest) Execute() ([]AutoTaggingResource, *http.Response, error) {
 	return r.ApiService.ListAutoTaggingExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *AutoTaggingAPIService) ListAutoTagging(ctx context.Context) ApiListAuto
 
 // Execute executes the request
 //  @return []AutoTaggingResource
-func (a *AutoTaggingAPIService) ListAutoTaggingExecute(r ApiListAutoTaggingRequest) ([]*AutoTaggingResource, *http.Response, error) {
+func (a *AutoTaggingAPIService) ListAutoTaggingExecute(r ApiListAutoTaggingRequest) ([]AutoTaggingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*AutoTaggingResource
+		localVarReturnValue  []AutoTaggingResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingAPIService.ListAutoTagging")
@@ -523,12 +527,13 @@ func (a *AutoTaggingAPIService) ListAutoTaggingExecute(r ApiListAutoTaggingReque
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListAutoTaggingSchemaRequest struct {
 	ctx context.Context
 	ApiService *AutoTaggingAPIService
 }
 
-func (r ApiListAutoTaggingSchemaRequest) Execute() ([]*AutoTaggingSpecificationSchema, *http.Response, error) {
+func (r ApiListAutoTaggingSchemaRequest) Execute() ([]AutoTaggingSpecificationSchema, *http.Response, error) {
 	return r.ApiService.ListAutoTaggingSchemaExecute(r)
 }
 
@@ -547,12 +552,12 @@ func (a *AutoTaggingAPIService) ListAutoTaggingSchema(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []AutoTaggingSpecificationSchema
-func (a *AutoTaggingAPIService) ListAutoTaggingSchemaExecute(r ApiListAutoTaggingSchemaRequest) ([]*AutoTaggingSpecificationSchema, *http.Response, error) {
+func (a *AutoTaggingAPIService) ListAutoTaggingSchemaExecute(r ApiListAutoTaggingSchemaRequest) ([]AutoTaggingSpecificationSchema, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*AutoTaggingSpecificationSchema
+		localVarReturnValue  []AutoTaggingSpecificationSchema
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutoTaggingAPIService.ListAutoTaggingSchema")
@@ -647,6 +652,7 @@ func (a *AutoTaggingAPIService) ListAutoTaggingSchemaExecute(r ApiListAutoTaggin
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateAutoTaggingRequest struct {
 	ctx context.Context
 	ApiService *AutoTaggingAPIService
@@ -694,7 +700,7 @@ func (a *AutoTaggingAPIService) UpdateAutoTaggingExecute(r ApiUpdateAutoTaggingR
 	}
 
 	localVarPath := localBasePath + "/api/v3/autotagging/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

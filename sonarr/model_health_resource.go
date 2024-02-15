@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the HealthResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &HealthResource{}
+
 // HealthResource struct for HealthResource
 type HealthResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -42,7 +45,7 @@ func NewHealthResourceWithDefaults() *HealthResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *HealthResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *HealthResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HealthResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *HealthResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *HealthResource) SetId(v int32) {
 
 // GetSource returns the Source field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HealthResource) GetSource() string {
-	if o == nil || isNil(o.Source.Get()) {
+	if o == nil || IsNil(o.Source.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *HealthResource) GetSource() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HealthResource) GetSourceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Source.Get(), o.Source.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *HealthResource) UnsetSource() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *HealthResource) GetType() HealthCheckResult {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret HealthCheckResult
 		return ret
 	}
@@ -126,15 +129,15 @@ func (o *HealthResource) GetType() HealthCheckResult {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HealthResource) GetTypeOk() (*HealthCheckResult, bool) {
-	if o == nil || isNil(o.Type) {
-    return nil, false
+	if o == nil || IsNil(o.Type) {
+		return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *HealthResource) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *HealthResource) SetType(v HealthCheckResult) {
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HealthResource) GetMessage() string {
-	if o == nil || isNil(o.Message.Get()) {
+	if o == nil || IsNil(o.Message.Get()) {
 		var ret string
 		return ret
 	}
@@ -160,7 +163,7 @@ func (o *HealthResource) GetMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HealthResource) GetMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Message.Get(), o.Message.IsSet()
 }
@@ -190,7 +193,7 @@ func (o *HealthResource) UnsetMessage() {
 
 // GetWikiUrl returns the WikiUrl field value if set, zero value otherwise.
 func (o *HealthResource) GetWikiUrl() string {
-	if o == nil || isNil(o.WikiUrl) {
+	if o == nil || IsNil(o.WikiUrl) {
 		var ret string
 		return ret
 	}
@@ -200,15 +203,15 @@ func (o *HealthResource) GetWikiUrl() string {
 // GetWikiUrlOk returns a tuple with the WikiUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HealthResource) GetWikiUrlOk() (*string, bool) {
-	if o == nil || isNil(o.WikiUrl) {
-    return nil, false
+	if o == nil || IsNil(o.WikiUrl) {
+		return nil, false
 	}
 	return o.WikiUrl, true
 }
 
 // HasWikiUrl returns a boolean if a field has been set.
 func (o *HealthResource) HasWikiUrl() bool {
-	if o != nil && !isNil(o.WikiUrl) {
+	if o != nil && !IsNil(o.WikiUrl) {
 		return true
 	}
 
@@ -221,23 +224,31 @@ func (o *HealthResource) SetWikiUrl(v string) {
 }
 
 func (o HealthResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o HealthResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Source.IsSet() {
 		toSerialize["source"] = o.Source.Get()
 	}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
 	if o.Message.IsSet() {
 		toSerialize["message"] = o.Message.Get()
 	}
-	if !isNil(o.WikiUrl) {
+	if !IsNil(o.WikiUrl) {
 		toSerialize["wikiUrl"] = o.WikiUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableHealthResource struct {

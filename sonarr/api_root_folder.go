@@ -22,6 +22,7 @@ import (
 
 // RootFolderAPIService RootFolderAPI service
 type RootFolderAPIService service
+
 type ApiCreateRootFolderRequest struct {
 	ctx context.Context
 	ApiService *RootFolderAPIService
@@ -154,6 +155,7 @@ func (a *RootFolderAPIService) CreateRootFolderExecute(r ApiCreateRootFolderRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteRootFolderRequest struct {
 	ctx context.Context
 	ApiService *RootFolderAPIService
@@ -193,7 +195,7 @@ func (a *RootFolderAPIService) DeleteRootFolderExecute(r ApiDeleteRootFolderRequ
 	}
 
 	localVarPath := localBasePath + "/api/v3/rootfolder/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *RootFolderAPIService) DeleteRootFolderExecute(r ApiDeleteRootFolderRequ
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetRootFolderByIdRequest struct {
 	ctx context.Context
 	ApiService *RootFolderAPIService
@@ -312,7 +315,7 @@ func (a *RootFolderAPIService) GetRootFolderByIdExecute(r ApiGetRootFolderByIdRe
 	}
 
 	localVarPath := localBasePath + "/api/v3/rootfolder/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *RootFolderAPIService) GetRootFolderByIdExecute(r ApiGetRootFolderByIdRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListRootFolderRequest struct {
 	ctx context.Context
 	ApiService *RootFolderAPIService
 }
 
-func (r ApiListRootFolderRequest) Execute() ([]*RootFolderResource, *http.Response, error) {
+func (r ApiListRootFolderRequest) Execute() ([]RootFolderResource, *http.Response, error) {
 	return r.ApiService.ListRootFolderExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *RootFolderAPIService) ListRootFolder(ctx context.Context) ApiListRootFo
 
 // Execute executes the request
 //  @return []RootFolderResource
-func (a *RootFolderAPIService) ListRootFolderExecute(r ApiListRootFolderRequest) ([]*RootFolderResource, *http.Response, error) {
+func (a *RootFolderAPIService) ListRootFolderExecute(r ApiListRootFolderRequest) ([]RootFolderResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*RootFolderResource
+		localVarReturnValue  []RootFolderResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootFolderAPIService.ListRootFolder")

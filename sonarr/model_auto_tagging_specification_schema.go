@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AutoTaggingSpecificationSchema type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AutoTaggingSpecificationSchema{}
+
 // AutoTaggingSpecificationSchema struct for AutoTaggingSpecificationSchema
 type AutoTaggingSpecificationSchema struct {
 	Id *int32 `json:"id,omitempty"`
@@ -22,7 +25,7 @@ type AutoTaggingSpecificationSchema struct {
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Negate *bool `json:"negate,omitempty"`
 	Required *bool `json:"required,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
 }
 
 // NewAutoTaggingSpecificationSchema instantiates a new AutoTaggingSpecificationSchema object
@@ -44,7 +47,7 @@ func NewAutoTaggingSpecificationSchemaWithDefaults() *AutoTaggingSpecificationSc
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AutoTaggingSpecificationSchema) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *AutoTaggingSpecificationSchema) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AutoTaggingSpecificationSchema) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *AutoTaggingSpecificationSchema) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *AutoTaggingSpecificationSchema) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AutoTaggingSpecificationSchema) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *AutoTaggingSpecificationSchema) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AutoTaggingSpecificationSchema) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -118,7 +121,7 @@ func (o *AutoTaggingSpecificationSchema) UnsetName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AutoTaggingSpecificationSchema) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -130,7 +133,7 @@ func (o *AutoTaggingSpecificationSchema) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AutoTaggingSpecificationSchema) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -160,7 +163,7 @@ func (o *AutoTaggingSpecificationSchema) UnsetImplementation() {
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AutoTaggingSpecificationSchema) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AutoTaggingSpecificationSchema) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AutoTaggingSpecificationSchema) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -202,7 +205,7 @@ func (o *AutoTaggingSpecificationSchema) UnsetImplementationName() {
 
 // GetNegate returns the Negate field value if set, zero value otherwise.
 func (o *AutoTaggingSpecificationSchema) GetNegate() bool {
-	if o == nil || isNil(o.Negate) {
+	if o == nil || IsNil(o.Negate) {
 		var ret bool
 		return ret
 	}
@@ -212,15 +215,15 @@ func (o *AutoTaggingSpecificationSchema) GetNegate() bool {
 // GetNegateOk returns a tuple with the Negate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AutoTaggingSpecificationSchema) GetNegateOk() (*bool, bool) {
-	if o == nil || isNil(o.Negate) {
-    return nil, false
+	if o == nil || IsNil(o.Negate) {
+		return nil, false
 	}
 	return o.Negate, true
 }
 
 // HasNegate returns a boolean if a field has been set.
 func (o *AutoTaggingSpecificationSchema) HasNegate() bool {
-	if o != nil && !isNil(o.Negate) {
+	if o != nil && !IsNil(o.Negate) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *AutoTaggingSpecificationSchema) SetNegate(v bool) {
 
 // GetRequired returns the Required field value if set, zero value otherwise.
 func (o *AutoTaggingSpecificationSchema) GetRequired() bool {
-	if o == nil || isNil(o.Required) {
+	if o == nil || IsNil(o.Required) {
 		var ret bool
 		return ret
 	}
@@ -244,15 +247,15 @@ func (o *AutoTaggingSpecificationSchema) GetRequired() bool {
 // GetRequiredOk returns a tuple with the Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AutoTaggingSpecificationSchema) GetRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.Required) {
-    return nil, false
+	if o == nil || IsNil(o.Required) {
+		return nil, false
 	}
 	return o.Required, true
 }
 
 // HasRequired returns a boolean if a field has been set.
 func (o *AutoTaggingSpecificationSchema) HasRequired() bool {
-	if o != nil && !isNil(o.Required) {
+	if o != nil && !IsNil(o.Required) {
 		return true
 	}
 
@@ -265,9 +268,9 @@ func (o *AutoTaggingSpecificationSchema) SetRequired(v bool) {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AutoTaggingSpecificationSchema) GetFields() []*Field {
+func (o *AutoTaggingSpecificationSchema) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -276,16 +279,16 @@ func (o *AutoTaggingSpecificationSchema) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AutoTaggingSpecificationSchema) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *AutoTaggingSpecificationSchema) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *AutoTaggingSpecificationSchema) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -293,13 +296,21 @@ func (o *AutoTaggingSpecificationSchema) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *AutoTaggingSpecificationSchema) SetFields(v []*Field) {
+func (o *AutoTaggingSpecificationSchema) SetFields(v []Field) {
 	o.Fields = v
 }
 
 func (o AutoTaggingSpecificationSchema) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AutoTaggingSpecificationSchema) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -311,16 +322,16 @@ func (o AutoTaggingSpecificationSchema) MarshalJSON() ([]byte, error) {
 	if o.ImplementationName.IsSet() {
 		toSerialize["implementationName"] = o.ImplementationName.Get()
 	}
-	if !isNil(o.Negate) {
+	if !IsNil(o.Negate) {
 		toSerialize["negate"] = o.Negate
 	}
-	if !isNil(o.Required) {
+	if !IsNil(o.Required) {
 		toSerialize["required"] = o.Required
 	}
 	if o.Fields != nil {
 		toSerialize["fields"] = o.Fields
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAutoTaggingSpecificationSchema struct {

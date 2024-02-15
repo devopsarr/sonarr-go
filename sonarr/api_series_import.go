@@ -21,6 +21,7 @@ import (
 
 // SeriesImportAPIService SeriesImportAPI service
 type SeriesImportAPIService service
+
 type ApiCreateSeriesImportRequest struct {
 	ctx context.Context
 	ApiService *SeriesImportAPIService

@@ -22,6 +22,7 @@ import (
 
 // DownloadClientAPIService DownloadClientAPI service
 type DownloadClientAPIService service
+
 type ApiCreateDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -78,7 +79,10 @@ func (a *DownloadClientAPIService) CreateDownloadClientExecute(r ApiCreateDownlo
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,6 +167,7 @@ func (a *DownloadClientAPIService) CreateDownloadClientExecute(r ApiCreateDownlo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiCreateDownloadClientActionByNameRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -208,7 +213,7 @@ func (a *DownloadClientAPIService) CreateDownloadClientActionByNameExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/api/v3/downloadclient/action/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,6 +293,7 @@ func (a *DownloadClientAPIService) CreateDownloadClientActionByNameExecute(r Api
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -327,7 +333,7 @@ func (a *DownloadClientAPIService) DeleteDownloadClientExecute(r ApiDeleteDownlo
 	}
 
 	localVarPath := localBasePath + "/api/v3/downloadclient/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -405,6 +411,7 @@ func (a *DownloadClientAPIService) DeleteDownloadClientExecute(r ApiDeleteDownlo
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteDownloadClientBulkRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -526,6 +533,7 @@ func (a *DownloadClientAPIService) DeleteDownloadClientBulkExecute(r ApiDeleteDo
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetDownloadClientByIdRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -567,7 +575,7 @@ func (a *DownloadClientAPIService) GetDownloadClientByIdExecute(r ApiGetDownload
 	}
 
 	localVarPath := localBasePath + "/api/v3/downloadclient/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -654,12 +662,13 @@ func (a *DownloadClientAPIService) GetDownloadClientByIdExecute(r ApiGetDownload
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
 }
 
-func (r ApiListDownloadClientRequest) Execute() ([]*DownloadClientResource, *http.Response, error) {
+func (r ApiListDownloadClientRequest) Execute() ([]DownloadClientResource, *http.Response, error) {
 	return r.ApiService.ListDownloadClientExecute(r)
 }
 
@@ -678,12 +687,12 @@ func (a *DownloadClientAPIService) ListDownloadClient(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []DownloadClientResource
-func (a *DownloadClientAPIService) ListDownloadClientExecute(r ApiListDownloadClientRequest) ([]*DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientAPIService) ListDownloadClientExecute(r ApiListDownloadClientRequest) ([]DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*DownloadClientResource
+		localVarReturnValue  []DownloadClientResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientAPIService.ListDownloadClient")
@@ -778,12 +787,13 @@ func (a *DownloadClientAPIService) ListDownloadClientExecute(r ApiListDownloadCl
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListDownloadClientSchemaRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
 }
 
-func (r ApiListDownloadClientSchemaRequest) Execute() ([]*DownloadClientResource, *http.Response, error) {
+func (r ApiListDownloadClientSchemaRequest) Execute() ([]DownloadClientResource, *http.Response, error) {
 	return r.ApiService.ListDownloadClientSchemaExecute(r)
 }
 
@@ -802,12 +812,12 @@ func (a *DownloadClientAPIService) ListDownloadClientSchema(ctx context.Context)
 
 // Execute executes the request
 //  @return []DownloadClientResource
-func (a *DownloadClientAPIService) ListDownloadClientSchemaExecute(r ApiListDownloadClientSchemaRequest) ([]*DownloadClientResource, *http.Response, error) {
+func (a *DownloadClientAPIService) ListDownloadClientSchemaExecute(r ApiListDownloadClientSchemaRequest) ([]DownloadClientResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*DownloadClientResource
+		localVarReturnValue  []DownloadClientResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DownloadClientAPIService.ListDownloadClientSchema")
@@ -902,6 +912,7 @@ func (a *DownloadClientAPIService) ListDownloadClientSchemaExecute(r ApiListDown
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutDownloadClientBulkRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -1034,6 +1045,7 @@ func (a *DownloadClientAPIService) PutDownloadClientBulkExecute(r ApiPutDownload
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiTestDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -1155,6 +1167,7 @@ func (a *DownloadClientAPIService) TestDownloadClientExecute(r ApiTestDownloadCl
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiTestallDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -1268,6 +1281,7 @@ func (a *DownloadClientAPIService) TestallDownloadClientExecute(r ApiTestallDown
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateDownloadClientRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientAPIService
@@ -1321,14 +1335,17 @@ func (a *DownloadClientAPIService) UpdateDownloadClientExecute(r ApiUpdateDownlo
 	}
 
 	localVarPath := localBasePath + "/api/v3/downloadclient/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

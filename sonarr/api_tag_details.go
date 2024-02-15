@@ -22,6 +22,7 @@ import (
 
 // TagDetailsAPIService TagDetailsAPI service
 type TagDetailsAPIService service
+
 type ApiGetTagDetailByIdRequest struct {
 	ctx context.Context
 	ApiService *TagDetailsAPIService
@@ -63,7 +64,7 @@ func (a *TagDetailsAPIService) GetTagDetailByIdExecute(r ApiGetTagDetailByIdRequ
 	}
 
 	localVarPath := localBasePath + "/api/v3/tag/detail/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,12 +151,13 @@ func (a *TagDetailsAPIService) GetTagDetailByIdExecute(r ApiGetTagDetailByIdRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListTagDetailRequest struct {
 	ctx context.Context
 	ApiService *TagDetailsAPIService
 }
 
-func (r ApiListTagDetailRequest) Execute() ([]*TagDetailsResource, *http.Response, error) {
+func (r ApiListTagDetailRequest) Execute() ([]TagDetailsResource, *http.Response, error) {
 	return r.ApiService.ListTagDetailExecute(r)
 }
 
@@ -174,12 +176,12 @@ func (a *TagDetailsAPIService) ListTagDetail(ctx context.Context) ApiListTagDeta
 
 // Execute executes the request
 //  @return []TagDetailsResource
-func (a *TagDetailsAPIService) ListTagDetailExecute(r ApiListTagDetailRequest) ([]*TagDetailsResource, *http.Response, error) {
+func (a *TagDetailsAPIService) ListTagDetailExecute(r ApiListTagDetailRequest) ([]TagDetailsResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*TagDetailsResource
+		localVarReturnValue  []TagDetailsResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagDetailsAPIService.ListTagDetail")

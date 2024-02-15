@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the LogResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LogResource{}
+
 // LogResource struct for LogResource
 type LogResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -46,7 +49,7 @@ func NewLogResourceWithDefaults() *LogResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *LogResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -56,15 +59,15 @@ func (o *LogResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LogResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *LogResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -78,7 +81,7 @@ func (o *LogResource) SetId(v int32) {
 
 // GetTime returns the Time field value if set, zero value otherwise.
 func (o *LogResource) GetTime() time.Time {
-	if o == nil || isNil(o.Time) {
+	if o == nil || IsNil(o.Time) {
 		var ret time.Time
 		return ret
 	}
@@ -88,15 +91,15 @@ func (o *LogResource) GetTime() time.Time {
 // GetTimeOk returns a tuple with the Time field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LogResource) GetTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Time) {
-    return nil, false
+	if o == nil || IsNil(o.Time) {
+		return nil, false
 	}
 	return o.Time, true
 }
 
 // HasTime returns a boolean if a field has been set.
 func (o *LogResource) HasTime() bool {
-	if o != nil && !isNil(o.Time) {
+	if o != nil && !IsNil(o.Time) {
 		return true
 	}
 
@@ -110,7 +113,7 @@ func (o *LogResource) SetTime(v time.Time) {
 
 // GetException returns the Exception field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogResource) GetException() string {
-	if o == nil || isNil(o.Exception.Get()) {
+	if o == nil || IsNil(o.Exception.Get()) {
 		var ret string
 		return ret
 	}
@@ -122,7 +125,7 @@ func (o *LogResource) GetException() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogResource) GetExceptionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Exception.Get(), o.Exception.IsSet()
 }
@@ -152,7 +155,7 @@ func (o *LogResource) UnsetException() {
 
 // GetExceptionType returns the ExceptionType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogResource) GetExceptionType() string {
-	if o == nil || isNil(o.ExceptionType.Get()) {
+	if o == nil || IsNil(o.ExceptionType.Get()) {
 		var ret string
 		return ret
 	}
@@ -164,7 +167,7 @@ func (o *LogResource) GetExceptionType() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogResource) GetExceptionTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ExceptionType.Get(), o.ExceptionType.IsSet()
 }
@@ -194,7 +197,7 @@ func (o *LogResource) UnsetExceptionType() {
 
 // GetLevel returns the Level field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogResource) GetLevel() string {
-	if o == nil || isNil(o.Level.Get()) {
+	if o == nil || IsNil(o.Level.Get()) {
 		var ret string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *LogResource) GetLevel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogResource) GetLevelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Level.Get(), o.Level.IsSet()
 }
@@ -236,7 +239,7 @@ func (o *LogResource) UnsetLevel() {
 
 // GetLogger returns the Logger field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogResource) GetLogger() string {
-	if o == nil || isNil(o.Logger.Get()) {
+	if o == nil || IsNil(o.Logger.Get()) {
 		var ret string
 		return ret
 	}
@@ -248,7 +251,7 @@ func (o *LogResource) GetLogger() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogResource) GetLoggerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Logger.Get(), o.Logger.IsSet()
 }
@@ -278,7 +281,7 @@ func (o *LogResource) UnsetLogger() {
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogResource) GetMessage() string {
-	if o == nil || isNil(o.Message.Get()) {
+	if o == nil || IsNil(o.Message.Get()) {
 		var ret string
 		return ret
 	}
@@ -290,7 +293,7 @@ func (o *LogResource) GetMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogResource) GetMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Message.Get(), o.Message.IsSet()
 }
@@ -320,7 +323,7 @@ func (o *LogResource) UnsetMessage() {
 
 // GetMethod returns the Method field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogResource) GetMethod() string {
-	if o == nil || isNil(o.Method.Get()) {
+	if o == nil || IsNil(o.Method.Get()) {
 		var ret string
 		return ret
 	}
@@ -332,7 +335,7 @@ func (o *LogResource) GetMethod() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogResource) GetMethodOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Method.Get(), o.Method.IsSet()
 }
@@ -361,11 +364,19 @@ func (o *LogResource) UnsetMethod() {
 }
 
 func (o LogResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o LogResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.Time) {
+	if !IsNil(o.Time) {
 		toSerialize["time"] = o.Time
 	}
 	if o.Exception.IsSet() {
@@ -386,7 +397,7 @@ func (o LogResource) MarshalJSON() ([]byte, error) {
 	if o.Method.IsSet() {
 		toSerialize["method"] = o.Method.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableLogResource struct {

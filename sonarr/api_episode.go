@@ -23,6 +23,7 @@ import (
 
 // EpisodeAPIService EpisodeAPI service
 type EpisodeAPIService service
+
 type ApiGetEpisodeByIdRequest struct {
 	ctx context.Context
 	ApiService *EpisodeAPIService
@@ -64,7 +65,7 @@ func (a *EpisodeAPIService) GetEpisodeByIdExecute(r ApiGetEpisodeByIdRequest) (*
 	}
 
 	localVarPath := localBasePath + "/api/v3/episode/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -151,6 +152,7 @@ func (a *EpisodeAPIService) GetEpisodeByIdExecute(r ApiGetEpisodeByIdRequest) (*
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListEpisodeRequest struct {
 	ctx context.Context
 	ApiService *EpisodeAPIService
@@ -186,7 +188,7 @@ func (r ApiListEpisodeRequest) IncludeImages(includeImages bool) ApiListEpisodeR
 	return r
 }
 
-func (r ApiListEpisodeRequest) Execute() ([]*EpisodeResource, *http.Response, error) {
+func (r ApiListEpisodeRequest) Execute() ([]EpisodeResource, *http.Response, error) {
 	return r.ApiService.ListEpisodeExecute(r)
 }
 
@@ -205,12 +207,12 @@ func (a *EpisodeAPIService) ListEpisode(ctx context.Context) ApiListEpisodeReque
 
 // Execute executes the request
 //  @return []EpisodeResource
-func (a *EpisodeAPIService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*EpisodeResource, *http.Response, error) {
+func (a *EpisodeAPIService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*EpisodeResource
+		localVarReturnValue  []EpisodeResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeAPIService.ListEpisode")
@@ -225,27 +227,30 @@ func (a *EpisodeAPIService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*Epis
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		localVarQueryParams.Add("seriesId", parameterToString(*r.seriesId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
 	}
 	if r.seasonNumber != nil {
-		localVarQueryParams.Add("seasonNumber", parameterToString(*r.seasonNumber, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "")
 	}
 	if r.episodeIds != nil {
 		t := *r.episodeIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("episodeIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("episodeIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", t, "multi")
 		}
 	}
 	if r.episodeFileId != nil {
-		localVarQueryParams.Add("episodeFileId", parameterToString(*r.episodeFileId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileId", r.episodeFileId, "")
 	}
 	if r.includeImages != nil {
-		localVarQueryParams.Add("includeImages", parameterToString(*r.includeImages, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "")
+	} else {
+		var defaultValue bool = false
+		r.includeImages = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -328,6 +333,7 @@ func (a *EpisodeAPIService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]*Epis
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutEpisodeMonitorRequest struct {
 	ctx context.Context
 	ApiService *EpisodeAPIService
@@ -382,7 +388,10 @@ func (a *EpisodeAPIService) PutEpisodeMonitorExecute(r ApiPutEpisodeMonitorReque
 	localVarFormParams := url.Values{}
 
 	if r.includeImages != nil {
-		localVarQueryParams.Add("includeImages", parameterToString(*r.includeImages, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "")
+	} else {
+		var defaultValue bool = false
+		r.includeImages = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -458,6 +467,7 @@ func (a *EpisodeAPIService) PutEpisodeMonitorExecute(r ApiPutEpisodeMonitorReque
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateEpisodeRequest struct {
 	ctx context.Context
 	ApiService *EpisodeAPIService
@@ -505,7 +515,7 @@ func (a *EpisodeAPIService) UpdateEpisodeExecute(r ApiUpdateEpisodeRequest) (*Ep
 	}
 
 	localVarPath := localBasePath + "/api/v3/episode/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

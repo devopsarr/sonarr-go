@@ -21,6 +21,7 @@ import (
 
 // SeasonPassAPIService SeasonPassAPI service
 type SeasonPassAPIService service
+
 type ApiCreateSeasonPassRequest struct {
 	ctx context.Context
 	ApiService *SeasonPassAPIService

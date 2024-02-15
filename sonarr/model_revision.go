@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Revision type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Revision{}
+
 // Revision struct for Revision
 type Revision struct {
 	Version *int32 `json:"version,omitempty"`
@@ -40,7 +43,7 @@ func NewRevisionWithDefaults() *Revision {
 
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *Revision) GetVersion() int32 {
-	if o == nil || isNil(o.Version) {
+	if o == nil || IsNil(o.Version) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *Revision) GetVersion() int32 {
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Revision) GetVersionOk() (*int32, bool) {
-	if o == nil || isNil(o.Version) {
-    return nil, false
+	if o == nil || IsNil(o.Version) {
+		return nil, false
 	}
 	return o.Version, true
 }
 
 // HasVersion returns a boolean if a field has been set.
 func (o *Revision) HasVersion() bool {
-	if o != nil && !isNil(o.Version) {
+	if o != nil && !IsNil(o.Version) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *Revision) SetVersion(v int32) {
 
 // GetReal returns the Real field value if set, zero value otherwise.
 func (o *Revision) GetReal() int32 {
-	if o == nil || isNil(o.Real) {
+	if o == nil || IsNil(o.Real) {
 		var ret int32
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *Revision) GetReal() int32 {
 // GetRealOk returns a tuple with the Real field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Revision) GetRealOk() (*int32, bool) {
-	if o == nil || isNil(o.Real) {
-    return nil, false
+	if o == nil || IsNil(o.Real) {
+		return nil, false
 	}
 	return o.Real, true
 }
 
 // HasReal returns a boolean if a field has been set.
 func (o *Revision) HasReal() bool {
-	if o != nil && !isNil(o.Real) {
+	if o != nil && !IsNil(o.Real) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *Revision) SetReal(v int32) {
 
 // GetIsRepack returns the IsRepack field value if set, zero value otherwise.
 func (o *Revision) GetIsRepack() bool {
-	if o == nil || isNil(o.IsRepack) {
+	if o == nil || IsNil(o.IsRepack) {
 		var ret bool
 		return ret
 	}
@@ -114,15 +117,15 @@ func (o *Revision) GetIsRepack() bool {
 // GetIsRepackOk returns a tuple with the IsRepack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Revision) GetIsRepackOk() (*bool, bool) {
-	if o == nil || isNil(o.IsRepack) {
-    return nil, false
+	if o == nil || IsNil(o.IsRepack) {
+		return nil, false
 	}
 	return o.IsRepack, true
 }
 
 // HasIsRepack returns a boolean if a field has been set.
 func (o *Revision) HasIsRepack() bool {
-	if o != nil && !isNil(o.IsRepack) {
+	if o != nil && !IsNil(o.IsRepack) {
 		return true
 	}
 
@@ -135,17 +138,25 @@ func (o *Revision) SetIsRepack(v bool) {
 }
 
 func (o Revision) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Version) {
-		toSerialize["version"] = o.Version
-	}
-	if !isNil(o.Real) {
-		toSerialize["real"] = o.Real
-	}
-	if !isNil(o.IsRepack) {
-		toSerialize["isRepack"] = o.IsRepack
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Revision) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Version) {
+		toSerialize["version"] = o.Version
+	}
+	if !IsNil(o.Real) {
+		toSerialize["real"] = o.Real
+	}
+	if !IsNil(o.IsRepack) {
+		toSerialize["isRepack"] = o.IsRepack
+	}
+	return toSerialize, nil
 }
 
 type NullableRevision struct {

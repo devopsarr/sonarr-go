@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TagResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TagResource{}
+
 // TagResource struct for TagResource
 type TagResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -39,7 +42,7 @@ func NewTagResourceWithDefaults() *TagResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *TagResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *TagResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TagResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *TagResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *TagResource) SetId(v int32) {
 
 // GetLabel returns the Label field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TagResource) GetLabel() string {
-	if o == nil || isNil(o.Label.Get()) {
+	if o == nil || IsNil(o.Label.Get()) {
 		var ret string
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *TagResource) GetLabel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TagResource) GetLabelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Label.Get(), o.Label.IsSet()
 }
@@ -112,14 +115,22 @@ func (o *TagResource) UnsetLabel() {
 }
 
 func (o TagResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TagResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Label.IsSet() {
 		toSerialize["label"] = o.Label.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTagResource struct {

@@ -22,6 +22,7 @@ import (
 
 // LocalizationAPIService LocalizationAPI service
 type LocalizationAPIService service
+
 type ApiGetLocalizationRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
@@ -146,6 +147,7 @@ func (a *LocalizationAPIService) GetLocalizationExecute(r ApiGetLocalizationRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetLocalizationByIdRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
@@ -187,7 +189,7 @@ func (a *LocalizationAPIService) GetLocalizationByIdExecute(r ApiGetLocalization
 	}
 
 	localVarPath := localBasePath + "/api/v3/localization/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *LocalizationAPIService) GetLocalizationByIdExecute(r ApiGetLocalization
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetLocalizationLanguageRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService

@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the SeasonResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SeasonResource{}
+
 // SeasonResource struct for SeasonResource
 type SeasonResource struct {
 	SeasonNumber *int32 `json:"seasonNumber,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 	Statistics *SeasonStatisticsResource `json:"statistics,omitempty"`
-	Images []*MediaCover `json:"images,omitempty"`
+	Images []MediaCover `json:"images,omitempty"`
 }
 
 // NewSeasonResource instantiates a new SeasonResource object
@@ -41,7 +44,7 @@ func NewSeasonResourceWithDefaults() *SeasonResource {
 
 // GetSeasonNumber returns the SeasonNumber field value if set, zero value otherwise.
 func (o *SeasonResource) GetSeasonNumber() int32 {
-	if o == nil || isNil(o.SeasonNumber) {
+	if o == nil || IsNil(o.SeasonNumber) {
 		var ret int32
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *SeasonResource) GetSeasonNumber() int32 {
 // GetSeasonNumberOk returns a tuple with the SeasonNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonResource) GetSeasonNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.SeasonNumber) {
-    return nil, false
+	if o == nil || IsNil(o.SeasonNumber) {
+		return nil, false
 	}
 	return o.SeasonNumber, true
 }
 
 // HasSeasonNumber returns a boolean if a field has been set.
 func (o *SeasonResource) HasSeasonNumber() bool {
-	if o != nil && !isNil(o.SeasonNumber) {
+	if o != nil && !IsNil(o.SeasonNumber) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *SeasonResource) SetSeasonNumber(v int32) {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *SeasonResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -83,15 +86,15 @@ func (o *SeasonResource) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonResource) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *SeasonResource) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *SeasonResource) SetMonitored(v bool) {
 
 // GetStatistics returns the Statistics field value if set, zero value otherwise.
 func (o *SeasonResource) GetStatistics() SeasonStatisticsResource {
-	if o == nil || isNil(o.Statistics) {
+	if o == nil || IsNil(o.Statistics) {
 		var ret SeasonStatisticsResource
 		return ret
 	}
@@ -115,15 +118,15 @@ func (o *SeasonResource) GetStatistics() SeasonStatisticsResource {
 // GetStatisticsOk returns a tuple with the Statistics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonResource) GetStatisticsOk() (*SeasonStatisticsResource, bool) {
-	if o == nil || isNil(o.Statistics) {
-    return nil, false
+	if o == nil || IsNil(o.Statistics) {
+		return nil, false
 	}
 	return o.Statistics, true
 }
 
 // HasStatistics returns a boolean if a field has been set.
 func (o *SeasonResource) HasStatistics() bool {
-	if o != nil && !isNil(o.Statistics) {
+	if o != nil && !IsNil(o.Statistics) {
 		return true
 	}
 
@@ -136,9 +139,9 @@ func (o *SeasonResource) SetStatistics(v SeasonStatisticsResource) {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeasonResource) GetImages() []*MediaCover {
+func (o *SeasonResource) GetImages() []MediaCover {
 	if o == nil {
-		var ret []*MediaCover
+		var ret []MediaCover
 		return ret
 	}
 	return o.Images
@@ -147,16 +150,16 @@ func (o *SeasonResource) GetImages() []*MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeasonResource) GetImagesOk() ([]*MediaCover, bool) {
-	if o == nil || isNil(o.Images) {
-    return nil, false
+func (o *SeasonResource) GetImagesOk() ([]MediaCover, bool) {
+	if o == nil || IsNil(o.Images) {
+		return nil, false
 	}
 	return o.Images, true
 }
 
 // HasImages returns a boolean if a field has been set.
 func (o *SeasonResource) HasImages() bool {
-	if o != nil && isNil(o.Images) {
+	if o != nil && IsNil(o.Images) {
 		return true
 	}
 
@@ -164,25 +167,33 @@ func (o *SeasonResource) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *SeasonResource) SetImages(v []*MediaCover) {
+func (o *SeasonResource) SetImages(v []MediaCover) {
 	o.Images = v
 }
 
 func (o SeasonResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SeasonResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SeasonNumber) {
+	if !IsNil(o.SeasonNumber) {
 		toSerialize["seasonNumber"] = o.SeasonNumber
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	if !isNil(o.Statistics) {
+	if !IsNil(o.Statistics) {
 		toSerialize["statistics"] = o.Statistics
 	}
 	if o.Images != nil {
 		toSerialize["images"] = o.Images
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSeasonResource struct {

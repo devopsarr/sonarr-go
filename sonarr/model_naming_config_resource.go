@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the NamingConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &NamingConfigResource{}
+
 // NamingConfigResource struct for NamingConfigResource
 type NamingConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -54,7 +57,7 @@ func NewNamingConfigResourceWithDefaults() *NamingConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -64,15 +67,15 @@ func (o *NamingConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *NamingConfigResource) SetId(v int32) {
 
 // GetRenameEpisodes returns the RenameEpisodes field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetRenameEpisodes() bool {
-	if o == nil || isNil(o.RenameEpisodes) {
+	if o == nil || IsNil(o.RenameEpisodes) {
 		var ret bool
 		return ret
 	}
@@ -96,15 +99,15 @@ func (o *NamingConfigResource) GetRenameEpisodes() bool {
 // GetRenameEpisodesOk returns a tuple with the RenameEpisodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetRenameEpisodesOk() (*bool, bool) {
-	if o == nil || isNil(o.RenameEpisodes) {
-    return nil, false
+	if o == nil || IsNil(o.RenameEpisodes) {
+		return nil, false
 	}
 	return o.RenameEpisodes, true
 }
 
 // HasRenameEpisodes returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasRenameEpisodes() bool {
-	if o != nil && !isNil(o.RenameEpisodes) {
+	if o != nil && !IsNil(o.RenameEpisodes) {
 		return true
 	}
 
@@ -118,7 +121,7 @@ func (o *NamingConfigResource) SetRenameEpisodes(v bool) {
 
 // GetReplaceIllegalCharacters returns the ReplaceIllegalCharacters field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetReplaceIllegalCharacters() bool {
-	if o == nil || isNil(o.ReplaceIllegalCharacters) {
+	if o == nil || IsNil(o.ReplaceIllegalCharacters) {
 		var ret bool
 		return ret
 	}
@@ -128,15 +131,15 @@ func (o *NamingConfigResource) GetReplaceIllegalCharacters() bool {
 // GetReplaceIllegalCharactersOk returns a tuple with the ReplaceIllegalCharacters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetReplaceIllegalCharactersOk() (*bool, bool) {
-	if o == nil || isNil(o.ReplaceIllegalCharacters) {
-    return nil, false
+	if o == nil || IsNil(o.ReplaceIllegalCharacters) {
+		return nil, false
 	}
 	return o.ReplaceIllegalCharacters, true
 }
 
 // HasReplaceIllegalCharacters returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasReplaceIllegalCharacters() bool {
-	if o != nil && !isNil(o.ReplaceIllegalCharacters) {
+	if o != nil && !IsNil(o.ReplaceIllegalCharacters) {
 		return true
 	}
 
@@ -150,7 +153,7 @@ func (o *NamingConfigResource) SetReplaceIllegalCharacters(v bool) {
 
 // GetColonReplacementFormat returns the ColonReplacementFormat field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetColonReplacementFormat() int32 {
-	if o == nil || isNil(o.ColonReplacementFormat) {
+	if o == nil || IsNil(o.ColonReplacementFormat) {
 		var ret int32
 		return ret
 	}
@@ -160,15 +163,15 @@ func (o *NamingConfigResource) GetColonReplacementFormat() int32 {
 // GetColonReplacementFormatOk returns a tuple with the ColonReplacementFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetColonReplacementFormatOk() (*int32, bool) {
-	if o == nil || isNil(o.ColonReplacementFormat) {
-    return nil, false
+	if o == nil || IsNil(o.ColonReplacementFormat) {
+		return nil, false
 	}
 	return o.ColonReplacementFormat, true
 }
 
 // HasColonReplacementFormat returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasColonReplacementFormat() bool {
-	if o != nil && !isNil(o.ColonReplacementFormat) {
+	if o != nil && !IsNil(o.ColonReplacementFormat) {
 		return true
 	}
 
@@ -182,7 +185,7 @@ func (o *NamingConfigResource) SetColonReplacementFormat(v int32) {
 
 // GetMultiEpisodeStyle returns the MultiEpisodeStyle field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetMultiEpisodeStyle() int32 {
-	if o == nil || isNil(o.MultiEpisodeStyle) {
+	if o == nil || IsNil(o.MultiEpisodeStyle) {
 		var ret int32
 		return ret
 	}
@@ -192,15 +195,15 @@ func (o *NamingConfigResource) GetMultiEpisodeStyle() int32 {
 // GetMultiEpisodeStyleOk returns a tuple with the MultiEpisodeStyle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetMultiEpisodeStyleOk() (*int32, bool) {
-	if o == nil || isNil(o.MultiEpisodeStyle) {
-    return nil, false
+	if o == nil || IsNil(o.MultiEpisodeStyle) {
+		return nil, false
 	}
 	return o.MultiEpisodeStyle, true
 }
 
 // HasMultiEpisodeStyle returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasMultiEpisodeStyle() bool {
-	if o != nil && !isNil(o.MultiEpisodeStyle) {
+	if o != nil && !IsNil(o.MultiEpisodeStyle) {
 		return true
 	}
 
@@ -214,7 +217,7 @@ func (o *NamingConfigResource) SetMultiEpisodeStyle(v int32) {
 
 // GetStandardEpisodeFormat returns the StandardEpisodeFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetStandardEpisodeFormat() string {
-	if o == nil || isNil(o.StandardEpisodeFormat.Get()) {
+	if o == nil || IsNil(o.StandardEpisodeFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -226,7 +229,7 @@ func (o *NamingConfigResource) GetStandardEpisodeFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetStandardEpisodeFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.StandardEpisodeFormat.Get(), o.StandardEpisodeFormat.IsSet()
 }
@@ -256,7 +259,7 @@ func (o *NamingConfigResource) UnsetStandardEpisodeFormat() {
 
 // GetDailyEpisodeFormat returns the DailyEpisodeFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetDailyEpisodeFormat() string {
-	if o == nil || isNil(o.DailyEpisodeFormat.Get()) {
+	if o == nil || IsNil(o.DailyEpisodeFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *NamingConfigResource) GetDailyEpisodeFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetDailyEpisodeFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DailyEpisodeFormat.Get(), o.DailyEpisodeFormat.IsSet()
 }
@@ -298,7 +301,7 @@ func (o *NamingConfigResource) UnsetDailyEpisodeFormat() {
 
 // GetAnimeEpisodeFormat returns the AnimeEpisodeFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetAnimeEpisodeFormat() string {
-	if o == nil || isNil(o.AnimeEpisodeFormat.Get()) {
+	if o == nil || IsNil(o.AnimeEpisodeFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -310,7 +313,7 @@ func (o *NamingConfigResource) GetAnimeEpisodeFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetAnimeEpisodeFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AnimeEpisodeFormat.Get(), o.AnimeEpisodeFormat.IsSet()
 }
@@ -340,7 +343,7 @@ func (o *NamingConfigResource) UnsetAnimeEpisodeFormat() {
 
 // GetSeriesFolderFormat returns the SeriesFolderFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetSeriesFolderFormat() string {
-	if o == nil || isNil(o.SeriesFolderFormat.Get()) {
+	if o == nil || IsNil(o.SeriesFolderFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -352,7 +355,7 @@ func (o *NamingConfigResource) GetSeriesFolderFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetSeriesFolderFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SeriesFolderFormat.Get(), o.SeriesFolderFormat.IsSet()
 }
@@ -382,7 +385,7 @@ func (o *NamingConfigResource) UnsetSeriesFolderFormat() {
 
 // GetSeasonFolderFormat returns the SeasonFolderFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetSeasonFolderFormat() string {
-	if o == nil || isNil(o.SeasonFolderFormat.Get()) {
+	if o == nil || IsNil(o.SeasonFolderFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -394,7 +397,7 @@ func (o *NamingConfigResource) GetSeasonFolderFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetSeasonFolderFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SeasonFolderFormat.Get(), o.SeasonFolderFormat.IsSet()
 }
@@ -424,7 +427,7 @@ func (o *NamingConfigResource) UnsetSeasonFolderFormat() {
 
 // GetSpecialsFolderFormat returns the SpecialsFolderFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetSpecialsFolderFormat() string {
-	if o == nil || isNil(o.SpecialsFolderFormat.Get()) {
+	if o == nil || IsNil(o.SpecialsFolderFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -436,7 +439,7 @@ func (o *NamingConfigResource) GetSpecialsFolderFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetSpecialsFolderFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SpecialsFolderFormat.Get(), o.SpecialsFolderFormat.IsSet()
 }
@@ -466,7 +469,7 @@ func (o *NamingConfigResource) UnsetSpecialsFolderFormat() {
 
 // GetIncludeSeriesTitle returns the IncludeSeriesTitle field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetIncludeSeriesTitle() bool {
-	if o == nil || isNil(o.IncludeSeriesTitle) {
+	if o == nil || IsNil(o.IncludeSeriesTitle) {
 		var ret bool
 		return ret
 	}
@@ -476,15 +479,15 @@ func (o *NamingConfigResource) GetIncludeSeriesTitle() bool {
 // GetIncludeSeriesTitleOk returns a tuple with the IncludeSeriesTitle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetIncludeSeriesTitleOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeSeriesTitle) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeSeriesTitle) {
+		return nil, false
 	}
 	return o.IncludeSeriesTitle, true
 }
 
 // HasIncludeSeriesTitle returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasIncludeSeriesTitle() bool {
-	if o != nil && !isNil(o.IncludeSeriesTitle) {
+	if o != nil && !IsNil(o.IncludeSeriesTitle) {
 		return true
 	}
 
@@ -498,7 +501,7 @@ func (o *NamingConfigResource) SetIncludeSeriesTitle(v bool) {
 
 // GetIncludeEpisodeTitle returns the IncludeEpisodeTitle field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetIncludeEpisodeTitle() bool {
-	if o == nil || isNil(o.IncludeEpisodeTitle) {
+	if o == nil || IsNil(o.IncludeEpisodeTitle) {
 		var ret bool
 		return ret
 	}
@@ -508,15 +511,15 @@ func (o *NamingConfigResource) GetIncludeEpisodeTitle() bool {
 // GetIncludeEpisodeTitleOk returns a tuple with the IncludeEpisodeTitle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetIncludeEpisodeTitleOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeEpisodeTitle) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeEpisodeTitle) {
+		return nil, false
 	}
 	return o.IncludeEpisodeTitle, true
 }
 
 // HasIncludeEpisodeTitle returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasIncludeEpisodeTitle() bool {
-	if o != nil && !isNil(o.IncludeEpisodeTitle) {
+	if o != nil && !IsNil(o.IncludeEpisodeTitle) {
 		return true
 	}
 
@@ -530,7 +533,7 @@ func (o *NamingConfigResource) SetIncludeEpisodeTitle(v bool) {
 
 // GetIncludeQuality returns the IncludeQuality field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetIncludeQuality() bool {
-	if o == nil || isNil(o.IncludeQuality) {
+	if o == nil || IsNil(o.IncludeQuality) {
 		var ret bool
 		return ret
 	}
@@ -540,15 +543,15 @@ func (o *NamingConfigResource) GetIncludeQuality() bool {
 // GetIncludeQualityOk returns a tuple with the IncludeQuality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetIncludeQualityOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeQuality) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeQuality) {
+		return nil, false
 	}
 	return o.IncludeQuality, true
 }
 
 // HasIncludeQuality returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasIncludeQuality() bool {
-	if o != nil && !isNil(o.IncludeQuality) {
+	if o != nil && !IsNil(o.IncludeQuality) {
 		return true
 	}
 
@@ -562,7 +565,7 @@ func (o *NamingConfigResource) SetIncludeQuality(v bool) {
 
 // GetReplaceSpaces returns the ReplaceSpaces field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetReplaceSpaces() bool {
-	if o == nil || isNil(o.ReplaceSpaces) {
+	if o == nil || IsNil(o.ReplaceSpaces) {
 		var ret bool
 		return ret
 	}
@@ -572,15 +575,15 @@ func (o *NamingConfigResource) GetReplaceSpaces() bool {
 // GetReplaceSpacesOk returns a tuple with the ReplaceSpaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetReplaceSpacesOk() (*bool, bool) {
-	if o == nil || isNil(o.ReplaceSpaces) {
-    return nil, false
+	if o == nil || IsNil(o.ReplaceSpaces) {
+		return nil, false
 	}
 	return o.ReplaceSpaces, true
 }
 
 // HasReplaceSpaces returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasReplaceSpaces() bool {
-	if o != nil && !isNil(o.ReplaceSpaces) {
+	if o != nil && !IsNil(o.ReplaceSpaces) {
 		return true
 	}
 
@@ -594,7 +597,7 @@ func (o *NamingConfigResource) SetReplaceSpaces(v bool) {
 
 // GetSeparator returns the Separator field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetSeparator() string {
-	if o == nil || isNil(o.Separator.Get()) {
+	if o == nil || IsNil(o.Separator.Get()) {
 		var ret string
 		return ret
 	}
@@ -606,7 +609,7 @@ func (o *NamingConfigResource) GetSeparator() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetSeparatorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Separator.Get(), o.Separator.IsSet()
 }
@@ -636,7 +639,7 @@ func (o *NamingConfigResource) UnsetSeparator() {
 
 // GetNumberStyle returns the NumberStyle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetNumberStyle() string {
-	if o == nil || isNil(o.NumberStyle.Get()) {
+	if o == nil || IsNil(o.NumberStyle.Get()) {
 		var ret string
 		return ret
 	}
@@ -648,7 +651,7 @@ func (o *NamingConfigResource) GetNumberStyle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetNumberStyleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NumberStyle.Get(), o.NumberStyle.IsSet()
 }
@@ -677,20 +680,28 @@ func (o *NamingConfigResource) UnsetNumberStyle() {
 }
 
 func (o NamingConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o NamingConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.RenameEpisodes) {
+	if !IsNil(o.RenameEpisodes) {
 		toSerialize["renameEpisodes"] = o.RenameEpisodes
 	}
-	if !isNil(o.ReplaceIllegalCharacters) {
+	if !IsNil(o.ReplaceIllegalCharacters) {
 		toSerialize["replaceIllegalCharacters"] = o.ReplaceIllegalCharacters
 	}
-	if !isNil(o.ColonReplacementFormat) {
+	if !IsNil(o.ColonReplacementFormat) {
 		toSerialize["colonReplacementFormat"] = o.ColonReplacementFormat
 	}
-	if !isNil(o.MultiEpisodeStyle) {
+	if !IsNil(o.MultiEpisodeStyle) {
 		toSerialize["multiEpisodeStyle"] = o.MultiEpisodeStyle
 	}
 	if o.StandardEpisodeFormat.IsSet() {
@@ -711,16 +722,16 @@ func (o NamingConfigResource) MarshalJSON() ([]byte, error) {
 	if o.SpecialsFolderFormat.IsSet() {
 		toSerialize["specialsFolderFormat"] = o.SpecialsFolderFormat.Get()
 	}
-	if !isNil(o.IncludeSeriesTitle) {
+	if !IsNil(o.IncludeSeriesTitle) {
 		toSerialize["includeSeriesTitle"] = o.IncludeSeriesTitle
 	}
-	if !isNil(o.IncludeEpisodeTitle) {
+	if !IsNil(o.IncludeEpisodeTitle) {
 		toSerialize["includeEpisodeTitle"] = o.IncludeEpisodeTitle
 	}
-	if !isNil(o.IncludeQuality) {
+	if !IsNil(o.IncludeQuality) {
 		toSerialize["includeQuality"] = o.IncludeQuality
 	}
-	if !isNil(o.ReplaceSpaces) {
+	if !IsNil(o.ReplaceSpaces) {
 		toSerialize["replaceSpaces"] = o.ReplaceSpaces
 	}
 	if o.Separator.IsSet() {
@@ -729,7 +740,7 @@ func (o NamingConfigResource) MarshalJSON() ([]byte, error) {
 	if o.NumberStyle.IsSet() {
 		toSerialize["numberStyle"] = o.NumberStyle.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableNamingConfigResource struct {

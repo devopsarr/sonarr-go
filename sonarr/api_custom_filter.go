@@ -22,6 +22,7 @@ import (
 
 // CustomFilterAPIService CustomFilterAPI service
 type CustomFilterAPIService service
+
 type ApiCreateCustomFilterRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterAPIService
@@ -154,6 +155,7 @@ func (a *CustomFilterAPIService) CreateCustomFilterExecute(r ApiCreateCustomFilt
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteCustomFilterRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterAPIService
@@ -193,7 +195,7 @@ func (a *CustomFilterAPIService) DeleteCustomFilterExecute(r ApiDeleteCustomFilt
 	}
 
 	localVarPath := localBasePath + "/api/v3/customfilter/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *CustomFilterAPIService) DeleteCustomFilterExecute(r ApiDeleteCustomFilt
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetCustomFilterByIdRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterAPIService
@@ -312,7 +315,7 @@ func (a *CustomFilterAPIService) GetCustomFilterByIdExecute(r ApiGetCustomFilter
 	}
 
 	localVarPath := localBasePath + "/api/v3/customfilter/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *CustomFilterAPIService) GetCustomFilterByIdExecute(r ApiGetCustomFilter
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListCustomFilterRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterAPIService
 }
 
-func (r ApiListCustomFilterRequest) Execute() ([]*CustomFilterResource, *http.Response, error) {
+func (r ApiListCustomFilterRequest) Execute() ([]CustomFilterResource, *http.Response, error) {
 	return r.ApiService.ListCustomFilterExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *CustomFilterAPIService) ListCustomFilter(ctx context.Context) ApiListCu
 
 // Execute executes the request
 //  @return []CustomFilterResource
-func (a *CustomFilterAPIService) ListCustomFilterExecute(r ApiListCustomFilterRequest) ([]*CustomFilterResource, *http.Response, error) {
+func (a *CustomFilterAPIService) ListCustomFilterExecute(r ApiListCustomFilterRequest) ([]CustomFilterResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*CustomFilterResource
+		localVarReturnValue  []CustomFilterResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFilterAPIService.ListCustomFilter")
@@ -523,6 +527,7 @@ func (a *CustomFilterAPIService) ListCustomFilterExecute(r ApiListCustomFilterRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateCustomFilterRequest struct {
 	ctx context.Context
 	ApiService *CustomFilterAPIService
@@ -570,7 +575,7 @@ func (a *CustomFilterAPIService) UpdateCustomFilterExecute(r ApiUpdateCustomFilt
 	}
 
 	localVarPath := localBasePath + "/api/v3/customfilter/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

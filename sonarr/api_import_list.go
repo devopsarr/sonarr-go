@@ -22,6 +22,7 @@ import (
 
 // ImportListAPIService ImportListAPI service
 type ImportListAPIService service
+
 type ApiCreateImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -78,7 +79,10 @@ func (a *ImportListAPIService) CreateImportListExecute(r ApiCreateImportListRequ
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,6 +167,7 @@ func (a *ImportListAPIService) CreateImportListExecute(r ApiCreateImportListRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiCreateImportListActionByNameRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -208,7 +213,7 @@ func (a *ImportListAPIService) CreateImportListActionByNameExecute(r ApiCreateIm
 	}
 
 	localVarPath := localBasePath + "/api/v3/importlist/action/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,6 +293,7 @@ func (a *ImportListAPIService) CreateImportListActionByNameExecute(r ApiCreateIm
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -327,7 +333,7 @@ func (a *ImportListAPIService) DeleteImportListExecute(r ApiDeleteImportListRequ
 	}
 
 	localVarPath := localBasePath + "/api/v3/importlist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -405,6 +411,7 @@ func (a *ImportListAPIService) DeleteImportListExecute(r ApiDeleteImportListRequ
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteImportListBulkRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -526,6 +533,7 @@ func (a *ImportListAPIService) DeleteImportListBulkExecute(r ApiDeleteImportList
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetImportListByIdRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -567,7 +575,7 @@ func (a *ImportListAPIService) GetImportListByIdExecute(r ApiGetImportListByIdRe
 	}
 
 	localVarPath := localBasePath + "/api/v3/importlist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -654,12 +662,13 @@ func (a *ImportListAPIService) GetImportListByIdExecute(r ApiGetImportListByIdRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
 }
 
-func (r ApiListImportListRequest) Execute() ([]*ImportListResource, *http.Response, error) {
+func (r ApiListImportListRequest) Execute() ([]ImportListResource, *http.Response, error) {
 	return r.ApiService.ListImportListExecute(r)
 }
 
@@ -678,12 +687,12 @@ func (a *ImportListAPIService) ListImportList(ctx context.Context) ApiListImport
 
 // Execute executes the request
 //  @return []ImportListResource
-func (a *ImportListAPIService) ListImportListExecute(r ApiListImportListRequest) ([]*ImportListResource, *http.Response, error) {
+func (a *ImportListAPIService) ListImportListExecute(r ApiListImportListRequest) ([]ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ImportListResource
+		localVarReturnValue  []ImportListResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListAPIService.ListImportList")
@@ -778,12 +787,13 @@ func (a *ImportListAPIService) ListImportListExecute(r ApiListImportListRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListImportListSchemaRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
 }
 
-func (r ApiListImportListSchemaRequest) Execute() ([]*ImportListResource, *http.Response, error) {
+func (r ApiListImportListSchemaRequest) Execute() ([]ImportListResource, *http.Response, error) {
 	return r.ApiService.ListImportListSchemaExecute(r)
 }
 
@@ -802,12 +812,12 @@ func (a *ImportListAPIService) ListImportListSchema(ctx context.Context) ApiList
 
 // Execute executes the request
 //  @return []ImportListResource
-func (a *ImportListAPIService) ListImportListSchemaExecute(r ApiListImportListSchemaRequest) ([]*ImportListResource, *http.Response, error) {
+func (a *ImportListAPIService) ListImportListSchemaExecute(r ApiListImportListSchemaRequest) ([]ImportListResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ImportListResource
+		localVarReturnValue  []ImportListResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListAPIService.ListImportListSchema")
@@ -902,6 +912,7 @@ func (a *ImportListAPIService) ListImportListSchemaExecute(r ApiListImportListSc
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutImportListBulkRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -1034,6 +1045,7 @@ func (a *ImportListAPIService) PutImportListBulkExecute(r ApiPutImportListBulkRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiTestImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -1155,6 +1167,7 @@ func (a *ImportListAPIService) TestImportListExecute(r ApiTestImportListRequest)
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiTestallImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -1268,6 +1281,7 @@ func (a *ImportListAPIService) TestallImportListExecute(r ApiTestallImportListRe
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListAPIService
@@ -1321,14 +1335,17 @@ func (a *ImportListAPIService) UpdateImportListExecute(r ApiUpdateImportListRequ
 	}
 
 	localVarPath := localBasePath + "/api/v3/importlist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

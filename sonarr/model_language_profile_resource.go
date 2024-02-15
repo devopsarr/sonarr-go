@@ -14,13 +14,16 @@ import (
 	"encoding/json"
 )
 
+// checks if the LanguageProfileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LanguageProfileResource{}
+
 // LanguageProfileResource struct for LanguageProfileResource
 type LanguageProfileResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	UpgradeAllowed *bool `json:"upgradeAllowed,omitempty"`
 	Cutoff *Language `json:"cutoff,omitempty"`
-	Languages []*LanguageProfileItemResource `json:"languages,omitempty"`
+	Languages []LanguageProfileItemResource `json:"languages,omitempty"`
 }
 
 // NewLanguageProfileResource instantiates a new LanguageProfileResource object
@@ -42,7 +45,7 @@ func NewLanguageProfileResourceWithDefaults() *LanguageProfileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *LanguageProfileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *LanguageProfileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LanguageProfileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *LanguageProfileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *LanguageProfileResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LanguageProfileResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *LanguageProfileResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LanguageProfileResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *LanguageProfileResource) UnsetName() {
 
 // GetUpgradeAllowed returns the UpgradeAllowed field value if set, zero value otherwise.
 func (o *LanguageProfileResource) GetUpgradeAllowed() bool {
-	if o == nil || isNil(o.UpgradeAllowed) {
+	if o == nil || IsNil(o.UpgradeAllowed) {
 		var ret bool
 		return ret
 	}
@@ -126,15 +129,15 @@ func (o *LanguageProfileResource) GetUpgradeAllowed() bool {
 // GetUpgradeAllowedOk returns a tuple with the UpgradeAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LanguageProfileResource) GetUpgradeAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.UpgradeAllowed) {
-    return nil, false
+	if o == nil || IsNil(o.UpgradeAllowed) {
+		return nil, false
 	}
 	return o.UpgradeAllowed, true
 }
 
 // HasUpgradeAllowed returns a boolean if a field has been set.
 func (o *LanguageProfileResource) HasUpgradeAllowed() bool {
-	if o != nil && !isNil(o.UpgradeAllowed) {
+	if o != nil && !IsNil(o.UpgradeAllowed) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *LanguageProfileResource) SetUpgradeAllowed(v bool) {
 
 // GetCutoff returns the Cutoff field value if set, zero value otherwise.
 func (o *LanguageProfileResource) GetCutoff() Language {
-	if o == nil || isNil(o.Cutoff) {
+	if o == nil || IsNil(o.Cutoff) {
 		var ret Language
 		return ret
 	}
@@ -158,15 +161,15 @@ func (o *LanguageProfileResource) GetCutoff() Language {
 // GetCutoffOk returns a tuple with the Cutoff field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LanguageProfileResource) GetCutoffOk() (*Language, bool) {
-	if o == nil || isNil(o.Cutoff) {
-    return nil, false
+	if o == nil || IsNil(o.Cutoff) {
+		return nil, false
 	}
 	return o.Cutoff, true
 }
 
 // HasCutoff returns a boolean if a field has been set.
 func (o *LanguageProfileResource) HasCutoff() bool {
-	if o != nil && !isNil(o.Cutoff) {
+	if o != nil && !IsNil(o.Cutoff) {
 		return true
 	}
 
@@ -179,9 +182,9 @@ func (o *LanguageProfileResource) SetCutoff(v Language) {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LanguageProfileResource) GetLanguages() []*LanguageProfileItemResource {
+func (o *LanguageProfileResource) GetLanguages() []LanguageProfileItemResource {
 	if o == nil {
-		var ret []*LanguageProfileItemResource
+		var ret []LanguageProfileItemResource
 		return ret
 	}
 	return o.Languages
@@ -190,16 +193,16 @@ func (o *LanguageProfileResource) GetLanguages() []*LanguageProfileItemResource 
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LanguageProfileResource) GetLanguagesOk() ([]*LanguageProfileItemResource, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *LanguageProfileResource) GetLanguagesOk() ([]LanguageProfileItemResource, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *LanguageProfileResource) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -207,28 +210,36 @@ func (o *LanguageProfileResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []LanguageProfileItemResource and assigns it to the Languages field.
-func (o *LanguageProfileResource) SetLanguages(v []*LanguageProfileItemResource) {
+func (o *LanguageProfileResource) SetLanguages(v []LanguageProfileItemResource) {
 	o.Languages = v
 }
 
 func (o LanguageProfileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o LanguageProfileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.UpgradeAllowed) {
+	if !IsNil(o.UpgradeAllowed) {
 		toSerialize["upgradeAllowed"] = o.UpgradeAllowed
 	}
-	if !isNil(o.Cutoff) {
+	if !IsNil(o.Cutoff) {
 		toSerialize["cutoff"] = o.Cutoff
 	}
 	if o.Languages != nil {
 		toSerialize["languages"] = o.Languages
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableLanguageProfileResource struct {

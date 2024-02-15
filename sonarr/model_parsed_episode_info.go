@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParsedEpisodeInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParsedEpisodeInfo{}
+
 // ParsedEpisodeInfo struct for ParsedEpisodeInfo
 type ParsedEpisodeInfo struct {
 	ReleaseTitle NullableString `json:"releaseTitle,omitempty"`
@@ -21,11 +24,11 @@ type ParsedEpisodeInfo struct {
 	SeriesTitleInfo *SeriesTitleInfo `json:"seriesTitleInfo,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 	SeasonNumber *int32 `json:"seasonNumber,omitempty"`
-	EpisodeNumbers []*int32 `json:"episodeNumbers,omitempty"`
-	AbsoluteEpisodeNumbers []*int32 `json:"absoluteEpisodeNumbers,omitempty"`
-	SpecialAbsoluteEpisodeNumbers []*float64 `json:"specialAbsoluteEpisodeNumbers,omitempty"`
+	EpisodeNumbers []int32 `json:"episodeNumbers,omitempty"`
+	AbsoluteEpisodeNumbers []int32 `json:"absoluteEpisodeNumbers,omitempty"`
+	SpecialAbsoluteEpisodeNumbers []float64 `json:"specialAbsoluteEpisodeNumbers,omitempty"`
 	AirDate NullableString `json:"airDate,omitempty"`
-	Languages []*Language `json:"languages,omitempty"`
+	Languages []Language `json:"languages,omitempty"`
 	FullSeason *bool `json:"fullSeason,omitempty"`
 	IsPartialSeason *bool `json:"isPartialSeason,omitempty"`
 	IsMultiSeason *bool `json:"isMultiSeason,omitempty"`
@@ -61,7 +64,7 @@ func NewParsedEpisodeInfoWithDefaults() *ParsedEpisodeInfo {
 
 // GetReleaseTitle returns the ReleaseTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedEpisodeInfo) GetReleaseTitle() string {
-	if o == nil || isNil(o.ReleaseTitle.Get()) {
+	if o == nil || IsNil(o.ReleaseTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -73,7 +76,7 @@ func (o *ParsedEpisodeInfo) GetReleaseTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedEpisodeInfo) GetReleaseTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseTitle.Get(), o.ReleaseTitle.IsSet()
 }
@@ -103,7 +106,7 @@ func (o *ParsedEpisodeInfo) UnsetReleaseTitle() {
 
 // GetSeriesTitle returns the SeriesTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedEpisodeInfo) GetSeriesTitle() string {
-	if o == nil || isNil(o.SeriesTitle.Get()) {
+	if o == nil || IsNil(o.SeriesTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *ParsedEpisodeInfo) GetSeriesTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedEpisodeInfo) GetSeriesTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SeriesTitle.Get(), o.SeriesTitle.IsSet()
 }
@@ -145,7 +148,7 @@ func (o *ParsedEpisodeInfo) UnsetSeriesTitle() {
 
 // GetSeriesTitleInfo returns the SeriesTitleInfo field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetSeriesTitleInfo() SeriesTitleInfo {
-	if o == nil || isNil(o.SeriesTitleInfo) {
+	if o == nil || IsNil(o.SeriesTitleInfo) {
 		var ret SeriesTitleInfo
 		return ret
 	}
@@ -155,15 +158,15 @@ func (o *ParsedEpisodeInfo) GetSeriesTitleInfo() SeriesTitleInfo {
 // GetSeriesTitleInfoOk returns a tuple with the SeriesTitleInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetSeriesTitleInfoOk() (*SeriesTitleInfo, bool) {
-	if o == nil || isNil(o.SeriesTitleInfo) {
-    return nil, false
+	if o == nil || IsNil(o.SeriesTitleInfo) {
+		return nil, false
 	}
 	return o.SeriesTitleInfo, true
 }
 
 // HasSeriesTitleInfo returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasSeriesTitleInfo() bool {
-	if o != nil && !isNil(o.SeriesTitleInfo) {
+	if o != nil && !IsNil(o.SeriesTitleInfo) {
 		return true
 	}
 
@@ -177,7 +180,7 @@ func (o *ParsedEpisodeInfo) SetSeriesTitleInfo(v SeriesTitleInfo) {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -187,15 +190,15 @@ func (o *ParsedEpisodeInfo) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -209,7 +212,7 @@ func (o *ParsedEpisodeInfo) SetQuality(v QualityModel) {
 
 // GetSeasonNumber returns the SeasonNumber field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetSeasonNumber() int32 {
-	if o == nil || isNil(o.SeasonNumber) {
+	if o == nil || IsNil(o.SeasonNumber) {
 		var ret int32
 		return ret
 	}
@@ -219,15 +222,15 @@ func (o *ParsedEpisodeInfo) GetSeasonNumber() int32 {
 // GetSeasonNumberOk returns a tuple with the SeasonNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetSeasonNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.SeasonNumber) {
-    return nil, false
+	if o == nil || IsNil(o.SeasonNumber) {
+		return nil, false
 	}
 	return o.SeasonNumber, true
 }
 
 // HasSeasonNumber returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasSeasonNumber() bool {
-	if o != nil && !isNil(o.SeasonNumber) {
+	if o != nil && !IsNil(o.SeasonNumber) {
 		return true
 	}
 
@@ -240,9 +243,9 @@ func (o *ParsedEpisodeInfo) SetSeasonNumber(v int32) {
 }
 
 // GetEpisodeNumbers returns the EpisodeNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedEpisodeInfo) GetEpisodeNumbers() []*int32 {
+func (o *ParsedEpisodeInfo) GetEpisodeNumbers() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.EpisodeNumbers
@@ -251,16 +254,16 @@ func (o *ParsedEpisodeInfo) GetEpisodeNumbers() []*int32 {
 // GetEpisodeNumbersOk returns a tuple with the EpisodeNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedEpisodeInfo) GetEpisodeNumbersOk() ([]*int32, bool) {
-	if o == nil || isNil(o.EpisodeNumbers) {
-    return nil, false
+func (o *ParsedEpisodeInfo) GetEpisodeNumbersOk() ([]int32, bool) {
+	if o == nil || IsNil(o.EpisodeNumbers) {
+		return nil, false
 	}
 	return o.EpisodeNumbers, true
 }
 
 // HasEpisodeNumbers returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasEpisodeNumbers() bool {
-	if o != nil && isNil(o.EpisodeNumbers) {
+	if o != nil && IsNil(o.EpisodeNumbers) {
 		return true
 	}
 
@@ -268,14 +271,14 @@ func (o *ParsedEpisodeInfo) HasEpisodeNumbers() bool {
 }
 
 // SetEpisodeNumbers gets a reference to the given []int32 and assigns it to the EpisodeNumbers field.
-func (o *ParsedEpisodeInfo) SetEpisodeNumbers(v []*int32) {
+func (o *ParsedEpisodeInfo) SetEpisodeNumbers(v []int32) {
 	o.EpisodeNumbers = v
 }
 
 // GetAbsoluteEpisodeNumbers returns the AbsoluteEpisodeNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbers() []*int32 {
+func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbers() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.AbsoluteEpisodeNumbers
@@ -284,16 +287,16 @@ func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbers() []*int32 {
 // GetAbsoluteEpisodeNumbersOk returns a tuple with the AbsoluteEpisodeNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbersOk() ([]*int32, bool) {
-	if o == nil || isNil(o.AbsoluteEpisodeNumbers) {
-    return nil, false
+func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbersOk() ([]int32, bool) {
+	if o == nil || IsNil(o.AbsoluteEpisodeNumbers) {
+		return nil, false
 	}
 	return o.AbsoluteEpisodeNumbers, true
 }
 
 // HasAbsoluteEpisodeNumbers returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasAbsoluteEpisodeNumbers() bool {
-	if o != nil && isNil(o.AbsoluteEpisodeNumbers) {
+	if o != nil && IsNil(o.AbsoluteEpisodeNumbers) {
 		return true
 	}
 
@@ -301,14 +304,14 @@ func (o *ParsedEpisodeInfo) HasAbsoluteEpisodeNumbers() bool {
 }
 
 // SetAbsoluteEpisodeNumbers gets a reference to the given []int32 and assigns it to the AbsoluteEpisodeNumbers field.
-func (o *ParsedEpisodeInfo) SetAbsoluteEpisodeNumbers(v []*int32) {
+func (o *ParsedEpisodeInfo) SetAbsoluteEpisodeNumbers(v []int32) {
 	o.AbsoluteEpisodeNumbers = v
 }
 
 // GetSpecialAbsoluteEpisodeNumbers returns the SpecialAbsoluteEpisodeNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbers() []*float64 {
+func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbers() []float64 {
 	if o == nil {
-		var ret []*float64
+		var ret []float64
 		return ret
 	}
 	return o.SpecialAbsoluteEpisodeNumbers
@@ -317,16 +320,16 @@ func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbers() []*float64 {
 // GetSpecialAbsoluteEpisodeNumbersOk returns a tuple with the SpecialAbsoluteEpisodeNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbersOk() ([]*float64, bool) {
-	if o == nil || isNil(o.SpecialAbsoluteEpisodeNumbers) {
-    return nil, false
+func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbersOk() ([]float64, bool) {
+	if o == nil || IsNil(o.SpecialAbsoluteEpisodeNumbers) {
+		return nil, false
 	}
 	return o.SpecialAbsoluteEpisodeNumbers, true
 }
 
 // HasSpecialAbsoluteEpisodeNumbers returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasSpecialAbsoluteEpisodeNumbers() bool {
-	if o != nil && isNil(o.SpecialAbsoluteEpisodeNumbers) {
+	if o != nil && IsNil(o.SpecialAbsoluteEpisodeNumbers) {
 		return true
 	}
 
@@ -334,13 +337,13 @@ func (o *ParsedEpisodeInfo) HasSpecialAbsoluteEpisodeNumbers() bool {
 }
 
 // SetSpecialAbsoluteEpisodeNumbers gets a reference to the given []float64 and assigns it to the SpecialAbsoluteEpisodeNumbers field.
-func (o *ParsedEpisodeInfo) SetSpecialAbsoluteEpisodeNumbers(v []*float64) {
+func (o *ParsedEpisodeInfo) SetSpecialAbsoluteEpisodeNumbers(v []float64) {
 	o.SpecialAbsoluteEpisodeNumbers = v
 }
 
 // GetAirDate returns the AirDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedEpisodeInfo) GetAirDate() string {
-	if o == nil || isNil(o.AirDate.Get()) {
+	if o == nil || IsNil(o.AirDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -352,7 +355,7 @@ func (o *ParsedEpisodeInfo) GetAirDate() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedEpisodeInfo) GetAirDateOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AirDate.Get(), o.AirDate.IsSet()
 }
@@ -381,9 +384,9 @@ func (o *ParsedEpisodeInfo) UnsetAirDate() {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedEpisodeInfo) GetLanguages() []*Language {
+func (o *ParsedEpisodeInfo) GetLanguages() []Language {
 	if o == nil {
-		var ret []*Language
+		var ret []Language
 		return ret
 	}
 	return o.Languages
@@ -392,16 +395,16 @@ func (o *ParsedEpisodeInfo) GetLanguages() []*Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedEpisodeInfo) GetLanguagesOk() ([]*Language, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *ParsedEpisodeInfo) GetLanguagesOk() ([]Language, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -409,13 +412,13 @@ func (o *ParsedEpisodeInfo) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *ParsedEpisodeInfo) SetLanguages(v []*Language) {
+func (o *ParsedEpisodeInfo) SetLanguages(v []Language) {
 	o.Languages = v
 }
 
 // GetFullSeason returns the FullSeason field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetFullSeason() bool {
-	if o == nil || isNil(o.FullSeason) {
+	if o == nil || IsNil(o.FullSeason) {
 		var ret bool
 		return ret
 	}
@@ -425,15 +428,15 @@ func (o *ParsedEpisodeInfo) GetFullSeason() bool {
 // GetFullSeasonOk returns a tuple with the FullSeason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetFullSeasonOk() (*bool, bool) {
-	if o == nil || isNil(o.FullSeason) {
-    return nil, false
+	if o == nil || IsNil(o.FullSeason) {
+		return nil, false
 	}
 	return o.FullSeason, true
 }
 
 // HasFullSeason returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasFullSeason() bool {
-	if o != nil && !isNil(o.FullSeason) {
+	if o != nil && !IsNil(o.FullSeason) {
 		return true
 	}
 
@@ -447,7 +450,7 @@ func (o *ParsedEpisodeInfo) SetFullSeason(v bool) {
 
 // GetIsPartialSeason returns the IsPartialSeason field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetIsPartialSeason() bool {
-	if o == nil || isNil(o.IsPartialSeason) {
+	if o == nil || IsNil(o.IsPartialSeason) {
 		var ret bool
 		return ret
 	}
@@ -457,15 +460,15 @@ func (o *ParsedEpisodeInfo) GetIsPartialSeason() bool {
 // GetIsPartialSeasonOk returns a tuple with the IsPartialSeason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetIsPartialSeasonOk() (*bool, bool) {
-	if o == nil || isNil(o.IsPartialSeason) {
-    return nil, false
+	if o == nil || IsNil(o.IsPartialSeason) {
+		return nil, false
 	}
 	return o.IsPartialSeason, true
 }
 
 // HasIsPartialSeason returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasIsPartialSeason() bool {
-	if o != nil && !isNil(o.IsPartialSeason) {
+	if o != nil && !IsNil(o.IsPartialSeason) {
 		return true
 	}
 
@@ -479,7 +482,7 @@ func (o *ParsedEpisodeInfo) SetIsPartialSeason(v bool) {
 
 // GetIsMultiSeason returns the IsMultiSeason field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetIsMultiSeason() bool {
-	if o == nil || isNil(o.IsMultiSeason) {
+	if o == nil || IsNil(o.IsMultiSeason) {
 		var ret bool
 		return ret
 	}
@@ -489,15 +492,15 @@ func (o *ParsedEpisodeInfo) GetIsMultiSeason() bool {
 // GetIsMultiSeasonOk returns a tuple with the IsMultiSeason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetIsMultiSeasonOk() (*bool, bool) {
-	if o == nil || isNil(o.IsMultiSeason) {
-    return nil, false
+	if o == nil || IsNil(o.IsMultiSeason) {
+		return nil, false
 	}
 	return o.IsMultiSeason, true
 }
 
 // HasIsMultiSeason returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasIsMultiSeason() bool {
-	if o != nil && !isNil(o.IsMultiSeason) {
+	if o != nil && !IsNil(o.IsMultiSeason) {
 		return true
 	}
 
@@ -511,7 +514,7 @@ func (o *ParsedEpisodeInfo) SetIsMultiSeason(v bool) {
 
 // GetIsSeasonExtra returns the IsSeasonExtra field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetIsSeasonExtra() bool {
-	if o == nil || isNil(o.IsSeasonExtra) {
+	if o == nil || IsNil(o.IsSeasonExtra) {
 		var ret bool
 		return ret
 	}
@@ -521,15 +524,15 @@ func (o *ParsedEpisodeInfo) GetIsSeasonExtra() bool {
 // GetIsSeasonExtraOk returns a tuple with the IsSeasonExtra field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetIsSeasonExtraOk() (*bool, bool) {
-	if o == nil || isNil(o.IsSeasonExtra) {
-    return nil, false
+	if o == nil || IsNil(o.IsSeasonExtra) {
+		return nil, false
 	}
 	return o.IsSeasonExtra, true
 }
 
 // HasIsSeasonExtra returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasIsSeasonExtra() bool {
-	if o != nil && !isNil(o.IsSeasonExtra) {
+	if o != nil && !IsNil(o.IsSeasonExtra) {
 		return true
 	}
 
@@ -543,7 +546,7 @@ func (o *ParsedEpisodeInfo) SetIsSeasonExtra(v bool) {
 
 // GetSpecial returns the Special field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetSpecial() bool {
-	if o == nil || isNil(o.Special) {
+	if o == nil || IsNil(o.Special) {
 		var ret bool
 		return ret
 	}
@@ -553,15 +556,15 @@ func (o *ParsedEpisodeInfo) GetSpecial() bool {
 // GetSpecialOk returns a tuple with the Special field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetSpecialOk() (*bool, bool) {
-	if o == nil || isNil(o.Special) {
-    return nil, false
+	if o == nil || IsNil(o.Special) {
+		return nil, false
 	}
 	return o.Special, true
 }
 
 // HasSpecial returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasSpecial() bool {
-	if o != nil && !isNil(o.Special) {
+	if o != nil && !IsNil(o.Special) {
 		return true
 	}
 
@@ -575,7 +578,7 @@ func (o *ParsedEpisodeInfo) SetSpecial(v bool) {
 
 // GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedEpisodeInfo) GetReleaseGroup() string {
-	if o == nil || isNil(o.ReleaseGroup.Get()) {
+	if o == nil || IsNil(o.ReleaseGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -587,7 +590,7 @@ func (o *ParsedEpisodeInfo) GetReleaseGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedEpisodeInfo) GetReleaseGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
 }
@@ -617,7 +620,7 @@ func (o *ParsedEpisodeInfo) UnsetReleaseGroup() {
 
 // GetReleaseHash returns the ReleaseHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedEpisodeInfo) GetReleaseHash() string {
-	if o == nil || isNil(o.ReleaseHash.Get()) {
+	if o == nil || IsNil(o.ReleaseHash.Get()) {
 		var ret string
 		return ret
 	}
@@ -629,7 +632,7 @@ func (o *ParsedEpisodeInfo) GetReleaseHash() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedEpisodeInfo) GetReleaseHashOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseHash.Get(), o.ReleaseHash.IsSet()
 }
@@ -659,7 +662,7 @@ func (o *ParsedEpisodeInfo) UnsetReleaseHash() {
 
 // GetSeasonPart returns the SeasonPart field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetSeasonPart() int32 {
-	if o == nil || isNil(o.SeasonPart) {
+	if o == nil || IsNil(o.SeasonPart) {
 		var ret int32
 		return ret
 	}
@@ -669,15 +672,15 @@ func (o *ParsedEpisodeInfo) GetSeasonPart() int32 {
 // GetSeasonPartOk returns a tuple with the SeasonPart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetSeasonPartOk() (*int32, bool) {
-	if o == nil || isNil(o.SeasonPart) {
-    return nil, false
+	if o == nil || IsNil(o.SeasonPart) {
+		return nil, false
 	}
 	return o.SeasonPart, true
 }
 
 // HasSeasonPart returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasSeasonPart() bool {
-	if o != nil && !isNil(o.SeasonPart) {
+	if o != nil && !IsNil(o.SeasonPart) {
 		return true
 	}
 
@@ -691,7 +694,7 @@ func (o *ParsedEpisodeInfo) SetSeasonPart(v int32) {
 
 // GetReleaseTokens returns the ReleaseTokens field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedEpisodeInfo) GetReleaseTokens() string {
-	if o == nil || isNil(o.ReleaseTokens.Get()) {
+	if o == nil || IsNil(o.ReleaseTokens.Get()) {
 		var ret string
 		return ret
 	}
@@ -703,7 +706,7 @@ func (o *ParsedEpisodeInfo) GetReleaseTokens() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedEpisodeInfo) GetReleaseTokensOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseTokens.Get(), o.ReleaseTokens.IsSet()
 }
@@ -733,7 +736,7 @@ func (o *ParsedEpisodeInfo) UnsetReleaseTokens() {
 
 // GetDailyPart returns the DailyPart field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedEpisodeInfo) GetDailyPart() int32 {
-	if o == nil || isNil(o.DailyPart.Get()) {
+	if o == nil || IsNil(o.DailyPart.Get()) {
 		var ret int32
 		return ret
 	}
@@ -745,7 +748,7 @@ func (o *ParsedEpisodeInfo) GetDailyPart() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedEpisodeInfo) GetDailyPartOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DailyPart.Get(), o.DailyPart.IsSet()
 }
@@ -775,7 +778,7 @@ func (o *ParsedEpisodeInfo) UnsetDailyPart() {
 
 // GetIsDaily returns the IsDaily field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetIsDaily() bool {
-	if o == nil || isNil(o.IsDaily) {
+	if o == nil || IsNil(o.IsDaily) {
 		var ret bool
 		return ret
 	}
@@ -785,15 +788,15 @@ func (o *ParsedEpisodeInfo) GetIsDaily() bool {
 // GetIsDailyOk returns a tuple with the IsDaily field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetIsDailyOk() (*bool, bool) {
-	if o == nil || isNil(o.IsDaily) {
-    return nil, false
+	if o == nil || IsNil(o.IsDaily) {
+		return nil, false
 	}
 	return o.IsDaily, true
 }
 
 // HasIsDaily returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasIsDaily() bool {
-	if o != nil && !isNil(o.IsDaily) {
+	if o != nil && !IsNil(o.IsDaily) {
 		return true
 	}
 
@@ -807,7 +810,7 @@ func (o *ParsedEpisodeInfo) SetIsDaily(v bool) {
 
 // GetIsAbsoluteNumbering returns the IsAbsoluteNumbering field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetIsAbsoluteNumbering() bool {
-	if o == nil || isNil(o.IsAbsoluteNumbering) {
+	if o == nil || IsNil(o.IsAbsoluteNumbering) {
 		var ret bool
 		return ret
 	}
@@ -817,15 +820,15 @@ func (o *ParsedEpisodeInfo) GetIsAbsoluteNumbering() bool {
 // GetIsAbsoluteNumberingOk returns a tuple with the IsAbsoluteNumbering field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetIsAbsoluteNumberingOk() (*bool, bool) {
-	if o == nil || isNil(o.IsAbsoluteNumbering) {
-    return nil, false
+	if o == nil || IsNil(o.IsAbsoluteNumbering) {
+		return nil, false
 	}
 	return o.IsAbsoluteNumbering, true
 }
 
 // HasIsAbsoluteNumbering returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasIsAbsoluteNumbering() bool {
-	if o != nil && !isNil(o.IsAbsoluteNumbering) {
+	if o != nil && !IsNil(o.IsAbsoluteNumbering) {
 		return true
 	}
 
@@ -839,7 +842,7 @@ func (o *ParsedEpisodeInfo) SetIsAbsoluteNumbering(v bool) {
 
 // GetIsPossibleSpecialEpisode returns the IsPossibleSpecialEpisode field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetIsPossibleSpecialEpisode() bool {
-	if o == nil || isNil(o.IsPossibleSpecialEpisode) {
+	if o == nil || IsNil(o.IsPossibleSpecialEpisode) {
 		var ret bool
 		return ret
 	}
@@ -849,15 +852,15 @@ func (o *ParsedEpisodeInfo) GetIsPossibleSpecialEpisode() bool {
 // GetIsPossibleSpecialEpisodeOk returns a tuple with the IsPossibleSpecialEpisode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetIsPossibleSpecialEpisodeOk() (*bool, bool) {
-	if o == nil || isNil(o.IsPossibleSpecialEpisode) {
-    return nil, false
+	if o == nil || IsNil(o.IsPossibleSpecialEpisode) {
+		return nil, false
 	}
 	return o.IsPossibleSpecialEpisode, true
 }
 
 // HasIsPossibleSpecialEpisode returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasIsPossibleSpecialEpisode() bool {
-	if o != nil && !isNil(o.IsPossibleSpecialEpisode) {
+	if o != nil && !IsNil(o.IsPossibleSpecialEpisode) {
 		return true
 	}
 
@@ -871,7 +874,7 @@ func (o *ParsedEpisodeInfo) SetIsPossibleSpecialEpisode(v bool) {
 
 // GetIsPossibleSceneSeasonSpecial returns the IsPossibleSceneSeasonSpecial field value if set, zero value otherwise.
 func (o *ParsedEpisodeInfo) GetIsPossibleSceneSeasonSpecial() bool {
-	if o == nil || isNil(o.IsPossibleSceneSeasonSpecial) {
+	if o == nil || IsNil(o.IsPossibleSceneSeasonSpecial) {
 		var ret bool
 		return ret
 	}
@@ -881,15 +884,15 @@ func (o *ParsedEpisodeInfo) GetIsPossibleSceneSeasonSpecial() bool {
 // GetIsPossibleSceneSeasonSpecialOk returns a tuple with the IsPossibleSceneSeasonSpecial field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedEpisodeInfo) GetIsPossibleSceneSeasonSpecialOk() (*bool, bool) {
-	if o == nil || isNil(o.IsPossibleSceneSeasonSpecial) {
-    return nil, false
+	if o == nil || IsNil(o.IsPossibleSceneSeasonSpecial) {
+		return nil, false
 	}
 	return o.IsPossibleSceneSeasonSpecial, true
 }
 
 // HasIsPossibleSceneSeasonSpecial returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasIsPossibleSceneSeasonSpecial() bool {
-	if o != nil && !isNil(o.IsPossibleSceneSeasonSpecial) {
+	if o != nil && !IsNil(o.IsPossibleSceneSeasonSpecial) {
 		return true
 	}
 
@@ -902,6 +905,14 @@ func (o *ParsedEpisodeInfo) SetIsPossibleSceneSeasonSpecial(v bool) {
 }
 
 func (o ParsedEpisodeInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ParsedEpisodeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ReleaseTitle.IsSet() {
 		toSerialize["releaseTitle"] = o.ReleaseTitle.Get()
@@ -909,13 +920,13 @@ func (o ParsedEpisodeInfo) MarshalJSON() ([]byte, error) {
 	if o.SeriesTitle.IsSet() {
 		toSerialize["seriesTitle"] = o.SeriesTitle.Get()
 	}
-	if !isNil(o.SeriesTitleInfo) {
+	if !IsNil(o.SeriesTitleInfo) {
 		toSerialize["seriesTitleInfo"] = o.SeriesTitleInfo
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
-	if !isNil(o.SeasonNumber) {
+	if !IsNil(o.SeasonNumber) {
 		toSerialize["seasonNumber"] = o.SeasonNumber
 	}
 	if o.EpisodeNumbers != nil {
@@ -933,19 +944,19 @@ func (o ParsedEpisodeInfo) MarshalJSON() ([]byte, error) {
 	if o.Languages != nil {
 		toSerialize["languages"] = o.Languages
 	}
-	if !isNil(o.FullSeason) {
+	if !IsNil(o.FullSeason) {
 		toSerialize["fullSeason"] = o.FullSeason
 	}
-	if !isNil(o.IsPartialSeason) {
+	if !IsNil(o.IsPartialSeason) {
 		toSerialize["isPartialSeason"] = o.IsPartialSeason
 	}
-	if !isNil(o.IsMultiSeason) {
+	if !IsNil(o.IsMultiSeason) {
 		toSerialize["isMultiSeason"] = o.IsMultiSeason
 	}
-	if !isNil(o.IsSeasonExtra) {
+	if !IsNil(o.IsSeasonExtra) {
 		toSerialize["isSeasonExtra"] = o.IsSeasonExtra
 	}
-	if !isNil(o.Special) {
+	if !IsNil(o.Special) {
 		toSerialize["special"] = o.Special
 	}
 	if o.ReleaseGroup.IsSet() {
@@ -954,7 +965,7 @@ func (o ParsedEpisodeInfo) MarshalJSON() ([]byte, error) {
 	if o.ReleaseHash.IsSet() {
 		toSerialize["releaseHash"] = o.ReleaseHash.Get()
 	}
-	if !isNil(o.SeasonPart) {
+	if !IsNil(o.SeasonPart) {
 		toSerialize["seasonPart"] = o.SeasonPart
 	}
 	if o.ReleaseTokens.IsSet() {
@@ -963,19 +974,19 @@ func (o ParsedEpisodeInfo) MarshalJSON() ([]byte, error) {
 	if o.DailyPart.IsSet() {
 		toSerialize["dailyPart"] = o.DailyPart.Get()
 	}
-	if !isNil(o.IsDaily) {
+	if !IsNil(o.IsDaily) {
 		toSerialize["isDaily"] = o.IsDaily
 	}
-	if !isNil(o.IsAbsoluteNumbering) {
+	if !IsNil(o.IsAbsoluteNumbering) {
 		toSerialize["isAbsoluteNumbering"] = o.IsAbsoluteNumbering
 	}
-	if !isNil(o.IsPossibleSpecialEpisode) {
+	if !IsNil(o.IsPossibleSpecialEpisode) {
 		toSerialize["isPossibleSpecialEpisode"] = o.IsPossibleSpecialEpisode
 	}
-	if !isNil(o.IsPossibleSceneSeasonSpecial) {
+	if !IsNil(o.IsPossibleSceneSeasonSpecial) {
 		toSerialize["isPossibleSceneSeasonSpecial"] = o.IsPossibleSceneSeasonSpecial
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableParsedEpisodeInfo struct {

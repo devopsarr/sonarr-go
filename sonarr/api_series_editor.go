@@ -21,6 +21,7 @@ import (
 
 // SeriesEditorAPIService SeriesEditorAPI service
 type SeriesEditorAPIService service
+
 type ApiDeleteSeriesEditorRequest struct {
 	ctx context.Context
 	ApiService *SeriesEditorAPIService
@@ -142,6 +143,7 @@ func (a *SeriesEditorAPIService) DeleteSeriesEditorExecute(r ApiDeleteSeriesEdit
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiPutSeriesEditorRequest struct {
 	ctx context.Context
 	ApiService *SeriesEditorAPIService

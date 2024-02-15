@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the BackupResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BackupResource{}
+
 // BackupResource struct for BackupResource
 type BackupResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -44,7 +47,7 @@ func NewBackupResourceWithDefaults() *BackupResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *BackupResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *BackupResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BackupResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *BackupResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *BackupResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *BackupResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -118,7 +121,7 @@ func (o *BackupResource) UnsetName() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackupResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -130,7 +133,7 @@ func (o *BackupResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackupResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -160,7 +163,7 @@ func (o *BackupResource) UnsetPath() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *BackupResource) GetType() BackupType {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret BackupType
 		return ret
 	}
@@ -170,15 +173,15 @@ func (o *BackupResource) GetType() BackupType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BackupResource) GetTypeOk() (*BackupType, bool) {
-	if o == nil || isNil(o.Type) {
-    return nil, false
+	if o == nil || IsNil(o.Type) {
+		return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *BackupResource) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *BackupResource) SetType(v BackupType) {
 
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *BackupResource) GetSize() int64 {
-	if o == nil || isNil(o.Size) {
+	if o == nil || IsNil(o.Size) {
 		var ret int64
 		return ret
 	}
@@ -202,15 +205,15 @@ func (o *BackupResource) GetSize() int64 {
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BackupResource) GetSizeOk() (*int64, bool) {
-	if o == nil || isNil(o.Size) {
-    return nil, false
+	if o == nil || IsNil(o.Size) {
+		return nil, false
 	}
 	return o.Size, true
 }
 
 // HasSize returns a boolean if a field has been set.
 func (o *BackupResource) HasSize() bool {
-	if o != nil && !isNil(o.Size) {
+	if o != nil && !IsNil(o.Size) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *BackupResource) SetSize(v int64) {
 
 // GetTime returns the Time field value if set, zero value otherwise.
 func (o *BackupResource) GetTime() time.Time {
-	if o == nil || isNil(o.Time) {
+	if o == nil || IsNil(o.Time) {
 		var ret time.Time
 		return ret
 	}
@@ -234,15 +237,15 @@ func (o *BackupResource) GetTime() time.Time {
 // GetTimeOk returns a tuple with the Time field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BackupResource) GetTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Time) {
-    return nil, false
+	if o == nil || IsNil(o.Time) {
+		return nil, false
 	}
 	return o.Time, true
 }
 
 // HasTime returns a boolean if a field has been set.
 func (o *BackupResource) HasTime() bool {
-	if o != nil && !isNil(o.Time) {
+	if o != nil && !IsNil(o.Time) {
 		return true
 	}
 
@@ -255,8 +258,16 @@ func (o *BackupResource) SetTime(v time.Time) {
 }
 
 func (o BackupResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BackupResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -265,16 +276,16 @@ func (o BackupResource) MarshalJSON() ([]byte, error) {
 	if o.Path.IsSet() {
 		toSerialize["path"] = o.Path.Get()
 	}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !isNil(o.Size) {
+	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
-	if !isNil(o.Time) {
+	if !IsNil(o.Time) {
 		toSerialize["time"] = o.Time
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBackupResource struct {

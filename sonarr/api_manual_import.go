@@ -21,6 +21,7 @@ import (
 
 // ManualImportAPIService ManualImportAPI service
 type ManualImportAPIService service
+
 type ApiCreateManualImportRequest struct {
 	ctx context.Context
 	ApiService *ManualImportAPIService
@@ -142,6 +143,7 @@ func (a *ManualImportAPIService) CreateManualImportExecute(r ApiCreateManualImpo
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiListManualImportRequest struct {
 	ctx context.Context
 	ApiService *ManualImportAPIService
@@ -177,7 +179,7 @@ func (r ApiListManualImportRequest) FilterExistingFiles(filterExistingFiles bool
 	return r
 }
 
-func (r ApiListManualImportRequest) Execute() ([]*ManualImportResource, *http.Response, error) {
+func (r ApiListManualImportRequest) Execute() ([]ManualImportResource, *http.Response, error) {
 	return r.ApiService.ListManualImportExecute(r)
 }
 
@@ -196,12 +198,12 @@ func (a *ManualImportAPIService) ListManualImport(ctx context.Context) ApiListMa
 
 // Execute executes the request
 //  @return []ManualImportResource
-func (a *ManualImportAPIService) ListManualImportExecute(r ApiListManualImportRequest) ([]*ManualImportResource, *http.Response, error) {
+func (a *ManualImportAPIService) ListManualImportExecute(r ApiListManualImportRequest) ([]ManualImportResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ManualImportResource
+		localVarReturnValue  []ManualImportResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualImportAPIService.ListManualImport")
@@ -216,19 +218,22 @@ func (a *ManualImportAPIService) ListManualImportExecute(r ApiListManualImportRe
 	localVarFormParams := url.Values{}
 
 	if r.folder != nil {
-		localVarQueryParams.Add("folder", parameterToString(*r.folder, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "folder", r.folder, "")
 	}
 	if r.downloadId != nil {
-		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
 	}
 	if r.seriesId != nil {
-		localVarQueryParams.Add("seriesId", parameterToString(*r.seriesId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
 	}
 	if r.seasonNumber != nil {
-		localVarQueryParams.Add("seasonNumber", parameterToString(*r.seasonNumber, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "")
 	}
 	if r.filterExistingFiles != nil {
-		localVarQueryParams.Add("filterExistingFiles", parameterToString(*r.filterExistingFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filterExistingFiles", r.filterExistingFiles, "")
+	} else {
+		var defaultValue bool = true
+		r.filterExistingFiles = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

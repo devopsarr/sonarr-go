@@ -21,6 +21,7 @@ import (
 
 // ParseAPIService ParseAPI service
 type ParseAPIService service
+
 type ApiGetParseRequest struct {
 	ctx context.Context
 	ApiService *ParseAPIService
@@ -77,10 +78,10 @@ func (a *ParseAPIService) GetParseExecute(r ApiGetParseRequest) (*ParseResource,
 	localVarFormParams := url.Values{}
 
 	if r.title != nil {
-		localVarQueryParams.Add("title", parameterToString(*r.title, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "title", r.title, "")
 	}
 	if r.path != nil {
-		localVarQueryParams.Add("path", parameterToString(*r.path, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

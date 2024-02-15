@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the QualityModel type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QualityModel{}
+
 // QualityModel struct for QualityModel
 type QualityModel struct {
 	Quality *Quality `json:"quality,omitempty"`
@@ -39,7 +42,7 @@ func NewQualityModelWithDefaults() *QualityModel {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *QualityModel) GetQuality() Quality {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret Quality
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *QualityModel) GetQuality() Quality {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityModel) GetQualityOk() (*Quality, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *QualityModel) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *QualityModel) SetQuality(v Quality) {
 
 // GetRevision returns the Revision field value if set, zero value otherwise.
 func (o *QualityModel) GetRevision() Revision {
-	if o == nil || isNil(o.Revision) {
+	if o == nil || IsNil(o.Revision) {
 		var ret Revision
 		return ret
 	}
@@ -81,15 +84,15 @@ func (o *QualityModel) GetRevision() Revision {
 // GetRevisionOk returns a tuple with the Revision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityModel) GetRevisionOk() (*Revision, bool) {
-	if o == nil || isNil(o.Revision) {
-    return nil, false
+	if o == nil || IsNil(o.Revision) {
+		return nil, false
 	}
 	return o.Revision, true
 }
 
 // HasRevision returns a boolean if a field has been set.
 func (o *QualityModel) HasRevision() bool {
-	if o != nil && !isNil(o.Revision) {
+	if o != nil && !IsNil(o.Revision) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *QualityModel) SetRevision(v Revision) {
 }
 
 func (o QualityModel) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Quality) {
-		toSerialize["quality"] = o.Quality
-	}
-	if !isNil(o.Revision) {
-		toSerialize["revision"] = o.Revision
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o QualityModel) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Quality) {
+		toSerialize["quality"] = o.Quality
+	}
+	if !IsNil(o.Revision) {
+		toSerialize["revision"] = o.Revision
+	}
+	return toSerialize, nil
 }
 
 type NullableQualityModel struct {

@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the SeriesTitleInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SeriesTitleInfo{}
+
 // SeriesTitleInfo struct for SeriesTitleInfo
 type SeriesTitleInfo struct {
 	Title NullableString `json:"title,omitempty"`
 	TitleWithoutYear NullableString `json:"titleWithoutYear,omitempty"`
 	Year *int32 `json:"year,omitempty"`
-	AllTitles []*string `json:"allTitles,omitempty"`
+	AllTitles []string `json:"allTitles,omitempty"`
 }
 
 // NewSeriesTitleInfo instantiates a new SeriesTitleInfo object
@@ -41,7 +44,7 @@ func NewSeriesTitleInfoWithDefaults() *SeriesTitleInfo {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeriesTitleInfo) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -53,7 +56,7 @@ func (o *SeriesTitleInfo) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeriesTitleInfo) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -83,7 +86,7 @@ func (o *SeriesTitleInfo) UnsetTitle() {
 
 // GetTitleWithoutYear returns the TitleWithoutYear field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeriesTitleInfo) GetTitleWithoutYear() string {
-	if o == nil || isNil(o.TitleWithoutYear.Get()) {
+	if o == nil || IsNil(o.TitleWithoutYear.Get()) {
 		var ret string
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *SeriesTitleInfo) GetTitleWithoutYear() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeriesTitleInfo) GetTitleWithoutYearOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TitleWithoutYear.Get(), o.TitleWithoutYear.IsSet()
 }
@@ -125,7 +128,7 @@ func (o *SeriesTitleInfo) UnsetTitleWithoutYear() {
 
 // GetYear returns the Year field value if set, zero value otherwise.
 func (o *SeriesTitleInfo) GetYear() int32 {
-	if o == nil || isNil(o.Year) {
+	if o == nil || IsNil(o.Year) {
 		var ret int32
 		return ret
 	}
@@ -135,15 +138,15 @@ func (o *SeriesTitleInfo) GetYear() int32 {
 // GetYearOk returns a tuple with the Year field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeriesTitleInfo) GetYearOk() (*int32, bool) {
-	if o == nil || isNil(o.Year) {
-    return nil, false
+	if o == nil || IsNil(o.Year) {
+		return nil, false
 	}
 	return o.Year, true
 }
 
 // HasYear returns a boolean if a field has been set.
 func (o *SeriesTitleInfo) HasYear() bool {
-	if o != nil && !isNil(o.Year) {
+	if o != nil && !IsNil(o.Year) {
 		return true
 	}
 
@@ -156,9 +159,9 @@ func (o *SeriesTitleInfo) SetYear(v int32) {
 }
 
 // GetAllTitles returns the AllTitles field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesTitleInfo) GetAllTitles() []*string {
+func (o *SeriesTitleInfo) GetAllTitles() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.AllTitles
@@ -167,16 +170,16 @@ func (o *SeriesTitleInfo) GetAllTitles() []*string {
 // GetAllTitlesOk returns a tuple with the AllTitles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesTitleInfo) GetAllTitlesOk() ([]*string, bool) {
-	if o == nil || isNil(o.AllTitles) {
-    return nil, false
+func (o *SeriesTitleInfo) GetAllTitlesOk() ([]string, bool) {
+	if o == nil || IsNil(o.AllTitles) {
+		return nil, false
 	}
 	return o.AllTitles, true
 }
 
 // HasAllTitles returns a boolean if a field has been set.
 func (o *SeriesTitleInfo) HasAllTitles() bool {
-	if o != nil && isNil(o.AllTitles) {
+	if o != nil && IsNil(o.AllTitles) {
 		return true
 	}
 
@@ -184,11 +187,19 @@ func (o *SeriesTitleInfo) HasAllTitles() bool {
 }
 
 // SetAllTitles gets a reference to the given []string and assigns it to the AllTitles field.
-func (o *SeriesTitleInfo) SetAllTitles(v []*string) {
+func (o *SeriesTitleInfo) SetAllTitles(v []string) {
 	o.AllTitles = v
 }
 
 func (o SeriesTitleInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SeriesTitleInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
@@ -196,13 +207,13 @@ func (o SeriesTitleInfo) MarshalJSON() ([]byte, error) {
 	if o.TitleWithoutYear.IsSet() {
 		toSerialize["titleWithoutYear"] = o.TitleWithoutYear.Get()
 	}
-	if !isNil(o.Year) {
+	if !IsNil(o.Year) {
 		toSerialize["year"] = o.Year
 	}
 	if o.AllTitles != nil {
 		toSerialize["allTitles"] = o.AllTitles
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSeriesTitleInfo struct {

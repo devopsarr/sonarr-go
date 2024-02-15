@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LocalizationLanguageResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LocalizationLanguageResource{}
+
 // LocalizationLanguageResource struct for LocalizationLanguageResource
 type LocalizationLanguageResource struct {
 	Identifier NullableString `json:"identifier,omitempty"`
@@ -38,7 +41,7 @@ func NewLocalizationLanguageResourceWithDefaults() *LocalizationLanguageResource
 
 // GetIdentifier returns the Identifier field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LocalizationLanguageResource) GetIdentifier() string {
-	if o == nil || isNil(o.Identifier.Get()) {
+	if o == nil || IsNil(o.Identifier.Get()) {
 		var ret string
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *LocalizationLanguageResource) GetIdentifier() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LocalizationLanguageResource) GetIdentifierOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Identifier.Get(), o.Identifier.IsSet()
 }
@@ -79,11 +82,19 @@ func (o *LocalizationLanguageResource) UnsetIdentifier() {
 }
 
 func (o LocalizationLanguageResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o LocalizationLanguageResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Identifier.IsSet() {
 		toSerialize["identifier"] = o.Identifier.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableLocalizationLanguageResource struct {

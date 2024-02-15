@@ -14,10 +14,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the DownloadClientBulkResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DownloadClientBulkResource{}
+
 // DownloadClientBulkResource struct for DownloadClientBulkResource
 type DownloadClientBulkResource struct {
-	Ids []*int32 `json:"ids,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Ids []int32 `json:"ids,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	Enable NullableBool `json:"enable,omitempty"`
 	Priority NullableInt32 `json:"priority,omitempty"`
@@ -43,9 +46,9 @@ func NewDownloadClientBulkResourceWithDefaults() *DownloadClientBulkResource {
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientBulkResource) GetIds() []*int32 {
+func (o *DownloadClientBulkResource) GetIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Ids
@@ -54,16 +57,16 @@ func (o *DownloadClientBulkResource) GetIds() []*int32 {
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientBulkResource) GetIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Ids) {
-    return nil, false
+func (o *DownloadClientBulkResource) GetIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Ids) {
+		return nil, false
 	}
 	return o.Ids, true
 }
 
 // HasIds returns a boolean if a field has been set.
 func (o *DownloadClientBulkResource) HasIds() bool {
-	if o != nil && isNil(o.Ids) {
+	if o != nil && IsNil(o.Ids) {
 		return true
 	}
 
@@ -71,14 +74,14 @@ func (o *DownloadClientBulkResource) HasIds() bool {
 }
 
 // SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *DownloadClientBulkResource) SetIds(v []*int32) {
+func (o *DownloadClientBulkResource) SetIds(v []int32) {
 	o.Ids = v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientBulkResource) GetTags() []*int32 {
+func (o *DownloadClientBulkResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -87,16 +90,16 @@ func (o *DownloadClientBulkResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientBulkResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *DownloadClientBulkResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *DownloadClientBulkResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -104,13 +107,13 @@ func (o *DownloadClientBulkResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *DownloadClientBulkResource) SetTags(v []*int32) {
+func (o *DownloadClientBulkResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetApplyTags returns the ApplyTags field value if set, zero value otherwise.
 func (o *DownloadClientBulkResource) GetApplyTags() ApplyTags {
-	if o == nil || isNil(o.ApplyTags) {
+	if o == nil || IsNil(o.ApplyTags) {
 		var ret ApplyTags
 		return ret
 	}
@@ -120,15 +123,15 @@ func (o *DownloadClientBulkResource) GetApplyTags() ApplyTags {
 // GetApplyTagsOk returns a tuple with the ApplyTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientBulkResource) GetApplyTagsOk() (*ApplyTags, bool) {
-	if o == nil || isNil(o.ApplyTags) {
-    return nil, false
+	if o == nil || IsNil(o.ApplyTags) {
+		return nil, false
 	}
 	return o.ApplyTags, true
 }
 
 // HasApplyTags returns a boolean if a field has been set.
 func (o *DownloadClientBulkResource) HasApplyTags() bool {
-	if o != nil && !isNil(o.ApplyTags) {
+	if o != nil && !IsNil(o.ApplyTags) {
 		return true
 	}
 
@@ -142,7 +145,7 @@ func (o *DownloadClientBulkResource) SetApplyTags(v ApplyTags) {
 
 // GetEnable returns the Enable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientBulkResource) GetEnable() bool {
-	if o == nil || isNil(o.Enable.Get()) {
+	if o == nil || IsNil(o.Enable.Get()) {
 		var ret bool
 		return ret
 	}
@@ -154,7 +157,7 @@ func (o *DownloadClientBulkResource) GetEnable() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientBulkResource) GetEnableOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Enable.Get(), o.Enable.IsSet()
 }
@@ -184,7 +187,7 @@ func (o *DownloadClientBulkResource) UnsetEnable() {
 
 // GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientBulkResource) GetPriority() int32 {
-	if o == nil || isNil(o.Priority.Get()) {
+	if o == nil || IsNil(o.Priority.Get()) {
 		var ret int32
 		return ret
 	}
@@ -196,7 +199,7 @@ func (o *DownloadClientBulkResource) GetPriority() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientBulkResource) GetPriorityOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Priority.Get(), o.Priority.IsSet()
 }
@@ -226,7 +229,7 @@ func (o *DownloadClientBulkResource) UnsetPriority() {
 
 // GetRemoveCompletedDownloads returns the RemoveCompletedDownloads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientBulkResource) GetRemoveCompletedDownloads() bool {
-	if o == nil || isNil(o.RemoveCompletedDownloads.Get()) {
+	if o == nil || IsNil(o.RemoveCompletedDownloads.Get()) {
 		var ret bool
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *DownloadClientBulkResource) GetRemoveCompletedDownloads() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientBulkResource) GetRemoveCompletedDownloadsOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RemoveCompletedDownloads.Get(), o.RemoveCompletedDownloads.IsSet()
 }
@@ -268,7 +271,7 @@ func (o *DownloadClientBulkResource) UnsetRemoveCompletedDownloads() {
 
 // GetRemoveFailedDownloads returns the RemoveFailedDownloads field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientBulkResource) GetRemoveFailedDownloads() bool {
-	if o == nil || isNil(o.RemoveFailedDownloads.Get()) {
+	if o == nil || IsNil(o.RemoveFailedDownloads.Get()) {
 		var ret bool
 		return ret
 	}
@@ -280,7 +283,7 @@ func (o *DownloadClientBulkResource) GetRemoveFailedDownloads() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientBulkResource) GetRemoveFailedDownloadsOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RemoveFailedDownloads.Get(), o.RemoveFailedDownloads.IsSet()
 }
@@ -309,6 +312,14 @@ func (o *DownloadClientBulkResource) UnsetRemoveFailedDownloads() {
 }
 
 func (o DownloadClientBulkResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o DownloadClientBulkResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Ids != nil {
 		toSerialize["ids"] = o.Ids
@@ -316,7 +327,7 @@ func (o DownloadClientBulkResource) MarshalJSON() ([]byte, error) {
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !isNil(o.ApplyTags) {
+	if !IsNil(o.ApplyTags) {
 		toSerialize["applyTags"] = o.ApplyTags
 	}
 	if o.Enable.IsSet() {
@@ -331,7 +342,7 @@ func (o DownloadClientBulkResource) MarshalJSON() ([]byte, error) {
 	if o.RemoveFailedDownloads.IsSet() {
 		toSerialize["removeFailedDownloads"] = o.RemoveFailedDownloads.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableDownloadClientBulkResource struct {

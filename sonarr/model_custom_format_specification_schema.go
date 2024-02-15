@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomFormatSpecificationSchema type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomFormatSpecificationSchema{}
+
 // CustomFormatSpecificationSchema struct for CustomFormatSpecificationSchema
 type CustomFormatSpecificationSchema struct {
 	Id *int32 `json:"id,omitempty"`
@@ -23,8 +26,8 @@ type CustomFormatSpecificationSchema struct {
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Negate *bool `json:"negate,omitempty"`
 	Required *bool `json:"required,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
-	Presets []*CustomFormatSpecificationSchema `json:"presets,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
+	Presets []CustomFormatSpecificationSchema `json:"presets,omitempty"`
 }
 
 // NewCustomFormatSpecificationSchema instantiates a new CustomFormatSpecificationSchema object
@@ -46,7 +49,7 @@ func NewCustomFormatSpecificationSchemaWithDefaults() *CustomFormatSpecification
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *CustomFormatSpecificationSchema) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -56,15 +59,15 @@ func (o *CustomFormatSpecificationSchema) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFormatSpecificationSchema) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *CustomFormatSpecificationSchema) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -78,7 +81,7 @@ func (o *CustomFormatSpecificationSchema) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFormatSpecificationSchema) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -90,7 +93,7 @@ func (o *CustomFormatSpecificationSchema) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFormatSpecificationSchema) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -120,7 +123,7 @@ func (o *CustomFormatSpecificationSchema) UnsetName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFormatSpecificationSchema) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -132,7 +135,7 @@ func (o *CustomFormatSpecificationSchema) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFormatSpecificationSchema) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -162,7 +165,7 @@ func (o *CustomFormatSpecificationSchema) UnsetImplementation() {
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFormatSpecificationSchema) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *CustomFormatSpecificationSchema) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFormatSpecificationSchema) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -204,7 +207,7 @@ func (o *CustomFormatSpecificationSchema) UnsetImplementationName() {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFormatSpecificationSchema) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -216,7 +219,7 @@ func (o *CustomFormatSpecificationSchema) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFormatSpecificationSchema) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -246,7 +249,7 @@ func (o *CustomFormatSpecificationSchema) UnsetInfoLink() {
 
 // GetNegate returns the Negate field value if set, zero value otherwise.
 func (o *CustomFormatSpecificationSchema) GetNegate() bool {
-	if o == nil || isNil(o.Negate) {
+	if o == nil || IsNil(o.Negate) {
 		var ret bool
 		return ret
 	}
@@ -256,15 +259,15 @@ func (o *CustomFormatSpecificationSchema) GetNegate() bool {
 // GetNegateOk returns a tuple with the Negate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFormatSpecificationSchema) GetNegateOk() (*bool, bool) {
-	if o == nil || isNil(o.Negate) {
-    return nil, false
+	if o == nil || IsNil(o.Negate) {
+		return nil, false
 	}
 	return o.Negate, true
 }
 
 // HasNegate returns a boolean if a field has been set.
 func (o *CustomFormatSpecificationSchema) HasNegate() bool {
-	if o != nil && !isNil(o.Negate) {
+	if o != nil && !IsNil(o.Negate) {
 		return true
 	}
 
@@ -278,7 +281,7 @@ func (o *CustomFormatSpecificationSchema) SetNegate(v bool) {
 
 // GetRequired returns the Required field value if set, zero value otherwise.
 func (o *CustomFormatSpecificationSchema) GetRequired() bool {
-	if o == nil || isNil(o.Required) {
+	if o == nil || IsNil(o.Required) {
 		var ret bool
 		return ret
 	}
@@ -288,15 +291,15 @@ func (o *CustomFormatSpecificationSchema) GetRequired() bool {
 // GetRequiredOk returns a tuple with the Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFormatSpecificationSchema) GetRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.Required) {
-    return nil, false
+	if o == nil || IsNil(o.Required) {
+		return nil, false
 	}
 	return o.Required, true
 }
 
 // HasRequired returns a boolean if a field has been set.
 func (o *CustomFormatSpecificationSchema) HasRequired() bool {
-	if o != nil && !isNil(o.Required) {
+	if o != nil && !IsNil(o.Required) {
 		return true
 	}
 
@@ -309,9 +312,9 @@ func (o *CustomFormatSpecificationSchema) SetRequired(v bool) {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomFormatSpecificationSchema) GetFields() []*Field {
+func (o *CustomFormatSpecificationSchema) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -320,16 +323,16 @@ func (o *CustomFormatSpecificationSchema) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomFormatSpecificationSchema) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *CustomFormatSpecificationSchema) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *CustomFormatSpecificationSchema) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -337,14 +340,14 @@ func (o *CustomFormatSpecificationSchema) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *CustomFormatSpecificationSchema) SetFields(v []*Field) {
+func (o *CustomFormatSpecificationSchema) SetFields(v []Field) {
 	o.Fields = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomFormatSpecificationSchema) GetPresets() []*CustomFormatSpecificationSchema {
+func (o *CustomFormatSpecificationSchema) GetPresets() []CustomFormatSpecificationSchema {
 	if o == nil {
-		var ret []*CustomFormatSpecificationSchema
+		var ret []CustomFormatSpecificationSchema
 		return ret
 	}
 	return o.Presets
@@ -353,16 +356,16 @@ func (o *CustomFormatSpecificationSchema) GetPresets() []*CustomFormatSpecificat
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomFormatSpecificationSchema) GetPresetsOk() ([]*CustomFormatSpecificationSchema, bool) {
-	if o == nil || isNil(o.Presets) {
-    return nil, false
+func (o *CustomFormatSpecificationSchema) GetPresetsOk() ([]CustomFormatSpecificationSchema, bool) {
+	if o == nil || IsNil(o.Presets) {
+		return nil, false
 	}
 	return o.Presets, true
 }
 
 // HasPresets returns a boolean if a field has been set.
 func (o *CustomFormatSpecificationSchema) HasPresets() bool {
-	if o != nil && isNil(o.Presets) {
+	if o != nil && IsNil(o.Presets) {
 		return true
 	}
 
@@ -370,13 +373,21 @@ func (o *CustomFormatSpecificationSchema) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []CustomFormatSpecificationSchema and assigns it to the Presets field.
-func (o *CustomFormatSpecificationSchema) SetPresets(v []*CustomFormatSpecificationSchema) {
+func (o *CustomFormatSpecificationSchema) SetPresets(v []CustomFormatSpecificationSchema) {
 	o.Presets = v
 }
 
 func (o CustomFormatSpecificationSchema) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CustomFormatSpecificationSchema) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -391,10 +402,10 @@ func (o CustomFormatSpecificationSchema) MarshalJSON() ([]byte, error) {
 	if o.InfoLink.IsSet() {
 		toSerialize["infoLink"] = o.InfoLink.Get()
 	}
-	if !isNil(o.Negate) {
+	if !IsNil(o.Negate) {
 		toSerialize["negate"] = o.Negate
 	}
-	if !isNil(o.Required) {
+	if !IsNil(o.Required) {
 		toSerialize["required"] = o.Required
 	}
 	if o.Fields != nil {
@@ -403,7 +414,7 @@ func (o CustomFormatSpecificationSchema) MarshalJSON() ([]byte, error) {
 	if o.Presets != nil {
 		toSerialize["presets"] = o.Presets
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCustomFormatSpecificationSchema struct {

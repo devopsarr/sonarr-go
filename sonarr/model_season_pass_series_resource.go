@@ -14,11 +14,14 @@ import (
 	"encoding/json"
 )
 
+// checks if the SeasonPassSeriesResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SeasonPassSeriesResource{}
+
 // SeasonPassSeriesResource struct for SeasonPassSeriesResource
 type SeasonPassSeriesResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
-	Seasons []*SeasonResource `json:"seasons,omitempty"`
+	Seasons []SeasonResource `json:"seasons,omitempty"`
 }
 
 // NewSeasonPassSeriesResource instantiates a new SeasonPassSeriesResource object
@@ -40,7 +43,7 @@ func NewSeasonPassSeriesResourceWithDefaults() *SeasonPassSeriesResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *SeasonPassSeriesResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *SeasonPassSeriesResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonPassSeriesResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *SeasonPassSeriesResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *SeasonPassSeriesResource) SetId(v int32) {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeasonPassSeriesResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored.Get()) {
+	if o == nil || IsNil(o.Monitored.Get()) {
 		var ret bool
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *SeasonPassSeriesResource) GetMonitored() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeasonPassSeriesResource) GetMonitoredOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Monitored.Get(), o.Monitored.IsSet()
 }
@@ -113,9 +116,9 @@ func (o *SeasonPassSeriesResource) UnsetMonitored() {
 }
 
 // GetSeasons returns the Seasons field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeasonPassSeriesResource) GetSeasons() []*SeasonResource {
+func (o *SeasonPassSeriesResource) GetSeasons() []SeasonResource {
 	if o == nil {
-		var ret []*SeasonResource
+		var ret []SeasonResource
 		return ret
 	}
 	return o.Seasons
@@ -124,16 +127,16 @@ func (o *SeasonPassSeriesResource) GetSeasons() []*SeasonResource {
 // GetSeasonsOk returns a tuple with the Seasons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeasonPassSeriesResource) GetSeasonsOk() ([]*SeasonResource, bool) {
-	if o == nil || isNil(o.Seasons) {
-    return nil, false
+func (o *SeasonPassSeriesResource) GetSeasonsOk() ([]SeasonResource, bool) {
+	if o == nil || IsNil(o.Seasons) {
+		return nil, false
 	}
 	return o.Seasons, true
 }
 
 // HasSeasons returns a boolean if a field has been set.
 func (o *SeasonPassSeriesResource) HasSeasons() bool {
-	if o != nil && isNil(o.Seasons) {
+	if o != nil && IsNil(o.Seasons) {
 		return true
 	}
 
@@ -141,13 +144,21 @@ func (o *SeasonPassSeriesResource) HasSeasons() bool {
 }
 
 // SetSeasons gets a reference to the given []SeasonResource and assigns it to the Seasons field.
-func (o *SeasonPassSeriesResource) SetSeasons(v []*SeasonResource) {
+func (o *SeasonPassSeriesResource) SetSeasons(v []SeasonResource) {
 	o.Seasons = v
 }
 
 func (o SeasonPassSeriesResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SeasonPassSeriesResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Monitored.IsSet() {
@@ -156,7 +167,7 @@ func (o SeasonPassSeriesResource) MarshalJSON() ([]byte, error) {
 	if o.Seasons != nil {
 		toSerialize["seasons"] = o.Seasons
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSeasonPassSeriesResource struct {

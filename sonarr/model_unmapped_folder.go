@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the UnmappedFolder type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnmappedFolder{}
+
 // UnmappedFolder struct for UnmappedFolder
 type UnmappedFolder struct {
 	Name NullableString `json:"name,omitempty"`
@@ -40,7 +43,7 @@ func NewUnmappedFolderWithDefaults() *UnmappedFolder {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UnmappedFolder) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *UnmappedFolder) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UnmappedFolder) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -82,7 +85,7 @@ func (o *UnmappedFolder) UnsetName() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UnmappedFolder) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *UnmappedFolder) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UnmappedFolder) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -124,7 +127,7 @@ func (o *UnmappedFolder) UnsetPath() {
 
 // GetRelativePath returns the RelativePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UnmappedFolder) GetRelativePath() string {
-	if o == nil || isNil(o.RelativePath.Get()) {
+	if o == nil || IsNil(o.RelativePath.Get()) {
 		var ret string
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *UnmappedFolder) GetRelativePath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UnmappedFolder) GetRelativePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RelativePath.Get(), o.RelativePath.IsSet()
 }
@@ -165,6 +168,14 @@ func (o *UnmappedFolder) UnsetRelativePath() {
 }
 
 func (o UnmappedFolder) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o UnmappedFolder) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
@@ -175,7 +186,7 @@ func (o UnmappedFolder) MarshalJSON() ([]byte, error) {
 	if o.RelativePath.IsSet() {
 		toSerialize["relativePath"] = o.RelativePath.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableUnmappedFolder struct {

@@ -21,6 +21,7 @@ import (
 
 // ReleasePushAPIService ReleasePushAPI service
 type ReleasePushAPIService service
+
 type ApiCreateReleasePushRequest struct {
 	ctx context.Context
 	ApiService *ReleasePushAPIService
@@ -32,7 +33,7 @@ func (r ApiCreateReleasePushRequest) ReleaseResource(releaseResource ReleaseReso
 	return r
 }
 
-func (r ApiCreateReleasePushRequest) Execute() ([]*ReleaseResource, *http.Response, error) {
+func (r ApiCreateReleasePushRequest) Execute() ([]ReleaseResource, *http.Response, error) {
 	return r.ApiService.CreateReleasePushExecute(r)
 }
 
@@ -51,12 +52,12 @@ func (a *ReleasePushAPIService) CreateReleasePush(ctx context.Context) ApiCreate
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleasePushAPIService) CreateReleasePushExecute(r ApiCreateReleasePushRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *ReleasePushAPIService) CreateReleasePushExecute(r ApiCreateReleasePushRequest) ([]ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ReleaseResource
+		localVarReturnValue  []ReleaseResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePushAPIService.CreateReleasePush")

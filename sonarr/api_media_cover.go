@@ -22,6 +22,7 @@ import (
 
 // MediaCoverAPIService MediaCoverAPI service
 type MediaCoverAPIService service
+
 type ApiGetMediaCoverByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverAPIService
@@ -64,8 +65,8 @@ func (a *MediaCoverAPIService) GetMediaCoverByFilenameExecute(r ApiGetMediaCover
 	}
 
 	localVarPath := localBasePath + "/api/v3/mediacover/{seriesId}/{filename}"
-	localVarPath = strings.Replace(localVarPath, "{"+"seriesId"+"}", url.PathEscape(parameterToString(r.seriesId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterToString(r.filename, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"seriesId"+"}", url.PathEscape(parameterValueToString(r.seriesId, "seriesId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterValueToString(r.filename, "filename")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

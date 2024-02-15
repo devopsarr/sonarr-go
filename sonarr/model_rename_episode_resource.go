@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the RenameEpisodeResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RenameEpisodeResource{}
+
 // RenameEpisodeResource struct for RenameEpisodeResource
 type RenameEpisodeResource struct {
 	Id *int32 `json:"id,omitempty"`
 	SeriesId *int32 `json:"seriesId,omitempty"`
 	SeasonNumber *int32 `json:"seasonNumber,omitempty"`
-	EpisodeNumbers []*int32 `json:"episodeNumbers,omitempty"`
+	EpisodeNumbers []int32 `json:"episodeNumbers,omitempty"`
 	EpisodeFileId *int32 `json:"episodeFileId,omitempty"`
 	ExistingPath NullableString `json:"existingPath,omitempty"`
 	NewPath NullableString `json:"newPath,omitempty"`
@@ -44,7 +47,7 @@ func NewRenameEpisodeResourceWithDefaults() *RenameEpisodeResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RenameEpisodeResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *RenameEpisodeResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameEpisodeResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RenameEpisodeResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *RenameEpisodeResource) SetId(v int32) {
 
 // GetSeriesId returns the SeriesId field value if set, zero value otherwise.
 func (o *RenameEpisodeResource) GetSeriesId() int32 {
-	if o == nil || isNil(o.SeriesId) {
+	if o == nil || IsNil(o.SeriesId) {
 		var ret int32
 		return ret
 	}
@@ -86,15 +89,15 @@ func (o *RenameEpisodeResource) GetSeriesId() int32 {
 // GetSeriesIdOk returns a tuple with the SeriesId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameEpisodeResource) GetSeriesIdOk() (*int32, bool) {
-	if o == nil || isNil(o.SeriesId) {
-    return nil, false
+	if o == nil || IsNil(o.SeriesId) {
+		return nil, false
 	}
 	return o.SeriesId, true
 }
 
 // HasSeriesId returns a boolean if a field has been set.
 func (o *RenameEpisodeResource) HasSeriesId() bool {
-	if o != nil && !isNil(o.SeriesId) {
+	if o != nil && !IsNil(o.SeriesId) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *RenameEpisodeResource) SetSeriesId(v int32) {
 
 // GetSeasonNumber returns the SeasonNumber field value if set, zero value otherwise.
 func (o *RenameEpisodeResource) GetSeasonNumber() int32 {
-	if o == nil || isNil(o.SeasonNumber) {
+	if o == nil || IsNil(o.SeasonNumber) {
 		var ret int32
 		return ret
 	}
@@ -118,15 +121,15 @@ func (o *RenameEpisodeResource) GetSeasonNumber() int32 {
 // GetSeasonNumberOk returns a tuple with the SeasonNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameEpisodeResource) GetSeasonNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.SeasonNumber) {
-    return nil, false
+	if o == nil || IsNil(o.SeasonNumber) {
+		return nil, false
 	}
 	return o.SeasonNumber, true
 }
 
 // HasSeasonNumber returns a boolean if a field has been set.
 func (o *RenameEpisodeResource) HasSeasonNumber() bool {
-	if o != nil && !isNil(o.SeasonNumber) {
+	if o != nil && !IsNil(o.SeasonNumber) {
 		return true
 	}
 
@@ -139,9 +142,9 @@ func (o *RenameEpisodeResource) SetSeasonNumber(v int32) {
 }
 
 // GetEpisodeNumbers returns the EpisodeNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RenameEpisodeResource) GetEpisodeNumbers() []*int32 {
+func (o *RenameEpisodeResource) GetEpisodeNumbers() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.EpisodeNumbers
@@ -150,16 +153,16 @@ func (o *RenameEpisodeResource) GetEpisodeNumbers() []*int32 {
 // GetEpisodeNumbersOk returns a tuple with the EpisodeNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RenameEpisodeResource) GetEpisodeNumbersOk() ([]*int32, bool) {
-	if o == nil || isNil(o.EpisodeNumbers) {
-    return nil, false
+func (o *RenameEpisodeResource) GetEpisodeNumbersOk() ([]int32, bool) {
+	if o == nil || IsNil(o.EpisodeNumbers) {
+		return nil, false
 	}
 	return o.EpisodeNumbers, true
 }
 
 // HasEpisodeNumbers returns a boolean if a field has been set.
 func (o *RenameEpisodeResource) HasEpisodeNumbers() bool {
-	if o != nil && isNil(o.EpisodeNumbers) {
+	if o != nil && IsNil(o.EpisodeNumbers) {
 		return true
 	}
 
@@ -167,13 +170,13 @@ func (o *RenameEpisodeResource) HasEpisodeNumbers() bool {
 }
 
 // SetEpisodeNumbers gets a reference to the given []int32 and assigns it to the EpisodeNumbers field.
-func (o *RenameEpisodeResource) SetEpisodeNumbers(v []*int32) {
+func (o *RenameEpisodeResource) SetEpisodeNumbers(v []int32) {
 	o.EpisodeNumbers = v
 }
 
 // GetEpisodeFileId returns the EpisodeFileId field value if set, zero value otherwise.
 func (o *RenameEpisodeResource) GetEpisodeFileId() int32 {
-	if o == nil || isNil(o.EpisodeFileId) {
+	if o == nil || IsNil(o.EpisodeFileId) {
 		var ret int32
 		return ret
 	}
@@ -183,15 +186,15 @@ func (o *RenameEpisodeResource) GetEpisodeFileId() int32 {
 // GetEpisodeFileIdOk returns a tuple with the EpisodeFileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameEpisodeResource) GetEpisodeFileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.EpisodeFileId) {
-    return nil, false
+	if o == nil || IsNil(o.EpisodeFileId) {
+		return nil, false
 	}
 	return o.EpisodeFileId, true
 }
 
 // HasEpisodeFileId returns a boolean if a field has been set.
 func (o *RenameEpisodeResource) HasEpisodeFileId() bool {
-	if o != nil && !isNil(o.EpisodeFileId) {
+	if o != nil && !IsNil(o.EpisodeFileId) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *RenameEpisodeResource) SetEpisodeFileId(v int32) {
 
 // GetExistingPath returns the ExistingPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RenameEpisodeResource) GetExistingPath() string {
-	if o == nil || isNil(o.ExistingPath.Get()) {
+	if o == nil || IsNil(o.ExistingPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -217,7 +220,7 @@ func (o *RenameEpisodeResource) GetExistingPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RenameEpisodeResource) GetExistingPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ExistingPath.Get(), o.ExistingPath.IsSet()
 }
@@ -247,7 +250,7 @@ func (o *RenameEpisodeResource) UnsetExistingPath() {
 
 // GetNewPath returns the NewPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RenameEpisodeResource) GetNewPath() string {
-	if o == nil || isNil(o.NewPath.Get()) {
+	if o == nil || IsNil(o.NewPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *RenameEpisodeResource) GetNewPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RenameEpisodeResource) GetNewPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NewPath.Get(), o.NewPath.IsSet()
 }
@@ -288,20 +291,28 @@ func (o *RenameEpisodeResource) UnsetNewPath() {
 }
 
 func (o RenameEpisodeResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RenameEpisodeResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.SeriesId) {
+	if !IsNil(o.SeriesId) {
 		toSerialize["seriesId"] = o.SeriesId
 	}
-	if !isNil(o.SeasonNumber) {
+	if !IsNil(o.SeasonNumber) {
 		toSerialize["seasonNumber"] = o.SeasonNumber
 	}
 	if o.EpisodeNumbers != nil {
 		toSerialize["episodeNumbers"] = o.EpisodeNumbers
 	}
-	if !isNil(o.EpisodeFileId) {
+	if !IsNil(o.EpisodeFileId) {
 		toSerialize["episodeFileId"] = o.EpisodeFileId
 	}
 	if o.ExistingPath.IsSet() {
@@ -310,7 +321,7 @@ func (o RenameEpisodeResource) MarshalJSON() ([]byte, error) {
 	if o.NewPath.IsSet() {
 		toSerialize["newPath"] = o.NewPath.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRenameEpisodeResource struct {

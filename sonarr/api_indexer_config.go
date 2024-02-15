@@ -22,6 +22,7 @@ import (
 
 // IndexerConfigAPIService IndexerConfigAPI service
 type IndexerConfigAPIService service
+
 type ApiGetIndexerConfigRequest struct {
 	ctx context.Context
 	ApiService *IndexerConfigAPIService
@@ -146,6 +147,7 @@ func (a *IndexerConfigAPIService) GetIndexerConfigExecute(r ApiGetIndexerConfigR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetIndexerConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *IndexerConfigAPIService
@@ -187,7 +189,7 @@ func (a *IndexerConfigAPIService) GetIndexerConfigByIdExecute(r ApiGetIndexerCon
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/indexer/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *IndexerConfigAPIService) GetIndexerConfigByIdExecute(r ApiGetIndexerCon
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateIndexerConfigRequest struct {
 	ctx context.Context
 	ApiService *IndexerConfigAPIService
@@ -321,7 +324,7 @@ func (a *IndexerConfigAPIService) UpdateIndexerConfigExecute(r ApiUpdateIndexerC
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/indexer/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RemotePathMappingResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RemotePathMappingResource{}
+
 // RemotePathMappingResource struct for RemotePathMappingResource
 type RemotePathMappingResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -41,7 +44,7 @@ func NewRemotePathMappingResourceWithDefaults() *RemotePathMappingResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RemotePathMappingResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *RemotePathMappingResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RemotePathMappingResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RemotePathMappingResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *RemotePathMappingResource) SetId(v int32) {
 
 // GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RemotePathMappingResource) GetHost() string {
-	if o == nil || isNil(o.Host.Get()) {
+	if o == nil || IsNil(o.Host.Get()) {
 		var ret string
 		return ret
 	}
@@ -85,7 +88,7 @@ func (o *RemotePathMappingResource) GetHost() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemotePathMappingResource) GetHostOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Host.Get(), o.Host.IsSet()
 }
@@ -115,7 +118,7 @@ func (o *RemotePathMappingResource) UnsetHost() {
 
 // GetRemotePath returns the RemotePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RemotePathMappingResource) GetRemotePath() string {
-	if o == nil || isNil(o.RemotePath.Get()) {
+	if o == nil || IsNil(o.RemotePath.Get()) {
 		var ret string
 		return ret
 	}
@@ -127,7 +130,7 @@ func (o *RemotePathMappingResource) GetRemotePath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemotePathMappingResource) GetRemotePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RemotePath.Get(), o.RemotePath.IsSet()
 }
@@ -157,7 +160,7 @@ func (o *RemotePathMappingResource) UnsetRemotePath() {
 
 // GetLocalPath returns the LocalPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RemotePathMappingResource) GetLocalPath() string {
-	if o == nil || isNil(o.LocalPath.Get()) {
+	if o == nil || IsNil(o.LocalPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -169,7 +172,7 @@ func (o *RemotePathMappingResource) GetLocalPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RemotePathMappingResource) GetLocalPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LocalPath.Get(), o.LocalPath.IsSet()
 }
@@ -198,8 +201,16 @@ func (o *RemotePathMappingResource) UnsetLocalPath() {
 }
 
 func (o RemotePathMappingResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RemotePathMappingResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Host.IsSet() {
@@ -211,7 +222,7 @@ func (o RemotePathMappingResource) MarshalJSON() ([]byte, error) {
 	if o.LocalPath.IsSet() {
 		toSerialize["localPath"] = o.LocalPath.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRemotePathMappingResource struct {

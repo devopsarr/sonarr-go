@@ -21,6 +21,7 @@ import (
 
 // PingAPIService PingAPI service
 type PingAPIService service
+
 type ApiGetPingRequest struct {
 	ctx context.Context
 	ApiService *PingAPIService

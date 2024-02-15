@@ -22,6 +22,7 @@ import (
 
 // ReleaseProfileAPIService ReleaseProfileAPI service
 type ReleaseProfileAPIService service
+
 type ApiCreateReleaseProfileRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileAPIService
@@ -154,6 +155,7 @@ func (a *ReleaseProfileAPIService) CreateReleaseProfileExecute(r ApiCreateReleas
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteReleaseProfileRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileAPIService
@@ -193,7 +195,7 @@ func (a *ReleaseProfileAPIService) DeleteReleaseProfileExecute(r ApiDeleteReleas
 	}
 
 	localVarPath := localBasePath + "/api/v3/releaseprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *ReleaseProfileAPIService) DeleteReleaseProfileExecute(r ApiDeleteReleas
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetReleaseProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileAPIService
@@ -312,7 +315,7 @@ func (a *ReleaseProfileAPIService) GetReleaseProfileByIdExecute(r ApiGetReleaseP
 	}
 
 	localVarPath := localBasePath + "/api/v3/releaseprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *ReleaseProfileAPIService) GetReleaseProfileByIdExecute(r ApiGetReleaseP
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListReleaseProfileRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileAPIService
 }
 
-func (r ApiListReleaseProfileRequest) Execute() ([]*ReleaseProfileResource, *http.Response, error) {
+func (r ApiListReleaseProfileRequest) Execute() ([]ReleaseProfileResource, *http.Response, error) {
 	return r.ApiService.ListReleaseProfileExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *ReleaseProfileAPIService) ListReleaseProfile(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []ReleaseProfileResource
-func (a *ReleaseProfileAPIService) ListReleaseProfileExecute(r ApiListReleaseProfileRequest) ([]*ReleaseProfileResource, *http.Response, error) {
+func (a *ReleaseProfileAPIService) ListReleaseProfileExecute(r ApiListReleaseProfileRequest) ([]ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ReleaseProfileResource
+		localVarReturnValue  []ReleaseProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileAPIService.ListReleaseProfile")
@@ -523,6 +527,7 @@ func (a *ReleaseProfileAPIService) ListReleaseProfileExecute(r ApiListReleasePro
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateReleaseProfileRequest struct {
 	ctx context.Context
 	ApiService *ReleaseProfileAPIService
@@ -570,7 +575,7 @@ func (a *ReleaseProfileAPIService) UpdateReleaseProfileExecute(r ApiUpdateReleas
 	}
 
 	localVarPath := localBasePath + "/api/v3/releaseprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

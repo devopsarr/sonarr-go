@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LocalizationResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LocalizationResource{}
+
 // LocalizationResource struct for LocalizationResource
 type LocalizationResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -39,7 +42,7 @@ func NewLocalizationResourceWithDefaults() *LocalizationResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *LocalizationResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *LocalizationResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalizationResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *LocalizationResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -82,15 +85,15 @@ func (o *LocalizationResource) GetStrings() map[string]string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LocalizationResource) GetStringsOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.Strings) {
-    return nil, false
+	if o == nil || IsNil(o.Strings) {
+		return nil, false
 	}
 	return &o.Strings, true
 }
 
 // HasStrings returns a boolean if a field has been set.
 func (o *LocalizationResource) HasStrings() bool {
-	if o != nil && isNil(o.Strings) {
+	if o != nil && IsNil(o.Strings) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *LocalizationResource) SetStrings(v map[string]string) {
 }
 
 func (o LocalizationResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o LocalizationResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Strings != nil {
 		toSerialize["strings"] = o.Strings
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableLocalizationResource struct {

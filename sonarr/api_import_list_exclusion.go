@@ -22,6 +22,7 @@ import (
 
 // ImportListExclusionAPIService ImportListExclusionAPI service
 type ImportListExclusionAPIService service
+
 type ApiCreateImportListExclusionRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionAPIService
@@ -154,6 +155,7 @@ func (a *ImportListExclusionAPIService) CreateImportListExclusionExecute(r ApiCr
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteImportListExclusionRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionAPIService
@@ -193,7 +195,7 @@ func (a *ImportListExclusionAPIService) DeleteImportListExclusionExecute(r ApiDe
 	}
 
 	localVarPath := localBasePath + "/api/v3/importlistexclusion/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *ImportListExclusionAPIService) DeleteImportListExclusionExecute(r ApiDe
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetImportListExclusionByIdRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionAPIService
@@ -312,7 +315,7 @@ func (a *ImportListExclusionAPIService) GetImportListExclusionByIdExecute(r ApiG
 	}
 
 	localVarPath := localBasePath + "/api/v3/importlistexclusion/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *ImportListExclusionAPIService) GetImportListExclusionByIdExecute(r ApiG
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListImportListExclusionRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionAPIService
 }
 
-func (r ApiListImportListExclusionRequest) Execute() ([]*ImportListExclusionResource, *http.Response, error) {
+func (r ApiListImportListExclusionRequest) Execute() ([]ImportListExclusionResource, *http.Response, error) {
 	return r.ApiService.ListImportListExclusionExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *ImportListExclusionAPIService) ListImportListExclusion(ctx context.Cont
 
 // Execute executes the request
 //  @return []ImportListExclusionResource
-func (a *ImportListExclusionAPIService) ListImportListExclusionExecute(r ApiListImportListExclusionRequest) ([]*ImportListExclusionResource, *http.Response, error) {
+func (a *ImportListExclusionAPIService) ListImportListExclusionExecute(r ApiListImportListExclusionRequest) ([]ImportListExclusionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ImportListExclusionResource
+		localVarReturnValue  []ImportListExclusionResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListExclusionAPIService.ListImportListExclusion")
@@ -523,6 +527,7 @@ func (a *ImportListExclusionAPIService) ListImportListExclusionExecute(r ApiList
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateImportListExclusionRequest struct {
 	ctx context.Context
 	ApiService *ImportListExclusionAPIService
@@ -570,7 +575,7 @@ func (a *ImportListExclusionAPIService) UpdateImportListExclusionExecute(r ApiUp
 	}
 
 	localVarPath := localBasePath + "/api/v3/importlistexclusion/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

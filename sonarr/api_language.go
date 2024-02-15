@@ -22,6 +22,7 @@ import (
 
 // LanguageAPIService LanguageAPI service
 type LanguageAPIService service
+
 type ApiGetLanguageByIdRequest struct {
 	ctx context.Context
 	ApiService *LanguageAPIService
@@ -63,7 +64,7 @@ func (a *LanguageAPIService) GetLanguageByIdExecute(r ApiGetLanguageByIdRequest)
 	}
 
 	localVarPath := localBasePath + "/api/v3/language/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,12 +151,13 @@ func (a *LanguageAPIService) GetLanguageByIdExecute(r ApiGetLanguageByIdRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListLanguageRequest struct {
 	ctx context.Context
 	ApiService *LanguageAPIService
 }
 
-func (r ApiListLanguageRequest) Execute() ([]*LanguageResource, *http.Response, error) {
+func (r ApiListLanguageRequest) Execute() ([]LanguageResource, *http.Response, error) {
 	return r.ApiService.ListLanguageExecute(r)
 }
 
@@ -174,12 +176,12 @@ func (a *LanguageAPIService) ListLanguage(ctx context.Context) ApiListLanguageRe
 
 // Execute executes the request
 //  @return []LanguageResource
-func (a *LanguageAPIService) ListLanguageExecute(r ApiListLanguageRequest) ([]*LanguageResource, *http.Response, error) {
+func (a *LanguageAPIService) ListLanguageExecute(r ApiListLanguageRequest) ([]LanguageResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*LanguageResource
+		localVarReturnValue  []LanguageResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageAPIService.ListLanguage")

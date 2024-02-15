@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the SeasonPassResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SeasonPassResource{}
+
 // SeasonPassResource struct for SeasonPassResource
 type SeasonPassResource struct {
-	Series []*SeasonPassSeriesResource `json:"series,omitempty"`
+	Series []SeasonPassSeriesResource `json:"series,omitempty"`
 	MonitoringOptions *MonitoringOptions `json:"monitoringOptions,omitempty"`
 }
 
@@ -38,9 +41,9 @@ func NewSeasonPassResourceWithDefaults() *SeasonPassResource {
 }
 
 // GetSeries returns the Series field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeasonPassResource) GetSeries() []*SeasonPassSeriesResource {
+func (o *SeasonPassResource) GetSeries() []SeasonPassSeriesResource {
 	if o == nil {
-		var ret []*SeasonPassSeriesResource
+		var ret []SeasonPassSeriesResource
 		return ret
 	}
 	return o.Series
@@ -49,16 +52,16 @@ func (o *SeasonPassResource) GetSeries() []*SeasonPassSeriesResource {
 // GetSeriesOk returns a tuple with the Series field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeasonPassResource) GetSeriesOk() ([]*SeasonPassSeriesResource, bool) {
-	if o == nil || isNil(o.Series) {
-    return nil, false
+func (o *SeasonPassResource) GetSeriesOk() ([]SeasonPassSeriesResource, bool) {
+	if o == nil || IsNil(o.Series) {
+		return nil, false
 	}
 	return o.Series, true
 }
 
 // HasSeries returns a boolean if a field has been set.
 func (o *SeasonPassResource) HasSeries() bool {
-	if o != nil && isNil(o.Series) {
+	if o != nil && IsNil(o.Series) {
 		return true
 	}
 
@@ -66,13 +69,13 @@ func (o *SeasonPassResource) HasSeries() bool {
 }
 
 // SetSeries gets a reference to the given []SeasonPassSeriesResource and assigns it to the Series field.
-func (o *SeasonPassResource) SetSeries(v []*SeasonPassSeriesResource) {
+func (o *SeasonPassResource) SetSeries(v []SeasonPassSeriesResource) {
 	o.Series = v
 }
 
 // GetMonitoringOptions returns the MonitoringOptions field value if set, zero value otherwise.
 func (o *SeasonPassResource) GetMonitoringOptions() MonitoringOptions {
-	if o == nil || isNil(o.MonitoringOptions) {
+	if o == nil || IsNil(o.MonitoringOptions) {
 		var ret MonitoringOptions
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *SeasonPassResource) GetMonitoringOptions() MonitoringOptions {
 // GetMonitoringOptionsOk returns a tuple with the MonitoringOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonPassResource) GetMonitoringOptionsOk() (*MonitoringOptions, bool) {
-	if o == nil || isNil(o.MonitoringOptions) {
-    return nil, false
+	if o == nil || IsNil(o.MonitoringOptions) {
+		return nil, false
 	}
 	return o.MonitoringOptions, true
 }
 
 // HasMonitoringOptions returns a boolean if a field has been set.
 func (o *SeasonPassResource) HasMonitoringOptions() bool {
-	if o != nil && !isNil(o.MonitoringOptions) {
+	if o != nil && !IsNil(o.MonitoringOptions) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *SeasonPassResource) SetMonitoringOptions(v MonitoringOptions) {
 }
 
 func (o SeasonPassResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SeasonPassResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Series != nil {
 		toSerialize["series"] = o.Series
 	}
-	if !isNil(o.MonitoringOptions) {
+	if !IsNil(o.MonitoringOptions) {
 		toSerialize["monitoringOptions"] = o.MonitoringOptions
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSeasonPassResource struct {

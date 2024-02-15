@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the QueueStatusResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QueueStatusResource{}
+
 // QueueStatusResource struct for QueueStatusResource
 type QueueStatusResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -45,7 +48,7 @@ func NewQueueStatusResourceWithDefaults() *QueueStatusResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *QueueStatusResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -55,15 +58,15 @@ func (o *QueueStatusResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueStatusResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *QueueStatusResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -77,7 +80,7 @@ func (o *QueueStatusResource) SetId(v int32) {
 
 // GetTotalCount returns the TotalCount field value if set, zero value otherwise.
 func (o *QueueStatusResource) GetTotalCount() int32 {
-	if o == nil || isNil(o.TotalCount) {
+	if o == nil || IsNil(o.TotalCount) {
 		var ret int32
 		return ret
 	}
@@ -87,15 +90,15 @@ func (o *QueueStatusResource) GetTotalCount() int32 {
 // GetTotalCountOk returns a tuple with the TotalCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueStatusResource) GetTotalCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TotalCount) {
-    return nil, false
+	if o == nil || IsNil(o.TotalCount) {
+		return nil, false
 	}
 	return o.TotalCount, true
 }
 
 // HasTotalCount returns a boolean if a field has been set.
 func (o *QueueStatusResource) HasTotalCount() bool {
-	if o != nil && !isNil(o.TotalCount) {
+	if o != nil && !IsNil(o.TotalCount) {
 		return true
 	}
 
@@ -109,7 +112,7 @@ func (o *QueueStatusResource) SetTotalCount(v int32) {
 
 // GetCount returns the Count field value if set, zero value otherwise.
 func (o *QueueStatusResource) GetCount() int32 {
-	if o == nil || isNil(o.Count) {
+	if o == nil || IsNil(o.Count) {
 		var ret int32
 		return ret
 	}
@@ -119,15 +122,15 @@ func (o *QueueStatusResource) GetCount() int32 {
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueStatusResource) GetCountOk() (*int32, bool) {
-	if o == nil || isNil(o.Count) {
-    return nil, false
+	if o == nil || IsNil(o.Count) {
+		return nil, false
 	}
 	return o.Count, true
 }
 
 // HasCount returns a boolean if a field has been set.
 func (o *QueueStatusResource) HasCount() bool {
-	if o != nil && !isNil(o.Count) {
+	if o != nil && !IsNil(o.Count) {
 		return true
 	}
 
@@ -141,7 +144,7 @@ func (o *QueueStatusResource) SetCount(v int32) {
 
 // GetUnknownCount returns the UnknownCount field value if set, zero value otherwise.
 func (o *QueueStatusResource) GetUnknownCount() int32 {
-	if o == nil || isNil(o.UnknownCount) {
+	if o == nil || IsNil(o.UnknownCount) {
 		var ret int32
 		return ret
 	}
@@ -151,15 +154,15 @@ func (o *QueueStatusResource) GetUnknownCount() int32 {
 // GetUnknownCountOk returns a tuple with the UnknownCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueStatusResource) GetUnknownCountOk() (*int32, bool) {
-	if o == nil || isNil(o.UnknownCount) {
-    return nil, false
+	if o == nil || IsNil(o.UnknownCount) {
+		return nil, false
 	}
 	return o.UnknownCount, true
 }
 
 // HasUnknownCount returns a boolean if a field has been set.
 func (o *QueueStatusResource) HasUnknownCount() bool {
-	if o != nil && !isNil(o.UnknownCount) {
+	if o != nil && !IsNil(o.UnknownCount) {
 		return true
 	}
 
@@ -173,7 +176,7 @@ func (o *QueueStatusResource) SetUnknownCount(v int32) {
 
 // GetErrors returns the Errors field value if set, zero value otherwise.
 func (o *QueueStatusResource) GetErrors() bool {
-	if o == nil || isNil(o.Errors) {
+	if o == nil || IsNil(o.Errors) {
 		var ret bool
 		return ret
 	}
@@ -183,15 +186,15 @@ func (o *QueueStatusResource) GetErrors() bool {
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueStatusResource) GetErrorsOk() (*bool, bool) {
-	if o == nil || isNil(o.Errors) {
-    return nil, false
+	if o == nil || IsNil(o.Errors) {
+		return nil, false
 	}
 	return o.Errors, true
 }
 
 // HasErrors returns a boolean if a field has been set.
 func (o *QueueStatusResource) HasErrors() bool {
-	if o != nil && !isNil(o.Errors) {
+	if o != nil && !IsNil(o.Errors) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *QueueStatusResource) SetErrors(v bool) {
 
 // GetWarnings returns the Warnings field value if set, zero value otherwise.
 func (o *QueueStatusResource) GetWarnings() bool {
-	if o == nil || isNil(o.Warnings) {
+	if o == nil || IsNil(o.Warnings) {
 		var ret bool
 		return ret
 	}
@@ -215,15 +218,15 @@ func (o *QueueStatusResource) GetWarnings() bool {
 // GetWarningsOk returns a tuple with the Warnings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueStatusResource) GetWarningsOk() (*bool, bool) {
-	if o == nil || isNil(o.Warnings) {
-    return nil, false
+	if o == nil || IsNil(o.Warnings) {
+		return nil, false
 	}
 	return o.Warnings, true
 }
 
 // HasWarnings returns a boolean if a field has been set.
 func (o *QueueStatusResource) HasWarnings() bool {
-	if o != nil && !isNil(o.Warnings) {
+	if o != nil && !IsNil(o.Warnings) {
 		return true
 	}
 
@@ -237,7 +240,7 @@ func (o *QueueStatusResource) SetWarnings(v bool) {
 
 // GetUnknownErrors returns the UnknownErrors field value if set, zero value otherwise.
 func (o *QueueStatusResource) GetUnknownErrors() bool {
-	if o == nil || isNil(o.UnknownErrors) {
+	if o == nil || IsNil(o.UnknownErrors) {
 		var ret bool
 		return ret
 	}
@@ -247,15 +250,15 @@ func (o *QueueStatusResource) GetUnknownErrors() bool {
 // GetUnknownErrorsOk returns a tuple with the UnknownErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueStatusResource) GetUnknownErrorsOk() (*bool, bool) {
-	if o == nil || isNil(o.UnknownErrors) {
-    return nil, false
+	if o == nil || IsNil(o.UnknownErrors) {
+		return nil, false
 	}
 	return o.UnknownErrors, true
 }
 
 // HasUnknownErrors returns a boolean if a field has been set.
 func (o *QueueStatusResource) HasUnknownErrors() bool {
-	if o != nil && !isNil(o.UnknownErrors) {
+	if o != nil && !IsNil(o.UnknownErrors) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *QueueStatusResource) SetUnknownErrors(v bool) {
 
 // GetUnknownWarnings returns the UnknownWarnings field value if set, zero value otherwise.
 func (o *QueueStatusResource) GetUnknownWarnings() bool {
-	if o == nil || isNil(o.UnknownWarnings) {
+	if o == nil || IsNil(o.UnknownWarnings) {
 		var ret bool
 		return ret
 	}
@@ -279,15 +282,15 @@ func (o *QueueStatusResource) GetUnknownWarnings() bool {
 // GetUnknownWarningsOk returns a tuple with the UnknownWarnings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueStatusResource) GetUnknownWarningsOk() (*bool, bool) {
-	if o == nil || isNil(o.UnknownWarnings) {
-    return nil, false
+	if o == nil || IsNil(o.UnknownWarnings) {
+		return nil, false
 	}
 	return o.UnknownWarnings, true
 }
 
 // HasUnknownWarnings returns a boolean if a field has been set.
 func (o *QueueStatusResource) HasUnknownWarnings() bool {
-	if o != nil && !isNil(o.UnknownWarnings) {
+	if o != nil && !IsNil(o.UnknownWarnings) {
 		return true
 	}
 
@@ -300,32 +303,40 @@ func (o *QueueStatusResource) SetUnknownWarnings(v bool) {
 }
 
 func (o QueueStatusResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.TotalCount) {
-		toSerialize["totalCount"] = o.TotalCount
-	}
-	if !isNil(o.Count) {
-		toSerialize["count"] = o.Count
-	}
-	if !isNil(o.UnknownCount) {
-		toSerialize["unknownCount"] = o.UnknownCount
-	}
-	if !isNil(o.Errors) {
-		toSerialize["errors"] = o.Errors
-	}
-	if !isNil(o.Warnings) {
-		toSerialize["warnings"] = o.Warnings
-	}
-	if !isNil(o.UnknownErrors) {
-		toSerialize["unknownErrors"] = o.UnknownErrors
-	}
-	if !isNil(o.UnknownWarnings) {
-		toSerialize["unknownWarnings"] = o.UnknownWarnings
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o QueueStatusResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.TotalCount) {
+		toSerialize["totalCount"] = o.TotalCount
+	}
+	if !IsNil(o.Count) {
+		toSerialize["count"] = o.Count
+	}
+	if !IsNil(o.UnknownCount) {
+		toSerialize["unknownCount"] = o.UnknownCount
+	}
+	if !IsNil(o.Errors) {
+		toSerialize["errors"] = o.Errors
+	}
+	if !IsNil(o.Warnings) {
+		toSerialize["warnings"] = o.Warnings
+	}
+	if !IsNil(o.UnknownErrors) {
+		toSerialize["unknownErrors"] = o.UnknownErrors
+	}
+	if !IsNil(o.UnknownWarnings) {
+		toSerialize["unknownWarnings"] = o.UnknownWarnings
+	}
+	return toSerialize, nil
 }
 
 type NullableQueueStatusResource struct {

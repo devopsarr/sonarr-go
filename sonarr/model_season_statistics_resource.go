@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the SeasonStatisticsResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SeasonStatisticsResource{}
+
 // SeasonStatisticsResource struct for SeasonStatisticsResource
 type SeasonStatisticsResource struct {
 	NextAiring NullableTime `json:"nextAiring,omitempty"`
@@ -23,7 +26,7 @@ type SeasonStatisticsResource struct {
 	EpisodeCount *int32 `json:"episodeCount,omitempty"`
 	TotalEpisodeCount *int32 `json:"totalEpisodeCount,omitempty"`
 	SizeOnDisk *int64 `json:"sizeOnDisk,omitempty"`
-	ReleaseGroups []*string `json:"releaseGroups,omitempty"`
+	ReleaseGroups []string `json:"releaseGroups,omitempty"`
 	PercentOfEpisodes *float64 `json:"percentOfEpisodes,omitempty"`
 }
 
@@ -46,7 +49,7 @@ func NewSeasonStatisticsResourceWithDefaults() *SeasonStatisticsResource {
 
 // GetNextAiring returns the NextAiring field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeasonStatisticsResource) GetNextAiring() time.Time {
-	if o == nil || isNil(o.NextAiring.Get()) {
+	if o == nil || IsNil(o.NextAiring.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -58,7 +61,7 @@ func (o *SeasonStatisticsResource) GetNextAiring() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeasonStatisticsResource) GetNextAiringOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NextAiring.Get(), o.NextAiring.IsSet()
 }
@@ -88,7 +91,7 @@ func (o *SeasonStatisticsResource) UnsetNextAiring() {
 
 // GetPreviousAiring returns the PreviousAiring field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeasonStatisticsResource) GetPreviousAiring() time.Time {
-	if o == nil || isNil(o.PreviousAiring.Get()) {
+	if o == nil || IsNil(o.PreviousAiring.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *SeasonStatisticsResource) GetPreviousAiring() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeasonStatisticsResource) GetPreviousAiringOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PreviousAiring.Get(), o.PreviousAiring.IsSet()
 }
@@ -130,7 +133,7 @@ func (o *SeasonStatisticsResource) UnsetPreviousAiring() {
 
 // GetEpisodeFileCount returns the EpisodeFileCount field value if set, zero value otherwise.
 func (o *SeasonStatisticsResource) GetEpisodeFileCount() int32 {
-	if o == nil || isNil(o.EpisodeFileCount) {
+	if o == nil || IsNil(o.EpisodeFileCount) {
 		var ret int32
 		return ret
 	}
@@ -140,15 +143,15 @@ func (o *SeasonStatisticsResource) GetEpisodeFileCount() int32 {
 // GetEpisodeFileCountOk returns a tuple with the EpisodeFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonStatisticsResource) GetEpisodeFileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.EpisodeFileCount) {
-    return nil, false
+	if o == nil || IsNil(o.EpisodeFileCount) {
+		return nil, false
 	}
 	return o.EpisodeFileCount, true
 }
 
 // HasEpisodeFileCount returns a boolean if a field has been set.
 func (o *SeasonStatisticsResource) HasEpisodeFileCount() bool {
-	if o != nil && !isNil(o.EpisodeFileCount) {
+	if o != nil && !IsNil(o.EpisodeFileCount) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *SeasonStatisticsResource) SetEpisodeFileCount(v int32) {
 
 // GetEpisodeCount returns the EpisodeCount field value if set, zero value otherwise.
 func (o *SeasonStatisticsResource) GetEpisodeCount() int32 {
-	if o == nil || isNil(o.EpisodeCount) {
+	if o == nil || IsNil(o.EpisodeCount) {
 		var ret int32
 		return ret
 	}
@@ -172,15 +175,15 @@ func (o *SeasonStatisticsResource) GetEpisodeCount() int32 {
 // GetEpisodeCountOk returns a tuple with the EpisodeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonStatisticsResource) GetEpisodeCountOk() (*int32, bool) {
-	if o == nil || isNil(o.EpisodeCount) {
-    return nil, false
+	if o == nil || IsNil(o.EpisodeCount) {
+		return nil, false
 	}
 	return o.EpisodeCount, true
 }
 
 // HasEpisodeCount returns a boolean if a field has been set.
 func (o *SeasonStatisticsResource) HasEpisodeCount() bool {
-	if o != nil && !isNil(o.EpisodeCount) {
+	if o != nil && !IsNil(o.EpisodeCount) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *SeasonStatisticsResource) SetEpisodeCount(v int32) {
 
 // GetTotalEpisodeCount returns the TotalEpisodeCount field value if set, zero value otherwise.
 func (o *SeasonStatisticsResource) GetTotalEpisodeCount() int32 {
-	if o == nil || isNil(o.TotalEpisodeCount) {
+	if o == nil || IsNil(o.TotalEpisodeCount) {
 		var ret int32
 		return ret
 	}
@@ -204,15 +207,15 @@ func (o *SeasonStatisticsResource) GetTotalEpisodeCount() int32 {
 // GetTotalEpisodeCountOk returns a tuple with the TotalEpisodeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonStatisticsResource) GetTotalEpisodeCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TotalEpisodeCount) {
-    return nil, false
+	if o == nil || IsNil(o.TotalEpisodeCount) {
+		return nil, false
 	}
 	return o.TotalEpisodeCount, true
 }
 
 // HasTotalEpisodeCount returns a boolean if a field has been set.
 func (o *SeasonStatisticsResource) HasTotalEpisodeCount() bool {
-	if o != nil && !isNil(o.TotalEpisodeCount) {
+	if o != nil && !IsNil(o.TotalEpisodeCount) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *SeasonStatisticsResource) SetTotalEpisodeCount(v int32) {
 
 // GetSizeOnDisk returns the SizeOnDisk field value if set, zero value otherwise.
 func (o *SeasonStatisticsResource) GetSizeOnDisk() int64 {
-	if o == nil || isNil(o.SizeOnDisk) {
+	if o == nil || IsNil(o.SizeOnDisk) {
 		var ret int64
 		return ret
 	}
@@ -236,15 +239,15 @@ func (o *SeasonStatisticsResource) GetSizeOnDisk() int64 {
 // GetSizeOnDiskOk returns a tuple with the SizeOnDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonStatisticsResource) GetSizeOnDiskOk() (*int64, bool) {
-	if o == nil || isNil(o.SizeOnDisk) {
-    return nil, false
+	if o == nil || IsNil(o.SizeOnDisk) {
+		return nil, false
 	}
 	return o.SizeOnDisk, true
 }
 
 // HasSizeOnDisk returns a boolean if a field has been set.
 func (o *SeasonStatisticsResource) HasSizeOnDisk() bool {
-	if o != nil && !isNil(o.SizeOnDisk) {
+	if o != nil && !IsNil(o.SizeOnDisk) {
 		return true
 	}
 
@@ -257,9 +260,9 @@ func (o *SeasonStatisticsResource) SetSizeOnDisk(v int64) {
 }
 
 // GetReleaseGroups returns the ReleaseGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeasonStatisticsResource) GetReleaseGroups() []*string {
+func (o *SeasonStatisticsResource) GetReleaseGroups() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.ReleaseGroups
@@ -268,16 +271,16 @@ func (o *SeasonStatisticsResource) GetReleaseGroups() []*string {
 // GetReleaseGroupsOk returns a tuple with the ReleaseGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeasonStatisticsResource) GetReleaseGroupsOk() ([]*string, bool) {
-	if o == nil || isNil(o.ReleaseGroups) {
-    return nil, false
+func (o *SeasonStatisticsResource) GetReleaseGroupsOk() ([]string, bool) {
+	if o == nil || IsNil(o.ReleaseGroups) {
+		return nil, false
 	}
 	return o.ReleaseGroups, true
 }
 
 // HasReleaseGroups returns a boolean if a field has been set.
 func (o *SeasonStatisticsResource) HasReleaseGroups() bool {
-	if o != nil && isNil(o.ReleaseGroups) {
+	if o != nil && IsNil(o.ReleaseGroups) {
 		return true
 	}
 
@@ -285,13 +288,13 @@ func (o *SeasonStatisticsResource) HasReleaseGroups() bool {
 }
 
 // SetReleaseGroups gets a reference to the given []string and assigns it to the ReleaseGroups field.
-func (o *SeasonStatisticsResource) SetReleaseGroups(v []*string) {
+func (o *SeasonStatisticsResource) SetReleaseGroups(v []string) {
 	o.ReleaseGroups = v
 }
 
 // GetPercentOfEpisodes returns the PercentOfEpisodes field value if set, zero value otherwise.
 func (o *SeasonStatisticsResource) GetPercentOfEpisodes() float64 {
-	if o == nil || isNil(o.PercentOfEpisodes) {
+	if o == nil || IsNil(o.PercentOfEpisodes) {
 		var ret float64
 		return ret
 	}
@@ -301,15 +304,15 @@ func (o *SeasonStatisticsResource) GetPercentOfEpisodes() float64 {
 // GetPercentOfEpisodesOk returns a tuple with the PercentOfEpisodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeasonStatisticsResource) GetPercentOfEpisodesOk() (*float64, bool) {
-	if o == nil || isNil(o.PercentOfEpisodes) {
-    return nil, false
+	if o == nil || IsNil(o.PercentOfEpisodes) {
+		return nil, false
 	}
 	return o.PercentOfEpisodes, true
 }
 
 // HasPercentOfEpisodes returns a boolean if a field has been set.
 func (o *SeasonStatisticsResource) HasPercentOfEpisodes() bool {
-	if o != nil && !isNil(o.PercentOfEpisodes) {
+	if o != nil && !IsNil(o.PercentOfEpisodes) {
 		return true
 	}
 
@@ -322,6 +325,14 @@ func (o *SeasonStatisticsResource) SetPercentOfEpisodes(v float64) {
 }
 
 func (o SeasonStatisticsResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SeasonStatisticsResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.NextAiring.IsSet() {
 		toSerialize["nextAiring"] = o.NextAiring.Get()
@@ -329,25 +340,25 @@ func (o SeasonStatisticsResource) MarshalJSON() ([]byte, error) {
 	if o.PreviousAiring.IsSet() {
 		toSerialize["previousAiring"] = o.PreviousAiring.Get()
 	}
-	if !isNil(o.EpisodeFileCount) {
+	if !IsNil(o.EpisodeFileCount) {
 		toSerialize["episodeFileCount"] = o.EpisodeFileCount
 	}
-	if !isNil(o.EpisodeCount) {
+	if !IsNil(o.EpisodeCount) {
 		toSerialize["episodeCount"] = o.EpisodeCount
 	}
-	if !isNil(o.TotalEpisodeCount) {
+	if !IsNil(o.TotalEpisodeCount) {
 		toSerialize["totalEpisodeCount"] = o.TotalEpisodeCount
 	}
-	if !isNil(o.SizeOnDisk) {
+	if !IsNil(o.SizeOnDisk) {
 		toSerialize["sizeOnDisk"] = o.SizeOnDisk
 	}
 	if o.ReleaseGroups != nil {
 		toSerialize["releaseGroups"] = o.ReleaseGroups
 	}
-	if !isNil(o.PercentOfEpisodes) {
+	if !IsNil(o.PercentOfEpisodes) {
 		toSerialize["percentOfEpisodes"] = o.PercentOfEpisodes
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSeasonStatisticsResource struct {

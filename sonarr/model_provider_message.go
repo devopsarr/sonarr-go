@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ProviderMessage type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProviderMessage{}
+
 // ProviderMessage struct for ProviderMessage
 type ProviderMessage struct {
 	Message NullableString `json:"message,omitempty"`
@@ -39,7 +42,7 @@ func NewProviderMessageWithDefaults() *ProviderMessage {
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProviderMessage) GetMessage() string {
-	if o == nil || isNil(o.Message.Get()) {
+	if o == nil || IsNil(o.Message.Get()) {
 		var ret string
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *ProviderMessage) GetMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ProviderMessage) GetMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Message.Get(), o.Message.IsSet()
 }
@@ -81,7 +84,7 @@ func (o *ProviderMessage) UnsetMessage() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ProviderMessage) GetType() ProviderMessageType {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret ProviderMessageType
 		return ret
 	}
@@ -91,15 +94,15 @@ func (o *ProviderMessage) GetType() ProviderMessageType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProviderMessage) GetTypeOk() (*ProviderMessageType, bool) {
-	if o == nil || isNil(o.Type) {
-    return nil, false
+	if o == nil || IsNil(o.Type) {
+		return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *ProviderMessage) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -112,14 +115,22 @@ func (o *ProviderMessage) SetType(v ProviderMessageType) {
 }
 
 func (o ProviderMessage) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ProviderMessage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Message.IsSet() {
 		toSerialize["message"] = o.Message.Get()
 	}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableProviderMessage struct {

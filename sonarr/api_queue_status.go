@@ -21,6 +21,7 @@ import (
 
 // QueueStatusAPIService QueueStatusAPI service
 type QueueStatusAPIService service
+
 type ApiGetQueueStatusRequest struct {
 	ctx context.Context
 	ApiService *QueueStatusAPIService
