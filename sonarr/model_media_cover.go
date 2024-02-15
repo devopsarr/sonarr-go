@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MediaCover type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MediaCover{}
+
 // MediaCover struct for MediaCover
 type MediaCover struct {
 	CoverType *MediaCoverTypes `json:"coverType,omitempty"`
@@ -40,7 +43,7 @@ func NewMediaCoverWithDefaults() *MediaCover {
 
 // GetCoverType returns the CoverType field value if set, zero value otherwise.
 func (o *MediaCover) GetCoverType() MediaCoverTypes {
-	if o == nil || isNil(o.CoverType) {
+	if o == nil || IsNil(o.CoverType) {
 		var ret MediaCoverTypes
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *MediaCover) GetCoverType() MediaCoverTypes {
 // GetCoverTypeOk returns a tuple with the CoverType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaCover) GetCoverTypeOk() (*MediaCoverTypes, bool) {
-	if o == nil || isNil(o.CoverType) {
-    return nil, false
+	if o == nil || IsNil(o.CoverType) {
+		return nil, false
 	}
 	return o.CoverType, true
 }
 
 // HasCoverType returns a boolean if a field has been set.
 func (o *MediaCover) HasCoverType() bool {
-	if o != nil && !isNil(o.CoverType) {
+	if o != nil && !IsNil(o.CoverType) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *MediaCover) SetCoverType(v MediaCoverTypes) {
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaCover) GetUrl() string {
-	if o == nil || isNil(o.Url.Get()) {
+	if o == nil || IsNil(o.Url.Get()) {
 		var ret string
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *MediaCover) GetUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaCover) GetUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Url.Get(), o.Url.IsSet()
 }
@@ -114,7 +117,7 @@ func (o *MediaCover) UnsetUrl() {
 
 // GetRemoteUrl returns the RemoteUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaCover) GetRemoteUrl() string {
-	if o == nil || isNil(o.RemoteUrl.Get()) {
+	if o == nil || IsNil(o.RemoteUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -126,7 +129,7 @@ func (o *MediaCover) GetRemoteUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaCover) GetRemoteUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RemoteUrl.Get(), o.RemoteUrl.IsSet()
 }
@@ -155,8 +158,16 @@ func (o *MediaCover) UnsetRemoteUrl() {
 }
 
 func (o MediaCover) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MediaCover) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.CoverType) {
+	if !IsNil(o.CoverType) {
 		toSerialize["coverType"] = o.CoverType
 	}
 	if o.Url.IsSet() {
@@ -165,7 +176,7 @@ func (o MediaCover) MarshalJSON() ([]byte, error) {
 	if o.RemoteUrl.IsSet() {
 		toSerialize["remoteUrl"] = o.RemoteUrl.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMediaCover struct {

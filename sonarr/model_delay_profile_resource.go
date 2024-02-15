@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DelayProfileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DelayProfileResource{}
+
 // DelayProfileResource struct for DelayProfileResource
 type DelayProfileResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -26,7 +29,7 @@ type DelayProfileResource struct {
 	BypassIfAboveCustomFormatScore *bool `json:"bypassIfAboveCustomFormatScore,omitempty"`
 	MinimumCustomFormatScore *int32 `json:"minimumCustomFormatScore,omitempty"`
 	Order *int32 `json:"order,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 }
 
 // NewDelayProfileResource instantiates a new DelayProfileResource object
@@ -48,7 +51,7 @@ func NewDelayProfileResourceWithDefaults() *DelayProfileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -58,15 +61,15 @@ func (o *DelayProfileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -80,7 +83,7 @@ func (o *DelayProfileResource) SetId(v int32) {
 
 // GetEnableUsenet returns the EnableUsenet field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetEnableUsenet() bool {
-	if o == nil || isNil(o.EnableUsenet) {
+	if o == nil || IsNil(o.EnableUsenet) {
 		var ret bool
 		return ret
 	}
@@ -90,15 +93,15 @@ func (o *DelayProfileResource) GetEnableUsenet() bool {
 // GetEnableUsenetOk returns a tuple with the EnableUsenet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetEnableUsenetOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableUsenet) {
-    return nil, false
+	if o == nil || IsNil(o.EnableUsenet) {
+		return nil, false
 	}
 	return o.EnableUsenet, true
 }
 
 // HasEnableUsenet returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasEnableUsenet() bool {
-	if o != nil && !isNil(o.EnableUsenet) {
+	if o != nil && !IsNil(o.EnableUsenet) {
 		return true
 	}
 
@@ -112,7 +115,7 @@ func (o *DelayProfileResource) SetEnableUsenet(v bool) {
 
 // GetEnableTorrent returns the EnableTorrent field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetEnableTorrent() bool {
-	if o == nil || isNil(o.EnableTorrent) {
+	if o == nil || IsNil(o.EnableTorrent) {
 		var ret bool
 		return ret
 	}
@@ -122,15 +125,15 @@ func (o *DelayProfileResource) GetEnableTorrent() bool {
 // GetEnableTorrentOk returns a tuple with the EnableTorrent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetEnableTorrentOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableTorrent) {
-    return nil, false
+	if o == nil || IsNil(o.EnableTorrent) {
+		return nil, false
 	}
 	return o.EnableTorrent, true
 }
 
 // HasEnableTorrent returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasEnableTorrent() bool {
-	if o != nil && !isNil(o.EnableTorrent) {
+	if o != nil && !IsNil(o.EnableTorrent) {
 		return true
 	}
 
@@ -144,7 +147,7 @@ func (o *DelayProfileResource) SetEnableTorrent(v bool) {
 
 // GetPreferredProtocol returns the PreferredProtocol field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetPreferredProtocol() DownloadProtocol {
-	if o == nil || isNil(o.PreferredProtocol) {
+	if o == nil || IsNil(o.PreferredProtocol) {
 		var ret DownloadProtocol
 		return ret
 	}
@@ -154,15 +157,15 @@ func (o *DelayProfileResource) GetPreferredProtocol() DownloadProtocol {
 // GetPreferredProtocolOk returns a tuple with the PreferredProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetPreferredProtocolOk() (*DownloadProtocol, bool) {
-	if o == nil || isNil(o.PreferredProtocol) {
-    return nil, false
+	if o == nil || IsNil(o.PreferredProtocol) {
+		return nil, false
 	}
 	return o.PreferredProtocol, true
 }
 
 // HasPreferredProtocol returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasPreferredProtocol() bool {
-	if o != nil && !isNil(o.PreferredProtocol) {
+	if o != nil && !IsNil(o.PreferredProtocol) {
 		return true
 	}
 
@@ -176,7 +179,7 @@ func (o *DelayProfileResource) SetPreferredProtocol(v DownloadProtocol) {
 
 // GetUsenetDelay returns the UsenetDelay field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetUsenetDelay() int32 {
-	if o == nil || isNil(o.UsenetDelay) {
+	if o == nil || IsNil(o.UsenetDelay) {
 		var ret int32
 		return ret
 	}
@@ -186,15 +189,15 @@ func (o *DelayProfileResource) GetUsenetDelay() int32 {
 // GetUsenetDelayOk returns a tuple with the UsenetDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetUsenetDelayOk() (*int32, bool) {
-	if o == nil || isNil(o.UsenetDelay) {
-    return nil, false
+	if o == nil || IsNil(o.UsenetDelay) {
+		return nil, false
 	}
 	return o.UsenetDelay, true
 }
 
 // HasUsenetDelay returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasUsenetDelay() bool {
-	if o != nil && !isNil(o.UsenetDelay) {
+	if o != nil && !IsNil(o.UsenetDelay) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *DelayProfileResource) SetUsenetDelay(v int32) {
 
 // GetTorrentDelay returns the TorrentDelay field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetTorrentDelay() int32 {
-	if o == nil || isNil(o.TorrentDelay) {
+	if o == nil || IsNil(o.TorrentDelay) {
 		var ret int32
 		return ret
 	}
@@ -218,15 +221,15 @@ func (o *DelayProfileResource) GetTorrentDelay() int32 {
 // GetTorrentDelayOk returns a tuple with the TorrentDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetTorrentDelayOk() (*int32, bool) {
-	if o == nil || isNil(o.TorrentDelay) {
-    return nil, false
+	if o == nil || IsNil(o.TorrentDelay) {
+		return nil, false
 	}
 	return o.TorrentDelay, true
 }
 
 // HasTorrentDelay returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasTorrentDelay() bool {
-	if o != nil && !isNil(o.TorrentDelay) {
+	if o != nil && !IsNil(o.TorrentDelay) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *DelayProfileResource) SetTorrentDelay(v int32) {
 
 // GetBypassIfHighestQuality returns the BypassIfHighestQuality field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetBypassIfHighestQuality() bool {
-	if o == nil || isNil(o.BypassIfHighestQuality) {
+	if o == nil || IsNil(o.BypassIfHighestQuality) {
 		var ret bool
 		return ret
 	}
@@ -250,15 +253,15 @@ func (o *DelayProfileResource) GetBypassIfHighestQuality() bool {
 // GetBypassIfHighestQualityOk returns a tuple with the BypassIfHighestQuality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetBypassIfHighestQualityOk() (*bool, bool) {
-	if o == nil || isNil(o.BypassIfHighestQuality) {
-    return nil, false
+	if o == nil || IsNil(o.BypassIfHighestQuality) {
+		return nil, false
 	}
 	return o.BypassIfHighestQuality, true
 }
 
 // HasBypassIfHighestQuality returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasBypassIfHighestQuality() bool {
-	if o != nil && !isNil(o.BypassIfHighestQuality) {
+	if o != nil && !IsNil(o.BypassIfHighestQuality) {
 		return true
 	}
 
@@ -272,7 +275,7 @@ func (o *DelayProfileResource) SetBypassIfHighestQuality(v bool) {
 
 // GetBypassIfAboveCustomFormatScore returns the BypassIfAboveCustomFormatScore field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetBypassIfAboveCustomFormatScore() bool {
-	if o == nil || isNil(o.BypassIfAboveCustomFormatScore) {
+	if o == nil || IsNil(o.BypassIfAboveCustomFormatScore) {
 		var ret bool
 		return ret
 	}
@@ -282,15 +285,15 @@ func (o *DelayProfileResource) GetBypassIfAboveCustomFormatScore() bool {
 // GetBypassIfAboveCustomFormatScoreOk returns a tuple with the BypassIfAboveCustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetBypassIfAboveCustomFormatScoreOk() (*bool, bool) {
-	if o == nil || isNil(o.BypassIfAboveCustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.BypassIfAboveCustomFormatScore) {
+		return nil, false
 	}
 	return o.BypassIfAboveCustomFormatScore, true
 }
 
 // HasBypassIfAboveCustomFormatScore returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasBypassIfAboveCustomFormatScore() bool {
-	if o != nil && !isNil(o.BypassIfAboveCustomFormatScore) {
+	if o != nil && !IsNil(o.BypassIfAboveCustomFormatScore) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *DelayProfileResource) SetBypassIfAboveCustomFormatScore(v bool) {
 
 // GetMinimumCustomFormatScore returns the MinimumCustomFormatScore field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetMinimumCustomFormatScore() int32 {
-	if o == nil || isNil(o.MinimumCustomFormatScore) {
+	if o == nil || IsNil(o.MinimumCustomFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -314,15 +317,15 @@ func (o *DelayProfileResource) GetMinimumCustomFormatScore() int32 {
 // GetMinimumCustomFormatScoreOk returns a tuple with the MinimumCustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetMinimumCustomFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumCustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumCustomFormatScore) {
+		return nil, false
 	}
 	return o.MinimumCustomFormatScore, true
 }
 
 // HasMinimumCustomFormatScore returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasMinimumCustomFormatScore() bool {
-	if o != nil && !isNil(o.MinimumCustomFormatScore) {
+	if o != nil && !IsNil(o.MinimumCustomFormatScore) {
 		return true
 	}
 
@@ -336,7 +339,7 @@ func (o *DelayProfileResource) SetMinimumCustomFormatScore(v int32) {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *DelayProfileResource) GetOrder() int32 {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret int32
 		return ret
 	}
@@ -346,15 +349,15 @@ func (o *DelayProfileResource) GetOrder() int32 {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayProfileResource) GetOrderOk() (*int32, bool) {
-	if o == nil || isNil(o.Order) {
-    return nil, false
+	if o == nil || IsNil(o.Order) {
+		return nil, false
 	}
 	return o.Order, true
 }
 
 // HasOrder returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -367,9 +370,9 @@ func (o *DelayProfileResource) SetOrder(v int32) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DelayProfileResource) GetTags() []*int32 {
+func (o *DelayProfileResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -378,16 +381,16 @@ func (o *DelayProfileResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DelayProfileResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *DelayProfileResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *DelayProfileResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -395,46 +398,54 @@ func (o *DelayProfileResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *DelayProfileResource) SetTags(v []*int32) {
+func (o *DelayProfileResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 func (o DelayProfileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o DelayProfileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.EnableUsenet) {
+	if !IsNil(o.EnableUsenet) {
 		toSerialize["enableUsenet"] = o.EnableUsenet
 	}
-	if !isNil(o.EnableTorrent) {
+	if !IsNil(o.EnableTorrent) {
 		toSerialize["enableTorrent"] = o.EnableTorrent
 	}
-	if !isNil(o.PreferredProtocol) {
+	if !IsNil(o.PreferredProtocol) {
 		toSerialize["preferredProtocol"] = o.PreferredProtocol
 	}
-	if !isNil(o.UsenetDelay) {
+	if !IsNil(o.UsenetDelay) {
 		toSerialize["usenetDelay"] = o.UsenetDelay
 	}
-	if !isNil(o.TorrentDelay) {
+	if !IsNil(o.TorrentDelay) {
 		toSerialize["torrentDelay"] = o.TorrentDelay
 	}
-	if !isNil(o.BypassIfHighestQuality) {
+	if !IsNil(o.BypassIfHighestQuality) {
 		toSerialize["bypassIfHighestQuality"] = o.BypassIfHighestQuality
 	}
-	if !isNil(o.BypassIfAboveCustomFormatScore) {
+	if !IsNil(o.BypassIfAboveCustomFormatScore) {
 		toSerialize["bypassIfAboveCustomFormatScore"] = o.BypassIfAboveCustomFormatScore
 	}
-	if !isNil(o.MinimumCustomFormatScore) {
+	if !IsNil(o.MinimumCustomFormatScore) {
 		toSerialize["minimumCustomFormatScore"] = o.MinimumCustomFormatScore
 	}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableDelayProfileResource struct {

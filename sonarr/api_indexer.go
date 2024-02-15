@@ -22,6 +22,7 @@ import (
 
 // IndexerAPIService IndexerAPI service
 type IndexerAPIService service
+
 type ApiCreateIndexerRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -78,7 +79,10 @@ func (a *IndexerAPIService) CreateIndexerExecute(r ApiCreateIndexerRequest) (*In
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,6 +167,7 @@ func (a *IndexerAPIService) CreateIndexerExecute(r ApiCreateIndexerRequest) (*In
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiCreateIndexerActionByNameRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -208,7 +213,7 @@ func (a *IndexerAPIService) CreateIndexerActionByNameExecute(r ApiCreateIndexerA
 	}
 
 	localVarPath := localBasePath + "/api/v3/indexer/action/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,6 +293,7 @@ func (a *IndexerAPIService) CreateIndexerActionByNameExecute(r ApiCreateIndexerA
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteIndexerRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -327,7 +333,7 @@ func (a *IndexerAPIService) DeleteIndexerExecute(r ApiDeleteIndexerRequest) (*ht
 	}
 
 	localVarPath := localBasePath + "/api/v3/indexer/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -405,6 +411,7 @@ func (a *IndexerAPIService) DeleteIndexerExecute(r ApiDeleteIndexerRequest) (*ht
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteIndexerBulkRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -526,6 +533,7 @@ func (a *IndexerAPIService) DeleteIndexerBulkExecute(r ApiDeleteIndexerBulkReque
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetIndexerByIdRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -567,7 +575,7 @@ func (a *IndexerAPIService) GetIndexerByIdExecute(r ApiGetIndexerByIdRequest) (*
 	}
 
 	localVarPath := localBasePath + "/api/v3/indexer/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -654,12 +662,13 @@ func (a *IndexerAPIService) GetIndexerByIdExecute(r ApiGetIndexerByIdRequest) (*
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListIndexerRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
 }
 
-func (r ApiListIndexerRequest) Execute() ([]*IndexerResource, *http.Response, error) {
+func (r ApiListIndexerRequest) Execute() ([]IndexerResource, *http.Response, error) {
 	return r.ApiService.ListIndexerExecute(r)
 }
 
@@ -678,12 +687,12 @@ func (a *IndexerAPIService) ListIndexer(ctx context.Context) ApiListIndexerReque
 
 // Execute executes the request
 //  @return []IndexerResource
-func (a *IndexerAPIService) ListIndexerExecute(r ApiListIndexerRequest) ([]*IndexerResource, *http.Response, error) {
+func (a *IndexerAPIService) ListIndexerExecute(r ApiListIndexerRequest) ([]IndexerResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*IndexerResource
+		localVarReturnValue  []IndexerResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerAPIService.ListIndexer")
@@ -778,12 +787,13 @@ func (a *IndexerAPIService) ListIndexerExecute(r ApiListIndexerRequest) ([]*Inde
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListIndexerSchemaRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
 }
 
-func (r ApiListIndexerSchemaRequest) Execute() ([]*IndexerResource, *http.Response, error) {
+func (r ApiListIndexerSchemaRequest) Execute() ([]IndexerResource, *http.Response, error) {
 	return r.ApiService.ListIndexerSchemaExecute(r)
 }
 
@@ -802,12 +812,12 @@ func (a *IndexerAPIService) ListIndexerSchema(ctx context.Context) ApiListIndexe
 
 // Execute executes the request
 //  @return []IndexerResource
-func (a *IndexerAPIService) ListIndexerSchemaExecute(r ApiListIndexerSchemaRequest) ([]*IndexerResource, *http.Response, error) {
+func (a *IndexerAPIService) ListIndexerSchemaExecute(r ApiListIndexerSchemaRequest) ([]IndexerResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*IndexerResource
+		localVarReturnValue  []IndexerResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerAPIService.ListIndexerSchema")
@@ -902,6 +912,7 @@ func (a *IndexerAPIService) ListIndexerSchemaExecute(r ApiListIndexerSchemaReque
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutIndexerBulkRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -1034,6 +1045,7 @@ func (a *IndexerAPIService) PutIndexerBulkExecute(r ApiPutIndexerBulkRequest) (*
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiTestIndexerRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -1155,6 +1167,7 @@ func (a *IndexerAPIService) TestIndexerExecute(r ApiTestIndexerRequest) (*http.R
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiTestallIndexerRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -1268,6 +1281,7 @@ func (a *IndexerAPIService) TestallIndexerExecute(r ApiTestallIndexerRequest) (*
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateIndexerRequest struct {
 	ctx context.Context
 	ApiService *IndexerAPIService
@@ -1321,14 +1335,17 @@ func (a *IndexerAPIService) UpdateIndexerExecute(r ApiUpdateIndexerRequest) (*In
 	}
 
 	localVarPath := localBasePath + "/api/v3/indexer/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

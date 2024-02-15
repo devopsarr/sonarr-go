@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the EpisodesMonitoredResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EpisodesMonitoredResource{}
+
 // EpisodesMonitoredResource struct for EpisodesMonitoredResource
 type EpisodesMonitoredResource struct {
-	EpisodeIds []*int32 `json:"episodeIds,omitempty"`
+	EpisodeIds []int32 `json:"episodeIds,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 }
 
@@ -38,9 +41,9 @@ func NewEpisodesMonitoredResourceWithDefaults() *EpisodesMonitoredResource {
 }
 
 // GetEpisodeIds returns the EpisodeIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodesMonitoredResource) GetEpisodeIds() []*int32 {
+func (o *EpisodesMonitoredResource) GetEpisodeIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.EpisodeIds
@@ -49,16 +52,16 @@ func (o *EpisodesMonitoredResource) GetEpisodeIds() []*int32 {
 // GetEpisodeIdsOk returns a tuple with the EpisodeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodesMonitoredResource) GetEpisodeIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.EpisodeIds) {
-    return nil, false
+func (o *EpisodesMonitoredResource) GetEpisodeIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.EpisodeIds) {
+		return nil, false
 	}
 	return o.EpisodeIds, true
 }
 
 // HasEpisodeIds returns a boolean if a field has been set.
 func (o *EpisodesMonitoredResource) HasEpisodeIds() bool {
-	if o != nil && isNil(o.EpisodeIds) {
+	if o != nil && IsNil(o.EpisodeIds) {
 		return true
 	}
 
@@ -66,13 +69,13 @@ func (o *EpisodesMonitoredResource) HasEpisodeIds() bool {
 }
 
 // SetEpisodeIds gets a reference to the given []int32 and assigns it to the EpisodeIds field.
-func (o *EpisodesMonitoredResource) SetEpisodeIds(v []*int32) {
+func (o *EpisodesMonitoredResource) SetEpisodeIds(v []int32) {
 	o.EpisodeIds = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *EpisodesMonitoredResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *EpisodesMonitoredResource) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodesMonitoredResource) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *EpisodesMonitoredResource) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *EpisodesMonitoredResource) SetMonitored(v bool) {
 }
 
 func (o EpisodesMonitoredResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o EpisodesMonitoredResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.EpisodeIds != nil {
 		toSerialize["episodeIds"] = o.EpisodeIds
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableEpisodesMonitoredResource struct {

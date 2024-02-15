@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LanguageProfileItemResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LanguageProfileItemResource{}
+
 // LanguageProfileItemResource struct for LanguageProfileItemResource
 type LanguageProfileItemResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -40,7 +43,7 @@ func NewLanguageProfileItemResourceWithDefaults() *LanguageProfileItemResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *LanguageProfileItemResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *LanguageProfileItemResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LanguageProfileItemResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *LanguageProfileItemResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *LanguageProfileItemResource) SetId(v int32) {
 
 // GetLanguage returns the Language field value if set, zero value otherwise.
 func (o *LanguageProfileItemResource) GetLanguage() Language {
-	if o == nil || isNil(o.Language) {
+	if o == nil || IsNil(o.Language) {
 		var ret Language
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *LanguageProfileItemResource) GetLanguage() Language {
 // GetLanguageOk returns a tuple with the Language field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LanguageProfileItemResource) GetLanguageOk() (*Language, bool) {
-	if o == nil || isNil(o.Language) {
-    return nil, false
+	if o == nil || IsNil(o.Language) {
+		return nil, false
 	}
 	return o.Language, true
 }
 
 // HasLanguage returns a boolean if a field has been set.
 func (o *LanguageProfileItemResource) HasLanguage() bool {
-	if o != nil && !isNil(o.Language) {
+	if o != nil && !IsNil(o.Language) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *LanguageProfileItemResource) SetLanguage(v Language) {
 
 // GetAllowed returns the Allowed field value if set, zero value otherwise.
 func (o *LanguageProfileItemResource) GetAllowed() bool {
-	if o == nil || isNil(o.Allowed) {
+	if o == nil || IsNil(o.Allowed) {
 		var ret bool
 		return ret
 	}
@@ -114,15 +117,15 @@ func (o *LanguageProfileItemResource) GetAllowed() bool {
 // GetAllowedOk returns a tuple with the Allowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LanguageProfileItemResource) GetAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.Allowed) {
-    return nil, false
+	if o == nil || IsNil(o.Allowed) {
+		return nil, false
 	}
 	return o.Allowed, true
 }
 
 // HasAllowed returns a boolean if a field has been set.
 func (o *LanguageProfileItemResource) HasAllowed() bool {
-	if o != nil && !isNil(o.Allowed) {
+	if o != nil && !IsNil(o.Allowed) {
 		return true
 	}
 
@@ -135,17 +138,25 @@ func (o *LanguageProfileItemResource) SetAllowed(v bool) {
 }
 
 func (o LanguageProfileItemResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Language) {
-		toSerialize["language"] = o.Language
-	}
-	if !isNil(o.Allowed) {
-		toSerialize["allowed"] = o.Allowed
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LanguageProfileItemResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.Language) {
+		toSerialize["language"] = o.Language
+	}
+	if !IsNil(o.Allowed) {
+		toSerialize["allowed"] = o.Allowed
+	}
+	return toSerialize, nil
 }
 
 type NullableLanguageProfileItemResource struct {

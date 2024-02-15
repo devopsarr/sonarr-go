@@ -14,15 +14,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReleaseProfileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReleaseProfileResource{}
+
 // ReleaseProfileResource struct for ReleaseProfileResource
 type ReleaseProfileResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
-	Required []*string `json:"required,omitempty"`
-	Ignored []*string `json:"ignored,omitempty"`
+	Required []string `json:"required,omitempty"`
+	Ignored []string `json:"ignored,omitempty"`
 	IndexerId *int32 `json:"indexerId,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 }
 
 // NewReleaseProfileResource instantiates a new ReleaseProfileResource object
@@ -44,7 +47,7 @@ func NewReleaseProfileResourceWithDefaults() *ReleaseProfileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ReleaseProfileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *ReleaseProfileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseProfileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *ReleaseProfileResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ReleaseProfileResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *ReleaseProfileResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ReleaseProfileResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -118,7 +121,7 @@ func (o *ReleaseProfileResource) UnsetName() {
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *ReleaseProfileResource) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -128,15 +131,15 @@ func (o *ReleaseProfileResource) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseProfileResource) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
-    return nil, false
+	if o == nil || IsNil(o.Enabled) {
+		return nil, false
 	}
 	return o.Enabled, true
 }
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -149,9 +152,9 @@ func (o *ReleaseProfileResource) SetEnabled(v bool) {
 }
 
 // GetRequired returns the Required field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseProfileResource) GetRequired() []*string {
+func (o *ReleaseProfileResource) GetRequired() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Required
@@ -160,16 +163,16 @@ func (o *ReleaseProfileResource) GetRequired() []*string {
 // GetRequiredOk returns a tuple with the Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseProfileResource) GetRequiredOk() ([]*string, bool) {
-	if o == nil || isNil(o.Required) {
-    return nil, false
+func (o *ReleaseProfileResource) GetRequiredOk() ([]string, bool) {
+	if o == nil || IsNil(o.Required) {
+		return nil, false
 	}
 	return o.Required, true
 }
 
 // HasRequired returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasRequired() bool {
-	if o != nil && isNil(o.Required) {
+	if o != nil && IsNil(o.Required) {
 		return true
 	}
 
@@ -177,14 +180,14 @@ func (o *ReleaseProfileResource) HasRequired() bool {
 }
 
 // SetRequired gets a reference to the given []string and assigns it to the Required field.
-func (o *ReleaseProfileResource) SetRequired(v []*string) {
+func (o *ReleaseProfileResource) SetRequired(v []string) {
 	o.Required = v
 }
 
 // GetIgnored returns the Ignored field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseProfileResource) GetIgnored() []*string {
+func (o *ReleaseProfileResource) GetIgnored() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Ignored
@@ -193,16 +196,16 @@ func (o *ReleaseProfileResource) GetIgnored() []*string {
 // GetIgnoredOk returns a tuple with the Ignored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseProfileResource) GetIgnoredOk() ([]*string, bool) {
-	if o == nil || isNil(o.Ignored) {
-    return nil, false
+func (o *ReleaseProfileResource) GetIgnoredOk() ([]string, bool) {
+	if o == nil || IsNil(o.Ignored) {
+		return nil, false
 	}
 	return o.Ignored, true
 }
 
 // HasIgnored returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasIgnored() bool {
-	if o != nil && isNil(o.Ignored) {
+	if o != nil && IsNil(o.Ignored) {
 		return true
 	}
 
@@ -210,13 +213,13 @@ func (o *ReleaseProfileResource) HasIgnored() bool {
 }
 
 // SetIgnored gets a reference to the given []string and assigns it to the Ignored field.
-func (o *ReleaseProfileResource) SetIgnored(v []*string) {
+func (o *ReleaseProfileResource) SetIgnored(v []string) {
 	o.Ignored = v
 }
 
 // GetIndexerId returns the IndexerId field value if set, zero value otherwise.
 func (o *ReleaseProfileResource) GetIndexerId() int32 {
-	if o == nil || isNil(o.IndexerId) {
+	if o == nil || IsNil(o.IndexerId) {
 		var ret int32
 		return ret
 	}
@@ -226,15 +229,15 @@ func (o *ReleaseProfileResource) GetIndexerId() int32 {
 // GetIndexerIdOk returns a tuple with the IndexerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseProfileResource) GetIndexerIdOk() (*int32, bool) {
-	if o == nil || isNil(o.IndexerId) {
-    return nil, false
+	if o == nil || IsNil(o.IndexerId) {
+		return nil, false
 	}
 	return o.IndexerId, true
 }
 
 // HasIndexerId returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasIndexerId() bool {
-	if o != nil && !isNil(o.IndexerId) {
+	if o != nil && !IsNil(o.IndexerId) {
 		return true
 	}
 
@@ -247,9 +250,9 @@ func (o *ReleaseProfileResource) SetIndexerId(v int32) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ReleaseProfileResource) GetTags() []*int32 {
+func (o *ReleaseProfileResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -258,16 +261,16 @@ func (o *ReleaseProfileResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ReleaseProfileResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *ReleaseProfileResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -275,19 +278,27 @@ func (o *ReleaseProfileResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *ReleaseProfileResource) SetTags(v []*int32) {
+func (o *ReleaseProfileResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 func (o ReleaseProfileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ReleaseProfileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.Enabled) {
+	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	if o.Required != nil {
@@ -296,13 +307,13 @@ func (o ReleaseProfileResource) MarshalJSON() ([]byte, error) {
 	if o.Ignored != nil {
 		toSerialize["ignored"] = o.Ignored
 	}
-	if !isNil(o.IndexerId) {
+	if !IsNil(o.IndexerId) {
 		toSerialize["indexerId"] = o.IndexerId
 	}
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableReleaseProfileResource struct {

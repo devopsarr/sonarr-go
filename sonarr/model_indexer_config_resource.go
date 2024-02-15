@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndexerConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerConfigResource{}
+
 // IndexerConfigResource struct for IndexerConfigResource
 type IndexerConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -42,7 +45,7 @@ func NewIndexerConfigResourceWithDefaults() *IndexerConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *IndexerConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *IndexerConfigResource) SetId(v int32) {
 
 // GetMinimumAge returns the MinimumAge field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetMinimumAge() int32 {
-	if o == nil || isNil(o.MinimumAge) {
+	if o == nil || IsNil(o.MinimumAge) {
 		var ret int32
 		return ret
 	}
@@ -84,15 +87,15 @@ func (o *IndexerConfigResource) GetMinimumAge() int32 {
 // GetMinimumAgeOk returns a tuple with the MinimumAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetMinimumAgeOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumAge) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumAge) {
+		return nil, false
 	}
 	return o.MinimumAge, true
 }
 
 // HasMinimumAge returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasMinimumAge() bool {
-	if o != nil && !isNil(o.MinimumAge) {
+	if o != nil && !IsNil(o.MinimumAge) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *IndexerConfigResource) SetMinimumAge(v int32) {
 
 // GetRetention returns the Retention field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetRetention() int32 {
-	if o == nil || isNil(o.Retention) {
+	if o == nil || IsNil(o.Retention) {
 		var ret int32
 		return ret
 	}
@@ -116,15 +119,15 @@ func (o *IndexerConfigResource) GetRetention() int32 {
 // GetRetentionOk returns a tuple with the Retention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetRetentionOk() (*int32, bool) {
-	if o == nil || isNil(o.Retention) {
-    return nil, false
+	if o == nil || IsNil(o.Retention) {
+		return nil, false
 	}
 	return o.Retention, true
 }
 
 // HasRetention returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasRetention() bool {
-	if o != nil && !isNil(o.Retention) {
+	if o != nil && !IsNil(o.Retention) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *IndexerConfigResource) SetRetention(v int32) {
 
 // GetMaximumSize returns the MaximumSize field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetMaximumSize() int32 {
-	if o == nil || isNil(o.MaximumSize) {
+	if o == nil || IsNil(o.MaximumSize) {
 		var ret int32
 		return ret
 	}
@@ -148,15 +151,15 @@ func (o *IndexerConfigResource) GetMaximumSize() int32 {
 // GetMaximumSizeOk returns a tuple with the MaximumSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetMaximumSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumSize) {
-    return nil, false
+	if o == nil || IsNil(o.MaximumSize) {
+		return nil, false
 	}
 	return o.MaximumSize, true
 }
 
 // HasMaximumSize returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasMaximumSize() bool {
-	if o != nil && !isNil(o.MaximumSize) {
+	if o != nil && !IsNil(o.MaximumSize) {
 		return true
 	}
 
@@ -170,7 +173,7 @@ func (o *IndexerConfigResource) SetMaximumSize(v int32) {
 
 // GetRssSyncInterval returns the RssSyncInterval field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetRssSyncInterval() int32 {
-	if o == nil || isNil(o.RssSyncInterval) {
+	if o == nil || IsNil(o.RssSyncInterval) {
 		var ret int32
 		return ret
 	}
@@ -180,15 +183,15 @@ func (o *IndexerConfigResource) GetRssSyncInterval() int32 {
 // GetRssSyncIntervalOk returns a tuple with the RssSyncInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetRssSyncIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.RssSyncInterval) {
-    return nil, false
+	if o == nil || IsNil(o.RssSyncInterval) {
+		return nil, false
 	}
 	return o.RssSyncInterval, true
 }
 
 // HasRssSyncInterval returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasRssSyncInterval() bool {
-	if o != nil && !isNil(o.RssSyncInterval) {
+	if o != nil && !IsNil(o.RssSyncInterval) {
 		return true
 	}
 
@@ -201,23 +204,31 @@ func (o *IndexerConfigResource) SetRssSyncInterval(v int32) {
 }
 
 func (o IndexerConfigResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.MinimumAge) {
-		toSerialize["minimumAge"] = o.MinimumAge
-	}
-	if !isNil(o.Retention) {
-		toSerialize["retention"] = o.Retention
-	}
-	if !isNil(o.MaximumSize) {
-		toSerialize["maximumSize"] = o.MaximumSize
-	}
-	if !isNil(o.RssSyncInterval) {
-		toSerialize["rssSyncInterval"] = o.RssSyncInterval
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o IndexerConfigResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.MinimumAge) {
+		toSerialize["minimumAge"] = o.MinimumAge
+	}
+	if !IsNil(o.Retention) {
+		toSerialize["retention"] = o.Retention
+	}
+	if !IsNil(o.MaximumSize) {
+		toSerialize["maximumSize"] = o.MaximumSize
+	}
+	if !IsNil(o.RssSyncInterval) {
+		toSerialize["rssSyncInterval"] = o.RssSyncInterval
+	}
+	return toSerialize, nil
 }
 
 type NullableIndexerConfigResource struct {

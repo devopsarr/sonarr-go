@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PingResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PingResource{}
+
 // PingResource struct for PingResource
 type PingResource struct {
 	Status NullableString `json:"status,omitempty"`
@@ -38,7 +41,7 @@ func NewPingResourceWithDefaults() *PingResource {
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PingResource) GetStatus() string {
-	if o == nil || isNil(o.Status.Get()) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *PingResource) GetStatus() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PingResource) GetStatusOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Status.Get(), o.Status.IsSet()
 }
@@ -79,11 +82,19 @@ func (o *PingResource) UnsetStatus() {
 }
 
 func (o PingResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PingResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Status.IsSet() {
 		toSerialize["status"] = o.Status.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePingResource struct {

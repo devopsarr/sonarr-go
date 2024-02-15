@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the UpdateResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UpdateResource{}
+
 // UpdateResource struct for UpdateResource
 type UpdateResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -50,7 +53,7 @@ func NewUpdateResourceWithDefaults() *UpdateResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *UpdateResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -60,15 +63,15 @@ func (o *UpdateResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *UpdateResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -82,7 +85,7 @@ func (o *UpdateResource) SetId(v int32) {
 
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *UpdateResource) GetVersion() string {
-	if o == nil || isNil(o.Version) {
+	if o == nil || IsNil(o.Version) {
 		var ret string
 		return ret
 	}
@@ -92,15 +95,15 @@ func (o *UpdateResource) GetVersion() string {
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateResource) GetVersionOk() (*string, bool) {
-	if o == nil || isNil(o.Version) {
-    return nil, false
+	if o == nil || IsNil(o.Version) {
+		return nil, false
 	}
 	return o.Version, true
 }
 
 // HasVersion returns a boolean if a field has been set.
 func (o *UpdateResource) HasVersion() bool {
-	if o != nil && !isNil(o.Version) {
+	if o != nil && !IsNil(o.Version) {
 		return true
 	}
 
@@ -114,7 +117,7 @@ func (o *UpdateResource) SetVersion(v string) {
 
 // GetBranch returns the Branch field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateResource) GetBranch() string {
-	if o == nil || isNil(o.Branch.Get()) {
+	if o == nil || IsNil(o.Branch.Get()) {
 		var ret string
 		return ret
 	}
@@ -126,7 +129,7 @@ func (o *UpdateResource) GetBranch() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateResource) GetBranchOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Branch.Get(), o.Branch.IsSet()
 }
@@ -156,7 +159,7 @@ func (o *UpdateResource) UnsetBranch() {
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise.
 func (o *UpdateResource) GetReleaseDate() time.Time {
-	if o == nil || isNil(o.ReleaseDate) {
+	if o == nil || IsNil(o.ReleaseDate) {
 		var ret time.Time
 		return ret
 	}
@@ -166,15 +169,15 @@ func (o *UpdateResource) GetReleaseDate() time.Time {
 // GetReleaseDateOk returns a tuple with the ReleaseDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateResource) GetReleaseDateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.ReleaseDate) {
-    return nil, false
+	if o == nil || IsNil(o.ReleaseDate) {
+		return nil, false
 	}
 	return o.ReleaseDate, true
 }
 
 // HasReleaseDate returns a boolean if a field has been set.
 func (o *UpdateResource) HasReleaseDate() bool {
-	if o != nil && !isNil(o.ReleaseDate) {
+	if o != nil && !IsNil(o.ReleaseDate) {
 		return true
 	}
 
@@ -188,7 +191,7 @@ func (o *UpdateResource) SetReleaseDate(v time.Time) {
 
 // GetFileName returns the FileName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateResource) GetFileName() string {
-	if o == nil || isNil(o.FileName.Get()) {
+	if o == nil || IsNil(o.FileName.Get()) {
 		var ret string
 		return ret
 	}
@@ -200,7 +203,7 @@ func (o *UpdateResource) GetFileName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateResource) GetFileNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.FileName.Get(), o.FileName.IsSet()
 }
@@ -230,7 +233,7 @@ func (o *UpdateResource) UnsetFileName() {
 
 // GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateResource) GetUrl() string {
-	if o == nil || isNil(o.Url.Get()) {
+	if o == nil || IsNil(o.Url.Get()) {
 		var ret string
 		return ret
 	}
@@ -242,7 +245,7 @@ func (o *UpdateResource) GetUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateResource) GetUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Url.Get(), o.Url.IsSet()
 }
@@ -272,7 +275,7 @@ func (o *UpdateResource) UnsetUrl() {
 
 // GetInstalled returns the Installed field value if set, zero value otherwise.
 func (o *UpdateResource) GetInstalled() bool {
-	if o == nil || isNil(o.Installed) {
+	if o == nil || IsNil(o.Installed) {
 		var ret bool
 		return ret
 	}
@@ -282,15 +285,15 @@ func (o *UpdateResource) GetInstalled() bool {
 // GetInstalledOk returns a tuple with the Installed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateResource) GetInstalledOk() (*bool, bool) {
-	if o == nil || isNil(o.Installed) {
-    return nil, false
+	if o == nil || IsNil(o.Installed) {
+		return nil, false
 	}
 	return o.Installed, true
 }
 
 // HasInstalled returns a boolean if a field has been set.
 func (o *UpdateResource) HasInstalled() bool {
-	if o != nil && !isNil(o.Installed) {
+	if o != nil && !IsNil(o.Installed) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *UpdateResource) SetInstalled(v bool) {
 
 // GetInstalledOn returns the InstalledOn field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateResource) GetInstalledOn() time.Time {
-	if o == nil || isNil(o.InstalledOn.Get()) {
+	if o == nil || IsNil(o.InstalledOn.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -316,7 +319,7 @@ func (o *UpdateResource) GetInstalledOn() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateResource) GetInstalledOnOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InstalledOn.Get(), o.InstalledOn.IsSet()
 }
@@ -346,7 +349,7 @@ func (o *UpdateResource) UnsetInstalledOn() {
 
 // GetInstallable returns the Installable field value if set, zero value otherwise.
 func (o *UpdateResource) GetInstallable() bool {
-	if o == nil || isNil(o.Installable) {
+	if o == nil || IsNil(o.Installable) {
 		var ret bool
 		return ret
 	}
@@ -356,15 +359,15 @@ func (o *UpdateResource) GetInstallable() bool {
 // GetInstallableOk returns a tuple with the Installable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateResource) GetInstallableOk() (*bool, bool) {
-	if o == nil || isNil(o.Installable) {
-    return nil, false
+	if o == nil || IsNil(o.Installable) {
+		return nil, false
 	}
 	return o.Installable, true
 }
 
 // HasInstallable returns a boolean if a field has been set.
 func (o *UpdateResource) HasInstallable() bool {
-	if o != nil && !isNil(o.Installable) {
+	if o != nil && !IsNil(o.Installable) {
 		return true
 	}
 
@@ -378,7 +381,7 @@ func (o *UpdateResource) SetInstallable(v bool) {
 
 // GetLatest returns the Latest field value if set, zero value otherwise.
 func (o *UpdateResource) GetLatest() bool {
-	if o == nil || isNil(o.Latest) {
+	if o == nil || IsNil(o.Latest) {
 		var ret bool
 		return ret
 	}
@@ -388,15 +391,15 @@ func (o *UpdateResource) GetLatest() bool {
 // GetLatestOk returns a tuple with the Latest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateResource) GetLatestOk() (*bool, bool) {
-	if o == nil || isNil(o.Latest) {
-    return nil, false
+	if o == nil || IsNil(o.Latest) {
+		return nil, false
 	}
 	return o.Latest, true
 }
 
 // HasLatest returns a boolean if a field has been set.
 func (o *UpdateResource) HasLatest() bool {
-	if o != nil && !isNil(o.Latest) {
+	if o != nil && !IsNil(o.Latest) {
 		return true
 	}
 
@@ -410,7 +413,7 @@ func (o *UpdateResource) SetLatest(v bool) {
 
 // GetChanges returns the Changes field value if set, zero value otherwise.
 func (o *UpdateResource) GetChanges() UpdateChanges {
-	if o == nil || isNil(o.Changes) {
+	if o == nil || IsNil(o.Changes) {
 		var ret UpdateChanges
 		return ret
 	}
@@ -420,15 +423,15 @@ func (o *UpdateResource) GetChanges() UpdateChanges {
 // GetChangesOk returns a tuple with the Changes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateResource) GetChangesOk() (*UpdateChanges, bool) {
-	if o == nil || isNil(o.Changes) {
-    return nil, false
+	if o == nil || IsNil(o.Changes) {
+		return nil, false
 	}
 	return o.Changes, true
 }
 
 // HasChanges returns a boolean if a field has been set.
 func (o *UpdateResource) HasChanges() bool {
-	if o != nil && !isNil(o.Changes) {
+	if o != nil && !IsNil(o.Changes) {
 		return true
 	}
 
@@ -442,7 +445,7 @@ func (o *UpdateResource) SetChanges(v UpdateChanges) {
 
 // GetHash returns the Hash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpdateResource) GetHash() string {
-	if o == nil || isNil(o.Hash.Get()) {
+	if o == nil || IsNil(o.Hash.Get()) {
 		var ret string
 		return ret
 	}
@@ -454,7 +457,7 @@ func (o *UpdateResource) GetHash() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdateResource) GetHashOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Hash.Get(), o.Hash.IsSet()
 }
@@ -483,17 +486,25 @@ func (o *UpdateResource) UnsetHash() {
 }
 
 func (o UpdateResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o UpdateResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.Version) {
+	if !IsNil(o.Version) {
 		toSerialize["version"] = o.Version
 	}
 	if o.Branch.IsSet() {
 		toSerialize["branch"] = o.Branch.Get()
 	}
-	if !isNil(o.ReleaseDate) {
+	if !IsNil(o.ReleaseDate) {
 		toSerialize["releaseDate"] = o.ReleaseDate
 	}
 	if o.FileName.IsSet() {
@@ -502,25 +513,25 @@ func (o UpdateResource) MarshalJSON() ([]byte, error) {
 	if o.Url.IsSet() {
 		toSerialize["url"] = o.Url.Get()
 	}
-	if !isNil(o.Installed) {
+	if !IsNil(o.Installed) {
 		toSerialize["installed"] = o.Installed
 	}
 	if o.InstalledOn.IsSet() {
 		toSerialize["installedOn"] = o.InstalledOn.Get()
 	}
-	if !isNil(o.Installable) {
+	if !IsNil(o.Installable) {
 		toSerialize["installable"] = o.Installable
 	}
-	if !isNil(o.Latest) {
+	if !IsNil(o.Latest) {
 		toSerialize["latest"] = o.Latest
 	}
-	if !isNil(o.Changes) {
+	if !IsNil(o.Changes) {
 		toSerialize["changes"] = o.Changes
 	}
 	if o.Hash.IsSet() {
 		toSerialize["hash"] = o.Hash.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableUpdateResource struct {

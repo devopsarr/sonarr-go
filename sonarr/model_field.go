@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Field type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Field{}
+
 // Field struct for Field
 type Field struct {
 	Order *int32 `json:"order,omitempty"`
@@ -26,7 +29,7 @@ type Field struct {
 	Value interface{} `json:"value,omitempty"`
 	Type NullableString `json:"type,omitempty"`
 	Advanced *bool `json:"advanced,omitempty"`
-	SelectOptions []*SelectOption `json:"selectOptions,omitempty"`
+	SelectOptions []SelectOption `json:"selectOptions,omitempty"`
 	SelectOptionsProviderAction NullableString `json:"selectOptionsProviderAction,omitempty"`
 	Section NullableString `json:"section,omitempty"`
 	Hidden NullableString `json:"hidden,omitempty"`
@@ -54,7 +57,7 @@ func NewFieldWithDefaults() *Field {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *Field) GetOrder() int32 {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret int32
 		return ret
 	}
@@ -64,15 +67,15 @@ func (o *Field) GetOrder() int32 {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Field) GetOrderOk() (*int32, bool) {
-	if o == nil || isNil(o.Order) {
-    return nil, false
+	if o == nil || IsNil(o.Order) {
+		return nil, false
 	}
 	return o.Order, true
 }
 
 // HasOrder returns a boolean if a field has been set.
 func (o *Field) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *Field) SetOrder(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *Field) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -128,7 +131,7 @@ func (o *Field) UnsetName() {
 
 // GetLabel returns the Label field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetLabel() string {
-	if o == nil || isNil(o.Label.Get()) {
+	if o == nil || IsNil(o.Label.Get()) {
 		var ret string
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *Field) GetLabel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetLabelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Label.Get(), o.Label.IsSet()
 }
@@ -170,7 +173,7 @@ func (o *Field) UnsetLabel() {
 
 // GetUnit returns the Unit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetUnit() string {
-	if o == nil || isNil(o.Unit.Get()) {
+	if o == nil || IsNil(o.Unit.Get()) {
 		var ret string
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *Field) GetUnit() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetUnitOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Unit.Get(), o.Unit.IsSet()
 }
@@ -212,7 +215,7 @@ func (o *Field) UnsetUnit() {
 
 // GetHelpText returns the HelpText field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetHelpText() string {
-	if o == nil || isNil(o.HelpText.Get()) {
+	if o == nil || IsNil(o.HelpText.Get()) {
 		var ret string
 		return ret
 	}
@@ -224,7 +227,7 @@ func (o *Field) GetHelpText() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetHelpTextOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.HelpText.Get(), o.HelpText.IsSet()
 }
@@ -254,7 +257,7 @@ func (o *Field) UnsetHelpText() {
 
 // GetHelpTextWarning returns the HelpTextWarning field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetHelpTextWarning() string {
-	if o == nil || isNil(o.HelpTextWarning.Get()) {
+	if o == nil || IsNil(o.HelpTextWarning.Get()) {
 		var ret string
 		return ret
 	}
@@ -266,7 +269,7 @@ func (o *Field) GetHelpTextWarning() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetHelpTextWarningOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.HelpTextWarning.Get(), o.HelpTextWarning.IsSet()
 }
@@ -296,7 +299,7 @@ func (o *Field) UnsetHelpTextWarning() {
 
 // GetHelpLink returns the HelpLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetHelpLink() string {
-	if o == nil || isNil(o.HelpLink.Get()) {
+	if o == nil || IsNil(o.HelpLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -308,7 +311,7 @@ func (o *Field) GetHelpLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetHelpLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.HelpLink.Get(), o.HelpLink.IsSet()
 }
@@ -349,15 +352,15 @@ func (o *Field) GetValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetValueOk() (*interface{}, bool) {
-	if o == nil || isNil(o.Value) {
-    return nil, false
+	if o == nil || IsNil(o.Value) {
+		return nil, false
 	}
 	return &o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *Field) HasValue() bool {
-	if o != nil && isNil(o.Value) {
+	if o != nil && IsNil(o.Value) {
 		return true
 	}
 
@@ -371,7 +374,7 @@ func (o *Field) SetValue(v interface{}) {
 
 // GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetType() string {
-	if o == nil || isNil(o.Type.Get()) {
+	if o == nil || IsNil(o.Type.Get()) {
 		var ret string
 		return ret
 	}
@@ -383,7 +386,7 @@ func (o *Field) GetType() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Type.Get(), o.Type.IsSet()
 }
@@ -413,7 +416,7 @@ func (o *Field) UnsetType() {
 
 // GetAdvanced returns the Advanced field value if set, zero value otherwise.
 func (o *Field) GetAdvanced() bool {
-	if o == nil || isNil(o.Advanced) {
+	if o == nil || IsNil(o.Advanced) {
 		var ret bool
 		return ret
 	}
@@ -423,15 +426,15 @@ func (o *Field) GetAdvanced() bool {
 // GetAdvancedOk returns a tuple with the Advanced field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Field) GetAdvancedOk() (*bool, bool) {
-	if o == nil || isNil(o.Advanced) {
-    return nil, false
+	if o == nil || IsNil(o.Advanced) {
+		return nil, false
 	}
 	return o.Advanced, true
 }
 
 // HasAdvanced returns a boolean if a field has been set.
 func (o *Field) HasAdvanced() bool {
-	if o != nil && !isNil(o.Advanced) {
+	if o != nil && !IsNil(o.Advanced) {
 		return true
 	}
 
@@ -444,9 +447,9 @@ func (o *Field) SetAdvanced(v bool) {
 }
 
 // GetSelectOptions returns the SelectOptions field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Field) GetSelectOptions() []*SelectOption {
+func (o *Field) GetSelectOptions() []SelectOption {
 	if o == nil {
-		var ret []*SelectOption
+		var ret []SelectOption
 		return ret
 	}
 	return o.SelectOptions
@@ -455,16 +458,16 @@ func (o *Field) GetSelectOptions() []*SelectOption {
 // GetSelectOptionsOk returns a tuple with the SelectOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Field) GetSelectOptionsOk() ([]*SelectOption, bool) {
-	if o == nil || isNil(o.SelectOptions) {
-    return nil, false
+func (o *Field) GetSelectOptionsOk() ([]SelectOption, bool) {
+	if o == nil || IsNil(o.SelectOptions) {
+		return nil, false
 	}
 	return o.SelectOptions, true
 }
 
 // HasSelectOptions returns a boolean if a field has been set.
 func (o *Field) HasSelectOptions() bool {
-	if o != nil && isNil(o.SelectOptions) {
+	if o != nil && IsNil(o.SelectOptions) {
 		return true
 	}
 
@@ -472,13 +475,13 @@ func (o *Field) HasSelectOptions() bool {
 }
 
 // SetSelectOptions gets a reference to the given []SelectOption and assigns it to the SelectOptions field.
-func (o *Field) SetSelectOptions(v []*SelectOption) {
+func (o *Field) SetSelectOptions(v []SelectOption) {
 	o.SelectOptions = v
 }
 
 // GetSelectOptionsProviderAction returns the SelectOptionsProviderAction field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetSelectOptionsProviderAction() string {
-	if o == nil || isNil(o.SelectOptionsProviderAction.Get()) {
+	if o == nil || IsNil(o.SelectOptionsProviderAction.Get()) {
 		var ret string
 		return ret
 	}
@@ -490,7 +493,7 @@ func (o *Field) GetSelectOptionsProviderAction() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetSelectOptionsProviderActionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SelectOptionsProviderAction.Get(), o.SelectOptionsProviderAction.IsSet()
 }
@@ -520,7 +523,7 @@ func (o *Field) UnsetSelectOptionsProviderAction() {
 
 // GetSection returns the Section field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetSection() string {
-	if o == nil || isNil(o.Section.Get()) {
+	if o == nil || IsNil(o.Section.Get()) {
 		var ret string
 		return ret
 	}
@@ -532,7 +535,7 @@ func (o *Field) GetSection() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetSectionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Section.Get(), o.Section.IsSet()
 }
@@ -562,7 +565,7 @@ func (o *Field) UnsetSection() {
 
 // GetHidden returns the Hidden field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetHidden() string {
-	if o == nil || isNil(o.Hidden.Get()) {
+	if o == nil || IsNil(o.Hidden.Get()) {
 		var ret string
 		return ret
 	}
@@ -574,7 +577,7 @@ func (o *Field) GetHidden() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetHiddenOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Hidden.Get(), o.Hidden.IsSet()
 }
@@ -604,7 +607,7 @@ func (o *Field) UnsetHidden() {
 
 // GetPrivacy returns the Privacy field value if set, zero value otherwise.
 func (o *Field) GetPrivacy() PrivacyLevel {
-	if o == nil || isNil(o.Privacy) {
+	if o == nil || IsNil(o.Privacy) {
 		var ret PrivacyLevel
 		return ret
 	}
@@ -614,15 +617,15 @@ func (o *Field) GetPrivacy() PrivacyLevel {
 // GetPrivacyOk returns a tuple with the Privacy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Field) GetPrivacyOk() (*PrivacyLevel, bool) {
-	if o == nil || isNil(o.Privacy) {
-    return nil, false
+	if o == nil || IsNil(o.Privacy) {
+		return nil, false
 	}
 	return o.Privacy, true
 }
 
 // HasPrivacy returns a boolean if a field has been set.
 func (o *Field) HasPrivacy() bool {
-	if o != nil && !isNil(o.Privacy) {
+	if o != nil && !IsNil(o.Privacy) {
 		return true
 	}
 
@@ -636,7 +639,7 @@ func (o *Field) SetPrivacy(v PrivacyLevel) {
 
 // GetPlaceholder returns the Placeholder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Field) GetPlaceholder() string {
-	if o == nil || isNil(o.Placeholder.Get()) {
+	if o == nil || IsNil(o.Placeholder.Get()) {
 		var ret string
 		return ret
 	}
@@ -648,7 +651,7 @@ func (o *Field) GetPlaceholder() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Field) GetPlaceholderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Placeholder.Get(), o.Placeholder.IsSet()
 }
@@ -678,7 +681,7 @@ func (o *Field) UnsetPlaceholder() {
 
 // GetIsFloat returns the IsFloat field value if set, zero value otherwise.
 func (o *Field) GetIsFloat() bool {
-	if o == nil || isNil(o.IsFloat) {
+	if o == nil || IsNil(o.IsFloat) {
 		var ret bool
 		return ret
 	}
@@ -688,15 +691,15 @@ func (o *Field) GetIsFloat() bool {
 // GetIsFloatOk returns a tuple with the IsFloat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Field) GetIsFloatOk() (*bool, bool) {
-	if o == nil || isNil(o.IsFloat) {
-    return nil, false
+	if o == nil || IsNil(o.IsFloat) {
+		return nil, false
 	}
 	return o.IsFloat, true
 }
 
 // HasIsFloat returns a boolean if a field has been set.
 func (o *Field) HasIsFloat() bool {
-	if o != nil && !isNil(o.IsFloat) {
+	if o != nil && !IsNil(o.IsFloat) {
 		return true
 	}
 
@@ -709,8 +712,16 @@ func (o *Field) SetIsFloat(v bool) {
 }
 
 func (o Field) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Field) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
 	if o.Name.IsSet() {
@@ -737,7 +748,7 @@ func (o Field) MarshalJSON() ([]byte, error) {
 	if o.Type.IsSet() {
 		toSerialize["type"] = o.Type.Get()
 	}
-	if !isNil(o.Advanced) {
+	if !IsNil(o.Advanced) {
 		toSerialize["advanced"] = o.Advanced
 	}
 	if o.SelectOptions != nil {
@@ -752,16 +763,16 @@ func (o Field) MarshalJSON() ([]byte, error) {
 	if o.Hidden.IsSet() {
 		toSerialize["hidden"] = o.Hidden.Get()
 	}
-	if !isNil(o.Privacy) {
+	if !IsNil(o.Privacy) {
 		toSerialize["privacy"] = o.Privacy
 	}
 	if o.Placeholder.IsSet() {
 		toSerialize["placeholder"] = o.Placeholder.Get()
 	}
-	if !isNil(o.IsFloat) {
+	if !IsNil(o.IsFloat) {
 		toSerialize["isFloat"] = o.IsFloat
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableField struct {

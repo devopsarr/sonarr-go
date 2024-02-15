@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the EpisodeFileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EpisodeFileResource{}
+
 // EpisodeFileResource struct for EpisodeFileResource
 type EpisodeFileResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -26,9 +29,9 @@ type EpisodeFileResource struct {
 	DateAdded *time.Time `json:"dateAdded,omitempty"`
 	SceneName NullableString `json:"sceneName,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
-	Languages []*Language `json:"languages,omitempty"`
+	Languages []Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 	MediaInfo *MediaInfoResource `json:"mediaInfo,omitempty"`
 	QualityCutoffNotMet *bool `json:"qualityCutoffNotMet,omitempty"`
@@ -53,7 +56,7 @@ func NewEpisodeFileResourceWithDefaults() *EpisodeFileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -63,15 +66,15 @@ func (o *EpisodeFileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *EpisodeFileResource) SetId(v int32) {
 
 // GetSeriesId returns the SeriesId field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetSeriesId() int32 {
-	if o == nil || isNil(o.SeriesId) {
+	if o == nil || IsNil(o.SeriesId) {
 		var ret int32
 		return ret
 	}
@@ -95,15 +98,15 @@ func (o *EpisodeFileResource) GetSeriesId() int32 {
 // GetSeriesIdOk returns a tuple with the SeriesId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetSeriesIdOk() (*int32, bool) {
-	if o == nil || isNil(o.SeriesId) {
-    return nil, false
+	if o == nil || IsNil(o.SeriesId) {
+		return nil, false
 	}
 	return o.SeriesId, true
 }
 
 // HasSeriesId returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasSeriesId() bool {
-	if o != nil && !isNil(o.SeriesId) {
+	if o != nil && !IsNil(o.SeriesId) {
 		return true
 	}
 
@@ -117,7 +120,7 @@ func (o *EpisodeFileResource) SetSeriesId(v int32) {
 
 // GetSeasonNumber returns the SeasonNumber field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetSeasonNumber() int32 {
-	if o == nil || isNil(o.SeasonNumber) {
+	if o == nil || IsNil(o.SeasonNumber) {
 		var ret int32
 		return ret
 	}
@@ -127,15 +130,15 @@ func (o *EpisodeFileResource) GetSeasonNumber() int32 {
 // GetSeasonNumberOk returns a tuple with the SeasonNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetSeasonNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.SeasonNumber) {
-    return nil, false
+	if o == nil || IsNil(o.SeasonNumber) {
+		return nil, false
 	}
 	return o.SeasonNumber, true
 }
 
 // HasSeasonNumber returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasSeasonNumber() bool {
-	if o != nil && !isNil(o.SeasonNumber) {
+	if o != nil && !IsNil(o.SeasonNumber) {
 		return true
 	}
 
@@ -149,7 +152,7 @@ func (o *EpisodeFileResource) SetSeasonNumber(v int32) {
 
 // GetRelativePath returns the RelativePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EpisodeFileResource) GetRelativePath() string {
-	if o == nil || isNil(o.RelativePath.Get()) {
+	if o == nil || IsNil(o.RelativePath.Get()) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *EpisodeFileResource) GetRelativePath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EpisodeFileResource) GetRelativePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RelativePath.Get(), o.RelativePath.IsSet()
 }
@@ -191,7 +194,7 @@ func (o *EpisodeFileResource) UnsetRelativePath() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EpisodeFileResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -203,7 +206,7 @@ func (o *EpisodeFileResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EpisodeFileResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -233,7 +236,7 @@ func (o *EpisodeFileResource) UnsetPath() {
 
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetSize() int64 {
-	if o == nil || isNil(o.Size) {
+	if o == nil || IsNil(o.Size) {
 		var ret int64
 		return ret
 	}
@@ -243,15 +246,15 @@ func (o *EpisodeFileResource) GetSize() int64 {
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetSizeOk() (*int64, bool) {
-	if o == nil || isNil(o.Size) {
-    return nil, false
+	if o == nil || IsNil(o.Size) {
+		return nil, false
 	}
 	return o.Size, true
 }
 
 // HasSize returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasSize() bool {
-	if o != nil && !isNil(o.Size) {
+	if o != nil && !IsNil(o.Size) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *EpisodeFileResource) SetSize(v int64) {
 
 // GetDateAdded returns the DateAdded field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetDateAdded() time.Time {
-	if o == nil || isNil(o.DateAdded) {
+	if o == nil || IsNil(o.DateAdded) {
 		var ret time.Time
 		return ret
 	}
@@ -275,15 +278,15 @@ func (o *EpisodeFileResource) GetDateAdded() time.Time {
 // GetDateAddedOk returns a tuple with the DateAdded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetDateAddedOk() (*time.Time, bool) {
-	if o == nil || isNil(o.DateAdded) {
-    return nil, false
+	if o == nil || IsNil(o.DateAdded) {
+		return nil, false
 	}
 	return o.DateAdded, true
 }
 
 // HasDateAdded returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasDateAdded() bool {
-	if o != nil && !isNil(o.DateAdded) {
+	if o != nil && !IsNil(o.DateAdded) {
 		return true
 	}
 
@@ -297,7 +300,7 @@ func (o *EpisodeFileResource) SetDateAdded(v time.Time) {
 
 // GetSceneName returns the SceneName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EpisodeFileResource) GetSceneName() string {
-	if o == nil || isNil(o.SceneName.Get()) {
+	if o == nil || IsNil(o.SceneName.Get()) {
 		var ret string
 		return ret
 	}
@@ -309,7 +312,7 @@ func (o *EpisodeFileResource) GetSceneName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EpisodeFileResource) GetSceneNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SceneName.Get(), o.SceneName.IsSet()
 }
@@ -339,7 +342,7 @@ func (o *EpisodeFileResource) UnsetSceneName() {
 
 // GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EpisodeFileResource) GetReleaseGroup() string {
-	if o == nil || isNil(o.ReleaseGroup.Get()) {
+	if o == nil || IsNil(o.ReleaseGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -351,7 +354,7 @@ func (o *EpisodeFileResource) GetReleaseGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EpisodeFileResource) GetReleaseGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
 }
@@ -380,9 +383,9 @@ func (o *EpisodeFileResource) UnsetReleaseGroup() {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodeFileResource) GetLanguages() []*Language {
+func (o *EpisodeFileResource) GetLanguages() []Language {
 	if o == nil {
-		var ret []*Language
+		var ret []Language
 		return ret
 	}
 	return o.Languages
@@ -391,16 +394,16 @@ func (o *EpisodeFileResource) GetLanguages() []*Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodeFileResource) GetLanguagesOk() ([]*Language, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *EpisodeFileResource) GetLanguagesOk() ([]Language, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -408,13 +411,13 @@ func (o *EpisodeFileResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *EpisodeFileResource) SetLanguages(v []*Language) {
+func (o *EpisodeFileResource) SetLanguages(v []Language) {
 	o.Languages = v
 }
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -424,15 +427,15 @@ func (o *EpisodeFileResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -445,9 +448,9 @@ func (o *EpisodeFileResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *EpisodeFileResource) GetCustomFormats() []*CustomFormatResource {
+func (o *EpisodeFileResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -456,16 +459,16 @@ func (o *EpisodeFileResource) GetCustomFormats() []*CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *EpisodeFileResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *EpisodeFileResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -473,13 +476,13 @@ func (o *EpisodeFileResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *EpisodeFileResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *EpisodeFileResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetCustomFormatScore() int32 {
-	if o == nil || isNil(o.CustomFormatScore) {
+	if o == nil || IsNil(o.CustomFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -489,15 +492,15 @@ func (o *EpisodeFileResource) GetCustomFormatScore() int32 {
 // GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetCustomFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.CustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.CustomFormatScore) {
+		return nil, false
 	}
 	return o.CustomFormatScore, true
 }
 
 // HasCustomFormatScore returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasCustomFormatScore() bool {
-	if o != nil && !isNil(o.CustomFormatScore) {
+	if o != nil && !IsNil(o.CustomFormatScore) {
 		return true
 	}
 
@@ -511,7 +514,7 @@ func (o *EpisodeFileResource) SetCustomFormatScore(v int32) {
 
 // GetMediaInfo returns the MediaInfo field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetMediaInfo() MediaInfoResource {
-	if o == nil || isNil(o.MediaInfo) {
+	if o == nil || IsNil(o.MediaInfo) {
 		var ret MediaInfoResource
 		return ret
 	}
@@ -521,15 +524,15 @@ func (o *EpisodeFileResource) GetMediaInfo() MediaInfoResource {
 // GetMediaInfoOk returns a tuple with the MediaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetMediaInfoOk() (*MediaInfoResource, bool) {
-	if o == nil || isNil(o.MediaInfo) {
-    return nil, false
+	if o == nil || IsNil(o.MediaInfo) {
+		return nil, false
 	}
 	return o.MediaInfo, true
 }
 
 // HasMediaInfo returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasMediaInfo() bool {
-	if o != nil && !isNil(o.MediaInfo) {
+	if o != nil && !IsNil(o.MediaInfo) {
 		return true
 	}
 
@@ -543,7 +546,7 @@ func (o *EpisodeFileResource) SetMediaInfo(v MediaInfoResource) {
 
 // GetQualityCutoffNotMet returns the QualityCutoffNotMet field value if set, zero value otherwise.
 func (o *EpisodeFileResource) GetQualityCutoffNotMet() bool {
-	if o == nil || isNil(o.QualityCutoffNotMet) {
+	if o == nil || IsNil(o.QualityCutoffNotMet) {
 		var ret bool
 		return ret
 	}
@@ -553,15 +556,15 @@ func (o *EpisodeFileResource) GetQualityCutoffNotMet() bool {
 // GetQualityCutoffNotMetOk returns a tuple with the QualityCutoffNotMet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpisodeFileResource) GetQualityCutoffNotMetOk() (*bool, bool) {
-	if o == nil || isNil(o.QualityCutoffNotMet) {
-    return nil, false
+	if o == nil || IsNil(o.QualityCutoffNotMet) {
+		return nil, false
 	}
 	return o.QualityCutoffNotMet, true
 }
 
 // HasQualityCutoffNotMet returns a boolean if a field has been set.
 func (o *EpisodeFileResource) HasQualityCutoffNotMet() bool {
-	if o != nil && !isNil(o.QualityCutoffNotMet) {
+	if o != nil && !IsNil(o.QualityCutoffNotMet) {
 		return true
 	}
 
@@ -574,14 +577,22 @@ func (o *EpisodeFileResource) SetQualityCutoffNotMet(v bool) {
 }
 
 func (o EpisodeFileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o EpisodeFileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.SeriesId) {
+	if !IsNil(o.SeriesId) {
 		toSerialize["seriesId"] = o.SeriesId
 	}
-	if !isNil(o.SeasonNumber) {
+	if !IsNil(o.SeasonNumber) {
 		toSerialize["seasonNumber"] = o.SeasonNumber
 	}
 	if o.RelativePath.IsSet() {
@@ -590,10 +601,10 @@ func (o EpisodeFileResource) MarshalJSON() ([]byte, error) {
 	if o.Path.IsSet() {
 		toSerialize["path"] = o.Path.Get()
 	}
-	if !isNil(o.Size) {
+	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
-	if !isNil(o.DateAdded) {
+	if !IsNil(o.DateAdded) {
 		toSerialize["dateAdded"] = o.DateAdded
 	}
 	if o.SceneName.IsSet() {
@@ -605,22 +616,22 @@ func (o EpisodeFileResource) MarshalJSON() ([]byte, error) {
 	if o.Languages != nil {
 		toSerialize["languages"] = o.Languages
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.CustomFormatScore) {
+	if !IsNil(o.CustomFormatScore) {
 		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
-	if !isNil(o.MediaInfo) {
+	if !IsNil(o.MediaInfo) {
 		toSerialize["mediaInfo"] = o.MediaInfo
 	}
-	if !isNil(o.QualityCutoffNotMet) {
+	if !IsNil(o.QualityCutoffNotMet) {
 		toSerialize["qualityCutoffNotMet"] = o.QualityCutoffNotMet
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableEpisodeFileResource struct {

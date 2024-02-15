@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MonitoringOptions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MonitoringOptions{}
+
 // MonitoringOptions struct for MonitoringOptions
 type MonitoringOptions struct {
 	IgnoreEpisodesWithFiles *bool `json:"ignoreEpisodesWithFiles,omitempty"`
@@ -40,7 +43,7 @@ func NewMonitoringOptionsWithDefaults() *MonitoringOptions {
 
 // GetIgnoreEpisodesWithFiles returns the IgnoreEpisodesWithFiles field value if set, zero value otherwise.
 func (o *MonitoringOptions) GetIgnoreEpisodesWithFiles() bool {
-	if o == nil || isNil(o.IgnoreEpisodesWithFiles) {
+	if o == nil || IsNil(o.IgnoreEpisodesWithFiles) {
 		var ret bool
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *MonitoringOptions) GetIgnoreEpisodesWithFiles() bool {
 // GetIgnoreEpisodesWithFilesOk returns a tuple with the IgnoreEpisodesWithFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringOptions) GetIgnoreEpisodesWithFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.IgnoreEpisodesWithFiles) {
-    return nil, false
+	if o == nil || IsNil(o.IgnoreEpisodesWithFiles) {
+		return nil, false
 	}
 	return o.IgnoreEpisodesWithFiles, true
 }
 
 // HasIgnoreEpisodesWithFiles returns a boolean if a field has been set.
 func (o *MonitoringOptions) HasIgnoreEpisodesWithFiles() bool {
-	if o != nil && !isNil(o.IgnoreEpisodesWithFiles) {
+	if o != nil && !IsNil(o.IgnoreEpisodesWithFiles) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *MonitoringOptions) SetIgnoreEpisodesWithFiles(v bool) {
 
 // GetIgnoreEpisodesWithoutFiles returns the IgnoreEpisodesWithoutFiles field value if set, zero value otherwise.
 func (o *MonitoringOptions) GetIgnoreEpisodesWithoutFiles() bool {
-	if o == nil || isNil(o.IgnoreEpisodesWithoutFiles) {
+	if o == nil || IsNil(o.IgnoreEpisodesWithoutFiles) {
 		var ret bool
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *MonitoringOptions) GetIgnoreEpisodesWithoutFiles() bool {
 // GetIgnoreEpisodesWithoutFilesOk returns a tuple with the IgnoreEpisodesWithoutFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringOptions) GetIgnoreEpisodesWithoutFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.IgnoreEpisodesWithoutFiles) {
-    return nil, false
+	if o == nil || IsNil(o.IgnoreEpisodesWithoutFiles) {
+		return nil, false
 	}
 	return o.IgnoreEpisodesWithoutFiles, true
 }
 
 // HasIgnoreEpisodesWithoutFiles returns a boolean if a field has been set.
 func (o *MonitoringOptions) HasIgnoreEpisodesWithoutFiles() bool {
-	if o != nil && !isNil(o.IgnoreEpisodesWithoutFiles) {
+	if o != nil && !IsNil(o.IgnoreEpisodesWithoutFiles) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *MonitoringOptions) SetIgnoreEpisodesWithoutFiles(v bool) {
 
 // GetMonitor returns the Monitor field value if set, zero value otherwise.
 func (o *MonitoringOptions) GetMonitor() MonitorTypes {
-	if o == nil || isNil(o.Monitor) {
+	if o == nil || IsNil(o.Monitor) {
 		var ret MonitorTypes
 		return ret
 	}
@@ -114,15 +117,15 @@ func (o *MonitoringOptions) GetMonitor() MonitorTypes {
 // GetMonitorOk returns a tuple with the Monitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringOptions) GetMonitorOk() (*MonitorTypes, bool) {
-	if o == nil || isNil(o.Monitor) {
-    return nil, false
+	if o == nil || IsNil(o.Monitor) {
+		return nil, false
 	}
 	return o.Monitor, true
 }
 
 // HasMonitor returns a boolean if a field has been set.
 func (o *MonitoringOptions) HasMonitor() bool {
-	if o != nil && !isNil(o.Monitor) {
+	if o != nil && !IsNil(o.Monitor) {
 		return true
 	}
 
@@ -135,17 +138,25 @@ func (o *MonitoringOptions) SetMonitor(v MonitorTypes) {
 }
 
 func (o MonitoringOptions) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.IgnoreEpisodesWithFiles) {
-		toSerialize["ignoreEpisodesWithFiles"] = o.IgnoreEpisodesWithFiles
-	}
-	if !isNil(o.IgnoreEpisodesWithoutFiles) {
-		toSerialize["ignoreEpisodesWithoutFiles"] = o.IgnoreEpisodesWithoutFiles
-	}
-	if !isNil(o.Monitor) {
-		toSerialize["monitor"] = o.Monitor
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MonitoringOptions) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.IgnoreEpisodesWithFiles) {
+		toSerialize["ignoreEpisodesWithFiles"] = o.IgnoreEpisodesWithFiles
+	}
+	if !IsNil(o.IgnoreEpisodesWithoutFiles) {
+		toSerialize["ignoreEpisodesWithoutFiles"] = o.IgnoreEpisodesWithoutFiles
+	}
+	if !IsNil(o.Monitor) {
+		toSerialize["monitor"] = o.Monitor
+	}
+	return toSerialize, nil
 }
 
 type NullableMonitoringOptions struct {

@@ -23,6 +23,7 @@ import (
 
 // EpisodeFileAPIService EpisodeFileAPI service
 type EpisodeFileAPIService service
+
 type ApiDeleteEpisodeFileRequest struct {
 	ctx context.Context
 	ApiService *EpisodeFileAPIService
@@ -62,7 +63,7 @@ func (a *EpisodeFileAPIService) DeleteEpisodeFileExecute(r ApiDeleteEpisodeFileR
 	}
 
 	localVarPath := localBasePath + "/api/v3/episodefile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -140,6 +141,7 @@ func (a *EpisodeFileAPIService) DeleteEpisodeFileExecute(r ApiDeleteEpisodeFileR
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteEpisodeFileBulkRequest struct {
 	ctx context.Context
 	ApiService *EpisodeFileAPIService
@@ -261,6 +263,7 @@ func (a *EpisodeFileAPIService) DeleteEpisodeFileBulkExecute(r ApiDeleteEpisodeF
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetEpisodeFileByIdRequest struct {
 	ctx context.Context
 	ApiService *EpisodeFileAPIService
@@ -302,7 +305,7 @@ func (a *EpisodeFileAPIService) GetEpisodeFileByIdExecute(r ApiGetEpisodeFileByI
 	}
 
 	localVarPath := localBasePath + "/api/v3/episodefile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -389,6 +392,7 @@ func (a *EpisodeFileAPIService) GetEpisodeFileByIdExecute(r ApiGetEpisodeFileByI
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListEpisodeFileRequest struct {
 	ctx context.Context
 	ApiService *EpisodeFileAPIService
@@ -406,7 +410,7 @@ func (r ApiListEpisodeFileRequest) EpisodeFileIds(episodeFileIds []int32) ApiLis
 	return r
 }
 
-func (r ApiListEpisodeFileRequest) Execute() ([]*EpisodeFileResource, *http.Response, error) {
+func (r ApiListEpisodeFileRequest) Execute() ([]EpisodeFileResource, *http.Response, error) {
 	return r.ApiService.ListEpisodeFileExecute(r)
 }
 
@@ -425,12 +429,12 @@ func (a *EpisodeFileAPIService) ListEpisodeFile(ctx context.Context) ApiListEpis
 
 // Execute executes the request
 //  @return []EpisodeFileResource
-func (a *EpisodeFileAPIService) ListEpisodeFileExecute(r ApiListEpisodeFileRequest) ([]*EpisodeFileResource, *http.Response, error) {
+func (a *EpisodeFileAPIService) ListEpisodeFileExecute(r ApiListEpisodeFileRequest) ([]EpisodeFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*EpisodeFileResource
+		localVarReturnValue  []EpisodeFileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EpisodeFileAPIService.ListEpisodeFile")
@@ -445,17 +449,17 @@ func (a *EpisodeFileAPIService) ListEpisodeFileExecute(r ApiListEpisodeFileReque
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		localVarQueryParams.Add("seriesId", parameterToString(*r.seriesId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
 	}
 	if r.episodeFileIds != nil {
 		t := *r.episodeFileIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("episodeFileIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("episodeFileIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileIds", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -539,6 +543,7 @@ func (a *EpisodeFileAPIService) ListEpisodeFileExecute(r ApiListEpisodeFileReque
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutEpisodeFileBulkRequest struct {
 	ctx context.Context
 	ApiService *EpisodeFileAPIService
@@ -660,6 +665,7 @@ func (a *EpisodeFileAPIService) PutEpisodeFileBulkExecute(r ApiPutEpisodeFileBul
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiPutEpisodeFileEditorRequest struct {
 	ctx context.Context
 	ApiService *EpisodeFileAPIService
@@ -781,6 +787,7 @@ func (a *EpisodeFileAPIService) PutEpisodeFileEditorExecute(r ApiPutEpisodeFileE
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateEpisodeFileRequest struct {
 	ctx context.Context
 	ApiService *EpisodeFileAPIService
@@ -828,7 +835,7 @@ func (a *EpisodeFileAPIService) UpdateEpisodeFileExecute(r ApiUpdateEpisodeFileR
 	}
 
 	localVarPath := localBasePath + "/api/v3/episodefile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

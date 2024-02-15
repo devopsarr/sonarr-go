@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomFormatResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomFormatResource{}
+
 // CustomFormatResource struct for CustomFormatResource
 type CustomFormatResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	IncludeCustomFormatWhenRenaming NullableBool `json:"includeCustomFormatWhenRenaming,omitempty"`
-	Specifications []*CustomFormatSpecificationSchema `json:"specifications,omitempty"`
+	Specifications []CustomFormatSpecificationSchema `json:"specifications,omitempty"`
 }
 
 // NewCustomFormatResource instantiates a new CustomFormatResource object
@@ -41,7 +44,7 @@ func NewCustomFormatResourceWithDefaults() *CustomFormatResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *CustomFormatResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *CustomFormatResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFormatResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *CustomFormatResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *CustomFormatResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFormatResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -85,7 +88,7 @@ func (o *CustomFormatResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFormatResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -115,7 +118,7 @@ func (o *CustomFormatResource) UnsetName() {
 
 // GetIncludeCustomFormatWhenRenaming returns the IncludeCustomFormatWhenRenaming field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFormatResource) GetIncludeCustomFormatWhenRenaming() bool {
-	if o == nil || isNil(o.IncludeCustomFormatWhenRenaming.Get()) {
+	if o == nil || IsNil(o.IncludeCustomFormatWhenRenaming.Get()) {
 		var ret bool
 		return ret
 	}
@@ -127,7 +130,7 @@ func (o *CustomFormatResource) GetIncludeCustomFormatWhenRenaming() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFormatResource) GetIncludeCustomFormatWhenRenamingOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeCustomFormatWhenRenaming.Get(), o.IncludeCustomFormatWhenRenaming.IsSet()
 }
@@ -156,9 +159,9 @@ func (o *CustomFormatResource) UnsetIncludeCustomFormatWhenRenaming() {
 }
 
 // GetSpecifications returns the Specifications field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomFormatResource) GetSpecifications() []*CustomFormatSpecificationSchema {
+func (o *CustomFormatResource) GetSpecifications() []CustomFormatSpecificationSchema {
 	if o == nil {
-		var ret []*CustomFormatSpecificationSchema
+		var ret []CustomFormatSpecificationSchema
 		return ret
 	}
 	return o.Specifications
@@ -167,16 +170,16 @@ func (o *CustomFormatResource) GetSpecifications() []*CustomFormatSpecificationS
 // GetSpecificationsOk returns a tuple with the Specifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomFormatResource) GetSpecificationsOk() ([]*CustomFormatSpecificationSchema, bool) {
-	if o == nil || isNil(o.Specifications) {
-    return nil, false
+func (o *CustomFormatResource) GetSpecificationsOk() ([]CustomFormatSpecificationSchema, bool) {
+	if o == nil || IsNil(o.Specifications) {
+		return nil, false
 	}
 	return o.Specifications, true
 }
 
 // HasSpecifications returns a boolean if a field has been set.
 func (o *CustomFormatResource) HasSpecifications() bool {
-	if o != nil && isNil(o.Specifications) {
+	if o != nil && IsNil(o.Specifications) {
 		return true
 	}
 
@@ -184,13 +187,21 @@ func (o *CustomFormatResource) HasSpecifications() bool {
 }
 
 // SetSpecifications gets a reference to the given []CustomFormatSpecificationSchema and assigns it to the Specifications field.
-func (o *CustomFormatResource) SetSpecifications(v []*CustomFormatSpecificationSchema) {
+func (o *CustomFormatResource) SetSpecifications(v []CustomFormatSpecificationSchema) {
 	o.Specifications = v
 }
 
 func (o CustomFormatResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CustomFormatResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -202,7 +213,7 @@ func (o CustomFormatResource) MarshalJSON() ([]byte, error) {
 	if o.Specifications != nil {
 		toSerialize["specifications"] = o.Specifications
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCustomFormatResource struct {

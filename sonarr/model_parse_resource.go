@@ -14,15 +14,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParseResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParseResource{}
+
 // ParseResource struct for ParseResource
 type ParseResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	ParsedEpisodeInfo *ParsedEpisodeInfo `json:"parsedEpisodeInfo,omitempty"`
 	Series *SeriesResource `json:"series,omitempty"`
-	Episodes []*EpisodeResource `json:"episodes,omitempty"`
-	Languages []*Language `json:"languages,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	Episodes []EpisodeResource `json:"episodes,omitempty"`
+	Languages []Language `json:"languages,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 }
 
@@ -45,7 +48,7 @@ func NewParseResourceWithDefaults() *ParseResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ParseResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -55,15 +58,15 @@ func (o *ParseResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ParseResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -77,7 +80,7 @@ func (o *ParseResource) SetId(v int32) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParseResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -89,7 +92,7 @@ func (o *ParseResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParseResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -119,7 +122,7 @@ func (o *ParseResource) UnsetTitle() {
 
 // GetParsedEpisodeInfo returns the ParsedEpisodeInfo field value if set, zero value otherwise.
 func (o *ParseResource) GetParsedEpisodeInfo() ParsedEpisodeInfo {
-	if o == nil || isNil(o.ParsedEpisodeInfo) {
+	if o == nil || IsNil(o.ParsedEpisodeInfo) {
 		var ret ParsedEpisodeInfo
 		return ret
 	}
@@ -129,15 +132,15 @@ func (o *ParseResource) GetParsedEpisodeInfo() ParsedEpisodeInfo {
 // GetParsedEpisodeInfoOk returns a tuple with the ParsedEpisodeInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetParsedEpisodeInfoOk() (*ParsedEpisodeInfo, bool) {
-	if o == nil || isNil(o.ParsedEpisodeInfo) {
-    return nil, false
+	if o == nil || IsNil(o.ParsedEpisodeInfo) {
+		return nil, false
 	}
 	return o.ParsedEpisodeInfo, true
 }
 
 // HasParsedEpisodeInfo returns a boolean if a field has been set.
 func (o *ParseResource) HasParsedEpisodeInfo() bool {
-	if o != nil && !isNil(o.ParsedEpisodeInfo) {
+	if o != nil && !IsNil(o.ParsedEpisodeInfo) {
 		return true
 	}
 
@@ -151,7 +154,7 @@ func (o *ParseResource) SetParsedEpisodeInfo(v ParsedEpisodeInfo) {
 
 // GetSeries returns the Series field value if set, zero value otherwise.
 func (o *ParseResource) GetSeries() SeriesResource {
-	if o == nil || isNil(o.Series) {
+	if o == nil || IsNil(o.Series) {
 		var ret SeriesResource
 		return ret
 	}
@@ -161,15 +164,15 @@ func (o *ParseResource) GetSeries() SeriesResource {
 // GetSeriesOk returns a tuple with the Series field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetSeriesOk() (*SeriesResource, bool) {
-	if o == nil || isNil(o.Series) {
-    return nil, false
+	if o == nil || IsNil(o.Series) {
+		return nil, false
 	}
 	return o.Series, true
 }
 
 // HasSeries returns a boolean if a field has been set.
 func (o *ParseResource) HasSeries() bool {
-	if o != nil && !isNil(o.Series) {
+	if o != nil && !IsNil(o.Series) {
 		return true
 	}
 
@@ -182,9 +185,9 @@ func (o *ParseResource) SetSeries(v SeriesResource) {
 }
 
 // GetEpisodes returns the Episodes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParseResource) GetEpisodes() []*EpisodeResource {
+func (o *ParseResource) GetEpisodes() []EpisodeResource {
 	if o == nil {
-		var ret []*EpisodeResource
+		var ret []EpisodeResource
 		return ret
 	}
 	return o.Episodes
@@ -193,16 +196,16 @@ func (o *ParseResource) GetEpisodes() []*EpisodeResource {
 // GetEpisodesOk returns a tuple with the Episodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParseResource) GetEpisodesOk() ([]*EpisodeResource, bool) {
-	if o == nil || isNil(o.Episodes) {
-    return nil, false
+func (o *ParseResource) GetEpisodesOk() ([]EpisodeResource, bool) {
+	if o == nil || IsNil(o.Episodes) {
+		return nil, false
 	}
 	return o.Episodes, true
 }
 
 // HasEpisodes returns a boolean if a field has been set.
 func (o *ParseResource) HasEpisodes() bool {
-	if o != nil && isNil(o.Episodes) {
+	if o != nil && IsNil(o.Episodes) {
 		return true
 	}
 
@@ -210,14 +213,14 @@ func (o *ParseResource) HasEpisodes() bool {
 }
 
 // SetEpisodes gets a reference to the given []EpisodeResource and assigns it to the Episodes field.
-func (o *ParseResource) SetEpisodes(v []*EpisodeResource) {
+func (o *ParseResource) SetEpisodes(v []EpisodeResource) {
 	o.Episodes = v
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParseResource) GetLanguages() []*Language {
+func (o *ParseResource) GetLanguages() []Language {
 	if o == nil {
-		var ret []*Language
+		var ret []Language
 		return ret
 	}
 	return o.Languages
@@ -226,16 +229,16 @@ func (o *ParseResource) GetLanguages() []*Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParseResource) GetLanguagesOk() ([]*Language, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *ParseResource) GetLanguagesOk() ([]Language, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ParseResource) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -243,14 +246,14 @@ func (o *ParseResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *ParseResource) SetLanguages(v []*Language) {
+func (o *ParseResource) SetLanguages(v []Language) {
 	o.Languages = v
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParseResource) GetCustomFormats() []*CustomFormatResource {
+func (o *ParseResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -259,16 +262,16 @@ func (o *ParseResource) GetCustomFormats() []*CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParseResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *ParseResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ParseResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -276,13 +279,13 @@ func (o *ParseResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *ParseResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *ParseResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
 func (o *ParseResource) GetCustomFormatScore() int32 {
-	if o == nil || isNil(o.CustomFormatScore) {
+	if o == nil || IsNil(o.CustomFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -292,15 +295,15 @@ func (o *ParseResource) GetCustomFormatScore() int32 {
 // GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetCustomFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.CustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.CustomFormatScore) {
+		return nil, false
 	}
 	return o.CustomFormatScore, true
 }
 
 // HasCustomFormatScore returns a boolean if a field has been set.
 func (o *ParseResource) HasCustomFormatScore() bool {
-	if o != nil && !isNil(o.CustomFormatScore) {
+	if o != nil && !IsNil(o.CustomFormatScore) {
 		return true
 	}
 
@@ -313,17 +316,25 @@ func (o *ParseResource) SetCustomFormatScore(v int32) {
 }
 
 func (o ParseResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ParseResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	if !isNil(o.ParsedEpisodeInfo) {
+	if !IsNil(o.ParsedEpisodeInfo) {
 		toSerialize["parsedEpisodeInfo"] = o.ParsedEpisodeInfo
 	}
-	if !isNil(o.Series) {
+	if !IsNil(o.Series) {
 		toSerialize["series"] = o.Series
 	}
 	if o.Episodes != nil {
@@ -335,10 +346,10 @@ func (o ParseResource) MarshalJSON() ([]byte, error) {
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.CustomFormatScore) {
+	if !IsNil(o.CustomFormatScore) {
 		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableParseResource struct {

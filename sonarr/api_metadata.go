@@ -22,6 +22,7 @@ import (
 
 // MetadataAPIService MetadataAPI service
 type MetadataAPIService service
+
 type ApiCreateMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
@@ -78,7 +79,10 @@ func (a *MetadataAPIService) CreateMetadataExecute(r ApiCreateMetadataRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,6 +167,7 @@ func (a *MetadataAPIService) CreateMetadataExecute(r ApiCreateMetadataRequest) (
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiCreateMetadataActionByNameRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
@@ -208,7 +213,7 @@ func (a *MetadataAPIService) CreateMetadataActionByNameExecute(r ApiCreateMetada
 	}
 
 	localVarPath := localBasePath + "/api/v3/metadata/action/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,6 +293,7 @@ func (a *MetadataAPIService) CreateMetadataActionByNameExecute(r ApiCreateMetada
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
@@ -327,7 +333,7 @@ func (a *MetadataAPIService) DeleteMetadataExecute(r ApiDeleteMetadataRequest) (
 	}
 
 	localVarPath := localBasePath + "/api/v3/metadata/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -405,6 +411,7 @@ func (a *MetadataAPIService) DeleteMetadataExecute(r ApiDeleteMetadataRequest) (
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetMetadataByIdRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
@@ -446,7 +453,7 @@ func (a *MetadataAPIService) GetMetadataByIdExecute(r ApiGetMetadataByIdRequest)
 	}
 
 	localVarPath := localBasePath + "/api/v3/metadata/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -533,12 +540,13 @@ func (a *MetadataAPIService) GetMetadataByIdExecute(r ApiGetMetadataByIdRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
 }
 
-func (r ApiListMetadataRequest) Execute() ([]*MetadataResource, *http.Response, error) {
+func (r ApiListMetadataRequest) Execute() ([]MetadataResource, *http.Response, error) {
 	return r.ApiService.ListMetadataExecute(r)
 }
 
@@ -557,12 +565,12 @@ func (a *MetadataAPIService) ListMetadata(ctx context.Context) ApiListMetadataRe
 
 // Execute executes the request
 //  @return []MetadataResource
-func (a *MetadataAPIService) ListMetadataExecute(r ApiListMetadataRequest) ([]*MetadataResource, *http.Response, error) {
+func (a *MetadataAPIService) ListMetadataExecute(r ApiListMetadataRequest) ([]MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*MetadataResource
+		localVarReturnValue  []MetadataResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.ListMetadata")
@@ -657,12 +665,13 @@ func (a *MetadataAPIService) ListMetadataExecute(r ApiListMetadataRequest) ([]*M
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListMetadataSchemaRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
 }
 
-func (r ApiListMetadataSchemaRequest) Execute() ([]*MetadataResource, *http.Response, error) {
+func (r ApiListMetadataSchemaRequest) Execute() ([]MetadataResource, *http.Response, error) {
 	return r.ApiService.ListMetadataSchemaExecute(r)
 }
 
@@ -681,12 +690,12 @@ func (a *MetadataAPIService) ListMetadataSchema(ctx context.Context) ApiListMeta
 
 // Execute executes the request
 //  @return []MetadataResource
-func (a *MetadataAPIService) ListMetadataSchemaExecute(r ApiListMetadataSchemaRequest) ([]*MetadataResource, *http.Response, error) {
+func (a *MetadataAPIService) ListMetadataSchemaExecute(r ApiListMetadataSchemaRequest) ([]MetadataResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*MetadataResource
+		localVarReturnValue  []MetadataResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.ListMetadataSchema")
@@ -781,6 +790,7 @@ func (a *MetadataAPIService) ListMetadataSchemaExecute(r ApiListMetadataSchemaRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiTestMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
@@ -902,6 +912,7 @@ func (a *MetadataAPIService) TestMetadataExecute(r ApiTestMetadataRequest) (*htt
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiTestallMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
@@ -1015,6 +1026,7 @@ func (a *MetadataAPIService) TestallMetadataExecute(r ApiTestallMetadataRequest)
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
@@ -1068,14 +1080,17 @@ func (a *MetadataAPIService) UpdateMetadataExecute(r ApiUpdateMetadataRequest) (
 	}
 
 	localVarPath := localBasePath + "/api/v3/metadata/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

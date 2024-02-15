@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the QualityDefinitionResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QualityDefinitionResource{}
+
 // QualityDefinitionResource struct for QualityDefinitionResource
 type QualityDefinitionResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -44,7 +47,7 @@ func NewQualityDefinitionResourceWithDefaults() *QualityDefinitionResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *QualityDefinitionResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *QualityDefinitionResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityDefinitionResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *QualityDefinitionResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *QualityDefinitionResource) SetId(v int32) {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *QualityDefinitionResource) GetQuality() Quality {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret Quality
 		return ret
 	}
@@ -86,15 +89,15 @@ func (o *QualityDefinitionResource) GetQuality() Quality {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityDefinitionResource) GetQualityOk() (*Quality, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *QualityDefinitionResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *QualityDefinitionResource) SetQuality(v Quality) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QualityDefinitionResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -120,7 +123,7 @@ func (o *QualityDefinitionResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QualityDefinitionResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -150,7 +153,7 @@ func (o *QualityDefinitionResource) UnsetTitle() {
 
 // GetWeight returns the Weight field value if set, zero value otherwise.
 func (o *QualityDefinitionResource) GetWeight() int32 {
-	if o == nil || isNil(o.Weight) {
+	if o == nil || IsNil(o.Weight) {
 		var ret int32
 		return ret
 	}
@@ -160,15 +163,15 @@ func (o *QualityDefinitionResource) GetWeight() int32 {
 // GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QualityDefinitionResource) GetWeightOk() (*int32, bool) {
-	if o == nil || isNil(o.Weight) {
-    return nil, false
+	if o == nil || IsNil(o.Weight) {
+		return nil, false
 	}
 	return o.Weight, true
 }
 
 // HasWeight returns a boolean if a field has been set.
 func (o *QualityDefinitionResource) HasWeight() bool {
-	if o != nil && !isNil(o.Weight) {
+	if o != nil && !IsNil(o.Weight) {
 		return true
 	}
 
@@ -182,7 +185,7 @@ func (o *QualityDefinitionResource) SetWeight(v int32) {
 
 // GetMinSize returns the MinSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QualityDefinitionResource) GetMinSize() float64 {
-	if o == nil || isNil(o.MinSize.Get()) {
+	if o == nil || IsNil(o.MinSize.Get()) {
 		var ret float64
 		return ret
 	}
@@ -194,7 +197,7 @@ func (o *QualityDefinitionResource) GetMinSize() float64 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QualityDefinitionResource) GetMinSizeOk() (*float64, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MinSize.Get(), o.MinSize.IsSet()
 }
@@ -224,7 +227,7 @@ func (o *QualityDefinitionResource) UnsetMinSize() {
 
 // GetMaxSize returns the MaxSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QualityDefinitionResource) GetMaxSize() float64 {
-	if o == nil || isNil(o.MaxSize.Get()) {
+	if o == nil || IsNil(o.MaxSize.Get()) {
 		var ret float64
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *QualityDefinitionResource) GetMaxSize() float64 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QualityDefinitionResource) GetMaxSizeOk() (*float64, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxSize.Get(), o.MaxSize.IsSet()
 }
@@ -266,7 +269,7 @@ func (o *QualityDefinitionResource) UnsetMaxSize() {
 
 // GetPreferredSize returns the PreferredSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QualityDefinitionResource) GetPreferredSize() float64 {
-	if o == nil || isNil(o.PreferredSize.Get()) {
+	if o == nil || IsNil(o.PreferredSize.Get()) {
 		var ret float64
 		return ret
 	}
@@ -278,7 +281,7 @@ func (o *QualityDefinitionResource) GetPreferredSize() float64 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QualityDefinitionResource) GetPreferredSizeOk() (*float64, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PreferredSize.Get(), o.PreferredSize.IsSet()
 }
@@ -307,17 +310,25 @@ func (o *QualityDefinitionResource) UnsetPreferredSize() {
 }
 
 func (o QualityDefinitionResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o QualityDefinitionResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	if !isNil(o.Weight) {
+	if !IsNil(o.Weight) {
 		toSerialize["weight"] = o.Weight
 	}
 	if o.MinSize.IsSet() {
@@ -329,7 +340,7 @@ func (o QualityDefinitionResource) MarshalJSON() ([]byte, error) {
 	if o.PreferredSize.IsSet() {
 		toSerialize["preferredSize"] = o.PreferredSize.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableQualityDefinitionResource struct {

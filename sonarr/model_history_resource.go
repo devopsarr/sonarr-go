@@ -15,15 +15,18 @@ import (
 	"time"
 )
 
+// checks if the HistoryResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &HistoryResource{}
+
 // HistoryResource struct for HistoryResource
 type HistoryResource struct {
 	Id *int32 `json:"id,omitempty"`
 	EpisodeId *int32 `json:"episodeId,omitempty"`
 	SeriesId *int32 `json:"seriesId,omitempty"`
 	SourceTitle NullableString `json:"sourceTitle,omitempty"`
-	Languages []*Language `json:"languages,omitempty"`
+	Languages []Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 	QualityCutoffNotMet *bool `json:"qualityCutoffNotMet,omitempty"`
 	Date *time.Time `json:"date,omitempty"`
@@ -53,7 +56,7 @@ func NewHistoryResourceWithDefaults() *HistoryResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *HistoryResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -63,15 +66,15 @@ func (o *HistoryResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *HistoryResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *HistoryResource) SetId(v int32) {
 
 // GetEpisodeId returns the EpisodeId field value if set, zero value otherwise.
 func (o *HistoryResource) GetEpisodeId() int32 {
-	if o == nil || isNil(o.EpisodeId) {
+	if o == nil || IsNil(o.EpisodeId) {
 		var ret int32
 		return ret
 	}
@@ -95,15 +98,15 @@ func (o *HistoryResource) GetEpisodeId() int32 {
 // GetEpisodeIdOk returns a tuple with the EpisodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetEpisodeIdOk() (*int32, bool) {
-	if o == nil || isNil(o.EpisodeId) {
-    return nil, false
+	if o == nil || IsNil(o.EpisodeId) {
+		return nil, false
 	}
 	return o.EpisodeId, true
 }
 
 // HasEpisodeId returns a boolean if a field has been set.
 func (o *HistoryResource) HasEpisodeId() bool {
-	if o != nil && !isNil(o.EpisodeId) {
+	if o != nil && !IsNil(o.EpisodeId) {
 		return true
 	}
 
@@ -117,7 +120,7 @@ func (o *HistoryResource) SetEpisodeId(v int32) {
 
 // GetSeriesId returns the SeriesId field value if set, zero value otherwise.
 func (o *HistoryResource) GetSeriesId() int32 {
-	if o == nil || isNil(o.SeriesId) {
+	if o == nil || IsNil(o.SeriesId) {
 		var ret int32
 		return ret
 	}
@@ -127,15 +130,15 @@ func (o *HistoryResource) GetSeriesId() int32 {
 // GetSeriesIdOk returns a tuple with the SeriesId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetSeriesIdOk() (*int32, bool) {
-	if o == nil || isNil(o.SeriesId) {
-    return nil, false
+	if o == nil || IsNil(o.SeriesId) {
+		return nil, false
 	}
 	return o.SeriesId, true
 }
 
 // HasSeriesId returns a boolean if a field has been set.
 func (o *HistoryResource) HasSeriesId() bool {
-	if o != nil && !isNil(o.SeriesId) {
+	if o != nil && !IsNil(o.SeriesId) {
 		return true
 	}
 
@@ -149,7 +152,7 @@ func (o *HistoryResource) SetSeriesId(v int32) {
 
 // GetSourceTitle returns the SourceTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HistoryResource) GetSourceTitle() string {
-	if o == nil || isNil(o.SourceTitle.Get()) {
+	if o == nil || IsNil(o.SourceTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *HistoryResource) GetSourceTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HistoryResource) GetSourceTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SourceTitle.Get(), o.SourceTitle.IsSet()
 }
@@ -190,9 +193,9 @@ func (o *HistoryResource) UnsetSourceTitle() {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoryResource) GetLanguages() []*Language {
+func (o *HistoryResource) GetLanguages() []Language {
 	if o == nil {
-		var ret []*Language
+		var ret []Language
 		return ret
 	}
 	return o.Languages
@@ -201,16 +204,16 @@ func (o *HistoryResource) GetLanguages() []*Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoryResource) GetLanguagesOk() ([]*Language, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *HistoryResource) GetLanguagesOk() ([]Language, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *HistoryResource) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -218,13 +221,13 @@ func (o *HistoryResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *HistoryResource) SetLanguages(v []*Language) {
+func (o *HistoryResource) SetLanguages(v []Language) {
 	o.Languages = v
 }
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *HistoryResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -234,15 +237,15 @@ func (o *HistoryResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *HistoryResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -255,9 +258,9 @@ func (o *HistoryResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoryResource) GetCustomFormats() []*CustomFormatResource {
+func (o *HistoryResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -266,16 +269,16 @@ func (o *HistoryResource) GetCustomFormats() []*CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoryResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *HistoryResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *HistoryResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -283,13 +286,13 @@ func (o *HistoryResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *HistoryResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *HistoryResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
 func (o *HistoryResource) GetCustomFormatScore() int32 {
-	if o == nil || isNil(o.CustomFormatScore) {
+	if o == nil || IsNil(o.CustomFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -299,15 +302,15 @@ func (o *HistoryResource) GetCustomFormatScore() int32 {
 // GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetCustomFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.CustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.CustomFormatScore) {
+		return nil, false
 	}
 	return o.CustomFormatScore, true
 }
 
 // HasCustomFormatScore returns a boolean if a field has been set.
 func (o *HistoryResource) HasCustomFormatScore() bool {
-	if o != nil && !isNil(o.CustomFormatScore) {
+	if o != nil && !IsNil(o.CustomFormatScore) {
 		return true
 	}
 
@@ -321,7 +324,7 @@ func (o *HistoryResource) SetCustomFormatScore(v int32) {
 
 // GetQualityCutoffNotMet returns the QualityCutoffNotMet field value if set, zero value otherwise.
 func (o *HistoryResource) GetQualityCutoffNotMet() bool {
-	if o == nil || isNil(o.QualityCutoffNotMet) {
+	if o == nil || IsNil(o.QualityCutoffNotMet) {
 		var ret bool
 		return ret
 	}
@@ -331,15 +334,15 @@ func (o *HistoryResource) GetQualityCutoffNotMet() bool {
 // GetQualityCutoffNotMetOk returns a tuple with the QualityCutoffNotMet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetQualityCutoffNotMetOk() (*bool, bool) {
-	if o == nil || isNil(o.QualityCutoffNotMet) {
-    return nil, false
+	if o == nil || IsNil(o.QualityCutoffNotMet) {
+		return nil, false
 	}
 	return o.QualityCutoffNotMet, true
 }
 
 // HasQualityCutoffNotMet returns a boolean if a field has been set.
 func (o *HistoryResource) HasQualityCutoffNotMet() bool {
-	if o != nil && !isNil(o.QualityCutoffNotMet) {
+	if o != nil && !IsNil(o.QualityCutoffNotMet) {
 		return true
 	}
 
@@ -353,7 +356,7 @@ func (o *HistoryResource) SetQualityCutoffNotMet(v bool) {
 
 // GetDate returns the Date field value if set, zero value otherwise.
 func (o *HistoryResource) GetDate() time.Time {
-	if o == nil || isNil(o.Date) {
+	if o == nil || IsNil(o.Date) {
 		var ret time.Time
 		return ret
 	}
@@ -363,15 +366,15 @@ func (o *HistoryResource) GetDate() time.Time {
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetDateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Date) {
-    return nil, false
+	if o == nil || IsNil(o.Date) {
+		return nil, false
 	}
 	return o.Date, true
 }
 
 // HasDate returns a boolean if a field has been set.
 func (o *HistoryResource) HasDate() bool {
-	if o != nil && !isNil(o.Date) {
+	if o != nil && !IsNil(o.Date) {
 		return true
 	}
 
@@ -385,7 +388,7 @@ func (o *HistoryResource) SetDate(v time.Time) {
 
 // GetDownloadId returns the DownloadId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HistoryResource) GetDownloadId() string {
-	if o == nil || isNil(o.DownloadId.Get()) {
+	if o == nil || IsNil(o.DownloadId.Get()) {
 		var ret string
 		return ret
 	}
@@ -397,7 +400,7 @@ func (o *HistoryResource) GetDownloadId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HistoryResource) GetDownloadIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DownloadId.Get(), o.DownloadId.IsSet()
 }
@@ -427,7 +430,7 @@ func (o *HistoryResource) UnsetDownloadId() {
 
 // GetEventType returns the EventType field value if set, zero value otherwise.
 func (o *HistoryResource) GetEventType() EpisodeHistoryEventType {
-	if o == nil || isNil(o.EventType) {
+	if o == nil || IsNil(o.EventType) {
 		var ret EpisodeHistoryEventType
 		return ret
 	}
@@ -437,15 +440,15 @@ func (o *HistoryResource) GetEventType() EpisodeHistoryEventType {
 // GetEventTypeOk returns a tuple with the EventType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetEventTypeOk() (*EpisodeHistoryEventType, bool) {
-	if o == nil || isNil(o.EventType) {
-    return nil, false
+	if o == nil || IsNil(o.EventType) {
+		return nil, false
 	}
 	return o.EventType, true
 }
 
 // HasEventType returns a boolean if a field has been set.
 func (o *HistoryResource) HasEventType() bool {
-	if o != nil && !isNil(o.EventType) {
+	if o != nil && !IsNil(o.EventType) {
 		return true
 	}
 
@@ -470,15 +473,15 @@ func (o *HistoryResource) GetData() map[string]string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HistoryResource) GetDataOk() (*map[string]string, bool) {
-	if o == nil || isNil(o.Data) {
-    return nil, false
+	if o == nil || IsNil(o.Data) {
+		return nil, false
 	}
 	return &o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *HistoryResource) HasData() bool {
-	if o != nil && isNil(o.Data) {
+	if o != nil && IsNil(o.Data) {
 		return true
 	}
 
@@ -492,7 +495,7 @@ func (o *HistoryResource) SetData(v map[string]string) {
 
 // GetEpisode returns the Episode field value if set, zero value otherwise.
 func (o *HistoryResource) GetEpisode() EpisodeResource {
-	if o == nil || isNil(o.Episode) {
+	if o == nil || IsNil(o.Episode) {
 		var ret EpisodeResource
 		return ret
 	}
@@ -502,15 +505,15 @@ func (o *HistoryResource) GetEpisode() EpisodeResource {
 // GetEpisodeOk returns a tuple with the Episode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetEpisodeOk() (*EpisodeResource, bool) {
-	if o == nil || isNil(o.Episode) {
-    return nil, false
+	if o == nil || IsNil(o.Episode) {
+		return nil, false
 	}
 	return o.Episode, true
 }
 
 // HasEpisode returns a boolean if a field has been set.
 func (o *HistoryResource) HasEpisode() bool {
-	if o != nil && !isNil(o.Episode) {
+	if o != nil && !IsNil(o.Episode) {
 		return true
 	}
 
@@ -524,7 +527,7 @@ func (o *HistoryResource) SetEpisode(v EpisodeResource) {
 
 // GetSeries returns the Series field value if set, zero value otherwise.
 func (o *HistoryResource) GetSeries() SeriesResource {
-	if o == nil || isNil(o.Series) {
+	if o == nil || IsNil(o.Series) {
 		var ret SeriesResource
 		return ret
 	}
@@ -534,15 +537,15 @@ func (o *HistoryResource) GetSeries() SeriesResource {
 // GetSeriesOk returns a tuple with the Series field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoryResource) GetSeriesOk() (*SeriesResource, bool) {
-	if o == nil || isNil(o.Series) {
-    return nil, false
+	if o == nil || IsNil(o.Series) {
+		return nil, false
 	}
 	return o.Series, true
 }
 
 // HasSeries returns a boolean if a field has been set.
 func (o *HistoryResource) HasSeries() bool {
-	if o != nil && !isNil(o.Series) {
+	if o != nil && !IsNil(o.Series) {
 		return true
 	}
 
@@ -555,14 +558,22 @@ func (o *HistoryResource) SetSeries(v SeriesResource) {
 }
 
 func (o HistoryResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o HistoryResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.EpisodeId) {
+	if !IsNil(o.EpisodeId) {
 		toSerialize["episodeId"] = o.EpisodeId
 	}
-	if !isNil(o.SeriesId) {
+	if !IsNil(o.SeriesId) {
 		toSerialize["seriesId"] = o.SeriesId
 	}
 	if o.SourceTitle.IsSet() {
@@ -571,37 +582,37 @@ func (o HistoryResource) MarshalJSON() ([]byte, error) {
 	if o.Languages != nil {
 		toSerialize["languages"] = o.Languages
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.CustomFormatScore) {
+	if !IsNil(o.CustomFormatScore) {
 		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
-	if !isNil(o.QualityCutoffNotMet) {
+	if !IsNil(o.QualityCutoffNotMet) {
 		toSerialize["qualityCutoffNotMet"] = o.QualityCutoffNotMet
 	}
-	if !isNil(o.Date) {
+	if !IsNil(o.Date) {
 		toSerialize["date"] = o.Date
 	}
 	if o.DownloadId.IsSet() {
 		toSerialize["downloadId"] = o.DownloadId.Get()
 	}
-	if !isNil(o.EventType) {
+	if !IsNil(o.EventType) {
 		toSerialize["eventType"] = o.EventType
 	}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	if !isNil(o.Episode) {
+	if !IsNil(o.Episode) {
 		toSerialize["episode"] = o.Episode
 	}
-	if !isNil(o.Series) {
+	if !IsNil(o.Series) {
 		toSerialize["series"] = o.Series
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableHistoryResource struct {

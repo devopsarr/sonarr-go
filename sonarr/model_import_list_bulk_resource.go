@@ -14,10 +14,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the ImportListBulkResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ImportListBulkResource{}
+
 // ImportListBulkResource struct for ImportListBulkResource
 type ImportListBulkResource struct {
-	Ids []*int32 `json:"ids,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Ids []int32 `json:"ids,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	EnableAutomaticAdd NullableBool `json:"enableAutomaticAdd,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
@@ -42,9 +45,9 @@ func NewImportListBulkResourceWithDefaults() *ImportListBulkResource {
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportListBulkResource) GetIds() []*int32 {
+func (o *ImportListBulkResource) GetIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Ids
@@ -53,16 +56,16 @@ func (o *ImportListBulkResource) GetIds() []*int32 {
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportListBulkResource) GetIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Ids) {
-    return nil, false
+func (o *ImportListBulkResource) GetIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Ids) {
+		return nil, false
 	}
 	return o.Ids, true
 }
 
 // HasIds returns a boolean if a field has been set.
 func (o *ImportListBulkResource) HasIds() bool {
-	if o != nil && isNil(o.Ids) {
+	if o != nil && IsNil(o.Ids) {
 		return true
 	}
 
@@ -70,14 +73,14 @@ func (o *ImportListBulkResource) HasIds() bool {
 }
 
 // SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *ImportListBulkResource) SetIds(v []*int32) {
+func (o *ImportListBulkResource) SetIds(v []int32) {
 	o.Ids = v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportListBulkResource) GetTags() []*int32 {
+func (o *ImportListBulkResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -86,16 +89,16 @@ func (o *ImportListBulkResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportListBulkResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *ImportListBulkResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *ImportListBulkResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -103,13 +106,13 @@ func (o *ImportListBulkResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *ImportListBulkResource) SetTags(v []*int32) {
+func (o *ImportListBulkResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetApplyTags returns the ApplyTags field value if set, zero value otherwise.
 func (o *ImportListBulkResource) GetApplyTags() ApplyTags {
-	if o == nil || isNil(o.ApplyTags) {
+	if o == nil || IsNil(o.ApplyTags) {
 		var ret ApplyTags
 		return ret
 	}
@@ -119,15 +122,15 @@ func (o *ImportListBulkResource) GetApplyTags() ApplyTags {
 // GetApplyTagsOk returns a tuple with the ApplyTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListBulkResource) GetApplyTagsOk() (*ApplyTags, bool) {
-	if o == nil || isNil(o.ApplyTags) {
-    return nil, false
+	if o == nil || IsNil(o.ApplyTags) {
+		return nil, false
 	}
 	return o.ApplyTags, true
 }
 
 // HasApplyTags returns a boolean if a field has been set.
 func (o *ImportListBulkResource) HasApplyTags() bool {
-	if o != nil && !isNil(o.ApplyTags) {
+	if o != nil && !IsNil(o.ApplyTags) {
 		return true
 	}
 
@@ -141,7 +144,7 @@ func (o *ImportListBulkResource) SetApplyTags(v ApplyTags) {
 
 // GetEnableAutomaticAdd returns the EnableAutomaticAdd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListBulkResource) GetEnableAutomaticAdd() bool {
-	if o == nil || isNil(o.EnableAutomaticAdd.Get()) {
+	if o == nil || IsNil(o.EnableAutomaticAdd.Get()) {
 		var ret bool
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *ImportListBulkResource) GetEnableAutomaticAdd() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListBulkResource) GetEnableAutomaticAddOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableAutomaticAdd.Get(), o.EnableAutomaticAdd.IsSet()
 }
@@ -183,7 +186,7 @@ func (o *ImportListBulkResource) UnsetEnableAutomaticAdd() {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListBulkResource) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -195,7 +198,7 @@ func (o *ImportListBulkResource) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListBulkResource) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -225,7 +228,7 @@ func (o *ImportListBulkResource) UnsetRootFolderPath() {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListBulkResource) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId.Get()) {
+	if o == nil || IsNil(o.QualityProfileId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -237,7 +240,7 @@ func (o *ImportListBulkResource) GetQualityProfileId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListBulkResource) GetQualityProfileIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.QualityProfileId.Get(), o.QualityProfileId.IsSet()
 }
@@ -266,6 +269,14 @@ func (o *ImportListBulkResource) UnsetQualityProfileId() {
 }
 
 func (o ImportListBulkResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ImportListBulkResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Ids != nil {
 		toSerialize["ids"] = o.Ids
@@ -273,7 +284,7 @@ func (o ImportListBulkResource) MarshalJSON() ([]byte, error) {
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !isNil(o.ApplyTags) {
+	if !IsNil(o.ApplyTags) {
 		toSerialize["applyTags"] = o.ApplyTags
 	}
 	if o.EnableAutomaticAdd.IsSet() {
@@ -285,7 +296,7 @@ func (o ImportListBulkResource) MarshalJSON() ([]byte, error) {
 	if o.QualityProfileId.IsSet() {
 		toSerialize["qualityProfileId"] = o.QualityProfileId.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableImportListBulkResource struct {

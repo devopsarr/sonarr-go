@@ -21,6 +21,7 @@ import (
 
 // SystemAPIService SystemAPI service
 type SystemAPIService service
+
 type ApiCreateSystemRestartRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
@@ -134,6 +135,7 @@ func (a *SystemAPIService) CreateSystemRestartExecute(r ApiCreateSystemRestartRe
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiCreateSystemShutdownRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
@@ -247,6 +249,7 @@ func (a *SystemAPIService) CreateSystemShutdownExecute(r ApiCreateSystemShutdown
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetSystemRoutesRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
@@ -360,6 +363,7 @@ func (a *SystemAPIService) GetSystemRoutesExecute(r ApiGetSystemRoutesRequest) (
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetSystemRoutesDuplicateRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
@@ -473,6 +477,7 @@ func (a *SystemAPIService) GetSystemRoutesDuplicateExecute(r ApiGetSystemRoutesD
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetSystemStatusRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService

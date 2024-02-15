@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MediaInfoResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MediaInfoResource{}
+
 // MediaInfoResource struct for MediaInfoResource
 type MediaInfoResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -53,7 +56,7 @@ func NewMediaInfoResourceWithDefaults() *MediaInfoResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *MediaInfoResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -63,15 +66,15 @@ func (o *MediaInfoResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *MediaInfoResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *MediaInfoResource) SetId(v int32) {
 
 // GetAudioBitrate returns the AudioBitrate field value if set, zero value otherwise.
 func (o *MediaInfoResource) GetAudioBitrate() int64 {
-	if o == nil || isNil(o.AudioBitrate) {
+	if o == nil || IsNil(o.AudioBitrate) {
 		var ret int64
 		return ret
 	}
@@ -95,15 +98,15 @@ func (o *MediaInfoResource) GetAudioBitrate() int64 {
 // GetAudioBitrateOk returns a tuple with the AudioBitrate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoResource) GetAudioBitrateOk() (*int64, bool) {
-	if o == nil || isNil(o.AudioBitrate) {
-    return nil, false
+	if o == nil || IsNil(o.AudioBitrate) {
+		return nil, false
 	}
 	return o.AudioBitrate, true
 }
 
 // HasAudioBitrate returns a boolean if a field has been set.
 func (o *MediaInfoResource) HasAudioBitrate() bool {
-	if o != nil && !isNil(o.AudioBitrate) {
+	if o != nil && !IsNil(o.AudioBitrate) {
 		return true
 	}
 
@@ -117,7 +120,7 @@ func (o *MediaInfoResource) SetAudioBitrate(v int64) {
 
 // GetAudioChannels returns the AudioChannels field value if set, zero value otherwise.
 func (o *MediaInfoResource) GetAudioChannels() float64 {
-	if o == nil || isNil(o.AudioChannels) {
+	if o == nil || IsNil(o.AudioChannels) {
 		var ret float64
 		return ret
 	}
@@ -127,15 +130,15 @@ func (o *MediaInfoResource) GetAudioChannels() float64 {
 // GetAudioChannelsOk returns a tuple with the AudioChannels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoResource) GetAudioChannelsOk() (*float64, bool) {
-	if o == nil || isNil(o.AudioChannels) {
-    return nil, false
+	if o == nil || IsNil(o.AudioChannels) {
+		return nil, false
 	}
 	return o.AudioChannels, true
 }
 
 // HasAudioChannels returns a boolean if a field has been set.
 func (o *MediaInfoResource) HasAudioChannels() bool {
-	if o != nil && !isNil(o.AudioChannels) {
+	if o != nil && !IsNil(o.AudioChannels) {
 		return true
 	}
 
@@ -149,7 +152,7 @@ func (o *MediaInfoResource) SetAudioChannels(v float64) {
 
 // GetAudioCodec returns the AudioCodec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetAudioCodec() string {
-	if o == nil || isNil(o.AudioCodec.Get()) {
+	if o == nil || IsNil(o.AudioCodec.Get()) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *MediaInfoResource) GetAudioCodec() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetAudioCodecOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AudioCodec.Get(), o.AudioCodec.IsSet()
 }
@@ -191,7 +194,7 @@ func (o *MediaInfoResource) UnsetAudioCodec() {
 
 // GetAudioLanguages returns the AudioLanguages field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetAudioLanguages() string {
-	if o == nil || isNil(o.AudioLanguages.Get()) {
+	if o == nil || IsNil(o.AudioLanguages.Get()) {
 		var ret string
 		return ret
 	}
@@ -203,7 +206,7 @@ func (o *MediaInfoResource) GetAudioLanguages() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetAudioLanguagesOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AudioLanguages.Get(), o.AudioLanguages.IsSet()
 }
@@ -233,7 +236,7 @@ func (o *MediaInfoResource) UnsetAudioLanguages() {
 
 // GetAudioStreamCount returns the AudioStreamCount field value if set, zero value otherwise.
 func (o *MediaInfoResource) GetAudioStreamCount() int32 {
-	if o == nil || isNil(o.AudioStreamCount) {
+	if o == nil || IsNil(o.AudioStreamCount) {
 		var ret int32
 		return ret
 	}
@@ -243,15 +246,15 @@ func (o *MediaInfoResource) GetAudioStreamCount() int32 {
 // GetAudioStreamCountOk returns a tuple with the AudioStreamCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoResource) GetAudioStreamCountOk() (*int32, bool) {
-	if o == nil || isNil(o.AudioStreamCount) {
-    return nil, false
+	if o == nil || IsNil(o.AudioStreamCount) {
+		return nil, false
 	}
 	return o.AudioStreamCount, true
 }
 
 // HasAudioStreamCount returns a boolean if a field has been set.
 func (o *MediaInfoResource) HasAudioStreamCount() bool {
-	if o != nil && !isNil(o.AudioStreamCount) {
+	if o != nil && !IsNil(o.AudioStreamCount) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *MediaInfoResource) SetAudioStreamCount(v int32) {
 
 // GetVideoBitDepth returns the VideoBitDepth field value if set, zero value otherwise.
 func (o *MediaInfoResource) GetVideoBitDepth() int32 {
-	if o == nil || isNil(o.VideoBitDepth) {
+	if o == nil || IsNil(o.VideoBitDepth) {
 		var ret int32
 		return ret
 	}
@@ -275,15 +278,15 @@ func (o *MediaInfoResource) GetVideoBitDepth() int32 {
 // GetVideoBitDepthOk returns a tuple with the VideoBitDepth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoResource) GetVideoBitDepthOk() (*int32, bool) {
-	if o == nil || isNil(o.VideoBitDepth) {
-    return nil, false
+	if o == nil || IsNil(o.VideoBitDepth) {
+		return nil, false
 	}
 	return o.VideoBitDepth, true
 }
 
 // HasVideoBitDepth returns a boolean if a field has been set.
 func (o *MediaInfoResource) HasVideoBitDepth() bool {
-	if o != nil && !isNil(o.VideoBitDepth) {
+	if o != nil && !IsNil(o.VideoBitDepth) {
 		return true
 	}
 
@@ -297,7 +300,7 @@ func (o *MediaInfoResource) SetVideoBitDepth(v int32) {
 
 // GetVideoBitrate returns the VideoBitrate field value if set, zero value otherwise.
 func (o *MediaInfoResource) GetVideoBitrate() int64 {
-	if o == nil || isNil(o.VideoBitrate) {
+	if o == nil || IsNil(o.VideoBitrate) {
 		var ret int64
 		return ret
 	}
@@ -307,15 +310,15 @@ func (o *MediaInfoResource) GetVideoBitrate() int64 {
 // GetVideoBitrateOk returns a tuple with the VideoBitrate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoResource) GetVideoBitrateOk() (*int64, bool) {
-	if o == nil || isNil(o.VideoBitrate) {
-    return nil, false
+	if o == nil || IsNil(o.VideoBitrate) {
+		return nil, false
 	}
 	return o.VideoBitrate, true
 }
 
 // HasVideoBitrate returns a boolean if a field has been set.
 func (o *MediaInfoResource) HasVideoBitrate() bool {
-	if o != nil && !isNil(o.VideoBitrate) {
+	if o != nil && !IsNil(o.VideoBitrate) {
 		return true
 	}
 
@@ -329,7 +332,7 @@ func (o *MediaInfoResource) SetVideoBitrate(v int64) {
 
 // GetVideoCodec returns the VideoCodec field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetVideoCodec() string {
-	if o == nil || isNil(o.VideoCodec.Get()) {
+	if o == nil || IsNil(o.VideoCodec.Get()) {
 		var ret string
 		return ret
 	}
@@ -341,7 +344,7 @@ func (o *MediaInfoResource) GetVideoCodec() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetVideoCodecOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.VideoCodec.Get(), o.VideoCodec.IsSet()
 }
@@ -371,7 +374,7 @@ func (o *MediaInfoResource) UnsetVideoCodec() {
 
 // GetVideoFps returns the VideoFps field value if set, zero value otherwise.
 func (o *MediaInfoResource) GetVideoFps() float64 {
-	if o == nil || isNil(o.VideoFps) {
+	if o == nil || IsNil(o.VideoFps) {
 		var ret float64
 		return ret
 	}
@@ -381,15 +384,15 @@ func (o *MediaInfoResource) GetVideoFps() float64 {
 // GetVideoFpsOk returns a tuple with the VideoFps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaInfoResource) GetVideoFpsOk() (*float64, bool) {
-	if o == nil || isNil(o.VideoFps) {
-    return nil, false
+	if o == nil || IsNil(o.VideoFps) {
+		return nil, false
 	}
 	return o.VideoFps, true
 }
 
 // HasVideoFps returns a boolean if a field has been set.
 func (o *MediaInfoResource) HasVideoFps() bool {
-	if o != nil && !isNil(o.VideoFps) {
+	if o != nil && !IsNil(o.VideoFps) {
 		return true
 	}
 
@@ -403,7 +406,7 @@ func (o *MediaInfoResource) SetVideoFps(v float64) {
 
 // GetVideoDynamicRange returns the VideoDynamicRange field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetVideoDynamicRange() string {
-	if o == nil || isNil(o.VideoDynamicRange.Get()) {
+	if o == nil || IsNil(o.VideoDynamicRange.Get()) {
 		var ret string
 		return ret
 	}
@@ -415,7 +418,7 @@ func (o *MediaInfoResource) GetVideoDynamicRange() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetVideoDynamicRangeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.VideoDynamicRange.Get(), o.VideoDynamicRange.IsSet()
 }
@@ -445,7 +448,7 @@ func (o *MediaInfoResource) UnsetVideoDynamicRange() {
 
 // GetVideoDynamicRangeType returns the VideoDynamicRangeType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetVideoDynamicRangeType() string {
-	if o == nil || isNil(o.VideoDynamicRangeType.Get()) {
+	if o == nil || IsNil(o.VideoDynamicRangeType.Get()) {
 		var ret string
 		return ret
 	}
@@ -457,7 +460,7 @@ func (o *MediaInfoResource) GetVideoDynamicRangeType() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetVideoDynamicRangeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.VideoDynamicRangeType.Get(), o.VideoDynamicRangeType.IsSet()
 }
@@ -487,7 +490,7 @@ func (o *MediaInfoResource) UnsetVideoDynamicRangeType() {
 
 // GetResolution returns the Resolution field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetResolution() string {
-	if o == nil || isNil(o.Resolution.Get()) {
+	if o == nil || IsNil(o.Resolution.Get()) {
 		var ret string
 		return ret
 	}
@@ -499,7 +502,7 @@ func (o *MediaInfoResource) GetResolution() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetResolutionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Resolution.Get(), o.Resolution.IsSet()
 }
@@ -529,7 +532,7 @@ func (o *MediaInfoResource) UnsetResolution() {
 
 // GetRunTime returns the RunTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetRunTime() string {
-	if o == nil || isNil(o.RunTime.Get()) {
+	if o == nil || IsNil(o.RunTime.Get()) {
 		var ret string
 		return ret
 	}
@@ -541,7 +544,7 @@ func (o *MediaInfoResource) GetRunTime() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetRunTimeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RunTime.Get(), o.RunTime.IsSet()
 }
@@ -571,7 +574,7 @@ func (o *MediaInfoResource) UnsetRunTime() {
 
 // GetScanType returns the ScanType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetScanType() string {
-	if o == nil || isNil(o.ScanType.Get()) {
+	if o == nil || IsNil(o.ScanType.Get()) {
 		var ret string
 		return ret
 	}
@@ -583,7 +586,7 @@ func (o *MediaInfoResource) GetScanType() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetScanTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ScanType.Get(), o.ScanType.IsSet()
 }
@@ -613,7 +616,7 @@ func (o *MediaInfoResource) UnsetScanType() {
 
 // GetSubtitles returns the Subtitles field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetSubtitles() string {
-	if o == nil || isNil(o.Subtitles.Get()) {
+	if o == nil || IsNil(o.Subtitles.Get()) {
 		var ret string
 		return ret
 	}
@@ -625,7 +628,7 @@ func (o *MediaInfoResource) GetSubtitles() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaInfoResource) GetSubtitlesOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Subtitles.Get(), o.Subtitles.IsSet()
 }
@@ -654,14 +657,22 @@ func (o *MediaInfoResource) UnsetSubtitles() {
 }
 
 func (o MediaInfoResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MediaInfoResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.AudioBitrate) {
+	if !IsNil(o.AudioBitrate) {
 		toSerialize["audioBitrate"] = o.AudioBitrate
 	}
-	if !isNil(o.AudioChannels) {
+	if !IsNil(o.AudioChannels) {
 		toSerialize["audioChannels"] = o.AudioChannels
 	}
 	if o.AudioCodec.IsSet() {
@@ -670,19 +681,19 @@ func (o MediaInfoResource) MarshalJSON() ([]byte, error) {
 	if o.AudioLanguages.IsSet() {
 		toSerialize["audioLanguages"] = o.AudioLanguages.Get()
 	}
-	if !isNil(o.AudioStreamCount) {
+	if !IsNil(o.AudioStreamCount) {
 		toSerialize["audioStreamCount"] = o.AudioStreamCount
 	}
-	if !isNil(o.VideoBitDepth) {
+	if !IsNil(o.VideoBitDepth) {
 		toSerialize["videoBitDepth"] = o.VideoBitDepth
 	}
-	if !isNil(o.VideoBitrate) {
+	if !IsNil(o.VideoBitrate) {
 		toSerialize["videoBitrate"] = o.VideoBitrate
 	}
 	if o.VideoCodec.IsSet() {
 		toSerialize["videoCodec"] = o.VideoCodec.Get()
 	}
-	if !isNil(o.VideoFps) {
+	if !IsNil(o.VideoFps) {
 		toSerialize["videoFps"] = o.VideoFps
 	}
 	if o.VideoDynamicRange.IsSet() {
@@ -703,7 +714,7 @@ func (o MediaInfoResource) MarshalJSON() ([]byte, error) {
 	if o.Subtitles.IsSet() {
 		toSerialize["subtitles"] = o.Subtitles.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMediaInfoResource struct {

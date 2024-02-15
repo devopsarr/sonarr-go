@@ -22,6 +22,7 @@ import (
 
 // BlocklistAPIService BlocklistAPI service
 type BlocklistAPIService service
+
 type ApiDeleteBlocklistRequest struct {
 	ctx context.Context
 	ApiService *BlocklistAPIService
@@ -61,7 +62,7 @@ func (a *BlocklistAPIService) DeleteBlocklistExecute(r ApiDeleteBlocklistRequest
 	}
 
 	localVarPath := localBasePath + "/api/v3/blocklist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -139,6 +140,7 @@ func (a *BlocklistAPIService) DeleteBlocklistExecute(r ApiDeleteBlocklistRequest
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteBlocklistBulkRequest struct {
 	ctx context.Context
 	ApiService *BlocklistAPIService
@@ -260,6 +262,7 @@ func (a *BlocklistAPIService) DeleteBlocklistBulkExecute(r ApiDeleteBlocklistBul
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetBlocklistRequest struct {
 	ctx context.Context
 	ApiService *BlocklistAPIService
@@ -328,16 +331,22 @@ func (a *BlocklistAPIService) GetBlocklistExecute(r ApiGetBlocklistRequest) (*Bl
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	} else {
+		var defaultValue int32 = 1
+		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+	} else {
+		var defaultValue int32 = 10
+		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
 	}
 	if r.sortDirection != nil {
-		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

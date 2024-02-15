@@ -14,13 +14,16 @@ import (
 	"encoding/json"
 )
 
+// checks if the RootFolderResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RootFolderResource{}
+
 // RootFolderResource struct for RootFolderResource
 type RootFolderResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Path NullableString `json:"path,omitempty"`
 	Accessible *bool `json:"accessible,omitempty"`
 	FreeSpace NullableInt64 `json:"freeSpace,omitempty"`
-	UnmappedFolders []*UnmappedFolder `json:"unmappedFolders,omitempty"`
+	UnmappedFolders []UnmappedFolder `json:"unmappedFolders,omitempty"`
 }
 
 // NewRootFolderResource instantiates a new RootFolderResource object
@@ -42,7 +45,7 @@ func NewRootFolderResourceWithDefaults() *RootFolderResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RootFolderResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *RootFolderResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootFolderResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RootFolderResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *RootFolderResource) SetId(v int32) {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RootFolderResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *RootFolderResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RootFolderResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *RootFolderResource) UnsetPath() {
 
 // GetAccessible returns the Accessible field value if set, zero value otherwise.
 func (o *RootFolderResource) GetAccessible() bool {
-	if o == nil || isNil(o.Accessible) {
+	if o == nil || IsNil(o.Accessible) {
 		var ret bool
 		return ret
 	}
@@ -126,15 +129,15 @@ func (o *RootFolderResource) GetAccessible() bool {
 // GetAccessibleOk returns a tuple with the Accessible field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootFolderResource) GetAccessibleOk() (*bool, bool) {
-	if o == nil || isNil(o.Accessible) {
-    return nil, false
+	if o == nil || IsNil(o.Accessible) {
+		return nil, false
 	}
 	return o.Accessible, true
 }
 
 // HasAccessible returns a boolean if a field has been set.
 func (o *RootFolderResource) HasAccessible() bool {
-	if o != nil && !isNil(o.Accessible) {
+	if o != nil && !IsNil(o.Accessible) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *RootFolderResource) SetAccessible(v bool) {
 
 // GetFreeSpace returns the FreeSpace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RootFolderResource) GetFreeSpace() int64 {
-	if o == nil || isNil(o.FreeSpace.Get()) {
+	if o == nil || IsNil(o.FreeSpace.Get()) {
 		var ret int64
 		return ret
 	}
@@ -160,7 +163,7 @@ func (o *RootFolderResource) GetFreeSpace() int64 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RootFolderResource) GetFreeSpaceOk() (*int64, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.FreeSpace.Get(), o.FreeSpace.IsSet()
 }
@@ -189,9 +192,9 @@ func (o *RootFolderResource) UnsetFreeSpace() {
 }
 
 // GetUnmappedFolders returns the UnmappedFolders field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RootFolderResource) GetUnmappedFolders() []*UnmappedFolder {
+func (o *RootFolderResource) GetUnmappedFolders() []UnmappedFolder {
 	if o == nil {
-		var ret []*UnmappedFolder
+		var ret []UnmappedFolder
 		return ret
 	}
 	return o.UnmappedFolders
@@ -200,16 +203,16 @@ func (o *RootFolderResource) GetUnmappedFolders() []*UnmappedFolder {
 // GetUnmappedFoldersOk returns a tuple with the UnmappedFolders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RootFolderResource) GetUnmappedFoldersOk() ([]*UnmappedFolder, bool) {
-	if o == nil || isNil(o.UnmappedFolders) {
-    return nil, false
+func (o *RootFolderResource) GetUnmappedFoldersOk() ([]UnmappedFolder, bool) {
+	if o == nil || IsNil(o.UnmappedFolders) {
+		return nil, false
 	}
 	return o.UnmappedFolders, true
 }
 
 // HasUnmappedFolders returns a boolean if a field has been set.
 func (o *RootFolderResource) HasUnmappedFolders() bool {
-	if o != nil && isNil(o.UnmappedFolders) {
+	if o != nil && IsNil(o.UnmappedFolders) {
 		return true
 	}
 
@@ -217,19 +220,27 @@ func (o *RootFolderResource) HasUnmappedFolders() bool {
 }
 
 // SetUnmappedFolders gets a reference to the given []UnmappedFolder and assigns it to the UnmappedFolders field.
-func (o *RootFolderResource) SetUnmappedFolders(v []*UnmappedFolder) {
+func (o *RootFolderResource) SetUnmappedFolders(v []UnmappedFolder) {
 	o.UnmappedFolders = v
 }
 
 func (o RootFolderResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RootFolderResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Path.IsSet() {
 		toSerialize["path"] = o.Path.Get()
 	}
-	if !isNil(o.Accessible) {
+	if !IsNil(o.Accessible) {
 		toSerialize["accessible"] = o.Accessible
 	}
 	if o.FreeSpace.IsSet() {
@@ -238,7 +249,7 @@ func (o RootFolderResource) MarshalJSON() ([]byte, error) {
 	if o.UnmappedFolders != nil {
 		toSerialize["unmappedFolders"] = o.UnmappedFolders
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRootFolderResource struct {

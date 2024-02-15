@@ -22,6 +22,7 @@ import (
 
 // DelayProfileAPIService DelayProfileAPI service
 type DelayProfileAPIService service
+
 type ApiCreateDelayProfileRequest struct {
 	ctx context.Context
 	ApiService *DelayProfileAPIService
@@ -154,6 +155,7 @@ func (a *DelayProfileAPIService) CreateDelayProfileExecute(r ApiCreateDelayProfi
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteDelayProfileRequest struct {
 	ctx context.Context
 	ApiService *DelayProfileAPIService
@@ -193,7 +195,7 @@ func (a *DelayProfileAPIService) DeleteDelayProfileExecute(r ApiDeleteDelayProfi
 	}
 
 	localVarPath := localBasePath + "/api/v3/delayprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *DelayProfileAPIService) DeleteDelayProfileExecute(r ApiDeleteDelayProfi
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetDelayProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *DelayProfileAPIService
@@ -312,7 +315,7 @@ func (a *DelayProfileAPIService) GetDelayProfileByIdExecute(r ApiGetDelayProfile
 	}
 
 	localVarPath := localBasePath + "/api/v3/delayprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *DelayProfileAPIService) GetDelayProfileByIdExecute(r ApiGetDelayProfile
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListDelayProfileRequest struct {
 	ctx context.Context
 	ApiService *DelayProfileAPIService
 }
 
-func (r ApiListDelayProfileRequest) Execute() ([]*DelayProfileResource, *http.Response, error) {
+func (r ApiListDelayProfileRequest) Execute() ([]DelayProfileResource, *http.Response, error) {
 	return r.ApiService.ListDelayProfileExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *DelayProfileAPIService) ListDelayProfile(ctx context.Context) ApiListDe
 
 // Execute executes the request
 //  @return []DelayProfileResource
-func (a *DelayProfileAPIService) ListDelayProfileExecute(r ApiListDelayProfileRequest) ([]*DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileAPIService) ListDelayProfileExecute(r ApiListDelayProfileRequest) ([]DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*DelayProfileResource
+		localVarReturnValue  []DelayProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileAPIService.ListDelayProfile")
@@ -523,6 +527,7 @@ func (a *DelayProfileAPIService) ListDelayProfileExecute(r ApiListDelayProfileRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateDelayProfileRequest struct {
 	ctx context.Context
 	ApiService *DelayProfileAPIService
@@ -570,7 +575,7 @@ func (a *DelayProfileAPIService) UpdateDelayProfileExecute(r ApiUpdateDelayProfi
 	}
 
 	localVarPath := localBasePath + "/api/v3/delayprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -659,6 +664,7 @@ func (a *DelayProfileAPIService) UpdateDelayProfileExecute(r ApiUpdateDelayProfi
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateDelayProfileReorderRequest struct {
 	ctx context.Context
 	ApiService *DelayProfileAPIService
@@ -671,7 +677,7 @@ func (r ApiUpdateDelayProfileReorderRequest) After(after int32) ApiUpdateDelayPr
 	return r
 }
 
-func (r ApiUpdateDelayProfileReorderRequest) Execute() ([]*DelayProfileResource, *http.Response, error) {
+func (r ApiUpdateDelayProfileReorderRequest) Execute() ([]DelayProfileResource, *http.Response, error) {
 	return r.ApiService.UpdateDelayProfileReorderExecute(r)
 }
 
@@ -692,12 +698,12 @@ func (a *DelayProfileAPIService) UpdateDelayProfileReorder(ctx context.Context, 
 
 // Execute executes the request
 //  @return []DelayProfileResource
-func (a *DelayProfileAPIService) UpdateDelayProfileReorderExecute(r ApiUpdateDelayProfileReorderRequest) ([]*DelayProfileResource, *http.Response, error) {
+func (a *DelayProfileAPIService) UpdateDelayProfileReorderExecute(r ApiUpdateDelayProfileReorderRequest) ([]DelayProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*DelayProfileResource
+		localVarReturnValue  []DelayProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelayProfileAPIService.UpdateDelayProfileReorder")
@@ -706,14 +712,14 @@ func (a *DelayProfileAPIService) UpdateDelayProfileReorderExecute(r ApiUpdateDel
 	}
 
 	localVarPath := localBasePath + "/api/v3/delayprofile/reorder/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.after != nil {
-		localVarQueryParams.Add("after", parameterToString(*r.after, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "after", r.after, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

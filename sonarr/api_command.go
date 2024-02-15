@@ -22,6 +22,7 @@ import (
 
 // CommandAPIService CommandAPI service
 type CommandAPIService service
+
 type ApiCreateCommandRequest struct {
 	ctx context.Context
 	ApiService *CommandAPIService
@@ -154,6 +155,7 @@ func (a *CommandAPIService) CreateCommandExecute(r ApiCreateCommandRequest) (*Co
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteCommandRequest struct {
 	ctx context.Context
 	ApiService *CommandAPIService
@@ -193,7 +195,7 @@ func (a *CommandAPIService) DeleteCommandExecute(r ApiDeleteCommandRequest) (*ht
 	}
 
 	localVarPath := localBasePath + "/api/v3/command/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *CommandAPIService) DeleteCommandExecute(r ApiDeleteCommandRequest) (*ht
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetCommandByIdRequest struct {
 	ctx context.Context
 	ApiService *CommandAPIService
@@ -312,7 +315,7 @@ func (a *CommandAPIService) GetCommandByIdExecute(r ApiGetCommandByIdRequest) (*
 	}
 
 	localVarPath := localBasePath + "/api/v3/command/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *CommandAPIService) GetCommandByIdExecute(r ApiGetCommandByIdRequest) (*
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListCommandRequest struct {
 	ctx context.Context
 	ApiService *CommandAPIService
 }
 
-func (r ApiListCommandRequest) Execute() ([]*CommandResource, *http.Response, error) {
+func (r ApiListCommandRequest) Execute() ([]CommandResource, *http.Response, error) {
 	return r.ApiService.ListCommandExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *CommandAPIService) ListCommand(ctx context.Context) ApiListCommandReque
 
 // Execute executes the request
 //  @return []CommandResource
-func (a *CommandAPIService) ListCommandExecute(r ApiListCommandRequest) ([]*CommandResource, *http.Response, error) {
+func (a *CommandAPIService) ListCommandExecute(r ApiListCommandRequest) ([]CommandResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*CommandResource
+		localVarReturnValue  []CommandResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CommandAPIService.ListCommand")

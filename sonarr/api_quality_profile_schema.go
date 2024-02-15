@@ -21,6 +21,7 @@ import (
 
 // QualityProfileSchemaAPIService QualityProfileSchemaAPI service
 type QualityProfileSchemaAPIService service
+
 type ApiGetQualityprofileSchemaRequest struct {
 	ctx context.Context
 	ApiService *QualityProfileSchemaAPIService

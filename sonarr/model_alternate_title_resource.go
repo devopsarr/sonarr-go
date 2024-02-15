@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AlternateTitleResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlternateTitleResource{}
+
 // AlternateTitleResource struct for AlternateTitleResource
 type AlternateTitleResource struct {
 	Title NullableString `json:"title,omitempty"`
@@ -42,7 +45,7 @@ func NewAlternateTitleResourceWithDefaults() *AlternateTitleResource {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlternateTitleResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -54,7 +57,7 @@ func (o *AlternateTitleResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlternateTitleResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -84,7 +87,7 @@ func (o *AlternateTitleResource) UnsetTitle() {
 
 // GetSeasonNumber returns the SeasonNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlternateTitleResource) GetSeasonNumber() int32 {
-	if o == nil || isNil(o.SeasonNumber.Get()) {
+	if o == nil || IsNil(o.SeasonNumber.Get()) {
 		var ret int32
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *AlternateTitleResource) GetSeasonNumber() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlternateTitleResource) GetSeasonNumberOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SeasonNumber.Get(), o.SeasonNumber.IsSet()
 }
@@ -126,7 +129,7 @@ func (o *AlternateTitleResource) UnsetSeasonNumber() {
 
 // GetSceneSeasonNumber returns the SceneSeasonNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlternateTitleResource) GetSceneSeasonNumber() int32 {
-	if o == nil || isNil(o.SceneSeasonNumber.Get()) {
+	if o == nil || IsNil(o.SceneSeasonNumber.Get()) {
 		var ret int32
 		return ret
 	}
@@ -138,7 +141,7 @@ func (o *AlternateTitleResource) GetSceneSeasonNumber() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlternateTitleResource) GetSceneSeasonNumberOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SceneSeasonNumber.Get(), o.SceneSeasonNumber.IsSet()
 }
@@ -168,7 +171,7 @@ func (o *AlternateTitleResource) UnsetSceneSeasonNumber() {
 
 // GetSceneOrigin returns the SceneOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlternateTitleResource) GetSceneOrigin() string {
-	if o == nil || isNil(o.SceneOrigin.Get()) {
+	if o == nil || IsNil(o.SceneOrigin.Get()) {
 		var ret string
 		return ret
 	}
@@ -180,7 +183,7 @@ func (o *AlternateTitleResource) GetSceneOrigin() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlternateTitleResource) GetSceneOriginOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SceneOrigin.Get(), o.SceneOrigin.IsSet()
 }
@@ -210,7 +213,7 @@ func (o *AlternateTitleResource) UnsetSceneOrigin() {
 
 // GetComment returns the Comment field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlternateTitleResource) GetComment() string {
-	if o == nil || isNil(o.Comment.Get()) {
+	if o == nil || IsNil(o.Comment.Get()) {
 		var ret string
 		return ret
 	}
@@ -222,7 +225,7 @@ func (o *AlternateTitleResource) GetComment() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlternateTitleResource) GetCommentOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
 }
@@ -251,6 +254,14 @@ func (o *AlternateTitleResource) UnsetComment() {
 }
 
 func (o AlternateTitleResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AlternateTitleResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
@@ -267,7 +278,7 @@ func (o AlternateTitleResource) MarshalJSON() ([]byte, error) {
 	if o.Comment.IsSet() {
 		toSerialize["comment"] = o.Comment.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAlternateTitleResource struct {

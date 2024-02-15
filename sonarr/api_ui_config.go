@@ -22,6 +22,7 @@ import (
 
 // UiConfigAPIService UiConfigAPI service
 type UiConfigAPIService service
+
 type ApiGetUiConfigRequest struct {
 	ctx context.Context
 	ApiService *UiConfigAPIService
@@ -146,6 +147,7 @@ func (a *UiConfigAPIService) GetUiConfigExecute(r ApiGetUiConfigRequest) (*UiCon
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetUiConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *UiConfigAPIService
@@ -187,7 +189,7 @@ func (a *UiConfigAPIService) GetUiConfigByIdExecute(r ApiGetUiConfigByIdRequest)
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/ui/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *UiConfigAPIService) GetUiConfigByIdExecute(r ApiGetUiConfigByIdRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateUiConfigRequest struct {
 	ctx context.Context
 	ApiService *UiConfigAPIService
@@ -321,7 +324,7 @@ func (a *UiConfigAPIService) UpdateUiConfigExecute(r ApiUpdateUiConfigRequest) (
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/ui/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -22,6 +22,7 @@ import (
 
 // LanguageProfileAPIService LanguageProfileAPI service
 type LanguageProfileAPIService service
+
 type ApiCreateLanguageProfileRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileAPIService
@@ -157,6 +158,7 @@ func (a *LanguageProfileAPIService) CreateLanguageProfileExecute(r ApiCreateLang
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteLanguageProfileRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileAPIService
@@ -199,7 +201,7 @@ func (a *LanguageProfileAPIService) DeleteLanguageProfileExecute(r ApiDeleteLang
 	}
 
 	localVarPath := localBasePath + "/api/v3/languageprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -277,6 +279,7 @@ func (a *LanguageProfileAPIService) DeleteLanguageProfileExecute(r ApiDeleteLang
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetLanguageProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileAPIService
@@ -318,7 +321,7 @@ func (a *LanguageProfileAPIService) GetLanguageProfileByIdExecute(r ApiGetLangua
 	}
 
 	localVarPath := localBasePath + "/api/v3/languageprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -405,12 +408,13 @@ func (a *LanguageProfileAPIService) GetLanguageProfileByIdExecute(r ApiGetLangua
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListLanguageProfileRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileAPIService
 }
 
-func (r ApiListLanguageProfileRequest) Execute() ([]*LanguageProfileResource, *http.Response, error) {
+func (r ApiListLanguageProfileRequest) Execute() ([]LanguageProfileResource, *http.Response, error) {
 	return r.ApiService.ListLanguageProfileExecute(r)
 }
 
@@ -432,12 +436,12 @@ func (a *LanguageProfileAPIService) ListLanguageProfile(ctx context.Context) Api
 // Execute executes the request
 //  @return []LanguageProfileResource
 // Deprecated
-func (a *LanguageProfileAPIService) ListLanguageProfileExecute(r ApiListLanguageProfileRequest) ([]*LanguageProfileResource, *http.Response, error) {
+func (a *LanguageProfileAPIService) ListLanguageProfileExecute(r ApiListLanguageProfileRequest) ([]LanguageProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*LanguageProfileResource
+		localVarReturnValue  []LanguageProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LanguageProfileAPIService.ListLanguageProfile")
@@ -532,6 +536,7 @@ func (a *LanguageProfileAPIService) ListLanguageProfileExecute(r ApiListLanguage
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateLanguageProfileRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileAPIService
@@ -582,7 +587,7 @@ func (a *LanguageProfileAPIService) UpdateLanguageProfileExecute(r ApiUpdateLang
 	}
 
 	localVarPath := localBasePath + "/api/v3/languageprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

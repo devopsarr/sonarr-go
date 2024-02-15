@@ -21,6 +21,7 @@ import (
 
 // ReleaseAPIService ReleaseAPI service
 type ReleaseAPIService service
+
 type ApiCreateReleaseRequest struct {
 	ctx context.Context
 	ApiService *ReleaseAPIService
@@ -142,6 +143,7 @@ func (a *ReleaseAPIService) CreateReleaseExecute(r ApiCreateReleaseRequest) (*ht
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiListReleaseRequest struct {
 	ctx context.Context
 	ApiService *ReleaseAPIService
@@ -165,7 +167,7 @@ func (r ApiListReleaseRequest) SeasonNumber(seasonNumber int32) ApiListReleaseRe
 	return r
 }
 
-func (r ApiListReleaseRequest) Execute() ([]*ReleaseResource, *http.Response, error) {
+func (r ApiListReleaseRequest) Execute() ([]ReleaseResource, *http.Response, error) {
 	return r.ApiService.ListReleaseExecute(r)
 }
 
@@ -184,12 +186,12 @@ func (a *ReleaseAPIService) ListRelease(ctx context.Context) ApiListReleaseReque
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ReleaseResource
+		localVarReturnValue  []ReleaseResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseAPIService.ListRelease")
@@ -204,13 +206,13 @@ func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]*Rele
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		localVarQueryParams.Add("seriesId", parameterToString(*r.seriesId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
 	}
 	if r.episodeId != nil {
-		localVarQueryParams.Add("episodeId", parameterToString(*r.episodeId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "episodeId", r.episodeId, "")
 	}
 	if r.seasonNumber != nil {
-		localVarQueryParams.Add("seasonNumber", parameterToString(*r.seasonNumber, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

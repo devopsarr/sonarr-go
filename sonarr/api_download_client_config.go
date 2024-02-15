@@ -22,6 +22,7 @@ import (
 
 // DownloadClientConfigAPIService DownloadClientConfigAPI service
 type DownloadClientConfigAPIService service
+
 type ApiGetDownloadClientConfigRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientConfigAPIService
@@ -146,6 +147,7 @@ func (a *DownloadClientConfigAPIService) GetDownloadClientConfigExecute(r ApiGet
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetDownloadClientConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientConfigAPIService
@@ -187,7 +189,7 @@ func (a *DownloadClientConfigAPIService) GetDownloadClientConfigByIdExecute(r Ap
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/downloadclient/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *DownloadClientConfigAPIService) GetDownloadClientConfigByIdExecute(r Ap
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateDownloadClientConfigRequest struct {
 	ctx context.Context
 	ApiService *DownloadClientConfigAPIService
@@ -321,7 +324,7 @@ func (a *DownloadClientConfigAPIService) UpdateDownloadClientConfigExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/downloadclient/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

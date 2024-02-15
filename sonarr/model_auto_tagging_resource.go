@@ -14,13 +14,16 @@ import (
 	"encoding/json"
 )
 
+// checks if the AutoTaggingResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AutoTaggingResource{}
+
 // AutoTaggingResource struct for AutoTaggingResource
 type AutoTaggingResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	RemoveTagsAutomatically *bool `json:"removeTagsAutomatically,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
-	Specifications []*AutoTaggingSpecificationSchema `json:"specifications,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
+	Specifications []AutoTaggingSpecificationSchema `json:"specifications,omitempty"`
 }
 
 // NewAutoTaggingResource instantiates a new AutoTaggingResource object
@@ -42,7 +45,7 @@ func NewAutoTaggingResourceWithDefaults() *AutoTaggingResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AutoTaggingResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *AutoTaggingResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AutoTaggingResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *AutoTaggingResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *AutoTaggingResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AutoTaggingResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *AutoTaggingResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AutoTaggingResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -116,7 +119,7 @@ func (o *AutoTaggingResource) UnsetName() {
 
 // GetRemoveTagsAutomatically returns the RemoveTagsAutomatically field value if set, zero value otherwise.
 func (o *AutoTaggingResource) GetRemoveTagsAutomatically() bool {
-	if o == nil || isNil(o.RemoveTagsAutomatically) {
+	if o == nil || IsNil(o.RemoveTagsAutomatically) {
 		var ret bool
 		return ret
 	}
@@ -126,15 +129,15 @@ func (o *AutoTaggingResource) GetRemoveTagsAutomatically() bool {
 // GetRemoveTagsAutomaticallyOk returns a tuple with the RemoveTagsAutomatically field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AutoTaggingResource) GetRemoveTagsAutomaticallyOk() (*bool, bool) {
-	if o == nil || isNil(o.RemoveTagsAutomatically) {
-    return nil, false
+	if o == nil || IsNil(o.RemoveTagsAutomatically) {
+		return nil, false
 	}
 	return o.RemoveTagsAutomatically, true
 }
 
 // HasRemoveTagsAutomatically returns a boolean if a field has been set.
 func (o *AutoTaggingResource) HasRemoveTagsAutomatically() bool {
-	if o != nil && !isNil(o.RemoveTagsAutomatically) {
+	if o != nil && !IsNil(o.RemoveTagsAutomatically) {
 		return true
 	}
 
@@ -147,9 +150,9 @@ func (o *AutoTaggingResource) SetRemoveTagsAutomatically(v bool) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AutoTaggingResource) GetTags() []*int32 {
+func (o *AutoTaggingResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -158,16 +161,16 @@ func (o *AutoTaggingResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AutoTaggingResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *AutoTaggingResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *AutoTaggingResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -175,14 +178,14 @@ func (o *AutoTaggingResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *AutoTaggingResource) SetTags(v []*int32) {
+func (o *AutoTaggingResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetSpecifications returns the Specifications field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AutoTaggingResource) GetSpecifications() []*AutoTaggingSpecificationSchema {
+func (o *AutoTaggingResource) GetSpecifications() []AutoTaggingSpecificationSchema {
 	if o == nil {
-		var ret []*AutoTaggingSpecificationSchema
+		var ret []AutoTaggingSpecificationSchema
 		return ret
 	}
 	return o.Specifications
@@ -191,16 +194,16 @@ func (o *AutoTaggingResource) GetSpecifications() []*AutoTaggingSpecificationSch
 // GetSpecificationsOk returns a tuple with the Specifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AutoTaggingResource) GetSpecificationsOk() ([]*AutoTaggingSpecificationSchema, bool) {
-	if o == nil || isNil(o.Specifications) {
-    return nil, false
+func (o *AutoTaggingResource) GetSpecificationsOk() ([]AutoTaggingSpecificationSchema, bool) {
+	if o == nil || IsNil(o.Specifications) {
+		return nil, false
 	}
 	return o.Specifications, true
 }
 
 // HasSpecifications returns a boolean if a field has been set.
 func (o *AutoTaggingResource) HasSpecifications() bool {
-	if o != nil && isNil(o.Specifications) {
+	if o != nil && IsNil(o.Specifications) {
 		return true
 	}
 
@@ -208,19 +211,27 @@ func (o *AutoTaggingResource) HasSpecifications() bool {
 }
 
 // SetSpecifications gets a reference to the given []AutoTaggingSpecificationSchema and assigns it to the Specifications field.
-func (o *AutoTaggingResource) SetSpecifications(v []*AutoTaggingSpecificationSchema) {
+func (o *AutoTaggingResource) SetSpecifications(v []AutoTaggingSpecificationSchema) {
 	o.Specifications = v
 }
 
 func (o AutoTaggingResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AutoTaggingResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.RemoveTagsAutomatically) {
+	if !IsNil(o.RemoveTagsAutomatically) {
 		toSerialize["removeTagsAutomatically"] = o.RemoveTagsAutomatically
 	}
 	if o.Tags != nil {
@@ -229,7 +240,7 @@ func (o AutoTaggingResource) MarshalJSON() ([]byte, error) {
 	if o.Specifications != nil {
 		toSerialize["specifications"] = o.Specifications
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAutoTaggingResource struct {

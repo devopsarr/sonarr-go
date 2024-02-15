@@ -14,18 +14,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the TagDetailsResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TagDetailsResource{}
+
 // TagDetailsResource struct for TagDetailsResource
 type TagDetailsResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Label NullableString `json:"label,omitempty"`
-	DelayProfileIds []*int32 `json:"delayProfileIds,omitempty"`
-	ImportListIds []*int32 `json:"importListIds,omitempty"`
-	NotificationIds []*int32 `json:"notificationIds,omitempty"`
-	RestrictionIds []*int32 `json:"restrictionIds,omitempty"`
-	IndexerIds []*int32 `json:"indexerIds,omitempty"`
-	DownloadClientIds []*int32 `json:"downloadClientIds,omitempty"`
-	AutoTagIds []*int32 `json:"autoTagIds,omitempty"`
-	SeriesIds []*int32 `json:"seriesIds,omitempty"`
+	DelayProfileIds []int32 `json:"delayProfileIds,omitempty"`
+	ImportListIds []int32 `json:"importListIds,omitempty"`
+	NotificationIds []int32 `json:"notificationIds,omitempty"`
+	RestrictionIds []int32 `json:"restrictionIds,omitempty"`
+	IndexerIds []int32 `json:"indexerIds,omitempty"`
+	DownloadClientIds []int32 `json:"downloadClientIds,omitempty"`
+	AutoTagIds []int32 `json:"autoTagIds,omitempty"`
+	SeriesIds []int32 `json:"seriesIds,omitempty"`
 }
 
 // NewTagDetailsResource instantiates a new TagDetailsResource object
@@ -47,7 +50,7 @@ func NewTagDetailsResourceWithDefaults() *TagDetailsResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *TagDetailsResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -57,15 +60,15 @@ func (o *TagDetailsResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TagDetailsResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -79,7 +82,7 @@ func (o *TagDetailsResource) SetId(v int32) {
 
 // GetLabel returns the Label field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TagDetailsResource) GetLabel() string {
-	if o == nil || isNil(o.Label.Get()) {
+	if o == nil || IsNil(o.Label.Get()) {
 		var ret string
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *TagDetailsResource) GetLabel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TagDetailsResource) GetLabelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Label.Get(), o.Label.IsSet()
 }
@@ -120,9 +123,9 @@ func (o *TagDetailsResource) UnsetLabel() {
 }
 
 // GetDelayProfileIds returns the DelayProfileIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetDelayProfileIds() []*int32 {
+func (o *TagDetailsResource) GetDelayProfileIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.DelayProfileIds
@@ -131,16 +134,16 @@ func (o *TagDetailsResource) GetDelayProfileIds() []*int32 {
 // GetDelayProfileIdsOk returns a tuple with the DelayProfileIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetDelayProfileIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.DelayProfileIds) {
-    return nil, false
+func (o *TagDetailsResource) GetDelayProfileIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.DelayProfileIds) {
+		return nil, false
 	}
 	return o.DelayProfileIds, true
 }
 
 // HasDelayProfileIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasDelayProfileIds() bool {
-	if o != nil && isNil(o.DelayProfileIds) {
+	if o != nil && IsNil(o.DelayProfileIds) {
 		return true
 	}
 
@@ -148,14 +151,14 @@ func (o *TagDetailsResource) HasDelayProfileIds() bool {
 }
 
 // SetDelayProfileIds gets a reference to the given []int32 and assigns it to the DelayProfileIds field.
-func (o *TagDetailsResource) SetDelayProfileIds(v []*int32) {
+func (o *TagDetailsResource) SetDelayProfileIds(v []int32) {
 	o.DelayProfileIds = v
 }
 
 // GetImportListIds returns the ImportListIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetImportListIds() []*int32 {
+func (o *TagDetailsResource) GetImportListIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.ImportListIds
@@ -164,16 +167,16 @@ func (o *TagDetailsResource) GetImportListIds() []*int32 {
 // GetImportListIdsOk returns a tuple with the ImportListIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetImportListIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.ImportListIds) {
-    return nil, false
+func (o *TagDetailsResource) GetImportListIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.ImportListIds) {
+		return nil, false
 	}
 	return o.ImportListIds, true
 }
 
 // HasImportListIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasImportListIds() bool {
-	if o != nil && isNil(o.ImportListIds) {
+	if o != nil && IsNil(o.ImportListIds) {
 		return true
 	}
 
@@ -181,14 +184,14 @@ func (o *TagDetailsResource) HasImportListIds() bool {
 }
 
 // SetImportListIds gets a reference to the given []int32 and assigns it to the ImportListIds field.
-func (o *TagDetailsResource) SetImportListIds(v []*int32) {
+func (o *TagDetailsResource) SetImportListIds(v []int32) {
 	o.ImportListIds = v
 }
 
 // GetNotificationIds returns the NotificationIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetNotificationIds() []*int32 {
+func (o *TagDetailsResource) GetNotificationIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.NotificationIds
@@ -197,16 +200,16 @@ func (o *TagDetailsResource) GetNotificationIds() []*int32 {
 // GetNotificationIdsOk returns a tuple with the NotificationIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetNotificationIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.NotificationIds) {
-    return nil, false
+func (o *TagDetailsResource) GetNotificationIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.NotificationIds) {
+		return nil, false
 	}
 	return o.NotificationIds, true
 }
 
 // HasNotificationIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasNotificationIds() bool {
-	if o != nil && isNil(o.NotificationIds) {
+	if o != nil && IsNil(o.NotificationIds) {
 		return true
 	}
 
@@ -214,14 +217,14 @@ func (o *TagDetailsResource) HasNotificationIds() bool {
 }
 
 // SetNotificationIds gets a reference to the given []int32 and assigns it to the NotificationIds field.
-func (o *TagDetailsResource) SetNotificationIds(v []*int32) {
+func (o *TagDetailsResource) SetNotificationIds(v []int32) {
 	o.NotificationIds = v
 }
 
 // GetRestrictionIds returns the RestrictionIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetRestrictionIds() []*int32 {
+func (o *TagDetailsResource) GetRestrictionIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.RestrictionIds
@@ -230,16 +233,16 @@ func (o *TagDetailsResource) GetRestrictionIds() []*int32 {
 // GetRestrictionIdsOk returns a tuple with the RestrictionIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetRestrictionIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.RestrictionIds) {
-    return nil, false
+func (o *TagDetailsResource) GetRestrictionIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.RestrictionIds) {
+		return nil, false
 	}
 	return o.RestrictionIds, true
 }
 
 // HasRestrictionIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasRestrictionIds() bool {
-	if o != nil && isNil(o.RestrictionIds) {
+	if o != nil && IsNil(o.RestrictionIds) {
 		return true
 	}
 
@@ -247,14 +250,14 @@ func (o *TagDetailsResource) HasRestrictionIds() bool {
 }
 
 // SetRestrictionIds gets a reference to the given []int32 and assigns it to the RestrictionIds field.
-func (o *TagDetailsResource) SetRestrictionIds(v []*int32) {
+func (o *TagDetailsResource) SetRestrictionIds(v []int32) {
 	o.RestrictionIds = v
 }
 
 // GetIndexerIds returns the IndexerIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetIndexerIds() []*int32 {
+func (o *TagDetailsResource) GetIndexerIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.IndexerIds
@@ -263,16 +266,16 @@ func (o *TagDetailsResource) GetIndexerIds() []*int32 {
 // GetIndexerIdsOk returns a tuple with the IndexerIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetIndexerIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.IndexerIds) {
-    return nil, false
+func (o *TagDetailsResource) GetIndexerIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.IndexerIds) {
+		return nil, false
 	}
 	return o.IndexerIds, true
 }
 
 // HasIndexerIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasIndexerIds() bool {
-	if o != nil && isNil(o.IndexerIds) {
+	if o != nil && IsNil(o.IndexerIds) {
 		return true
 	}
 
@@ -280,14 +283,14 @@ func (o *TagDetailsResource) HasIndexerIds() bool {
 }
 
 // SetIndexerIds gets a reference to the given []int32 and assigns it to the IndexerIds field.
-func (o *TagDetailsResource) SetIndexerIds(v []*int32) {
+func (o *TagDetailsResource) SetIndexerIds(v []int32) {
 	o.IndexerIds = v
 }
 
 // GetDownloadClientIds returns the DownloadClientIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetDownloadClientIds() []*int32 {
+func (o *TagDetailsResource) GetDownloadClientIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.DownloadClientIds
@@ -296,16 +299,16 @@ func (o *TagDetailsResource) GetDownloadClientIds() []*int32 {
 // GetDownloadClientIdsOk returns a tuple with the DownloadClientIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetDownloadClientIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.DownloadClientIds) {
-    return nil, false
+func (o *TagDetailsResource) GetDownloadClientIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.DownloadClientIds) {
+		return nil, false
 	}
 	return o.DownloadClientIds, true
 }
 
 // HasDownloadClientIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasDownloadClientIds() bool {
-	if o != nil && isNil(o.DownloadClientIds) {
+	if o != nil && IsNil(o.DownloadClientIds) {
 		return true
 	}
 
@@ -313,14 +316,14 @@ func (o *TagDetailsResource) HasDownloadClientIds() bool {
 }
 
 // SetDownloadClientIds gets a reference to the given []int32 and assigns it to the DownloadClientIds field.
-func (o *TagDetailsResource) SetDownloadClientIds(v []*int32) {
+func (o *TagDetailsResource) SetDownloadClientIds(v []int32) {
 	o.DownloadClientIds = v
 }
 
 // GetAutoTagIds returns the AutoTagIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetAutoTagIds() []*int32 {
+func (o *TagDetailsResource) GetAutoTagIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.AutoTagIds
@@ -329,16 +332,16 @@ func (o *TagDetailsResource) GetAutoTagIds() []*int32 {
 // GetAutoTagIdsOk returns a tuple with the AutoTagIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetAutoTagIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.AutoTagIds) {
-    return nil, false
+func (o *TagDetailsResource) GetAutoTagIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.AutoTagIds) {
+		return nil, false
 	}
 	return o.AutoTagIds, true
 }
 
 // HasAutoTagIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasAutoTagIds() bool {
-	if o != nil && isNil(o.AutoTagIds) {
+	if o != nil && IsNil(o.AutoTagIds) {
 		return true
 	}
 
@@ -346,14 +349,14 @@ func (o *TagDetailsResource) HasAutoTagIds() bool {
 }
 
 // SetAutoTagIds gets a reference to the given []int32 and assigns it to the AutoTagIds field.
-func (o *TagDetailsResource) SetAutoTagIds(v []*int32) {
+func (o *TagDetailsResource) SetAutoTagIds(v []int32) {
 	o.AutoTagIds = v
 }
 
 // GetSeriesIds returns the SeriesIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetSeriesIds() []*int32 {
+func (o *TagDetailsResource) GetSeriesIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.SeriesIds
@@ -362,16 +365,16 @@ func (o *TagDetailsResource) GetSeriesIds() []*int32 {
 // GetSeriesIdsOk returns a tuple with the SeriesIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetSeriesIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.SeriesIds) {
-    return nil, false
+func (o *TagDetailsResource) GetSeriesIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.SeriesIds) {
+		return nil, false
 	}
 	return o.SeriesIds, true
 }
 
 // HasSeriesIds returns a boolean if a field has been set.
 func (o *TagDetailsResource) HasSeriesIds() bool {
-	if o != nil && isNil(o.SeriesIds) {
+	if o != nil && IsNil(o.SeriesIds) {
 		return true
 	}
 
@@ -379,13 +382,21 @@ func (o *TagDetailsResource) HasSeriesIds() bool {
 }
 
 // SetSeriesIds gets a reference to the given []int32 and assigns it to the SeriesIds field.
-func (o *TagDetailsResource) SetSeriesIds(v []*int32) {
+func (o *TagDetailsResource) SetSeriesIds(v []int32) {
 	o.SeriesIds = v
 }
 
 func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TagDetailsResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Label.IsSet() {
@@ -415,7 +426,7 @@ func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	if o.SeriesIds != nil {
 		toSerialize["seriesIds"] = o.SeriesIds
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTagDetailsResource struct {

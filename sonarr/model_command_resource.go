@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the CommandResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CommandResource{}
+
 // CommandResource struct for CommandResource
 type CommandResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -57,7 +60,7 @@ func NewCommandResourceWithDefaults() *CommandResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *CommandResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -67,15 +70,15 @@ func (o *CommandResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *CommandResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *CommandResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *CommandResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -131,7 +134,7 @@ func (o *CommandResource) UnsetName() {
 
 // GetCommandName returns the CommandName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetCommandName() string {
-	if o == nil || isNil(o.CommandName.Get()) {
+	if o == nil || IsNil(o.CommandName.Get()) {
 		var ret string
 		return ret
 	}
@@ -143,7 +146,7 @@ func (o *CommandResource) GetCommandName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetCommandNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CommandName.Get(), o.CommandName.IsSet()
 }
@@ -173,7 +176,7 @@ func (o *CommandResource) UnsetCommandName() {
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetMessage() string {
-	if o == nil || isNil(o.Message.Get()) {
+	if o == nil || IsNil(o.Message.Get()) {
 		var ret string
 		return ret
 	}
@@ -185,7 +188,7 @@ func (o *CommandResource) GetMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Message.Get(), o.Message.IsSet()
 }
@@ -215,7 +218,7 @@ func (o *CommandResource) UnsetMessage() {
 
 // GetBody returns the Body field value if set, zero value otherwise.
 func (o *CommandResource) GetBody() Command {
-	if o == nil || isNil(o.Body) {
+	if o == nil || IsNil(o.Body) {
 		var ret Command
 		return ret
 	}
@@ -225,15 +228,15 @@ func (o *CommandResource) GetBody() Command {
 // GetBodyOk returns a tuple with the Body field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetBodyOk() (*Command, bool) {
-	if o == nil || isNil(o.Body) {
-    return nil, false
+	if o == nil || IsNil(o.Body) {
+		return nil, false
 	}
 	return o.Body, true
 }
 
 // HasBody returns a boolean if a field has been set.
 func (o *CommandResource) HasBody() bool {
-	if o != nil && !isNil(o.Body) {
+	if o != nil && !IsNil(o.Body) {
 		return true
 	}
 
@@ -247,7 +250,7 @@ func (o *CommandResource) SetBody(v Command) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *CommandResource) GetPriority() CommandPriority {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret CommandPriority
 		return ret
 	}
@@ -257,15 +260,15 @@ func (o *CommandResource) GetPriority() CommandPriority {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetPriorityOk() (*CommandPriority, bool) {
-	if o == nil || isNil(o.Priority) {
-    return nil, false
+	if o == nil || IsNil(o.Priority) {
+		return nil, false
 	}
 	return o.Priority, true
 }
 
 // HasPriority returns a boolean if a field has been set.
 func (o *CommandResource) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -279,7 +282,7 @@ func (o *CommandResource) SetPriority(v CommandPriority) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *CommandResource) GetStatus() CommandStatus {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret CommandStatus
 		return ret
 	}
@@ -289,15 +292,15 @@ func (o *CommandResource) GetStatus() CommandStatus {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetStatusOk() (*CommandStatus, bool) {
-	if o == nil || isNil(o.Status) {
-    return nil, false
+	if o == nil || IsNil(o.Status) {
+		return nil, false
 	}
 	return o.Status, true
 }
 
 // HasStatus returns a boolean if a field has been set.
 func (o *CommandResource) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -311,7 +314,7 @@ func (o *CommandResource) SetStatus(v CommandStatus) {
 
 // GetResult returns the Result field value if set, zero value otherwise.
 func (o *CommandResource) GetResult() CommandResult {
-	if o == nil || isNil(o.Result) {
+	if o == nil || IsNil(o.Result) {
 		var ret CommandResult
 		return ret
 	}
@@ -321,15 +324,15 @@ func (o *CommandResource) GetResult() CommandResult {
 // GetResultOk returns a tuple with the Result field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetResultOk() (*CommandResult, bool) {
-	if o == nil || isNil(o.Result) {
-    return nil, false
+	if o == nil || IsNil(o.Result) {
+		return nil, false
 	}
 	return o.Result, true
 }
 
 // HasResult returns a boolean if a field has been set.
 func (o *CommandResource) HasResult() bool {
-	if o != nil && !isNil(o.Result) {
+	if o != nil && !IsNil(o.Result) {
 		return true
 	}
 
@@ -343,7 +346,7 @@ func (o *CommandResource) SetResult(v CommandResult) {
 
 // GetQueued returns the Queued field value if set, zero value otherwise.
 func (o *CommandResource) GetQueued() time.Time {
-	if o == nil || isNil(o.Queued) {
+	if o == nil || IsNil(o.Queued) {
 		var ret time.Time
 		return ret
 	}
@@ -353,15 +356,15 @@ func (o *CommandResource) GetQueued() time.Time {
 // GetQueuedOk returns a tuple with the Queued field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetQueuedOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Queued) {
-    return nil, false
+	if o == nil || IsNil(o.Queued) {
+		return nil, false
 	}
 	return o.Queued, true
 }
 
 // HasQueued returns a boolean if a field has been set.
 func (o *CommandResource) HasQueued() bool {
-	if o != nil && !isNil(o.Queued) {
+	if o != nil && !IsNil(o.Queued) {
 		return true
 	}
 
@@ -375,7 +378,7 @@ func (o *CommandResource) SetQueued(v time.Time) {
 
 // GetStarted returns the Started field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetStarted() time.Time {
-	if o == nil || isNil(o.Started.Get()) {
+	if o == nil || IsNil(o.Started.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -387,7 +390,7 @@ func (o *CommandResource) GetStarted() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetStartedOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Started.Get(), o.Started.IsSet()
 }
@@ -417,7 +420,7 @@ func (o *CommandResource) UnsetStarted() {
 
 // GetEnded returns the Ended field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetEnded() time.Time {
-	if o == nil || isNil(o.Ended.Get()) {
+	if o == nil || IsNil(o.Ended.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -429,7 +432,7 @@ func (o *CommandResource) GetEnded() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetEndedOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Ended.Get(), o.Ended.IsSet()
 }
@@ -459,7 +462,7 @@ func (o *CommandResource) UnsetEnded() {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *CommandResource) GetDuration() string {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret string
 		return ret
 	}
@@ -469,15 +472,15 @@ func (o *CommandResource) GetDuration() string {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetDurationOk() (*string, bool) {
-	if o == nil || isNil(o.Duration) {
-    return nil, false
+	if o == nil || IsNil(o.Duration) {
+		return nil, false
 	}
 	return o.Duration, true
 }
 
 // HasDuration returns a boolean if a field has been set.
 func (o *CommandResource) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -491,7 +494,7 @@ func (o *CommandResource) SetDuration(v string) {
 
 // GetException returns the Exception field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetException() string {
-	if o == nil || isNil(o.Exception.Get()) {
+	if o == nil || IsNil(o.Exception.Get()) {
 		var ret string
 		return ret
 	}
@@ -503,7 +506,7 @@ func (o *CommandResource) GetException() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetExceptionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Exception.Get(), o.Exception.IsSet()
 }
@@ -533,7 +536,7 @@ func (o *CommandResource) UnsetException() {
 
 // GetTrigger returns the Trigger field value if set, zero value otherwise.
 func (o *CommandResource) GetTrigger() CommandTrigger {
-	if o == nil || isNil(o.Trigger) {
+	if o == nil || IsNil(o.Trigger) {
 		var ret CommandTrigger
 		return ret
 	}
@@ -543,15 +546,15 @@ func (o *CommandResource) GetTrigger() CommandTrigger {
 // GetTriggerOk returns a tuple with the Trigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetTriggerOk() (*CommandTrigger, bool) {
-	if o == nil || isNil(o.Trigger) {
-    return nil, false
+	if o == nil || IsNil(o.Trigger) {
+		return nil, false
 	}
 	return o.Trigger, true
 }
 
 // HasTrigger returns a boolean if a field has been set.
 func (o *CommandResource) HasTrigger() bool {
-	if o != nil && !isNil(o.Trigger) {
+	if o != nil && !IsNil(o.Trigger) {
 		return true
 	}
 
@@ -565,7 +568,7 @@ func (o *CommandResource) SetTrigger(v CommandTrigger) {
 
 // GetClientUserAgent returns the ClientUserAgent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetClientUserAgent() string {
-	if o == nil || isNil(o.ClientUserAgent.Get()) {
+	if o == nil || IsNil(o.ClientUserAgent.Get()) {
 		var ret string
 		return ret
 	}
@@ -577,7 +580,7 @@ func (o *CommandResource) GetClientUserAgent() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetClientUserAgentOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientUserAgent.Get(), o.ClientUserAgent.IsSet()
 }
@@ -607,7 +610,7 @@ func (o *CommandResource) UnsetClientUserAgent() {
 
 // GetStateChangeTime returns the StateChangeTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetStateChangeTime() time.Time {
-	if o == nil || isNil(o.StateChangeTime.Get()) {
+	if o == nil || IsNil(o.StateChangeTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -619,7 +622,7 @@ func (o *CommandResource) GetStateChangeTime() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetStateChangeTimeOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.StateChangeTime.Get(), o.StateChangeTime.IsSet()
 }
@@ -649,7 +652,7 @@ func (o *CommandResource) UnsetStateChangeTime() {
 
 // GetSendUpdatesToClient returns the SendUpdatesToClient field value if set, zero value otherwise.
 func (o *CommandResource) GetSendUpdatesToClient() bool {
-	if o == nil || isNil(o.SendUpdatesToClient) {
+	if o == nil || IsNil(o.SendUpdatesToClient) {
 		var ret bool
 		return ret
 	}
@@ -659,15 +662,15 @@ func (o *CommandResource) GetSendUpdatesToClient() bool {
 // GetSendUpdatesToClientOk returns a tuple with the SendUpdatesToClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetSendUpdatesToClientOk() (*bool, bool) {
-	if o == nil || isNil(o.SendUpdatesToClient) {
-    return nil, false
+	if o == nil || IsNil(o.SendUpdatesToClient) {
+		return nil, false
 	}
 	return o.SendUpdatesToClient, true
 }
 
 // HasSendUpdatesToClient returns a boolean if a field has been set.
 func (o *CommandResource) HasSendUpdatesToClient() bool {
-	if o != nil && !isNil(o.SendUpdatesToClient) {
+	if o != nil && !IsNil(o.SendUpdatesToClient) {
 		return true
 	}
 
@@ -681,7 +684,7 @@ func (o *CommandResource) SetSendUpdatesToClient(v bool) {
 
 // GetUpdateScheduledTask returns the UpdateScheduledTask field value if set, zero value otherwise.
 func (o *CommandResource) GetUpdateScheduledTask() bool {
-	if o == nil || isNil(o.UpdateScheduledTask) {
+	if o == nil || IsNil(o.UpdateScheduledTask) {
 		var ret bool
 		return ret
 	}
@@ -691,15 +694,15 @@ func (o *CommandResource) GetUpdateScheduledTask() bool {
 // GetUpdateScheduledTaskOk returns a tuple with the UpdateScheduledTask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommandResource) GetUpdateScheduledTaskOk() (*bool, bool) {
-	if o == nil || isNil(o.UpdateScheduledTask) {
-    return nil, false
+	if o == nil || IsNil(o.UpdateScheduledTask) {
+		return nil, false
 	}
 	return o.UpdateScheduledTask, true
 }
 
 // HasUpdateScheduledTask returns a boolean if a field has been set.
 func (o *CommandResource) HasUpdateScheduledTask() bool {
-	if o != nil && !isNil(o.UpdateScheduledTask) {
+	if o != nil && !IsNil(o.UpdateScheduledTask) {
 		return true
 	}
 
@@ -713,7 +716,7 @@ func (o *CommandResource) SetUpdateScheduledTask(v bool) {
 
 // GetLastExecutionTime returns the LastExecutionTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommandResource) GetLastExecutionTime() time.Time {
-	if o == nil || isNil(o.LastExecutionTime.Get()) {
+	if o == nil || IsNil(o.LastExecutionTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -725,7 +728,7 @@ func (o *CommandResource) GetLastExecutionTime() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CommandResource) GetLastExecutionTimeOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LastExecutionTime.Get(), o.LastExecutionTime.IsSet()
 }
@@ -754,8 +757,16 @@ func (o *CommandResource) UnsetLastExecutionTime() {
 }
 
 func (o CommandResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CommandResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -767,19 +778,19 @@ func (o CommandResource) MarshalJSON() ([]byte, error) {
 	if o.Message.IsSet() {
 		toSerialize["message"] = o.Message.Get()
 	}
-	if !isNil(o.Body) {
+	if !IsNil(o.Body) {
 		toSerialize["body"] = o.Body
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !isNil(o.Result) {
+	if !IsNil(o.Result) {
 		toSerialize["result"] = o.Result
 	}
-	if !isNil(o.Queued) {
+	if !IsNil(o.Queued) {
 		toSerialize["queued"] = o.Queued
 	}
 	if o.Started.IsSet() {
@@ -788,13 +799,13 @@ func (o CommandResource) MarshalJSON() ([]byte, error) {
 	if o.Ended.IsSet() {
 		toSerialize["ended"] = o.Ended.Get()
 	}
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
 	if o.Exception.IsSet() {
 		toSerialize["exception"] = o.Exception.Get()
 	}
-	if !isNil(o.Trigger) {
+	if !IsNil(o.Trigger) {
 		toSerialize["trigger"] = o.Trigger
 	}
 	if o.ClientUserAgent.IsSet() {
@@ -803,16 +814,16 @@ func (o CommandResource) MarshalJSON() ([]byte, error) {
 	if o.StateChangeTime.IsSet() {
 		toSerialize["stateChangeTime"] = o.StateChangeTime.Get()
 	}
-	if !isNil(o.SendUpdatesToClient) {
+	if !IsNil(o.SendUpdatesToClient) {
 		toSerialize["sendUpdatesToClient"] = o.SendUpdatesToClient
 	}
-	if !isNil(o.UpdateScheduledTask) {
+	if !IsNil(o.UpdateScheduledTask) {
 		toSerialize["updateScheduledTask"] = o.UpdateScheduledTask
 	}
 	if o.LastExecutionTime.IsSet() {
 		toSerialize["lastExecutionTime"] = o.LastExecutionTime.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCommandResource struct {

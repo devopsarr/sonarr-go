@@ -22,6 +22,7 @@ import (
 
 // QueueDetailsAPIService QueueDetailsAPI service
 type QueueDetailsAPIService service
+
 type ApiListQueueDetailsRequest struct {
 	ctx context.Context
 	ApiService *QueueDetailsAPIService
@@ -51,7 +52,7 @@ func (r ApiListQueueDetailsRequest) IncludeEpisode(includeEpisode bool) ApiListQ
 	return r
 }
 
-func (r ApiListQueueDetailsRequest) Execute() ([]*QueueResource, *http.Response, error) {
+func (r ApiListQueueDetailsRequest) Execute() ([]QueueResource, *http.Response, error) {
 	return r.ApiService.ListQueueDetailsExecute(r)
 }
 
@@ -70,12 +71,12 @@ func (a *QueueDetailsAPIService) ListQueueDetails(ctx context.Context) ApiListQu
 
 // Execute executes the request
 //  @return []QueueResource
-func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]*QueueResource, *http.Response, error) {
+func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]QueueResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*QueueResource
+		localVarReturnValue  []QueueResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueDetailsAPIService.ListQueueDetails")
@@ -90,24 +91,30 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		localVarQueryParams.Add("seriesId", parameterToString(*r.seriesId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
 	}
 	if r.episodeIds != nil {
 		t := *r.episodeIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("episodeIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("episodeIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", t, "multi")
 		}
 	}
 	if r.includeSeries != nil {
-		localVarQueryParams.Add("includeSeries", parameterToString(*r.includeSeries, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "")
+	} else {
+		var defaultValue bool = false
+		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisode != nil {
-		localVarQueryParams.Add("includeEpisode", parameterToString(*r.includeEpisode, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "")
+	} else {
+		var defaultValue bool = false
+		r.includeEpisode = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

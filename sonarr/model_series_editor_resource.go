@@ -14,16 +14,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the SeriesEditorResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SeriesEditorResource{}
+
 // SeriesEditorResource struct for SeriesEditorResource
 type SeriesEditorResource struct {
-	SeriesIds []*int32 `json:"seriesIds,omitempty"`
+	SeriesIds []int32 `json:"seriesIds,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
 	MonitorNewItems *NewItemMonitorTypes `json:"monitorNewItems,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
 	SeriesType *SeriesTypes `json:"seriesType,omitempty"`
 	SeasonFolder NullableBool `json:"seasonFolder,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	MoveFiles *bool `json:"moveFiles,omitempty"`
 	DeleteFiles *bool `json:"deleteFiles,omitempty"`
@@ -48,9 +51,9 @@ func NewSeriesEditorResourceWithDefaults() *SeriesEditorResource {
 }
 
 // GetSeriesIds returns the SeriesIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesEditorResource) GetSeriesIds() []*int32 {
+func (o *SeriesEditorResource) GetSeriesIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.SeriesIds
@@ -59,16 +62,16 @@ func (o *SeriesEditorResource) GetSeriesIds() []*int32 {
 // GetSeriesIdsOk returns a tuple with the SeriesIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesEditorResource) GetSeriesIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.SeriesIds) {
-    return nil, false
+func (o *SeriesEditorResource) GetSeriesIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.SeriesIds) {
+		return nil, false
 	}
 	return o.SeriesIds, true
 }
 
 // HasSeriesIds returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasSeriesIds() bool {
-	if o != nil && isNil(o.SeriesIds) {
+	if o != nil && IsNil(o.SeriesIds) {
 		return true
 	}
 
@@ -76,13 +79,13 @@ func (o *SeriesEditorResource) HasSeriesIds() bool {
 }
 
 // SetSeriesIds gets a reference to the given []int32 and assigns it to the SeriesIds field.
-func (o *SeriesEditorResource) SetSeriesIds(v []*int32) {
+func (o *SeriesEditorResource) SetSeriesIds(v []int32) {
 	o.SeriesIds = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeriesEditorResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored.Get()) {
+	if o == nil || IsNil(o.Monitored.Get()) {
 		var ret bool
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *SeriesEditorResource) GetMonitored() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeriesEditorResource) GetMonitoredOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Monitored.Get(), o.Monitored.IsSet()
 }
@@ -124,7 +127,7 @@ func (o *SeriesEditorResource) UnsetMonitored() {
 
 // GetMonitorNewItems returns the MonitorNewItems field value if set, zero value otherwise.
 func (o *SeriesEditorResource) GetMonitorNewItems() NewItemMonitorTypes {
-	if o == nil || isNil(o.MonitorNewItems) {
+	if o == nil || IsNil(o.MonitorNewItems) {
 		var ret NewItemMonitorTypes
 		return ret
 	}
@@ -134,15 +137,15 @@ func (o *SeriesEditorResource) GetMonitorNewItems() NewItemMonitorTypes {
 // GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeriesEditorResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool) {
-	if o == nil || isNil(o.MonitorNewItems) {
-    return nil, false
+	if o == nil || IsNil(o.MonitorNewItems) {
+		return nil, false
 	}
 	return o.MonitorNewItems, true
 }
 
 // HasMonitorNewItems returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasMonitorNewItems() bool {
-	if o != nil && !isNil(o.MonitorNewItems) {
+	if o != nil && !IsNil(o.MonitorNewItems) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *SeriesEditorResource) SetMonitorNewItems(v NewItemMonitorTypes) {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeriesEditorResource) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId.Get()) {
+	if o == nil || IsNil(o.QualityProfileId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -168,7 +171,7 @@ func (o *SeriesEditorResource) GetQualityProfileId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeriesEditorResource) GetQualityProfileIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.QualityProfileId.Get(), o.QualityProfileId.IsSet()
 }
@@ -198,7 +201,7 @@ func (o *SeriesEditorResource) UnsetQualityProfileId() {
 
 // GetSeriesType returns the SeriesType field value if set, zero value otherwise.
 func (o *SeriesEditorResource) GetSeriesType() SeriesTypes {
-	if o == nil || isNil(o.SeriesType) {
+	if o == nil || IsNil(o.SeriesType) {
 		var ret SeriesTypes
 		return ret
 	}
@@ -208,15 +211,15 @@ func (o *SeriesEditorResource) GetSeriesType() SeriesTypes {
 // GetSeriesTypeOk returns a tuple with the SeriesType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeriesEditorResource) GetSeriesTypeOk() (*SeriesTypes, bool) {
-	if o == nil || isNil(o.SeriesType) {
-    return nil, false
+	if o == nil || IsNil(o.SeriesType) {
+		return nil, false
 	}
 	return o.SeriesType, true
 }
 
 // HasSeriesType returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasSeriesType() bool {
-	if o != nil && !isNil(o.SeriesType) {
+	if o != nil && !IsNil(o.SeriesType) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *SeriesEditorResource) SetSeriesType(v SeriesTypes) {
 
 // GetSeasonFolder returns the SeasonFolder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeriesEditorResource) GetSeasonFolder() bool {
-	if o == nil || isNil(o.SeasonFolder.Get()) {
+	if o == nil || IsNil(o.SeasonFolder.Get()) {
 		var ret bool
 		return ret
 	}
@@ -242,7 +245,7 @@ func (o *SeriesEditorResource) GetSeasonFolder() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeriesEditorResource) GetSeasonFolderOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SeasonFolder.Get(), o.SeasonFolder.IsSet()
 }
@@ -272,7 +275,7 @@ func (o *SeriesEditorResource) UnsetSeasonFolder() {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SeriesEditorResource) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -284,7 +287,7 @@ func (o *SeriesEditorResource) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SeriesEditorResource) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -313,9 +316,9 @@ func (o *SeriesEditorResource) UnsetRootFolderPath() {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SeriesEditorResource) GetTags() []*int32 {
+func (o *SeriesEditorResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -324,16 +327,16 @@ func (o *SeriesEditorResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SeriesEditorResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *SeriesEditorResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -341,13 +344,13 @@ func (o *SeriesEditorResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *SeriesEditorResource) SetTags(v []*int32) {
+func (o *SeriesEditorResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetApplyTags returns the ApplyTags field value if set, zero value otherwise.
 func (o *SeriesEditorResource) GetApplyTags() ApplyTags {
-	if o == nil || isNil(o.ApplyTags) {
+	if o == nil || IsNil(o.ApplyTags) {
 		var ret ApplyTags
 		return ret
 	}
@@ -357,15 +360,15 @@ func (o *SeriesEditorResource) GetApplyTags() ApplyTags {
 // GetApplyTagsOk returns a tuple with the ApplyTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeriesEditorResource) GetApplyTagsOk() (*ApplyTags, bool) {
-	if o == nil || isNil(o.ApplyTags) {
-    return nil, false
+	if o == nil || IsNil(o.ApplyTags) {
+		return nil, false
 	}
 	return o.ApplyTags, true
 }
 
 // HasApplyTags returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasApplyTags() bool {
-	if o != nil && !isNil(o.ApplyTags) {
+	if o != nil && !IsNil(o.ApplyTags) {
 		return true
 	}
 
@@ -379,7 +382,7 @@ func (o *SeriesEditorResource) SetApplyTags(v ApplyTags) {
 
 // GetMoveFiles returns the MoveFiles field value if set, zero value otherwise.
 func (o *SeriesEditorResource) GetMoveFiles() bool {
-	if o == nil || isNil(o.MoveFiles) {
+	if o == nil || IsNil(o.MoveFiles) {
 		var ret bool
 		return ret
 	}
@@ -389,15 +392,15 @@ func (o *SeriesEditorResource) GetMoveFiles() bool {
 // GetMoveFilesOk returns a tuple with the MoveFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeriesEditorResource) GetMoveFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.MoveFiles) {
-    return nil, false
+	if o == nil || IsNil(o.MoveFiles) {
+		return nil, false
 	}
 	return o.MoveFiles, true
 }
 
 // HasMoveFiles returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasMoveFiles() bool {
-	if o != nil && !isNil(o.MoveFiles) {
+	if o != nil && !IsNil(o.MoveFiles) {
 		return true
 	}
 
@@ -411,7 +414,7 @@ func (o *SeriesEditorResource) SetMoveFiles(v bool) {
 
 // GetDeleteFiles returns the DeleteFiles field value if set, zero value otherwise.
 func (o *SeriesEditorResource) GetDeleteFiles() bool {
-	if o == nil || isNil(o.DeleteFiles) {
+	if o == nil || IsNil(o.DeleteFiles) {
 		var ret bool
 		return ret
 	}
@@ -421,15 +424,15 @@ func (o *SeriesEditorResource) GetDeleteFiles() bool {
 // GetDeleteFilesOk returns a tuple with the DeleteFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeriesEditorResource) GetDeleteFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.DeleteFiles) {
-    return nil, false
+	if o == nil || IsNil(o.DeleteFiles) {
+		return nil, false
 	}
 	return o.DeleteFiles, true
 }
 
 // HasDeleteFiles returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasDeleteFiles() bool {
-	if o != nil && !isNil(o.DeleteFiles) {
+	if o != nil && !IsNil(o.DeleteFiles) {
 		return true
 	}
 
@@ -443,7 +446,7 @@ func (o *SeriesEditorResource) SetDeleteFiles(v bool) {
 
 // GetAddImportListExclusion returns the AddImportListExclusion field value if set, zero value otherwise.
 func (o *SeriesEditorResource) GetAddImportListExclusion() bool {
-	if o == nil || isNil(o.AddImportListExclusion) {
+	if o == nil || IsNil(o.AddImportListExclusion) {
 		var ret bool
 		return ret
 	}
@@ -453,15 +456,15 @@ func (o *SeriesEditorResource) GetAddImportListExclusion() bool {
 // GetAddImportListExclusionOk returns a tuple with the AddImportListExclusion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeriesEditorResource) GetAddImportListExclusionOk() (*bool, bool) {
-	if o == nil || isNil(o.AddImportListExclusion) {
-    return nil, false
+	if o == nil || IsNil(o.AddImportListExclusion) {
+		return nil, false
 	}
 	return o.AddImportListExclusion, true
 }
 
 // HasAddImportListExclusion returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasAddImportListExclusion() bool {
-	if o != nil && !isNil(o.AddImportListExclusion) {
+	if o != nil && !IsNil(o.AddImportListExclusion) {
 		return true
 	}
 
@@ -474,6 +477,14 @@ func (o *SeriesEditorResource) SetAddImportListExclusion(v bool) {
 }
 
 func (o SeriesEditorResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SeriesEditorResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.SeriesIds != nil {
 		toSerialize["seriesIds"] = o.SeriesIds
@@ -481,13 +492,13 @@ func (o SeriesEditorResource) MarshalJSON() ([]byte, error) {
 	if o.Monitored.IsSet() {
 		toSerialize["monitored"] = o.Monitored.Get()
 	}
-	if !isNil(o.MonitorNewItems) {
+	if !IsNil(o.MonitorNewItems) {
 		toSerialize["monitorNewItems"] = o.MonitorNewItems
 	}
 	if o.QualityProfileId.IsSet() {
 		toSerialize["qualityProfileId"] = o.QualityProfileId.Get()
 	}
-	if !isNil(o.SeriesType) {
+	if !IsNil(o.SeriesType) {
 		toSerialize["seriesType"] = o.SeriesType
 	}
 	if o.SeasonFolder.IsSet() {
@@ -499,19 +510,19 @@ func (o SeriesEditorResource) MarshalJSON() ([]byte, error) {
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !isNil(o.ApplyTags) {
+	if !IsNil(o.ApplyTags) {
 		toSerialize["applyTags"] = o.ApplyTags
 	}
-	if !isNil(o.MoveFiles) {
+	if !IsNil(o.MoveFiles) {
 		toSerialize["moveFiles"] = o.MoveFiles
 	}
-	if !isNil(o.DeleteFiles) {
+	if !IsNil(o.DeleteFiles) {
 		toSerialize["deleteFiles"] = o.DeleteFiles
 	}
-	if !isNil(o.AddImportListExclusion) {
+	if !IsNil(o.AddImportListExclusion) {
 		toSerialize["addImportListExclusion"] = o.AddImportListExclusion
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSeriesEditorResource struct {

@@ -22,6 +22,7 @@ import (
 
 // NamingConfigAPIService NamingConfigAPI service
 type NamingConfigAPIService service
+
 type ApiGetNamingConfigRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigAPIService
@@ -146,6 +147,7 @@ func (a *NamingConfigAPIService) GetNamingConfigExecute(r ApiGetNamingConfigRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetNamingConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigAPIService
@@ -187,7 +189,7 @@ func (a *NamingConfigAPIService) GetNamingConfigByIdExecute(r ApiGetNamingConfig
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/naming/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *NamingConfigAPIService) GetNamingConfigByIdExecute(r ApiGetNamingConfig
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetNamingConfigExamplesRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigAPIService
@@ -424,58 +427,58 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameEpisodes != nil {
-		localVarQueryParams.Add("renameEpisodes", parameterToString(*r.renameEpisodes, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "renameEpisodes", r.renameEpisodes, "")
 	}
 	if r.replaceIllegalCharacters != nil {
-		localVarQueryParams.Add("replaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "")
 	}
 	if r.colonReplacementFormat != nil {
-		localVarQueryParams.Add("colonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "")
 	}
 	if r.multiEpisodeStyle != nil {
-		localVarQueryParams.Add("multiEpisodeStyle", parameterToString(*r.multiEpisodeStyle, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "multiEpisodeStyle", r.multiEpisodeStyle, "")
 	}
 	if r.standardEpisodeFormat != nil {
-		localVarQueryParams.Add("standardEpisodeFormat", parameterToString(*r.standardEpisodeFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "standardEpisodeFormat", r.standardEpisodeFormat, "")
 	}
 	if r.dailyEpisodeFormat != nil {
-		localVarQueryParams.Add("dailyEpisodeFormat", parameterToString(*r.dailyEpisodeFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dailyEpisodeFormat", r.dailyEpisodeFormat, "")
 	}
 	if r.animeEpisodeFormat != nil {
-		localVarQueryParams.Add("animeEpisodeFormat", parameterToString(*r.animeEpisodeFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "animeEpisodeFormat", r.animeEpisodeFormat, "")
 	}
 	if r.seriesFolderFormat != nil {
-		localVarQueryParams.Add("seriesFolderFormat", parameterToString(*r.seriesFolderFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesFolderFormat", r.seriesFolderFormat, "")
 	}
 	if r.seasonFolderFormat != nil {
-		localVarQueryParams.Add("seasonFolderFormat", parameterToString(*r.seasonFolderFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonFolderFormat", r.seasonFolderFormat, "")
 	}
 	if r.specialsFolderFormat != nil {
-		localVarQueryParams.Add("specialsFolderFormat", parameterToString(*r.specialsFolderFormat, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "specialsFolderFormat", r.specialsFolderFormat, "")
 	}
 	if r.includeSeriesTitle != nil {
-		localVarQueryParams.Add("includeSeriesTitle", parameterToString(*r.includeSeriesTitle, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeriesTitle", r.includeSeriesTitle, "")
 	}
 	if r.includeEpisodeTitle != nil {
-		localVarQueryParams.Add("includeEpisodeTitle", parameterToString(*r.includeEpisodeTitle, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeTitle", r.includeEpisodeTitle, "")
 	}
 	if r.includeQuality != nil {
-		localVarQueryParams.Add("includeQuality", parameterToString(*r.includeQuality, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeQuality", r.includeQuality, "")
 	}
 	if r.replaceSpaces != nil {
-		localVarQueryParams.Add("replaceSpaces", parameterToString(*r.replaceSpaces, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceSpaces", r.replaceSpaces, "")
 	}
 	if r.separator != nil {
-		localVarQueryParams.Add("separator", parameterToString(*r.separator, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "separator", r.separator, "")
 	}
 	if r.numberStyle != nil {
-		localVarQueryParams.Add("numberStyle", parameterToString(*r.numberStyle, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "numberStyle", r.numberStyle, "")
 	}
 	if r.id != nil {
-		localVarQueryParams.Add("id", parameterToString(*r.id, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
 	}
 	if r.resourceName != nil {
-		localVarQueryParams.Add("resourceName", parameterToString(*r.resourceName, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -549,6 +552,7 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateNamingConfigRequest struct {
 	ctx context.Context
 	ApiService *NamingConfigAPIService
@@ -596,7 +600,7 @@ func (a *NamingConfigAPIService) UpdateNamingConfigExecute(r ApiUpdateNamingConf
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/naming/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

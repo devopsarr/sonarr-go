@@ -21,6 +21,7 @@ import (
 
 // FileSystemAPIService FileSystemAPI service
 type FileSystemAPIService service
+
 type ApiGetFileSystemRequest struct {
 	ctx context.Context
 	ApiService *FileSystemAPIService
@@ -81,13 +82,19 @@ func (a *FileSystemAPIService) GetFileSystemExecute(r ApiGetFileSystemRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.path != nil {
-		localVarQueryParams.Add("path", parameterToString(*r.path, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "")
 	}
 	if r.includeFiles != nil {
-		localVarQueryParams.Add("includeFiles", parameterToString(*r.includeFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeFiles", r.includeFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.includeFiles = &defaultValue
 	}
 	if r.allowFoldersWithoutTrailingSlashes != nil {
-		localVarQueryParams.Add("allowFoldersWithoutTrailingSlashes", parameterToString(*r.allowFoldersWithoutTrailingSlashes, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "allowFoldersWithoutTrailingSlashes", r.allowFoldersWithoutTrailingSlashes, "")
+	} else {
+		var defaultValue bool = false
+		r.allowFoldersWithoutTrailingSlashes = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -161,6 +168,7 @@ func (a *FileSystemAPIService) GetFileSystemExecute(r ApiGetFileSystemRequest) (
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetFileSystemMediafilesRequest struct {
 	ctx context.Context
 	ApiService *FileSystemAPIService
@@ -209,7 +217,7 @@ func (a *FileSystemAPIService) GetFileSystemMediafilesExecute(r ApiGetFileSystem
 	localVarFormParams := url.Values{}
 
 	if r.path != nil {
-		localVarQueryParams.Add("path", parameterToString(*r.path, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -283,6 +291,7 @@ func (a *FileSystemAPIService) GetFileSystemMediafilesExecute(r ApiGetFileSystem
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetFileSystemTypeRequest struct {
 	ctx context.Context
 	ApiService *FileSystemAPIService
@@ -331,7 +340,7 @@ func (a *FileSystemAPIService) GetFileSystemTypeExecute(r ApiGetFileSystemTypeRe
 	localVarFormParams := url.Values{}
 
 	if r.path != nil {
-		localVarQueryParams.Add("path", parameterToString(*r.path, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -22,6 +22,7 @@ import (
 
 // HostConfigAPIService HostConfigAPI service
 type HostConfigAPIService service
+
 type ApiGetHostConfigRequest struct {
 	ctx context.Context
 	ApiService *HostConfigAPIService
@@ -146,6 +147,7 @@ func (a *HostConfigAPIService) GetHostConfigExecute(r ApiGetHostConfigRequest) (
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetHostConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *HostConfigAPIService
@@ -187,7 +189,7 @@ func (a *HostConfigAPIService) GetHostConfigByIdExecute(r ApiGetHostConfigByIdRe
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/host/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *HostConfigAPIService) GetHostConfigByIdExecute(r ApiGetHostConfigByIdRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateHostConfigRequest struct {
 	ctx context.Context
 	ApiService *HostConfigAPIService
@@ -321,7 +324,7 @@ func (a *HostConfigAPIService) UpdateHostConfigExecute(r ApiUpdateHostConfigRequ
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/host/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

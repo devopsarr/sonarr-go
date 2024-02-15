@@ -23,6 +23,7 @@ import (
 
 // CalendarAPIService CalendarAPI service
 type CalendarAPIService service
+
 type ApiGetCalendarByIdRequest struct {
 	ctx context.Context
 	ApiService *CalendarAPIService
@@ -64,7 +65,7 @@ func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest)
 	}
 
 	localVarPath := localBasePath + "/api/v3/calendar/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -151,6 +152,7 @@ func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListCalendarRequest struct {
 	ctx context.Context
 	ApiService *CalendarAPIService
@@ -198,7 +200,7 @@ func (r ApiListCalendarRequest) Tags(tags string) ApiListCalendarRequest {
 	return r
 }
 
-func (r ApiListCalendarRequest) Execute() ([]*EpisodeResource, *http.Response, error) {
+func (r ApiListCalendarRequest) Execute() ([]EpisodeResource, *http.Response, error) {
 	return r.ApiService.ListCalendarExecute(r)
 }
 
@@ -217,12 +219,12 @@ func (a *CalendarAPIService) ListCalendar(ctx context.Context) ApiListCalendarRe
 
 // Execute executes the request
 //  @return []EpisodeResource
-func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*EpisodeResource, *http.Response, error) {
+func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]EpisodeResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*EpisodeResource
+		localVarReturnValue  []EpisodeResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarAPIService.ListCalendar")
@@ -237,25 +239,40 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*E
 	localVarFormParams := url.Values{}
 
 	if r.start != nil {
-		localVarQueryParams.Add("start", parameterToString(*r.start, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "")
 	}
 	if r.end != nil {
-		localVarQueryParams.Add("end", parameterToString(*r.end, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "")
 	}
 	if r.unmonitored != nil {
-		localVarQueryParams.Add("unmonitored", parameterToString(*r.unmonitored, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "")
+	} else {
+		var defaultValue bool = false
+		r.unmonitored = &defaultValue
 	}
 	if r.includeSeries != nil {
-		localVarQueryParams.Add("includeSeries", parameterToString(*r.includeSeries, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "")
+	} else {
+		var defaultValue bool = false
+		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisodeFile != nil {
-		localVarQueryParams.Add("includeEpisodeFile", parameterToString(*r.includeEpisodeFile, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeFile", r.includeEpisodeFile, "")
+	} else {
+		var defaultValue bool = false
+		r.includeEpisodeFile = &defaultValue
 	}
 	if r.includeEpisodeImages != nil {
-		localVarQueryParams.Add("includeEpisodeImages", parameterToString(*r.includeEpisodeImages, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeImages", r.includeEpisodeImages, "")
+	} else {
+		var defaultValue bool = false
+		r.includeEpisodeImages = &defaultValue
 	}
 	if r.tags != nil {
-		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "")
+	} else {
+		var defaultValue string = ""
+		r.tags = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

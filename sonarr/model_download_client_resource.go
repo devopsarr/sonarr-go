@@ -14,18 +14,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the DownloadClientResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DownloadClientResource{}
+
 // DownloadClientResource struct for DownloadClientResource
 type DownloadClientResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
-	Presets []*DownloadClientResource `json:"presets,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
+	Presets []DownloadClientResource `json:"presets,omitempty"`
 	Enable *bool `json:"enable,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	Priority *int32 `json:"priority,omitempty"`
@@ -52,7 +55,7 @@ func NewDownloadClientResourceWithDefaults() *DownloadClientResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *DownloadClientResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -62,15 +65,15 @@ func (o *DownloadClientResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -84,7 +87,7 @@ func (o *DownloadClientResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *DownloadClientResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -125,9 +128,9 @@ func (o *DownloadClientResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientResource) GetFields() []*Field {
+func (o *DownloadClientResource) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -136,16 +139,16 @@ func (o *DownloadClientResource) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientResource) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *DownloadClientResource) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -153,13 +156,13 @@ func (o *DownloadClientResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *DownloadClientResource) SetFields(v []*Field) {
+func (o *DownloadClientResource) SetFields(v []Field) {
 	o.Fields = v
 }
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientResource) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -171,7 +174,7 @@ func (o *DownloadClientResource) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientResource) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -201,7 +204,7 @@ func (o *DownloadClientResource) UnsetImplementationName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientResource) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *DownloadClientResource) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientResource) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -243,7 +246,7 @@ func (o *DownloadClientResource) UnsetImplementation() {
 
 // GetConfigContract returns the ConfigContract field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientResource) GetConfigContract() string {
-	if o == nil || isNil(o.ConfigContract.Get()) {
+	if o == nil || IsNil(o.ConfigContract.Get()) {
 		var ret string
 		return ret
 	}
@@ -255,7 +258,7 @@ func (o *DownloadClientResource) GetConfigContract() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientResource) GetConfigContractOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConfigContract.Get(), o.ConfigContract.IsSet()
 }
@@ -285,7 +288,7 @@ func (o *DownloadClientResource) UnsetConfigContract() {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientResource) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -297,7 +300,7 @@ func (o *DownloadClientResource) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientResource) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -327,7 +330,7 @@ func (o *DownloadClientResource) UnsetInfoLink() {
 
 // GetMessage returns the Message field value if set, zero value otherwise.
 func (o *DownloadClientResource) GetMessage() ProviderMessage {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		var ret ProviderMessage
 		return ret
 	}
@@ -337,15 +340,15 @@ func (o *DownloadClientResource) GetMessage() ProviderMessage {
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientResource) GetMessageOk() (*ProviderMessage, bool) {
-	if o == nil || isNil(o.Message) {
-    return nil, false
+	if o == nil || IsNil(o.Message) {
+		return nil, false
 	}
 	return o.Message, true
 }
 
 // HasMessage returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasMessage() bool {
-	if o != nil && !isNil(o.Message) {
+	if o != nil && !IsNil(o.Message) {
 		return true
 	}
 
@@ -358,9 +361,9 @@ func (o *DownloadClientResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientResource) GetTags() []*int32 {
+func (o *DownloadClientResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -369,16 +372,16 @@ func (o *DownloadClientResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *DownloadClientResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -386,14 +389,14 @@ func (o *DownloadClientResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *DownloadClientResource) SetTags(v []*int32) {
+func (o *DownloadClientResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DownloadClientResource) GetPresets() []*DownloadClientResource {
+func (o *DownloadClientResource) GetPresets() []DownloadClientResource {
 	if o == nil {
-		var ret []*DownloadClientResource
+		var ret []DownloadClientResource
 		return ret
 	}
 	return o.Presets
@@ -402,16 +405,16 @@ func (o *DownloadClientResource) GetPresets() []*DownloadClientResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DownloadClientResource) GetPresetsOk() ([]*DownloadClientResource, bool) {
-	if o == nil || isNil(o.Presets) {
-    return nil, false
+func (o *DownloadClientResource) GetPresetsOk() ([]DownloadClientResource, bool) {
+	if o == nil || IsNil(o.Presets) {
+		return nil, false
 	}
 	return o.Presets, true
 }
 
 // HasPresets returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasPresets() bool {
-	if o != nil && isNil(o.Presets) {
+	if o != nil && IsNil(o.Presets) {
 		return true
 	}
 
@@ -419,13 +422,13 @@ func (o *DownloadClientResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []DownloadClientResource and assigns it to the Presets field.
-func (o *DownloadClientResource) SetPresets(v []*DownloadClientResource) {
+func (o *DownloadClientResource) SetPresets(v []DownloadClientResource) {
 	o.Presets = v
 }
 
 // GetEnable returns the Enable field value if set, zero value otherwise.
 func (o *DownloadClientResource) GetEnable() bool {
-	if o == nil || isNil(o.Enable) {
+	if o == nil || IsNil(o.Enable) {
 		var ret bool
 		return ret
 	}
@@ -435,15 +438,15 @@ func (o *DownloadClientResource) GetEnable() bool {
 // GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientResource) GetEnableOk() (*bool, bool) {
-	if o == nil || isNil(o.Enable) {
-    return nil, false
+	if o == nil || IsNil(o.Enable) {
+		return nil, false
 	}
 	return o.Enable, true
 }
 
 // HasEnable returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasEnable() bool {
-	if o != nil && !isNil(o.Enable) {
+	if o != nil && !IsNil(o.Enable) {
 		return true
 	}
 
@@ -457,7 +460,7 @@ func (o *DownloadClientResource) SetEnable(v bool) {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *DownloadClientResource) GetProtocol() DownloadProtocol {
-	if o == nil || isNil(o.Protocol) {
+	if o == nil || IsNil(o.Protocol) {
 		var ret DownloadProtocol
 		return ret
 	}
@@ -467,15 +470,15 @@ func (o *DownloadClientResource) GetProtocol() DownloadProtocol {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientResource) GetProtocolOk() (*DownloadProtocol, bool) {
-	if o == nil || isNil(o.Protocol) {
-    return nil, false
+	if o == nil || IsNil(o.Protocol) {
+		return nil, false
 	}
 	return o.Protocol, true
 }
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasProtocol() bool {
-	if o != nil && !isNil(o.Protocol) {
+	if o != nil && !IsNil(o.Protocol) {
 		return true
 	}
 
@@ -489,7 +492,7 @@ func (o *DownloadClientResource) SetProtocol(v DownloadProtocol) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *DownloadClientResource) GetPriority() int32 {
-	if o == nil || isNil(o.Priority) {
+	if o == nil || IsNil(o.Priority) {
 		var ret int32
 		return ret
 	}
@@ -499,15 +502,15 @@ func (o *DownloadClientResource) GetPriority() int32 {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientResource) GetPriorityOk() (*int32, bool) {
-	if o == nil || isNil(o.Priority) {
-    return nil, false
+	if o == nil || IsNil(o.Priority) {
+		return nil, false
 	}
 	return o.Priority, true
 }
 
 // HasPriority returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasPriority() bool {
-	if o != nil && !isNil(o.Priority) {
+	if o != nil && !IsNil(o.Priority) {
 		return true
 	}
 
@@ -521,7 +524,7 @@ func (o *DownloadClientResource) SetPriority(v int32) {
 
 // GetRemoveCompletedDownloads returns the RemoveCompletedDownloads field value if set, zero value otherwise.
 func (o *DownloadClientResource) GetRemoveCompletedDownloads() bool {
-	if o == nil || isNil(o.RemoveCompletedDownloads) {
+	if o == nil || IsNil(o.RemoveCompletedDownloads) {
 		var ret bool
 		return ret
 	}
@@ -531,15 +534,15 @@ func (o *DownloadClientResource) GetRemoveCompletedDownloads() bool {
 // GetRemoveCompletedDownloadsOk returns a tuple with the RemoveCompletedDownloads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientResource) GetRemoveCompletedDownloadsOk() (*bool, bool) {
-	if o == nil || isNil(o.RemoveCompletedDownloads) {
-    return nil, false
+	if o == nil || IsNil(o.RemoveCompletedDownloads) {
+		return nil, false
 	}
 	return o.RemoveCompletedDownloads, true
 }
 
 // HasRemoveCompletedDownloads returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasRemoveCompletedDownloads() bool {
-	if o != nil && !isNil(o.RemoveCompletedDownloads) {
+	if o != nil && !IsNil(o.RemoveCompletedDownloads) {
 		return true
 	}
 
@@ -553,7 +556,7 @@ func (o *DownloadClientResource) SetRemoveCompletedDownloads(v bool) {
 
 // GetRemoveFailedDownloads returns the RemoveFailedDownloads field value if set, zero value otherwise.
 func (o *DownloadClientResource) GetRemoveFailedDownloads() bool {
-	if o == nil || isNil(o.RemoveFailedDownloads) {
+	if o == nil || IsNil(o.RemoveFailedDownloads) {
 		var ret bool
 		return ret
 	}
@@ -563,15 +566,15 @@ func (o *DownloadClientResource) GetRemoveFailedDownloads() bool {
 // GetRemoveFailedDownloadsOk returns a tuple with the RemoveFailedDownloads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientResource) GetRemoveFailedDownloadsOk() (*bool, bool) {
-	if o == nil || isNil(o.RemoveFailedDownloads) {
-    return nil, false
+	if o == nil || IsNil(o.RemoveFailedDownloads) {
+		return nil, false
 	}
 	return o.RemoveFailedDownloads, true
 }
 
 // HasRemoveFailedDownloads returns a boolean if a field has been set.
 func (o *DownloadClientResource) HasRemoveFailedDownloads() bool {
-	if o != nil && !isNil(o.RemoveFailedDownloads) {
+	if o != nil && !IsNil(o.RemoveFailedDownloads) {
 		return true
 	}
 
@@ -584,8 +587,16 @@ func (o *DownloadClientResource) SetRemoveFailedDownloads(v bool) {
 }
 
 func (o DownloadClientResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o DownloadClientResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -606,7 +617,7 @@ func (o DownloadClientResource) MarshalJSON() ([]byte, error) {
 	if o.InfoLink.IsSet() {
 		toSerialize["infoLink"] = o.InfoLink.Get()
 	}
-	if !isNil(o.Message) {
+	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
 	if o.Tags != nil {
@@ -615,22 +626,22 @@ func (o DownloadClientResource) MarshalJSON() ([]byte, error) {
 	if o.Presets != nil {
 		toSerialize["presets"] = o.Presets
 	}
-	if !isNil(o.Enable) {
+	if !IsNil(o.Enable) {
 		toSerialize["enable"] = o.Enable
 	}
-	if !isNil(o.Protocol) {
+	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
-	if !isNil(o.Priority) {
+	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !isNil(o.RemoveCompletedDownloads) {
+	if !IsNil(o.RemoveCompletedDownloads) {
 		toSerialize["removeCompletedDownloads"] = o.RemoveCompletedDownloads
 	}
-	if !isNil(o.RemoveFailedDownloads) {
+	if !IsNil(o.RemoveFailedDownloads) {
 		toSerialize["removeFailedDownloads"] = o.RemoveFailedDownloads
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableDownloadClientResource struct {

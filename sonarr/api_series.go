@@ -22,6 +22,7 @@ import (
 
 // SeriesAPIService SeriesAPI service
 type SeriesAPIService service
+
 type ApiCreateSeriesRequest struct {
 	ctx context.Context
 	ApiService *SeriesAPIService
@@ -154,6 +155,7 @@ func (a *SeriesAPIService) CreateSeriesExecute(r ApiCreateSeriesRequest) (*Serie
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteSeriesRequest struct {
 	ctx context.Context
 	ApiService *SeriesAPIService
@@ -205,17 +207,23 @@ func (a *SeriesAPIService) DeleteSeriesExecute(r ApiDeleteSeriesRequest) (*http.
 	}
 
 	localVarPath := localBasePath + "/api/v3/series/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+	} else {
+		var defaultValue bool = false
+		r.addImportListExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -289,6 +297,7 @@ func (a *SeriesAPIService) DeleteSeriesExecute(r ApiDeleteSeriesRequest) (*http.
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetSeriesByIdRequest struct {
 	ctx context.Context
 	ApiService *SeriesAPIService
@@ -336,14 +345,17 @@ func (a *SeriesAPIService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*Ser
 	}
 
 	localVarPath := localBasePath + "/api/v3/series/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.includeSeasonImages != nil {
-		localVarQueryParams.Add("includeSeasonImages", parameterToString(*r.includeSeasonImages, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", r.includeSeasonImages, "")
+	} else {
+		var defaultValue bool = false
+		r.includeSeasonImages = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -426,6 +438,7 @@ func (a *SeriesAPIService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*Ser
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListSeriesRequest struct {
 	ctx context.Context
 	ApiService *SeriesAPIService
@@ -443,7 +456,7 @@ func (r ApiListSeriesRequest) IncludeSeasonImages(includeSeasonImages bool) ApiL
 	return r
 }
 
-func (r ApiListSeriesRequest) Execute() ([]*SeriesResource, *http.Response, error) {
+func (r ApiListSeriesRequest) Execute() ([]SeriesResource, *http.Response, error) {
 	return r.ApiService.ListSeriesExecute(r)
 }
 
@@ -462,12 +475,12 @@ func (a *SeriesAPIService) ListSeries(ctx context.Context) ApiListSeriesRequest 
 
 // Execute executes the request
 //  @return []SeriesResource
-func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesResource, *http.Response, error) {
+func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]SeriesResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*SeriesResource
+		localVarReturnValue  []SeriesResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesAPIService.ListSeries")
@@ -482,10 +495,13 @@ func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesR
 	localVarFormParams := url.Values{}
 
 	if r.tvdbId != nil {
-		localVarQueryParams.Add("tvdbId", parameterToString(*r.tvdbId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tvdbId", r.tvdbId, "")
 	}
 	if r.includeSeasonImages != nil {
-		localVarQueryParams.Add("includeSeasonImages", parameterToString(*r.includeSeasonImages, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", r.includeSeasonImages, "")
+	} else {
+		var defaultValue bool = false
+		r.includeSeasonImages = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -568,6 +584,7 @@ func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]*SeriesR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateSeriesRequest struct {
 	ctx context.Context
 	ApiService *SeriesAPIService
@@ -621,14 +638,17 @@ func (a *SeriesAPIService) UpdateSeriesExecute(r ApiUpdateSeriesRequest) (*Serie
 	}
 
 	localVarPath := localBasePath + "/api/v3/series/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.moveFiles != nil {
-		localVarQueryParams.Add("moveFiles", parameterToString(*r.moveFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.moveFiles = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

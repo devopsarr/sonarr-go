@@ -21,6 +21,7 @@ import (
 
 // ApiInfoAPIService ApiInfoAPI service
 type ApiInfoAPIService service
+
 type ApiGetApiRequest struct {
 	ctx context.Context
 	ApiService *ApiInfoAPIService

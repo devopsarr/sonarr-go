@@ -22,6 +22,7 @@ import (
 
 // CustomFormatAPIService CustomFormatAPI service
 type CustomFormatAPIService service
+
 type ApiCreateCustomFormatRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatAPIService
@@ -154,6 +155,7 @@ func (a *CustomFormatAPIService) CreateCustomFormatExecute(r ApiCreateCustomForm
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteCustomFormatRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatAPIService
@@ -193,7 +195,7 @@ func (a *CustomFormatAPIService) DeleteCustomFormatExecute(r ApiDeleteCustomForm
 	}
 
 	localVarPath := localBasePath + "/api/v3/customformat/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *CustomFormatAPIService) DeleteCustomFormatExecute(r ApiDeleteCustomForm
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetCustomFormatByIdRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatAPIService
@@ -312,7 +315,7 @@ func (a *CustomFormatAPIService) GetCustomFormatByIdExecute(r ApiGetCustomFormat
 	}
 
 	localVarPath := localBasePath + "/api/v3/customformat/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *CustomFormatAPIService) GetCustomFormatByIdExecute(r ApiGetCustomFormat
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListCustomFormatRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatAPIService
 }
 
-func (r ApiListCustomFormatRequest) Execute() ([]*CustomFormatResource, *http.Response, error) {
+func (r ApiListCustomFormatRequest) Execute() ([]CustomFormatResource, *http.Response, error) {
 	return r.ApiService.ListCustomFormatExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *CustomFormatAPIService) ListCustomFormat(ctx context.Context) ApiListCu
 
 // Execute executes the request
 //  @return []CustomFormatResource
-func (a *CustomFormatAPIService) ListCustomFormatExecute(r ApiListCustomFormatRequest) ([]*CustomFormatResource, *http.Response, error) {
+func (a *CustomFormatAPIService) ListCustomFormatExecute(r ApiListCustomFormatRequest) ([]CustomFormatResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*CustomFormatResource
+		localVarReturnValue  []CustomFormatResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatAPIService.ListCustomFormat")
@@ -523,12 +527,13 @@ func (a *CustomFormatAPIService) ListCustomFormatExecute(r ApiListCustomFormatRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListCustomFormatSchemaRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatAPIService
 }
 
-func (r ApiListCustomFormatSchemaRequest) Execute() ([]*CustomFormatSpecificationSchema, *http.Response, error) {
+func (r ApiListCustomFormatSchemaRequest) Execute() ([]CustomFormatSpecificationSchema, *http.Response, error) {
 	return r.ApiService.ListCustomFormatSchemaExecute(r)
 }
 
@@ -547,12 +552,12 @@ func (a *CustomFormatAPIService) ListCustomFormatSchema(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []CustomFormatSpecificationSchema
-func (a *CustomFormatAPIService) ListCustomFormatSchemaExecute(r ApiListCustomFormatSchemaRequest) ([]*CustomFormatSpecificationSchema, *http.Response, error) {
+func (a *CustomFormatAPIService) ListCustomFormatSchemaExecute(r ApiListCustomFormatSchemaRequest) ([]CustomFormatSpecificationSchema, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*CustomFormatSpecificationSchema
+		localVarReturnValue  []CustomFormatSpecificationSchema
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomFormatAPIService.ListCustomFormatSchema")
@@ -647,6 +652,7 @@ func (a *CustomFormatAPIService) ListCustomFormatSchemaExecute(r ApiListCustomFo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateCustomFormatRequest struct {
 	ctx context.Context
 	ApiService *CustomFormatAPIService
@@ -694,7 +700,7 @@ func (a *CustomFormatAPIService) UpdateCustomFormatExecute(r ApiUpdateCustomForm
 	}
 
 	localVarPath := localBasePath + "/api/v3/customformat/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -22,6 +22,7 @@ import (
 
 // NotificationAPIService NotificationAPI service
 type NotificationAPIService service
+
 type ApiCreateNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
@@ -78,7 +79,10 @@ func (a *NotificationAPIService) CreateNotificationExecute(r ApiCreateNotificati
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -163,6 +167,7 @@ func (a *NotificationAPIService) CreateNotificationExecute(r ApiCreateNotificati
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiCreateNotificationActionByNameRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
@@ -208,7 +213,7 @@ func (a *NotificationAPIService) CreateNotificationActionByNameExecute(r ApiCrea
 	}
 
 	localVarPath := localBasePath + "/api/v3/notification/action/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -288,6 +293,7 @@ func (a *NotificationAPIService) CreateNotificationActionByNameExecute(r ApiCrea
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
@@ -327,7 +333,7 @@ func (a *NotificationAPIService) DeleteNotificationExecute(r ApiDeleteNotificati
 	}
 
 	localVarPath := localBasePath + "/api/v3/notification/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -405,6 +411,7 @@ func (a *NotificationAPIService) DeleteNotificationExecute(r ApiDeleteNotificati
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetNotificationByIdRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
@@ -446,7 +453,7 @@ func (a *NotificationAPIService) GetNotificationByIdExecute(r ApiGetNotification
 	}
 
 	localVarPath := localBasePath + "/api/v3/notification/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -533,12 +540,13 @@ func (a *NotificationAPIService) GetNotificationByIdExecute(r ApiGetNotification
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
 }
 
-func (r ApiListNotificationRequest) Execute() ([]*NotificationResource, *http.Response, error) {
+func (r ApiListNotificationRequest) Execute() ([]NotificationResource, *http.Response, error) {
 	return r.ApiService.ListNotificationExecute(r)
 }
 
@@ -557,12 +565,12 @@ func (a *NotificationAPIService) ListNotification(ctx context.Context) ApiListNo
 
 // Execute executes the request
 //  @return []NotificationResource
-func (a *NotificationAPIService) ListNotificationExecute(r ApiListNotificationRequest) ([]*NotificationResource, *http.Response, error) {
+func (a *NotificationAPIService) ListNotificationExecute(r ApiListNotificationRequest) ([]NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*NotificationResource
+		localVarReturnValue  []NotificationResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationAPIService.ListNotification")
@@ -657,12 +665,13 @@ func (a *NotificationAPIService) ListNotificationExecute(r ApiListNotificationRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListNotificationSchemaRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
 }
 
-func (r ApiListNotificationSchemaRequest) Execute() ([]*NotificationResource, *http.Response, error) {
+func (r ApiListNotificationSchemaRequest) Execute() ([]NotificationResource, *http.Response, error) {
 	return r.ApiService.ListNotificationSchemaExecute(r)
 }
 
@@ -681,12 +690,12 @@ func (a *NotificationAPIService) ListNotificationSchema(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []NotificationResource
-func (a *NotificationAPIService) ListNotificationSchemaExecute(r ApiListNotificationSchemaRequest) ([]*NotificationResource, *http.Response, error) {
+func (a *NotificationAPIService) ListNotificationSchemaExecute(r ApiListNotificationSchemaRequest) ([]NotificationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*NotificationResource
+		localVarReturnValue  []NotificationResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationAPIService.ListNotificationSchema")
@@ -781,6 +790,7 @@ func (a *NotificationAPIService) ListNotificationSchemaExecute(r ApiListNotifica
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiTestNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
@@ -902,6 +912,7 @@ func (a *NotificationAPIService) TestNotificationExecute(r ApiTestNotificationRe
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiTestallNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
@@ -1015,6 +1026,7 @@ func (a *NotificationAPIService) TestallNotificationExecute(r ApiTestallNotifica
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateNotificationRequest struct {
 	ctx context.Context
 	ApiService *NotificationAPIService
@@ -1068,14 +1080,17 @@ func (a *NotificationAPIService) UpdateNotificationExecute(r ApiUpdateNotificati
 	}
 
 	localVarPath := localBasePath + "/api/v3/notification/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+	} else {
+		var defaultValue bool = false
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

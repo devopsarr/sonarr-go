@@ -22,6 +22,7 @@ import (
 
 // MediaManagementConfigAPIService MediaManagementConfigAPI service
 type MediaManagementConfigAPIService service
+
 type ApiGetMediaManagementConfigRequest struct {
 	ctx context.Context
 	ApiService *MediaManagementConfigAPIService
@@ -146,6 +147,7 @@ func (a *MediaManagementConfigAPIService) GetMediaManagementConfigExecute(r ApiG
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetMediaManagementConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *MediaManagementConfigAPIService
@@ -187,7 +189,7 @@ func (a *MediaManagementConfigAPIService) GetMediaManagementConfigByIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/mediamanagement/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *MediaManagementConfigAPIService) GetMediaManagementConfigByIdExecute(r 
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateMediaManagementConfigRequest struct {
 	ctx context.Context
 	ApiService *MediaManagementConfigAPIService
@@ -321,7 +324,7 @@ func (a *MediaManagementConfigAPIService) UpdateMediaManagementConfigExecute(r A
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/mediamanagement/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

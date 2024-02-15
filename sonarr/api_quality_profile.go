@@ -22,6 +22,7 @@ import (
 
 // QualityProfileAPIService QualityProfileAPI service
 type QualityProfileAPIService service
+
 type ApiCreateQualityProfileRequest struct {
 	ctx context.Context
 	ApiService *QualityProfileAPIService
@@ -154,6 +155,7 @@ func (a *QualityProfileAPIService) CreateQualityProfileExecute(r ApiCreateQualit
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteQualityProfileRequest struct {
 	ctx context.Context
 	ApiService *QualityProfileAPIService
@@ -193,7 +195,7 @@ func (a *QualityProfileAPIService) DeleteQualityProfileExecute(r ApiDeleteQualit
 	}
 
 	localVarPath := localBasePath + "/api/v3/qualityprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *QualityProfileAPIService) DeleteQualityProfileExecute(r ApiDeleteQualit
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetQualityProfileByIdRequest struct {
 	ctx context.Context
 	ApiService *QualityProfileAPIService
@@ -312,7 +315,7 @@ func (a *QualityProfileAPIService) GetQualityProfileByIdExecute(r ApiGetQualityP
 	}
 
 	localVarPath := localBasePath + "/api/v3/qualityprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *QualityProfileAPIService) GetQualityProfileByIdExecute(r ApiGetQualityP
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListQualityProfileRequest struct {
 	ctx context.Context
 	ApiService *QualityProfileAPIService
 }
 
-func (r ApiListQualityProfileRequest) Execute() ([]*QualityProfileResource, *http.Response, error) {
+func (r ApiListQualityProfileRequest) Execute() ([]QualityProfileResource, *http.Response, error) {
 	return r.ApiService.ListQualityProfileExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *QualityProfileAPIService) ListQualityProfile(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return []QualityProfileResource
-func (a *QualityProfileAPIService) ListQualityProfileExecute(r ApiListQualityProfileRequest) ([]*QualityProfileResource, *http.Response, error) {
+func (a *QualityProfileAPIService) ListQualityProfileExecute(r ApiListQualityProfileRequest) ([]QualityProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*QualityProfileResource
+		localVarReturnValue  []QualityProfileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QualityProfileAPIService.ListQualityProfile")
@@ -523,6 +527,7 @@ func (a *QualityProfileAPIService) ListQualityProfileExecute(r ApiListQualityPro
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateQualityProfileRequest struct {
 	ctx context.Context
 	ApiService *QualityProfileAPIService
@@ -570,7 +575,7 @@ func (a *QualityProfileAPIService) UpdateQualityProfileExecute(r ApiUpdateQualit
 	}
 
 	localVarPath := localBasePath + "/api/v3/qualityprofile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -21,6 +21,7 @@ import (
 
 // CalendarFeedAPIService CalendarFeedAPI service
 type CalendarFeedAPIService service
+
 type ApiGetFeedV3CalendarSonarrIcsRequest struct {
 	ctx context.Context
 	ApiService *CalendarFeedAPIService
@@ -99,22 +100,40 @@ func (a *CalendarFeedAPIService) GetFeedV3CalendarSonarrIcsExecute(r ApiGetFeedV
 	localVarFormParams := url.Values{}
 
 	if r.pastDays != nil {
-		localVarQueryParams.Add("pastDays", parameterToString(*r.pastDays, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", r.pastDays, "")
+	} else {
+		var defaultValue int32 = 7
+		r.pastDays = &defaultValue
 	}
 	if r.futureDays != nil {
-		localVarQueryParams.Add("futureDays", parameterToString(*r.futureDays, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", r.futureDays, "")
+	} else {
+		var defaultValue int32 = 28
+		r.futureDays = &defaultValue
 	}
 	if r.tags != nil {
-		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "")
+	} else {
+		var defaultValue string = ""
+		r.tags = &defaultValue
 	}
 	if r.unmonitored != nil {
-		localVarQueryParams.Add("unmonitored", parameterToString(*r.unmonitored, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "")
+	} else {
+		var defaultValue bool = false
+		r.unmonitored = &defaultValue
 	}
 	if r.premieresOnly != nil {
-		localVarQueryParams.Add("premieresOnly", parameterToString(*r.premieresOnly, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "premieresOnly", r.premieresOnly, "")
+	} else {
+		var defaultValue bool = false
+		r.premieresOnly = &defaultValue
 	}
 	if r.asAllDay != nil {
-		localVarQueryParams.Add("asAllDay", parameterToString(*r.asAllDay, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "asAllDay", r.asAllDay, "")
+	} else {
+		var defaultValue bool = false
+		r.asAllDay = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

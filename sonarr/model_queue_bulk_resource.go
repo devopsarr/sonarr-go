@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the QueueBulkResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QueueBulkResource{}
+
 // QueueBulkResource struct for QueueBulkResource
 type QueueBulkResource struct {
-	Ids []*int32 `json:"ids,omitempty"`
+	Ids []int32 `json:"ids,omitempty"`
 }
 
 // NewQueueBulkResource instantiates a new QueueBulkResource object
@@ -37,9 +40,9 @@ func NewQueueBulkResourceWithDefaults() *QueueBulkResource {
 }
 
 // GetIds returns the Ids field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueueBulkResource) GetIds() []*int32 {
+func (o *QueueBulkResource) GetIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Ids
@@ -48,16 +51,16 @@ func (o *QueueBulkResource) GetIds() []*int32 {
 // GetIdsOk returns a tuple with the Ids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QueueBulkResource) GetIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Ids) {
-    return nil, false
+func (o *QueueBulkResource) GetIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Ids) {
+		return nil, false
 	}
 	return o.Ids, true
 }
 
 // HasIds returns a boolean if a field has been set.
 func (o *QueueBulkResource) HasIds() bool {
-	if o != nil && isNil(o.Ids) {
+	if o != nil && IsNil(o.Ids) {
 		return true
 	}
 
@@ -65,16 +68,24 @@ func (o *QueueBulkResource) HasIds() bool {
 }
 
 // SetIds gets a reference to the given []int32 and assigns it to the Ids field.
-func (o *QueueBulkResource) SetIds(v []*int32) {
+func (o *QueueBulkResource) SetIds(v []int32) {
 	o.Ids = v
 }
 
 func (o QueueBulkResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o QueueBulkResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Ids != nil {
 		toSerialize["ids"] = o.Ids
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableQueueBulkResource struct {

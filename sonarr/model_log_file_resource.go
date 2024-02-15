@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the LogFileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LogFileResource{}
+
 // LogFileResource struct for LogFileResource
 type LogFileResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewLogFileResourceWithDefaults() *LogFileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *LogFileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *LogFileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LogFileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *LogFileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *LogFileResource) SetId(v int32) {
 
 // GetFilename returns the Filename field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogFileResource) GetFilename() string {
-	if o == nil || isNil(o.Filename.Get()) {
+	if o == nil || IsNil(o.Filename.Get()) {
 		var ret string
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *LogFileResource) GetFilename() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogFileResource) GetFilenameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Filename.Get(), o.Filename.IsSet()
 }
@@ -117,7 +120,7 @@ func (o *LogFileResource) UnsetFilename() {
 
 // GetLastWriteTime returns the LastWriteTime field value if set, zero value otherwise.
 func (o *LogFileResource) GetLastWriteTime() time.Time {
-	if o == nil || isNil(o.LastWriteTime) {
+	if o == nil || IsNil(o.LastWriteTime) {
 		var ret time.Time
 		return ret
 	}
@@ -127,15 +130,15 @@ func (o *LogFileResource) GetLastWriteTime() time.Time {
 // GetLastWriteTimeOk returns a tuple with the LastWriteTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LogFileResource) GetLastWriteTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.LastWriteTime) {
-    return nil, false
+	if o == nil || IsNil(o.LastWriteTime) {
+		return nil, false
 	}
 	return o.LastWriteTime, true
 }
 
 // HasLastWriteTime returns a boolean if a field has been set.
 func (o *LogFileResource) HasLastWriteTime() bool {
-	if o != nil && !isNil(o.LastWriteTime) {
+	if o != nil && !IsNil(o.LastWriteTime) {
 		return true
 	}
 
@@ -149,7 +152,7 @@ func (o *LogFileResource) SetLastWriteTime(v time.Time) {
 
 // GetContentsUrl returns the ContentsUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogFileResource) GetContentsUrl() string {
-	if o == nil || isNil(o.ContentsUrl.Get()) {
+	if o == nil || IsNil(o.ContentsUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *LogFileResource) GetContentsUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogFileResource) GetContentsUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ContentsUrl.Get(), o.ContentsUrl.IsSet()
 }
@@ -191,7 +194,7 @@ func (o *LogFileResource) UnsetContentsUrl() {
 
 // GetDownloadUrl returns the DownloadUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LogFileResource) GetDownloadUrl() string {
-	if o == nil || isNil(o.DownloadUrl.Get()) {
+	if o == nil || IsNil(o.DownloadUrl.Get()) {
 		var ret string
 		return ret
 	}
@@ -203,7 +206,7 @@ func (o *LogFileResource) GetDownloadUrl() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LogFileResource) GetDownloadUrlOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DownloadUrl.Get(), o.DownloadUrl.IsSet()
 }
@@ -232,14 +235,22 @@ func (o *LogFileResource) UnsetDownloadUrl() {
 }
 
 func (o LogFileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o LogFileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Filename.IsSet() {
 		toSerialize["filename"] = o.Filename.Get()
 	}
-	if !isNil(o.LastWriteTime) {
+	if !IsNil(o.LastWriteTime) {
 		toSerialize["lastWriteTime"] = o.LastWriteTime
 	}
 	if o.ContentsUrl.IsSet() {
@@ -248,7 +259,7 @@ func (o LogFileResource) MarshalJSON() ([]byte, error) {
 	if o.DownloadUrl.IsSet() {
 		toSerialize["downloadUrl"] = o.DownloadUrl.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableLogFileResource struct {

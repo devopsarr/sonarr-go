@@ -22,6 +22,7 @@ import (
 
 // BackupAPIService BackupAPI service
 type BackupAPIService service
+
 type ApiCreateSystemBackupRestoreByIdRequest struct {
 	ctx context.Context
 	ApiService *BackupAPIService
@@ -61,7 +62,7 @@ func (a *BackupAPIService) CreateSystemBackupRestoreByIdExecute(r ApiCreateSyste
 	}
 
 	localVarPath := localBasePath + "/api/v3/system/backup/restore/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -139,6 +140,7 @@ func (a *BackupAPIService) CreateSystemBackupRestoreByIdExecute(r ApiCreateSyste
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiCreateSystemBackupRestoreUploadRequest struct {
 	ctx context.Context
 	ApiService *BackupAPIService
@@ -252,6 +254,7 @@ func (a *BackupAPIService) CreateSystemBackupRestoreUploadExecute(r ApiCreateSys
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteSystemBackupRequest struct {
 	ctx context.Context
 	ApiService *BackupAPIService
@@ -291,7 +294,7 @@ func (a *BackupAPIService) DeleteSystemBackupExecute(r ApiDeleteSystemBackupRequ
 	}
 
 	localVarPath := localBasePath + "/api/v3/system/backup/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -369,12 +372,13 @@ func (a *BackupAPIService) DeleteSystemBackupExecute(r ApiDeleteSystemBackupRequ
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiListSystemBackupRequest struct {
 	ctx context.Context
 	ApiService *BackupAPIService
 }
 
-func (r ApiListSystemBackupRequest) Execute() ([]*BackupResource, *http.Response, error) {
+func (r ApiListSystemBackupRequest) Execute() ([]BackupResource, *http.Response, error) {
 	return r.ApiService.ListSystemBackupExecute(r)
 }
 
@@ -393,12 +397,12 @@ func (a *BackupAPIService) ListSystemBackup(ctx context.Context) ApiListSystemBa
 
 // Execute executes the request
 //  @return []BackupResource
-func (a *BackupAPIService) ListSystemBackupExecute(r ApiListSystemBackupRequest) ([]*BackupResource, *http.Response, error) {
+func (a *BackupAPIService) ListSystemBackupExecute(r ApiListSystemBackupRequest) ([]BackupResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*BackupResource
+		localVarReturnValue  []BackupResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupAPIService.ListSystemBackup")

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BlocklistResourcePagingResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BlocklistResourcePagingResource{}
+
 // BlocklistResourcePagingResource struct for BlocklistResourcePagingResource
 type BlocklistResourcePagingResource struct {
 	Page *int32 `json:"page,omitempty"`
@@ -21,7 +24,7 @@ type BlocklistResourcePagingResource struct {
 	SortKey NullableString `json:"sortKey,omitempty"`
 	SortDirection *SortDirection `json:"sortDirection,omitempty"`
 	TotalRecords *int32 `json:"totalRecords,omitempty"`
-	Records []*BlocklistResource `json:"records,omitempty"`
+	Records []BlocklistResource `json:"records,omitempty"`
 }
 
 // NewBlocklistResourcePagingResource instantiates a new BlocklistResourcePagingResource object
@@ -43,7 +46,7 @@ func NewBlocklistResourcePagingResourceWithDefaults() *BlocklistResourcePagingRe
 
 // GetPage returns the Page field value if set, zero value otherwise.
 func (o *BlocklistResourcePagingResource) GetPage() int32 {
-	if o == nil || isNil(o.Page) {
+	if o == nil || IsNil(o.Page) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *BlocklistResourcePagingResource) GetPage() int32 {
 // GetPageOk returns a tuple with the Page field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResourcePagingResource) GetPageOk() (*int32, bool) {
-	if o == nil || isNil(o.Page) {
-    return nil, false
+	if o == nil || IsNil(o.Page) {
+		return nil, false
 	}
 	return o.Page, true
 }
 
 // HasPage returns a boolean if a field has been set.
 func (o *BlocklistResourcePagingResource) HasPage() bool {
-	if o != nil && !isNil(o.Page) {
+	if o != nil && !IsNil(o.Page) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *BlocklistResourcePagingResource) SetPage(v int32) {
 
 // GetPageSize returns the PageSize field value if set, zero value otherwise.
 func (o *BlocklistResourcePagingResource) GetPageSize() int32 {
-	if o == nil || isNil(o.PageSize) {
+	if o == nil || IsNil(o.PageSize) {
 		var ret int32
 		return ret
 	}
@@ -85,15 +88,15 @@ func (o *BlocklistResourcePagingResource) GetPageSize() int32 {
 // GetPageSizeOk returns a tuple with the PageSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResourcePagingResource) GetPageSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.PageSize) {
-    return nil, false
+	if o == nil || IsNil(o.PageSize) {
+		return nil, false
 	}
 	return o.PageSize, true
 }
 
 // HasPageSize returns a boolean if a field has been set.
 func (o *BlocklistResourcePagingResource) HasPageSize() bool {
-	if o != nil && !isNil(o.PageSize) {
+	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *BlocklistResourcePagingResource) SetPageSize(v int32) {
 
 // GetSortKey returns the SortKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BlocklistResourcePagingResource) GetSortKey() string {
-	if o == nil || isNil(o.SortKey.Get()) {
+	if o == nil || IsNil(o.SortKey.Get()) {
 		var ret string
 		return ret
 	}
@@ -119,7 +122,7 @@ func (o *BlocklistResourcePagingResource) GetSortKey() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BlocklistResourcePagingResource) GetSortKeyOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SortKey.Get(), o.SortKey.IsSet()
 }
@@ -149,7 +152,7 @@ func (o *BlocklistResourcePagingResource) UnsetSortKey() {
 
 // GetSortDirection returns the SortDirection field value if set, zero value otherwise.
 func (o *BlocklistResourcePagingResource) GetSortDirection() SortDirection {
-	if o == nil || isNil(o.SortDirection) {
+	if o == nil || IsNil(o.SortDirection) {
 		var ret SortDirection
 		return ret
 	}
@@ -159,15 +162,15 @@ func (o *BlocklistResourcePagingResource) GetSortDirection() SortDirection {
 // GetSortDirectionOk returns a tuple with the SortDirection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResourcePagingResource) GetSortDirectionOk() (*SortDirection, bool) {
-	if o == nil || isNil(o.SortDirection) {
-    return nil, false
+	if o == nil || IsNil(o.SortDirection) {
+		return nil, false
 	}
 	return o.SortDirection, true
 }
 
 // HasSortDirection returns a boolean if a field has been set.
 func (o *BlocklistResourcePagingResource) HasSortDirection() bool {
-	if o != nil && !isNil(o.SortDirection) {
+	if o != nil && !IsNil(o.SortDirection) {
 		return true
 	}
 
@@ -181,7 +184,7 @@ func (o *BlocklistResourcePagingResource) SetSortDirection(v SortDirection) {
 
 // GetTotalRecords returns the TotalRecords field value if set, zero value otherwise.
 func (o *BlocklistResourcePagingResource) GetTotalRecords() int32 {
-	if o == nil || isNil(o.TotalRecords) {
+	if o == nil || IsNil(o.TotalRecords) {
 		var ret int32
 		return ret
 	}
@@ -191,15 +194,15 @@ func (o *BlocklistResourcePagingResource) GetTotalRecords() int32 {
 // GetTotalRecordsOk returns a tuple with the TotalRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResourcePagingResource) GetTotalRecordsOk() (*int32, bool) {
-	if o == nil || isNil(o.TotalRecords) {
-    return nil, false
+	if o == nil || IsNil(o.TotalRecords) {
+		return nil, false
 	}
 	return o.TotalRecords, true
 }
 
 // HasTotalRecords returns a boolean if a field has been set.
 func (o *BlocklistResourcePagingResource) HasTotalRecords() bool {
-	if o != nil && !isNil(o.TotalRecords) {
+	if o != nil && !IsNil(o.TotalRecords) {
 		return true
 	}
 
@@ -212,9 +215,9 @@ func (o *BlocklistResourcePagingResource) SetTotalRecords(v int32) {
 }
 
 // GetRecords returns the Records field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResourcePagingResource) GetRecords() []*BlocklistResource {
+func (o *BlocklistResourcePagingResource) GetRecords() []BlocklistResource {
 	if o == nil {
-		var ret []*BlocklistResource
+		var ret []BlocklistResource
 		return ret
 	}
 	return o.Records
@@ -223,16 +226,16 @@ func (o *BlocklistResourcePagingResource) GetRecords() []*BlocklistResource {
 // GetRecordsOk returns a tuple with the Records field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResourcePagingResource) GetRecordsOk() ([]*BlocklistResource, bool) {
-	if o == nil || isNil(o.Records) {
-    return nil, false
+func (o *BlocklistResourcePagingResource) GetRecordsOk() ([]BlocklistResource, bool) {
+	if o == nil || IsNil(o.Records) {
+		return nil, false
 	}
 	return o.Records, true
 }
 
 // HasRecords returns a boolean if a field has been set.
 func (o *BlocklistResourcePagingResource) HasRecords() bool {
-	if o != nil && isNil(o.Records) {
+	if o != nil && IsNil(o.Records) {
 		return true
 	}
 
@@ -240,31 +243,39 @@ func (o *BlocklistResourcePagingResource) HasRecords() bool {
 }
 
 // SetRecords gets a reference to the given []BlocklistResource and assigns it to the Records field.
-func (o *BlocklistResourcePagingResource) SetRecords(v []*BlocklistResource) {
+func (o *BlocklistResourcePagingResource) SetRecords(v []BlocklistResource) {
 	o.Records = v
 }
 
 func (o BlocklistResourcePagingResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BlocklistResourcePagingResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Page) {
+	if !IsNil(o.Page) {
 		toSerialize["page"] = o.Page
 	}
-	if !isNil(o.PageSize) {
+	if !IsNil(o.PageSize) {
 		toSerialize["pageSize"] = o.PageSize
 	}
 	if o.SortKey.IsSet() {
 		toSerialize["sortKey"] = o.SortKey.Get()
 	}
-	if !isNil(o.SortDirection) {
+	if !IsNil(o.SortDirection) {
 		toSerialize["sortDirection"] = o.SortDirection
 	}
-	if !isNil(o.TotalRecords) {
+	if !IsNil(o.TotalRecords) {
 		toSerialize["totalRecords"] = o.TotalRecords
 	}
 	if o.Records != nil {
 		toSerialize["records"] = o.Records
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBlocklistResourcePagingResource struct {

@@ -21,6 +21,7 @@ import (
 
 // LanguageProfileSchemaAPIService LanguageProfileSchemaAPI service
 type LanguageProfileSchemaAPIService service
+
 type ApiGetLanguageprofileSchemaRequest struct {
 	ctx context.Context
 	ApiService *LanguageProfileSchemaAPIService

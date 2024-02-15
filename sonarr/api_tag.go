@@ -22,6 +22,7 @@ import (
 
 // TagAPIService TagAPI service
 type TagAPIService service
+
 type ApiCreateTagRequest struct {
 	ctx context.Context
 	ApiService *TagAPIService
@@ -154,6 +155,7 @@ func (a *TagAPIService) CreateTagExecute(r ApiCreateTagRequest) (*TagResource, *
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteTagRequest struct {
 	ctx context.Context
 	ApiService *TagAPIService
@@ -193,7 +195,7 @@ func (a *TagAPIService) DeleteTagExecute(r ApiDeleteTagRequest) (*http.Response,
 	}
 
 	localVarPath := localBasePath + "/api/v3/tag/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *TagAPIService) DeleteTagExecute(r ApiDeleteTagRequest) (*http.Response,
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetTagByIdRequest struct {
 	ctx context.Context
 	ApiService *TagAPIService
@@ -312,7 +315,7 @@ func (a *TagAPIService) GetTagByIdExecute(r ApiGetTagByIdRequest) (*TagResource,
 	}
 
 	localVarPath := localBasePath + "/api/v3/tag/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -399,12 +402,13 @@ func (a *TagAPIService) GetTagByIdExecute(r ApiGetTagByIdRequest) (*TagResource,
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListTagRequest struct {
 	ctx context.Context
 	ApiService *TagAPIService
 }
 
-func (r ApiListTagRequest) Execute() ([]*TagResource, *http.Response, error) {
+func (r ApiListTagRequest) Execute() ([]TagResource, *http.Response, error) {
 	return r.ApiService.ListTagExecute(r)
 }
 
@@ -423,12 +427,12 @@ func (a *TagAPIService) ListTag(ctx context.Context) ApiListTagRequest {
 
 // Execute executes the request
 //  @return []TagResource
-func (a *TagAPIService) ListTagExecute(r ApiListTagRequest) ([]*TagResource, *http.Response, error) {
+func (a *TagAPIService) ListTagExecute(r ApiListTagRequest) ([]TagResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*TagResource
+		localVarReturnValue  []TagResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagAPIService.ListTag")
@@ -523,6 +527,7 @@ func (a *TagAPIService) ListTagExecute(r ApiListTagRequest) ([]*TagResource, *ht
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateTagRequest struct {
 	ctx context.Context
 	ApiService *TagAPIService
@@ -570,7 +575,7 @@ func (a *TagAPIService) UpdateTagExecute(r ApiUpdateTagRequest) (*TagResource, *
 	}
 
 	localVarPath := localBasePath + "/api/v3/tag/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
