@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.0.0](https://github.com/devopsarr/sonarr-go/compare/v0.6.0...v1.0.0) (2024-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x
+
+### Features
+
+* add sonarr auto tagging schema return type ([9fcbdf3](https://github.com/devopsarr/sonarr-go/commit/9fcbdf3c2de6eb696324560f72cb63c02135a46d))
+* align to go sdk ([43f9b85](https://github.com/devopsarr/sonarr-go/commit/43f9b85acee5718d5800c86b6fe3e921d42672b1))
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x ([cdc62a1](https://github.com/devopsarr/sonarr-go/commit/cdc62a12319882e13e65cdcc6a2b7ce823454de4))
+* inject api version into readme ([c76458e](https://github.com/devopsarr/sonarr-go/commit/c76458ebf173d104a5687ecc6f65fae4046457db))
+
+
+### Bug Fixes
+
+* release please commented lines ([859267d](https://github.com/devopsarr/sonarr-go/commit/859267db39fcb77533a88df38d43d8e2e32a4327))
+* remove middle elements from method name ([084f14d](https://github.com/devopsarr/sonarr-go/commit/084f14d21e4f9903209387e0e733b9c38c129a9b))
+
 ## [0.6.0](https://github.com/devopsarr/sonarr-go/compare/v0.5.1...v0.6.0) (2023-07-21)
 
 
