@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## GetNamingConfigExamples
 
-> GetNamingConfigExamples(ctx).RenameEpisodes(renameEpisodes).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).MultiEpisodeStyle(multiEpisodeStyle).StandardEpisodeFormat(standardEpisodeFormat).DailyEpisodeFormat(dailyEpisodeFormat).AnimeEpisodeFormat(animeEpisodeFormat).SeriesFolderFormat(seriesFolderFormat).SeasonFolderFormat(seasonFolderFormat).SpecialsFolderFormat(specialsFolderFormat).IncludeSeriesTitle(includeSeriesTitle).IncludeEpisodeTitle(includeEpisodeTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+> GetNamingConfigExamples(ctx).RenameEpisodes(renameEpisodes).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).MultiEpisodeStyle(multiEpisodeStyle).StandardEpisodeFormat(standardEpisodeFormat).DailyEpisodeFormat(dailyEpisodeFormat).AnimeEpisodeFormat(animeEpisodeFormat).SeriesFolderFormat(seriesFolderFormat).SeasonFolderFormat(seasonFolderFormat).SpecialsFolderFormat(specialsFolderFormat).Id(id).ResourceName(resourceName).Execute()
 
 
 
@@ -167,18 +167,12 @@ func main() {
 	seriesFolderFormat := "seriesFolderFormat_example" // string |  (optional)
 	seasonFolderFormat := "seasonFolderFormat_example" // string |  (optional)
 	specialsFolderFormat := "specialsFolderFormat_example" // string |  (optional)
-	includeSeriesTitle := true // bool |  (optional)
-	includeEpisodeTitle := true // bool |  (optional)
-	includeQuality := true // bool |  (optional)
-	replaceSpaces := true // bool |  (optional)
-	separator := "separator_example" // string |  (optional)
-	numberStyle := "numberStyle_example" // string |  (optional)
 	id := int32(56) // int32 |  (optional)
 	resourceName := "resourceName_example" // string |  (optional)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	r, err := apiClient.NamingConfigAPI.GetNamingConfigExamples(context.Background()).RenameEpisodes(renameEpisodes).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).MultiEpisodeStyle(multiEpisodeStyle).StandardEpisodeFormat(standardEpisodeFormat).DailyEpisodeFormat(dailyEpisodeFormat).AnimeEpisodeFormat(animeEpisodeFormat).SeriesFolderFormat(seriesFolderFormat).SeasonFolderFormat(seasonFolderFormat).SpecialsFolderFormat(specialsFolderFormat).IncludeSeriesTitle(includeSeriesTitle).IncludeEpisodeTitle(includeEpisodeTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+	r, err := apiClient.NamingConfigAPI.GetNamingConfigExamples(context.Background()).RenameEpisodes(renameEpisodes).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).MultiEpisodeStyle(multiEpisodeStyle).StandardEpisodeFormat(standardEpisodeFormat).DailyEpisodeFormat(dailyEpisodeFormat).AnimeEpisodeFormat(animeEpisodeFormat).SeriesFolderFormat(seriesFolderFormat).SeasonFolderFormat(seasonFolderFormat).SpecialsFolderFormat(specialsFolderFormat).Id(id).ResourceName(resourceName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigAPI.GetNamingConfigExamples``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -207,12 +201,6 @@ Name | Type | Description  | Notes
  **seriesFolderFormat** | **string** |  | 
  **seasonFolderFormat** | **string** |  | 
  **specialsFolderFormat** | **string** |  | 
- **includeSeriesTitle** | **bool** |  | 
- **includeEpisodeTitle** | **bool** |  | 
- **includeQuality** | **bool** |  | 
- **replaceSpaces** | **bool** |  | 
- **separator** | **string** |  | 
- **numberStyle** | **string** |  | 
  **id** | **int32** |  | 
  **resourceName** | **string** |  | 
 
