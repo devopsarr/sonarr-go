@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
+**IndexerFlags** | Pointer to **NullableInt32** |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
 
@@ -424,6 +425,41 @@ SetCustomFormatScore sets CustomFormatScore field to given value.
 
 HasCustomFormatScore returns a boolean if a field has been set.
 
+### GetIndexerFlags
+
+`func (o *EpisodeFileResource) GetIndexerFlags() int32`
+
+GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+
+### GetIndexerFlagsOk
+
+`func (o *EpisodeFileResource) GetIndexerFlagsOk() (*int32, bool)`
+
+GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerFlags
+
+`func (o *EpisodeFileResource) SetIndexerFlags(v int32)`
+
+SetIndexerFlags sets IndexerFlags field to given value.
+
+### HasIndexerFlags
+
+`func (o *EpisodeFileResource) HasIndexerFlags() bool`
+
+HasIndexerFlags returns a boolean if a field has been set.
+
+### SetIndexerFlagsNil
+
+`func (o *EpisodeFileResource) SetIndexerFlagsNil(b bool)`
+
+ SetIndexerFlagsNil sets the value for IndexerFlags to be an explicit nil
+
+### UnsetIndexerFlags
+`func (o *EpisodeFileResource) UnsetIndexerFlags()`
+
+UnsetIndexerFlags ensures that no value is present for IndexerFlags, not even an explicit nil
 ### GetMediaInfo
 
 `func (o *EpisodeFileResource) GetMediaInfo() MediaInfoResource`

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **IsPartialSeason** | Pointer to **bool** |  | [optional] 
 **IsMultiSeason** | Pointer to **bool** |  | [optional] 
 **IsSeasonExtra** | Pointer to **bool** |  | [optional] 
+**IsSplitEpisode** | Pointer to **bool** |  | [optional] 
 **Special** | Pointer to **bool** |  | [optional] 
 **ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **ReleaseHash** | Pointer to **NullableString** |  | [optional] 
@@ -467,6 +468,31 @@ SetIsSeasonExtra sets IsSeasonExtra field to given value.
 `func (o *ParsedEpisodeInfo) HasIsSeasonExtra() bool`
 
 HasIsSeasonExtra returns a boolean if a field has been set.
+
+### GetIsSplitEpisode
+
+`func (o *ParsedEpisodeInfo) GetIsSplitEpisode() bool`
+
+GetIsSplitEpisode returns the IsSplitEpisode field if non-nil, zero value otherwise.
+
+### GetIsSplitEpisodeOk
+
+`func (o *ParsedEpisodeInfo) GetIsSplitEpisodeOk() (*bool, bool)`
+
+GetIsSplitEpisodeOk returns a tuple with the IsSplitEpisode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsSplitEpisode
+
+`func (o *ParsedEpisodeInfo) SetIsSplitEpisode(v bool)`
+
+SetIsSplitEpisode sets IsSplitEpisode field to given value.
+
+### HasIsSplitEpisode
+
+`func (o *ParsedEpisodeInfo) HasIsSplitEpisode() bool`
+
+HasIsSplitEpisode returns a boolean if a field has been set.
 
 ### GetSpecial
 

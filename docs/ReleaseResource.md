@@ -53,6 +53,7 @@ Name | Type | Description | Notes
 **Seeders** | Pointer to **NullableInt32** |  | [optional] 
 **Leechers** | Pointer to **NullableInt32** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
+**IndexerFlags** | Pointer to **int32** |  | [optional] 
 **IsDaily** | Pointer to **bool** |  | [optional] 
 **IsAbsoluteNumbering** | Pointer to **bool** |  | [optional] 
 **IsPossibleSpecialEpisode** | Pointer to **bool** |  | [optional] 
@@ -1557,6 +1558,31 @@ SetProtocol sets Protocol field to given value.
 `func (o *ReleaseResource) HasProtocol() bool`
 
 HasProtocol returns a boolean if a field has been set.
+
+### GetIndexerFlags
+
+`func (o *ReleaseResource) GetIndexerFlags() int32`
+
+GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+
+### GetIndexerFlagsOk
+
+`func (o *ReleaseResource) GetIndexerFlagsOk() (*int32, bool)`
+
+GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerFlags
+
+`func (o *ReleaseResource) SetIndexerFlags(v int32)`
+
+SetIndexerFlags sets IndexerFlags field to given value.
+
+### HasIndexerFlags
+
+`func (o *ReleaseResource) HasIndexerFlags() bool`
+
+HasIndexerFlags returns a boolean if a field has been set.
 
 ### GetIsDaily
 

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
+**IndexerFlags** | Pointer to **int32** |  | [optional] 
 **Rejections** | Pointer to [**[]Rejection**](Rejection.md) |  | [optional] 
 
 ## Methods
@@ -416,6 +417,31 @@ SetCustomFormatScore sets CustomFormatScore field to given value.
 `func (o *ManualImportReprocessResource) HasCustomFormatScore() bool`
 
 HasCustomFormatScore returns a boolean if a field has been set.
+
+### GetIndexerFlags
+
+`func (o *ManualImportReprocessResource) GetIndexerFlags() int32`
+
+GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+
+### GetIndexerFlagsOk
+
+`func (o *ManualImportReprocessResource) GetIndexerFlagsOk() (*int32, bool)`
+
+GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerFlags
+
+`func (o *ManualImportReprocessResource) SetIndexerFlags(v int32)`
+
+SetIndexerFlags sets IndexerFlags field to given value.
+
+### HasIndexerFlags
+
+`func (o *ManualImportReprocessResource) HasIndexerFlags() bool`
+
+HasIndexerFlags returns a boolean if a field has been set.
 
 ### GetRejections
 
