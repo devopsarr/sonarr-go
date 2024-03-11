@@ -205,7 +205,7 @@ func (o *QualityProfileResource) GetItemsOk() ([]QualityProfileQualityItemResour
 
 // HasItems returns a boolean if a field has been set.
 func (o *QualityProfileResource) HasItems() bool {
-	if o != nil && IsNil(o.Items) {
+	if o != nil && !IsNil(o.Items) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *QualityProfileResource) GetFormatItemsOk() ([]ProfileFormatItemResource
 
 // HasFormatItems returns a boolean if a field has been set.
 func (o *QualityProfileResource) HasFormatItems() bool {
-	if o != nil && IsNil(o.FormatItems) {
+	if o != nil && !IsNil(o.FormatItems) {
 		return true
 	}
 

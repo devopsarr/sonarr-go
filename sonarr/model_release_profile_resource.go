@@ -172,7 +172,7 @@ func (o *ReleaseProfileResource) GetRequiredOk() ([]string, bool) {
 
 // HasRequired returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasRequired() bool {
-	if o != nil && IsNil(o.Required) {
+	if o != nil && !IsNil(o.Required) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *ReleaseProfileResource) GetIgnoredOk() ([]string, bool) {
 
 // HasIgnored returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasIgnored() bool {
-	if o != nil && IsNil(o.Ignored) {
+	if o != nil && !IsNil(o.Ignored) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *ReleaseProfileResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *ReleaseProfileResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 

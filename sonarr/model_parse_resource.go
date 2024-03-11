@@ -205,7 +205,7 @@ func (o *ParseResource) GetEpisodesOk() ([]EpisodeResource, bool) {
 
 // HasEpisodes returns a boolean if a field has been set.
 func (o *ParseResource) HasEpisodes() bool {
-	if o != nil && IsNil(o.Episodes) {
+	if o != nil && !IsNil(o.Episodes) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *ParseResource) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ParseResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *ParseResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ParseResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 

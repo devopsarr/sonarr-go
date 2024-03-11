@@ -264,7 +264,7 @@ func (o *ParsedEpisodeInfo) GetEpisodeNumbersOk() ([]int32, bool) {
 
 // HasEpisodeNumbers returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasEpisodeNumbers() bool {
-	if o != nil && IsNil(o.EpisodeNumbers) {
+	if o != nil && !IsNil(o.EpisodeNumbers) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *ParsedEpisodeInfo) GetAbsoluteEpisodeNumbersOk() ([]int32, bool) {
 
 // HasAbsoluteEpisodeNumbers returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasAbsoluteEpisodeNumbers() bool {
-	if o != nil && IsNil(o.AbsoluteEpisodeNumbers) {
+	if o != nil && !IsNil(o.AbsoluteEpisodeNumbers) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *ParsedEpisodeInfo) GetSpecialAbsoluteEpisodeNumbersOk() ([]float64, boo
 
 // HasSpecialAbsoluteEpisodeNumbers returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasSpecialAbsoluteEpisodeNumbers() bool {
-	if o != nil && IsNil(o.SpecialAbsoluteEpisodeNumbers) {
+	if o != nil && !IsNil(o.SpecialAbsoluteEpisodeNumbers) {
 		return true
 	}
 
@@ -405,7 +405,7 @@ func (o *ParsedEpisodeInfo) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ParsedEpisodeInfo) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 

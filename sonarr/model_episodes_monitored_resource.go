@@ -61,7 +61,7 @@ func (o *EpisodesMonitoredResource) GetEpisodeIdsOk() ([]int32, bool) {
 
 // HasEpisodeIds returns a boolean if a field has been set.
 func (o *EpisodesMonitoredResource) HasEpisodeIds() bool {
-	if o != nil && IsNil(o.EpisodeIds) {
+	if o != nil && !IsNil(o.EpisodeIds) {
 		return true
 	}
 

@@ -384,7 +384,7 @@ func (o *ManualImportResource) GetEpisodesOk() ([]EpisodeResource, bool) {
 
 // HasEpisodes returns a boolean if a field has been set.
 func (o *ManualImportResource) HasEpisodes() bool {
-	if o != nil && IsNil(o.Episodes) {
+	if o != nil && !IsNil(o.Episodes) {
 		return true
 	}
 
@@ -533,7 +533,7 @@ func (o *ManualImportResource) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ManualImportResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 
@@ -640,7 +640,7 @@ func (o *ManualImportResource) GetCustomFormatsOk() ([]CustomFormatResource, boo
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ManualImportResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -737,7 +737,7 @@ func (o *ManualImportResource) GetRejectionsOk() ([]Rejection, bool) {
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ManualImportResource) HasRejections() bool {
-	if o != nil && IsNil(o.Rejections) {
+	if o != nil && !IsNil(o.Rejections) {
 		return true
 	}
 

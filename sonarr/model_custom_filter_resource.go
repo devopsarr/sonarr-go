@@ -179,7 +179,7 @@ func (o *CustomFilterResource) GetFiltersOk() ([]map[string]interface{}, bool) {
 
 // HasFilters returns a boolean if a field has been set.
 func (o *CustomFilterResource) HasFilters() bool {
-	if o != nil && IsNil(o.Filters) {
+	if o != nil && !IsNil(o.Filters) {
 		return true
 	}
 

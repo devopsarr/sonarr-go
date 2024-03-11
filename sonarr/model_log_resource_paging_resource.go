@@ -235,7 +235,7 @@ func (o *LogResourcePagingResource) GetRecordsOk() ([]LogResource, bool) {
 
 // HasRecords returns a boolean if a field has been set.
 func (o *LogResourcePagingResource) HasRecords() bool {
-	if o != nil && IsNil(o.Records) {
+	if o != nil && !IsNil(o.Records) {
 		return true
 	}
 

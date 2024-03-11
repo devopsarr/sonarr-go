@@ -202,7 +202,7 @@ func (o *LanguageProfileResource) GetLanguagesOk() ([]LanguageProfileItemResourc
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *LanguageProfileResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 

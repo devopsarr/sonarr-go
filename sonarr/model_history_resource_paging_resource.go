@@ -235,7 +235,7 @@ func (o *HistoryResourcePagingResource) GetRecordsOk() ([]HistoryResource, bool)
 
 // HasRecords returns a boolean if a field has been set.
 func (o *HistoryResourcePagingResource) HasRecords() bool {
-	if o != nil && IsNil(o.Records) {
+	if o != nil && !IsNil(o.Records) {
 		return true
 	}
 

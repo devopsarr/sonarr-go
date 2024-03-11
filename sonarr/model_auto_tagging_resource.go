@@ -170,7 +170,7 @@ func (o *AutoTaggingResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *AutoTaggingResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *AutoTaggingResource) GetSpecificationsOk() ([]AutoTaggingSpecificationS
 
 // HasSpecifications returns a boolean if a field has been set.
 func (o *AutoTaggingResource) HasSpecifications() bool {
-	if o != nil && IsNil(o.Specifications) {
+	if o != nil && !IsNil(o.Specifications) {
 		return true
 	}
 

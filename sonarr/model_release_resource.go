@@ -724,7 +724,7 @@ func (o *ReleaseResource) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ReleaseResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 
@@ -873,7 +873,7 @@ func (o *ReleaseResource) GetEpisodeNumbersOk() ([]int32, bool) {
 
 // HasEpisodeNumbers returns a boolean if a field has been set.
 func (o *ReleaseResource) HasEpisodeNumbers() bool {
-	if o != nil && IsNil(o.EpisodeNumbers) {
+	if o != nil && !IsNil(o.EpisodeNumbers) {
 		return true
 	}
 
@@ -906,7 +906,7 @@ func (o *ReleaseResource) GetAbsoluteEpisodeNumbersOk() ([]int32, bool) {
 
 // HasAbsoluteEpisodeNumbers returns a boolean if a field has been set.
 func (o *ReleaseResource) HasAbsoluteEpisodeNumbers() bool {
-	if o != nil && IsNil(o.AbsoluteEpisodeNumbers) {
+	if o != nil && !IsNil(o.AbsoluteEpisodeNumbers) {
 		return true
 	}
 
@@ -981,7 +981,7 @@ func (o *ReleaseResource) GetMappedEpisodeNumbersOk() ([]int32, bool) {
 
 // HasMappedEpisodeNumbers returns a boolean if a field has been set.
 func (o *ReleaseResource) HasMappedEpisodeNumbers() bool {
-	if o != nil && IsNil(o.MappedEpisodeNumbers) {
+	if o != nil && !IsNil(o.MappedEpisodeNumbers) {
 		return true
 	}
 
@@ -1014,7 +1014,7 @@ func (o *ReleaseResource) GetMappedAbsoluteEpisodeNumbersOk() ([]int32, bool) {
 
 // HasMappedAbsoluteEpisodeNumbers returns a boolean if a field has been set.
 func (o *ReleaseResource) HasMappedAbsoluteEpisodeNumbers() bool {
-	if o != nil && IsNil(o.MappedAbsoluteEpisodeNumbers) {
+	if o != nil && !IsNil(o.MappedAbsoluteEpisodeNumbers) {
 		return true
 	}
 
@@ -1089,7 +1089,7 @@ func (o *ReleaseResource) GetMappedEpisodeInfoOk() ([]ReleaseEpisodeResource, bo
 
 // HasMappedEpisodeInfo returns a boolean if a field has been set.
 func (o *ReleaseResource) HasMappedEpisodeInfo() bool {
-	if o != nil && IsNil(o.MappedEpisodeInfo) {
+	if o != nil && !IsNil(o.MappedEpisodeInfo) {
 		return true
 	}
 
@@ -1282,7 +1282,7 @@ func (o *ReleaseResource) GetRejectionsOk() ([]string, bool) {
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ReleaseResource) HasRejections() bool {
-	if o != nil && IsNil(o.Rejections) {
+	if o != nil && !IsNil(o.Rejections) {
 		return true
 	}
 
@@ -1569,7 +1569,7 @@ func (o *ReleaseResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ReleaseResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -2110,7 +2110,7 @@ func (o *ReleaseResource) GetEpisodeIdsOk() ([]int32, bool) {
 
 // HasEpisodeIds returns a boolean if a field has been set.
 func (o *ReleaseResource) HasEpisodeIds() bool {
-	if o != nil && IsNil(o.EpisodeIds) {
+	if o != nil && !IsNil(o.EpisodeIds) {
 		return true
 	}
 
