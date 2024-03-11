@@ -212,7 +212,7 @@ func (o *RootFolderResource) GetUnmappedFoldersOk() ([]UnmappedFolder, bool) {
 
 // HasUnmappedFolders returns a boolean if a field has been set.
 func (o *RootFolderResource) HasUnmappedFolders() bool {
-	if o != nil && IsNil(o.UnmappedFolders) {
+	if o != nil && !IsNil(o.UnmappedFolders) {
 		return true
 	}
 

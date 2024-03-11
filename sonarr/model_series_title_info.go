@@ -179,7 +179,7 @@ func (o *SeriesTitleInfo) GetAllTitlesOk() ([]string, bool) {
 
 // HasAllTitles returns a boolean if a field has been set.
 func (o *SeriesTitleInfo) HasAllTitles() bool {
-	if o != nil && IsNil(o.AllTitles) {
+	if o != nil && !IsNil(o.AllTitles) {
 		return true
 	}
 

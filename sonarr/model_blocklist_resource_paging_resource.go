@@ -235,7 +235,7 @@ func (o *BlocklistResourcePagingResource) GetRecordsOk() ([]BlocklistResource, b
 
 // HasRecords returns a boolean if a field has been set.
 func (o *BlocklistResourcePagingResource) HasRecords() bool {
-	if o != nil && IsNil(o.Records) {
+	if o != nil && !IsNil(o.Records) {
 		return true
 	}
 

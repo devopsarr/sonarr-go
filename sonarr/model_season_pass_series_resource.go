@@ -136,7 +136,7 @@ func (o *SeasonPassSeriesResource) GetSeasonsOk() ([]SeasonResource, bool) {
 
 // HasSeasons returns a boolean if a field has been set.
 func (o *SeasonPassSeriesResource) HasSeasons() bool {
-	if o != nil && IsNil(o.Seasons) {
+	if o != nil && !IsNil(o.Seasons) {
 		return true
 	}
 

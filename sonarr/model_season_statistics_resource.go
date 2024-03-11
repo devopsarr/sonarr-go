@@ -280,7 +280,7 @@ func (o *SeasonStatisticsResource) GetReleaseGroupsOk() ([]string, bool) {
 
 // HasReleaseGroups returns a boolean if a field has been set.
 func (o *SeasonStatisticsResource) HasReleaseGroups() bool {
-	if o != nil && IsNil(o.ReleaseGroups) {
+	if o != nil && !IsNil(o.ReleaseGroups) {
 		return true
 	}
 

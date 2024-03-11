@@ -71,7 +71,7 @@ func (o *SeriesEditorResource) GetSeriesIdsOk() ([]int32, bool) {
 
 // HasSeriesIds returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasSeriesIds() bool {
-	if o != nil && IsNil(o.SeriesIds) {
+	if o != nil && !IsNil(o.SeriesIds) {
 		return true
 	}
 
@@ -336,7 +336,7 @@ func (o *SeriesEditorResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *SeriesEditorResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 

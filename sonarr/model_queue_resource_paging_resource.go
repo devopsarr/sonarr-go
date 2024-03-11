@@ -235,7 +235,7 @@ func (o *QueueResourcePagingResource) GetRecordsOk() ([]QueueResource, bool) {
 
 // HasRecords returns a boolean if a field has been set.
 func (o *QueueResourcePagingResource) HasRecords() bool {
-	if o != nil && IsNil(o.Records) {
+	if o != nil && !IsNil(o.Records) {
 		return true
 	}
 

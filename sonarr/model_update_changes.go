@@ -61,7 +61,7 @@ func (o *UpdateChanges) GetNewOk() ([]string, bool) {
 
 // HasNew returns a boolean if a field has been set.
 func (o *UpdateChanges) HasNew() bool {
-	if o != nil && IsNil(o.New) {
+	if o != nil && !IsNil(o.New) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *UpdateChanges) GetFixedOk() ([]string, bool) {
 
 // HasFixed returns a boolean if a field has been set.
 func (o *UpdateChanges) HasFixed() bool {
-	if o != nil && IsNil(o.Fixed) {
+	if o != nil && !IsNil(o.Fixed) {
 		return true
 	}
 

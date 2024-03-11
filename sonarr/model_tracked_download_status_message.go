@@ -103,7 +103,7 @@ func (o *TrackedDownloadStatusMessage) GetMessagesOk() ([]string, bool) {
 
 // HasMessages returns a boolean if a field has been set.
 func (o *TrackedDownloadStatusMessage) HasMessages() bool {
-	if o != nil && IsNil(o.Messages) {
+	if o != nil && !IsNil(o.Messages) {
 		return true
 	}
 

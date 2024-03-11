@@ -93,7 +93,7 @@ func (o *LocalizationResource) GetStringsOk() (*map[string]string, bool) {
 
 // HasStrings returns a boolean if a field has been set.
 func (o *LocalizationResource) HasStrings() bool {
-	if o != nil && IsNil(o.Strings) {
+	if o != nil && !IsNil(o.Strings) {
 		return true
 	}
 

@@ -332,7 +332,7 @@ func (o *CustomFormatSpecificationSchema) GetFieldsOk() ([]Field, bool) {
 
 // HasFields returns a boolean if a field has been set.
 func (o *CustomFormatSpecificationSchema) HasFields() bool {
-	if o != nil && IsNil(o.Fields) {
+	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
 
@@ -365,7 +365,7 @@ func (o *CustomFormatSpecificationSchema) GetPresetsOk() ([]CustomFormatSpecific
 
 // HasPresets returns a boolean if a field has been set.
 func (o *CustomFormatSpecificationSchema) HasPresets() bool {
-	if o != nil && IsNil(o.Presets) {
+	if o != nil && !IsNil(o.Presets) {
 		return true
 	}
 

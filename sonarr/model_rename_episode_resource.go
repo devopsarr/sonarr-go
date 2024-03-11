@@ -162,7 +162,7 @@ func (o *RenameEpisodeResource) GetEpisodeNumbersOk() ([]int32, bool) {
 
 // HasEpisodeNumbers returns a boolean if a field has been set.
 func (o *RenameEpisodeResource) HasEpisodeNumbers() bool {
-	if o != nil && IsNil(o.EpisodeNumbers) {
+	if o != nil && !IsNil(o.EpisodeNumbers) {
 		return true
 	}
 

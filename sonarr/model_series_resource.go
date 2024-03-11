@@ -179,7 +179,7 @@ func (o *SeriesResource) GetAlternateTitlesOk() ([]AlternateTitleResource, bool)
 
 // HasAlternateTitles returns a boolean if a field has been set.
 func (o *SeriesResource) HasAlternateTitles() bool {
-	if o != nil && IsNil(o.AlternateTitles) {
+	if o != nil && !IsNil(o.AlternateTitles) {
 		return true
 	}
 
@@ -570,7 +570,7 @@ func (o *SeriesResource) GetImagesOk() ([]MediaCover, bool) {
 
 // HasImages returns a boolean if a field has been set.
 func (o *SeriesResource) HasImages() bool {
-	if o != nil && IsNil(o.Images) {
+	if o != nil && !IsNil(o.Images) {
 		return true
 	}
 
@@ -677,7 +677,7 @@ func (o *SeriesResource) GetSeasonsOk() ([]SeasonResource, bool) {
 
 // HasSeasons returns a boolean if a field has been set.
 func (o *SeriesResource) HasSeasons() bool {
-	if o != nil && IsNil(o.Seasons) {
+	if o != nil && !IsNil(o.Seasons) {
 		return true
 	}
 
@@ -1440,7 +1440,7 @@ func (o *SeriesResource) GetGenresOk() ([]string, bool) {
 
 // HasGenres returns a boolean if a field has been set.
 func (o *SeriesResource) HasGenres() bool {
-	if o != nil && IsNil(o.Genres) {
+	if o != nil && !IsNil(o.Genres) {
 		return true
 	}
 
@@ -1473,7 +1473,7 @@ func (o *SeriesResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *SeriesResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 

@@ -144,7 +144,7 @@ func (o *MetadataResource) GetFieldsOk() ([]Field, bool) {
 
 // HasFields returns a boolean if a field has been set.
 func (o *MetadataResource) HasFields() bool {
-	if o != nil && IsNil(o.Fields) {
+	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *MetadataResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *MetadataResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
@@ -410,7 +410,7 @@ func (o *MetadataResource) GetPresetsOk() ([]MetadataResource, bool) {
 
 // HasPresets returns a boolean if a field has been set.
 func (o *MetadataResource) HasPresets() bool {
-	if o != nil && IsNil(o.Presets) {
+	if o != nil && !IsNil(o.Presets) {
 		return true
 	}
 

@@ -235,7 +235,7 @@ func (o *EpisodeResourcePagingResource) GetRecordsOk() ([]EpisodeResource, bool)
 
 // HasRecords returns a boolean if a field has been set.
 func (o *EpisodeResourcePagingResource) HasRecords() bool {
-	if o != nil && IsNil(o.Records) {
+	if o != nil && !IsNil(o.Records) {
 		return true
 	}
 

@@ -60,7 +60,7 @@ func (o *BlocklistBulkResource) GetIdsOk() ([]int32, bool) {
 
 // HasIds returns a boolean if a field has been set.
 func (o *BlocklistBulkResource) HasIds() bool {
-	if o != nil && IsNil(o.Ids) {
+	if o != nil && !IsNil(o.Ids) {
 		return true
 	}
 

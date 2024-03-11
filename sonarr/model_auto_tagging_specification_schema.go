@@ -288,7 +288,7 @@ func (o *AutoTaggingSpecificationSchema) GetFieldsOk() ([]Field, bool) {
 
 // HasFields returns a boolean if a field has been set.
 func (o *AutoTaggingSpecificationSchema) HasFields() bool {
-	if o != nil && IsNil(o.Fields) {
+	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
 

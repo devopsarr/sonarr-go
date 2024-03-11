@@ -64,7 +64,7 @@ func (o *EpisodeFileListResource) GetEpisodeFileIdsOk() ([]int32, bool) {
 
 // HasEpisodeFileIds returns a boolean if a field has been set.
 func (o *EpisodeFileListResource) HasEpisodeFileIds() bool {
-	if o != nil && IsNil(o.EpisodeFileIds) {
+	if o != nil && !IsNil(o.EpisodeFileIds) {
 		return true
 	}
 
@@ -97,7 +97,7 @@ func (o *EpisodeFileListResource) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *EpisodeFileListResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 
