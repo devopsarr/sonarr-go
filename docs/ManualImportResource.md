@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **IndexerFlags** | Pointer to **int32** |  | [optional] 
+**ReleaseType** | Pointer to [**ReleaseType**](ReleaseType.md) |  | [optional] 
 **Rejections** | Pointer to [**[]Rejection**](Rejection.md) |  | [optional] 
 
 ## Methods
@@ -602,6 +603,31 @@ SetIndexerFlags sets IndexerFlags field to given value.
 `func (o *ManualImportResource) HasIndexerFlags() bool`
 
 HasIndexerFlags returns a boolean if a field has been set.
+
+### GetReleaseType
+
+`func (o *ManualImportResource) GetReleaseType() ReleaseType`
+
+GetReleaseType returns the ReleaseType field if non-nil, zero value otherwise.
+
+### GetReleaseTypeOk
+
+`func (o *ManualImportResource) GetReleaseTypeOk() (*ReleaseType, bool)`
+
+GetReleaseTypeOk returns a tuple with the ReleaseType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseType
+
+`func (o *ManualImportResource) SetReleaseType(v ReleaseType)`
+
+SetReleaseType sets ReleaseType field to given value.
+
+### HasReleaseType
+
+`func (o *ManualImportResource) HasReleaseType() bool`
+
+HasReleaseType returns a boolean if a field has been set.
 
 ### GetRejections
 

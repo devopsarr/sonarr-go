@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateImportListExclusion**](ImportListExclusionAPI.md#CreateImportListExclusion) | **Post** /api/v3/importlistexclusion | 
 [**DeleteImportListExclusion**](ImportListExclusionAPI.md#DeleteImportListExclusion) | **Delete** /api/v3/importlistexclusion/{id} | 
 [**GetImportListExclusionById**](ImportListExclusionAPI.md#GetImportListExclusionById) | **Get** /api/v3/importlistexclusion/{id} | 
+[**GetImportListExclusionPaged**](ImportListExclusionAPI.md#GetImportListExclusionPaged) | **Get** /api/v3/importlistexclusion/paged | 
 [**ListImportListExclusion**](ImportListExclusionAPI.md#ListImportListExclusion) | **Get** /api/v3/importlistexclusion | 
 [**UpdateImportListExclusion**](ImportListExclusionAPI.md#UpdateImportListExclusion) | **Put** /api/v3/importlistexclusion/{id} | 
 
@@ -195,6 +196,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ImportListExclusionResource**](ImportListExclusionResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetImportListExclusionPaged
+
+> ImportListExclusionResourcePagingResource GetImportListExclusionPaged(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonarrClient "github.com/devopsarr/sonarr-go/sonarr"
+)
+
+func main() {
+	page := int32(56) // int32 |  (optional) (default to 1)
+	pageSize := int32(56) // int32 |  (optional) (default to 10)
+	sortKey := "sortKey_example" // string |  (optional)
+	sortDirection := sonarrClient.SortDirection("default") // SortDirection |  (optional)
+
+	configuration := sonarrClient.NewConfiguration()
+	apiClient := sonarrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ImportListExclusionAPI.GetImportListExclusionPaged(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionAPI.GetImportListExclusionPaged``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetImportListExclusionPaged`: ImportListExclusionResourcePagingResource
+	fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionAPI.GetImportListExclusionPaged`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetImportListExclusionPagedRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
+
+### Return type
+
+[**ImportListExclusionResourcePagingResource**](ImportListExclusionResourcePagingResource.md)
 
 ### Authorization
 

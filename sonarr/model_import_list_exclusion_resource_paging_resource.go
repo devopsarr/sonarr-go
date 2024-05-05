@@ -14,38 +14,38 @@ import (
 	"encoding/json"
 )
 
-// checks if the LogResourcePagingResource type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LogResourcePagingResource{}
+// checks if the ImportListExclusionResourcePagingResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ImportListExclusionResourcePagingResource{}
 
-// LogResourcePagingResource struct for LogResourcePagingResource
-type LogResourcePagingResource struct {
+// ImportListExclusionResourcePagingResource struct for ImportListExclusionResourcePagingResource
+type ImportListExclusionResourcePagingResource struct {
 	Page *int32 `json:"page,omitempty"`
 	PageSize *int32 `json:"pageSize,omitempty"`
 	SortKey NullableString `json:"sortKey,omitempty"`
 	SortDirection *SortDirection `json:"sortDirection,omitempty"`
 	TotalRecords *int32 `json:"totalRecords,omitempty"`
-	Records []LogResource `json:"records,omitempty"`
+	Records []ImportListExclusionResource `json:"records,omitempty"`
 }
 
-// NewLogResourcePagingResource instantiates a new LogResourcePagingResource object
+// NewImportListExclusionResourcePagingResource instantiates a new ImportListExclusionResourcePagingResource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLogResourcePagingResource() *LogResourcePagingResource {
-	this := LogResourcePagingResource{}
+func NewImportListExclusionResourcePagingResource() *ImportListExclusionResourcePagingResource {
+	this := ImportListExclusionResourcePagingResource{}
 	return &this
 }
 
-// NewLogResourcePagingResourceWithDefaults instantiates a new LogResourcePagingResource object
+// NewImportListExclusionResourcePagingResourceWithDefaults instantiates a new ImportListExclusionResourcePagingResource object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLogResourcePagingResourceWithDefaults() *LogResourcePagingResource {
-	this := LogResourcePagingResource{}
+func NewImportListExclusionResourcePagingResourceWithDefaults() *ImportListExclusionResourcePagingResource {
+	this := ImportListExclusionResourcePagingResource{}
 	return &this
 }
 
 // GetPage returns the Page field value if set, zero value otherwise.
-func (o *LogResourcePagingResource) GetPage() int32 {
+func (o *ImportListExclusionResourcePagingResource) GetPage() int32 {
 	if o == nil || IsNil(o.Page) {
 		var ret int32
 		return ret
@@ -55,7 +55,7 @@ func (o *LogResourcePagingResource) GetPage() int32 {
 
 // GetPageOk returns a tuple with the Page field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogResourcePagingResource) GetPageOk() (*int32, bool) {
+func (o *ImportListExclusionResourcePagingResource) GetPageOk() (*int32, bool) {
 	if o == nil || IsNil(o.Page) {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *LogResourcePagingResource) GetPageOk() (*int32, bool) {
 }
 
 // HasPage returns a boolean if a field has been set.
-func (o *LogResourcePagingResource) HasPage() bool {
+func (o *ImportListExclusionResourcePagingResource) HasPage() bool {
 	if o != nil && !IsNil(o.Page) {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *LogResourcePagingResource) HasPage() bool {
 }
 
 // SetPage gets a reference to the given int32 and assigns it to the Page field.
-func (o *LogResourcePagingResource) SetPage(v int32) {
+func (o *ImportListExclusionResourcePagingResource) SetPage(v int32) {
 	o.Page = &v
 }
 
 // GetPageSize returns the PageSize field value if set, zero value otherwise.
-func (o *LogResourcePagingResource) GetPageSize() int32 {
+func (o *ImportListExclusionResourcePagingResource) GetPageSize() int32 {
 	if o == nil || IsNil(o.PageSize) {
 		var ret int32
 		return ret
@@ -87,7 +87,7 @@ func (o *LogResourcePagingResource) GetPageSize() int32 {
 
 // GetPageSizeOk returns a tuple with the PageSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogResourcePagingResource) GetPageSizeOk() (*int32, bool) {
+func (o *ImportListExclusionResourcePagingResource) GetPageSizeOk() (*int32, bool) {
 	if o == nil || IsNil(o.PageSize) {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *LogResourcePagingResource) GetPageSizeOk() (*int32, bool) {
 }
 
 // HasPageSize returns a boolean if a field has been set.
-func (o *LogResourcePagingResource) HasPageSize() bool {
+func (o *ImportListExclusionResourcePagingResource) HasPageSize() bool {
 	if o != nil && !IsNil(o.PageSize) {
 		return true
 	}
@@ -104,12 +104,12 @@ func (o *LogResourcePagingResource) HasPageSize() bool {
 }
 
 // SetPageSize gets a reference to the given int32 and assigns it to the PageSize field.
-func (o *LogResourcePagingResource) SetPageSize(v int32) {
+func (o *ImportListExclusionResourcePagingResource) SetPageSize(v int32) {
 	o.PageSize = &v
 }
 
 // GetSortKey returns the SortKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LogResourcePagingResource) GetSortKey() string {
+func (o *ImportListExclusionResourcePagingResource) GetSortKey() string {
 	if o == nil || IsNil(o.SortKey.Get()) {
 		var ret string
 		return ret
@@ -120,7 +120,7 @@ func (o *LogResourcePagingResource) GetSortKey() string {
 // GetSortKeyOk returns a tuple with the SortKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LogResourcePagingResource) GetSortKeyOk() (*string, bool) {
+func (o *ImportListExclusionResourcePagingResource) GetSortKeyOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *LogResourcePagingResource) GetSortKeyOk() (*string, bool) {
 }
 
 // HasSortKey returns a boolean if a field has been set.
-func (o *LogResourcePagingResource) HasSortKey() bool {
+func (o *ImportListExclusionResourcePagingResource) HasSortKey() bool {
 	if o != nil && o.SortKey.IsSet() {
 		return true
 	}
@@ -137,21 +137,21 @@ func (o *LogResourcePagingResource) HasSortKey() bool {
 }
 
 // SetSortKey gets a reference to the given NullableString and assigns it to the SortKey field.
-func (o *LogResourcePagingResource) SetSortKey(v string) {
+func (o *ImportListExclusionResourcePagingResource) SetSortKey(v string) {
 	o.SortKey.Set(&v)
 }
 // SetSortKeyNil sets the value for SortKey to be an explicit nil
-func (o *LogResourcePagingResource) SetSortKeyNil() {
+func (o *ImportListExclusionResourcePagingResource) SetSortKeyNil() {
 	o.SortKey.Set(nil)
 }
 
 // UnsetSortKey ensures that no value is present for SortKey, not even an explicit nil
-func (o *LogResourcePagingResource) UnsetSortKey() {
+func (o *ImportListExclusionResourcePagingResource) UnsetSortKey() {
 	o.SortKey.Unset()
 }
 
 // GetSortDirection returns the SortDirection field value if set, zero value otherwise.
-func (o *LogResourcePagingResource) GetSortDirection() SortDirection {
+func (o *ImportListExclusionResourcePagingResource) GetSortDirection() SortDirection {
 	if o == nil || IsNil(o.SortDirection) {
 		var ret SortDirection
 		return ret
@@ -161,7 +161,7 @@ func (o *LogResourcePagingResource) GetSortDirection() SortDirection {
 
 // GetSortDirectionOk returns a tuple with the SortDirection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogResourcePagingResource) GetSortDirectionOk() (*SortDirection, bool) {
+func (o *ImportListExclusionResourcePagingResource) GetSortDirectionOk() (*SortDirection, bool) {
 	if o == nil || IsNil(o.SortDirection) {
 		return nil, false
 	}
@@ -169,7 +169,7 @@ func (o *LogResourcePagingResource) GetSortDirectionOk() (*SortDirection, bool) 
 }
 
 // HasSortDirection returns a boolean if a field has been set.
-func (o *LogResourcePagingResource) HasSortDirection() bool {
+func (o *ImportListExclusionResourcePagingResource) HasSortDirection() bool {
 	if o != nil && !IsNil(o.SortDirection) {
 		return true
 	}
@@ -178,12 +178,12 @@ func (o *LogResourcePagingResource) HasSortDirection() bool {
 }
 
 // SetSortDirection gets a reference to the given SortDirection and assigns it to the SortDirection field.
-func (o *LogResourcePagingResource) SetSortDirection(v SortDirection) {
+func (o *ImportListExclusionResourcePagingResource) SetSortDirection(v SortDirection) {
 	o.SortDirection = &v
 }
 
 // GetTotalRecords returns the TotalRecords field value if set, zero value otherwise.
-func (o *LogResourcePagingResource) GetTotalRecords() int32 {
+func (o *ImportListExclusionResourcePagingResource) GetTotalRecords() int32 {
 	if o == nil || IsNil(o.TotalRecords) {
 		var ret int32
 		return ret
@@ -193,7 +193,7 @@ func (o *LogResourcePagingResource) GetTotalRecords() int32 {
 
 // GetTotalRecordsOk returns a tuple with the TotalRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogResourcePagingResource) GetTotalRecordsOk() (*int32, bool) {
+func (o *ImportListExclusionResourcePagingResource) GetTotalRecordsOk() (*int32, bool) {
 	if o == nil || IsNil(o.TotalRecords) {
 		return nil, false
 	}
@@ -201,7 +201,7 @@ func (o *LogResourcePagingResource) GetTotalRecordsOk() (*int32, bool) {
 }
 
 // HasTotalRecords returns a boolean if a field has been set.
-func (o *LogResourcePagingResource) HasTotalRecords() bool {
+func (o *ImportListExclusionResourcePagingResource) HasTotalRecords() bool {
 	if o != nil && !IsNil(o.TotalRecords) {
 		return true
 	}
@@ -210,14 +210,14 @@ func (o *LogResourcePagingResource) HasTotalRecords() bool {
 }
 
 // SetTotalRecords gets a reference to the given int32 and assigns it to the TotalRecords field.
-func (o *LogResourcePagingResource) SetTotalRecords(v int32) {
+func (o *ImportListExclusionResourcePagingResource) SetTotalRecords(v int32) {
 	o.TotalRecords = &v
 }
 
 // GetRecords returns the Records field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LogResourcePagingResource) GetRecords() []LogResource {
+func (o *ImportListExclusionResourcePagingResource) GetRecords() []ImportListExclusionResource {
 	if o == nil {
-		var ret []LogResource
+		var ret []ImportListExclusionResource
 		return ret
 	}
 	return o.Records
@@ -226,7 +226,7 @@ func (o *LogResourcePagingResource) GetRecords() []LogResource {
 // GetRecordsOk returns a tuple with the Records field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LogResourcePagingResource) GetRecordsOk() ([]LogResource, bool) {
+func (o *ImportListExclusionResourcePagingResource) GetRecordsOk() ([]ImportListExclusionResource, bool) {
 	if o == nil || IsNil(o.Records) {
 		return nil, false
 	}
@@ -234,7 +234,7 @@ func (o *LogResourcePagingResource) GetRecordsOk() ([]LogResource, bool) {
 }
 
 // HasRecords returns a boolean if a field has been set.
-func (o *LogResourcePagingResource) HasRecords() bool {
+func (o *ImportListExclusionResourcePagingResource) HasRecords() bool {
 	if o != nil && !IsNil(o.Records) {
 		return true
 	}
@@ -242,12 +242,12 @@ func (o *LogResourcePagingResource) HasRecords() bool {
 	return false
 }
 
-// SetRecords gets a reference to the given []LogResource and assigns it to the Records field.
-func (o *LogResourcePagingResource) SetRecords(v []LogResource) {
+// SetRecords gets a reference to the given []ImportListExclusionResource and assigns it to the Records field.
+func (o *ImportListExclusionResourcePagingResource) SetRecords(v []ImportListExclusionResource) {
 	o.Records = v
 }
 
-func (o LogResourcePagingResource) MarshalJSON() ([]byte, error) {
+func (o ImportListExclusionResourcePagingResource) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -255,7 +255,7 @@ func (o LogResourcePagingResource) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o LogResourcePagingResource) ToMap() (map[string]interface{}, error) {
+func (o ImportListExclusionResourcePagingResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Page) {
 		toSerialize["page"] = o.Page
@@ -278,38 +278,38 @@ func (o LogResourcePagingResource) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableLogResourcePagingResource struct {
-	value *LogResourcePagingResource
+type NullableImportListExclusionResourcePagingResource struct {
+	value *ImportListExclusionResourcePagingResource
 	isSet bool
 }
 
-func (v NullableLogResourcePagingResource) Get() *LogResourcePagingResource {
+func (v NullableImportListExclusionResourcePagingResource) Get() *ImportListExclusionResourcePagingResource {
 	return v.value
 }
 
-func (v *NullableLogResourcePagingResource) Set(val *LogResourcePagingResource) {
+func (v *NullableImportListExclusionResourcePagingResource) Set(val *ImportListExclusionResourcePagingResource) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableLogResourcePagingResource) IsSet() bool {
+func (v NullableImportListExclusionResourcePagingResource) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableLogResourcePagingResource) Unset() {
+func (v *NullableImportListExclusionResourcePagingResource) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableLogResourcePagingResource(val *LogResourcePagingResource) *NullableLogResourcePagingResource {
-	return &NullableLogResourcePagingResource{value: val, isSet: true}
+func NewNullableImportListExclusionResourcePagingResource(val *ImportListExclusionResourcePagingResource) *NullableImportListExclusionResourcePagingResource {
+	return &NullableImportListExclusionResourcePagingResource{value: val, isSet: true}
 }
 
-func (v NullableLogResourcePagingResource) MarshalJSON() ([]byte, error) {
+func (v NullableImportListExclusionResourcePagingResource) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableLogResourcePagingResource) UnmarshalJSON(src []byte) error {
+func (v *NullableImportListExclusionResourcePagingResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

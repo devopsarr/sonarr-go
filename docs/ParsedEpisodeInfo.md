@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **IsMultiSeason** | Pointer to **bool** |  | [optional] 
 **IsSeasonExtra** | Pointer to **bool** |  | [optional] 
 **IsSplitEpisode** | Pointer to **bool** |  | [optional] 
+**IsMiniSeries** | Pointer to **bool** |  | [optional] 
 **Special** | Pointer to **bool** |  | [optional] 
 **ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **ReleaseHash** | Pointer to **NullableString** |  | [optional] 
@@ -29,6 +30,7 @@ Name | Type | Description | Notes
 **IsAbsoluteNumbering** | Pointer to **bool** |  | [optional] [readonly] 
 **IsPossibleSpecialEpisode** | Pointer to **bool** |  | [optional] [readonly] 
 **IsPossibleSceneSeasonSpecial** | Pointer to **bool** |  | [optional] [readonly] 
+**ReleaseType** | Pointer to [**ReleaseType**](ReleaseType.md) |  | [optional] 
 
 ## Methods
 
@@ -494,6 +496,31 @@ SetIsSplitEpisode sets IsSplitEpisode field to given value.
 
 HasIsSplitEpisode returns a boolean if a field has been set.
 
+### GetIsMiniSeries
+
+`func (o *ParsedEpisodeInfo) GetIsMiniSeries() bool`
+
+GetIsMiniSeries returns the IsMiniSeries field if non-nil, zero value otherwise.
+
+### GetIsMiniSeriesOk
+
+`func (o *ParsedEpisodeInfo) GetIsMiniSeriesOk() (*bool, bool)`
+
+GetIsMiniSeriesOk returns a tuple with the IsMiniSeries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsMiniSeries
+
+`func (o *ParsedEpisodeInfo) SetIsMiniSeries(v bool)`
+
+SetIsMiniSeries sets IsMiniSeries field to given value.
+
+### HasIsMiniSeries
+
+`func (o *ParsedEpisodeInfo) HasIsMiniSeries() bool`
+
+HasIsMiniSeries returns a boolean if a field has been set.
+
 ### GetSpecial
 
 `func (o *ParsedEpisodeInfo) GetSpecial() bool`
@@ -783,6 +810,31 @@ SetIsPossibleSceneSeasonSpecial sets IsPossibleSceneSeasonSpecial field to given
 `func (o *ParsedEpisodeInfo) HasIsPossibleSceneSeasonSpecial() bool`
 
 HasIsPossibleSceneSeasonSpecial returns a boolean if a field has been set.
+
+### GetReleaseType
+
+`func (o *ParsedEpisodeInfo) GetReleaseType() ReleaseType`
+
+GetReleaseType returns the ReleaseType field if non-nil, zero value otherwise.
+
+### GetReleaseTypeOk
+
+`func (o *ParsedEpisodeInfo) GetReleaseTypeOk() (*ReleaseType, bool)`
+
+GetReleaseTypeOk returns a tuple with the ReleaseType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseType
+
+`func (o *ParsedEpisodeInfo) SetReleaseType(v ReleaseType)`
+
+SetReleaseType sets ReleaseType field to given value.
+
+### HasReleaseType
+
+`func (o *ParsedEpisodeInfo) HasReleaseType() bool`
+
+HasReleaseType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
