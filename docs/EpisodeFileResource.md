@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **IndexerFlags** | Pointer to **NullableInt32** |  | [optional] 
+**ReleaseType** | Pointer to [**ReleaseType**](ReleaseType.md) |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
 
@@ -460,6 +461,31 @@ HasIndexerFlags returns a boolean if a field has been set.
 `func (o *EpisodeFileResource) UnsetIndexerFlags()`
 
 UnsetIndexerFlags ensures that no value is present for IndexerFlags, not even an explicit nil
+### GetReleaseType
+
+`func (o *EpisodeFileResource) GetReleaseType() ReleaseType`
+
+GetReleaseType returns the ReleaseType field if non-nil, zero value otherwise.
+
+### GetReleaseTypeOk
+
+`func (o *EpisodeFileResource) GetReleaseTypeOk() (*ReleaseType, bool)`
+
+GetReleaseTypeOk returns a tuple with the ReleaseType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseType
+
+`func (o *EpisodeFileResource) SetReleaseType(v ReleaseType)`
+
+SetReleaseType sets ReleaseType field to given value.
+
+### HasReleaseType
+
+`func (o *EpisodeFileResource) HasReleaseType() bool`
+
+HasReleaseType returns a boolean if a field has been set.
+
 ### GetMediaInfo
 
 `func (o *EpisodeFileResource) GetMediaInfo() MediaInfoResource`
