@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **TvdbId** | Pointer to **int32** |  | [optional] 
 **TvRageId** | Pointer to **int32** |  | [optional] 
 **TvMazeId** | Pointer to **int32** |  | [optional] 
+**TmdbId** | Pointer to **int32** |  | [optional] 
 **FirstAired** | Pointer to **NullableTime** |  | [optional] 
 **LastAired** | Pointer to **NullableTime** |  | [optional] 
 **SeriesType** | Pointer to [**SeriesTypes**](SeriesTypes.md) |  | [optional] 
@@ -872,6 +873,31 @@ SetTvMazeId sets TvMazeId field to given value.
 `func (o *SeriesResource) HasTvMazeId() bool`
 
 HasTvMazeId returns a boolean if a field has been set.
+
+### GetTmdbId
+
+`func (o *SeriesResource) GetTmdbId() int32`
+
+GetTmdbId returns the TmdbId field if non-nil, zero value otherwise.
+
+### GetTmdbIdOk
+
+`func (o *SeriesResource) GetTmdbIdOk() (*int32, bool)`
+
+GetTmdbIdOk returns a tuple with the TmdbId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTmdbId
+
+`func (o *SeriesResource) SetTmdbId(v int32)`
+
+SetTmdbId sets TmdbId field to given value.
+
+### HasTmdbId
+
+`func (o *SeriesResource) HasTmdbId() bool`
+
+HasTmdbId returns a boolean if a field has been set.
 
 ### GetFirstAired
 

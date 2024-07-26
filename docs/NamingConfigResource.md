@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **RenameEpisodes** | Pointer to **bool** |  | [optional] 
 **ReplaceIllegalCharacters** | Pointer to **bool** |  | [optional] 
 **ColonReplacementFormat** | Pointer to **int32** |  | [optional] 
+**CustomColonReplacementFormat** | Pointer to **NullableString** |  | [optional] 
 **MultiEpisodeStyle** | Pointer to **int32** |  | [optional] 
 **StandardEpisodeFormat** | Pointer to **NullableString** |  | [optional] 
 **DailyEpisodeFormat** | Pointer to **NullableString** |  | [optional] 
@@ -135,6 +136,41 @@ SetColonReplacementFormat sets ColonReplacementFormat field to given value.
 
 HasColonReplacementFormat returns a boolean if a field has been set.
 
+### GetCustomColonReplacementFormat
+
+`func (o *NamingConfigResource) GetCustomColonReplacementFormat() string`
+
+GetCustomColonReplacementFormat returns the CustomColonReplacementFormat field if non-nil, zero value otherwise.
+
+### GetCustomColonReplacementFormatOk
+
+`func (o *NamingConfigResource) GetCustomColonReplacementFormatOk() (*string, bool)`
+
+GetCustomColonReplacementFormatOk returns a tuple with the CustomColonReplacementFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomColonReplacementFormat
+
+`func (o *NamingConfigResource) SetCustomColonReplacementFormat(v string)`
+
+SetCustomColonReplacementFormat sets CustomColonReplacementFormat field to given value.
+
+### HasCustomColonReplacementFormat
+
+`func (o *NamingConfigResource) HasCustomColonReplacementFormat() bool`
+
+HasCustomColonReplacementFormat returns a boolean if a field has been set.
+
+### SetCustomColonReplacementFormatNil
+
+`func (o *NamingConfigResource) SetCustomColonReplacementFormatNil(b bool)`
+
+ SetCustomColonReplacementFormatNil sets the value for CustomColonReplacementFormat to be an explicit nil
+
+### UnsetCustomColonReplacementFormat
+`func (o *NamingConfigResource) UnsetCustomColonReplacementFormat()`
+
+UnsetCustomColonReplacementFormat ensures that no value is present for CustomColonReplacementFormat, not even an explicit nil
 ### GetMultiEpisodeStyle
 
 `func (o *NamingConfigResource) GetMultiEpisodeStyle() int32`

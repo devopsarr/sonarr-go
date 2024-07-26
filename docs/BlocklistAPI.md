@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## GetBlocklist
 
-> BlocklistResourcePagingResource GetBlocklist(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).Execute()
+> BlocklistResourcePagingResource GetBlocklist(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).SeriesIds(seriesIds).Protocols(protocols).Execute()
 
 
 
@@ -161,10 +161,12 @@ func main() {
 	pageSize := int32(56) // int32 |  (optional) (default to 10)
 	sortKey := "sortKey_example" // string |  (optional)
 	sortDirection := sonarrClient.SortDirection("default") // SortDirection |  (optional)
+	seriesIds := []int32{int32(123)} // []int32 |  (optional)
+	protocols := []sonarrClient.DownloadProtocol{sonarrClient.DownloadProtocol("unknown")} // []DownloadProtocol |  (optional)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlocklistAPI.GetBlocklist(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).Execute()
+	resp, r, err := apiClient.BlocklistAPI.GetBlocklist(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).SeriesIds(seriesIds).Protocols(protocols).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlocklistAPI.GetBlocklist``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,6 +191,8 @@ Name | Type | Description  | Notes
  **pageSize** | **int32** |  | [default to 10]
  **sortKey** | **string** |  | 
  **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
+ **seriesIds** | **[]int32** |  | 
+ **protocols** | [**[]DownloadProtocol**](DownloadProtocol.md) |  | 
 
 ### Return type
 

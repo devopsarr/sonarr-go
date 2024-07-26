@@ -404,7 +404,7 @@ Other parameters are passed through a pointer to a apiListMetadataSchemaRequest 
 
 ## TestMetadata
 
-> TestMetadata(ctx).MetadataResource(metadataResource).Execute()
+> TestMetadata(ctx).ForceTest(forceTest).MetadataResource(metadataResource).Execute()
 
 
 
@@ -421,11 +421,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	metadataResource := *sonarrClient.NewMetadataResource() // MetadataResource |  (optional)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	r, err := apiClient.MetadataAPI.TestMetadata(context.Background()).MetadataResource(metadataResource).Execute()
+	r, err := apiClient.MetadataAPI.TestMetadata(context.Background()).ForceTest(forceTest).MetadataResource(metadataResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.TestMetadata``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,6 +445,7 @@ Other parameters are passed through a pointer to a apiTestMetadataRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **metadataResource** | [**MetadataResource**](MetadataResource.md) |  | 
 
 ### Return type
