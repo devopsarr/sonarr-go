@@ -5,6 +5,8 @@
 
 * `DOWNLOADING` (value: `"downloading"`)
 
+* `IMPORT_BLOCKED` (value: `"importBlocked"`)
+
 * `IMPORT_PENDING` (value: `"importPending"`)
 
 * `IMPORTING` (value: `"importing"`)

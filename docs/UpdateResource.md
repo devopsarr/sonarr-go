@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**Version** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to **NullableString** |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
 **ReleaseDate** | Pointer to **time.Time** |  | [optional] 
 **FileName** | Pointer to **NullableString** |  | [optional] 
@@ -86,6 +86,16 @@ SetVersion sets Version field to given value.
 
 HasVersion returns a boolean if a field has been set.
 
+### SetVersionNil
+
+`func (o *UpdateResource) SetVersionNil(b bool)`
+
+ SetVersionNil sets the value for Version to be an explicit nil
+
+### UnsetVersion
+`func (o *UpdateResource) UnsetVersion()`
+
+UnsetVersion ensures that no value is present for Version, not even an explicit nil
 ### GetBranch
 
 `func (o *UpdateResource) GetBranch() string`

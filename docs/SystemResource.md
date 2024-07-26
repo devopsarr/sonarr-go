@@ -24,17 +24,17 @@ Name | Type | Description | Notes
 **Mode** | Pointer to [**RuntimeMode**](RuntimeMode.md) |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
 **Authentication** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
-**SqliteVersion** | Pointer to **string** |  | [optional] 
+**SqliteVersion** | Pointer to **NullableString** |  | [optional] 
 **MigrationVersion** | Pointer to **int32** |  | [optional] 
 **UrlBase** | Pointer to **NullableString** |  | [optional] 
-**RuntimeVersion** | Pointer to **string** |  | [optional] 
+**RuntimeVersion** | Pointer to **NullableString** |  | [optional] 
 **RuntimeName** | Pointer to **NullableString** |  | [optional] 
 **StartTime** | Pointer to **time.Time** |  | [optional] 
 **PackageVersion** | Pointer to **NullableString** |  | [optional] 
 **PackageAuthor** | Pointer to **NullableString** |  | [optional] 
 **PackageUpdateMechanism** | Pointer to [**UpdateMechanism**](UpdateMechanism.md) |  | [optional] 
 **PackageUpdateMechanismMessage** | Pointer to **NullableString** |  | [optional] 
-**DatabaseVersion** | Pointer to **string** |  | [optional] 
+**DatabaseVersion** | Pointer to **NullableString** |  | [optional] 
 **DatabaseType** | Pointer to [**DatabaseType**](DatabaseType.md) |  | [optional] 
 
 ## Methods
@@ -661,6 +661,16 @@ SetSqliteVersion sets SqliteVersion field to given value.
 
 HasSqliteVersion returns a boolean if a field has been set.
 
+### SetSqliteVersionNil
+
+`func (o *SystemResource) SetSqliteVersionNil(b bool)`
+
+ SetSqliteVersionNil sets the value for SqliteVersion to be an explicit nil
+
+### UnsetSqliteVersion
+`func (o *SystemResource) UnsetSqliteVersion()`
+
+UnsetSqliteVersion ensures that no value is present for SqliteVersion, not even an explicit nil
 ### GetMigrationVersion
 
 `func (o *SystemResource) GetMigrationVersion() int32`
@@ -746,6 +756,16 @@ SetRuntimeVersion sets RuntimeVersion field to given value.
 
 HasRuntimeVersion returns a boolean if a field has been set.
 
+### SetRuntimeVersionNil
+
+`func (o *SystemResource) SetRuntimeVersionNil(b bool)`
+
+ SetRuntimeVersionNil sets the value for RuntimeVersion to be an explicit nil
+
+### UnsetRuntimeVersion
+`func (o *SystemResource) UnsetRuntimeVersion()`
+
+UnsetRuntimeVersion ensures that no value is present for RuntimeVersion, not even an explicit nil
 ### GetRuntimeName
 
 `func (o *SystemResource) GetRuntimeName() string`
@@ -961,6 +981,16 @@ SetDatabaseVersion sets DatabaseVersion field to given value.
 
 HasDatabaseVersion returns a boolean if a field has been set.
 
+### SetDatabaseVersionNil
+
+`func (o *SystemResource) SetDatabaseVersionNil(b bool)`
+
+ SetDatabaseVersionNil sets the value for DatabaseVersion to be an explicit nil
+
+### UnsetDatabaseVersion
+`func (o *SystemResource) UnsetDatabaseVersion()`
+
+UnsetDatabaseVersion ensures that no value is present for DatabaseVersion, not even an explicit nil
 ### GetDatabaseType
 
 `func (o *SystemResource) GetDatabaseType() DatabaseType`

@@ -18,18 +18,21 @@ Name | Type | Description | Notes
 **OnGrab** | Pointer to **bool** |  | [optional] 
 **OnDownload** | Pointer to **bool** |  | [optional] 
 **OnUpgrade** | Pointer to **bool** |  | [optional] 
+**OnImportComplete** | Pointer to **bool** |  | [optional] 
 **OnRename** | Pointer to **bool** |  | [optional] 
 **OnSeriesAdd** | Pointer to **bool** |  | [optional] 
 **OnSeriesDelete** | Pointer to **bool** |  | [optional] 
 **OnEpisodeFileDelete** | Pointer to **bool** |  | [optional] 
 **OnEpisodeFileDeleteForUpgrade** | Pointer to **bool** |  | [optional] 
 **OnHealthIssue** | Pointer to **bool** |  | [optional] 
+**IncludeHealthWarnings** | Pointer to **bool** |  | [optional] 
 **OnHealthRestored** | Pointer to **bool** |  | [optional] 
 **OnApplicationUpdate** | Pointer to **bool** |  | [optional] 
 **OnManualInteractionRequired** | Pointer to **bool** |  | [optional] 
 **SupportsOnGrab** | Pointer to **bool** |  | [optional] 
 **SupportsOnDownload** | Pointer to **bool** |  | [optional] 
 **SupportsOnUpgrade** | Pointer to **bool** |  | [optional] 
+**SupportsOnImportComplete** | Pointer to **bool** |  | [optional] 
 **SupportsOnRename** | Pointer to **bool** |  | [optional] 
 **SupportsOnSeriesAdd** | Pointer to **bool** |  | [optional] 
 **SupportsOnSeriesDelete** | Pointer to **bool** |  | [optional] 
@@ -39,7 +42,6 @@ Name | Type | Description | Notes
 **SupportsOnHealthRestored** | Pointer to **bool** |  | [optional] 
 **SupportsOnApplicationUpdate** | Pointer to **bool** |  | [optional] 
 **SupportsOnManualInteractionRequired** | Pointer to **bool** |  | [optional] 
-**IncludeHealthWarnings** | Pointer to **bool** |  | [optional] 
 **TestCommand** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -501,6 +503,31 @@ SetOnUpgrade sets OnUpgrade field to given value.
 
 HasOnUpgrade returns a boolean if a field has been set.
 
+### GetOnImportComplete
+
+`func (o *NotificationResource) GetOnImportComplete() bool`
+
+GetOnImportComplete returns the OnImportComplete field if non-nil, zero value otherwise.
+
+### GetOnImportCompleteOk
+
+`func (o *NotificationResource) GetOnImportCompleteOk() (*bool, bool)`
+
+GetOnImportCompleteOk returns a tuple with the OnImportComplete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnImportComplete
+
+`func (o *NotificationResource) SetOnImportComplete(v bool)`
+
+SetOnImportComplete sets OnImportComplete field to given value.
+
+### HasOnImportComplete
+
+`func (o *NotificationResource) HasOnImportComplete() bool`
+
+HasOnImportComplete returns a boolean if a field has been set.
+
 ### GetOnRename
 
 `func (o *NotificationResource) GetOnRename() bool`
@@ -651,6 +678,31 @@ SetOnHealthIssue sets OnHealthIssue field to given value.
 
 HasOnHealthIssue returns a boolean if a field has been set.
 
+### GetIncludeHealthWarnings
+
+`func (o *NotificationResource) GetIncludeHealthWarnings() bool`
+
+GetIncludeHealthWarnings returns the IncludeHealthWarnings field if non-nil, zero value otherwise.
+
+### GetIncludeHealthWarningsOk
+
+`func (o *NotificationResource) GetIncludeHealthWarningsOk() (*bool, bool)`
+
+GetIncludeHealthWarningsOk returns a tuple with the IncludeHealthWarnings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeHealthWarnings
+
+`func (o *NotificationResource) SetIncludeHealthWarnings(v bool)`
+
+SetIncludeHealthWarnings sets IncludeHealthWarnings field to given value.
+
+### HasIncludeHealthWarnings
+
+`func (o *NotificationResource) HasIncludeHealthWarnings() bool`
+
+HasIncludeHealthWarnings returns a boolean if a field has been set.
+
 ### GetOnHealthRestored
 
 `func (o *NotificationResource) GetOnHealthRestored() bool`
@@ -800,6 +852,31 @@ SetSupportsOnUpgrade sets SupportsOnUpgrade field to given value.
 `func (o *NotificationResource) HasSupportsOnUpgrade() bool`
 
 HasSupportsOnUpgrade returns a boolean if a field has been set.
+
+### GetSupportsOnImportComplete
+
+`func (o *NotificationResource) GetSupportsOnImportComplete() bool`
+
+GetSupportsOnImportComplete returns the SupportsOnImportComplete field if non-nil, zero value otherwise.
+
+### GetSupportsOnImportCompleteOk
+
+`func (o *NotificationResource) GetSupportsOnImportCompleteOk() (*bool, bool)`
+
+GetSupportsOnImportCompleteOk returns a tuple with the SupportsOnImportComplete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsOnImportComplete
+
+`func (o *NotificationResource) SetSupportsOnImportComplete(v bool)`
+
+SetSupportsOnImportComplete sets SupportsOnImportComplete field to given value.
+
+### HasSupportsOnImportComplete
+
+`func (o *NotificationResource) HasSupportsOnImportComplete() bool`
+
+HasSupportsOnImportComplete returns a boolean if a field has been set.
 
 ### GetSupportsOnRename
 
@@ -1025,31 +1102,6 @@ SetSupportsOnManualInteractionRequired sets SupportsOnManualInteractionRequired 
 `func (o *NotificationResource) HasSupportsOnManualInteractionRequired() bool`
 
 HasSupportsOnManualInteractionRequired returns a boolean if a field has been set.
-
-### GetIncludeHealthWarnings
-
-`func (o *NotificationResource) GetIncludeHealthWarnings() bool`
-
-GetIncludeHealthWarnings returns the IncludeHealthWarnings field if non-nil, zero value otherwise.
-
-### GetIncludeHealthWarningsOk
-
-`func (o *NotificationResource) GetIncludeHealthWarningsOk() (*bool, bool)`
-
-GetIncludeHealthWarningsOk returns a tuple with the IncludeHealthWarnings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeHealthWarnings
-
-`func (o *NotificationResource) SetIncludeHealthWarnings(v bool)`
-
-SetIncludeHealthWarnings sets IncludeHealthWarnings field to given value.
-
-### HasIncludeHealthWarnings
-
-`func (o *NotificationResource) HasIncludeHealthWarnings() bool`
-
-HasIncludeHealthWarnings returns a boolean if a field has been set.
 
 ### GetTestCommand
 

@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ## TestImportList
 
-> TestImportList(ctx).ImportListResource(importListResource).Execute()
+> TestImportList(ctx).ForceTest(forceTest).ImportListResource(importListResource).Execute()
 
 
 
@@ -549,11 +549,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	importListResource := *sonarrClient.NewImportListResource() // ImportListResource |  (optional)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	r, err := apiClient.ImportListAPI.TestImportList(context.Background()).ImportListResource(importListResource).Execute()
+	r, err := apiClient.ImportListAPI.TestImportList(context.Background()).ForceTest(forceTest).ImportListResource(importListResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImportListAPI.TestImportList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -572,6 +573,7 @@ Other parameters are passed through a pointer to a apiTestImportListRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **importListResource** | [**ImportListResource**](ImportListResource.md) |  | 
 
 ### Return type

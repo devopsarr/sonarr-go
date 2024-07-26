@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ## TestIndexer
 
-> TestIndexer(ctx).IndexerResource(indexerResource).Execute()
+> TestIndexer(ctx).ForceTest(forceTest).IndexerResource(indexerResource).Execute()
 
 
 
@@ -549,11 +549,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	indexerResource := *sonarrClient.NewIndexerResource() // IndexerResource |  (optional)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	r, err := apiClient.IndexerAPI.TestIndexer(context.Background()).IndexerResource(indexerResource).Execute()
+	r, err := apiClient.IndexerAPI.TestIndexer(context.Background()).ForceTest(forceTest).IndexerResource(indexerResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexerAPI.TestIndexer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -572,6 +573,7 @@ Other parameters are passed through a pointer to a apiTestIndexerRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **indexerResource** | [**IndexerResource**](IndexerResource.md) |  | 
 
 ### Return type

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Size** | Pointer to **float64** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
 **Sizeleft** | Pointer to **float64** |  | [optional] 
-**Timeleft** | Pointer to **string** |  | [optional] 
+**Timeleft** | Pointer to **NullableString** |  | [optional] 
 **EstimatedCompletionTime** | Pointer to **NullableTime** |  | [optional] 
 **Added** | Pointer to **NullableTime** |  | [optional] 
 **Status** | Pointer to **NullableString** |  | [optional] 
@@ -462,6 +462,16 @@ SetTimeleft sets Timeleft field to given value.
 
 HasTimeleft returns a boolean if a field has been set.
 
+### SetTimeleftNil
+
+`func (o *QueueResource) SetTimeleftNil(b bool)`
+
+ SetTimeleftNil sets the value for Timeleft to be an explicit nil
+
+### UnsetTimeleft
+`func (o *QueueResource) UnsetTimeleft()`
+
+UnsetTimeleft ensures that no value is present for Timeleft, not even an explicit nil
 ### GetEstimatedCompletionTime
 
 `func (o *QueueResource) GetEstimatedCompletionTime() time.Time`

@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ## TestDownloadClient
 
-> TestDownloadClient(ctx).DownloadClientResource(downloadClientResource).Execute()
+> TestDownloadClient(ctx).ForceTest(forceTest).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -549,11 +549,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	downloadClientResource := *sonarrClient.NewDownloadClientResource() // DownloadClientResource |  (optional)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	r, err := apiClient.DownloadClientAPI.TestDownloadClient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
+	r, err := apiClient.DownloadClientAPI.TestDownloadClient(context.Background()).ForceTest(forceTest).DownloadClientResource(downloadClientResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientAPI.TestDownloadClient``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -572,6 +573,7 @@ Other parameters are passed through a pointer to a apiTestDownloadClientRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **downloadClientResource** | [**DownloadClientResource**](DownloadClientResource.md) |  | 
 
 ### Return type

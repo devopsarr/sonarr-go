@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Queued** | Pointer to **time.Time** |  | [optional] 
 **Started** | Pointer to **NullableTime** |  | [optional] 
 **Ended** | Pointer to **NullableTime** |  | [optional] 
-**Duration** | Pointer to **string** |  | [optional] 
+**Duration** | Pointer to **NullableString** |  | [optional] 
 **Exception** | Pointer to **NullableString** |  | [optional] 
 **Trigger** | Pointer to [**CommandTrigger**](CommandTrigger.md) |  | [optional] 
 **ClientUserAgent** | Pointer to **NullableString** |  | [optional] 
@@ -393,6 +393,16 @@ SetDuration sets Duration field to given value.
 
 HasDuration returns a boolean if a field has been set.
 
+### SetDurationNil
+
+`func (o *CommandResource) SetDurationNil(b bool)`
+
+ SetDurationNil sets the value for Duration to be an explicit nil
+
+### UnsetDuration
+`func (o *CommandResource) UnsetDuration()`
+
+UnsetDuration ensures that no value is present for Duration, not even an explicit nil
 ### GetException
 
 `func (o *CommandResource) GetException() string`

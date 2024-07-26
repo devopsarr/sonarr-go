@@ -404,7 +404,7 @@ Other parameters are passed through a pointer to a apiListNotificationSchemaRequ
 
 ## TestNotification
 
-> TestNotification(ctx).NotificationResource(notificationResource).Execute()
+> TestNotification(ctx).ForceTest(forceTest).NotificationResource(notificationResource).Execute()
 
 
 
@@ -421,11 +421,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	notificationResource := *sonarrClient.NewNotificationResource() // NotificationResource |  (optional)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	r, err := apiClient.NotificationAPI.TestNotification(context.Background()).NotificationResource(notificationResource).Execute()
+	r, err := apiClient.NotificationAPI.TestNotification(context.Background()).ForceTest(forceTest).NotificationResource(notificationResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NotificationAPI.TestNotification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,6 +445,7 @@ Other parameters are passed through a pointer to a apiTestNotificationRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **notificationResource** | [**NotificationResource**](NotificationResource.md) |  | 
 
 ### Return type

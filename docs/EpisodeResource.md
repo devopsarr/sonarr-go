@@ -26,10 +26,8 @@ Name | Type | Description | Notes
 **UnverifiedSceneNumbering** | Pointer to **bool** |  | [optional] 
 **EndTime** | Pointer to **NullableTime** |  | [optional] 
 **GrabDate** | Pointer to **NullableTime** |  | [optional] 
-**SeriesTitle** | Pointer to **NullableString** |  | [optional] 
 **Series** | Pointer to [**SeriesResource**](SeriesResource.md) |  | [optional] 
 **Images** | Pointer to [**[]MediaCover**](MediaCover.md) |  | [optional] 
-**Grabbed** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -710,41 +708,6 @@ HasGrabDate returns a boolean if a field has been set.
 `func (o *EpisodeResource) UnsetGrabDate()`
 
 UnsetGrabDate ensures that no value is present for GrabDate, not even an explicit nil
-### GetSeriesTitle
-
-`func (o *EpisodeResource) GetSeriesTitle() string`
-
-GetSeriesTitle returns the SeriesTitle field if non-nil, zero value otherwise.
-
-### GetSeriesTitleOk
-
-`func (o *EpisodeResource) GetSeriesTitleOk() (*string, bool)`
-
-GetSeriesTitleOk returns a tuple with the SeriesTitle field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeriesTitle
-
-`func (o *EpisodeResource) SetSeriesTitle(v string)`
-
-SetSeriesTitle sets SeriesTitle field to given value.
-
-### HasSeriesTitle
-
-`func (o *EpisodeResource) HasSeriesTitle() bool`
-
-HasSeriesTitle returns a boolean if a field has been set.
-
-### SetSeriesTitleNil
-
-`func (o *EpisodeResource) SetSeriesTitleNil(b bool)`
-
- SetSeriesTitleNil sets the value for SeriesTitle to be an explicit nil
-
-### UnsetSeriesTitle
-`func (o *EpisodeResource) UnsetSeriesTitle()`
-
-UnsetSeriesTitle ensures that no value is present for SeriesTitle, not even an explicit nil
 ### GetSeries
 
 `func (o *EpisodeResource) GetSeries() SeriesResource`
@@ -805,31 +768,6 @@ HasImages returns a boolean if a field has been set.
 `func (o *EpisodeResource) UnsetImages()`
 
 UnsetImages ensures that no value is present for Images, not even an explicit nil
-### GetGrabbed
-
-`func (o *EpisodeResource) GetGrabbed() bool`
-
-GetGrabbed returns the Grabbed field if non-nil, zero value otherwise.
-
-### GetGrabbedOk
-
-`func (o *EpisodeResource) GetGrabbedOk() (*bool, bool)`
-
-GetGrabbedOk returns a tuple with the Grabbed field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGrabbed
-
-`func (o *EpisodeResource) SetGrabbed(v bool)`
-
-SetGrabbed sets Grabbed field to given value.
-
-### HasGrabbed
-
-`func (o *EpisodeResource) HasGrabbed() bool`
-
-HasGrabbed returns a boolean if a field has been set.
-
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

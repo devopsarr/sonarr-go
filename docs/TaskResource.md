@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **LastExecution** | Pointer to **time.Time** |  | [optional] 
 **LastStartTime** | Pointer to **time.Time** |  | [optional] 
 **NextExecution** | Pointer to **time.Time** |  | [optional] 
-**LastDuration** | Pointer to **string** |  | [optional] 
+**LastDuration** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
