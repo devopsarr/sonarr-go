@@ -397,43 +397,43 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameEpisodes != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "renameEpisodes", r.renameEpisodes, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "renameEpisodes", r.renameEpisodes, "form", "")
 	}
 	if r.replaceIllegalCharacters != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "form", "")
 	}
 	if r.colonReplacementFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "form", "")
 	}
 	if r.customColonReplacementFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "customColonReplacementFormat", r.customColonReplacementFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "customColonReplacementFormat", r.customColonReplacementFormat, "form", "")
 	}
 	if r.multiEpisodeStyle != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "multiEpisodeStyle", r.multiEpisodeStyle, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "multiEpisodeStyle", r.multiEpisodeStyle, "form", "")
 	}
 	if r.standardEpisodeFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "standardEpisodeFormat", r.standardEpisodeFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "standardEpisodeFormat", r.standardEpisodeFormat, "form", "")
 	}
 	if r.dailyEpisodeFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dailyEpisodeFormat", r.dailyEpisodeFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "dailyEpisodeFormat", r.dailyEpisodeFormat, "form", "")
 	}
 	if r.animeEpisodeFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "animeEpisodeFormat", r.animeEpisodeFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "animeEpisodeFormat", r.animeEpisodeFormat, "form", "")
 	}
 	if r.seriesFolderFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesFolderFormat", r.seriesFolderFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesFolderFormat", r.seriesFolderFormat, "form", "")
 	}
 	if r.seasonFolderFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonFolderFormat", r.seasonFolderFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonFolderFormat", r.seasonFolderFormat, "form", "")
 	}
 	if r.specialsFolderFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "specialsFolderFormat", r.specialsFolderFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "specialsFolderFormat", r.specialsFolderFormat, "form", "")
 	}
 	if r.id != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "form", "")
 	}
 	if r.resourceName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -214,13 +214,13 @@ func (a *SeriesAPIService) DeleteSeriesExecute(r ApiDeleteSeriesRequest) (*http.
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.addImportListExclusion = &defaultValue
@@ -352,7 +352,7 @@ func (a *SeriesAPIService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*Ser
 	localVarFormParams := url.Values{}
 
 	if r.includeSeasonImages != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", r.includeSeasonImages, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", r.includeSeasonImages, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeSeasonImages = &defaultValue
@@ -495,10 +495,10 @@ func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]SeriesRe
 	localVarFormParams := url.Values{}
 
 	if r.tvdbId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tvdbId", r.tvdbId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tvdbId", r.tvdbId, "form", "")
 	}
 	if r.includeSeasonImages != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", r.includeSeasonImages, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", r.includeSeasonImages, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeSeasonImages = &defaultValue
@@ -645,7 +645,7 @@ func (a *SeriesAPIService) UpdateSeriesExecute(r ApiUpdateSeriesRequest) (*Serie
 	localVarFormParams := url.Values{}
 
 	if r.moveFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.moveFiles = &defaultValue

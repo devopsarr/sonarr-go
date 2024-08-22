@@ -91,27 +91,27 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "form", "")
 	}
 	if r.episodeIds != nil {
 		t := *r.episodeIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", t, "form", "multi")
 		}
 	}
 	if r.includeSeries != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeEpisode = &defaultValue

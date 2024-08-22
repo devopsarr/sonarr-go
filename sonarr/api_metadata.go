@@ -79,7 +79,7 @@ func (a *MetadataAPIService) CreateMetadataExecute(r ApiCreateMetadataRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceSave = &defaultValue
@@ -845,7 +845,7 @@ func (a *MetadataAPIService) TestMetadataExecute(r ApiTestMetadataRequest) (*htt
 	localVarFormParams := url.Values{}
 
 	if r.forceTest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", r.forceTest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", r.forceTest, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceTest = &defaultValue
@@ -1099,7 +1099,7 @@ func (a *MetadataAPIService) UpdateMetadataExecute(r ApiUpdateMetadataRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceSave = &defaultValue
