@@ -96,25 +96,25 @@ func (a *LogAPIService) GetLogExecute(r ApiGetLogRequest) (*LogResourcePagingRes
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
 		var defaultValue int32 = 10
 		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
 	}
 	if r.sortDirection != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "form", "")
 	}
 	if r.level != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "level", r.level, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "level", r.level, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

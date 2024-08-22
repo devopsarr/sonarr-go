@@ -206,13 +206,13 @@ func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]Relea
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "form", "")
 	}
 	if r.episodeId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "episodeId", r.episodeId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "episodeId", r.episodeId, "form", "")
 	}
 	if r.seasonNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -109,37 +109,37 @@ func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
 		var defaultValue int32 = 10
 		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
 	}
 	if r.sortDirection != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "form", "")
 	}
 	if r.includeSeries != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeSeries = &defaultValue
 	}
 	if r.includeImages != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeImages = &defaultValue
 	}
 	if r.monitored != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "monitored", r.monitored, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "monitored", r.monitored, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.monitored = &defaultValue

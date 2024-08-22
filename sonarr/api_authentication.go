@@ -88,7 +88,7 @@ func (a *AuthenticationAPIService) CreateLoginExecute(r ApiCreateLoginRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.returnUrl != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "returnUrl", r.returnUrl, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "returnUrl", r.returnUrl, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"multipart/form-data"}
@@ -108,13 +108,13 @@ func (a *AuthenticationAPIService) CreateLoginExecute(r ApiCreateLoginRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.username != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "username", r.username, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "username", r.username, "form", "")
 	}
 	if r.password != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "password", r.password, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "password", r.password, "form", "")
 	}
 	if r.rememberMe != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "rememberMe", r.rememberMe, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "rememberMe", r.rememberMe, "form", "")
 	}
 	if r.ctx != nil {
 		// API Key Authentication

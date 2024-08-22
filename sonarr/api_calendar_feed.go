@@ -100,37 +100,37 @@ func (a *CalendarFeedAPIService) GetFeedV3CalendarSonarrIcsExecute(r ApiGetFeedV
 	localVarFormParams := url.Values{}
 
 	if r.pastDays != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", r.pastDays, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", r.pastDays, "form", "")
 	} else {
 		var defaultValue int32 = 7
 		r.pastDays = &defaultValue
 	}
 	if r.futureDays != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", r.futureDays, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", r.futureDays, "form", "")
 	} else {
 		var defaultValue int32 = 28
 		r.futureDays = &defaultValue
 	}
 	if r.tags != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "form", "")
 	} else {
 		var defaultValue string = ""
 		r.tags = &defaultValue
 	}
 	if r.unmonitored != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.unmonitored = &defaultValue
 	}
 	if r.premieresOnly != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "premieresOnly", r.premieresOnly, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "premieresOnly", r.premieresOnly, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.premieresOnly = &defaultValue
 	}
 	if r.asAllDay != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "asAllDay", r.asAllDay, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "asAllDay", r.asAllDay, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.asAllDay = &defaultValue

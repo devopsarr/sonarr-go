@@ -259,55 +259,55 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
 		var defaultValue int32 = 10
 		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
 	}
 	if r.sortDirection != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "form", "")
 	}
 	if r.includeSeries != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	}
 	if r.includeEpisode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "form", "")
 	}
 	if r.eventType != nil {
 		t := *r.eventType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "form", "multi")
 		}
 	}
 	if r.episodeId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "episodeId", r.episodeId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "episodeId", r.episodeId, "form", "")
 	}
 	if r.downloadId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "form", "")
 	}
 	if r.seriesIds != nil {
 		t := *r.seriesIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "seriesIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "seriesIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "seriesIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "seriesIds", t, "form", "multi")
 		}
 	}
 	if r.languages != nil {
@@ -315,10 +315,10 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "languages", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "languages", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "languages", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "languages", t, "form", "multi")
 		}
 	}
 	if r.quality != nil {
@@ -326,10 +326,10 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "quality", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "quality", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "quality", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "quality", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -488,22 +488,22 @@ func (a *HistoryAPIService) ListHistorySeriesExecute(r ApiListHistorySeriesReque
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "form", "")
 	}
 	if r.seasonNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "form", "")
 	}
 	if r.eventType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "form", "")
 	}
 	if r.includeSeries != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeEpisode = &defaultValue
@@ -658,19 +658,19 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	localVarFormParams := url.Values{}
 
 	if r.date != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
 	}
 	if r.eventType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "form", "")
 	}
 	if r.includeSeries != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeEpisode = &defaultValue

@@ -227,27 +227,27 @@ func (a *EpisodeAPIService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]Episo
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "form", "")
 	}
 	if r.seasonNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "form", "")
 	}
 	if r.episodeIds != nil {
 		t := *r.episodeIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeIds", t, "form", "multi")
 		}
 	}
 	if r.episodeFileId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileId", r.episodeFileId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileId", r.episodeFileId, "form", "")
 	}
 	if r.includeImages != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeImages = &defaultValue
@@ -388,7 +388,7 @@ func (a *EpisodeAPIService) PutEpisodeMonitorExecute(r ApiPutEpisodeMonitorReque
 	localVarFormParams := url.Values{}
 
 	if r.includeImages != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeImages = &defaultValue

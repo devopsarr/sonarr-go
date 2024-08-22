@@ -82,16 +82,16 @@ func (a *FileSystemAPIService) GetFileSystemExecute(r ApiGetFileSystemRequest) (
 	localVarFormParams := url.Values{}
 
 	if r.path != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "form", "")
 	}
 	if r.includeFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeFiles", r.includeFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeFiles", r.includeFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeFiles = &defaultValue
 	}
 	if r.allowFoldersWithoutTrailingSlashes != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "allowFoldersWithoutTrailingSlashes", r.allowFoldersWithoutTrailingSlashes, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "allowFoldersWithoutTrailingSlashes", r.allowFoldersWithoutTrailingSlashes, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.allowFoldersWithoutTrailingSlashes = &defaultValue
@@ -217,7 +217,7 @@ func (a *FileSystemAPIService) GetFileSystemMediafilesExecute(r ApiGetFileSystem
 	localVarFormParams := url.Values{}
 
 	if r.path != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -340,7 +340,7 @@ func (a *FileSystemAPIService) GetFileSystemTypeExecute(r ApiGetFileSystemTypeRe
 	localVarFormParams := url.Values{}
 
 	if r.path != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "path", r.path, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

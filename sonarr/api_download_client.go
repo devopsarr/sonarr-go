@@ -79,7 +79,7 @@ func (a *DownloadClientAPIService) CreateDownloadClientExecute(r ApiCreateDownlo
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceSave = &defaultValue
@@ -1100,7 +1100,7 @@ func (a *DownloadClientAPIService) TestDownloadClientExecute(r ApiTestDownloadCl
 	localVarFormParams := url.Values{}
 
 	if r.forceTest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", r.forceTest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", r.forceTest, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceTest = &defaultValue
@@ -1354,7 +1354,7 @@ func (a *DownloadClientAPIService) UpdateDownloadClientExecute(r ApiUpdateDownlo
 	localVarFormParams := url.Values{}
 
 	if r.forceSave != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.forceSave = &defaultValue

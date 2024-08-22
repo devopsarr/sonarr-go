@@ -449,17 +449,17 @@ func (a *EpisodeFileAPIService) ListEpisodeFileExecute(r ApiListEpisodeFileReque
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "form", "")
 	}
 	if r.episodeFileIds != nil {
 		t := *r.episodeFileIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "episodeFileIds", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header

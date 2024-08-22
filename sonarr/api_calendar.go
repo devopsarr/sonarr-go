@@ -239,37 +239,37 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]Ep
 	localVarFormParams := url.Values{}
 
 	if r.start != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
 	}
 	if r.end != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
 	}
 	if r.unmonitored != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.unmonitored = &defaultValue
 	}
 	if r.includeSeries != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisodeFile != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeFile", r.includeEpisodeFile, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeFile", r.includeEpisodeFile, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeEpisodeFile = &defaultValue
 	}
 	if r.includeEpisodeImages != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeImages", r.includeEpisodeImages, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeImages", r.includeEpisodeImages, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeEpisodeImages = &defaultValue
 	}
 	if r.tags != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "form", "")
 	} else {
 		var defaultValue string = ""
 		r.tags = &defaultValue

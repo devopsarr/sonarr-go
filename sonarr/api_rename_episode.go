@@ -78,10 +78,10 @@ func (a *RenameEpisodeAPIService) ListRenameExecute(r ApiListRenameRequest) ([]R
 	localVarFormParams := url.Values{}
 
 	if r.seriesId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seriesId", r.seriesId, "form", "")
 	}
 	if r.seasonNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "seasonNumber", r.seasonNumber, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
