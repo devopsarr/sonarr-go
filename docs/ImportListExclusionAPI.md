@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateImportListExclusion**](ImportListExclusionAPI.md#CreateImportListExclusion) | **Post** /api/v3/importlistexclusion | 
 [**DeleteImportListExclusion**](ImportListExclusionAPI.md#DeleteImportListExclusion) | **Delete** /api/v3/importlistexclusion/{id} | 
+[**DeleteImportListExclusionBulk**](ImportListExclusionAPI.md#DeleteImportListExclusionBulk) | **Delete** /api/v3/importlistexclusion/bulk | 
 [**GetImportListExclusionById**](ImportListExclusionAPI.md#GetImportListExclusionById) | **Get** /api/v3/importlistexclusion/{id} | 
 [**GetImportListExclusionPaged**](ImportListExclusionAPI.md#GetImportListExclusionPaged) | **Get** /api/v3/importlistexclusion/paged | 
 [**ListImportListExclusion**](ImportListExclusionAPI.md#ListImportListExclusion) | **Get** /api/v3/importlistexclusion | 
@@ -136,6 +137,68 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteImportListExclusionBulk
+
+> DeleteImportListExclusionBulk(ctx).ImportListExclusionBulkResource(importListExclusionBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonarrClient "github.com/devopsarr/sonarr-go/sonarr"
+)
+
+func main() {
+	importListExclusionBulkResource := *sonarrClient.NewImportListExclusionBulkResource() // ImportListExclusionBulkResource |  (optional)
+
+	configuration := sonarrClient.NewConfiguration()
+	apiClient := sonarrClient.NewAPIClient(configuration)
+	r, err := apiClient.ImportListExclusionAPI.DeleteImportListExclusionBulk(context.Background()).ImportListExclusionBulkResource(importListExclusionBulkResource).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionAPI.DeleteImportListExclusionBulk``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteImportListExclusionBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importListExclusionBulkResource** | [**ImportListExclusionBulkResource**](ImportListExclusionBulkResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, text/json, application/*+json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
