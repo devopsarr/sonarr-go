@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **Rejected** | Pointer to **bool** |  | [optional] 
 **TvdbId** | Pointer to **int32** |  | [optional] 
 **TvRageId** | Pointer to **int32** |  | [optional] 
+**ImdbId** | Pointer to **NullableString** |  | [optional] 
 **Rejections** | Pointer to **[]string** |  | [optional] 
 **PublishDate** | Pointer to **time.Time** |  | [optional] 
 **CommentUrl** | Pointer to **NullableString** |  | [optional] 
@@ -1069,6 +1070,41 @@ SetTvRageId sets TvRageId field to given value.
 
 HasTvRageId returns a boolean if a field has been set.
 
+### GetImdbId
+
+`func (o *ReleaseResource) GetImdbId() string`
+
+GetImdbId returns the ImdbId field if non-nil, zero value otherwise.
+
+### GetImdbIdOk
+
+`func (o *ReleaseResource) GetImdbIdOk() (*string, bool)`
+
+GetImdbIdOk returns a tuple with the ImdbId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImdbId
+
+`func (o *ReleaseResource) SetImdbId(v string)`
+
+SetImdbId sets ImdbId field to given value.
+
+### HasImdbId
+
+`func (o *ReleaseResource) HasImdbId() bool`
+
+HasImdbId returns a boolean if a field has been set.
+
+### SetImdbIdNil
+
+`func (o *ReleaseResource) SetImdbIdNil(b bool)`
+
+ SetImdbIdNil sets the value for ImdbId to be an explicit nil
+
+### UnsetImdbId
+`func (o *ReleaseResource) UnsetImdbId()`
+
+UnsetImdbId ensures that no value is present for ImdbId, not even an explicit nil
 ### GetRejections
 
 `func (o *ReleaseResource) GetRejections() []string`

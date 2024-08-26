@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Password** | Pointer to **NullableString** |  | [optional] 
 **PasswordConfirmation** | Pointer to **NullableString** |  | [optional] 
 **LogLevel** | Pointer to **NullableString** |  | [optional] 
+**LogSizeLimit** | Pointer to **int32** |  | [optional] 
 **ConsoleLogLevel** | Pointer to **NullableString** |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
 **ApiKey** | Pointer to **NullableString** |  | [optional] 
@@ -435,6 +436,31 @@ HasLogLevel returns a boolean if a field has been set.
 `func (o *HostConfigResource) UnsetLogLevel()`
 
 UnsetLogLevel ensures that no value is present for LogLevel, not even an explicit nil
+### GetLogSizeLimit
+
+`func (o *HostConfigResource) GetLogSizeLimit() int32`
+
+GetLogSizeLimit returns the LogSizeLimit field if non-nil, zero value otherwise.
+
+### GetLogSizeLimitOk
+
+`func (o *HostConfigResource) GetLogSizeLimitOk() (*int32, bool)`
+
+GetLogSizeLimitOk returns a tuple with the LogSizeLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogSizeLimit
+
+`func (o *HostConfigResource) SetLogSizeLimit(v int32)`
+
+SetLogSizeLimit sets LogSizeLimit field to given value.
+
+### HasLogSizeLimit
+
+`func (o *HostConfigResource) HasLogSizeLimit() bool`
+
+HasLogSizeLimit returns a boolean if a field has been set.
+
 ### GetConsoleLogLevel
 
 `func (o *HostConfigResource) GetConsoleLogLevel() string`
