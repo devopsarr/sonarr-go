@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/devopsarr/sonarr-go/compare/v1.0.0...v1.0.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.9.0 ([a5deb71](https://github.com/devopsarr/sonarr-go/commit/a5deb71993a11284c9acd12dc9ed43931bf70cfc))
+
 ## [1.0.0](https://github.com/devopsarr/sonarr-go/compare/v0.6.0...v1.0.0) (2024-02-15)
 
 
