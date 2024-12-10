@@ -6,9 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateCustomFormat**](CustomFormatAPI.md#CreateCustomFormat) | **Post** /api/v3/customformat | 
 [**DeleteCustomFormat**](CustomFormatAPI.md#DeleteCustomFormat) | **Delete** /api/v3/customformat/{id} | 
+[**DeleteCustomFormatBulk**](CustomFormatAPI.md#DeleteCustomFormatBulk) | **Delete** /api/v3/customformat/bulk | 
 [**GetCustomFormatById**](CustomFormatAPI.md#GetCustomFormatById) | **Get** /api/v3/customformat/{id} | 
 [**ListCustomFormat**](CustomFormatAPI.md#ListCustomFormat) | **Get** /api/v3/customformat | 
 [**ListCustomFormatSchema**](CustomFormatAPI.md#ListCustomFormatSchema) | **Get** /api/v3/customformat/schema | 
+[**PutCustomFormatBulk**](CustomFormatAPI.md#PutCustomFormatBulk) | **Put** /api/v3/customformat/bulk | 
 [**UpdateCustomFormat**](CustomFormatAPI.md#UpdateCustomFormat) | **Put** /api/v3/customformat/{id} | 
 
 
@@ -136,6 +138,68 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCustomFormatBulk
+
+> DeleteCustomFormatBulk(ctx).CustomFormatBulkResource(customFormatBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonarrClient "github.com/devopsarr/sonarr-go/sonarr"
+)
+
+func main() {
+	customFormatBulkResource := *sonarrClient.NewCustomFormatBulkResource() // CustomFormatBulkResource |  (optional)
+
+	configuration := sonarrClient.NewConfiguration()
+	apiClient := sonarrClient.NewAPIClient(configuration)
+	r, err := apiClient.CustomFormatAPI.DeleteCustomFormatBulk(context.Background()).CustomFormatBulkResource(customFormatBulkResource).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatAPI.DeleteCustomFormatBulk``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteCustomFormatBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customFormatBulkResource** | [**CustomFormatBulkResource**](CustomFormatBulkResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -322,6 +386,70 @@ Other parameters are passed through a pointer to a apiListCustomFormatSchemaRequ
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutCustomFormatBulk
+
+> CustomFormatResource PutCustomFormatBulk(ctx).CustomFormatBulkResource(customFormatBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonarrClient "github.com/devopsarr/sonarr-go/sonarr"
+)
+
+func main() {
+	customFormatBulkResource := *sonarrClient.NewCustomFormatBulkResource() // CustomFormatBulkResource |  (optional)
+
+	configuration := sonarrClient.NewConfiguration()
+	apiClient := sonarrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomFormatAPI.PutCustomFormatBulk(context.Background()).CustomFormatBulkResource(customFormatBulkResource).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatAPI.PutCustomFormatBulk``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PutCustomFormatBulk`: CustomFormatResource
+	fmt.Fprintf(os.Stdout, "Response from `CustomFormatAPI.PutCustomFormatBulk`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutCustomFormatBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customFormatBulkResource** | [**CustomFormatBulkResource**](CustomFormatBulkResource.md) |  | 
+
+### Return type
+
+[**CustomFormatResource**](CustomFormatResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

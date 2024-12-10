@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Timeleft** | Pointer to **NullableString** |  | [optional] 
 **EstimatedCompletionTime** | Pointer to **NullableTime** |  | [optional] 
 **Added** | Pointer to **NullableTime** |  | [optional] 
-**Status** | Pointer to **NullableString** |  | [optional] 
+**Status** | Pointer to [**QueueStatus**](QueueStatus.md) |  | [optional] 
 **TrackedDownloadStatus** | Pointer to [**TrackedDownloadStatus**](TrackedDownloadStatus.md) |  | [optional] 
 **TrackedDownloadState** | Pointer to [**TrackedDownloadState**](TrackedDownloadState.md) |  | [optional] 
 **StatusMessages** | Pointer to [**[]TrackedDownloadStatusMessage**](TrackedDownloadStatusMessage.md) |  | [optional] 
@@ -544,20 +544,20 @@ HasAdded returns a boolean if a field has been set.
 UnsetAdded ensures that no value is present for Added, not even an explicit nil
 ### GetStatus
 
-`func (o *QueueResource) GetStatus() string`
+`func (o *QueueResource) GetStatus() QueueStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *QueueResource) GetStatusOk() (*string, bool)`
+`func (o *QueueResource) GetStatusOk() (*QueueStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *QueueResource) SetStatus(v string)`
+`func (o *QueueResource) SetStatus(v QueueStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -567,16 +567,6 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
-### SetStatusNil
-
-`func (o *QueueResource) SetStatusNil(b bool)`
-
- SetStatusNil sets the value for Status to be an explicit nil
-
-### UnsetStatus
-`func (o *QueueResource) UnsetStatus()`
-
-UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetTrackedDownloadStatus
 
 `func (o *QueueResource) GetTrackedDownloadStatus() TrackedDownloadStatus`

@@ -542,7 +542,7 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := int32(56) // int32 | 
 	forceSave := true // bool |  (optional) (default to false)
 	metadataResource := *sonarrClient.NewMetadataResource() // MetadataResource |  (optional)
 
@@ -564,7 +564,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **int32** |  | 
 
 ### Other Parameters
 

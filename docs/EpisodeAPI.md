@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## ListEpisode
 
-> []EpisodeResource ListEpisode(ctx).SeriesId(seriesId).SeasonNumber(seasonNumber).EpisodeIds(episodeIds).EpisodeFileId(episodeFileId).IncludeImages(includeImages).Execute()
+> []EpisodeResource ListEpisode(ctx).SeriesId(seriesId).SeasonNumber(seasonNumber).EpisodeIds(episodeIds).EpisodeFileId(episodeFileId).IncludeSeries(includeSeries).IncludeEpisodeFile(includeEpisodeFile).IncludeImages(includeImages).Execute()
 
 
 
@@ -102,11 +102,13 @@ func main() {
 	seasonNumber := int32(56) // int32 |  (optional)
 	episodeIds := []int32{int32(123)} // []int32 |  (optional)
 	episodeFileId := int32(56) // int32 |  (optional)
+	includeSeries := true // bool |  (optional) (default to false)
+	includeEpisodeFile := true // bool |  (optional) (default to false)
 	includeImages := true // bool |  (optional) (default to false)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EpisodeAPI.ListEpisode(context.Background()).SeriesId(seriesId).SeasonNumber(seasonNumber).EpisodeIds(episodeIds).EpisodeFileId(episodeFileId).IncludeImages(includeImages).Execute()
+	resp, r, err := apiClient.EpisodeAPI.ListEpisode(context.Background()).SeriesId(seriesId).SeasonNumber(seasonNumber).EpisodeIds(episodeIds).EpisodeFileId(episodeFileId).IncludeSeries(includeSeries).IncludeEpisodeFile(includeEpisodeFile).IncludeImages(includeImages).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EpisodeAPI.ListEpisode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,6 +133,8 @@ Name | Type | Description  | Notes
  **seasonNumber** | **int32** |  | 
  **episodeIds** | **[]int32** |  | 
  **episodeFileId** | **int32** |  | 
+ **includeSeries** | **bool** |  | [default to false]
+ **includeEpisodeFile** | **bool** |  | [default to false]
  **includeImages** | **bool** |  | [default to false]
 
 ### Return type
