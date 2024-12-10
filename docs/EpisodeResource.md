@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Title** | Pointer to **NullableString** |  | [optional] 
 **AirDate** | Pointer to **NullableString** |  | [optional] 
 **AirDateUtc** | Pointer to **NullableTime** |  | [optional] 
+**LastSearchTime** | Pointer to **NullableTime** |  | [optional] 
 **Runtime** | Pointer to **int32** |  | [optional] 
 **FinaleType** | Pointer to **NullableString** |  | [optional] 
 **Overview** | Pointer to **NullableString** |  | [optional] 
@@ -303,6 +304,41 @@ HasAirDateUtc returns a boolean if a field has been set.
 `func (o *EpisodeResource) UnsetAirDateUtc()`
 
 UnsetAirDateUtc ensures that no value is present for AirDateUtc, not even an explicit nil
+### GetLastSearchTime
+
+`func (o *EpisodeResource) GetLastSearchTime() time.Time`
+
+GetLastSearchTime returns the LastSearchTime field if non-nil, zero value otherwise.
+
+### GetLastSearchTimeOk
+
+`func (o *EpisodeResource) GetLastSearchTimeOk() (*time.Time, bool)`
+
+GetLastSearchTimeOk returns a tuple with the LastSearchTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastSearchTime
+
+`func (o *EpisodeResource) SetLastSearchTime(v time.Time)`
+
+SetLastSearchTime sets LastSearchTime field to given value.
+
+### HasLastSearchTime
+
+`func (o *EpisodeResource) HasLastSearchTime() bool`
+
+HasLastSearchTime returns a boolean if a field has been set.
+
+### SetLastSearchTimeNil
+
+`func (o *EpisodeResource) SetLastSearchTimeNil(b bool)`
+
+ SetLastSearchTimeNil sets the value for LastSearchTime to be an explicit nil
+
+### UnsetLastSearchTime
+`func (o *EpisodeResource) UnsetLastSearchTime()`
+
+UnsetLastSearchTime ensures that no value is present for LastSearchTime, not even an explicit nil
 ### GetRuntime
 
 `func (o *EpisodeResource) GetRuntime() int32`

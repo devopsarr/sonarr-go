@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## GetQueue
 
-> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).SeriesIds(seriesIds).Protocol(protocol).Languages(languages).Quality(quality).Execute()
+> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).SeriesIds(seriesIds).Protocol(protocol).Languages(languages).Quality(quality).Status(status).Execute()
 
 
 
@@ -183,11 +183,12 @@ func main() {
 	seriesIds := []int32{int32(123)} // []int32 |  (optional)
 	protocol := sonarrClient.DownloadProtocol("unknown") // DownloadProtocol |  (optional)
 	languages := []int32{int32(123)} // []int32 |  (optional)
-	quality := int32(56) // int32 |  (optional)
+	quality := []int32{int32(123)} // []int32 |  (optional)
+	status := []sonarrClient.QueueStatus{sonarrClient.QueueStatus("unknown")} // []QueueStatus |  (optional)
 
 	configuration := sonarrClient.NewConfiguration()
 	apiClient := sonarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).SeriesIds(seriesIds).Protocol(protocol).Languages(languages).Quality(quality).Execute()
+	resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownSeriesItems(includeUnknownSeriesItems).IncludeSeries(includeSeries).IncludeEpisode(includeEpisode).SeriesIds(seriesIds).Protocol(protocol).Languages(languages).Quality(quality).Status(status).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.GetQueue``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -218,7 +219,8 @@ Name | Type | Description  | Notes
  **seriesIds** | **[]int32** |  | 
  **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | 
  **languages** | **[]int32** |  | 
- **quality** | **int32** |  | 
+ **quality** | **[]int32** |  | 
+ **status** | [**[]QueueStatus**](QueueStatus.md) |  | 
 
 ### Return type
 

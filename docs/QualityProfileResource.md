@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Items** | Pointer to [**[]QualityProfileQualityItemResource**](QualityProfileQualityItemResource.md) |  | [optional] 
 **MinFormatScore** | Pointer to **int32** |  | [optional] 
 **CutoffFormatScore** | Pointer to **int32** |  | [optional] 
+**MinUpgradeFormatScore** | Pointer to **int32** |  | [optional] 
 **FormatItems** | Pointer to [**[]ProfileFormatItemResource**](ProfileFormatItemResource.md) |  | [optional] 
 
 ## Methods
@@ -226,6 +227,31 @@ SetCutoffFormatScore sets CutoffFormatScore field to given value.
 `func (o *QualityProfileResource) HasCutoffFormatScore() bool`
 
 HasCutoffFormatScore returns a boolean if a field has been set.
+
+### GetMinUpgradeFormatScore
+
+`func (o *QualityProfileResource) GetMinUpgradeFormatScore() int32`
+
+GetMinUpgradeFormatScore returns the MinUpgradeFormatScore field if non-nil, zero value otherwise.
+
+### GetMinUpgradeFormatScoreOk
+
+`func (o *QualityProfileResource) GetMinUpgradeFormatScoreOk() (*int32, bool)`
+
+GetMinUpgradeFormatScoreOk returns a tuple with the MinUpgradeFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinUpgradeFormatScore
+
+`func (o *QualityProfileResource) SetMinUpgradeFormatScore(v int32)`
+
+SetMinUpgradeFormatScore sets MinUpgradeFormatScore field to given value.
+
+### HasMinUpgradeFormatScore
+
+`func (o *QualityProfileResource) HasMinUpgradeFormatScore() bool`
+
+HasMinUpgradeFormatScore returns a boolean if a field has been set.
 
 ### GetFormatItems
 

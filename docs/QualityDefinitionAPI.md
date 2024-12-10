@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost:8989*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetQualityDefinitionById**](QualityDefinitionAPI.md#GetQualityDefinitionById) | **Get** /api/v3/qualitydefinition/{id} | 
+[**GetQualityDefinitionLimits**](QualityDefinitionAPI.md#GetQualityDefinitionLimits) | **Get** /api/v3/qualitydefinition/limits | 
 [**ListQualityDefinition**](QualityDefinitionAPI.md#ListQualityDefinition) | **Get** /api/v3/qualitydefinition | 
 [**PutQualityDefinitionUpdate**](QualityDefinitionAPI.md#PutQualityDefinitionUpdate) | **Put** /api/v3/qualitydefinition/update | 
 [**UpdateQualityDefinition**](QualityDefinitionAPI.md#UpdateQualityDefinition) | **Put** /api/v3/qualitydefinition/{id} | 
@@ -73,6 +74,65 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetQualityDefinitionLimits
+
+> QualityDefinitionLimitsResource GetQualityDefinitionLimits(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonarrClient "github.com/devopsarr/sonarr-go/sonarr"
+)
+
+func main() {
+
+	configuration := sonarrClient.NewConfiguration()
+	apiClient := sonarrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.QualityDefinitionAPI.GetQualityDefinitionLimits(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionAPI.GetQualityDefinitionLimits``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetQualityDefinitionLimits`: QualityDefinitionLimitsResource
+	fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionAPI.GetQualityDefinitionLimits`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetQualityDefinitionLimitsRequest struct via the builder pattern
+
+
+### Return type
+
+[**QualityDefinitionLimitsResource**](QualityDefinitionLimitsResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
