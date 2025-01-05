@@ -16,8 +16,6 @@ Name | Type | Description | Notes
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **Size** | Pointer to **float64** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
-**Sizeleft** | Pointer to **float64** |  | [optional] 
-**Timeleft** | Pointer to **NullableString** |  | [optional] 
 **EstimatedCompletionTime** | Pointer to **NullableTime** |  | [optional] 
 **Added** | Pointer to **NullableTime** |  | [optional] 
 **Status** | Pointer to [**QueueStatus**](QueueStatus.md) |  | [optional] 
@@ -32,6 +30,8 @@ Name | Type | Description | Notes
 **Indexer** | Pointer to **NullableString** |  | [optional] 
 **OutputPath** | Pointer to **NullableString** |  | [optional] 
 **EpisodeHasFile** | Pointer to **bool** |  | [optional] 
+**Sizeleft** | Pointer to **float64** |  | [optional] 
+**Timeleft** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -412,66 +412,6 @@ HasTitle returns a boolean if a field has been set.
 `func (o *QueueResource) UnsetTitle()`
 
 UnsetTitle ensures that no value is present for Title, not even an explicit nil
-### GetSizeleft
-
-`func (o *QueueResource) GetSizeleft() float64`
-
-GetSizeleft returns the Sizeleft field if non-nil, zero value otherwise.
-
-### GetSizeleftOk
-
-`func (o *QueueResource) GetSizeleftOk() (*float64, bool)`
-
-GetSizeleftOk returns a tuple with the Sizeleft field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSizeleft
-
-`func (o *QueueResource) SetSizeleft(v float64)`
-
-SetSizeleft sets Sizeleft field to given value.
-
-### HasSizeleft
-
-`func (o *QueueResource) HasSizeleft() bool`
-
-HasSizeleft returns a boolean if a field has been set.
-
-### GetTimeleft
-
-`func (o *QueueResource) GetTimeleft() string`
-
-GetTimeleft returns the Timeleft field if non-nil, zero value otherwise.
-
-### GetTimeleftOk
-
-`func (o *QueueResource) GetTimeleftOk() (*string, bool)`
-
-GetTimeleftOk returns a tuple with the Timeleft field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTimeleft
-
-`func (o *QueueResource) SetTimeleft(v string)`
-
-SetTimeleft sets Timeleft field to given value.
-
-### HasTimeleft
-
-`func (o *QueueResource) HasTimeleft() bool`
-
-HasTimeleft returns a boolean if a field has been set.
-
-### SetTimeleftNil
-
-`func (o *QueueResource) SetTimeleftNil(b bool)`
-
- SetTimeleftNil sets the value for Timeleft to be an explicit nil
-
-### UnsetTimeleft
-`func (o *QueueResource) UnsetTimeleft()`
-
-UnsetTimeleft ensures that no value is present for Timeleft, not even an explicit nil
 ### GetEstimatedCompletionTime
 
 `func (o *QueueResource) GetEstimatedCompletionTime() time.Time`
@@ -902,6 +842,66 @@ SetEpisodeHasFile sets EpisodeHasFile field to given value.
 
 HasEpisodeHasFile returns a boolean if a field has been set.
 
+### GetSizeleft
+
+`func (o *QueueResource) GetSizeleft() float64`
+
+GetSizeleft returns the Sizeleft field if non-nil, zero value otherwise.
+
+### GetSizeleftOk
+
+`func (o *QueueResource) GetSizeleftOk() (*float64, bool)`
+
+GetSizeleftOk returns a tuple with the Sizeleft field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSizeleft
+
+`func (o *QueueResource) SetSizeleft(v float64)`
+
+SetSizeleft sets Sizeleft field to given value.
+
+### HasSizeleft
+
+`func (o *QueueResource) HasSizeleft() bool`
+
+HasSizeleft returns a boolean if a field has been set.
+
+### GetTimeleft
+
+`func (o *QueueResource) GetTimeleft() string`
+
+GetTimeleft returns the Timeleft field if non-nil, zero value otherwise.
+
+### GetTimeleftOk
+
+`func (o *QueueResource) GetTimeleftOk() (*string, bool)`
+
+GetTimeleftOk returns a tuple with the Timeleft field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimeleft
+
+`func (o *QueueResource) SetTimeleft(v string)`
+
+SetTimeleft sets Timeleft field to given value.
+
+### HasTimeleft
+
+`func (o *QueueResource) HasTimeleft() bool`
+
+HasTimeleft returns a boolean if a field has been set.
+
+### SetTimeleftNil
+
+`func (o *QueueResource) SetTimeleftNil(b bool)`
+
+ SetTimeleftNil sets the value for Timeleft to be an explicit nil
+
+### UnsetTimeleft
+`func (o *QueueResource) UnsetTimeleft()`
+
+UnsetTimeleft ensures that no value is present for Timeleft, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

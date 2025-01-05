@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **IndexerFlags** | Pointer to **int32** |  | [optional] 
 **ReleaseType** | Pointer to [**ReleaseType**](ReleaseType.md) |  | [optional] 
-**Rejections** | Pointer to [**[]Rejection**](Rejection.md) |  | [optional] 
+**Rejections** | Pointer to [**[]ImportRejectionResource**](ImportRejectionResource.md) |  | [optional] 
 
 ## Methods
 
@@ -631,20 +631,20 @@ HasReleaseType returns a boolean if a field has been set.
 
 ### GetRejections
 
-`func (o *ManualImportResource) GetRejections() []Rejection`
+`func (o *ManualImportResource) GetRejections() []ImportRejectionResource`
 
 GetRejections returns the Rejections field if non-nil, zero value otherwise.
 
 ### GetRejectionsOk
 
-`func (o *ManualImportResource) GetRejectionsOk() (*[]Rejection, bool)`
+`func (o *ManualImportResource) GetRejectionsOk() (*[]ImportRejectionResource, bool)`
 
 GetRejectionsOk returns a tuple with the Rejections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRejections
 
-`func (o *ManualImportResource) SetRejections(v []Rejection)`
+`func (o *ManualImportResource) SetRejections(v []ImportRejectionResource)`
 
 SetRejections sets Rejections field to given value.
 
