@@ -16,50 +16,53 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 
-// HealthAPIService HealthAPI service
-type HealthAPIService service
+// SeriesFolderAPIService SeriesFolderAPI service
+type SeriesFolderAPIService service
 
-type ApiListHealthRequest struct {
+type ApiGetSeriesFolderRequest struct {
 	ctx context.Context
-	ApiService *HealthAPIService
+	ApiService *SeriesFolderAPIService
+	id int32
 }
 
-func (r ApiListHealthRequest) Execute() ([]HealthResource, *http.Response, error) {
-	return r.ApiService.ListHealthExecute(r)
+func (r ApiGetSeriesFolderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetSeriesFolderExecute(r)
 }
 
 /*
-ListHealth Method for ListHealth
+GetSeriesFolder Method for GetSeriesFolder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListHealthRequest
+ @param id
+ @return ApiGetSeriesFolderRequest
 */
-func (a *HealthAPIService) ListHealth(ctx context.Context) ApiListHealthRequest {
-	return ApiListHealthRequest{
+func (a *SeriesFolderAPIService) GetSeriesFolder(ctx context.Context, id int32) ApiGetSeriesFolderRequest {
+	return ApiGetSeriesFolderRequest{
 		ApiService: a,
 		ctx: ctx,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//  @return []HealthResource
-func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) ([]HealthResource, *http.Response, error) {
+func (a *SeriesFolderAPIService) GetSeriesFolderExecute(r ApiGetSeriesFolderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []HealthResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.ListHealth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SeriesFolderAPIService.GetSeriesFolder")
 	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v3/health"
+	localVarPath := localBasePath + "/api/v3/series/{id}/folder"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -75,7 +78,7 @@ func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) ([]HealthRe
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
+	localVarHTTPHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -112,19 +115,19 @@ func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) ([]HealthRe
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return localVarReturnValue, nil, err
+		return nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
+		return localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
+		return localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -132,17 +135,8 @@ func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) ([]HealthRe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
+		return localVarHTTPResponse, newErr
 	}
 
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
+	return localVarHTTPResponse, nil
 }
