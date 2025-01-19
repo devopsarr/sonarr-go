@@ -289,7 +289,6 @@ Class | Method | HTTP request | Description
 *SeriesFolderAPI* | [**GetSeriesFolder**](docs/SeriesFolderAPI.md#getseriesfolder) | **Get** /api/v3/series/{id}/folder | 
 *SeriesImportAPI* | [**CreateSeriesImport**](docs/SeriesImportAPI.md#createseriesimport) | **Post** /api/v3/series/import | 
 *SeriesLookupAPI* | [**ListSeriesLookup**](docs/SeriesLookupAPI.md#listserieslookup) | **Get** /api/v3/series/lookup | 
-*StaticResourceAPI* | [**Get**](docs/StaticResourceAPI.md#get) | **Get** / | 
 *StaticResourceAPI* | [**GetByPath**](docs/StaticResourceAPI.md#getbypath) | **Get** /{path} | 
 *StaticResourceAPI* | [**GetContentByPath**](docs/StaticResourceAPI.md#getcontentbypath) | **Get** /content/{path} | 
 *StaticResourceAPI* | [**GetLogin**](docs/StaticResourceAPI.md#getlogin) | **Get** /login | 
