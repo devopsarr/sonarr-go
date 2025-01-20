@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/devopsarr/sonarr-go/compare/v1.0.2...v1.1.0) (2025-01-20)
+
+
+### Features
+
+* remove broken root api path ([54fc7ae](https://github.com/devopsarr/sonarr-go/commit/54fc7aeba6273091d0b99aea565442e679a5b0e0))
+
+
+### Bug Fixes
+
+* **deps:** update dependency sonarr/sonarr to v4.0.12.2823 ([49b0d9b](https://github.com/devopsarr/sonarr-go/commit/49b0d9bdf86c90e4fc6541939263135ac176f96d))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.11.0 ([2ae9837](https://github.com/devopsarr/sonarr-go/commit/2ae98376854c75de11e490b189cb984ad498f832))
+
 ## [1.0.2](https://github.com/devopsarr/sonarr-go/compare/v1.0.1...v1.0.2) (2024-12-10)
 
 
