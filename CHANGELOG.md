@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/devopsarr/sonarr-go/compare/v1.1.0...v1.1.1) (2025-03-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sonarr/sonarr to v4.0.13.2932 ([63cf5ea](https://github.com/devopsarr/sonarr-go/commit/63cf5eab823dfb0cc927f392ae3c47e44a64f382))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.12.0 ([379432b](https://github.com/devopsarr/sonarr-go/commit/379432baf9f522ff7b36e21b0b3e5b9a010bbc0e))
+
 ## [1.1.0](https://github.com/devopsarr/sonarr-go/compare/v1.0.2...v1.1.0) (2025-01-20)
 
 
