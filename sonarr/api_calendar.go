@@ -247,32 +247,37 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]Ep
 	if r.unmonitored != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.unmonitored = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", defaultValue, "form", "")
+        r.unmonitored = &defaultValue
 	}
 	if r.includeSeries != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeSeries = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
+        r.includeSeries = &defaultValue
 	}
 	if r.includeEpisodeFile != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeFile", r.includeEpisodeFile, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeEpisodeFile = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeFile", defaultValue, "form", "")
+        r.includeEpisodeFile = &defaultValue
 	}
 	if r.includeEpisodeImages != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeImages", r.includeEpisodeImages, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeEpisodeImages = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeImages", defaultValue, "form", "")
+        r.includeEpisodeImages = &defaultValue
 	}
 	if r.tags != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "form", "")
 	} else {
-		var defaultValue string = ""
-		r.tags = &defaultValue
+        var defaultValue string = ""
+        parameterAddToHeaderOrQuery(localVarQueryParams, "tags", defaultValue, "form", "")
+        r.tags = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

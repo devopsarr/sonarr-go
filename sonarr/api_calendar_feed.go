@@ -102,38 +102,44 @@ func (a *CalendarFeedAPIService) GetFeedV3CalendarSonarrIcsExecute(r ApiGetFeedV
 	if r.pastDays != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", r.pastDays, "form", "")
 	} else {
-		var defaultValue int32 = 7
-		r.pastDays = &defaultValue
+        var defaultValue int32 = 7
+        parameterAddToHeaderOrQuery(localVarQueryParams, "pastDays", defaultValue, "form", "")
+        r.pastDays = &defaultValue
 	}
 	if r.futureDays != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", r.futureDays, "form", "")
 	} else {
-		var defaultValue int32 = 28
-		r.futureDays = &defaultValue
+        var defaultValue int32 = 28
+        parameterAddToHeaderOrQuery(localVarQueryParams, "futureDays", defaultValue, "form", "")
+        r.futureDays = &defaultValue
 	}
 	if r.tags != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "form", "")
 	} else {
-		var defaultValue string = ""
-		r.tags = &defaultValue
+        var defaultValue string = ""
+        parameterAddToHeaderOrQuery(localVarQueryParams, "tags", defaultValue, "form", "")
+        r.tags = &defaultValue
 	}
 	if r.unmonitored != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.unmonitored = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", defaultValue, "form", "")
+        r.unmonitored = &defaultValue
 	}
 	if r.premieresOnly != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "premieresOnly", r.premieresOnly, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.premieresOnly = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "premieresOnly", defaultValue, "form", "")
+        r.premieresOnly = &defaultValue
 	}
 	if r.asAllDay != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "asAllDay", r.asAllDay, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.asAllDay = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "asAllDay", defaultValue, "form", "")
+        r.asAllDay = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

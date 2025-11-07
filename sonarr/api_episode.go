@@ -261,20 +261,23 @@ func (a *EpisodeAPIService) ListEpisodeExecute(r ApiListEpisodeRequest) ([]Episo
 	if r.includeSeries != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeSeries = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
+        r.includeSeries = &defaultValue
 	}
 	if r.includeEpisodeFile != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeFile", r.includeEpisodeFile, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeEpisodeFile = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisodeFile", defaultValue, "form", "")
+        r.includeEpisodeFile = &defaultValue
 	}
 	if r.includeImages != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeImages = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", defaultValue, "form", "")
+        r.includeImages = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -414,8 +417,9 @@ func (a *EpisodeAPIService) PutEpisodeMonitorExecute(r ApiPutEpisodeMonitorReque
 	if r.includeImages != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeImages = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", defaultValue, "form", "")
+        r.includeImages = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
