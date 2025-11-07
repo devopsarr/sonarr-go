@@ -111,14 +111,16 @@ func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
-		var defaultValue int32 = 1
-		r.page = &defaultValue
+        var defaultValue int32 = 1
+        parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
+        r.page = &defaultValue
 	}
 	if r.pageSize != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
-		var defaultValue int32 = 10
-		r.pageSize = &defaultValue
+        var defaultValue int32 = 10
+        parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
+        r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
@@ -129,20 +131,23 @@ func (a *MissingAPIService) GetWantedMissingExecute(r ApiGetWantedMissingRequest
 	if r.includeSeries != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeSeries = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
+        r.includeSeries = &defaultValue
 	}
 	if r.includeImages != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", r.includeImages, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeImages = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeImages", defaultValue, "form", "")
+        r.includeImages = &defaultValue
 	}
 	if r.monitored != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "monitored", r.monitored, "form", "")
 	} else {
-		var defaultValue bool = true
-		r.monitored = &defaultValue
+        var defaultValue bool = true
+        parameterAddToHeaderOrQuery(localVarQueryParams, "monitored", defaultValue, "form", "")
+        r.monitored = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

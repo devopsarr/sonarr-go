@@ -232,8 +232,9 @@ func (a *ManualImportAPIService) ListManualImportExecute(r ApiListManualImportRe
 	if r.filterExistingFiles != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filterExistingFiles", r.filterExistingFiles, "form", "")
 	} else {
-		var defaultValue bool = true
-		r.filterExistingFiles = &defaultValue
+        var defaultValue bool = true
+        parameterAddToHeaderOrQuery(localVarQueryParams, "filterExistingFiles", defaultValue, "form", "")
+        r.filterExistingFiles = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
