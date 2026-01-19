@@ -96,30 +96,30 @@ func (a *QueueAPIService) DeleteQueueExecute(r ApiDeleteQueueRequest) (*http.Res
 	if r.removeFromClient != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "form", "")
 	} else {
-        var defaultValue bool = true
-        parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", defaultValue, "form", "")
-        r.removeFromClient = &defaultValue
+		var defaultValue bool = true
+		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", defaultValue, "form", "")
+		r.removeFromClient = &defaultValue
 	}
 	if r.blocklist != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", defaultValue, "form", "")
-        r.blocklist = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", defaultValue, "form", "")
+		r.blocklist = &defaultValue
 	}
 	if r.skipRedownload != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", defaultValue, "form", "")
-        r.skipRedownload = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", defaultValue, "form", "")
+		r.skipRedownload = &defaultValue
 	}
 	if r.changeCategory != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", defaultValue, "form", "")
-        r.changeCategory = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", defaultValue, "form", "")
+		r.changeCategory = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -268,30 +268,30 @@ func (a *QueueAPIService) DeleteQueueBulkExecute(r ApiDeleteQueueBulkRequest) (*
 	if r.removeFromClient != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "form", "")
 	} else {
-        var defaultValue bool = true
-        parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", defaultValue, "form", "")
-        r.removeFromClient = &defaultValue
+		var defaultValue bool = true
+		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", defaultValue, "form", "")
+		r.removeFromClient = &defaultValue
 	}
 	if r.blocklist != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", defaultValue, "form", "")
-        r.blocklist = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", defaultValue, "form", "")
+		r.blocklist = &defaultValue
 	}
 	if r.skipRedownload != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", defaultValue, "form", "")
-        r.skipRedownload = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", defaultValue, "form", "")
+		r.skipRedownload = &defaultValue
 	}
 	if r.changeCategory != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", defaultValue, "form", "")
-        r.changeCategory = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", defaultValue, "form", "")
+		r.changeCategory = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
@@ -486,16 +486,16 @@ func (a *QueueAPIService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
-        var defaultValue int32 = 1
-        parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
-        r.page = &defaultValue
+		var defaultValue int32 = 1
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
+		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
-        var defaultValue int32 = 10
-        parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
-        r.pageSize = &defaultValue
+		var defaultValue int32 = 10
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
+		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
@@ -506,23 +506,23 @@ func (a *QueueAPIService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	if r.includeUnknownSeriesItems != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeUnknownSeriesItems", r.includeUnknownSeriesItems, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeUnknownSeriesItems", defaultValue, "form", "")
-        r.includeUnknownSeriesItems = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeUnknownSeriesItems", defaultValue, "form", "")
+		r.includeUnknownSeriesItems = &defaultValue
 	}
 	if r.includeSeries != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
-        r.includeSeries = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
+		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisode != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", defaultValue, "form", "")
-        r.includeEpisode = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", defaultValue, "form", "")
+		r.includeEpisode = &defaultValue
 	}
 	if r.seriesIds != nil {
 		t := *r.seriesIds

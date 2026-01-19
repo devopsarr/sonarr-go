@@ -261,16 +261,16 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
-        var defaultValue int32 = 1
-        parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
-        r.page = &defaultValue
+		var defaultValue int32 = 1
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
+		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
-        var defaultValue int32 = 10
-        parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
-        r.pageSize = &defaultValue
+		var defaultValue int32 = 10
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
+		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
@@ -501,16 +501,16 @@ func (a *HistoryAPIService) ListHistorySeriesExecute(r ApiListHistorySeriesReque
 	if r.includeSeries != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
-        r.includeSeries = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
+		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisode != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", defaultValue, "form", "")
-        r.includeEpisode = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", defaultValue, "form", "")
+		r.includeEpisode = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -670,16 +670,16 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	if r.includeSeries != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
-        r.includeSeries = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
+		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisode != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", defaultValue, "form", "")
-        r.includeEpisode = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", defaultValue, "form", "")
+		r.includeEpisode = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

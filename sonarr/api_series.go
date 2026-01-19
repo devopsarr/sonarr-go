@@ -216,16 +216,16 @@ func (a *SeriesAPIService) DeleteSeriesExecute(r ApiDeleteSeriesRequest) (*http.
 	if r.deleteFiles != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", defaultValue, "form", "")
-        r.deleteFiles = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", defaultValue, "form", "")
+		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", defaultValue, "form", "")
-        r.addImportListExclusion = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", defaultValue, "form", "")
+		r.addImportListExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -356,9 +356,9 @@ func (a *SeriesAPIService) GetSeriesByIdExecute(r ApiGetSeriesByIdRequest) (*Ser
 	if r.includeSeasonImages != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", r.includeSeasonImages, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", defaultValue, "form", "")
-        r.includeSeasonImages = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", defaultValue, "form", "")
+		r.includeSeasonImages = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -503,9 +503,9 @@ func (a *SeriesAPIService) ListSeriesExecute(r ApiListSeriesRequest) ([]SeriesRe
 	if r.includeSeasonImages != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", r.includeSeasonImages, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", defaultValue, "form", "")
-        r.includeSeasonImages = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeasonImages", defaultValue, "form", "")
+		r.includeSeasonImages = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -651,9 +651,9 @@ func (a *SeriesAPIService) UpdateSeriesExecute(r ApiUpdateSeriesRequest) (*Serie
 	if r.moveFiles != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", defaultValue, "form", "")
-        r.moveFiles = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", defaultValue, "form", "")
+		r.moveFiles = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

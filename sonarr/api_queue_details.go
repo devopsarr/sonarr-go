@@ -107,16 +107,16 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	if r.includeSeries != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", r.includeSeries, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
-        r.includeSeries = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeSeries", defaultValue, "form", "")
+		r.includeSeries = &defaultValue
 	}
 	if r.includeEpisode != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", r.includeEpisode, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", defaultValue, "form", "")
-        r.includeEpisode = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeEpisode", defaultValue, "form", "")
+		r.includeEpisode = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

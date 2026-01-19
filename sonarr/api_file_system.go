@@ -87,16 +87,16 @@ func (a *FileSystemAPIService) GetFileSystemExecute(r ApiGetFileSystemRequest) (
 	if r.includeFiles != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeFiles", r.includeFiles, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeFiles", defaultValue, "form", "")
-        r.includeFiles = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeFiles", defaultValue, "form", "")
+		r.includeFiles = &defaultValue
 	}
 	if r.allowFoldersWithoutTrailingSlashes != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "allowFoldersWithoutTrailingSlashes", r.allowFoldersWithoutTrailingSlashes, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "allowFoldersWithoutTrailingSlashes", defaultValue, "form", "")
-        r.allowFoldersWithoutTrailingSlashes = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "allowFoldersWithoutTrailingSlashes", defaultValue, "form", "")
+		r.allowFoldersWithoutTrailingSlashes = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -81,9 +81,9 @@ func (a *MetadataAPIService) CreateMetadataExecute(r ApiCreateMetadataRequest) (
 	if r.forceSave != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", defaultValue, "form", "")
-        r.forceSave = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", defaultValue, "form", "")
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -848,9 +848,9 @@ func (a *MetadataAPIService) TestMetadataExecute(r ApiTestMetadataRequest) (*htt
 	if r.forceTest != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", r.forceTest, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", defaultValue, "form", "")
-        r.forceTest = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", defaultValue, "form", "")
+		r.forceTest = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1103,9 +1103,9 @@ func (a *MetadataAPIService) UpdateMetadataExecute(r ApiUpdateMetadataRequest) (
 	if r.forceSave != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", defaultValue, "form", "")
-        r.forceSave = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", defaultValue, "form", "")
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
