@@ -81,9 +81,9 @@ func (a *DownloadClientAPIService) CreateDownloadClientExecute(r ApiCreateDownlo
 	if r.forceSave != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", defaultValue, "form", "")
-        r.forceSave = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", defaultValue, "form", "")
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1103,9 +1103,9 @@ func (a *DownloadClientAPIService) TestDownloadClientExecute(r ApiTestDownloadCl
 	if r.forceTest != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", r.forceTest, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", defaultValue, "form", "")
-        r.forceTest = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceTest", defaultValue, "form", "")
+		r.forceTest = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -1358,9 +1358,9 @@ func (a *DownloadClientAPIService) UpdateDownloadClientExecute(r ApiUpdateDownlo
 	if r.forceSave != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", r.forceSave, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", defaultValue, "form", "")
-        r.forceSave = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "forceSave", defaultValue, "form", "")
+		r.forceSave = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
