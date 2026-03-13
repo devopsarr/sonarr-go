@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.2](https://github.com/devopsarr/sonarr-go/compare/v1.1.1...v1.1.2) (2026-03-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sonarr/sonarr to v4.0.16.2944 ([31c6ffc](https://github.com/devopsarr/sonarr-go/commit/31c6ffc7f1d115fb4b186aa584e3d645c4d86a5c))
+* **deps:** update dependency sonarr/sonarr to v4.0.16.2944 ([712275b](https://github.com/devopsarr/sonarr-go/commit/712275b4271c0d51a989eefa743eaf602a9d1527))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.16.0 ([0ede22c](https://github.com/devopsarr/sonarr-go/commit/0ede22cbcf78465473a0df9e32b3558efdd2c668))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([ad3bd02](https://github.com/devopsarr/sonarr-go/commit/ad3bd022a48a14b9e7377b73e734962edb76e3bf))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([22cf9cb](https://github.com/devopsarr/sonarr-go/commit/22cf9cb246ca9f03b4eeea3e760a540b7bca3d06))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([da3ff06](https://github.com/devopsarr/sonarr-go/commit/da3ff060bf4d76a5da2f57cb7fb104cc98dcd9a9))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([b9902ed](https://github.com/devopsarr/sonarr-go/commit/b9902ed72ef3eb0874ff3e7908f12f52a65677a0))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([ce9ba3d](https://github.com/devopsarr/sonarr-go/commit/ce9ba3d29956e8afbfc14176f787dd8863656474))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([e738b46](https://github.com/devopsarr/sonarr-go/commit/e738b46279a1a5d32c3fa0ad89cd027fcbfb716e))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([86ebc0e](https://github.com/devopsarr/sonarr-go/commit/86ebc0e5ac248cea9d72b51072cbefd796f38a3f))
+
 ## [1.1.1](https://github.com/devopsarr/sonarr-go/compare/v1.1.0...v1.1.1) (2025-09-02)
 
 
