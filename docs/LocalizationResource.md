@@ -53,20 +53,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetStrings
 
-`func (o *LocalizationResource) GetStrings() map[string]string`
+`func (o *LocalizationResource) GetStrings() map[string]*string`
 
 GetStrings returns the Strings field if non-nil, zero value otherwise.
 
 ### GetStringsOk
 
-`func (o *LocalizationResource) GetStringsOk() (*map[string]string, bool)`
+`func (o *LocalizationResource) GetStringsOk() (*map[string]*string, bool)`
 
 GetStringsOk returns a tuple with the Strings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStrings
 
-`func (o *LocalizationResource) SetStrings(v map[string]string)`
+`func (o *LocalizationResource) SetStrings(v map[string]*string)`
 
 SetStrings sets Strings field to given value.
 
