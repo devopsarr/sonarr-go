@@ -20,7 +20,7 @@ var _ MappedNullable = &LocalizationResource{}
 // LocalizationResource struct for LocalizationResource
 type LocalizationResource struct {
 	Id *int32 `json:"id,omitempty"`
-	Strings map[string]string `json:"strings,omitempty"`
+	Strings map[string]*string `json:"strings,omitempty"`
 }
 
 // NewLocalizationResource instantiates a new LocalizationResource object
@@ -73,9 +73,9 @@ func (o *LocalizationResource) SetId(v int32) {
 }
 
 // GetStrings returns the Strings field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LocalizationResource) GetStrings() map[string]string {
+func (o *LocalizationResource) GetStrings() map[string]*string {
 	if o == nil {
-		var ret map[string]string
+		var ret map[string]*string
 		return ret
 	}
 	return o.Strings
@@ -84,7 +84,7 @@ func (o *LocalizationResource) GetStrings() map[string]string {
 // GetStringsOk returns a tuple with the Strings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LocalizationResource) GetStringsOk() (*map[string]string, bool) {
+func (o *LocalizationResource) GetStringsOk() (*map[string]*string, bool) {
 	if o == nil || IsNil(o.Strings) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *LocalizationResource) HasStrings() bool {
 	return false
 }
 
-// SetStrings gets a reference to the given map[string]string and assigns it to the Strings field.
-func (o *LocalizationResource) SetStrings(v map[string]string) {
+// SetStrings gets a reference to the given map[string]*string and assigns it to the Strings field.
+func (o *LocalizationResource) SetStrings(v map[string]*string) {
 	o.Strings = v
 }
 

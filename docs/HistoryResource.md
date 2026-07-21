@@ -381,20 +381,20 @@ HasEventType returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *HistoryResource) GetData() map[string]string`
+`func (o *HistoryResource) GetData() map[string]*string`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoryResource) GetDataOk() (*map[string]string, bool)`
+`func (o *HistoryResource) GetDataOk() (*map[string]*string, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoryResource) SetData(v map[string]string)`
+`func (o *HistoryResource) SetData(v map[string]*string)`
 
 SetData sets Data field to given value.
 
