@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/devopsarr/sonarr-go/compare/v1.1.2...v1.1.3) (2026-11-10)
+
+
+### Bug Fixes
+
+* add go releaser file version ([3f2e4a7](https://github.com/devopsarr/sonarr-go/commit/3f2e4a75cf5196eefc6e9e8f91b4487295ebf901))
+* add go releaser file version ([e670332](https://github.com/devopsarr/sonarr-go/commit/e670332e19747329b69df4aebfc1620053828b10))
+
 ## [1.1.2](https://github.com/devopsarr/sonarr-go/compare/v1.1.1...v1.1.2) (2026-11-10)
 
 
