@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **LaunchBrowser** | Pointer to **bool** |  | [optional] 
 **AuthenticationMethod** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
 **AuthenticationRequired** | Pointer to [**AuthenticationRequiredType**](AuthenticationRequiredType.md) |  | [optional] 
+**AllowedHosts** | Pointer to **NullableString** |  | [optional] 
 **AnalyticsEnabled** | Pointer to **bool** |  | [optional] 
 **Username** | Pointer to **NullableString** |  | [optional] 
 **Password** | Pointer to **NullableString** |  | [optional] 
@@ -24,6 +25,7 @@ Name | Type | Description | Notes
 **SslCertPath** | Pointer to **NullableString** |  | [optional] 
 **SslCertPassword** | Pointer to **NullableString** |  | [optional] 
 **UrlBase** | Pointer to **NullableString** |  | [optional] 
+**TrustedNetworks** | Pointer to **NullableString** |  | [optional] 
 **InstanceName** | Pointer to **NullableString** |  | [optional] 
 **ApplicationUrl** | Pointer to **NullableString** |  | [optional] 
 **UpdateAutomatically** | Pointer to **bool** |  | [optional] 
@@ -272,6 +274,41 @@ SetAuthenticationRequired sets AuthenticationRequired field to given value.
 
 HasAuthenticationRequired returns a boolean if a field has been set.
 
+### GetAllowedHosts
+
+`func (o *HostConfigResource) GetAllowedHosts() string`
+
+GetAllowedHosts returns the AllowedHosts field if non-nil, zero value otherwise.
+
+### GetAllowedHostsOk
+
+`func (o *HostConfigResource) GetAllowedHostsOk() (*string, bool)`
+
+GetAllowedHostsOk returns a tuple with the AllowedHosts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedHosts
+
+`func (o *HostConfigResource) SetAllowedHosts(v string)`
+
+SetAllowedHosts sets AllowedHosts field to given value.
+
+### HasAllowedHosts
+
+`func (o *HostConfigResource) HasAllowedHosts() bool`
+
+HasAllowedHosts returns a boolean if a field has been set.
+
+### SetAllowedHostsNil
+
+`func (o *HostConfigResource) SetAllowedHostsNil(b bool)`
+
+ SetAllowedHostsNil sets the value for AllowedHosts to be an explicit nil
+
+### UnsetAllowedHosts
+`func (o *HostConfigResource) UnsetAllowedHosts()`
+
+UnsetAllowedHosts ensures that no value is present for AllowedHosts, not even an explicit nil
 ### GetAnalyticsEnabled
 
 `func (o *HostConfigResource) GetAnalyticsEnabled() bool`
@@ -672,6 +709,41 @@ HasUrlBase returns a boolean if a field has been set.
 `func (o *HostConfigResource) UnsetUrlBase()`
 
 UnsetUrlBase ensures that no value is present for UrlBase, not even an explicit nil
+### GetTrustedNetworks
+
+`func (o *HostConfigResource) GetTrustedNetworks() string`
+
+GetTrustedNetworks returns the TrustedNetworks field if non-nil, zero value otherwise.
+
+### GetTrustedNetworksOk
+
+`func (o *HostConfigResource) GetTrustedNetworksOk() (*string, bool)`
+
+GetTrustedNetworksOk returns a tuple with the TrustedNetworks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustedNetworks
+
+`func (o *HostConfigResource) SetTrustedNetworks(v string)`
+
+SetTrustedNetworks sets TrustedNetworks field to given value.
+
+### HasTrustedNetworks
+
+`func (o *HostConfigResource) HasTrustedNetworks() bool`
+
+HasTrustedNetworks returns a boolean if a field has been set.
+
+### SetTrustedNetworksNil
+
+`func (o *HostConfigResource) SetTrustedNetworksNil(b bool)`
+
+ SetTrustedNetworksNil sets the value for TrustedNetworks to be an explicit nil
+
+### UnsetTrustedNetworks
+`func (o *HostConfigResource) UnsetTrustedNetworks()`
+
+UnsetTrustedNetworks ensures that no value is present for TrustedNetworks, not even an explicit nil
 ### GetInstanceName
 
 `func (o *HostConfigResource) GetInstanceName() string`
