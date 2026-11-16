@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.4 (2026-11-16)
+
+## What's Changed
+* chore: edit changelog type to github by @devopsarr[bot] in https://github.com/devopsarr/sonarr-go/pull/102
+
+
+**Full Changelog**: https://github.com/devopsarr/sonarr-go/compare/v1.1.3...v1.1.4
+
 ## [1.1.3](https://github.com/devopsarr/sonarr-go/compare/v1.1.2...v1.1.3) (2026-11-10)
 
 
